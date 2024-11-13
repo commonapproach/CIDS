@@ -1398,7 +1398,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Alignment Risk</rdfs:label>
-        <skos:definition xml:lang="en">Alignment Risk considers an impact that that is not correlated with the organization&apos;s intended mission. The probability that impact is not locked into the enterprise model.</skos:definition>
+        <skos:definition xml:lang="en">Alignment Risk considers an impact that that is not correlated with the organization&apos;s intended purpose. The probability that impact is not locked into the enterprise model.</skos:definition>
     </owl:Class>
     
 
@@ -2949,7 +2949,7 @@ Properties common across all types of Input are:
 •	hasContact: Identifies one or more contacts for the organization.
 •	hasDescription: a string that describes the Organization.
 •	hasWebAddress: a URI specifying the website for the organization.
-•	hasPurpose: text defining the mission or vision of the organization.
+•	hasPurpose: text defining the purpose or vision of the organization.
 •	sch:dateCreated: the date the Organization’s record was created.</dc:description>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
@@ -3589,7 +3589,7 @@ A person can play a role at an organization. For any role, a person can be assig
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#SocialPurposeOrganization">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
-        <rdfs:comment xml:lang="en">A social purpose organization can be a charity, nonprofit, social enterprise, co-operative, or for profit social enterprise. In all cases, a social purpose organization is advancing a social, cultural or environmental mission. (https://communityfoundations.ca/investment-readiness-program-glossary/)</rdfs:comment>
+        <rdfs:comment xml:lang="en">A social purpose organization can be a charity, nonprofit, social enterprise, co-operative, or for profit social enterprise. In all cases, a social purpose organization is advancing a social, cultural or environmental purpose. (https://communityfoundations.ca/investment-readiness-program-glossary/)</rdfs:comment>
         <rdfs:label xml:lang="en">Social Purpose Organization</rdfs:label>
     </owl:Class>
     
