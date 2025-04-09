@@ -27,28 +27,27 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/">
+     xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://ontology.commonapproach.org/cids-3.0">
         <owl:imports rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl"/>
         <owl:imports rdf:resource="http://ontology.eil.utoronto.ca/tove/activity.owl"/>
         <owl:imports rdf:resource="http://ontology.eil.utoronto.ca/tove/icontact.owl"/>
         <owl:imports rdf:resource="http://ontology.eil.utoronto.ca/tove/organization.owl"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time.rdf"/>
-        <cc:license>Common Impact Data Standard V2.1 © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</cc:license>
-        <dcterms:creator rdf:resource="#ac"/>
+        <cc:license>Common Impact Data Standard V3.0 © 2024 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</cc:license>
+        <dcterms:creator rdf:resource="https://ontology.commonapproach.org/cids-3.0#ac"/>
+        <dcterms:date>01-24-2024</dcterms:date>
         <dcterms:description xml:lang="en">The Common Impact Data Standard (CIDS) provides a standard representation for the core concepts and attributes that underlie impact models (e.g., logic model, impact thesis, theory of change, etc.), inputs, activities, outputs, and outcomes.</dcterms:description>
         <dcterms:title xml:lang="en">Common Impact Data Standard</dcterms:title>
         <vann:preferredNamespacePrefix>cids</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://ontology.commonapproach.org/cids-3.0#</vann:preferredNamespaceUri>
-        <dcterms:date>01-10-2024</dcterms:date>
+        <owl:priorVersion rdf:resource="https://ontology.commonapproach.org/cids-2.1"/>
         <owl:versionInfo xml:lang="en">3.0</owl:versionInfo>
-        <adms:relatedDocumentation xml:lang="en">Common Approach to Impact Measurement (2023) “Technical Guide: The Common Impact Data Standard V2.1 An Ontology for Representing Impact”, Common Approach to Impact Measurement. DOI 10.5281/zenodo.7930431 https://www.commonapproach.org/wp-content/uploads/2021/03/Common-Impact-Data-Standard-V2.1.pdf</adms:relatedDocumentation>
-      <owl:priorVersion rdf:resource="https://ontology.commonapproach.org/cids-2.1"/>
+        <adms:relatedDocumentation xml:lang="en">Common Approach to Impact Measurement (2023) “Technical Guide: The Common Impact Data Standard V3.0 An Ontology for Representing Impact”, Common Approach to Impact Measurement. DOI 10.5281/zenodo.7930431 https://www.commonapproach.org/wp-content/uploads/2023/05/Common-Approach_Common-Impact-Data-Standard_Current-version.pdf</adms:relatedDocumentation>
     </owl:Ontology>
 
 
-    <!-- 
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -67,7 +66,7 @@
     <!-- http://creativecommons.org/ns#license -->
 
     <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#modifiedBy -->
@@ -76,19 +75,19 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:domain rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
@@ -102,13 +101,13 @@
     <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
+
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
@@ -126,13 +125,12 @@
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/adms#relatedDocumentation -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#relatedDocumentation"/>
-    
 
 
     <!-- 
@@ -143,16 +141,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.w3.org/2001/XMLSchema#date -->
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
 
 
-    <!-- 
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -160,7 +157,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Occupation -->
@@ -169,10 +166,12 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#numberOf -->
+
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#numberOf">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#benefitsFrom -->
@@ -180,7 +179,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#benefitsFrom">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#canEnable -->
@@ -188,7 +187,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#canEnable">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#canProduce -->
@@ -196,13 +195,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#canProduce">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#contributes -->
@@ -210,13 +209,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#contributes">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#dcObjectProperty -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#dcObjectProperty"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#definedBy -->
@@ -225,7 +224,6 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forActivity -->
@@ -233,7 +231,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forActivity">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forFeature -->
@@ -241,7 +239,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forFeature">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forIndicator -->
@@ -251,7 +249,7 @@
         <owl:inverseOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasIndicatorReport"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forOrganization -->
@@ -261,14 +259,19 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
 
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasOrganization -->
+
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasOrganization">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasPerson -->
+
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasPerson">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forOutcome -->
@@ -277,7 +280,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forStakeholder -->
@@ -285,7 +288,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forStakeholder">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#forTheme -->
@@ -294,10 +297,13 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasTheme -->
+
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasTheme">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#fromPerspectiveOf -->
@@ -305,7 +311,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#fromPerspectiveOf">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasAccess -->
@@ -313,7 +319,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasAccess">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasActivity -->
@@ -321,7 +327,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasActivity">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasActualAmount -->
@@ -329,7 +335,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasActualAmount">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasAmount -->
@@ -337,7 +343,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasAmount">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasBaseline -->
@@ -346,7 +352,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasBeneficialStakeholder -->
@@ -354,7 +360,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasBeneficialStakeholder">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholder"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasCharacteristic -->
@@ -362,6 +368,8 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasCharacteristic">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#forCharacteristic -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forCharacteristic">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
@@ -374,7 +382,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasCode">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasContact -->
@@ -382,7 +390,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasContact">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasContributingStakeholder -->
@@ -390,7 +398,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasContributingStakeholder">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholder"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasContribution -->
@@ -398,7 +406,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasContribution">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasCounterfactual -->
@@ -407,7 +415,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasDataSource -->
@@ -415,7 +423,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasDataSource">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasDisability -->
@@ -423,7 +431,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasDisability">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasDisease -->
@@ -431,7 +439,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasDisease">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImmigrationStatus -->
@@ -439,7 +447,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImmigrationStatus">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpact -->
@@ -447,7 +455,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImpact">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactDepth -->
@@ -456,7 +464,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactDuration -->
@@ -465,7 +473,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactModel -->
@@ -473,7 +481,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImpactModel">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactReport -->
@@ -481,7 +489,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImpactReport">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactRisk -->
@@ -489,7 +497,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImpactRisk">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactScale -->
@@ -498,7 +506,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasIndicator -->
@@ -506,7 +514,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasIndicator">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasIndicatorReport -->
@@ -514,7 +522,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasIndicatorReport">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasIndicatorStandard -->
@@ -522,7 +530,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasIndicatorStandard">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasInput -->
@@ -530,7 +538,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasInput">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasMaritalStatus -->
@@ -538,7 +546,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasMaritalStatus">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasMethod -->
@@ -546,7 +554,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasMethod">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasOutcome -->
@@ -554,7 +562,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasOutcome">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasOutput -->
@@ -562,7 +570,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasOutput">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasPlannedAmount -->
@@ -570,7 +578,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasPlannedAmount">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasProgram -->
@@ -578,13 +586,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasProgram">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasProjectPartners -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasProjectPartners"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasResource -->
@@ -592,7 +600,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasResource">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasService -->
@@ -600,7 +608,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasService">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasStakeholder -->
@@ -609,7 +617,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdfs:domain rdf:resource="#Organization"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasStakeholderOutcome -->
@@ -617,13 +625,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasStakeholderOutcome">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasSupplementalFinanicalInformation -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasSupplementalFinanicalInformation"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasThreshold -->
@@ -632,7 +640,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasTimeInterval -->
@@ -641,7 +649,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasType -->
@@ -649,7 +657,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasType">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasValue -->
@@ -657,7 +665,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasValue">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#inputFor -->
@@ -665,7 +673,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#inputFor">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#performs -->
@@ -673,7 +681,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#performs">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#produces -->
@@ -681,13 +689,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#produces">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#servesPopulation -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#servesPopulation"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#usedByIndicator -->
@@ -696,7 +704,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
         <owl:inverseOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#usesOutput"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#usesOutput -->
@@ -704,7 +712,7 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#usesOutput">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in -->
@@ -720,37 +728,37 @@
         <rdfs:domain rdf:resource="#Counterfactual"/>
         <rdfs:domain rdf:resource="#HowMuchImpact"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/activity#hasElaboration -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/activity#hasElaboration"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/activity#subActivityOf -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/activity#subActivityOf"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasAddress -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasAddress"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#forActivity -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/organization#forActivity"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#hasID -->
@@ -758,13 +766,13 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/organization#hasID">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#hasRole -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/organization#hasRole"/>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/spatial -->
@@ -772,7 +780,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/spatial">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#dcObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/temporal -->
@@ -780,7 +788,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/temporal">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#dcObjectProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.org/vocab/relationship/spouseOf -->
@@ -788,31 +796,31 @@
     <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/spouseOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#hasEthnicity -->
 
     <owl:ObjectProperty rdf:about="http://sparql.cwrc.ca/ontologies/cwrc#hasEthnicity"/>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#hasGender -->
 
     <owl:ObjectProperty rdf:about="http://sparql.cwrc.ca/ontologies/cwrc#hasGender"/>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#hasReligion -->
 
     <owl:ObjectProperty rdf:about="http://sparql.cwrc.ca/ontologies/cwrc#hasReligion"/>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#parentOf -->
 
     <owl:ObjectProperty rdf:about="http://sparql.cwrc.ca/ontologies/cwrc#parentOf"/>
-    
+
 
 
     <!-- http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#hasPart -->
@@ -821,7 +829,7 @@
         <owl:inverseOf rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf -->
@@ -829,7 +837,7 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#hasBeginning -->
@@ -837,7 +845,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#hasBeginning">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#hasEnd -->
@@ -845,58 +853,57 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#hasEnd">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#hasTime -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTime"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dcat#dataset -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#dataset"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dcat#temporal -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#temporal"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#conformsTo -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#conformsTo"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#hasQualityAnnotation -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#hasQualityAnnotation"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#hasQualityMeasurement -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#hasQualityMeasurement"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#target -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#target"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy"/>
-    
 
 
-    <!-- 
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -904,7 +911,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#beneficialSizeEnd -->
@@ -912,7 +919,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#beneficialSizeEnd">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#beneficialSizeStart -->
@@ -920,13 +927,13 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#beneficialSizeStart">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#cidsDataProperty -->
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasCatchmentArea -->
@@ -934,7 +941,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasCatchmentArea">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasComment -->
@@ -943,7 +950,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasConsequence -->
@@ -951,7 +958,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasConsequence">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasDescription -->
@@ -961,7 +968,7 @@
         <rdfs:subPropertyOf rdf:resource="http://schema.org/description"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasExpectation -->
@@ -970,7 +977,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImportance -->
@@ -979,7 +986,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasLikelihood -->
@@ -988,13 +995,13 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasMethodS -->
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasMethodS"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasPurpose -->
@@ -1002,7 +1009,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasPurpose">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasMitigation -->
@@ -1010,7 +1017,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasMitigation">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasOccupation -->
@@ -1018,7 +1025,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasOccupation">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasReportedImpact -->
@@ -1027,7 +1034,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasSpecification -->
@@ -1036,13 +1043,13 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasStakeholderCharacteristic -->
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasStakeholderCharacteristic"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasWebAddress -->
@@ -1050,7 +1057,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasWebAddress">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#intendedImpact -->
@@ -1058,7 +1065,7 @@
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#intendedImpact">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#isUnderserved -->
@@ -1067,7 +1074,7 @@
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#has_Name -->
@@ -1075,7 +1082,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#has_Name">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#numerical_value -->
@@ -1083,7 +1090,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#numerical_value">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasBuilding -->
@@ -1091,7 +1098,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasBuilding">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasCityS -->
@@ -1099,7 +1106,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasCityS">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasCitySection -->
@@ -1107,7 +1114,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasCitySection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasPostalBox -->
@@ -1115,7 +1122,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasPostalBox">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode -->
@@ -1123,7 +1130,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasStreet -->
@@ -1131,7 +1138,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasStreet">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber -->
@@ -1139,7 +1146,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber -->
@@ -1147,7 +1154,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier -->
@@ -1155,7 +1162,7 @@
     <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier">
         <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://schema.org/birthDate -->
@@ -1163,7 +1170,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/birthDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://schema.org/codeValue -->
@@ -1171,7 +1178,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/codeValue">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://schema.org/dateCreated -->
@@ -1179,7 +1186,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/dateCreated">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://schema.org/description -->
@@ -1187,7 +1194,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/description">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://schema.org/identifier -->
@@ -1195,7 +1202,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/identifier">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://schema.org/name -->
@@ -1203,7 +1210,7 @@
     <owl:DatatypeProperty rdf:about="http://schema.org/name">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
@@ -1211,7 +1218,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
@@ -1219,7 +1226,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#day -->
@@ -1227,7 +1234,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#day">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#hour -->
@@ -1235,7 +1242,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#hour">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#minute -->
@@ -1243,7 +1250,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#minute">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#month -->
@@ -1251,7 +1258,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#month">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#second -->
@@ -1259,7 +1266,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#second">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#year -->
@@ -1267,7 +1274,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#year">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/familyName -->
@@ -1275,13 +1282,13 @@
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/familyName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/formerName -->
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/formerName"/>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/givenName -->
@@ -1289,7 +1296,7 @@
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/givenName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://xmlns.com/foaf/0.1/middleName -->
@@ -1297,10 +1304,11 @@
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/middleName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
+
     
 
 
-    <!-- 
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -1308,7 +1316,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Activity -->
@@ -1384,7 +1392,7 @@
 • act:subActivityOf: specifies the Service or Activity that this Activity is part of</rdfs:commment>
         <rdfs:label xml:lang="en">Activity</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#AlignmentRisk -->
@@ -1400,7 +1408,7 @@
         <rdfs:label>Alignment Risk</rdfs:label>
         <skos:definition xml:lang="en">Alignment Risk considers an impact that that is not correlated with the organization&apos;s intended purpose. The probability that impact is not locked into the enterprise model.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#BeneficialStakeholder -->
@@ -1433,7 +1441,7 @@
         <rdfs:commment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome.</rdfs:commment>
         <rdfs:label xml:lang="en">Beneficial Stakeholder</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Characteristic -->
@@ -1558,7 +1566,7 @@
         </rdfs:subClassOf>
     </owl:Class>
 
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Client -->
@@ -1566,7 +1574,7 @@
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Client">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Code -->
@@ -1635,7 +1643,7 @@
 •	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</rdfs:comment>
         <rdfs:label xml:lang="en">Code</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Community -->
@@ -1643,7 +1651,7 @@
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Community">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#CompositeCharacteristic -->
@@ -1659,7 +1667,7 @@
         <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic"/>
         <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ContributingStakeholder -->
@@ -1676,7 +1684,7 @@
         <rdfs:commment xml:lang="en">Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes.</rdfs:commment>
         <rdfs:label xml:lang="en">Contributing Stakeholder</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Counterfactual -->
@@ -1720,7 +1728,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">a comparison between what actually happened and what would have happened in the absence of the intervention. 
+        <rdfs:comment xml:lang="en">a comparison between what actually happened and what would have happened in the absence of the intervention.
 i72:located_in: spatial location of the counterfactual
 time:hasTime: time interval over which the counterfactual occurs
 • prov:wasGeneratedBy: A string that can used to describe the method used to determine the impact.
@@ -1728,19 +1736,19 @@ sch:description: general description of the Counterfactual
 i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label xml:lang="en">Counterfactual</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#DcThing -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DcThing"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#DcatThing -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DcatThing"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#DirectionOfChange -->
@@ -1748,7 +1756,7 @@ i72:value: value of the counterfactual</rdfs:comment>
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DirectionOfChange">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Disability -->
@@ -1758,7 +1766,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">Disabilities is an umbrella term, covering impairments, activity limitations, and participation restrictions. An impairment is a problem in body function or structure; an activity limitation is a difficulty encountered by an individual in executing a task or action; while a participation restriction is a problem experienced by an individual in involvement in life situations. (World Health Organization)</rdfs:comment>
         <rdfs:label xml:lang="en">Disability</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Disease -->
@@ -1769,7 +1777,7 @@ i72:value: value of the counterfactual</rdfs:comment>
 (Canadian Encyclopedia, https://www.thecanadianencyclopedia.ca/en/article/disease)</rdfs:comment>
         <rdfs:label xml:lang="en">Disease</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#DropOffRisk -->
@@ -1785,7 +1793,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>Drop Off Risk</rdfs:label>
         <skos:definition xml:lang="en">Drop-off Risk considers an impact that does not sustain a long lasting effect. The probability that positive impact does not endure and/or that negative impact is no longer mitigated.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#EfficiencyRisk -->
@@ -1801,7 +1809,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>Efficiency Risk</rdfs:label>
         <skos:definition xml:lang="en">Efficiency Risk considers an impact that could have been achieved with fewer resources or at a lower cost. The probability that the impact could have been achieved with fewer resources or at a lower cost.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Employee -->
@@ -1809,7 +1817,7 @@ i72:value: value of the counterfactual</rdfs:comment>
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Employee">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#EnduranceRisk -->
@@ -1825,7 +1833,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>Endurance Risk</rdfs:label>
         <skos:definition xml:lang="en">Endurance Risk considers an impact that would be sustained for a longer period of time if the intervention was also sustained. The probability that the required activities are not delivered for a long enough period.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#EvidenceRisk -->
@@ -1841,7 +1849,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>Evidence Risk</rdfs:label>
         <skos:definition xml:lang="en">Evidence Risk considers an impact that is improperly interpreted because of the lack of high quality data that is available. The probability that insufficient high-quality data exists to know what impact is occurring.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ExecutionRisk -->
@@ -1857,7 +1865,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>Execution Risk</rdfs:label>
         <skos:definition xml:lang="en">Execution Risk considers an impact that is different than what was intended because the intervention was not delivered properly. The probability that the activities are not delivered as planned and do not result in the desired outcomes.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ExternalRisk -->
@@ -1873,7 +1881,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:label>External Risk</rdfs:label>
         <skos:definition xml:lang="en">External Risk considers an impact that is disrupted by factors outside of the range of control. The probability that external factors disrupt our ability to deliver the impact.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#FinancialInput -->
@@ -1907,7 +1915,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">Financial resource that is used as input to an activity or service.</rdfs:comment>
         <rdfs:label xml:lang="en">Financial Input</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#FinancialOrganization -->
@@ -1935,7 +1943,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">an institution (public or private) that collects funds (from the public or other institutions) and invests them in financial assets. (https://www.vocabulary.com/dictionary/financial%20organization)</rdfs:comment>
         <rdfs:label xml:lang="en">Financial Organization</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#FinancialResource -->
@@ -1948,7 +1956,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">Liquid assets including cash, bank deposits and liquid financial investments</rdfs:comment>
         <rdfs:label xml:lang="en">Financial Resource</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#HowMuchImpact -->
@@ -1967,7 +1975,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forIndicator"/>
-                <owl:allValuesFrom  rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1998,7 +2006,7 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</dc:description>
         <rdfs:label xml:lang="en">How Much Impact</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImmigrationStatus -->
@@ -2008,7 +2016,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">A non-citizen’s position in a country—for example, permanent resident or visitor. (Government of Canada, https://www.canada.ca/en/services/immigration-citizenship/helpcentre/glossary.html)</rdfs:comment>
         <rdfs:label xml:lang="en">Immigration Status</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactDepth -->
@@ -2018,7 +2026,7 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">The degree of change experienced by the stakeholder. Depth is calculated by analysing the change that has occured between the &apos;Outcome level at base line&apos; and the &apos;Outcome level in period&apos;.  In other words % increase in Outcome relative to baseline.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Depth</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactDuration -->
@@ -2036,7 +2044,7 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	time:hasTime: defines the time interval for which the stakeholder experiences the outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Duration</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactImportance -->
@@ -2103,15 +2111,15 @@ i72:value: value of the counterfactual</rdfs:comment>
         <rdfs:comment xml:lang="en">Specifies the nature of the importance as a om:Quantity.  Users can define or select whatever quantification they prefer</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Importance</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactModel -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactModel">
-	<rdfs:label xml:lang="en">Impact Model</rdfs:label>
-	<cids:hasName xml:lang="en">Impact Model</cids:hasName>
-	<cids:hasDescription xml:lang="en">ny model that articulates how an organization creates impact. Examples of types of impact models include impact
+       <rdfs:label xml:lang="en">Impact Model</rdfs:label>
+       <cids:hasName xml:lang="en">Impact Model</cids:hasName>
+        <cids:hasDescription xml:lang="en">ny model that articulates how an organization creates impact. Examples of types of impact models include impact
    pathway, logic model, logical framework analysis, theory of change, outcome chain, impact map, results framework, results chain and outcomes map. Those
    familiar with these terms will know these are overlapping concepts. For example an impact map is an impact pathway with the addition of impact valuation.
    A theory of change is a detailed impact pathway with clearly specified assumptions and internal and external enablers.</cids:hasDescription>
@@ -2323,7 +2331,7 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	hasComment: A string field where any comments that the organization has can be provided.</dc:description>
         <rdfs:label xml:lang="en">Impact Report</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactRisk -->
@@ -2442,7 +2450,7 @@ i72:value: value of the counterfactual</rdfs:comment>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance. 
+        <rdfs:commment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance.
 The following defines the taxonomy of risk and key properties:
 •	forOutcome: Identifies the Outcome the risk is associated with.
 •	hasLikelihood: Identifies the likelihood that the risk will occur.
@@ -2452,7 +2460,7 @@ The following defines the taxonomy of risk and key properties:
 •	hasDescription: A description of this risk.</rdfs:commment>
         <rdfs:label xml:lang="en">Impact Risk</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#ImpactScale -->
@@ -2462,7 +2470,7 @@ The following defines the taxonomy of risk and key properties:
         <rdfs:commment xml:lang="en">Specifies the number of stakeholders who experience the outcome.</rdfs:commment>
         <rdfs:label xml:lang="en">Impact Scale</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Indicator -->
@@ -2580,7 +2588,7 @@ The following defines the taxonomy of risk and key properties:
 •	definedBy: Links to the cids:Organization that defined the Indicator.
 •	forOutcome: Links to the Outcome’s the Indicator measures.  .
 •	usesOutput: Links the Outputs that the indicator uses in defining its value. This is useful when indicators are computed using output information. This property can be ignored if dcat:dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.
-•	hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the indicator. 
+•	hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the indicator.
 •	hasThreshold: Links to an i72:Measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.
 •	prov:wasGeneratedBy: Links to a method that specifies how the Indicator was derived.
 •	dcat:dataset: Links to a dcat:Dataset that specifies the data used to derive the value if the method is Computation.
@@ -2593,13 +2601,13 @@ The following defines the taxonomy of risk and key properties:
 •	hasDescription: Description of the indicator.</rdfs:commment>
         <rdfs:label xml:lang="en">Indicator</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#IndicatorDefinition -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#IndicatorDefinition"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#IndicatorReport -->
@@ -2697,7 +2705,7 @@ The following defines the taxonomy of risk and key properties:
 •	hasComment: A string property in which a general comment for the report can be specified.</rdfs:commment>
         <rdfs:label xml:lang="en">Indicator Report</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Input -->
@@ -2777,9 +2785,9 @@ The following defines the taxonomy of risk and key properties:
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:commment xml:lang="en">A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:
-•	FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt. 
+•	FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt.
 •	SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.
-•	PhysicalInput is any type of physical item, such as food, clothing, furniture, etc. 
+•	PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.
 
 Properties common across all types of Input are:
 •	eof:partOf: specifies the impact models this Input is part of
@@ -2791,7 +2799,7 @@ Properties common across all types of Input are:
 •	time:hasTime: specifies the time interval over which the Input is provided</rdfs:commment>
         <rdfs:label xml:lang="en">Input</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#LogicModel -->
@@ -2863,7 +2871,7 @@ Properties common across all types of Input are:
 •	act:hasResource: Identifies key Resources of the model.</rdfs:commment>
         <rdfs:label xml:lang="en">Logic Model</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#MaritalStatus -->
@@ -2873,7 +2881,7 @@ Properties common across all types of Input are:
         <rdfs:comment xml:lang="en">United Nations&apos; &quot;Principles and Recommendations for Population and Housing Censuses, Revision 2&quot;, 2008. As in this standard, the Principles define marital status as &quot;the personal status of each individual in relation to the marriage laws or customs of the country&quot; and recommend the following categories: single or never married; married; widowed and not remarried; divorced and not remarried; and, married but separated. Also, the Principles recommend that, where the number of persons whose only or most recent marriage was annulled is insignificant, the individuals in this group should be classified according to their marital status before the (annulled) marriage took place.</rdfs:comment>
         <rdfs:label xml:lang="en">Marital Status</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Organization -->
@@ -2953,7 +2961,7 @@ Properties common across all types of Input are:
 •	sch:dateCreated: the date the Organization’s record was created.</dc:description>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Outcome -->
@@ -3061,7 +3069,7 @@ Properties common across all types of Input are:
 •	sch:dateCreated: date the Outcome was defined.</rdfs:commment>
         <rdfs:label xml:lang="en">Outcome</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#OutcomeChain -->
@@ -3103,7 +3111,7 @@ Properties common across all types of Input are:
 •	hasIndicator: identifies the key Indicators of the model</rdfs:commment>
         <rdfs:label xml:lang="en">Outcome Chain</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Output -->
@@ -3181,7 +3189,7 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
 •	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:commment>
         <rdfs:label xml:lang="en">Output</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Person -->
@@ -3317,7 +3325,7 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
 
 A person can play a role at an organization. For any role, a person can be assigned an ID, with additional meta-data about the role they play. Properties are included for possible disabilities, disease, and immigration status, for use by the theories of change.</rdfs:commment>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#PhysicalInput -->
@@ -3333,7 +3341,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">Physical resource that is used as input to an activity or service.</rdfs:comment>
         <rdfs:label xml:lang="en">Physical Input</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#PhysicalResource -->
@@ -3345,7 +3353,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">Physical resources are tangible items. Some of the most common physical resources include raw materials, buildings and facilities, machinery, energy, and supplies.</rdfs:comment>
         <rdfs:label xml:lang="en">Physical Resource</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Planet -->
@@ -3353,7 +3361,7 @@ A person can play a role at an organization. For any role, a person can be assig
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Planet">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic -->
@@ -3362,7 +3370,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
         <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Program -->
@@ -3432,7 +3440,7 @@ A person can play a role at an organization. For any role, a person can be assig
 •	hasOutput: identifies the Outputs of the Program</rdfs:comment>
         <rdfs:label xml:lang="en">Program</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#RatioIndicator -->
@@ -3463,7 +3471,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">An indicator that is the ratio of two quantities.</rdfs:comment>
         <rdfs:label xml:lang="en">Ratio Indicator</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Service -->
@@ -3555,7 +3563,7 @@ A person can play a role at an organization. For any role, a person can be assig
 •	time:hasTime: time intervale over which the service is provided</rdfs:commment>
         <rdfs:label xml:lang="en">Service</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#SkillInput -->
@@ -3571,7 +3579,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">Skill resource that is used as input to an activity or service.</rdfs:comment>
         <rdfs:label xml:lang="en">Skill Input</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#SkillResource -->
@@ -3582,7 +3590,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">A skill is the ability to do something well; expertise. A skill resource is a skill that is available for use, normally possessed by a person.</rdfs:comment>
         <rdfs:label xml:lang="en">Skill Resource</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#SocialPurposeOrganization -->
@@ -3592,7 +3600,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:comment xml:lang="en">A social purpose organization can be a charity, nonprofit, social enterprise, co-operative, or for profit social enterprise. In all cases, a social purpose organization is advancing a social, cultural or environmental purpose. (https://communityfoundations.ca/investment-readiness-program-glossary/)</rdfs:comment>
         <rdfs:label xml:lang="en">Social Purpose Organization</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Stakeholder -->
@@ -3696,7 +3704,7 @@ A person can play a role at an organization. For any role, a person can be assig
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the performs property, where they are located geographically using the i72:located_In property. Some methods for measuring impact, such as a Social Return on Investment, require that Social Purpose Organizations distinguish between the beneficiary and contributing stakeholders. A BeneficiaryStakeholder is a stakeholder that benefits from a logic model’s outcome. A ContributorStakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. These are explicitly defined as separate classes to highlight the fact that a contributor stakeholder is not always the same instance as the beneficiary stakeholder. The distinction is available in the ontology but is not required. 
+        <rdfs:commment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the performs property, where they are located geographically using the i72:located_In property. Some methods for measuring impact, such as a Social Return on Investment, require that Social Purpose Organizations distinguish between the beneficiary and contributing stakeholders. A BeneficiaryStakeholder is a stakeholder that benefits from a logic model’s outcome. A ContributorStakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. These are explicitly defined as separate classes to highlight the fact that a contributor stakeholder is not always the same instance as the beneficiary stakeholder. The distinction is available in the ontology but is not required.
 
 Stakeholder contains the following properties:
 •	hasName (title): A title for the stakeholder as a string.
@@ -3920,7 +3928,7 @@ Stakeholder contains the following properties:
 •	org:hasDescription: string that is description of the StakeholderOutcome.</rdfs:comment>
         <rdfs:label xml:lang="en">StakeholderOutcome</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#StakeholderParticipationRisk -->
@@ -3936,7 +3944,7 @@ Stakeholder contains the following properties:
         <rdfs:label>Stakeholder Participation Risk</rdfs:label>
         <skos:definition xml:lang="en">Stakeholder Participation Risk considers an impact that occurs without consulting or misinterpreting a stakeholder&apos;s expectations or experience.  The probability that the expectations and/or experience of stakeholders are misunderstood or not taken into account.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#StandardsOrganization -->
@@ -3964,7 +3972,7 @@ Stakeholder contains the following properties:
         <rdfs:comment xml:lang="en">A standards organization, standards body, standards developing organization (SDO), or standards setting organization (SSO) is an organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards[1] to address the needs of a group of affected adopters. (https://en.wikipedia.org/wiki/Standards_organization)</rdfs:comment>
         <rdfs:label xml:lang="en">Standards Organization</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Supplier -->
@@ -3981,7 +3989,7 @@ Stakeholder contains the following properties:
         <rdfs:label xml:lang="en">Relates To</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-   
+
 
     <!-- https://ontology.commonapproach.org/cids-3.0#Theme -->
 
@@ -4013,7 +4021,7 @@ Stakeholder contains the following properties:
         <rdfs:comment xml:lang="en">Theme identifies a sector that the Outcome applies to.</rdfs:comment>
         <rdfs:label xml:lang="en">Theme</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#UnexpectedImpactRisk -->
@@ -4029,7 +4037,7 @@ Stakeholder contains the following properties:
         <rdfs:label>Unexpected Impact Risk</rdfs:label>
         <skos:definition xml:lang="en">Unexpected Impact Risk considers an impact that is more significant than originally anticipated. The probability that significant unexpected positive and/or negative impact is experienced by people and the planet.</skos:definition>
     </owl:Class>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#cidsThing -->
@@ -4056,55 +4064,54 @@ Stakeholder contains the following properties:
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-    
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/activity#Activity -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#Address -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#Address"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#Organization -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/organization#Organization"/>
-    
+
 
 
     <!-- http://ontology.eil.utoronto.ca/tove/organization#Role -->
 
     <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/organization#Role"/>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/Location -->
@@ -4112,7 +4119,7 @@ Stakeholder contains the following properties:
     <owl:Class rdf:about="http://purl.org/dc/elements/1.1/Location">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#DcThing"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/PeriodOfTime -->
@@ -4120,19 +4127,19 @@ Stakeholder contains the following properties:
     <owl:Class rdf:about="http://purl.org/dc/elements/1.1/PeriodOfTime">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#DcThing"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.org/dc/terms/Standard -->
 
     <owl:Class rdf:about="http://purl.org/dc/terms/Standard"/>
-    
+
 
 
     <!-- http://schema.org/Person -->
 
     <owl:Class rdf:about="http://schema.org/Person"/>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#Ethnicity -->
@@ -4141,7 +4148,7 @@ Stakeholder contains the following properties:
         <rdfs:comment xml:lang="en">A subclass of Cultural Form for indicating a person&apos;s ethnicity, either as self-reported or as assigned by others, with accompanying context, where present, provided by race or ethnicity context annotations. Ethnicities are groups constructed on the conception of shared national, religious, geographical, racial, or cultural backgrounds or traditions, and particular ethnicities may be denigrated, lauded, or both, depending on the context. Ethnicities are shifting, historically constituted, and interestedly deployed categories whose use must be situated contextually and which are understood here finally as discursive or representational although they have real material impacts. As Angel Oquendo writes, &quot;Despite its long ‘materialist&apos; past in which it was taken to be synonymous with ‘race,&apos; the concept of ethnicity as used today does appear to focus on cultural rather than on physiognomic difference.&quot; (Angel R. Oquendo, &quot;Re-imagining the Latino/a Race&quot; in The Latino/a Condition: A Critical Reader edited by Richard Delgado, Jean Stefancic 1998. This ontology therefore does not attempt to lay out an exact, fully defined, or mutually exclusive set of ethnic categories: this is an impossibility given their shifting use and the overlap among them and with identity categories for race, geography, and nationality, as demonstrated by Noel Ignatieve in his book How the Irish Became White (Ignatieve, 1995). Those using this class and its instances are encouraged to consult associated race or ethnicity context annotations, if available. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Ethnicity)</rdfs:comment>
         <rdfs:label xml:lang="en">Ethnicity</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#Gender -->
@@ -4150,7 +4157,7 @@ Stakeholder contains the following properties:
         <rdfs:comment xml:lang="en">A subclass of cultural form for indicating a person&apos;s gender, whether attributed or self-reported, with accompanying context, where present, provided by gender context annotations. Although in popular culture gender and biological sex are conflated and understood to be binary, the concept of gender stresses the relationality, constructedness, and performativity of gendered identities and gendered behaviour, whose categories are historically contingent and shifting, and the boundaries between them blurry. Simone de Beauvoir (1973) stated &quot;One is not born, but rather becomes, a woman,&quot; a belief that has been taken up by many other theorists of gender including Judith Butler (1990). Gender studies to date has investigated the social construction of femininity more than that of masculinity. The multi-layered constructedness of gender is also underlined by Donna Haraway who understands it as a &quot;socially, historically, and semiotically positioned difference&quot; (Donna Haraway, 1988). Gender is understood as fluid, situational, and sometimes plural, and it is related to, though not commensurate with, sexual identity and orientation, just as it is related to but not defined by specific forms of embodiment. Rather than seeing biological sex as a pre-social or natural given, the body is understood as a site of inscription (cf. (Elizabeth Grosz, 1994) which is also socially constructed and indeed epigenetically shaped by environmental factors (N. Katherine Hayles, 2012). As articulated by feminist neurologist Gillian Einstein, (2012)&quot;The world writes on the body.&quot; This ontology therefore does not provide separate terms for sex as distinct from gender. Instead, it privileges terms associated with gender, recognizing that they are conventionally but not necessarily associated with sex, and that there is constant slippage between gender and sex in the way that these categories circulate through discourses, actions, and institutions. Far from indicating a universal facet of experience, gender intersects with other identity categories and axes of oppression such as class, race or colour, or geographical heritage to produced quite different interests and experiences among people of the same gender, as with the intersection of religion and white masculine identity in the Muscular Christianity movement in nineteenth-century Britain. Being a woman of colour often compounds the impacts of gender oppression. Such interaction between different forms of oppression is termed &quot;intersectionality&quot; (Kimberlé Crenshaw, 1989). Where this class and its instances are concerned, readers are advised to consult gender context context annotations, if available. Where terms are applied to younger individuals, the gendered variants, such as “girl” for “woman”, are understood to apply. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Gender)</rdfs:comment>
         <rdfs:label xml:lang="en">Gender</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://sparql.cwrc.ca/ontologies/cwrc#Religion -->
@@ -4159,13 +4166,13 @@ Stakeholder contains the following properties:
         <rdfs:comment xml:lang="en">A subclass of cultural form, this describes a person&apos;s religion(s) or belief system(s). Note that while atheism denotes the absence of religion, we use the Religion label for convenience. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Religion)</rdfs:comment>
         <rdfs:label xml:lang="en">Religion</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.w3.org/2006/time#DateTimeInterval -->
 
     <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dcat#Dataset -->
@@ -4173,28 +4180,28 @@ Stakeholder contains the following properties:
     <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#DcatThing"/>
     </owl:Class>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#QualityAnnotation -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityAnnotation"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#QualityMeasurement -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityMeasurement"/>
-    
+
 
 
     <!-- http://www.w3.org/ns/dqv#QualityPolicy -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityPolicy"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -4208,91 +4215,91 @@ Stakeholder contains the following properties:
     <!-- https://ontology.commonapproach.org/cids-3.0#average -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#average"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#better -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#better"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#highRisk -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#highRisk"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#likely -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#likely"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#lowRisk -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#lowRisk"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#mediumRisk -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#mediumRisk"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#minimal -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#minimal"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#negative -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#negative"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#neutral -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#neutral"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#none -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#none"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#positive -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#positive"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#severe -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#severe"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#unlikely -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#unlikely"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#veryLikely -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#veryLikely"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#veryUnlikely -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#veryUnlikely"/>
-    
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#worse -->
