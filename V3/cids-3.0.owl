@@ -115,9 +115,9 @@
     
 
 
-    <!-- http://www.w3.org/2000/01/rdf-schema#commment -->
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#commment"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
     
 
 
@@ -1709,7 +1709,7 @@
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome.</rdfs:commment>
+        <rdfs:comment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">Beneficial Stakeholder</rdfs:label>
     </owl:Class>
     
@@ -1875,7 +1875,7 @@
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Input"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes.</rdfs:commment>
+        <rdfs:comment xml:lang="en">Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes.</rdfs:comment>
         <rdfs:label xml:lang="en">Contributing Stakeholder</rdfs:label>
     </owl:Class>
     
@@ -2600,7 +2600,7 @@
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactScale">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact"/>
-        <rdfs:commment xml:lang="en">Specifies the number of stakeholders who experience the outcome.</rdfs:commment>
+        <rdfs:comment xml:lang="en">Specifies the number of stakeholders who experience the outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Scale</rdfs:label>
     </owl:Class>
     
@@ -2804,7 +2804,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">IndicatorReport is used to report the value of an indicator for some time interval. It contains the following properties:
+        <rdfs:comment xml:lang="en">IndicatorReport is used to report the value of an indicator for some time interval. It contains the following properties:
 •	forOrganization: Links to the Organization that submits the report.
 •	forIndicator: Links to the Indicator that is being reported.
 •	i72:value: Links to the value specified as a i72:Measure.
@@ -2815,7 +2815,7 @@
 •	dqv:conformsTo: Specifies the standards that the Indicator being reported conforms to.
 •	dqv:hasQualityMeasurement: Specifies a metric that represents the evaluation of the indicator.
 •	hasAccess: Links to the organizations that can read this Indicator report.
-•	hasComment: A string property in which a general comment for the report can be specified.</rdfs:commment>
+•	hasComment: A string property in which a general comment for the report can be specified.</rdfs:comment>
         <rdfs:label xml:lang="en">Indicator Report</rdfs:label>
     </owl:Class>
     
@@ -2955,7 +2955,7 @@
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">LogicModel is a subclass of ImpactModel. The top-level definition of a LogicModel contains the following properties:
+        <rdfs:comment xml:lang="en">LogicModel is a subclass of ImpactModel. The top-level definition of a LogicModel contains the following properties:
 •	hasProgram: Identifies all the Programs being modeled.
 •	hasStakeholder: Identifies key stakeholders participating in the model.
 •	hasOutcome: Identifies key Outcomes for the model.
@@ -2963,7 +2963,7 @@
 •	hasInput: Identifies key Inputs for the model.
 •	hasOutput: Identifies key Outputs for the model.
 •	hasActivity: Identifies key Activities of the model.
-•	act:hasResource: Identifies key Resources of the model.</rdfs:commment>
+•	act:hasResource: Identifies key Resources of the model.</rdfs:comment>
         <rdfs:label xml:lang="en">Logic Model</rdfs:label>
     </owl:Class>
     
@@ -3362,9 +3362,9 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">The Person ontology pattern defines human stakeholders and the various relationships they form. The ontology can capture a great deal of detail about an individual, depending on the available data and needs of the application.
+        <rdfs:comment xml:lang="en">The Person ontology pattern defines human stakeholders and the various relationships they form. The ontology can capture a great deal of detail about an individual, depending on the available data and needs of the application.
 
-A person can play a role at an organization. For any role, a person can be assigned an ID, with additional meta-data about the role they play. Properties are included for possible disabilities, disease, and immigration status, for use by the theories of change.</rdfs:commment>
+A person can play a role at an organization. For any role, a person can be assigned an ID, with additional meta-data about the role they play. Properties are included for possible disabilities, disease, and immigration status, for use by the theories of change.</rdfs:comment>
     </owl:Class>
     
 
@@ -3582,7 +3582,7 @@ A person can play a role at an organization. For any role, a person can be assig
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes.
+        <rdfs:comment xml:lang="en">A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes.
 •	act:hasSubActivity: identifies the Activities that make that comprise the Service
 •	hasInput: identifies the Inputs to the Service
 •	hasOutput: identifies the Outputs of the Service
@@ -3591,7 +3591,7 @@ A person can play a role at an organization. For any role, a person can be assig
 •	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Service
 •	bSizeStart: number of benefical stakeholders at the beginning of the service time interval
 •	bSizeEnd: number of benefical stakeholders at the end of the service time interval
-•	time:hasTime: time intervale over which the service is provided</rdfs:commment>
+•	time:hasTime: time intervale over which the service is provided</rdfs:comment>
         <rdfs:label xml:lang="en">Service</rdfs:label>
     </owl:Class>
     
@@ -4392,7 +4392,7 @@ A person can play a role at an organization. For any role, a person can be assig
         <cids:hasName xml:lang="en">Stakeholder Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Activity">
-        <rdfs:commment xml:lang="en">Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the TOVE Activity (outlined in Section 3.7), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:
+        <rdfs:comment xml:lang="en">Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the TOVE Activity (outlined in Section 3.7), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:
 • canProduce: Specifies the Outcome that results from performance of the Activity. It is used primarily for representing Outcome Chains.
 • oep:partOf: Identifies the Impact Model it is a component of.
 • hasInput: Specifies the Input to the Activity.
@@ -4401,7 +4401,7 @@ A person can play a role at an organization. For any role, a person can be assig
 • act:subActivityOf: Specifies the Service or Activity that this Activity is part of.
 • hasName: Specifies a name or title for the activity.
 • hasDescription: Specifies a description of the activity.
-• hasIdentiifier: Specifies a unique identifier for the activity.</rdfs:commment>
+• hasIdentiifier: Specifies a unique identifier for the activity.</rdfs:comment>
         <rdfs:label xml:lang="en">Activity</rdfs:label>
         <cids:hasName xml:lang="en">Activity</cids:hasName>
     </rdf:Description>
@@ -4447,11 +4447,11 @@ i72:value: value of the counterfactual</rdfs:comment>
         <cids:hasName xml:lang="en">How Much Impact</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactModel">
-        <rdfs:commment xml:lang="en">ImpactModel provides the most basic properties:
+        <rdfs:comment xml:lang="en">ImpactModel provides the most basic properties:
 •	hasName: a string containing a title for the model.
 •	hasDescription: a string containing a description of the model.
 •	sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.
-•	forOrganization: an object property that links to the Organization the model is for.</rdfs:commment>
+•	forOrganization: an object property that links to the Organization the model is for.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Model</rdfs:label>
         <cids:hasName xml:lang="en">Impact Model</cids:hasName>
     </rdf:Description>
@@ -4475,19 +4475,19 @@ i72:value: value of the counterfactual</rdfs:comment>
         <cids:hasName xml:lang="en">Impact Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactRisk">
-        <rdfs:commment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance.
+        <rdfs:comment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance.
 The following defines the taxonomy of risk and key properties:
 •	forOutcome: Identifies the Outcome the risk is associated with.
 •	hasLikelihood: Identifies the likelihood that the risk will occur.
 •	hasConsequence: Identifies the degree of impact the risk could have.
 •	hasMitigation: A string that specifies a mitigation plan or references a document.
 •	hasIdentifier: A unique identifier for this risk.
-•	hasDescription: A description of this risk.</rdfs:commment>
+•	hasDescription: A description of this risk.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Risk</rdfs:label>
         <cids:hasName xml:lang="en">Impact Risk</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Indicator">
-        <rdfs:commment xml:lang="en">Indicator extends the definition of i72:Indicator with the following properties:
+        <rdfs:comment xml:lang="en">Indicator extends the definition of i72:Indicator with the following properties:
 •	definedBy: Links to the cids:Organization that defined the Indicator.
 •	forOutcome: Links to the Outcome’s the Indicator measures.  .
 •	usesOutput: Links the Outputs that the indicator uses in defining its value. This is useful when indicators are computed using output information. This property can be ignored if dcat:dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.
@@ -4501,12 +4501,12 @@ The following defines the taxonomy of risk and key properties:
 •	dqv:target: Links to quality policies that the Indicator should conform to.
 •	hasIdentifier: Unique identifier for the indicator.
 •	hasName: Name or title for the indicator.
-•	hasDescription: Description of the indicator.</rdfs:commment>
+•	hasDescription: Description of the indicator.</rdfs:comment>
         <rdfs:label xml:lang="en">Indicator</rdfs:label>
         <cids:hasName xml:lang="en">Indicator</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Input">
-        <rdfs:commment xml:lang="en">A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:
+        <rdfs:comment xml:lang="en">A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:
 •	FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt.
 •	SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.
 •	PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.
@@ -4518,7 +4518,7 @@ Properties common across all types of Input are:
 •	hasType: specifies the type of Resource by denoting the relevant subclass of Resource
 •	hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity
 •	hasActualAmount: specifies the actual Quantity of Input (which in turn specifies the unit of measure) used
-•	time:hasTime: specifies the time interval over which the Input is provided</rdfs:commment>
+•	time:hasTime: specifies the time interval over which the Input is provided</rdfs:comment>
         <rdfs:label xml:lang="en">Input</rdfs:label>
         <cids:hasName xml:lang="en">Input</cids:hasName>
     </rdf:Description>
@@ -4538,7 +4538,7 @@ Properties common across all types of Input are:
         <cids:hasName xml:lang="en">Organization</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Outcome">
-        <rdfs:commment xml:lang="en">As defined by the Impact Measurement Project, Outcomes “are what stakeholders experience as a result of an enterprise’s activities.  They can be positive or negative, intended or unintended.”  An Outcome has the following properties:
+        <rdfs:comment xml:lang="en">As defined by the Impact Measurement Project, Outcomes “are what stakeholders experience as a result of an enterprise’s activities.  They can be positive or negative, intended or unintended.”  An Outcome has the following properties:
 •	hasCode: Links to zero or more Codes that are externally defined taxonomies of outcomes.
 •	hasStakeholderOutcome: Identifies the impact it has on Stakeholders.
 •	forTheme: Identifies the Themes that the Outcome aligns with.
@@ -4550,26 +4550,26 @@ Properties common across all types of Input are:
 •	oep:partOf: Identifies the Impact Model it is a component of.
 •	hasName: string that provides a name for the Outcome.
 •	hasDescription: string that provides a description for the Outcome.
-•	sch:dateCreated: date the Outcome was defined.</rdfs:commment>
+•	sch:dateCreated: date the Outcome was defined.</rdfs:comment>
         <rdfs:label xml:lang="en">Outcome</rdfs:label>
         <cids:hasName xml:lang="en">Outcome</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#OutcomeChain">
-        <rdfs:commment xml:lang="en">OutcomeChain is a subclass of ImpactModel. The top-level definition of an ImpactChain contains the following properties:
+        <rdfs:comment xml:lang="en">OutcomeChain is a subclass of ImpactModel. The top-level definition of an ImpactChain contains the following properties:
 •	hasOutcome: identifies key Outcomes for the model
 •	hasActivity: identifies key Activities of the model
-•	hasIndicator: identifies the key Indicators of the model</rdfs:commment>
+•	hasIndicator: identifies the key Indicators of the model</rdfs:comment>
         <rdfs:label xml:lang="en">Outcome Chain</rdfs:label>
         <cids:hasName xml:lang="en">Outcome Chain</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Output">
-        <rdfs:commment xml:lang="en">Outputs are a quantitative summary of an activity. For example, if the activity is ‘we
+        <rdfs:comment xml:lang="en">Outputs are a quantitative summary of an activity. For example, if the activity is ‘we
 provide training’ and the output is ‘we trained 50 people to NVQ level 3’ (CED, 2012). Or a production output could produce 100 meals for the homeless. Basic to these outputs is “what” has been produced and the quantity.
 •	eof:partOf: specifies the impact models this Output is part of
 •	forActivity: identifies the Activity or Service that produces the Output
 •	hi7s:value identifies that amount that is produced
 •	produces: identifies the Resource that is produced such as a skill, or a type of Meal
-•	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:commment>
+•	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:comment>
         <rdfs:label xml:lang="en">Output</rdfs:label>
         <cids:hasName xml:lang="en">Output</cids:hasName>
     </rdf:Description>
@@ -4585,7 +4585,7 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
         <cids:hasName xml:lang="en">Program</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder">
-        <rdfs:commment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the performs property, where they are located geographically using the i72:located_In property. Some methods for measuring impact, such as a Social Return on Investment, require that Social Purpose Organizations distinguish between the beneficiary and contributing stakeholders. A BeneficiaryStakeholder is a stakeholder that benefits from a logic model’s outcome. A ContributorStakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. These are explicitly defined as separate classes to highlight the fact that a contributor stakeholder is not always the same instance as the beneficiary stakeholder. The distinction is available in the ontology but is not required.
+        <rdfs:comment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the performs property, where they are located geographically using the i72:located_In property. Some methods for measuring impact, such as a Social Return on Investment, require that Social Purpose Organizations distinguish between the beneficiary and contributing stakeholders. A BeneficiaryStakeholder is a stakeholder that benefits from a logic model’s outcome. A ContributorStakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. These are explicitly defined as separate classes to highlight the fact that a contributor stakeholder is not always the same instance as the beneficiary stakeholder. The distinction is available in the ontology but is not required.
 
 Stakeholder contains the following properties:
 •	hasName (title): A title for the stakeholder as a string.
@@ -4593,7 +4593,7 @@ Stakeholder contains the following properties:
 •	hasCatchmentArea: Specifies the regional span of the stakeholders.
 •	performs: Links to the activities performed by the stakeholder.
 •	i72:located_in: Links to the specific geographic area in which the stakeholder is located.
-•	oep:part of: Links the Impact Model that the stakeholder is being specified for.</rdfs:commment>
+• oep:part of: Links the Impact Model that the stakeholder is being specified for.</rdfs:comment>
         <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
         <cids:hasName xml:lang="en">Stakeholder</cids:hasName>
     </rdf:Description>
