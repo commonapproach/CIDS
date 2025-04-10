@@ -4342,15 +4342,6 @@ A person can play a role at an organization. For any role, a person can be assig
     <!-- https://ontology.commonapproach.org/cids-3.0#worse -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#worse"/>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    </rdf:Description>
     
 
 
