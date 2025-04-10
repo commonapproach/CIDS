@@ -652,7 +652,7 @@
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasStakeholder">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
-        <rdfs:domain rdf:resource="#Organization"/>
+        <rdfs:domain rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
     </owl:ObjectProperty>
 
 
@@ -768,8 +768,8 @@
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="#Counterfactual"/>
-        <rdfs:domain rdf:resource="#HowMuchImpact"/>
+        <rdfs:domain rdf:resource="https://ontology.commonapproach.org/cids-3.0#Counterfactual"/>
+        <rdfs:domain rdf:resource="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact"/>
     </owl:ObjectProperty>
 
 
@@ -1549,6 +1549,8 @@
     </owl:Class>
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#Target -->
+
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Target">
         <rdfs:label xml:lang="en">Target</rdfs:label>
         <cids:hasName xml:lang="en">Target</cids:hasName>
@@ -2193,15 +2195,17 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	hasDescription: a string containing a description of the model.
 •	sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.
 •	forOrganization: an object property that links to the Organization the model is for.</rdfs:commment>
-        <rdfs:label xml:lang="en">Impact Model</rdfs:label>
     </owl:Class>
-    
+
+
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#ImpactPathway -->
 
     <owl:Class rdf:about="#ImpactPathway">
-	<rdfs:label xml:lang="en">Impact Pathway</rdfs:label>
-	<cids:hasName xml:lang="en">Impact Pathway</cids:hasName>
-	<cids:hasDescription xml:lang="en">An impact pathway is a “sequence that links organisations’ actions with their effects on people and the natural environment. The impact pathway describes the link between organisations’ inputs, activities and outputs with their effects on people and the natural environment, notably outcomes and impact.”</cids:hasDescription>
-        <rdfs:subClassOf rdf:resource="#ImpactModel"/>
+        <rdfs:label xml:lang="en">Impact Pathway</rdfs:label>
+        <cids:hasName xml:lang="en">Impact Pathway</cids:hasName>
+        <cids:hasDescription xml:lang="en">An impact pathway is a “sequence that links organisations’ actions with their effects on people and the natural environment. The impact pathway describes the link between organisations’ inputs, activities and outputs with their effects on people and the natural environment, notably outcomes and impact.”</cids:hasDescription>
+        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactModel"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasInput"/>
@@ -3016,9 +3020,9 @@ Properties common across all types of Input are:
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#forOrganization"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOrganization"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="#Organization"/>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3759,6 +3763,9 @@ Stakeholder contains the following properties:
         <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
     </owl:Class>
 
+
+    <!-- https://ontology.commonapproach.org/CharacteristicReport -->
+
     <owl:Class rdf:about="CharacteristicReport">
         <rdfs:label xml:lang="en">Characteristic Report</rdfs:label>
         <cids:hasName xml:lang="en">Characteristic Report</cids:hasName>
@@ -3777,7 +3784,11 @@ Stakeholder contains the following properties:
         </rdfs:subClassOf>
     </owl:Class>
 
-    <owl:Class rdf:about="StakeholderReport">
+
+
+    <!-- https://ontology.commonapproach.org/StakeholderReport -->
+
+    <owl:Class rdf:about="https://ontology.commonapproach.org/StakeholderReport">
         <rdfs:label xml:lang="en">Stakeholder Report</rdfs:label>
         <cids:hasName xml:lang="en">Stakeholder Report</cids:hasName>
         <cids:hasDescription xml:lang="en">The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</cids:hasDescription>
@@ -4025,7 +4036,9 @@ Stakeholder contains the following properties:
     </owl:Class>
     
 
-    <owl:ObjectProperty rdf:about="#relatesTo">
+    <!-- https://ontology.commonapproach.org/cids-3.0#relatesTo -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#relatesTo">
         <rdfs:Range rdf:resource="#Theme"/>
         <rdfs:Domain rdf:resource="#Theme"/>
         <cids:hasName xml:lang="en">Relates To</cids:hasName>
