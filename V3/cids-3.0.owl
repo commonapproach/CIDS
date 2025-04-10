@@ -1426,14 +1426,16 @@
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:commment xml:lang="en">Activity defines the actual “actions” performed by an organization to implement a Service. CIDS’s Activity class is defined to be a subclass of the TOVE Activity, and is extended by including properties for Input, Output and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather by what resources they use (input) or who performs the activity (service). Its properties are:
-• canProduce: specifies the Outcome that results from performance of the Activity. It is used primarily for representing Impact Chains.
-• oep:partOf: Identifies the Impact Model it is a component of
-• hasInput: specifies the Input to the Activity
-• hasOutput: specifies the Output of the Activity
-• hasCode: specifies zero or more codes, created by various organizations, to identify a type of Activity, e.g., ICHI – International Classification of Health Interventions activities
-• act:subActivityOf: specifies the Service or Activity that this Activity is part of</rdfs:commment>
-        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <rdfs:commment xml:lang="en">Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the TOVE Activity (outlined in Section 3.7), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:
+• canProduce: Specifies the Outcome that results from performance of the Activity. It is used primarily for representing Outcome Chains.
+• oep:partOf: Identifies the Impact Model it is a component of.
+• hasInput: Specifies the Input to the Activity.
+• hasOutput: Specifies the Output of the Activity.
+• hasCode: Specifies zero or more codes created by various organizations to identify a type of Activity. E.g., ICHI – International Classification of Health Interventions activities.
+• act:subActivityOf: Specifies the Service or Activity that this Activity is part of.
+• hasName: Specifies a name or title for the activity.
+• hasDescription: Specifies a description of the activity.
+• hasIdentiifier: Specifies a unique identifier for the activity.</rdfs:commment>
     </owl:Class>
 
 
