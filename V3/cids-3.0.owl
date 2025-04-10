@@ -93,7 +93,13 @@
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
+
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+
 
 
     <!-- http://purl.org/dc/terms/modified -->
@@ -113,13 +119,25 @@
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
+
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#Label"/>
+
 
 
     <!-- http://www.w3.org/2000/01/rdf-schema#commment -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#commment"/>
-    
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#qualifiedCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#qualifiedCardinality"/>
+
 
 
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
@@ -133,7 +151,20 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#relatedDocumentation"/>
 
 
-    <!-- 
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+
+
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasName -->
+
+    <owl:AnnotationProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasName"/>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Datatypes
@@ -374,7 +405,13 @@
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forCharacteristic">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
-    
+
+
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasCharacteristicReport -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasCharacteristicReport"/>
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasCode -->
@@ -718,7 +755,13 @@
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in -->
 
     <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
-    
+
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#numberOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#numberOf"/>
+
 
 
     <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure -->
