@@ -1686,7 +1686,6 @@
 •	hasDescription: A description of the code.
 •	schema:codeValue:  The value of the code, if appropriate.
 •	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</rdfs:comment>
-        <rdfs:label xml:lang="en">Code</rdfs:label>
     </owl:Class>
 
 
@@ -1711,6 +1710,7 @@
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic"/>
         <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
+        <rdfs:label>Composite Characteristic</rdfs:label>
     </owl:Class>
 
 
@@ -1779,7 +1779,6 @@ time:hasTime: time interval over which the counterfactual occurs
 • prov:wasGeneratedBy: A string that can used to describe the method used to determine the impact.
 sch:description: general description of the Counterfactual
 i72:value: value of the counterfactual</rdfs:comment>
-        <rdfs:label xml:lang="en">Counterfactual</rdfs:label>
     </owl:Class>
 
 
@@ -1800,6 +1799,7 @@ i72:value: value of the counterfactual</rdfs:comment>
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DirectionOfChange">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
+        <rdfs:label>Direction of Change</rdfs:label>
     </owl:Class>
 
 
@@ -2049,7 +2049,6 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	hasDescription: A string that can used to provide additional information about the impact.
 •	i72:value: Links to the value of the impact specified as an i72:Measure
 •	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</dc:description>
-        <rdfs:label xml:lang="en">How Much Impact</rdfs:label>
     </owl:Class>
 
 
@@ -2376,7 +2375,6 @@ i72:value: value of the counterfactual</rdfs:comment>
 •	hasImpactDuration: Impact Duration is the length of time that a stakeholder experiences an impact from the initial implementation.
 •	hasExpectation: A string field where any expectations that the organization has can be provided.
 •	hasComment: A string field where any comments that the organization has can be provided.</dc:description>
-        <rdfs:label xml:lang="en">Impact Report</rdfs:label>
     </owl:Class>
 
 
@@ -2505,7 +2503,6 @@ The following defines the taxonomy of risk and key properties:
 •	hasMitigation: A string that specifies a mitigation plan or references a document.
 •	hasIdentifier: A unique identifier for this risk.
 •	hasDescription: A description of this risk.</rdfs:commment>
-        <rdfs:label xml:lang="en">Impact Risk</rdfs:label>
     </owl:Class>
 
 
@@ -2646,7 +2643,6 @@ The following defines the taxonomy of risk and key properties:
 •	hasIdentifier: Unique identifier for the indicator.
 •	hasName: Name or title for the indicator.
 •	hasDescription: Description of the indicator.</rdfs:commment>
-        <rdfs:label xml:lang="en">Indicator</rdfs:label>
     </owl:Class>
 
 
@@ -2844,7 +2840,6 @@ Properties common across all types of Input are:
 •	hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity
 •	hasActualAmount: specifies the actual Quantity of Input (which in turn specifies the unit of measure) used
 •	time:hasTime: specifies the time interval over which the Input is provided</rdfs:commment>
-        <rdfs:label xml:lang="en">Input</rdfs:label>
     </owl:Class>
 
 
@@ -3006,7 +3001,6 @@ Properties common across all types of Input are:
 •	hasWebAddress: a URI specifying the website for the organization.
 •	hasPurpose: text defining the purpose or vision of the organization.
 •	sch:dateCreated: the date the Organization’s record was created.</dc:description>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
 
 
@@ -3114,7 +3108,6 @@ Properties common across all types of Input are:
 •	hasName: string that provides a name for the Outcome.
 •	hasDescription: string that provides a description for the Outcome.
 •	sch:dateCreated: date the Outcome was defined.</rdfs:commment>
-        <rdfs:label xml:lang="en">Outcome</rdfs:label>
     </owl:Class>
 
 
@@ -3156,7 +3149,6 @@ Properties common across all types of Input are:
 •	hasOutcome: identifies key Outcomes for the model
 •	hasActivity: identifies key Activities of the model
 •	hasIndicator: identifies the key Indicators of the model</rdfs:commment>
-        <rdfs:label xml:lang="en">Outcome Chain</rdfs:label>
     </owl:Class>
 
 
@@ -3234,7 +3226,6 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
 •	hi7s:value identifies that amount that is produced
 •	produces: identifies the Resource that is produced such as a skill, or a type of Meal
 •	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:commment>
-        <rdfs:label xml:lang="en">Output</rdfs:label>
     </owl:Class>
 
 
@@ -3416,6 +3407,7 @@ A person can play a role at an organization. For any role, a person can be assig
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
         <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
+        <rdfs:label>Primitive Characteristic</rdfs:label>
     </owl:Class>
 
 
@@ -3485,7 +3477,6 @@ A person can play a role at an organization. For any role, a person can be assig
 •	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Program
 •	hasInput: identifies the Inputs to the Program
 •	hasOutput: identifies the Outputs of the Program</rdfs:comment>
-        <rdfs:label xml:lang="en">Program</rdfs:label>
     </owl:Class>
 
 
@@ -3760,7 +3751,6 @@ Stakeholder contains the following properties:
 •	performs: Links to the activities performed by the stakeholder.
 •	i72:located_in: Links to the specific geographic area in which the stakeholder is located.
 •	oep:part of: Links the Impact Model that the stakeholder is being specified for.</rdfs:commment>
-        <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
     </owl:Class>
 
 
@@ -3980,7 +3970,6 @@ Stakeholder contains the following properties:
 •	hasImpactReport: identifies the set of ImpactReport that report on the results pertaining to each Outcome.
 •	org:hasName: string that is name of the StakeholderOutcome.
 •	org:hasDescription: string that is description of the StakeholderOutcome.</rdfs:comment>
-        <rdfs:label xml:lang="en">StakeholderOutcome</rdfs:label>
     </owl:Class>
 
 
@@ -4075,7 +4064,6 @@ Stakeholder contains the following properties:
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Theme identifies a sector that the Outcome applies to.</rdfs:comment>
-        <rdfs:label xml:lang="en">Theme</rdfs:label>
     </owl:Class>
 
 
