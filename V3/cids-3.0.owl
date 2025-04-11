@@ -4575,7 +4575,12 @@ Stakeholder contains the following properties:
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Theme">
         <rdfs:Label xml:lang="en">Theme</rdfs:Label>
-        <rdfs:comment xml:lang="en">Theme identifies a sector that the Outcome applies to.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Theme class is used to represent the impact themes for which outcomes are specified.
+Outcomes contribute to themes. It has the following properties:
+•	hasCode: Links to zero or more Codes that are defined taxonomies of Themes.
+•	hasName: A string that provides a name for the Theme.
+•	hasDescription: A string that provides a description for the Theme.
+•	relatesTo: Links a Theme to another Theme.</rdfs:comment>
         <cids:hasName xml:lang="en">Theme</cids:hasName>
     </rdf:Description>
 </rdf:RDF>
