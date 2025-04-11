@@ -2996,8 +2996,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactRisk"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactRisk"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactReport"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactReport"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3022,7 +3022,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOrganization"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4483,18 +4483,21 @@ Properties common across all types of Input are:
         <cids:hasName xml:lang="en">Organization</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Outcome">
-        <rdfs:comment xml:lang="en">As defined by the Impact Measurement Project, Outcomes “are what stakeholders experience as a result of an enterprise’s activities.  They can be positive or negative, intended or unintended.”  An Outcome has the following properties:
+        <rdfs:comment xml:lang="en">An outcome is the level of well-being experienced by a group of people, or the condition of the natural environment, as a result of an event or action (Source: Impact Management Norms). Outcomes are what stakeholders experience as a result of an organization’s activities. They can
+be positive or negative, intended or unintended.
+
+An Outcome has the following properties:
 •	hasCode: Links to zero or more Codes that are externally defined taxonomies of outcomes.
 •	hasStakeholderOutcome: Identifies the impact it has on Stakeholders.
-•	forTheme: Identifies the Themes that the Outcome aligns with.
+•	forTheme: Identifies the Themes that the Outcome aligns with (eg. UNSDG2 or &quot;Food Security&quot;).
 •	hasIndicator: Identifies the set of Indicators the organization assigns to the Outcome.
-•	canEnable: Links an Outcome to a Service or Activity that is made possible due to the result of the Outcome. It abstracts a more detailed specification of Activities producing States that enable other activities. It is used primarily for representing Outcome Chains.
-•	canProduce: Links an Outcome to another Outcome. It abstracts the underlying activity chain that usually links one Outcome to another. It is used primarily for representing Outcome Chains.
-•	i72:located_in: Identifies the spatial location the outcome is define for.
-•	hasImpactRisk: Identifies the impact risks associated with the outcome.
+•	canEnable: Links an Outcome to a Service or Activity that is made possible due to the result of the Outcome. It abstracts a more detailed specification of Activities producing States that enable other activities.
+•	canProduce: Links an Outcome to another Outcome. It abstracts the underlying activity chain that usually links one Outcome to another.
+•	i72:located_in: Identifies the spatial location the outcome is defined for.
 •	oep:partOf: Identifies the Impact Model it is a component of.
 •	hasName: string that provides a name for the Outcome.
 •	hasDescription: string that provides a description for the Outcome.
+•	hasImpactReport: Identifies the set of ImpactReports that report on the results pertaining to each Outcome.
 •	sch:dateCreated: date the Outcome was defined.</rdfs:comment>
         <rdfs:label xml:lang="en">Outcome</rdfs:label>
         <cids:hasName xml:lang="en">Outcome</cids:hasName>
