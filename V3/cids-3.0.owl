@@ -4554,18 +4554,18 @@ Stakeholder contains the following properties:
         <cids:hasName xml:lang="en">Stakeholder</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome">
-        <rdfs:comment xml:lang="en">The StakeholderOutcome specifies for a specific Stakeholder, a more specific outcome, whether the Outcome will have a positive, negative, or neutral affect on the Stakeholder, and the nature of the impact:
-•	hasCode: Associates codes from standard codelists with the StakeholderOutcome.
+        <rdfs:comment xml:lang="en">StakeholderOutcome specifies the outcome for a specific stakeholder, as well as properties of that outcome, such as if the stakeholder is underserved with respect to this outcome. StakeholderOutcome is not an alternative to Outcome; rather it is a specialization of a more general Outcome but for a specific stakeholder. Its properties are:
+•	hasName: A string that is name of the StakeholderOutcome.
+•	hasDescription: A string that is description of the StakeholderOutcome.
+•	hasCode: Links to zero or more Codes that are defined taxonomies of stakeholder outcomes.
 •	forStakeholder: Identifies the Stakeholder affected.
 •	forOutcome: Identifies the more general outcome this is part of.
 •	fromPerspectiveOf: Identifies the Stakeholder who is determining the importance of the Impact.
 •	hasImportance: Specifies the nature of the importance. One of {“high importance”, “moderate important”, “neutral”, “unimportant”}.
 •	isUnderserved: A Boolean that denotes if the stakeholder is underserved in relation to their specific outcome.
-•	intendedImpact: Identifies the intended direction of the change – note that ImpactReport captures the actual direction.
+•	intendedImpact: Identifies the intended direction of the change – note that ImpactReport captures the actual direction. This helps to inform the interpretation of the ImpactReport.
 •	hasIndicator: Identifies the set of Indicators the Organization assigns to the Outcome but are specific to this Stakeholder.
-•	hasImpactReport: identifies the set of ImpactReport that report on the results pertaining to each Outcome.
-•	org:hasName: string that is name of the StakeholderOutcome.
-•	org:hasDescription: string that is description of the StakeholderOutcome.</rdfs:comment>
+•	hasImpactReport: identifies the set of ImpactReport that report on the results pertaining to each Outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">StakeholderOutcome</rdfs:label>
         <cids:hasName xml:lang="en">StakeholderOutcome</cids:hasName>
     </rdf:Description>
