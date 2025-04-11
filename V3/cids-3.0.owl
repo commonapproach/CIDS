@@ -23,6 +23,7 @@
      xmlns:dcat="http://www.w3.org/ns/dcat#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:om-1="http://www.wurvoc.org/vocabularies/om-1.8/"
+     xmlns:prov="https://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:time="http://www.w3.org/2006/time#"
@@ -1171,6 +1172,18 @@
     <rdf:Description rdf:about="http://www.w3.org/2006/time#year">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime"/>
     
 
 
@@ -2362,9 +2375,8 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactRisk"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactRisk"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2399,7 +2411,7 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactScale"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact"/>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactScale"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2407,6 +2419,20 @@
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4392,17 +4418,40 @@ disaggregated data.
         <cids:hasName xml:lang="en">Impact Pathway</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactReport">
-        <dc:description xml:lang="en">ImpactReport specifies the “How Much” dimension of the Impact Management Project.  It reports on scale, depth, and duration of the Outcome.
+        <dc:description xml:lang="en">The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:
+• How much of the outcome is occurring – across scale, depth and duration?
+• Would this change likely have happened anyway?
+
+An ImpactReport has the following properties:
 •	forOrganization: Links to the Organization for whom this report is associated.
-•	time:hasTime: Specifies the time interval the report covers.
+•	prov:startedAtTime: Specifies the start of the time interval the report covers.
+•	prov:endedAtTime: Specifies the end of the time interval the report covers.
 •	forOutcome: Links to the Organization’s Outcome for whom this report is associated.
 •	hasName: Name or title of the report.
 •	hasReportedImpact: Specifies one of three values for the impact as measured – positive, negative or neutral.
 •	hasImpactScale: Specifies the number of stakeholders who experience the outcome.
-•	hasImpactDepth: Impact Depth is the degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders.  Impact Depth can be calculated using the measured or estimated counterfactual.
+•	hasImpactDepth: The degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders.
 •	hasImpactDuration: Impact Duration is the length of time that a stakeholder experiences an impact from the initial implementation.
 •	hasExpectation: A string field where any expectations that the organization has can be provided.
+•	hasImpactRisk: Links to information about Impact Risk as defined by Impact Management Norms.
 •	hasComment: A string field where any comments that the organization has can be provided.</dc:description>
+        <rdfs:comment>The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:
+• How much of the outcome is occurring – across scale, depth and duration?
+• Would this change likely have happened anyway?
+
+An ImpactReport has the following properties:
+•	forOrganization: Links to the Organization for whom this report is associated.
+•	prov:startedAtTime: Specifies the start of the time interval the report covers.
+•	prov:endedAtTime: Specifies the end of the time interval the report covers.
+•	forOutcome: Links to the Organization’s Outcome for whom this report is associated.
+•	hasName: Name or title of the report.
+•	hasReportedImpact: Specifies one of three values for the impact as measured – positive, negative or neutral.
+•	hasImpactScale: Specifies the number of stakeholders who experience the outcome.
+•	hasImpactDepth: The degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders.
+•	hasImpactDuration: Impact Duration is the length of time that a stakeholder experiences an impact from the initial implementation.
+•	hasExpectation: A string field where any expectations that the organization has can be provided.
+•	hasImpactRisk: Links to information about Impact Risk as defined by Impact Management Norms.
+•	hasComment: A string field where any comments that the organization has can be provided.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Report</rdfs:label>
         <cids:hasName xml:lang="en">Impact Report</cids:hasName>
     </rdf:Description>
