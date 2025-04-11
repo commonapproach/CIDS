@@ -469,6 +469,12 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#forImpactReport -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forImpactReport"/>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#forIndicator -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forIndicator">
@@ -2516,6 +2522,12 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forImpactReport"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactReport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOutcome"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
             </owl:Restriction>
@@ -4505,10 +4517,10 @@ An ImpactReport has the following properties:
         <cids:hasName xml:lang="en">Impact Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactRisk">
-        <rdfs:comment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance.
-The following defines the taxonomy of risk and key properties:
-•	forOutcome: Identifies the Outcome the risk is associated with.
-•	hasLikelihood: Identifies the likelihood that the risk will occur.
+        <rdfs:comment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. Risk is one of the five dimensions of impact as defined by the Impact Norms.
+The following defines the key properties of ImpactRisk and its subclasses:
+•	forImpactReport: Identifies the ImpactReport (and thus the associated StakeholderOutcome) that the risk is associated with.
+•	hasLikelihood: Identifies the likelihood that the risk will occur among the options given.
 •	hasConsequence: Identifies the degree of impact the risk could have.
 •	hasMitigation: A string that specifies a mitigation plan or references a document.
 •	hasIdentifier: A unique identifier for this risk.
