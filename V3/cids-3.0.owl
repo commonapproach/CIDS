@@ -2348,12 +2348,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholder"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholderOutcome"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome"/>
             </owl:Restriction>
@@ -2879,78 +2873,6 @@
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#LogicModel -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#LogicModel">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactModel"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#hasResource"/>
-                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasActivity"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCharacteristic"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasInput"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Input"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasOutcome"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasOutput"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Output"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasProgram"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Program"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholder"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholderOutcome"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">LogicModel is a subclass of ImpactModel. The top-level definition of a LogicModel contains the following properties:
-•	hasProgram: Identifies all the Programs being modeled.
-•	hasStakeholder: Identifies key stakeholders participating in the model.
-•	hasOutcome: Identifies key Outcomes for the model.
-•	hasStakeholderOutcome: identifies the outcome specific to a stakeholder.
-•	hasInput: Identifies key Inputs for the model.
-•	hasOutput: Identifies key Outputs for the model.
-•	hasActivity: Identifies key Activities of the model.
-•	act:hasResource: Identifies key Resources of the model.</rdfs:comment>
-        <rdfs:label xml:lang="en">Logic Model</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#MaritalStatus -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#MaritalStatus">
@@ -3123,12 +3045,6 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactModel"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasActivity"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasIndicator"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
             </owl:Restriction>
@@ -3137,6 +3053,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasOutcome"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasOutput"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4417,6 +4339,11 @@ i72:value: value of the counterfactual</rdfs:comment>
         <cids:hasName xml:lang="en">How Much Impact</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactModel">
+        <dc:description>ImpactModel provides the most basic properties:
+•	hasName: a string containing a title for the model.
+•	hasDescription: a string containing a description of the model.
+•	sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.
+•	forOrganization: an object property that links to the Organization the model is for.</dc:description>
         <rdfs:comment xml:lang="en">ImpactModel provides the most basic properties:
 •	hasName: a string containing a title for the model.
 •	hasDescription: a string containing a description of the model.
@@ -4426,6 +4353,28 @@ i72:value: value of the counterfactual</rdfs:comment>
         <cids:hasName xml:lang="en">Impact Model</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactPathway">
+        <dc:description>An impact pathway is a “sequence that links organizations’ actions with their effects on people and the natural environment.The top-level definition of the ImpactPathway class contains the following properties:
+•	hasInput: Identifies key Inputs for the model.
+•	hasOutput: Identifies key Outputs for the model.
+•	hasActivity: Identifies key Activities of the model.
+•	hasOutcome: Identifies key Outcomes for the model.
+•	hasIndicator: Identifies key Indicators for the model.
+•	hasIndicatorReport: A set of IndicatorReports associated with this model.
+•	hasStakeholder: Identifies key stakeholders participating in the pathway.
+•	hasStakeholderOutcome: Creates stakeholder-outcome pairing. This enables
+disaggregated data.
+•	hasProgram: Identifies the Programs being modelled, if different than the organization.</dc:description>
+        <rdfs:comment>An impact pathway is a “sequence that links organizations’ actions with their effects on people and the natural environment.The top-level definition of the ImpactPathway class contains the following properties:
+•	hasInput: Identifies key Inputs for the model.
+•	hasOutput: Identifies key Outputs for the model.
+•	hasActivity: Identifies key Activities of the model.
+•	hasOutcome: Identifies key Outcomes for the model.
+•	hasIndicator: Identifies key Indicators for the model.
+•	hasIndicatorReport: A set of IndicatorReports associated with this model.
+•	hasStakeholder: Identifies key stakeholders participating in the pathway.
+•	hasStakeholderOutcome: Creates stakeholder-outcome pairing. This enables
+disaggregated data.
+•	hasProgram: Identifies the Programs being modelled, if different than the organization.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Pathway</rdfs:label>
         <cids:hasName xml:lang="en">Impact Pathway</cids:hasName>
     </rdf:Description>
@@ -4525,7 +4474,15 @@ Properties common across all types of Input are:
         <cids:hasName xml:lang="en">Outcome</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#OutcomeChain">
-        <rdfs:comment xml:lang="en">OutcomeChain is a subclass of ImpactModel. The top-level definition of an ImpactChain contains the following properties:
+        <dc:description>OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact
+modelling classes it uses. The top-level definition of an OutcomeChain contains the following
+properties:
+•	hasOutcome: identifies key Outcomes for the model
+•	hasActivity: identifies key Activities of the model
+•	hasIndicator: identifies the key Indicators of the model</dc:description>
+        <rdfs:comment xml:lang="en">OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact
+modelling classes it uses. The top-level definition of an OutcomeChain contains the following
+properties:
 •	hasOutcome: identifies key Outcomes for the model
 •	hasActivity: identifies key Activities of the model
 •	hasIndicator: identifies the key Indicators of the model</rdfs:comment>
