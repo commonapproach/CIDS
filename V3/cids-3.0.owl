@@ -1784,13 +1784,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1815,6 +1808,13 @@
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasSpecification"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4307,7 +4307,15 @@ A person can play a role at an organization. For any role, a person can be assig
         <cids:hasName xml:lang="en">Characteristics</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Code">
-        <rdfs:comment xml:lang="en">CIDS does not define taxonomies of outcomes, stakeholder characteristics, etc., but must allow for the reference to them whether they are part of a standard, an organization vocabulary, etc. Code is used to specify the source, definition and value of outcomes, themes, indicators, and characteristics. It has the following properties:
+        <dc:description>The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
+•	definedBy: The Organization that defined the code.
+•	hasSpecification: The URI where the definition of the code can be found.
+•	hasIdentifier: The code’s unique identifier.
+• hasName: A name or title for the code.
+•	hasDescription: A description of the code.
+•	schema:codeValue:  The value of the code, if appropriate.
+•	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</dc:description>
+        <rdfs:comment xml:lang="en">The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
 •	definedBy: The Organization that defined the code.
 •	hasSpecification: The URI where the definition of the code can be found.
 •	hasIdentifier: The code’s unique identifier.
