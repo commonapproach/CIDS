@@ -2890,6 +2890,12 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasID"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#OrganizationID"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCharacteristic"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
             </owl:Restriction>
@@ -2898,12 +2904,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasContact"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactModel"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactModel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2920,9 +2920,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasID"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#OrganizationID"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasProgram"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Program"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasStakeholder"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4451,16 +4456,29 @@ Properties common across all types of Input are:
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization">
         <dc:description xml:lang="en">The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:
-•	org:hasID: Limits an organization to one org:OrganizationID.
-•	hasImpactModel: Indentifies one or more ImpactModels for the organization.
+•	org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.
+•	hasProgram: Identifies the Programs being modelled.
 •	hasIndicator: List of indicators associated with the Organization.
 •	hasOutcome: List of outcomes associated with the Organization.
+•	hasStakeholders: List of stakeholders associated with the Organization.
 •	hasCharacteristic: List of stakeholder characteristics associated with the Organization.
 •	hasContact: Identifies one or more contacts for the organization.
 •	hasDescription: a string that describes the Organization.
 •	hasWebAddress: a URI specifying the website for the organization.
-•	hasPurpose: text defining the purpose or vision of the organization.
+•	hasPurpose: text defining the purpose of the organization.
 •	sch:dateCreated: the date the Organization’s record was created.</dc:description>
+        <rdfs:comment>The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:
+•	org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.
+•	hasProgram: Identifies the Programs being modelled.
+•	hasIndicator: List of indicators associated with the Organization.
+•	hasOutcome: List of outcomes associated with the Organization.
+•	hasStakeholders: List of stakeholders associated with the Organization.
+•	hasCharacteristic: List of stakeholder characteristics associated with the Organization.
+•	hasContact: Identifies one or more contacts for the organization.
+•	hasDescription: a string that describes the Organization.
+•	hasWebAddress: a URI specifying the website for the organization.
+•	hasPurpose: text defining the purpose of the organization.
+•	sch:dateCreated: the date the Organization’s record was created.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
         <cids:hasName xml:lang="en">Organization</cids:hasName>
     </rdf:Description>
