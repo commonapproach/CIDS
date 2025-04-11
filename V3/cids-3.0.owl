@@ -3447,6 +3447,12 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#hasSubActivity"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasBeneficialStakeholder"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#BeneficialStakeholder"/>
             </owl:Restriction>
@@ -3484,9 +3490,23 @@ A person can play a role at an organization. For any role, a person can be assig
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3510,23 +3530,21 @@ A person can play a role at an organization. For any role, a person can be assig
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes.
-•	act:hasSubActivity: identifies the Activities that make that comprise the Service
-•	hasInput: identifies the Inputs to the Service
-•	hasOutput: identifies the Outputs of the Service
-•	hasOutcome: identifies the Outcomes that are specific to the Service
-•	hasContributingStakeholder: identifies the stakeholders that contribute to the Service
-•	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Service
-•	bSizeStart: number of benefical stakeholders at the beginning of the service time interval
-•	bSizeEnd: number of benefical stakeholders at the end of the service time interval
-•	time:hasTime: time intervale over which the service is provided</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes. 
+Service is a subclass of Activity and can be related to one or more Programs. It has the following properties:
+•	oep:partOf: Identifies the Impact Model it is a component of.
+•	hasName: Identifies the name of the Service.
+•	hasDescription: A description of the Service.
+•	act:hasSubActivity: Identifies the Activities that comprise the Service.
+•	hasInput: Identifies the Inputs to the Service.
+•	hasOutput: Identifies the Outputs of the Service.
+•	hasOutcome: Identifies the Outcomes that are specific to the Service.
+•	hasContributingStakeholder: Identifies the stakeholders that contribute to the Service.
+•	hasBeneficialStakeholder: Identifies the stakeholders that benefit from the Service.
+•	beneficialSizeStart: Number of benefical stakeholders at the beginning of the service time interval.
+•	beneficialSizeEnd: Number of benefical stakeholders at the end of the service time interval.
+•	prov:startedAtTime: The start of the time interval over which the service is provided.
+•	prov:endedAtTime: The end of the time interval over which the service is provided.</rdfs:comment>
         <rdfs:label xml:lang="en">Service</rdfs:label>
     </owl:Class>
     
