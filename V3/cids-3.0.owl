@@ -2145,6 +2145,12 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forIndicator"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
             </owl:Restriction>
@@ -2157,15 +2163,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2205,9 +2212,16 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The time period for which the stakeholder experience the outcome.
@@ -4387,10 +4401,11 @@ i72:value: value of the counterfactual</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact">
         <rdfs:comment xml:lang="en">HowMuchImpact defines the properties common to ImpactScale, ImpactDepth and ImpactDuration:
-•	forIndicator: The Indicator used to measure the Impact.
-•	prov:wasGeneratedBy: A string that can used to describe the method used to determine the impact.
+•	forIndicator: The Indicator used to measure the Impact (not a number value).
+•	prov:wasGeneratedBy: An Activity that can used to describe the method used to determine the impact. For example, it could be a random control trial, or estimation.
 •	hasDescription: A string that can used to provide additional information about the impact.
 •	i72:value: Links to the value of the impact specified as an i72:Measure
+•	i72:unit_of_measure: Specifies the units of measure of the impact.
 •	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</rdfs:comment>
         <rdfs:label xml:lang="en">How Much Impact</rdfs:label>
         <cids:hasName xml:lang="en">How Much Impact</cids:hasName>
