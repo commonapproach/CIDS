@@ -1888,6 +1888,13 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
@@ -1895,16 +1902,23 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4390,12 +4404,14 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <cids:hasName xml:lang="en">Code</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Counterfactual">
-        <rdfs:comment xml:lang="en">a comparison between what actually happened and what would have happened in the absence of the intervention.
-i72:located_in: spatial location of the counterfactual
-time:hasTime: time interval over which the counterfactual occurs
-• prov:wasGeneratedBy: A string that can used to describe the method used to determine the impact.
-sch:description: general description of the Counterfactual
-i72:value: value of the counterfactual</rdfs:comment>
+        <rdfs:comment xml:lang="en">Counterfactual defines what the impact on stakeholders would be if the stakeholders did not receive the service. It has the following properties:
+•	i72:located_in: Identifies the spatial location of the counterfactual.
+•	prov:startedAtTime: Identifies the start of the time interval during which the counterfactual was determined.
+•	prov:endedAtTime: Identifies the end of the time interval during which the counterfactual was determined.
+•	prov:wasGeneratedBy: An activity that describes how the counterfactual was generated.
+•	hasDescription: A string that describes the counterfactual.
+•	i72:value: A measure that specifies the value of the counterfactual.
+•	i72:unit_of_measure: Specifies the units of measure of the counterfactual.</rdfs:comment>
         <rdfs:label xml:lang="en">Counterfactual</rdfs:label>
         <cids:hasName xml:lang="en">Counterfactual</cids:hasName>
     </rdf:Description>
