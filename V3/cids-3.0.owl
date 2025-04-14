@@ -3642,12 +3642,6 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#performs"/>
-                <owl:someValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
                 <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
             </owl:Restriction>
@@ -3656,6 +3650,12 @@ Service is a subclass of Activity and can be related to one or more Programs. It
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCharacteristic"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#performs"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3670,12 +3670,6 @@ Service is a subclass of Activity and can be related to one or more Programs. It
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOrganization"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3722,6 +3716,13 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
@@ -4651,15 +4652,17 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
         <cids:hasName xml:lang="en">Program</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder">
-        <rdfs:comment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the performs property, where they are located geographically using the i72:located_In property. Some methods for measuring impact, such as a Social Return on Investment, require that Social Purpose Organizations distinguish between the beneficiary and contributing stakeholders. A BeneficiaryStakeholder is a stakeholder that benefits from a logic model’s outcome. A ContributorStakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. These are explicitly defined as separate classes to highlight the fact that a contributor stakeholder is not always the same instance as the beneficiary stakeholder. The distinction is available in the ontology but is not required.
+        <rdfs:comment xml:lang="en">A stakeholder may be an individual person, but is more often a group or category of people, an organization, or a feature. Stakeholders may be described as either contributing or beneficial stakeholders, as suggested by Social Value International. Stakeholders may also be identified by their roles, as specified by the Impact Management Norms: customers, employees, communities, suppliers, and planet.
 
 Stakeholder contains the following properties:
 •	hasName (title): A title for the stakeholder as a string.
 •	hasDescription: A general description of the stakeholder as a string.
-•	hasCatchmentArea: Specifies the regional span of the stakeholders.
+•	hasCatchmentArea: Specifies the regional span of the Stakeholder.
+•	hasCharacteristic: Specifies characteristics of the Stakeholder.
 •	performs: Links to the activities performed by the stakeholder.
-•	i72:located_in: Links to the specific geographic area in which the stakeholder is located.
-• oep:part of: Links the Impact Model that the stakeholder is being specified for.</rdfs:comment>
+•	i72:located_in: Links to the specific geographic area in which the Stakeholder is located.
+• oep:part of: Links the Impact Model that the Stakeholder is being specified for.
+•	forOrganization: Identifies the Organization which is associated with this Stakeholder.</rdfs:comment>
         <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
         <cids:hasName xml:lang="en">Stakeholder</cids:hasName>
     </rdf:Description>
