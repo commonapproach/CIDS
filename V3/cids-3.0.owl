@@ -2147,17 +2147,15 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit"/>
-                            </owl:Restriction>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:onClass>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Financial resource that is used as input to an activity or service.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Financial resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:
+•	hasType: a FinancialResource object indicating the type of FinancialInput.
+•	hasAmount: a Quantity and Unit of measure indicating the amount of the FinancialResource.</rdfs:comment>
         <rdfs:label xml:lang="en">Financial Input</rdfs:label>
     </owl:Class>
     
@@ -2978,12 +2976,6 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasContributingStakeholder"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ContributingStakeholder"/>
             </owl:Restriction>
@@ -3035,6 +3027,20 @@
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3463,7 +3469,8 @@ A person can play a role at an organization. For any role, a person can be assig
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#PhysicalResource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Physical resource that is used as input to an activity or service.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:
+•	hasType: a PhysicalResource object indicating the type of PhysicalInput.</rdfs:comment>
         <rdfs:label xml:lang="en">Physical Input</rdfs:label>
     </owl:Class>
     
@@ -3715,7 +3722,8 @@ Service is a subclass of Activity and can be related to one or more Programs. It
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#SkillResource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Skill resource that is used as input to an activity or service.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:
+•	hasType: A SkillResource object indicating the type of SkillInput.</rdfs:comment>
         <rdfs:label xml:lang="en">Skill Input</rdfs:label>
     </owl:Class>
     
@@ -4700,13 +4708,16 @@ cids:Indicator extends the definition of i72:Indicator with the following proper
 •	PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.
 
 Properties common across all types of Input are:
-•	eof:partOf: specifies the impact models this Input is part of
-•	inputFor: identifies the Program, Service or Activity this is an input for
-•	hasContributingStakeholder: identifies the stakeholder that contributes the resource
-•	hasType: specifies the type of Resource by denoting the relevant subclass of Resource
-•	hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity
-•	hasActualAmount: specifies the actual Quantity of Input (which in turn specifies the unit of measure) used
-•	time:hasTime: specifies the time interval over which the Input is provided</rdfs:comment>
+•	oep:partOf: specifies the impact models this Input is part of
+•	inputFor: identifies the Program, Service or Activity this is an input for.
+•	hasContributingStakeholder: identifies the stakeholder that contributes the resource.
+•	hasType: specifies the type of Resource by denoting the relevant subclass of Resource.
+•	hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity.
+•	hasActualAmount: specifies the actual Quantity of Input that was used (which in turn specifies the unit of measure).
+•	prov:startedAtTime: The start of the time interval over which the Input is provided.
+•	prov:endedAtTime: The end of the time interval over which the Input is provided.
+•	hasName: Identifies the name of the Input.
+•	hasDescription: A description of the Input.</rdfs:comment>
         <rdfs:label xml:lang="en">Input</rdfs:label>
         <cids:hasName xml:lang="en">Input</cids:hasName>
     </rdf:Description>
