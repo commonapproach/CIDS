@@ -1541,6 +1541,7 @@
     <!-- https://ontology.commonapproach.org/CharacteristicReport -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/CharacteristicReport">
+        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#numberOf"/>
@@ -4372,6 +4373,10 @@ Service is a subclass of Activity and can be related to one or more Programs. It
      -->
 
     <rdf:Description rdf:about="https://ontology.commonapproach.org/CharacteristicReport">
+        <rdfs:comment>The CharacteristicReport class identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.
+The CharacteristicReport class has the following properties:
+•	forCharacteristic: Identifies the Characteristics for which the report is being generated.
+•	numberOf: Specifies the number of members which possess the Characteristic.</rdfs:comment>
         <rdfs:label xml:lang="en">Characteristic Report</rdfs:label>
         <cids:hasName xml:lang="en">Characteristic Report</cids:hasName>
     </rdf:Description>
