@@ -485,6 +485,14 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#forIndicatorReport -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forIndicatorReport">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#forOrganization -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forOrganization">
@@ -3504,6 +3512,12 @@ A person can play a role at an organization. For any role, a person can be assig
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactModel"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasInput"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Input"/>
             </owl:Restriction>
@@ -4016,12 +4030,6 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
-                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
@@ -4036,16 +4044,9 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forIndicatorReport"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forIndicator"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#IndicatorReport"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4058,6 +4059,20 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.org/dateCreated"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
@@ -4765,13 +4780,16 @@ provide training’ and the output is ‘we trained 50 people to NVQ level 3’ 
         <cids:hasName xml:lang="en">Output</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Program">
-        <rdfs:comment xml:lang="en">A program defines a set of services that focus on a shared set of Outcomes. For example, a “poverty reduction program” can be made up of a set of Services such as mobiles services that provides food and clothing to those that live on the street, and a training service that provides basic skills for those living on the street. A Program has a set of Stakeholders that my contribute or benefit:
+        <rdfs:comment xml:lang="en">A program defines a set of services that focus on a shared set of Outcomes. For example, a “poverty reduction program” can be made up of services such as mobiles services that provide food and clothing to those experiencing homelessness. A Program has a set of Stakeholders who may contribute or benefit. The class contains the following properties:
 •	hasService: identifies the Services that make up the Program
-•	hasOutcome: identifies the Outcomes that the program is trying to achieve
-•	hasContributingStakeholder: identifies the stakeholders that contribute to the Program
-•	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Program
-•	hasInput: identifies the Inputs to the Program
-•	hasOutput: identifies the Outputs of the Program</rdfs:comment>
+•	hasName: Identifies the name of the Program.
+•	hasDescription: A description of the Program.
+•	hasOutcome: Identifies the Outcomes that the program is trying to achieve.
+•	hasImpactModel: Identifies one or more ImpactModels for the Program.
+•	hasContributingStakeholder: identifies the stakeholders that contribute to the Program.
+•	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Program.
+•	hasInput: identifies the Inputs to the Program.
+•	hasOutput: identifies the Outputs of the Program.</rdfs:comment>
         <rdfs:label xml:lang="en">Program</rdfs:label>
         <cids:hasName xml:lang="en">Program</cids:hasName>
     </rdf:Description>
@@ -4807,6 +4825,17 @@ Stakeholder contains the following properties:
         <cids:hasName xml:lang="en">StakeholderOutcome</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Target">
+        <rdfs:comment>The target is used to report the target value of an indicator and/or indicator report for some time interval. In addition to the target value and time interval of the target, this class also reports the units of measure of the target, the date the target was created, the name of the target, and
+any comment about the target that the user may wish to add. 
+This class contains the following properties:
+•	hasName: Specifies the Target&apos;s name.
+•	i72:value: Specifies a single measure of the Target.
+•	i72:unit_of_measure: Specifies a unit of measure for the Target.
+•	prov:startedAtTime: Specifies the start of the time interval that the Target covers.
+•	prov:endedAtTime: Specifies the end of the time interval that the Target covers.
+•	hasComment: A string property in which a general comment for the Target can be specified.
+•	sch:dateCreated: Is the date that the Target was created.
+•	forIndicatorReport: Links to the Indicator Reports which are associated with the target.</rdfs:comment>
         <rdfs:label xml:lang="en">Target</rdfs:label>
         <cids:hasName xml:lang="en">Target</cids:hasName>
     </rdf:Description>
