@@ -511,6 +511,14 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#forTarget -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forTarget">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#forTheme -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#forTheme">
@@ -650,6 +658,14 @@
     <!-- https://ontology.commonapproach.org/cids-3.0#hasDisease -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasDisease">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasHowMuch -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasHowMuch">
         <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -1367,7 +1383,6 @@
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasStakeholderCharacteristic"/>
     
-
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasWebAddress -->
@@ -2702,6 +2717,18 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCounterfactual"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Counterfactual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasHowMuch"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasIndicatorReport"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#IndicatorReport"/>
             </owl:Restriction>
@@ -2716,6 +2743,13 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#usesOutput"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2815,7 +2849,21 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasAccess"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization"/>
+                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2827,15 +2875,9 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2854,6 +2896,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forStakeholder"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forTarget"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Target"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasComment"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
@@ -2865,18 +2921,38 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">IndicatorReport is used to report the value of an indicator for some time interval. It contains the following properties:
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">IndicatorReport is used to report the value of an indicator for some time interval. In addition to the value of the indicator, it reports on when it was generated, the activity used to generate it, the datasets used, and the quality of the value reported using the DQV vocabulary (https://www.w3.org/TR/vocab-dqv/). It contains the following properties:
 •	forOrganization: Links to the Organization that submits the report.
 •	forIndicator: Links to the Indicator that is being reported.
-•	i72:value: Links to the value specified as a i72:Measure.
+•	i72:value: Specifies a single measure of the result value.
+•	i72:unit_of_measure: Specifies a unit of measure for the result value.
+•	forTarget: Links a Target to the result value.
 •	prov:wasGeneratedBy: Links to the method by which the Indicator was derived.
-•	dcat:dataset: Links to the dcat:Dataset that specifies the datasets used to derive the value if the method is Computation.
-•	time:hasTime: Specifies the time interval that the Indicator Report covers.
+•	dcat:dataset: Links to the dcat:Dataset that specifies the datasets used to derive the value if the method is computation.
+•	prov:startedAtTime: The start of the interval that the Indicator Report covers.
+•	prov:endedAtTime: The end of the time interval that the Indicator Report covers.
 •	dqv:hasQualityAnnotation: Specifies any annotations regarding the quality of the reported indicator quantity.
 •	dqv:conformsTo: Specifies the standards that the Indicator being reported conforms to.
 •	dqv:hasQualityMeasurement: Specifies a metric that represents the evaluation of the indicator.
+•	forStakeholder: Identifies the Stakeholder affected.
 •	hasAccess: Links to the organizations that can read this Indicator report.
-•	hasComment: A string property in which a general comment for the report can be specified.</rdfs:comment>
+•	hasName: Specifies the Indicator Report&apos;s name or title of the Indicator.
+•	hasComment: A string property in which a general comment for the report can be specified.
+•	sch:dateCreated: Is the date that the Indicator Report was created.</rdfs:comment>
         <rdfs:label xml:lang="en">Indicator Report</rdfs:label>
     </owl:Class>
     
