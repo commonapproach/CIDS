@@ -4786,13 +4786,16 @@ properties:
         <cids:hasName xml:lang="en">Outcome Chain</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Output">
-        <rdfs:comment xml:lang="en">Outputs are a quantitative summary of an activity. For example, if the activity is ‘we
-provide training’ and the output is ‘we trained 50 people to NVQ level 3’ (CED, 2012). Or a production output could produce 100 meals for the homeless. Basic to these outputs is “what” has been produced and the quantity.
-•	eof:partOf: specifies the impact models this Output is part of
-•	forActivity: identifies the Activity or Service that produces the Output
-•	hi7s:value identifies that amount that is produced
-•	produces: identifies the Resource that is produced such as a skill, or a type of Meal
-•	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:comment>
+        <rdfs:comment xml:lang="en">Outputs represent a quantitative summary of an activity. For example, if the activity is “we provide training,” the output is “we trained 50 people to NVQ level 3.” (Source: Social Value International, 2012.) An example of a production output would be “we produce 100 meals for people experiencing homelessness”. An output represents what has been produced and the quantity.
+The Output class contains the following properties:
+•	oep:partOf: specifies the impact models this Output is part of
+•	forActivity: identifies the Activity or Service that produces the Output.
+•	canProduce: specifies the Outcomes with which the Output is associated and is used to represent Impact Pathways and Outcome Chains.
+•	i72:value identifies that amount that is produced.
+•	produces: identifies the Resource that is produced, such as a skill or a type of meal.
+•	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator.
+•	hasName: Identifies the name of the Output.
+•	hasDescription: A description of the Output.</rdfs:comment>
         <rdfs:label xml:lang="en">Output</rdfs:label>
         <cids:hasName xml:lang="en">Output</cids:hasName>
     </rdf:Description>
