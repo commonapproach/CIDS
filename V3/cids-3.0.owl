@@ -1563,14 +1563,14 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forStakeholder"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOrganization"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCharacteristic"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forStakeholder"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1581,21 +1581,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasOrganization"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasPerson"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Person"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4377,6 +4376,14 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <cids:hasName xml:lang="en">Characteristic Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/StakeholderReport">
+        <rdfs:comment>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time. 
+The StakeholderReport class has the following properties:
+•	forStakeholder: Specifies the Stakeholders for which the report is being generated.
+•	prov:startedAtTime: Identifies the start of the time interval of the Stakeholder Report.
+•	prov:endedAtTime: Identifies the end of the time interval of the Stakeholder Report.
+•	hasCharacteristicReport: Specifies the Characteristics reports associated with the selected Stakeholders.
+•	hasPerson: Identifies the Persons who are the Stakeholder being reported upon.
+•	forOrganization: Identifies the Organization for which the Stakeholder is being generated.</rdfs:comment>
         <rdfs:label xml:lang="en">Stakeholder Report</rdfs:label>
         <cids:hasName xml:lang="en">Stakeholder Report</cids:hasName>
     </rdf:Description>
