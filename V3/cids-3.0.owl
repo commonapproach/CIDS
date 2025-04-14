@@ -863,6 +863,14 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasTarget">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#hasTheme -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasTheme">
@@ -1359,6 +1367,7 @@
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasStakeholderCharacteristic"/>
     
+
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#hasWebAddress -->
@@ -2661,17 +2670,6 @@
         <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Indicator"/>
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasAccess"/>
-                        <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#dataset"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
@@ -2679,14 +2677,21 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/dqv#target"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/dqv#QualityPolicy"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOutcome"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOutcome"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasAccess"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization"/>
+                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2703,6 +2708,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasTarget"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Target"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#usesOutput"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Output"/>
             </owl:Restriction>
@@ -2710,7 +2721,8 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4560,21 +4572,27 @@ The following defines the key properties of ImpactRisk and its subclasses:
         <cids:hasName xml:lang="en">Impact Risk</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Indicator">
-        <rdfs:comment xml:lang="en">Indicator extends the definition of i72:Indicator with the following properties:
+        <rdfs:comment xml:lang="en">Indicator is a subclass of i72:Indicator, which provides properties for units of measure, time and value.
+cids:Indicator extends the definition of i72:Indicator with the following properties:
 •	definedBy: Links to the cids:Organization that defined the Indicator.
-•	forOutcome: Links to the Outcome’s the Indicator measures.  .
+•	forOutcome: Links to the Outcomes the Indicator measures.  .
+•	forOrganization: Links to the Organization that is associated with the Indicator.
 •	usesOutput: Links the Outputs that the indicator uses in defining its value. This is useful when indicators are computed using output information. This property can be ignored if dcat:dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.
-•	hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the indicator.
+•	hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the Indicator.
 •	hasThreshold: Links to an i72:Measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.
+•	hasTarget: Links to a Target for the Indicator to allow for the assessment of performance against a Target.
+•	i72:unit_of_measure: Specifies the units of the Indicator.
 •	prov:wasGeneratedBy: Links to a method that specifies how the Indicator was derived.
 •	dcat:dataset: Links to a dcat:Dataset that specifies the data used to derive the value if the method is Computation.
-•	hasIndicatorReport: Links to all of the indicator reports for this indicator.
-•	hasAccess: Links to the organizations that can read this Indicator.
-•	hasCode: Links to a Code that identifies an existing standard/codelist that this Indicator is an example of.
-•	dqv:target: Links to quality policies that the Indicator should conform to.
-•	hasIdentifier: Unique identifier for the indicator.
-•	hasName: Name or title for the indicator.
-•	hasDescription: Description of the indicator.</rdfs:comment>
+•	hasIndicatorReport: Links to all of the Indicator Reports for this indicator.
+•	hasAccess: Links to the Stakeholders and Organizations that can read this Indicator.
+•	hasCode: Identifies the various standards/codelists that exist for a particular indicator. It supports the ability to compare an Outcome to nationally or internationally recognized by means of its indicators.
+•	hasIdentifier: Unique identifier for the Indicator.
+•	hasName: Specifies the title of the Indicator.
+•	hasDescription: Specifies the Indicator&apos;s description.
+•	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified as a string.
+•	hasHowMuch: Links to HowMuchImpact which defines the properties common to the subclasses ImpactScale, ImpactDepth, and ImpactDuration.
+•	sch:dateCreated: Is the date that the Indicator was created.</rdfs:comment>
         <rdfs:label xml:lang="en">Indicator</rdfs:label>
         <cids:hasName xml:lang="en">Indicator</cids:hasName>
     </rdf:Description>
