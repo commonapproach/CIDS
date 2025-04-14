@@ -1722,12 +1722,6 @@
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasValue"/>
-                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
             </owl:Restriction>
@@ -1746,9 +1740,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasValue"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1756,6 +1749,20 @@
                 <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4388,13 +4395,24 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <cids:hasName xml:lang="en">Activity</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Characteristic">
-        <dc:description xml:lang="en">The Characteristic class is used to define a characteristic of a Stakeholder. It inherits the Code properties and adds the following properties:
-•	hasName: Specifies the name or title of the characteristic.
-•	time:hasTime: The time interval that the Stakeholder has the characteristic.
-•	prov:wasGeneratedBy: identifies that activities that led to the Stakeholder having the characteristic.</dc:description>
+        <dc:description xml:lang="en">The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:
+•	forStakeholder: Identifies the Stakeholder affected.
+•	hasCode: Links to zero or more Codes that are externally defined taxonomies of Stakeholder characteristics.
+•	hasName: Specifies a name for the characteristic as a string. Can be inferred from hasCode.
+•	hasValue: Specifies a value for the characteristic as a string. It can be a number or a string corresponding to that characteristic and can be inferred from hasCode.
+•	prov:startedAtTime: The start of the time interval that the Stakeholder has the characteristic.
+•	prov:endedAtTime: The end of the time interval that the Stakeholder has the characteristic.
+•	prov:wasGeneratedBy: Identifies the activities that led to the Stakeholder having the characteristic.</dc:description>
+        <rdfs:comment>The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:
+•	forStakeholder: Identifies the Stakeholder affected.
+•	hasCode: Links to zero or more Codes that are externally defined taxonomies of Stakeholder characteristics.
+•	hasName: Specifies a name for the characteristic as a string. Can be inferred from hasCode.
+•	hasValue: Specifies a value for the characteristic as a string. It can be a number or a string corresponding to that characteristic and can be inferred from hasCode.
+•	prov:startedAtTime: The start of the time interval that the Stakeholder has the characteristic.
+•	prov:endedAtTime: The end of the time interval that the Stakeholder has the characteristic.
+•	prov:wasGeneratedBy: Identifies the activities that led to the Stakeholder having the characteristic.</rdfs:comment>
         <rdfs:label xml:lang="en">Characteristic</rdfs:label>
-        <rdfs:label xml:lang="en">Characteristics</rdfs:label>
-        <cids:hasName xml:lang="en">Characteristics</cids:hasName>
+        <cids:hasName xml:lang="en">Characteristic</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Code">
         <dc:description>The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
