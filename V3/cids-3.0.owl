@@ -4181,198 +4181,6 @@ Service is a subclass of Activity and can be related to one or more Programs. It
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://ontology.commonapproach.org/CharacteristicReport -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/CharacteristicReport">
-        <cids:hasDescription xml:lang="en">Identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/StakeholderReport -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/StakeholderReport">
-        <cids:hasDescription xml:lang="en">The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Activity -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Activity">
-        <cids:hasDescription xml:lang="en">The actions performed by an organization and/or contributing stakeholder to implement a service.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Characteristic -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Characteristic">
-        <cids:hasDescription xml:lang="en"> The specification of stakeholder characteristics is often theme-dependent. For example, social purpose organizations working to end homelessness often
-   define stakeholders by characteristics such as length of time, frequency of homelessness, and location of homelessness (e.g., street, shelter, friend’s
-   home).</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Code -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Code">
-        <cids:hasDescription xml:lang="en">Used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Counterfactual -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Counterfactual">
-        <cids:hasDescription xml:lang="en">Defines what the impact on stakeholders would be if the stakeholders did not receive the service.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#HowMuchImpact -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact">
-        <cids:hasDescription xml:lang="en">HowMuchImpact defines the properties common to ImpactScale, ImpactDepth and ImpactDuration.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#ImpactModel -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactModel">
-        <cids:hasDescription xml:lang="en">ny model that articulates how an organization creates impact. Examples of types of impact models include impact
-   pathway, logic model, logical framework analysis, theory of change, outcome chain, impact map, results framework, results chain and outcomes map. Those
-   familiar with these terms will know these are overlapping concepts. For example an impact map is an impact pathway with the addition of impact valuation.
-   A theory of change is a detailed impact pathway with clearly specified assumptions and internal and external enablers.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#ImpactPathway -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactPathway">
-        <cids:hasDescription xml:lang="en">An impact pathway is a “sequence that links organisations’ actions with their effects on people and the natural environment. The impact pathway describes the link between organisations’ inputs, activities and outputs with their effects on people and the natural environment, notably outcomes and impact.”</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#ImpactReport -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactReport">
-        <cids:hasDescription xml:lang="en">The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#ImpactRisk -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactRisk">
-        <cids:hasDescription xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected and that the difference will be material from the perspective of people or
-   the planet who experience impact.”</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Indicator -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Indicator">
-        <cids:hasDescription xml:lang="en">The terms “metric” and “indicator” are used interchangeably in the data standard. In this section, we define the Indicator, IndicatorReport, and
-   Target classes. Indicator is a subclass of i72:Indicator (see Section 3.5), which provides properties for units of measure, time and value.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Input -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Input">
-        <cids:hasDescription xml:lang="en">The direct result of an entity’s activities (e.g. wages paid, hours of training provided, products and services sold). It may also include
-   changes resulting from the entity’s actions or decisions which are relevant to achieving outcomes.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Organization -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization">
-        <cids:hasDescription xml:lang="en">The cids:Organization class is defined as a rdfs:subClass of org:Organization which provides the basic properties related to organization structure and behavior.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Outcome -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Outcome">
-        <cids:hasDescription xml:lang="en">The level of well-being experienced by a group of people, or the condition of the natural environment, as a result of an event or action.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#OutcomeChain -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#OutcomeChain">
-        <cids:hasDescription xml:lang="en">A simple impact model that “shows all the outcomes [from short-term to longer-term] required to bring about the
-   ultimate goal of an intervention” (Better Evaluation). On its own, an outcome chain is the simplest impact model. An outcome chain is often combined with
-   an impact pathway and/or theory of change to create a sophisticated impact model.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Output -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Output">
-        <cids:hasDescription xml:lang="en">The direct result of an entity’s activities (e.g. wages paid, hours of training provided, products and services sold). It may also include
-   changes resulting from the entity’s actions or decisions which are relevant to achieving outcomes.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Program -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Program">
-        <cids:hasDescription xml:lang="en">A  set of services that focus on a shared set of outcomes.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Stakeholder -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder">
-        <cids:hasDescription xml:lang="en"> A stakeholder either benefits from the services of an organization or contributes to them.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome">
-        <cids:hasDescription xml:lang="en">The outcome for a specific stakeholder, as well as properties of that outcome, such as if the stakeholder is underserved with
-   respect to this outcome. StakeholderOutcome is not an alternative to Outcome; rather it is a specialization of a more general Outcome but for a specific
-   stakeholder.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Target -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Target">
-        <cids:hasDescription xml:lang="en">The target is used to report the target value of an indicator and/or indicator report for some time interval.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Theme -->
-
-    <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#Theme">
-        <cids:hasDescription xml:lang="en">Describe a shared, high-level outcome pursued by many organizations.</cids:hasDescription>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#ac -->
 
     <owl:NamedIndividual rdf:about="https://ontology.commonapproach.org/cids-3.0#ac">
@@ -4382,7 +4190,6 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <foaf:name xml:lang="en">Common Approach to Impact Measurement</foaf:name>
         <cids:hasName xml:lang="en">Common Approach to Impact Measurement</cids:hasName>
     </owl:NamedIndividual>
-    
 
 
     <!-- https://ontology.commonapproach.org/cids-3.0#average -->
@@ -4495,7 +4302,6 @@ The CharacteristicReport class has the following properties:
 •	forCharacteristic: Identifies the Characteristics for which the report is being generated.
 •	numberOf: Specifies the number of members which possess the Characteristic.</rdfs:comment>
         <rdfs:label xml:lang="en">Characteristic Report</rdfs:label>
-        <cids:hasName xml:lang="en">Characteristic Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/StakeholderReport">
         <rdfs:comment>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time. 
@@ -4507,7 +4313,6 @@ The StakeholderReport class has the following properties:
 •	hasPerson: Identifies the Persons who are the Stakeholder being reported upon.
 •	forOrganization: Identifies the Organization for which the Stakeholder is being generated.</rdfs:comment>
         <rdfs:label xml:lang="en">Stakeholder Report</rdfs:label>
-        <cids:hasName xml:lang="en">Stakeholder Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Activity">
         <rdfs:comment xml:lang="en">Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the TOVE Activity (outlined in Section 3.7), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:
@@ -4521,17 +4326,8 @@ The StakeholderReport class has the following properties:
 • hasDescription: Specifies a description of the activity.
 • hasIdentiifier: Specifies a unique identifier for the activity.</rdfs:comment>
         <rdfs:label xml:lang="en">Activity</rdfs:label>
-        <cids:hasName xml:lang="en">Activity</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Characteristic">
-        <dc:description xml:lang="en">The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:
-•	forStakeholder: Identifies the Stakeholder affected.
-•	hasCode: Links to zero or more Codes that are externally defined taxonomies of Stakeholder characteristics.
-•	hasName: Specifies a name for the characteristic as a string. Can be inferred from hasCode.
-•	hasValue: Specifies a value for the characteristic as a string. It can be a number or a string corresponding to that characteristic and can be inferred from hasCode.
-•	prov:startedAtTime: The start of the time interval that the Stakeholder has the characteristic.
-•	prov:endedAtTime: The end of the time interval that the Stakeholder has the characteristic.
-•	prov:wasGeneratedBy: Identifies the activities that led to the Stakeholder having the characteristic.</dc:description>
         <rdfs:comment>The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:
 •	forStakeholder: Identifies the Stakeholder affected.
 •	hasCode: Links to zero or more Codes that are externally defined taxonomies of Stakeholder characteristics.
@@ -4541,17 +4337,8 @@ The StakeholderReport class has the following properties:
 •	prov:endedAtTime: The end of the time interval that the Stakeholder has the characteristic.
 •	prov:wasGeneratedBy: Identifies the activities that led to the Stakeholder having the characteristic.</rdfs:comment>
         <rdfs:label xml:lang="en">Characteristic</rdfs:label>
-        <cids:hasName xml:lang="en">Characteristic</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Code">
-        <dc:description>The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
-•	definedBy: The Organization that defined the code.
-•	hasSpecification: The URI where the definition of the code can be found.
-•	hasIdentifier: The code’s unique identifier.
-• hasName: A name or title for the code.
-•	hasDescription: A description of the code.
-•	schema:codeValue:  The value of the code, if appropriate.
-•	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</dc:description>
         <rdfs:comment xml:lang="en">The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
 •	definedBy: The Organization that defined the code.
 •	hasSpecification: The URI where the definition of the code can be found.
@@ -4561,7 +4348,6 @@ The StakeholderReport class has the following properties:
 •	schema:codeValue:  The value of the code, if appropriate.
 •	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</rdfs:comment>
         <rdfs:label xml:lang="en">Code</rdfs:label>
-        <cids:hasName xml:lang="en">Code</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Counterfactual">
         <rdfs:comment xml:lang="en">Counterfactual defines what the impact on stakeholders would be if the stakeholders did not receive the service. It has the following properties:
@@ -4573,7 +4359,6 @@ The StakeholderReport class has the following properties:
 •	i72:value: A measure that specifies the value of the counterfactual.
 •	i72:unit_of_measure: Specifies the units of measure of the counterfactual.</rdfs:comment>
         <rdfs:label xml:lang="en">Counterfactual</rdfs:label>
-        <cids:hasName xml:lang="en">Counterfactual</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#HowMuchImpact">
         <rdfs:comment xml:lang="en">HowMuchImpact defines the properties common to ImpactScale, ImpactDepth and ImpactDuration:
@@ -4584,34 +4369,16 @@ The StakeholderReport class has the following properties:
 •	i72:unit_of_measure: Specifies the units of measure of the impact.
 •	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</rdfs:comment>
         <rdfs:label xml:lang="en">How Much Impact</rdfs:label>
-        <cids:hasName xml:lang="en">How Much Impact</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactModel">
-        <dc:description>ImpactModel provides the most basic properties:
-•	hasName: a string containing a title for the model.
-•	hasDescription: a string containing a description of the model.
-•	sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.
-•	forOrganization: an object property that links to the Organization the model is for.</dc:description>
         <rdfs:comment xml:lang="en">ImpactModel provides the most basic properties:
 •	hasName: a string containing a title for the model.
 •	hasDescription: a string containing a description of the model.
 •	sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.
 •	forOrganization: an object property that links to the Organization the model is for.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Model</rdfs:label>
-        <cids:hasName xml:lang="en">Impact Model</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactPathway">
-        <dc:description>An impact pathway is a “sequence that links organizations’ actions with their effects on people and the natural environment.The top-level definition of the ImpactPathway class contains the following properties:
-•	hasInput: Identifies key Inputs for the model.
-•	hasOutput: Identifies key Outputs for the model.
-•	hasActivity: Identifies key Activities of the model.
-•	hasOutcome: Identifies key Outcomes for the model.
-•	hasIndicator: Identifies key Indicators for the model.
-•	hasIndicatorReport: A set of IndicatorReports associated with this model.
-•	hasStakeholder: Identifies key stakeholders participating in the pathway.
-•	hasStakeholderOutcome: Creates stakeholder-outcome pairing. This enables
-disaggregated data.
-•	hasProgram: Identifies the Programs being modelled, if different than the organization.</dc:description>
         <rdfs:comment>An impact pathway is a “sequence that links organizations’ actions with their effects on people and the natural environment.The top-level definition of the ImpactPathway class contains the following properties:
 •	hasInput: Identifies key Inputs for the model.
 •	hasOutput: Identifies key Outputs for the model.
@@ -4624,26 +4391,8 @@ disaggregated data.
 disaggregated data.
 •	hasProgram: Identifies the Programs being modelled, if different than the organization.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Pathway</rdfs:label>
-        <cids:hasName xml:lang="en">Impact Pathway</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactReport">
-        <dc:description xml:lang="en">The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:
-• How much of the outcome is occurring – across scale, depth and duration?
-• Would this change likely have happened anyway?
-
-An ImpactReport has the following properties:
-•	forOrganization: Links to the Organization for whom this report is associated.
-•	prov:startedAtTime: Specifies the start of the time interval the report covers.
-•	prov:endedAtTime: Specifies the end of the time interval the report covers.
-•	forOutcome: Links to the Organization’s Outcome for whom this report is associated.
-•	hasName: Name or title of the report.
-•	hasReportedImpact: Specifies one of three values for the impact as measured – positive, negative or neutral.
-•	hasImpactScale: Specifies the number of stakeholders who experience the outcome.
-•	hasImpactDepth: The degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders.
-•	hasImpactDuration: Impact Duration is the length of time that a stakeholder experiences an impact from the initial implementation.
-•	hasExpectation: A string field where any expectations that the organization has can be provided.
-•	hasImpactRisk: Links to information about Impact Risk as defined by Impact Management Norms.
-•	hasComment: A string field where any comments that the organization has can be provided.</dc:description>
         <rdfs:comment>The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:
 • How much of the outcome is occurring – across scale, depth and duration?
 • Would this change likely have happened anyway?
@@ -4662,7 +4411,6 @@ An ImpactReport has the following properties:
 •	hasImpactRisk: Links to information about Impact Risk as defined by Impact Management Norms.
 •	hasComment: A string field where any comments that the organization has can be provided.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Report</rdfs:label>
-        <cids:hasName xml:lang="en">Impact Report</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#ImpactRisk">
         <rdfs:comment xml:lang="en">ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. Risk is one of the five dimensions of impact as defined by the Impact Norms.
@@ -4674,7 +4422,6 @@ The following defines the key properties of ImpactRisk and its subclasses:
 •	hasIdentifier: A unique identifier for this risk.
 •	hasDescription: A description of this risk.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Risk</rdfs:label>
-        <cids:hasName xml:lang="en">Impact Risk</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Indicator">
         <rdfs:comment xml:lang="en">Indicator is a subclass of i72:Indicator, which provides properties for units of measure, time and value.
@@ -4699,7 +4446,6 @@ cids:Indicator extends the definition of i72:Indicator with the following proper
 •	hasHowMuch: Links to HowMuchImpact which defines the properties common to the subclasses ImpactScale, ImpactDepth, and ImpactDuration.
 •	sch:dateCreated: Is the date that the Indicator was created.</rdfs:comment>
         <rdfs:label xml:lang="en">Indicator</rdfs:label>
-        <cids:hasName xml:lang="en">Indicator</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Input">
         <rdfs:comment xml:lang="en">A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:
@@ -4719,21 +4465,8 @@ Properties common across all types of Input are:
 •	hasName: Identifies the name of the Input.
 •	hasDescription: A description of the Input.</rdfs:comment>
         <rdfs:label xml:lang="en">Input</rdfs:label>
-        <cids:hasName xml:lang="en">Input</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization">
-        <dc:description xml:lang="en">The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:
-•	org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.
-•	hasProgram: Identifies the Programs being modelled.
-•	hasIndicator: List of indicators associated with the Organization.
-•	hasOutcome: List of outcomes associated with the Organization.
-•	hasStakeholders: List of stakeholders associated with the Organization.
-•	hasCharacteristic: List of stakeholder characteristics associated with the Organization.
-•	hasContact: Identifies one or more contacts for the organization.
-•	hasDescription: a string that describes the Organization.
-•	hasWebAddress: a URI specifying the website for the organization.
-•	hasPurpose: text defining the purpose of the organization.
-•	sch:dateCreated: the date the Organization’s record was created.</dc:description>
         <rdfs:comment>The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:
 •	org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.
 •	hasProgram: Identifies the Programs being modelled.
@@ -4747,7 +4480,6 @@ Properties common across all types of Input are:
 •	hasPurpose: text defining the purpose of the organization.
 •	sch:dateCreated: the date the Organization’s record was created.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
-        <cids:hasName xml:lang="en">Organization</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Outcome">
         <rdfs:comment xml:lang="en">An outcome is the level of well-being experienced by a group of people, or the condition of the natural environment, as a result of an event or action (Source: Impact Management Norms). Outcomes are what stakeholders experience as a result of an organization’s activities. They can
@@ -4767,15 +4499,8 @@ An Outcome has the following properties:
 •	hasImpactReport: Identifies the set of ImpactReports that report on the results pertaining to each Outcome.
 •	sch:dateCreated: date the Outcome was defined.</rdfs:comment>
         <rdfs:label xml:lang="en">Outcome</rdfs:label>
-        <cids:hasName xml:lang="en">Outcome</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#OutcomeChain">
-        <dc:description>OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact
-modelling classes it uses. The top-level definition of an OutcomeChain contains the following
-properties:
-•	hasOutcome: identifies key Outcomes for the model
-•	hasActivity: identifies key Activities of the model
-•	hasIndicator: identifies the key Indicators of the model</dc:description>
         <rdfs:comment xml:lang="en">OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact
 modelling classes it uses. The top-level definition of an OutcomeChain contains the following
 properties:
@@ -4783,7 +4508,6 @@ properties:
 •	hasActivity: identifies key Activities of the model
 •	hasIndicator: identifies the key Indicators of the model</rdfs:comment>
         <rdfs:label xml:lang="en">Outcome Chain</rdfs:label>
-        <cids:hasName xml:lang="en">Outcome Chain</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Output">
         <rdfs:comment xml:lang="en">Outputs represent a quantitative summary of an activity. For example, if the activity is “we provide training,” the output is “we trained 50 people to NVQ level 3.” (Source: Social Value International, 2012.) An example of a production output would be “we produce 100 meals for people experiencing homelessness”. An output represents what has been produced and the quantity.
@@ -4797,7 +4521,6 @@ The Output class contains the following properties:
 •	hasName: Identifies the name of the Output.
 •	hasDescription: A description of the Output.</rdfs:comment>
         <rdfs:label xml:lang="en">Output</rdfs:label>
-        <cids:hasName xml:lang="en">Output</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Program">
         <rdfs:comment xml:lang="en">A program defines a set of services that focus on a shared set of Outcomes. For example, a “poverty reduction program” can be made up of services such as mobiles services that provide food and clothing to those experiencing homelessness. A Program has a set of Stakeholders who may contribute or benefit. The class contains the following properties:
@@ -4811,7 +4534,6 @@ The Output class contains the following properties:
 •	hasInput: identifies the Inputs to the Program.
 •	hasOutput: identifies the Outputs of the Program.</rdfs:comment>
         <rdfs:label xml:lang="en">Program</rdfs:label>
-        <cids:hasName xml:lang="en">Program</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Stakeholder">
         <rdfs:comment xml:lang="en">A stakeholder may be an individual person, but is more often a group or category of people, an organization, or a feature. Stakeholders may be described as either contributing or beneficial stakeholders, as suggested by Social Value International. Stakeholders may also be identified by their roles, as specified by the Impact Management Norms: customers, employees, communities, suppliers, and planet.
@@ -4826,7 +4548,6 @@ Stakeholder contains the following properties:
 • oep:part of: Links the Impact Model that the Stakeholder is being specified for.
 •	forOrganization: Identifies the Organization which is associated with this Stakeholder.</rdfs:comment>
         <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
-        <cids:hasName xml:lang="en">Stakeholder</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#StakeholderOutcome">
         <rdfs:comment xml:lang="en">StakeholderOutcome specifies the outcome for a specific stakeholder, as well as properties of that outcome, such as if the stakeholder is underserved with respect to this outcome. StakeholderOutcome is not an alternative to Outcome; rather it is a specialization of a more general Outcome but for a specific stakeholder. Its properties are:
@@ -4842,7 +4563,6 @@ Stakeholder contains the following properties:
 •	hasIndicator: Identifies the set of Indicators the Organization assigns to the Outcome but are specific to this Stakeholder.
 •	hasImpactReport: identifies the set of ImpactReport that report on the results pertaining to each Outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">StakeholderOutcome</rdfs:label>
-        <cids:hasName xml:lang="en">StakeholderOutcome</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Target">
         <rdfs:comment>The target is used to report the target value of an indicator and/or indicator report for some time interval. In addition to the target value and time interval of the target, this class also reports the units of measure of the target, the date the target was created, the name of the target, and
@@ -4857,7 +4577,6 @@ This class contains the following properties:
 •	sch:dateCreated: Is the date that the Target was created.
 •	forIndicatorReport: Links to the Indicator Reports which are associated with the target.</rdfs:comment>
         <rdfs:label xml:lang="en">Target</rdfs:label>
-        <cids:hasName xml:lang="en">Target</cids:hasName>
     </rdf:Description>
     <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Theme">
         <rdfs:Label xml:lang="en">Theme</rdfs:Label>
@@ -4867,7 +4586,6 @@ Outcomes contribute to themes. It has the following properties:
 •	hasName: A string that provides a name for the Theme.
 •	hasDescription: A string that provides a description for the Theme.
 •	relatesTo: Links a Theme to another Theme.</rdfs:comment>
-        <cids:hasName xml:lang="en">Theme</cids:hasName>
     </rdf:Description>
 </rdf:RDF>
 
