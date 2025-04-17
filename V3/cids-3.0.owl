@@ -3673,37 +3673,6 @@ A person can play a role at an organization. For any role, a person can be assig
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#RatioIndicator -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#RatioIndicator">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Indicator"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#denominator"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#numerator"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_division"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An indicator that is the ratio of two quantities.</rdfs:comment>
-        <rdfs:label xml:lang="en">Ratio Indicator</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#Service -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Service">
