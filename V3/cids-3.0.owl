@@ -2032,15 +2032,6 @@ The StakeholderReport class has the following properties:
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#DirectionOfChange -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DirectionOfChange">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:label>Direction of Change</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#Disability -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Disability">
