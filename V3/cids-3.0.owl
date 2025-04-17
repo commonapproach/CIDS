@@ -1938,23 +1938,6 @@ The StakeholderReport class has the following properties:
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#CompositeCharacteristic -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#CompositeCharacteristic">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#hasPart"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic"/>
-        <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
-        <rdfs:label>Composite Characteristic</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#ContributingStakeholder -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#ContributingStakeholder">
@@ -3686,16 +3669,6 @@ A person can play a role at an organization. For any role, a person can be assig
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Planet">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#PrimitiveCharacteristic">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Characteristic"/>
-        <rdfs:comment xml:lang="en">Characteristic has two disjoint subclasses: PrimitiveCharacteristic and CompositeCharacteristic. The latter is the result of combining other characteristics that identified using the hasPart property.</rdfs:comment>
-        <rdfs:label>Primitive Characteristic</rdfs:label>
     </owl:Class>
     
 
