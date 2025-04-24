@@ -2032,27 +2032,6 @@ The StakeholderReport class has the following properties:
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#Disability -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Disability">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:comment xml:lang="en">Disabilities is an umbrella term, covering impairments, activity limitations, and participation restrictions. An impairment is a problem in body function or structure; an activity limitation is a difficulty encountered by an individual in executing a task or action; while a participation restriction is a problem experienced by an individual in involvement in life situations. (World Health Organization)</rdfs:comment>
-        <rdfs:label xml:lang="en">Disability</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Disease -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Disease">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:comment xml:lang="en">disease can be defined as an unhealthy condition resulting in an incorrect function in an individual. This can affect one or more organs, a specific part of the body or the whole body. It can be mental or physical and extends to all forms of life, including bacteria, plants, animals and humans.
-(Canadian Encyclopedia, https://www.thecanadianencyclopedia.ca/en/article/disease)</rdfs:comment>
-        <rdfs:label xml:lang="en">Disease</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#DropOffRisk -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#DropOffRisk">
@@ -2281,16 +2260,6 @@ The StakeholderReport class has the following properties:
 •	i72:unit_of_measure: Specifies the units of measure of the impact.
 •	hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</rdfs:comment>
         <rdfs:label xml:lang="en">How Much Impact</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#ImmigrationStatus -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#ImmigrationStatus">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:comment xml:lang="en">A non-citizen’s position in a country—for example, permanent resident or visitor. (Government of Canada, https://www.canada.ca/en/services/immigration-citizenship/helpcentre/glossary.html)</rdfs:comment>
-        <rdfs:label xml:lang="en">Immigration Status</rdfs:label>
     </owl:Class>
     
 
@@ -3107,16 +3076,6 @@ Properties common across all types of Input are:
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#MaritalStatus -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#MaritalStatus">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:comment xml:lang="en">United Nations&apos; &quot;Principles and Recommendations for Population and Housing Censuses, Revision 2&quot;, 2008. As in this standard, the Principles define marital status as &quot;the personal status of each individual in relation to the marriage laws or customs of the country&quot; and recommend the following categories: single or never married; married; widowed and not remarried; divorced and not remarried; and, married but separated. Also, the Principles recommend that, where the number of persons whose only or most recent marriage was annulled is insignificant, the individuals in this group should be classified according to their marital status before the (annulled) marriage took place.</rdfs:comment>
-        <rdfs:label xml:lang="en">Marital Status</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#Organization -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Organization">
@@ -3475,30 +3434,6 @@ The Output class contains the following properties:
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#parentOf"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasDisability"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Disability"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasDisease"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Disease"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImmigrationStatus"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ImmigrationStatus"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasMaritalStatus"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#MaritalStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
