@@ -2143,7 +2143,7 @@ The StakeholderReport class has the following properties:
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasType"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#FinancialResource"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2192,19 +2192,6 @@ The StakeholderReport class has the following properties:
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">an institution (public or private) that collects funds (from the public or other institutions) and invests them in financial assets. (https://www.vocabulary.com/dictionary/financial%20organization)</rdfs:comment>
         <rdfs:label xml:lang="en">Financial Organization</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#FinancialResource -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#FinancialResource">
-        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#PhysicalResource"/>
-        <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#SkillResource"/>
-        <rdfs:comment xml:lang="en">Liquid assets including cash, bank deposits and liquid financial investments</rdfs:comment>
-        <rdfs:label xml:lang="en">Financial Resource</rdfs:label>
     </owl:Class>
     
 
@@ -3502,24 +3489,12 @@ A person can play a role at an organization. For any role, a person can be assig
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasType"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#PhysicalResource"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:
 •	hasType: a PhysicalResource object indicating the type of PhysicalInput.</rdfs:comment>
         <rdfs:label xml:lang="en">Physical Input</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#PhysicalResource -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#PhysicalResource">
-        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <owl:disjointWith rdf:resource="https://ontology.commonapproach.org/cids-3.0#SkillResource"/>
-        <rdfs:comment xml:lang="en">Physical resources are tangible items. Some of the most common physical resources include raw materials, buildings and facilities, machinery, energy, and supplies.</rdfs:comment>
-        <rdfs:label xml:lang="en">Physical Resource</rdfs:label>
     </owl:Class>
     
 
@@ -3725,23 +3700,12 @@ Service is a subclass of Activity and can be related to one or more Programs. It
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasType"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#SkillResource"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:
 •	hasType: A SkillResource object indicating the type of SkillInput.</rdfs:comment>
         <rdfs:label xml:lang="en">Skill Input</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#SkillResource -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#SkillResource">
-        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
-        <rdfs:comment xml:lang="en">A skill is the ability to do something well; expertise. A skill resource is a skill that is available for use, normally possessed by a person.</rdfs:comment>
-        <rdfs:label xml:lang="en">Skill Resource</rdfs:label>
     </owl:Class>
     
 
