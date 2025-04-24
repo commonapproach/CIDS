@@ -1321,6 +1321,14 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasImpactManagementNormsDefinition -->
+
+    <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImpactManagementNormsDefinition">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#hasImportance -->
 
     <owl:DatatypeProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasImportance">
@@ -1754,25 +1762,49 @@ The StakeholderReport class has the following properties:
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasRole"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Client"/>
-                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Community"/>
-                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Employee"/>
-                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Planet"/>
-                            <rdf:Description rdf:about="https://ontology.commonapproach.org/cids-3.0#Supplier"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#benefitsFrom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#benefitsFrom"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Outcome"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasImpactManagementNormsDefinition"/>
+                <owl:allValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:oneOf>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Client</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Community</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Employee</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Planet</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>Supplier</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </owl:oneOf>
+                    </rdfs:Datatype>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome.</rdfs:comment>
@@ -1856,14 +1888,6 @@ The StakeholderReport class has the following properties:
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#Client -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Client">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#Code -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Code">
@@ -1926,14 +1950,6 @@ The StakeholderReport class has the following properties:
 •	schema:codeValue:  The value of the code, if appropriate.
 •	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</rdfs:comment>
         <rdfs:label xml:lang="en">Code</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Community -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Community">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
     
 
@@ -2060,14 +2076,6 @@ The StakeholderReport class has the following properties:
         </rdfs:subClassOf>
         <rdfs:label>Efficiency Risk</rdfs:label>
         <skos:definition xml:lang="en">Efficiency Risk considers an impact that could have been achieved with fewer resources or at a lower cost. The probability that the impact could have been achieved with fewer resources or at a lower cost.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Employee -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Employee">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
     
 
@@ -3499,14 +3507,6 @@ A person can play a role at an organization. For any role, a person can be assig
     
 
 
-    <!-- https://ontology.commonapproach.org/cids-3.0#Planet -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Planet">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
-    </owl:Class>
-    
-
-
     <!-- https://ontology.commonapproach.org/cids-3.0#Program -->
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Program">
@@ -4021,14 +4021,6 @@ Stakeholder contains the following properties:
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A standards organization, standards body, standards developing organization (SDO), or standards setting organization (SSO) is an organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards[1] to address the needs of a group of affected adopters. (https://en.wikipedia.org/wiki/Standards_organization)</rdfs:comment>
         <rdfs:label xml:lang="en">Standards Organization</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://ontology.commonapproach.org/cids-3.0#Supplier -->
-
-    <owl:Class rdf:about="https://ontology.commonapproach.org/cids-3.0#Supplier">
-        <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#Stakeholder"/>
     </owl:Class>
     
 
