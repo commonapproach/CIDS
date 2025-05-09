@@ -929,6 +929,14 @@
     
 
 
+    <!-- https://ontology.commonapproach.org/cids-3.0#hasValue -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#hasValue">
+        <rdfs:subPropertyOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://ontology.commonapproach.org/cids-3.0#inputFor -->
 
     <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/cids-3.0#inputFor">
@@ -1811,12 +1819,6 @@ The StakeholderReport class has the following properties:
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids-3.0#cidsThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasValue"/>
-                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Activity"/>
             </owl:Restriction>
@@ -1831,6 +1833,12 @@ The StakeholderReport class has the following properties:
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasCode"/>
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#hasValue"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
