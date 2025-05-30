@@ -101,9 +101,9 @@
             "@id": "cids:forOutcome",
             "@type": "cids:Outcome"
         },
-        "forStakholder": {
-            "@id": "cids:forStakholder",
-            "@type": "cids:Stakholder"
+        "forStakeholder": {
+            "@id": "cids:forStakeholder",
+            "@type": "cids:Stakeholder"
         },
         "canEnable": {
             "@id": "cids:canEnable",
@@ -264,7 +264,7 @@
             "@type": "xsd:nonNegativeNumber"
         },
         "usedByIndicator": {
-            "@id": "cids:Indicator",
+            "@id": "cids:usedByIndicator",
             "@type": "cids:Indicator"
         },
         "usesOutput": {
