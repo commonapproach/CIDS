@@ -1808,7 +1808,10 @@ The StakeholderReport class has the following properties:
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome. It has the following properties:
+
+•	benefitsFrom: the Outcomes that confer a benefit to the Stakeholder
+•	hasImpactManagementNormsDefinition: Beneficial Stakeholders may be identified by their roles, as specified by the Impact Management Norms: customers, employees, communities, suppliers, and/or planet.</rdfs:comment>
         <rdfs:label xml:lang="en">Beneficial Stakeholder</rdfs:label>
     </owl:Class>
     
@@ -1942,14 +1945,16 @@ The StakeholderReport class has the following properties:
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The Common Impact Data Standard is designed to work with other standards. There are many schemas and taxonomies to support impact measurement. To support interoperability between standards, the Common Impact Data Standard uses the Code class. The Code class is used to reference taxonomies of outcomes, stakeholder characteristics, themes, indicators, etc. Taxonomies can be externally defined, as in the SDGs or IRIS+ Indicators; or they can be internally defined, such as a list of StakeholderCharacteristics. An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
+        <rdfs:comment xml:lang="en">An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:
 •	definedBy: The Organization that defined the code.
 •	hasSpecification: The URI where the definition of the code can be found.
 •	hasIdentifier: The code’s unique identifier.
 • hasName: A name or title for the code.
 •	hasDescription: A description of the code.
 •	schema:codeValue:  The value of the code, if appropriate.
-•	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</rdfs:comment>
+•	i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.
+
+hasIdentifier, hasName, hasDescription, and codeValue act as a cache of the equivalent information to be found in the specification of the Code referred to by hasSpecification. The following table defines the Code class.</rdfs:comment>
         <rdfs:label xml:lang="en">Code</rdfs:label>
     </owl:Class>
     
@@ -1966,7 +1971,9 @@ The StakeholderReport class has the following properties:
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids#Input"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. It has the following properties:
+
+•	contributes: names the Inputs contributed by the Stakeholder. Inputs are for Programs, Services, or Activities.</rdfs:comment>
         <rdfs:label xml:lang="en">Contributing Stakeholder</rdfs:label>
     </owl:Class>
     
@@ -2264,7 +2271,9 @@ The StakeholderReport class has the following properties:
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids#ImpactDepth">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#HowMuchImpact"/>
-        <rdfs:comment xml:lang="en">The degree of change experienced by the stakeholder. Depth is calculated by analysing the change that has occured between the &apos;Outcome level at base line&apos; and the &apos;Outcome level in period&apos;.  In other words % increase in Outcome relative to baseline.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The degree of change experienced by the stakeholder. Depth is calculated by analysing the change that has occured between the &apos;Outcome level at base line&apos; and the &apos;Outcome level in period&apos;.  In other words % increase in Outcome relative to baseline.
+
+Refers to indicators that measure the degree of change experienced by the stakeholders compared to some baseline determined prior to the service being provided.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Depth</rdfs:label>
     </owl:Class>
     
@@ -2289,7 +2298,9 @@ The StakeholderReport class has the following properties:
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The time period for which the stakeholder experience the outcome.
-•	time:hasTime: defines the time interval for which the stakeholder experiences the outcome.</rdfs:comment>
+•	time:hasTime: defines the time interval for which the stakeholder experiences the outcome.
+
+Refers to indicators that measure how long the stakeholder experiences, or is likely to experience, the outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Duration</rdfs:label>
     </owl:Class>
     
@@ -2382,7 +2393,9 @@ The StakeholderReport class has the following properties:
                 <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#StakeholderOutcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>An impact pathway is a “sequence that links organizations’ actions with their effects on people and the natural environment.The top-level definition of the ImpactPathway class contains the following properties:
+        <rdfs:comment>ImpactPathway is a subclass of ImpactModel. Its properties link to the main impact modelling classes used by an impact pathway and contain the properties defined in the [Impact Management Platform](https://impactmanagementplatform.org/impact/). 
+
+The top-level definition of the ImpactPathway class contains the following properties:
 •	hasInput: Identifies key Inputs for the model.
 •	hasOutput: Identifies key Outputs for the model.
 •	hasActivity: Identifies key Activities of the model.
@@ -2654,7 +2667,9 @@ The following defines the key properties of ImpactRisk and its subclasses:
 •	hasConsequence: Identifies the degree of impact the risk could have.
 •	hasMitigation: A string that specifies a mitigation plan or references a document.
 •	hasIdentifier: A unique identifier for this risk.
-•	hasDescription: A description of this risk.</rdfs:comment>
+•	hasDescription: A description of this risk.
+
+Note that the subclasses of risk do not have properties that distinguish one from another. These will be provided in later versions as needed.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Risk</rdfs:label>
     </owl:Class>
     
@@ -2664,7 +2679,9 @@ The following defines the key properties of ImpactRisk and its subclasses:
 
     <owl:Class rdf:about="https://ontology.commonapproach.org/cids#ImpactScale">
         <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#HowMuchImpact"/>
-        <rdfs:comment xml:lang="en">Specifies the number of stakeholders who experience the outcome.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Specifies the number of stakeholders who experience the outcome.
+
+Refers to indicators that measure the number of individuals who are affected by the social purpose organization’s outcome.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact Scale</rdfs:label>
     </owl:Class>
     
@@ -3149,7 +3166,30 @@ Properties common across all types of Input are:
 •	hasDescription: a string that describes the Organization.
 •	hasWebAddress: a URI specifying the website for the organization.
 •	hasPurpose: text defining the purpose of the organization.
-•	sch:dateCreated: the date the Organization’s record was created.</rdfs:comment>
+•	sch:dateCreated: the date the Organization’s record was created.
+
+The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization below. 
+
+cids:Organization reuses and extends the TOVE Organization Ontology (Fox et al., 1998). The TOVE Organization Ontology is accessible at http://ontology.eil.utoronto.ca/tove/organization.owl.
+
+The following properties of org:Organization are inherited by cids:Organization:
+
+•	org:hasID: Ties to a unique recognized/public identifier for the Organization, e.g. a business number, charity number, etc.
+•	ic:has Address: The main address of the Organization.
+•	org:hasLegalName: Is a string that specifies the legal name of the Organization.
+•	org:hasLegalStatus: An instance of a class that specifies the legal status of the Organization. The legal status will differ based on country.
+•	ic:hasTelephone: Main phone numbers of the Organization.
+•	org:numberOfEmployees: A non-negative integer that specifies the Organization’s number of employees.
+•	hasContact: Identifies one or more people who are the contact for the Organization.
+•	org:consistsOf: An org:Organization may be divided into org:Divisions.
+
+The following properties of org:OrganizationID are also inherited by cids:Organization:
+
+•	org:issuedBy: Identifies the entity that issued the OrganizationID.
+•	hasIdentifier: The number created by the issuing organization.
+•	sch:dateCreated: The date the identifier was created.
+
+Note that org:FormalOrganization is a subclass of org:Organization to distinguish it from informal organizations. No additional properties are defined but can be extended by the user.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
     
@@ -3242,7 +3282,7 @@ Properties common across all types of Input are:
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An outcome is the level of well-being experienced by a group of people, or the condition of the natural environment, as a result of an event or action (Source: Impact Management Norms). Outcomes are what stakeholders experience as a result of an organization’s activities. They can
+        <rdfs:comment xml:lang="en">Outcomes are what stakeholders experience as a result of an organization’s activities. They can
 be positive or negative, intended or unintended.
 
 An Outcome has the following properties:
@@ -3821,7 +3861,7 @@ Service is a subclass of Activity and can be related to one or more Programs. It
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A stakeholder may be an individual person, but is more often a group or category of people, an organization, or a feature. Stakeholders may be described as either contributing or beneficial stakeholders, as suggested by Social Value International. Stakeholders may also be identified by their roles, as specified by the Impact Management Norms: customers, employees, communities, suppliers, and planet.
+        <rdfs:comment xml:lang="en">A stakeholder may be an individual person, but is more often a group or category of people, an organization, or a feature. Stakeholders may be described as either contributing or beneficial stakeholders, as suggested by [Social Value International](https://www.socialvalueint.org/). Stakeholders may also be identified by their roles, as specified by the [Impact Management Norms](https://impactfrontiers.org/norms/): customers, employees, communities, suppliers, and planet.
 
 Stakeholder contains the following properties:
 •	hasName (title): A title for the stakeholder as a string.
