@@ -1100,7 +1100,7 @@ cids:Activity rdf:type owl:Class ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:string
                               ] ;
-              rdfs:comment """<p>Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the TOVE Activity (outlined in Section 3.7), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:</p>
+              rdfs:comment """<p>Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the [TOVE Activity](https://ontology.commonapproach.org/foundational-ontologies.html#tove-activity), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:</p>
 <ul>
 <li>canProduce: Specifies the Outcome that results from performance of the Activity. It is used primarily for representing Outcome Chains.</li>
 <li>oep:partOf: Identifies the Impact Model it is a component of.</li>
@@ -1426,7 +1426,8 @@ cids:FinancialInput rdf:type owl:Class ;
                                                     rdf:type owl:Class
                                                   ]
                                     ] ;
-                    rdfs:comment """<p>Financial resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+                    rdfs:comment """<p>FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt.</p>
+<p>Financial resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
 <ul>
 <li>hasType: a FinancialResource object indicating the type of FinancialInput.</li>
 <li>hasAmount: a Quantity and Unit of measure indicating the amount of the FinancialResource.</li>
@@ -2075,12 +2076,7 @@ cids:Input rdf:type owl:Class ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
                            ] ;
-           rdfs:comment """<p>A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:</p>
-<ul>
-<li>FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt.</li>
-<li>SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.</li>
-<li>PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.</li>
-</ul>
+           rdfs:comment """<p>Inputs specify the resources required by a social purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input: [FinancialInput](#FinancialInput), [SkillInput](#SkillInput), and [PhysicalInput](#PhysicalInput).</p>
 
 <p>Properties common across all types of Input are:</p>
 <ul>
@@ -2337,6 +2333,7 @@ cids:Output rdf:type owl:Class ;
                               owl:onDataRange xsd:string
                             ] ;
             rdfs:comment """<p>Outputs represent a quantitative summary of an activity. For example, if the activity is “we provide training,” the output is “we trained 50 people to NVQ level 3.” (Source: Social Value International, 2012.) An example of a production output would be “we produce 100 meals for people experiencing homelessness”. An output represents what has been produced and the quantity.</p>
+<p><em>Note: Many impact models illustrate outputs leading to outcomes. Outputs describe the quantity of activity.</em></p>
 <p>The Output class contains the following properties:</p>
 <ul>
 <li>oep:partOf: specifies the impact models this Output is part of</li>
@@ -2435,7 +2432,8 @@ cids:PhysicalInput rdf:type owl:Class ;
                                      owl:onProperty cids:hasType ;
                                      owl:allValuesFrom act:Resource
                                    ] ;
-                   rdfs:comment """<p>Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+                   rdfs:comment """<p>PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.</p>
+<p>Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
 <ul>
 <li>hasType: a PhysicalResource object indicating the type of PhysicalInput.</li>
 </ul>"""@en ;
@@ -2589,7 +2587,8 @@ cids:SkillInput rdf:type owl:Class ;
                                   owl:onProperty cids:hasType ;
                                   owl:allValuesFrom act:Resource
                                 ] ;
-                rdfs:comment """<p>Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+                rdfs:comment """<p>SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.</p>
+<p>Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
 <ul>
 <li>hasType: A SkillResource object indicating the type of SkillInput.</li>
 </ul>"""@en ;
