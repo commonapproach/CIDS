@@ -83,7 +83,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#hasPrimaryContact"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Person"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#Person"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -110,37 +110,37 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#localityServed"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#Locality"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#Locality"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#provinceTerritoryServed"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#ProvinceTerritory"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#ProvinceTerritory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#primaryPopulationServed"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#PopulationServed"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#PopulationServed"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#organizationType"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#OrganizationType"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#OrganizationType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#servesEDG"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#EquityDeservingGroup"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#EquityDeservingGroup"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#hasFundingStatus"/>
-                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids-3.0#FundingStatus"/>
+                <owl:allValuesFrom rdf:resource="https://ontology.commonapproach.org/cids#FundingStatus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -454,9 +454,9 @@
       <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:Restriction>
     <owl:Restriction rdf:about="#forceHasDescription">
-                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids-3.0#forOrganization"/>
+                <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids#forOrganization"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids-3.0#Organization"/>
+                <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids#Organization"/>
             </owl:Restriction>
 
        
