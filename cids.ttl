@@ -30,7 +30,7 @@
 @base <https://ontology.commonapproach.org/cids> .
 
 <https://ontology.commonapproach.org/cids> rdf:type owl:Ontology ;
-                                            owl:versionIRI <https://ontology.commonapproach.org/cids-3.1.0> ;
+                                            owl:versionIRI <https://ontology.commonapproach.org/cids/3.1.0> ;
                                             owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl> ,
                                                         <http://ontology.eil.utoronto.ca/tove/activity.owl> ,
                                                         <http://ontology.eil.utoronto.ca/tove/icontact.owl> ,
@@ -43,7 +43,7 @@
                                             dcterms:title "Common Impact Data Standard"@en ;
                                             vann:preferredNamespacePrefix "cids" ;
                                             vann:preferredNamespaceUri "https://ontology.commonapproach.org/cids#" ;
-                                            owl:priorVersion <https://ontology.commonapproach.org/cids-3.0> ;
+                                            owl:priorVersion <https://ontology.commonapproach.org/cids/3.0> ;
                                             owl:versionInfo "3.1.0"@en ;
                                             adms:relatedDocumentation "Common Approach to Impact Measurement (2023) “Technical Guide: The Common Impact Data Standard V3.1.0 An Ontology for Representing Impact”, Common Approach to Impact Measurement. DOI 10.5281/zenodo.7930431 https://www.commonapproach.org/wp-content/uploads/2023/05/Common-Approach_Common-Impact-Data-Standard_Current-version.pdf"@en .
 
