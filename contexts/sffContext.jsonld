@@ -41,6 +41,10 @@
 
 
 
+        "hasOrganizationProfile": {
+            "@id": "sff:hasOrganizationProfile",
+            "@type": "sff:OrganizationProfile"
+        },
         "hasManagementTeamProfile": {
             "@id": "sff:hasManagementTeamProfile",
             "@type": "sff:TeamProfile"
