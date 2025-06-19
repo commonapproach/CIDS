@@ -36,9 +36,9 @@
                                                         <http://ontology.eil.utoronto.ca/tove/icontact.owl> ,
                                                         <http://ontology.eil.utoronto.ca/tove/organization.owl> ,
                                                         <http://www.w3.org/2006/time.rdf> ;
-                                            cc:license "Common Impact Data Standard V3.1.0 © 2024 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/" ;
+                                            cc:license "Common Impact Data Standard V3.1.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/" ;
                                             dcterms:creator cids:ac ;
-                                            dcterms:date "01-24-2024" ;
+                                            dcterms:date "06-16-2025" ;
                                             dcterms:description "The Common Impact Data Standard (CIDS) provides a standard representation for the core concepts and attributes that underlie impact models (e.g., logic model, impact thesis, theory of change, etc.), inputs, activities, outputs, and outcomes."@en ;
                                             dcterms:title "Common Impact Data Standard"@en ;
                                             vann:preferredNamespacePrefix "cids" ;
