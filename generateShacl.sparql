@@ -1,0 +1,86 @@
+prefix : <file://wsl.localhost/Ubuntu/home/kurt/BuildAlignmentShapes.sparql#>
+prefix afn: <http://jena.apache.org/ARQ/function#>
+prefix apf: <http://jena.apache.org/ARQ/property#>
+prefix cids: <https://ontology.commonapproach.org/cids#>
+prefix csvw: <http://www.w3.org/2013/csvw#>
+prefix dash: <http://www.w3.org/ns/shacl/dash#>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix ex: <http://ex.org/a#>
+prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+prefix org: <http://ontology.eil.utoronto.ca/tove/organization#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix schema: <http://schema.org/PostalAddress#>
+prefix sff: <https://ontology.commonapproach.org/sff-1.0#>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix tarql: <http://tarql.github.io/tarql#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+CONSTRUCT {
+   ?classShape a sh:NodeShape ;
+     sh:targetClass ?class ;
+     sh:property ?propertyShape .
+    ?propertyShape a sh:PropertyShape ;
+      sh:path ?property ;
+      rdfs:label ?label ;
+      sh:minCount ?minOccurs ;
+      sh:maxCount ?maxOccurs ;
+      sh:nodeKind ?nodeKind ;
+      sh:class ?targetClass ;
+      sh:datatype ?datatype ;
+      sh:name ?activeName ;
+      sh:description ?description ;
+      sh:order ?rowNum ;
+      .
+}
+WHERE
+{
+  bind(?ROWNUM as ?rowNum)
+  bind(tarql:expandPrefixedName(?PROPERTYNS) as ?property)
+  bind(tarql:expandPrefixedName(concat(?PROPERTYNS,"_PropertyShape")) as ?propertyShape)
+  bind(tarql:expandPrefixedName(?CLASSNS) as ?class)
+  bind(tarql:expandPrefixedName(concat(?CLASSNS,"_NodeShape")) as ?classShape)
+  bind(if(?NodeKind = "Class", sh:IRI, sh:Literal) as ?nodeKind)
+  bind(xsd:integer(?MinOccurs) as ?minOccurs)
+  bind(if(?MaxOccurs != "unbounded", xsd:integer(?MaxOccurs),?unBoundVar) as ?maxOccurs)
+  bind(if(?nodeKind = sh:IRI, tarql:expandPrefixedName(?TargetClass), ?unBoundVar) as ?targetClass)
+  bind(if(?nodeKind = sh:Literal, tarql:expandPrefixedName(?datatype), ?unBoundVar) as ?datatype)
+  bind(xsd:string(coalesce(?Name, strAfter(?PROPERTYNS,":"))) as ?activeName)
+  bind(lcase(coalesce(?Label, replace(?activeName,"([A-Z])"," $1"))) as ?label)
+  bind(?Definition as ?description)
+
+#  bind(str(cids:) as ?cids)
+#  bind(str(sff:) as ?sff)
+#  bind(str(ic:) as ?ic)
+
+#  bind(str(?CLASS) as ?classCurie)
+#  bind(strBefore(?classCurie,":") as ?classPrefix)
+#  bind(strAfter(?classCurie,":") as ?classLocalName)
+#  bind(str(?PROPERTYNS) as ?propertyCurie)
+#  bind(strBefore(?propertyCurie,":") as ?propertyPrefix)
+#  bind(strAfter(?propertyCurie,":") as ?propertyLocalName)
+#  bind(tarql:expandPrefixedName(?CLASS) as ?class)
+
+
+#  bind(if(?NAMESPACE = "cids", ?cids, if(?NAMESPACE = "sff", ?sff, if(?NAMESPACE = "ic", ?ic, ?NAMESPACE))) as ?namespace)
+#  bind (IRI(CONCAT(?cids, ?CLASS,'_NodeShape')) as ?nodeShape)
+#  bind(IRI(CONCAT(STR(cids:),?CLASS)) as ?class)
+#  bind(CONCAT("This is the node shape ",?nodeShape," for the class ",?CLASS) as ?nsComment)
+#  bind(if(contains(?PROPERTY,":"),strBefore(?PROPERTY,":"),?NAMESPACE) as ?propertyPrefix)
+#  bind(if(contains(?PROPERTY,":"),strAfter(?PROPERTY,":"),?PROPERTY) as ?propertyLocalName)
+#  bind(IRI(CONCAT(?namespace,?propertyLocalName)) as ?property)
+#  bind(IRI(CONCAT(str(?property),"_PropertyShape")) as ?propertyShape)
+#  bind(xsd:integer(?MinOccurs) as ?minOccurs)
+#  bind(if(?MaxOccurs != "unbounded", xsd:integer(?MaxOccurs),?unBoundVar) as ?maxOccurs)
+#  bind(if(bound(?TargetClass),sh:IRI, sh:Literal) as ?nodeKind)
+#  bind(if(bound(?TargetClass),strBefore(?TargetClass,":"), ?unBoundVar) as ?targetClassPrefix)
+#  bind(if(bound(?targetClassPrefix),if(?targetClassPrefix = "cids", ?cids, if(?targetClassPrefix = "sff", ?sff, if(?targetClassPrefix = "ic", ?ic, ?targetClassPrefix))), ?unBoundVar) as ?targetClassNamespace)
+#  bind(if(bound(?targetClassNamespace),IRI(CONCAT(?targetClassNamespace, strAfter(?TargetClass,":"))), ?unBoundVar) as ?targetClass)
+#  bind(if(bound(?Datatype),iri(concat(str(xsd:),strAfter(?Datatype,":"))), ?unBoundVar) as ?datatype)
+#  bind(xsd:string(coalesce(?Name, ?propertyLocalName)) as ?activeName)#
+#  bind(?Definition as ?definition)
+}
+ORDER By ?rowNum
