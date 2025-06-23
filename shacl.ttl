@@ -503,7 +503,16 @@ cids:hasAddress_PropertyShape
         rdfs:label      "has address" ;
         sh:minCount     0 ;
         sh:nodeKind     sh:IRI ;
-        sh:class        schema:PostalAddress ;
+        sh:class        sh:or (
+		[
+			sh:path schema:PostalAddress ;
+			sh:minCount 1 ;
+		]
+		[
+			sh:path ic:Address ;
+			sh:minCount 1 ;
+		]
+	) schema:PostalAddress ;
         sh:name         "hasAddress" ;
         sh:description  "The address of the Organization. This property is a subproperty of schema:address. It is used to specify the address of the organization." ;
         sh:order        39 .
