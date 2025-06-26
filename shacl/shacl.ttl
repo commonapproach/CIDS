@@ -506,11 +506,9 @@ cids:hasAddress_PropertyShape
         sh:or (
 		[
 			sh:class schema:PostalAddress ;
-			sh:minCount 1 ;
 		]
 		[
-			sh:path ic:Address ;
-			sh:minCount 1 ;
+			sh:class ic:Address ;
 		]
 	) ;
         sh:name         "hasAddress" ;
