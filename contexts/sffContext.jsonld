@@ -1,181 +1,143 @@
 {
-    "@context": {
-        "act": "http://ontology.eil.utoronto.ca/tove/activity#",
-        "adms": "http://www.w3.org/ns/adms#",
-        "cc": "http://creativecommons.org/ns#",
-        "cids": "https://ontology.commonapproach.org/cids#",
-        "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
-        "dash": "http://datashapes.org/dash#",
-        "dc": "http://purl.org/dc/elements/1.1/",
-        "dcat": "http://www.w3.org/ns/dcat#",
-        "dcterms": "http://purl.org/dc/terms/",
-        "dqv": "http://www.w3.org/ns/dqv#",
-        "foaf": "http://xmlns.com/foaf/0.1/",
-        "geo": "http://www.geonames.org/ontology/ontology_v3.1.rdf#",
-        "graphql": "http://datashapes.org/graphql#",
-        "i72": "http://ontology.eil.utoronto.ca/ISO21972/iso21972#",
-        "ic": "http://ontology.eil.utoronto.ca/tove/icontact#",
-        "oep": "http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#",
-        "org": "http://ontology.eil.utoronto.ca/tove/organization#",
-        "owl": "http://www.w3.org/2002/07/owl#",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "rel": "http://purl.org/vocab/relationship/",
-        "sch": "http://schema.org/",
-        "sff": "https://ontology.commonapproach.org/sff#",
-        "sh": "http://www.w3.org/ns/shacl#",
-        "skos": "http://www.w3.org/2004/02/skos/core#",
-        "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
-        "swa": "http://topbraid.org/swa#",
-        "terms": "http://purl.org/dc/terms/",
-        "time": "http://www.w3.org/2006/time#",
-        "tosh": "http://topbraid.org/tosh#",
-        "vann": "http://purl.org/vocab/vann/",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "xdmp": "http://marklogic.com/xdmp#",
-        "sem": "http://marklogic.com/semantics#",
-        "ca": "https://ontology.commonapproach.org/",
-        "prov": "http://www.w3.org/ns/prov#",
-        "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-        "iso5087": "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/",
-
-
-
-        "hasOrganizationProfile": {
-            "@id": "sff:hasOrganizationProfile",
-            "@type": "sff:OrganizationProfile"
-        },
-        "hasManagementTeamProfile": {
-            "@id": "sff:hasManagementTeamProfile",
-            "@type": "sff:TeamProfile"
-        },
-        "hasBoardProfile": {
-            "@id": "sff:hasBoardProfile",
-            "@type": "sff:TeamProfile"
-        },
-        "sectorServed": {
-            "@id": "sff:sectorServed",
-            "@type": "sff:Sector"
-        },
-        "localityServed": {
-            "@id": "sff:localityServed",
-            "@type": "sff:Locality"
-        },
-        "provinceTerritoryServed": {
-            "@id": "sff:provinceTerritoryServed",
-            "@type": "sff:ProvinceTerritory"
-        },
-        "hasIndicatorReport": {
-            "@id": "cids:hasIndicatorReport",
-            "@type": "cids:IndicatorReport"
-        },
-        "organizationType": {
-            "@id": "sff:organizationType",
-            "@type": "sff:OrganizationType"
-        },
-        "servesEDG": {
-            "@id": "sff:servesEDG",
-            "@type": "sff:EquityDeservingGroup"
-        },
-        "hasFundingStatus": {
-            "@id": "sff:hasFundingStatus",
-            "@type": "sff:FundingStatus"
-        },
-        "reportedDate": {
-            "@id": "sff:reportedDate",
-            "@type": "xsd:date"
-        },
-        "ReportInfo": {
-            "@id": "sff:reportInfo",
-            "@type": "sff:reportInfo"
-        },
-        "hasFundingState": {
-            "@id": "sff:hasFundingState",
-            "@type": "sff:FundingState"
-        },
-        "forFunder": {
-            "@id": "sff:forFunder",
-            "@type": "xsd:string"
-        },
-        "forOrganization": {
-            "@id": "cids:forOrganization",
-            "@type": "cids:Organization"
-        },
-        "hasName": {
-            "@id": "cids:hasName",
-            "@type": "xsd:string"
-        },
-        "hasDescription": {
-            "@id": "cids:hasDescription",
-            "@type": "xsd:string"
-        },
-        "TeamProfle": {
-            "@id": "sff:TeamProfile",
-            "@type": "sff:TeamProfile"
-        },
-        "hasTeamSize": {
-            "@id": "sff:hasTeamSize",
-            "@type": "xsd:nonNegativeInteger"
-        },
-        "hasEDGSize": {
-            "@id": "sff:hasEDGSize",
-            "@type": "xsd:nonNegativeInteger"
-        },
-        "hasEDGProfile": {
-            "@id": "sff:hasEDGProfile",
-            "@type": "sff:EDGProfile"
-        },
-        "hasComment": {
-            "@id": "sff:hasComment",
-            "@type": "xsd:string"
-        },
-        "EDGProfle": {
-            "@id": "sff:EDGProfile",
-            "@type": "sff:EDGProfile"
-        },
-        "forEDG": {
-            "@id": "sff:forEDG",
-            "@type": "sff:EquityDeservingGroup"
-        },
-        "hasSize": {
-            "@id": "sff:hasSize",
-            "@type": "xsd:nonNegativeInteger"
-        },
-        "EquityDeservingGroup": {
-            "@id": "sff:EquityDeservingGroup",
-            "@type": "sff:EquityDeservingGroup"
-        },
-        "isDefined": {
-            "@id": "sff:isDefined",
-            "@type": "xsd:boolean"
-        },
-        "hasPrimaryContact": {
-            "@id": "sff:hasPrimaryContact",
-            "@type": "cids:Person"
-        },
-        "primaryPopulationServed": {
-            "@id": "sff:primaryPopulationServed",
-            "@type": "cids:Code"
-        },
-        "forFunderId": {
-            "@id": "sff:forFunderId",
-            "@type": "@id"
-        },
-        "hasCharacteristic": {
-            "@id": "cids:hasCharacteristic",
-            "@type": "cids:Characteristic"
-        },
-        "hasCode": {
-            "@id": "cids:hasCode",
-            "@type": "cids:Code"
-        },
-        "hasValue": {
-            "@id": "cids:hasValue",
-            "@type": "xsd:string"
-        },
-        "hasIdentifier": {
-            "@id": "org:hasIdentifier",
-            "@type": "xsd:string"
-        }
+  "@context": {
+    "act": "http://ontology.eil.utoronto.ca/tove/activity#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "cc": "http://creativecommons.org/ns#",
+    "cids": "https://ontology.commonapproach.org/cids#",
+    "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
+    "dash": "http://datashapes.org/dash#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.geonames.org/ontology/ontology_v3.1.rdf#",
+    "graphql": "http://datashapes.org/graphql#",
+    "i72": "http://ontology.eil.utoronto.ca/ISO21972/iso21972#",
+    "ic": "http://ontology.eil.utoronto.ca/tove/icontact#",
+    "oep": "http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#",
+    "org": "http://ontology.eil.utoronto.ca/tove/organization#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rel": "http://purl.org/vocab/relationship/",
+    "sch": "http://schema.org/",
+    "sff": "https://ontology.commonapproach.org/sff#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
+    "swa": "http://topbraid.org/swa#",
+    "terms": "http://purl.org/dc/terms/",
+    "time": "http://www.w3.org/2006/time#",
+    "tosh": "http://topbraid.org/tosh#",
+    "vann": "http://purl.org/vocab/vann/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "xdmp": "http://marklogic.com/xdmp#",
+    "sem": "http://marklogic.com/semantics#",
+    "ca": "https://ontology.commonapproach.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "iso5087": "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/",
+    
+    "hasOrganizationProfile": {
+      "@id": "sff:hasOrganizationProfile",
+      "@type": "@id"
+    },
+    "hasManagementTeamProfile": {
+      "@id": "sff:hasManagementTeamProfile",
+      "@type": "@id"
+    },
+    "hasBoardProfile": {
+      "@id": "sff:hasBoardProfile",
+      "@type": "@id"
+    },
+    "sectorServed": {
+      "@id": "sff:sectorServed",
+      "@type": "@id"
+    },
+    "localityServed": {
+      "@id": "sff:localityServed",
+      "@type": "@id"
+    },
+    "provinceTerritoryServed": {
+      "@id": "sff:provinceTerritoryServed",
+      "@type": "@id"
+    },
+    "organizationType": {
+      "@id": "sff:organizationType",
+      "@type": "@id"
+    },
+    "servesEDG": {
+      "@id": "sff:servesEDG",
+      "@type": "@id"
+    },
+    "hasFundingStatus": {
+      "@id": "sff:hasFundingStatus",
+      "@type": "@id"
+    },
+    "reportedDate": {
+      "@id": "sff:reportedDate",
+      "@type": "xsd:date"
+    },
+    "ReportInfo": {
+      "@id": "sff:reportInfo",
+      "@type": "@id"
+    },
+    "hasFundingState": {
+      "@id": "sff:hasFundingState",
+      "@type": "@id"
+    },
+    "forFunder": {
+      "@id": "sff:forFunder",
+      "@type": "xsd:string"
+    },
+    "TeamProfile": {
+      "@id": "sff:TeamProfile",
+      "@type": "@id"
+    },
+    "hasTeamSize": {
+      "@id": "sff:hasTeamSize",
+      "@type": "xsd:nonNegativeInteger"
+    },
+    "hasEDGSize": {
+      "@id": "sff:hasEDGSize",
+      "@type": "xsd:nonNegativeInteger"
+    },
+    "hasEDGProfile": {
+      "@id": "sff:hasEDGProfile",
+      "@type": "@id"
+    },
+    "hasComment": {
+      "@id": "sff:hasComment",
+      "@type": "xsd:string"
+    },
+    "forEDG": {
+      "@id": "sff:forEDG",
+      "@type": "@id"
+    },
+    "hasSize": {
+      "@id": "sff:hasSize",
+      "@type": "xsd:nonNegativeInteger"
+    },
+    "EquityDeservingGroup": {
+      "@id": "sff:EquityDeservingGroup",
+      "@type": "@id"
+    },
+    "isDefined": {
+      "@id": "sff:isDefined",
+      "@type": "xsd:boolean"
+    },
+    "hasPrimaryContact": {
+      "@id": "sff:hasPrimaryContact",
+      "@type": "@id"
+    },
+    "primaryPopulationServed": {
+      "@id": "sff:primaryPopulationServed",
+      "@type": "@id"
+    },
+    "forFunderId": {
+      "@id": "sff:forFunderId",
+      "@type": "@id"
     }
+  }
 }

@@ -1,5 +1,4 @@
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix cids3: <https://ontology.commonapproach.org/cids-3.0#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -28,7 +27,7 @@ sff:
   ns0:term_status "Stable"@en, "Stable"@fr ;
   void:inDataset sff:datasetdefinition ;
   dc:rights "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
-  dc:creator cids3:ac ;
+  dc:creator cids:ac ;
   dc:description "An Ontology for Representing Social Finance Fund Reporting Requirements"@en ;
   dc:title "Social Finance Fund Companion Module"@en ;
   foaf:name "Social Finance Fund Companion Module"@en ;
@@ -40,12 +39,12 @@ sff:
 sff:datasetdefinition
   a void:Dataset, schema:Dataset, dcat:Dataset ;
   dc:rights <https://creativecommons.org/licenses/by-sa/4.0/> ;
-  dc:creator cids3:ac ;
+  dc:creator cids:ac ;
   dc:description "An Ontology for Representing Social Finance Fund Reporting Requirements"@en ;
   dc:title "Social Finance Fund Companion Module"@en ;
   foaf:name "Social Finance Fund Companion Module"@en ;
   ns2:license <https://creativecommons.org/licenses/by-sa/4.0/>, "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en ;
-  ns2:creator cids3:ac ;
+  ns2:creator cids:ac ;
   rdfs:isDefinedBy sff: .
 
 sff:OrganizationProfile
@@ -56,7 +55,7 @@ sff:OrganizationProfile
   rdfs:subClassOf "", [
     a owl:Restriction ;
     owl:onProperty sff:hasPrimaryContact ;
-    owl:allValuesFrom cids3:Person ;
+    owl:allValuesFrom cids:Person ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
@@ -71,31 +70,31 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:sectorServed ;
-    owl:allValuesFrom sff:Sector
+    owl:allValuesFrom cids:Sector
   ], [
     a owl:Restriction ;
     owl:onProperty sff:localityServed ;
-    owl:allValuesFrom cids3:Locality
+    owl:allValuesFrom cids:Locality
   ], [
     a owl:Restriction ;
     owl:onProperty sff:provinceTerritoryServed ;
-    owl:allValuesFrom cids3:ProvinceTerritory
+    owl:allValuesFrom cids:ProvinceTerritory
   ], [
     a owl:Restriction ;
     owl:onProperty sff:primaryPopulationServed ;
-    owl:allValuesFrom cids3:PopulationServed
+    owl:allValuesFrom cids:PopulationServed
   ], [
     a owl:Restriction ;
     owl:onProperty sff:organizationType ;
-    owl:allValuesFrom cids3:OrganizationType
+    owl:allValuesFrom cids:OrganizationType
   ], [
     a owl:Restriction ;
     owl:onProperty sff:servesEDG ;
-    owl:allValuesFrom cids3:EquityDeservingGroup
+    owl:allValuesFrom sff:EquityDeservingGroup
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasFundingStatus ;
-    owl:allValuesFrom cids3:FundingStatus
+    owl:allValuesFrom sff:FundingStatus
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
@@ -267,7 +266,7 @@ sff:EDGProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:forEDG ;
-    owl:allValuesFrom <https://ontology.commonapproach.org/EquityDeservingGroup> ;
+    owl:allValuesFrom sff:EquityDeservingGroup ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
   ] .
 
@@ -347,8 +346,8 @@ sff:hasEDGProfile
 
 sff:forceHasDescription
   a owl:Restriction ;
-  owl:onProperty cids:hasDescription, cids3:forOrganization ;
+  owl:onProperty cids:hasDescription, cids:forOrganization ;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
   owl:onDataRange xsd:string ;
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass cids3:Organization .
+  owl:onClass cids:Organization .
