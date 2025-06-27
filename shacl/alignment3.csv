@@ -32,7 +32,7 @@
 ,cids:Code,cids,hasDescription_PropertyShape,Class,Sector,cids:Sector,1,1,cids:Sector,,Code list defined by ESDC. Values to this code  list can be added.,FALSE,
 ,cids:Code,cids,,Class,Sector,cids:Sector,1,1,cids:Sector,,Code list defined by ESDC. Values to this code  list can be added.,FALSE,
 ,cids:Code,cids,,Class,ProvinceTerritory,cids:ProvinceTerritory,1,1,cids:Locality,,Code list defined by ESDC. Values to this code  list can not be modified or added.,FALSE,
-,cids:Code,cids,,,OrganizationType,cids:OrganizationType,1,1,cids:OrganizationType,,Code list defined by ESDC. Values to this code  list can not be modified or added.,FALSE,,
+,cids:Code,cids,,,OrganizationType,cids:OrganizationType,1,1,cids:OrganizationType,,Code list defined by ESDC. Values to this code  list can not be modified or added.,FALSE,
 ,cids:Code,cids,,Class,PopulationServed,cids:PopulationServed,1,1,cids:PopulationServed,,Code list defined by ESDC. Values to this code  list can be added.,FALSE,
 ,cids:Code,cids,,Class,EquityDeservingGroupESDC,cids:Theme,1,,cids:PopulationServed,,"Code list defined by ESDC. Values to this code list can be substiuted, modifed, or added.",FALSE,
 ,cids:Code,cids,,Literal,SDG,cids:SDG,1,1,cids:Theme,,Code list defined by United Nations' Sustainable Development Goals. Values to this code list can not be modified or added.,FALSE,
