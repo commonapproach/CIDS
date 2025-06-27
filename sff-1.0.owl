@@ -273,7 +273,7 @@
     </owl:Class>
 
     <owl:Class rdf:about="#FundingState">
-      <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#CODE"/>
+      <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#Code"/>
       <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
       <rdfs:label xml:lang="en">Funding State</rdfs:label>
       <cids:hasName xml:lang="en">Funding State</cids:hasName>
