@@ -52,7 +52,12 @@ sff:OrganizationProfile
   rdfs:label "Organization Profile"@en ;
   cids:hasName "Organization Profile"@en ;
   cids:hasDescription "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en ;
-  rdfs:subClassOf "", [
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty cids:forOrganization ;
+    owl:allValuesFrom cids:Organization ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
+  ],[
     a owl:Restriction ;
     owl:onProperty sff:hasPrimaryContact ;
     owl:allValuesFrom cids:Person ;
@@ -60,12 +65,10 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasManagementTeamProfile ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onClass sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasBoardProfile ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onClass sff:TeamProfile
   ], [
     a owl:Restriction ;
@@ -98,7 +101,7 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ] ;
   void:inDataset sff:datasetdefinition ;
@@ -119,7 +122,6 @@ sff:Sector
   rdfs:label "Sector"@en ;
   cids:hasName "Sector"@en ;
   cids:hasDescription "Sectors provide a high-level view of an organization's core focus and the general type of activities it conducts, helping to standardize its profile within the broader landscape of similar entities."@en ;
-  rdfs:subClassOf sff:forceHasOrganization ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -128,7 +130,12 @@ sff:ReportInfo
   rdfs:label "Report Info"@en ;
   cids:hasName "Report Info"@en ;
   cids:hasDescription "Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name."@en ;
-  rdfs:subClassOf sff:forceHasOrganization, [
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty cids:forOrganization ;
+    owl:allValuesFrom cids:Organization ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
+  ], [
     a owl:Restriction ;
     owl:onProperty prov:startedAtTime ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -155,7 +162,7 @@ sff:FundingStatus
     owl:onProperty sff:reportedDate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
-  ], sff:forceHasDescription, sff:forceHasOrganization, [
+  ], [
     a owl:Restriction ;
     owl:onProperty sff:forFunder ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -177,7 +184,7 @@ sff:TeamProfile
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ], [
     a owl:Restriction ;
@@ -192,12 +199,11 @@ sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasEDGProfile ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange sff:EDGProfile
+    owl:onClass sff:EDGProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasComment ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:string
   ] ;
   void:inDataset sff:datasetdefinition ;
@@ -205,7 +211,7 @@ sff:TeamProfile
 
 sff:FundingState
   a owl:Class, skos:ConceptScheme ;
-  rdfs:subClassOf cids:Code, sff:forceHasDescription ;
+  rdfs:subClassOf cids:Code ;
   rdfs:label "Funding State"@en ;
   cids:hasName "Funding State"@en ;
   cids:hasDescription "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;
@@ -277,9 +283,9 @@ sff:EquityDeservingGroup
   cids:hasDescription "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
-    owl:onProperty sff:hasCharacteristic ;
-    owl:onDataRange sff:Characteristic
-  ], sff:forceHasDescription, [
+    owl:onProperty cids:hasCharacteristic ;
+    owl:onDataRange cids:Characteristic
+  ], [
     a owl:Restriction ;
     owl:onProperty sff:isDefined ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -344,10 +350,3 @@ sff:hasEDGProfile
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
-sff:forceHasDescription
-  a owl:Restriction ;
-  owl:onProperty cids:hasDescription, cids:forOrganization ;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onDataRange xsd:string ;
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass cids:Organization .
