@@ -5,7 +5,7 @@
 This document outlines the process for generating and using a SHACL file to validate data against the Common Impact Data Standard (CIDS) ontology.
 
 The workflow consists of two main steps:
-1.  **Generation**: A Tarql query (`generateShacl.sparql`) is run against a CSV file (`alignment3.csv`) to automatically generate SHACL shapes (`shacl.ttl`).
+1.  **Generation**: A Tarql query (`generateShacl.sparql`) is run against a CSV file (`CIDSandSFF.csv`) to automatically generate SHACL shapes (`shacl.ttl`).
 2.  **Validation**: A Python script (`validate_script.py`) uses the generated `shacl.ttl` file to validate a given CIDS RDF data file.
 
 ---
