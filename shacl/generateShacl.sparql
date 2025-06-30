@@ -52,6 +52,8 @@ WHERE
   bind(lcase(coalesce(?Label, replace(?activeName,"([A-Z])"," $1"))) as ?label)
   bind(?Definition as ?description)
 
+# older and more verbose approach below, replaced by more efficient approach of tarql:expandPrefixedName
+
 #  bind(str(cids:) as ?cids)
 #  bind(str(sff:) as ?sff)
 #  bind(str(ic:) as ?ic)

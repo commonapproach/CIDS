@@ -218,7 +218,7 @@ sff:applied
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Applied"@en, "Appliqué"@fr ;
   cids:hasName "Applied" ;
-  rdfs:comment "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
+  cids:hasDescription "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -227,7 +227,7 @@ sff:rejected
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Rejected"@en, "Rejetée"@fr ;
   cids:hasName "Rejected" ;
-  rdfs:comment "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
+  cids:hasDescription "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -236,7 +236,7 @@ sff:funded
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Funded"@en, "Alloué"@fr ;
   cids:hasName "Funded" ;
-  rdfs:comment "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
+  cids:hasDescription "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -245,7 +245,7 @@ sff:inReview
   skos:inScheme sff:FundingState ;
   skos:prefLabel "In Review"@en, "Sous-évaluation"@fr ;
   cids:hasName "In Review" ;
-  rdfs:comment "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
+  cids:hasDescription "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 

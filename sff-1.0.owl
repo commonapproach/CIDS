@@ -453,7 +453,7 @@
       <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
       <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:Restriction>
-    <owl:Restriction rdf:about="#forceHasDescription">
+    <owl:Restriction rdf:about="#forceHasOrganization">
                 <owl:onProperty rdf:resource="https://ontology.commonapproach.org/cids#forOrganization"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://ontology.commonapproach.org/cids#Organization"/>
