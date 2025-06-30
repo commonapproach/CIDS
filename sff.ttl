@@ -50,14 +50,9 @@ sff:datasetdefinition
 sff:OrganizationProfile
   a owl:Class ;
   rdfs:label "Organization Profile"@en ;
-  cids:hasName "Organization Profile"@en ;
-  cids:hasDescription "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty cids:forOrganization ;
-    owl:allValuesFrom cids:Organization ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
-  ],[
+  cids:hasName "Organization Profile" ;
+  rdfs:comment "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en ;
+  rdfs:subClassOf sff:forceHasOrganization,[
     a owl:Restriction ;
     owl:onProperty sff:hasPrimaryContact ;
     owl:allValuesFrom cids:Person ;
@@ -112,24 +107,24 @@ sff:hasOrganizationProfile
   rdfs:domain cids:Organization ;
   rdfs:range sff:OrganizationProfile ;
   rdfs:label "hasOrganizationProfile"@en ;
-  cids:hasName "hasOrganizationProfile"@en ;
-  cids:hasDescription "Links an Organization to its Social Finance Fund (SFF) profile."@en ;
+  cids:hasName "hasOrganizationProfile" ;
+  rdfs:comment "Links an Organization to its Social Finance Fund (SFF) profile."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:Sector
   a owl:Class ;
   rdfs:label "Sector"@en ;
-  cids:hasName "Sector"@en ;
-  cids:hasDescription "Sectors provide a high-level view of an organization's core focus and the general type of activities it conducts, helping to standardize its profile within the broader landscape of similar entities."@en ;
+  cids:hasName "Sector" ;
+  rdfs:comment "Sectors provide a high-level view of an organization's core focus and the general type of activities it conducts, helping to standardize its profile within the broader landscape of similar entities."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:ReportInfo
   a owl:Class ;
   rdfs:label "Report Info"@en ;
-  cids:hasName "Report Info"@en ;
-  cids:hasDescription "Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name."@en ;
+  cids:hasName "Report Info" ;
+  rdfs:comment "Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name."@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty cids:forOrganization ;
@@ -155,9 +150,9 @@ sff:ReportInfo
 sff:FundingStatus
   a owl:Class ;
   rdfs:label "Funding Status"@en ;
-  cids:hasName "Funding Status"@en ;
-  cids:hasDescription "Provides information on the status of an organization’s application to a funder or investor."@en ;
-  rdfs:subClassOf [
+  cids:hasName "Funding Status" ;
+  rdfs:comment "Provides information on the status of an organization’s application to a funder or investor."@en ;
+  rdfs:subClassOf sff:forceHasDescription, sff:forceHasOrganization, [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -179,8 +174,8 @@ sff:FundingStatus
 sff:TeamProfile
   a owl:Class ;
   rdfs:label "Team Profile"@en ;
-  cids:hasName "Team Profile"@en ;
-  cids:hasDescription "A profile of a board or management team for a specified interval of time."@en ;
+  cids:hasName "Team Profile" ;
+  rdfs:comment "A profile of a board or management team for a specified interval of time."@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
@@ -213,8 +208,8 @@ sff:FundingState
   a owl:Class, skos:ConceptScheme ;
   rdfs:subClassOf cids:Code ;
   rdfs:label "Funding State"@en ;
-  cids:hasName "Funding State"@en ;
-  cids:hasDescription "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;
+  cids:hasName "Funding State" ;
+  rdfs:comment "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -222,8 +217,8 @@ sff:applied
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Applied"@en, "Appliqué"@fr ;
-  cids:hasName "Applied"@en, "Appliqué"@fr ;
-  cids:hasDescription "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
+  cids:hasName "Applied" ;
+  rdfs:comment "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -231,8 +226,8 @@ sff:rejected
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Rejected"@en, "Rejetée"@fr ;
-  cids:hasName "Rejected"@en, "Rejetée"@fr ;
-  cids:hasDescription "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
+  cids:hasName "Rejected" ;
+  rdfs:comment "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -240,8 +235,8 @@ sff:funded
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Funded"@en, "Alloué"@fr ;
-  cids:hasName "Funded"@en, "Alloué"@fr ;
-  cids:hasDescription "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
+  cids:hasName "Funded" ;
+  rdfs:comment "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
@@ -249,16 +244,16 @@ sff:inReview
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "In Review"@en, "Sous-évaluation"@fr ;
-  cids:hasName "In Review"@en, "Sous-évaluation"@fr ;
-  cids:hasDescription "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
+  cids:hasName "In Review" ;
+  rdfs:comment "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:EDGProfile
   a owl:Class ;
   rdfs:label "EDG Profile"@en ;
-  cids:hasName "EDG Profile"@en ;
-  cids:hasDescription "Information about the number of members belonging to a specific equity deserving group, as part of a board or management team, for a designated time interval."@en ;
+  cids:hasName "EDG Profile" ;
+  rdfs:comment "Information about the number of members belonging to a specific equity deserving group, as part of a board or management team, for a designated time interval."@en ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
@@ -279,9 +274,9 @@ sff:EDGProfile
 sff:EquityDeservingGroup
   a owl:Class ;
   rdfs:label "Equity Deserving Group"@en ;
-  cids:hasName "Equity Deserving Group"@en ;
-  cids:hasDescription "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en ;
-  rdfs:subClassOf [
+  cids:hasName "Equity Deserving Group" ;
+  rdfs:comment "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en ;
+  rdfs:subClassOf sff:forceHasDescription, [
     a owl:Restriction ;
     owl:onProperty cids:hasCharacteristic ;
     owl:onDataRange cids:Characteristic
@@ -297,56 +292,67 @@ sff:EquityDeservingGroup
 sff:hasTeamSize
   a owl:DatatypeProperty ;
   rdfs:label "Team Size"@en ;
-  cids:hasName "Team Size"@en ;
-  cids:hasDescription "Number of people on the team."@en ;
+  cids:hasName "Team Size" ;
+  rdfs:comment "Number of people on the team."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:hasCharacteristic
   a owl:DatatypeProperty ;
   rdfs:label "has Characteristic"@en ;
-  cids:hasName "has Characteristic"@en ;
-  cids:hasDescription "Specifies the group using a Characteristic. Links to one or more instances of Characteristic."@en ;
+  cids:hasName "has Characteristic" ;
+  rdfs:comment "Specifies the group using a Characteristic. Links to one or more instances of Characteristic."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:isDefined
   a owl:DatatypeProperty ;
   rdfs:label "isDefined"@en ;
-  cids:hasName "isDefined"@en ;
-  cids:hasDescription "Specifies whether the equity deserving group is defined with reference to an external code. Its value is a single xsd:Boolean."@en ;
+  cids:hasName "isDefined" ;
+  rdfs:comment "Specifies whether the equity deserving group is defined with reference to an external code. Its value is a single xsd:Boolean."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:hasEDGSize
   a owl:DatatypeProperty ;
   rdfs:label "EDG Size"@en ;
-  cids:hasName "EDG Size"@en ;
-  cids:hasDescription "Number of people on the team who are members of an equity deserving group."@en ;
+  cids:hasName "EDG Size" ;
+  rdfs:comment "Number of people on the team who are members of an equity deserving group."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:hasComment
   a owl:DatatypeProperty ;
   rdfs:label "Comment"@en ;
-  cids:hasName "Comment"@en ;
-  cids:hasDescription "Provides additional information about the team profile if needed."@en ;
+  cids:hasName "Comment" ;
+  rdfs:comment "Provides additional information about the team profile if needed."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:reportedDate
   a owl:DatatypeProperty ;
   rdfs:label "Reported Date"@en ;
-  cids:hasName "Reported Date"@en ;
-  cids:hasDescription "Specifies the date to which the reported information applies."@en ;
+  cids:hasName "Reported Date" ;
+  rdfs:comment "Specifies the date to which the reported information applies."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
 sff:hasEDGProfile
   a owl:ObjectProperty ;
   rdfs:label "EDG Profile"@en ;
-  cids:hasName "EDG Profile"@en ;
-  cids:hasDescription "Profiles each of the EDG groups that are present on the management team. Links to one or more instances of EDGProfile."@en ;
+  cids:hasName "EDG Profile" ;
+  rdfs:comment "Profiles each of the EDG groups that are present on the management team. Links to one or more instances of EDGProfile."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
 
+sff:forceHasDescription
+  a owl:Restriction ;
+  owl:onProperty cids:hasDescription;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange xsd:string .
+
+sff:forceHasOrganization
+  a owl:Restriction ;
+  owl:onProperty cids:forOrganization ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass cids:Organization .
