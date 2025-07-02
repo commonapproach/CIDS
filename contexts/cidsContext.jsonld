@@ -3,7 +3,7 @@
     "act": "http://ontology.eil.utoronto.ca/tove/activity#",
     "adms": "http://www.w3.org/ns/adms#",
     "cc": "http://creativecommons.org/ns#",
-    "cids": "http://ontology.commonapproach.org/cids#",
+    "cids": "https://ontology.commonapproach.org/cids#",
     "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
     "dash": "http://datashapes.org/dash#",
     "dc": "http://purl.org/dc/elements/1.1/",
