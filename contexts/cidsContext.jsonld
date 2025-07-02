@@ -3,7 +3,7 @@
     "act": "http://ontology.eil.utoronto.ca/tove/activity#",
     "adms": "http://www.w3.org/ns/adms#",
     "cc": "http://creativecommons.org/ns#",
-    "cids": "https://ontology.commonapproach.org/cids#",
+    "cids": "http://ontology.commonapproach.org/cids#",
     "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
     "dash": "http://datashapes.org/dash#",
     "dc": "http://purl.org/dc/elements/1.1/",
@@ -22,7 +22,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rel": "http://purl.org/vocab/relationship/",
     "sch": "http://schema.org/",
-    "sff": "https://ontology.commonapproach.org/sff#",
+    "sff": "http://ontology.commonapproach.org/sff#",
     "sh": "http://www.w3.org/ns/shacl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
@@ -34,10 +34,10 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "xdmp": "http://marklogic.com/xdmp#",
     "sem": "http://marklogic.com/semantics#",
-    "ca": "https://ontology.commonapproach.org/",
     "prov": "http://www.w3.org/ns/prov#",
     "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "iso5087": "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/",
+
     "hasImpactModel": {
       "@id": "cids:hasImpactModel",
       "@type": "@id"
@@ -293,6 +293,14 @@
     "relatesTo": {
       "@id": "cids:relatesTo",
       "@type": "@id"
+    },
+    "prov:startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "prov:endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
     }
   }
 }
