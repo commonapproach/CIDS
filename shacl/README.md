@@ -59,7 +59,7 @@ python validate_script.py <path_to_your_data.ttl> <path_to_shacl.ttl>
 
 Example:
 ```bash
-python validate_script.py my_cids_data.ttl shacl.ttl
+python validate_script.py my_cids_data.jsonld shacl.ttl
 ```
 
 ### Output
