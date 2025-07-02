@@ -1,4 +1,3 @@
-@prefix : <https://ontology.commonapproach.org/cids> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#> .
