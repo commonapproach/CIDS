@@ -4,11 +4,6 @@
 # This script validates a JSON-LD data file against a SHACL shapes file.
 # It requires the paths to the data file and the SHACL file to be provided
 # as command-line arguments.
-#
-# Optional setup commands in local application folder
-# python3 -m venv venv
-# source venv/bin/activate
-# pip install pyshacl
 # 
 # Example run command from local folder
 # python validate_script.py CIDSBasicandSFF.json shacl.ttl
