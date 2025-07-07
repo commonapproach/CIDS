@@ -294,11 +294,11 @@
       "@id": "cids:relatesTo",
       "@type": "@id"
     },
-    "prov:startedAtTime": {
+    "startedAtTime": {
       "@id": "prov:startedAtTime",
       "@type": "xsd:dateTime"
     },
-    "prov:endedAtTime": {
+    "endedAtTime": {
       "@id": "prov:endedAtTime",
       "@type": "xsd:dateTime"
     }
