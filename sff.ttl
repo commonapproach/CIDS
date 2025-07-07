@@ -60,11 +60,11 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasManagementTeamProfile ;
-    owl:onClass sff:TeamProfile
+    owl:allValuesFrom sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasBoardProfile ;
-    owl:onClass sff:TeamProfile
+    owl:allValuesFrom sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:sectorServed ;
