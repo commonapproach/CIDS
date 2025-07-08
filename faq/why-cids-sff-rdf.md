@@ -1,1 +1,1 @@
-# Why use CIDS/SFF?:
+# Why are CIDS and SFF in RDF?
