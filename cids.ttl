@@ -162,6 +162,14 @@ act:subActivityOf rdf:type owl:ObjectProperty .
 ###  http://ontology.eil.utoronto.ca/tove/icontact#hasAddress
 ic:hasAddress rdf:type owl:ObjectProperty .
 
+###  https://ontology.commonapproach.org/cids#hasAddress
+cids:hasAddress rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty ;
+                cids:belongsToTier cids:BasicTier ; 
+                rdfs:label "has Address"@en ;
+                rdfs:comment "Links an entity to its postal address."@en ;
+                rdfs:range cids:Address .
+
 
 ###  http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone
 ic:hasTelephone rdf:type owl:ObjectProperty .
@@ -928,6 +936,69 @@ cids:isUnderserved rdf:type owl:DatatypeProperty ;
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasLegalName
 org:hasLegalName cids:belongsToTier cids:BasicTier .
 
+###  https://ontology.commonapproach.org/cids#streetAddress
+cids:streetAddress rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty ;
+                      cids:belongsToTier cids:BasicTier ; 
+                      rdfs:label "Street Address"@en ;
+                      rdfs:comment "The street address. For example, 720 Bathurst St."@en ;
+                      rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressLocality
+cids:addressLocality rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:subPropertyOf cids:cidsDataProperty ;
+                        cids:belongsToTier cids:BasicTier ; 
+                        rdfs:label "Address Locality (City)"@en ;
+                        rdfs:comment "The city or locality. For example, Toronto."@en ;
+                        rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressRegion
+cids:addressRegion rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty ;
+                      cids:belongsToTier cids:BasicTier ; 
+                      rdfs:label "Address Region (State/Province)"@en ;
+                      rdfs:comment "The region or state. For example, ON."@en ;
+                      rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#postalCode
+cids:postalCode rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty ;
+                   cids:belongsToTier cids:BasicTier ;
+                   rdfs:label "Postal Code"@en ;
+                   rdfs:comment "The postal code. For example, M4S2R4."@en ;
+                   rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressCountry
+cids:addressCountry rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:subPropertyOf cids:cidsDataProperty ;
+                       cids:belongsToTier cids:BasicTier ; 
+                       rdfs:label "Address Country"@en ;
+                       rdfs:comment "The country. For example, Canada. Also can be used to provide the two-letter ISO 3166-1 alpha-2 country code e.g. CA."@en ;
+                       rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#postOfficeBoxNumber
+cids:postOfficeBoxNumber rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:subPropertyOf cids:cidsDataProperty ;
+                            cids:belongsToTier cids:BasicTier ; 
+                            rdfs:label "Post Office Box Number"@en ;
+                            rdfs:comment "The post office box number for PO box addresses."@en ;
+                            rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#extendedAddress
+cids:extendedAddress rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:subPropertyOf cids:cidsDataProperty ;
+                          cids:belongsToTier cids:BasicTier ; 
+                          rdfs:label "Extended Address (Unit/Suite/Apartment Number)"@en ;
+                          rdfs:comment "An address extension such as an apartment number, suite number, or 'C/O'."@en ;
+                          rdfs:range xsd:string .
+
 
 #################################################################
 #    Classes
@@ -958,8 +1029,51 @@ act:Activity rdf:type owl:Class .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/icontact#Address
-ic:Address rdf:type owl:Class ;
-            cids:belongsToTier cids:BasicTier .
+ic:Address rdf:type owl:Class .
+
+
+###  https://ontology.commonapproach.org/cids#Address
+cids:Address rdf:type owl:Class ;
+             cids:belongsToTier cids:BasicTier ; 
+             rdfs:subClassOf sch:PostalAddress ,
+                             cids:cidsThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:streetAddress ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressLocality ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressRegion ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:postalCode ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressCountry ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:postOfficeBoxNumber ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:extendedAddress ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             rdfs:label "Address"@en ;
+             rdfs:comment "A simplified postal address class for CIDS, based on schema:PostalAddress, using functional properties for common address components."@en .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber
@@ -2139,6 +2253,10 @@ cids:Organization rdf:type owl:Class ;
                   rdfs:subClassOf org:Organization ,
                                   cids:cidsThing ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasAddress ;
+                                    owl:allValuesFrom cids:Address
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty org:hasID ;
                                     owl:allValuesFrom org:OrganizationID
                                   ] ,
@@ -2202,7 +2320,7 @@ cids:Organization rdf:type owl:Class ;
 
 <ul>
 <li>org:hasID: Ties to a unique recognized/public identifier for the Organization, e.g. a business number, charity number, etc.</li>
-<li>ic:has Address: The main address of the Organization.</li>
+<li>ic:hasAddress: The main address of the Organization.</li>
 <li>org:hasLegalName: Is a string that specifies the legal name of the Organization.</li>
 <li>org:hasLegalStatus: An instance of a class that specifies the legal status of the Organization. The legal status will differ based on country.</li>
 <li>ic:hasTelephone: Main phone numbers of the Organization.</li>
@@ -2394,6 +2512,10 @@ cids:Person rdf:type owl:Class ;
                             cids:cidsThing ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasAddress ;
+                              owl:allValuesFrom ic:Address
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:hasAddress ;
                               owl:allValuesFrom ic:Address
                             ] ,
                             [ rdf:type owl:Restriction ;
