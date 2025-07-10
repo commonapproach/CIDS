@@ -2299,6 +2299,7 @@ cids:Organization rdf:type owl:Class ;
                                   ] ;
                   rdfs:comment """<p>The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:</p>
 <ul>
+<li>cids:hasAddress: The main address of the Organization, refers to an instance of cids:Address.</li>
 <li>org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.</li>
 <li>hasProgram: Identifies the Programs being modelled.</li>
 <li>hasIndicator: List of indicators associated with the Organization.</li>
@@ -2320,7 +2321,7 @@ cids:Organization rdf:type owl:Class ;
 
 <ul>
 <li>org:hasID: Ties to a unique recognized/public identifier for the Organization, e.g. a business number, charity number, etc.</li>
-<li>ic:hasAddress: The main address of the Organization.</li>
+<li>ic:hasAddress: The main address of the Organization (optional).</li>
 <li>org:hasLegalName: Is a string that specifies the legal name of the Organization.</li>
 <li>org:hasLegalStatus: An instance of a class that specifies the legal status of the Organization. The legal status will differ based on country.</li>
 <li>ic:hasTelephone: Main phone numbers of the Organization.</li>
