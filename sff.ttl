@@ -217,7 +217,7 @@ sff:applied
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Applied"@en, "Appliqué"@fr ;
-  cids:hasName "Applied" ;
+  org:hasName "Applied" ;
   cids:hasDescription "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
@@ -226,7 +226,7 @@ sff:rejected
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Rejected"@en, "Rejetée"@fr ;
-  cids:hasName "Rejected" ;
+  org:hasName "Rejected" ;
   cids:hasDescription "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
@@ -235,7 +235,7 @@ sff:funded
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "Funded"@en, "Alloué"@fr ;
-  cids:hasName "Funded" ;
+  org:hasName "Funded" ;
   cids:hasDescription "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
@@ -244,7 +244,7 @@ sff:inReview
   a sff:FundingState, skos:Concept ;
   skos:inScheme sff:FundingState ;
   skos:prefLabel "In Review"@en, "Sous-évaluation"@fr ;
-  cids:hasName "In Review" ;
+  org:hasName "In Review" ;
   cids:hasDescription "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: .
