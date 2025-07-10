@@ -115,6 +115,10 @@ cids:modifiedBy rdf:type owl:AnnotationProperty ;
                 rdfs:range xsd:string ;
                 rdfs:domain cids:cidsThing .
 
+###  https://ontology.commonapproach.org/cids#belongsToTier
+cids:belongsToTier rdf:type owl:AnnotationProperty ;
+                   rdfs:range cids:Tier ; 
+                   rdfs:comment "Indicates which CIDS Tier an entity belongs to."@en .
 
 #################################################################
 #    Datatypes
@@ -326,7 +330,8 @@ cids:forIndicatorReport rdf:type owl:ObjectProperty ;
 ###  https://ontology.commonapproach.org/cids#forOrganization
 cids:forOrganization rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf cids:cidsObjectProperty ;
-                     rdf:type owl:FunctionalProperty .
+                     rdf:type owl:FunctionalProperty ;
+                     cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#forOutcome
@@ -388,7 +393,8 @@ cids:hasBeneficialStakeholder rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasCharacteristic
 cids:hasCharacteristic rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf cids:cidsObjectProperty .
+                       rdfs:subPropertyOf cids:cidsObjectProperty ;
+                       cids:belongsToTier cids:EssentialTier, cids:SFFTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasCharacteristicReport
@@ -486,12 +492,14 @@ cids:hasImpactScale rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasIndicator
 cids:hasIndicator rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf cids:cidsObjectProperty .
+                  rdfs:subPropertyOf cids:cidsObjectProperty ;
+                  cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasIndicatorReport
 cids:hasIndicatorReport rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf cids:cidsObjectProperty .
+                        rdfs:subPropertyOf cids:cidsObjectProperty ;
+                        cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasIndicatorStandard
@@ -521,7 +529,8 @@ cids:hasOrganization rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasOutcome
 cids:hasOutcome rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf cids:cidsObjectProperty .
+                rdfs:subPropertyOf cids:cidsObjectProperty ;
+                cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasOutput
@@ -806,7 +815,8 @@ cids:hasCatchmentArea rdf:type owl:DatatypeProperty ;
 ###  https://ontology.commonapproach.org/cids#hasComment
 cids:hasComment rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf cids:cidsDataProperty ;
-                rdf:type owl:FunctionalProperty .
+                rdf:type owl:FunctionalProperty ;
+                cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasConsequence
@@ -818,7 +828,8 @@ cids:hasConsequence rdf:type owl:DatatypeProperty ;
 cids:hasDescription rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf sch:description ,
                                        cids:cidsDataProperty ;
-                    rdf:type owl:FunctionalProperty .
+                    rdf:type owl:FunctionalProperty ;
+                    cids:belongsToTier cids:BasicTier .
 
 
 ###  https://ontology.commonapproach.org/cids#hasExpectation
@@ -895,6 +906,10 @@ cids:isUnderserved rdf:type owl:DatatypeProperty ;
                    rdf:type owl:FunctionalProperty .
 
 
+###  http://ontology.eil.utoronto.ca/tove/organization#hasLegalName
+org:hasLegalName cids:belongsToTier cids:BasicTier .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -920,7 +935,8 @@ act:Activity rdf:type owl:Class .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/icontact#Address
-ic:Address rdf:type owl:Class .
+ic:Address rdf:type owl:Class ;
+            cids:belongsToTier cids:BasicTier.
 
 
 ###  http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber
@@ -928,7 +944,8 @@ ic:PhoneNumber rdf:type owl:Class .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#Organization
-org:Organization rdf:type owl:Class .
+org:Organization rdf:type owl:Class ;
+            cids:belongsToTier cids:BasicTier .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#Role
@@ -1267,7 +1284,8 @@ cids:Code rdf:type owl:Class ;
 <li>i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</li>
 </ul>
 <p>hasIdentifier, hasName, hasDescription, and codeValue act as a cache of the equivalent information to be found in the specification of the Code referred to by hasSpecification. The following table defines the Code class.</p>"""@en ;
-          rdfs:label "Code"@en .
+          rdfs:label "Code"@en ;
+          cids:belongsToTier cids:EssentialTier, cids:SFFTier .
 
 
 ###  https://ontology.commonapproach.org/cids#ContributingStakeholder
@@ -2902,6 +2920,51 @@ cids:UnexpectedImpactRisk rdf:type owl:Class ;
                                           ] ;
                           rdfs:label "Unexpected Impact Risk" ;
                           skos:definition "Unexpected Impact Risk considers an impact that is more significant than originally anticipated. The probability that significant unexpected positive and/or negative impact is experienced by people and the planet."@en .
+
+###  https://ontology.commonapproach.org/cids#Tier
+cids:Tier rdf:type owl:Class, skos:ConceptScheme ;
+          rdfs:subClassOf cids:cidsThing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty org:hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+          rdfs:Label "Tier"@en ;
+          rdfs:comment """<p>The Tier class represents the Common Impact Data Standard tier of alignment to which a class or property belongs.</p>
+<p>A software's alignment to a specific tier of alignment (Basic, Essential, or Full) indicates to a software user which groups of classes and properties are present in the data model of that software, and can be imported and exported in an aligned RDF format (nominally JSONLD).</p>
+<ul>
+<li>hasName: A string that provides a name for the tier of alignment.</li>
+</ul>"""@en .
+
+### Instances of Tier
+
+cids:BasicTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "BasicTier"@en ;
+  org:hasName "BasicTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:EssentialTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "EssentialTier"@en ;
+  org:hasName "EssentialTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:FullTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "FullTier"@en ;
+  org:hasName "FullTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:SFFTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "SFFTier"@en ;
+  org:hasName "SFFTier" ;
+  rdfs:isDefinedBy cids: .
 
 
 ###  https://ontology.commonapproach.org/cids#cidsThing
