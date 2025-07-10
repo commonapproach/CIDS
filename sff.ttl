@@ -148,7 +148,9 @@ sff:ReportInfo
     owl:onProperty org:hasName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:string
-  ] .
+  ] ;
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:FundingStatus
   a owl:Class ;
@@ -275,7 +277,9 @@ sff:EDGProfile
     owl:onProperty sff:forEDG ;
     owl:allValuesFrom sff:EquityDeservingGroup ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
-  ] .
+  ] ;
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:EquityDeservingGroup
   a owl:Class ;
