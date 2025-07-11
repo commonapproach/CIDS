@@ -446,7 +446,7 @@ org:hasLegalName_PropertyShape
         rdfs:label      "has legal name" ;
         sh:minCount     1 ;
         sh:maxCount     1 ;
-        sh:nodeKind     sh:IRI ;
+        sh:nodeKind     sh:Literal ;
         sh:name         "hasLegalName" ;
         sh:description  "Is a string that specifies the legal name of the Organization" ;
         sh:order        38 .      
