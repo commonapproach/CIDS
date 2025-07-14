@@ -555,6 +555,7 @@ cids:Indicator_NodeShape
         sh:property     org:hasName_PropertyShape ;
         sh:property     cids:hasDescription_PropertyShape ;
         sh:property     cids:forOutcome_PropertyShape ;
+        sh:property     cids:forTheme_PropertyShape ;
         sh:property     cids:forOrganization_PropertyShape ;
         sh:property     i72:unit_of_measure_PropertyShape .
 
