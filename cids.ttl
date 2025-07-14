@@ -1964,6 +1964,10 @@ cids:Indicator rdf:type owl:Class ;
                                  owl:allValuesFrom cids:Outcome
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:forTheme ;
+                                 owl:allValuesFrom cids:Theme
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasAccess ;
                                  owl:allValuesFrom [ rdf:type owl:Class ;
                                                      owl:unionOf ( cids:Organization
