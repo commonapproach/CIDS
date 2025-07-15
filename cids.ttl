@@ -34,7 +34,8 @@
                                                         <http://ontology.eil.utoronto.ca/tove/activity.owl> ,
                                                         <http://ontology.eil.utoronto.ca/tove/icontact.owl> ,
                                                         <http://ontology.eil.utoronto.ca/tove/organization.owl> ,
-                                                        <http://www.w3.org/2006/time.rdf> ;
+                                                        <http://www.w3.org/2006/time.rdf> ,
+                                                        <https://codelist.commonapproach.org/codeLists/SDGImpacts>;
                                             cc:license "Common Impact Data Standard V3.1.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/" ;
                                             dcterms:creator cids:ac ;
                                             dcterms:date "06-16-2025" ;
