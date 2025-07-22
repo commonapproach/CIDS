@@ -675,6 +675,13 @@ cids:usedByIndicator rdf:type owl:ObjectProperty ;
 cids:usesOutput rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf cids:cidsObjectProperty .
 
+###  https://ontology.commonapproach.org/cids#describesPopulation
+cids:describesPopulation rdf:type owl:ObjectProperty ;
+    rdfs:label "describes population"@en ;
+    rdfs:comment "An interim property used to link an Indicator to the Population it measures when the specific statistical parameter (e.g., Sum or Mean) is unknown. This property should be replaced with a more specific property (e.g., i72:sum_of or i72:mean_of) during a data enhancement process."@en ;
+    rdfs:domain cids:Indicator ;
+    rdfs:range i72:Population .
+
 
 #################################################################
 #    Data properties
@@ -1000,6 +1007,12 @@ cids:extendedAddress rdf:type owl:DatatypeProperty ,
                           rdfs:comment "An address extension such as an apartment number, suite number, or 'C/O'."@en ;
                           rdfs:range xsd:string .
 
+###  https://ontology.commonapproach.org/cids#unitDescription
+cids:unitDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "unit description"@en ;
+    rdfs:comment "A simple, human-readable text string provided by a user to describe the unit of measure for an indicator. This property is used to capture the user's original input, especially when it cannot be immediately mapped to a formal, structured unit of measure."@en ;
+    rdfs:domain cids:Indicator ;
+    rdfs:range xsd:string .
 
 #################################################################
 #    Classes
@@ -2044,6 +2057,16 @@ cids:Indicator rdf:type owl:Class ;
                                  owl:onProperty cids:hasDescription ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
+                               ] ,
+                                 [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:unitDescription ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:describesPopulation ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass i72:Population
                                ] ;
                rdfs:comment """<p>Indicator is a subclass of i72:Indicator, which provides properties for units of measure, time and value.</p>
 <p>cids:Indicator extends the definition of i72:Indicator with the following properties:</p>
@@ -2055,6 +2078,8 @@ cids:Indicator rdf:type owl:Class ;
 <li>hasBaseline: Links to an i72:measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the Indicator.</li>
 <li>hasThreshold: Links to an i72:measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.</li>
 <li>hasTarget: Links to a Target for the Indicator to allow for the assessment of performance against a Target.</li>
+<li>unitDescription: Provides a simple, human-readable text string to describe the unit of measure for an indicator. This property is used to capture the user's original input, especially when it cannot be immediately mapped to a formal, structured unit of measure.</li>
+<li>describesPopulation: An interim property used to link an Indicator to the Population it measures when the specific statistical parameter (e.g., Sum or Mean) is unknown. This property should be replaced with a more specific property (e.g., i72:sum_of or i72:mean_of, inherited from i72:Sum and i72:Mean subclasses respectively) during a data enhancement process.</li>
 <li>i72:unit_of_measure: Specifies the units of the Indicator.</li>
 <li>prov:wasGeneratedBy: Links to a method that specifies how the Indicator was derived.</li>
 <li>dcat:dataset: Links to a dcat:Dataset that specifies the data used to derive the value if the method is Computation.</li>
