@@ -1,0 +1,242 @@
+# SPARQL Update Script to Convert OWL to SHACL
+#
+# This script reads an OWL ontology in Turtle format and generates
+# a corresponding SHACL file, also in Turtle. It translates OWL
+# classes, properties, and restrictions into SHACL node and
+# property shapes.
+
+# -- PREFIX DEFINITIONS --
+# Prefixes from the source OWL file are included, plus sh: for SHACL.
+
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rel: <http://purl.org/vocab/relationship/>
+PREFIX sch: <http://schema.org/>
+PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cids: <https://ontology.commonapproach.org/cids#>
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX om-1: <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX prov: <https://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sh: <http://www.w3.org/ns/shacl#> ;
+
+# -- SCRIPT BODY --
+
+# 1. Create a sh:NodeShape for each owl:Class.
+# This establishes the basic structure, targeting each class for validation.
+INSERT {
+  ?shape rdf:type sh:NodeShape ;
+         sh:targetClass ?class ;
+         rdfs:label ?label ;
+         rdfs:comment ?comment .
+} WHERE {
+  ?class rdf:type owl:Class .
+  FILTER(isIRI(?class))
+  BIND(IRI(CONCAT(STR(?class), "Shape")) AS ?shape)
+  OPTIONAL { ?class rdfs:label ?label . }
+  OPTIONAL { ?class rdfs:comment ?comment . }
+};
+
+# 2. Translate rdfs:subClassOf relationships to sh:node.
+# This allows shapes to inherit constraints from their parent shapes.
+INSERT {
+    ?subClassShape sh:node ?superClassShape .
+} WHERE {
+    ?subClass rdfs:subClassOf ?superClass .
+    ?subClass rdf:type owl:Class .
+    ?superClass rdf:type owl:Class .
+    FILTER(isIRI(?subClass) && isIRI(?superClass))
+    BIND(IRI(CONCAT(STR(?subClass), "Shape")) as ?subClassShape)
+    BIND(IRI(CONCAT(STR(?superClass), "Shape")) as ?superClassShape)
+};
+
+# 3. Convert owl:FunctionalProperty to sh:maxCount 1.
+# This applies a maximum cardinality of 1 to properties declared as functional.
+INSERT {
+    ?classShape sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path ?prop ;
+        sh:maxCount 1
+    ] .
+} WHERE {
+    ?prop rdf:type owl:FunctionalProperty .
+    ?prop rdfs:domain ?class .
+    ?class rdf:type owl:Class .
+    FILTER(isIRI(?class))
+    BIND(IRI(CONCAT(STR(?class), "Shape")) as ?classShape)
+};
+
+# 4. Translate owl:allValuesFrom restrictions (for classes).
+# This ensures that all values of a property belong to a specific class.
+INSERT {
+  ?classShape sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path ?p ;
+    sh:class ?range
+  ] .
+} WHERE {
+    ?c rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty ?p ;
+        owl:allValuesFrom ?range
+    ] .
+    ?c rdf:type owl:Class .
+    ?range rdf:type owl:Class .
+    FILTER(isIRI(?c) && isIRI(?range))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+};
+
+# 5. Translate owl:allValuesFrom restrictions (for datatypes).
+# This ensures that all values of a property have a specific datatype.
+INSERT {
+  ?classShape sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path ?p ;
+    sh:datatype ?range
+  ] .
+} WHERE {
+    ?c rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty ?p ;
+        owl:allValuesFrom ?range
+    ] .
+    ?c rdf:type owl:Class .
+    ?range rdf:type rdfs:Datatype .
+    FILTER(isIRI(?c) && isIRI(?range))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+};
+
+# 6. Translate owl:someValuesFrom restrictions to sh:minCount 1.
+# This ensures that there is at least one value for the property that belongs to a specific class.
+INSERT {
+  ?classShape sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path ?p ;
+    sh:class ?range ;
+    sh:minCount 1
+  ] .
+} WHERE {
+    ?c rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty ?p ;
+        owl:someValuesFrom ?range
+    ] .
+    ?c rdf:type owl:Class .
+    ?range rdf:type owl:Class .
+    FILTER(isIRI(?c) && isIRI(?range))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+};
+
+# 7. Translate qualified cardinality restrictions with owl:onClass.
+# This handles min, max, and exact cardinality constraints for a property pointing to a specific class.
+INSERT {
+    ?classShape sh:property ?propShape .
+    ?propShape rdf:type sh:PropertyShape ;
+               sh:path ?p ;
+               sh:class ?rangeClass .
+    # Add minCount if present
+    ?propShape sh:minCount ?min .
+    # Add maxCount if present
+    ?propShape sh:maxCount ?max .
+} WHERE {
+    ?c rdfs:subClassOf ?restriction .
+    ?restriction rdf:type owl:Restriction ;
+                 owl:onProperty ?p ;
+                 owl:onClass ?rangeClass .
+    { ?restriction owl:minQualifiedCardinality ?min . }
+    UNION
+    { ?restriction owl:maxQualifiedCardinality ?max . }
+    UNION
+    { ?restriction owl:qualifiedCardinality ?exact . BIND(?exact as ?min) BIND(?exact as ?max) }
+
+    ?c rdf:type owl:Class .
+    FILTER(isIRI(?c))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+    BIND(BNODE() as ?propShape)
+};
+
+# 8. Translate qualified cardinality restrictions with owl:onDataRange.
+# This handles cardinality for properties with a specific datatype range.
+INSERT {
+    ?classShape sh:property ?propShape .
+    ?propShape rdf:type sh:PropertyShape ;
+               sh:path ?p ;
+               sh:datatype ?datatype .
+    # Add minCount if present
+    ?propShape sh:minCount ?min .
+    # Add maxCount if present
+    ?propShape sh:maxCount ?max .
+} WHERE {
+    ?c rdfs:subClassOf ?restriction .
+    ?restriction rdf:type owl:Restriction ;
+                 owl:onProperty ?p ;
+                 owl:onDataRange ?datatype .
+    { ?restriction owl:minQualifiedCardinality ?min . }
+    UNION
+    { ?restriction owl:maxQualifiedCardinality ?max . }
+    UNION
+    { ?restriction owl:qualifiedCardinality ?exact . BIND(?exact as ?min) BIND(?exact as ?max) }
+
+    ?c rdf:type owl:Class .
+    FILTER(isIRI(?c))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+    BIND(BNODE() as ?propShape)
+};
+
+# 9. Translate owl:hasValue restrictions.
+# This ensures a property has a specific, required value.
+INSERT {
+  ?classShape sh:property [
+    rdf:type sh:PropertyShape ;
+    sh:path ?p ;
+    sh:hasValue ?val
+  ] .
+} WHERE {
+    ?c rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty ?p ;
+        owl:hasValue ?val
+    ] .
+    ?c rdf:type owl:Class .
+    FILTER(isIRI(?c))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+};
+
+# 10. Translate owl:oneOf restrictions for datatypes using sh:in.
+# This constrains property values to a specific list of literals.
+INSERT {
+    ?classShape sh:property [
+        rdf:type sh:PropertyShape ;
+        sh:path ?p ;
+        sh:in ?list
+    ] .
+} WHERE {
+    ?c rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty ?p ;
+        owl:allValuesFrom [
+            owl:oneOf ?list
+        ]
+    ] .
+    ?c rdf:type owl:Class .
+    FILTER(isIRI(?c))
+    BIND(IRI(CONCAT(STR(?c), "Shape")) as ?classShape)
+};

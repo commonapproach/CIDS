@@ -1,34 +1,54 @@
-@prefix act: <http://ontology.eil.utoronto.ca/tove/activity#> .
-@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix cids: <https://ontology.commonapproach.org/cids#> .
-@prefix cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#> .
+@prefix act: <http://ontology.eil.utoronto.ca/tove/activity#> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#> .
 @prefix i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#> .
-@prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#> .
 @prefix oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#> .
-@prefix om-1: <http://www.wurvoc.org/vocabularies/om-1.8/> .
 @prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <https://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rel: <http://purl.org/vocab/relationship/> .
-@prefix rfds: <> .
-@prefix sch: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
 @prefix sur: <http://ontology.eil.utoronto.ca/tove/survey#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix om-1: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix prov: <https://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+#@base <https://ontology.commonapproach.org/cids> .
+@prefix sff: <https://ontology.commonapproach.org/sff#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+#@prefix cc: <http://creativecommons.org/ns#> .
+#@prefix dc: <http://purl.org/dc/terms/> .
+#@prefix dcat: <http://www.w3.org/ns/dcat#> .
+#@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+#@prefix owl: <http://www.w3.org/2002/07/owl#> .
+#@prefix prov: <http://www.w3.org/ns/prov#> .
+#@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+#@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+#@prefix void: <http://rdfs.org/ns/void#> .
+#@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+#@prefix schema: <https://schema.org/> .
+#@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+#@prefix voaf: <http://purl.org/vocommons/voaf#> .
+#@prefix time: <http://www.w3.org/2006/time#> .
+@prefix csh: <https://ontology.commonapproach.org/cids/shacl#> .
 
-@base <https://ontology.commonapproach.org/cids> .
+
 
 <https://ontology.commonapproach.org/cids> rdf:type owl:Ontology ;
                                             owl:versionIRI <https://ontology.commonapproach.org/cids/3.1.0> ;
@@ -296,9 +316,7 @@ cids:definedBy rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#forActivity
 cids:forActivity rdf:type owl:ObjectProperty ;
-    rdfs:range cids:Activity ;
-#    rfds:domain cids:Organization ;
-    rdfs:subPropertyOf cids:cidsObjectProperty .
+                 rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#forCharacteristic
@@ -696,36 +714,36 @@ ic:hasUnitNumber rdf:type owl:FunctionalProperty .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier
-org:hasIdentifier rdfs:subPropertyOf sch:identifier .
+org:hasIdentifier rdfs:subPropertyOf schema:identifier .
 
 
 ###  http://schema.org/birthDate
-sch:birthDate rdf:type owl:DatatypeProperty ,
+schema:birthDate rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
 
 
 ###  http://schema.org/codeValue
-sch:codeValue rdf:type owl:DatatypeProperty ,
+schema:codeValue rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
 
 
 ###  http://schema.org/dateCreated
-sch:dateCreated rdf:type owl:DatatypeProperty ;
+schema:dateCreated rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf cids:cidsDataProperty .
 
 
 ###  http://schema.org/description
-sch:description rdf:type owl:DatatypeProperty ;
+schema:description rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf cids:cidsDataProperty .
 
 
 ###  http://schema.org/identifier
-sch:identifier rdf:type owl:DatatypeProperty ;
+schema:identifier rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty .
 
 
 ###  http://schema.org/name
-sch:name rdf:type owl:DatatypeProperty ;
+schema:name rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf cids:cidsDataProperty .
 
 
@@ -820,7 +838,7 @@ cids:hasConsequence rdf:type owl:DatatypeProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasDescription
 cids:hasDescription rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf sch:description ,
+                    rdfs:subPropertyOf schema:description ,
                                        cids:cidsDataProperty ;
                     rdf:type owl:FunctionalProperty .
 
@@ -954,7 +972,7 @@ dcterms:Standard rdf:type owl:Class .
 
 
 ###  http://schema.org/Person
-sch:Person rdf:type owl:Class .
+schema:Person rdf:type owl:Class .
 
 
 ###  http://sparql.cwrc.ca/ontologies/cwrc#Ethnicity
@@ -996,8 +1014,8 @@ dqv:QualityMeasurement rdf:type owl:Class .
 dqv:QualityPolicy rdf:type owl:Class .
 
 
-###  https://ontology.commonapproach.org/CharacteristicReport
-<https://ontology.commonapproach.org/CharacteristicReport> rdf:type owl:Class ;
+###  https://ontology.commonapproach.org/cids#CharacteristicReport
+<https://ontology.commonapproach.org/cids#CharacteristicReport> rdf:type owl:Class ;
                                                            rdfs:subClassOf cids:cidsThing ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty i72:numberOf ;
@@ -1016,7 +1034,7 @@ dqv:QualityPolicy rdf:type owl:Class .
                                                            rdfs:label "Characteristic Report"@en .
 
 
-###  https://ontology.commonapproach.org/cids#StakeholderReport
+###  https://ontology.commonapproach.org/StakeholderReport
 <https://ontology.commonapproach.org/cids#StakeholderReport> rdf:type owl:Class ;
                                                         rdfs:subClassOf cids:cidsThing ,
                                                                         [ rdf:type owl:Restriction ;
@@ -1241,7 +1259,7 @@ cids:Code rdf:type owl:Class ;
                             owl:onDataRange xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty sch:codeValue ;
+                            owl:onProperty schema:codeValue ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string
                           ] ,
@@ -1551,7 +1569,7 @@ cids:ImpactModel rdf:type owl:Class ;
 <ul>
 <li>hasName: a string containing a title for the model.</li>
 <li>hasDescription: a string containing a description of the model.</li>
-<li>sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.</li>
+<li>schema:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.</li>
 <li>forOrganization: an object property that links to the Organization the model is for.</li>
 </ul>"""@en ;
                  rdfs:label "Impact Model"@en .
@@ -1910,7 +1928,7 @@ cids:Indicator rdf:type owl:Class ;
 <li>hasDescription: Specifies the Indicator's description.</li>
 <li>hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified as a string.</li>
 <li>hasHowMuch: Links to HowMuchImpact which defines the properties common to the subclasses ImpactScale, ImpactDepth, and ImpactDuration.</li>
-<li>sch:dateCreated: Is the date that the Indicator was created.</li>
+<li>schema:dateCreated: Is the date that the Indicator was created.</li>
 </ul>"""@en ;
                rdfs:label "Indicator"@en .
 
@@ -2018,7 +2036,7 @@ cids:IndicatorReport rdf:type owl:Class ;
 <li>hasAccess: Links to the organizations that can read this Indicator report.</li>
 <li>hasName: Specifies the Indicator Report's name or title of the Indicator.</li>
 <li>hasComment: A string property in which a general comment for the report can be specified.</li>
-<li>sch:dateCreated: Is the date that the Indicator Report was created.</li>
+<li>schema:dateCreated: Is the date that the Indicator Report was created.</li>
 </ul>"""@en ;
                      rdfs:label "Indicator Report"@en .
 
@@ -2154,7 +2172,7 @@ cids:Organization rdf:type owl:Class ;
 <li>hasDescription: a string that describes the Organization.</li>
 <li>hasWebAddress: a URI specifying the website for the organization.</li>
 <li>hasPurpose: text defining the purpose of the organization.</li>
-<li>sch:dateCreated: the date the Organization’s record was created.</li>
+<li>schema:dateCreated: the date the Organization’s record was created.</li>
 </ul>
 
 <p>The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization below.</p>
@@ -2179,7 +2197,7 @@ cids:Organization rdf:type owl:Class ;
 <ul>
 <li>org:issuedBy: Identifies the entity that issued the OrganizationID.</li>
 <li>hasIdentifier: The number created by the issuing organization.</li>
-<li>sch:dateCreated: The date the identifier was created.</li>
+<li>schema:dateCreated: The date the identifier was created.</li>
 </ul>
 
 <p>Note that org:FormalOrganization is a subclass of org:Organization to distinguish it from informal organizations. No additional properties are defined but can be extended by the user.</p>""" ;
@@ -2260,7 +2278,7 @@ cids:Outcome rdf:type owl:Class ;
 <li>hasName: string that provides a name for the Outcome.</li>
 <li>hasDescription: string that provides a description for the Outcome.</li>
 <li>hasImpactReport: Identifies the set of ImpactReports that report on the results pertaining to each Outcome.</li>
-<li>sch:dateCreated: date the Outcome was defined.</li>
+<li>schema:dateCreated: date the Outcome was defined.</li>
 </ul>"""@en ;
              rdfs:label "Outcome"@en .
 
@@ -2353,7 +2371,7 @@ cids:Output rdf:type owl:Class ;
 
 ###  https://ontology.commonapproach.org/cids#Person
 cids:Person rdf:type owl:Class ;
-            rdfs:subClassOf sch:Person ,
+            rdfs:subClassOf schema:Person ,
                             cids:cidsThing ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasAddress ;
@@ -2396,7 +2414,7 @@ cids:Person rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty sch:identifier ;
+                              owl:onProperty schema:identifier ;
                               owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -2404,7 +2422,7 @@ cids:Person rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty sch:birthDate ;
+                              owl:onProperty schema:birthDate ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
@@ -2835,7 +2853,7 @@ cids:Target rdf:type owl:Class ;
                               owl:onDataRange xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty sch:dateCreated ;
+                              owl:onProperty schema:dateCreated ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
@@ -2863,7 +2881,7 @@ cids:Target rdf:type owl:Class ;
 <li>prov:startedAtTime: Specifies the start of the time interval that the Target covers.</li>
 <li>prov:endedAtTime: Specifies the end of the time interval that the Target covers.</li>
 <li>hasComment: A string property in which a general comment for the Target can be specified.</li>
-<li>sch:dateCreated: Is the date that the Target was created.</li>
+<li>schema:dateCreated: Is the date that the Target was created.</li>
 <li>forIndicatorReport: Links to the Indicator Reports which are associated with the target.</li>
 </ul>""" ;
             rdfs:label "Target"@en .
@@ -2911,16 +2929,16 @@ cids:UnexpectedImpactRisk rdf:type owl:Class ;
 ###  https://ontology.commonapproach.org/cids#cidsThing
 cids:cidsThing rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty sch:description ;
+                                 owl:onProperty schema:description ;
                                  owl:allValuesFrom xsd:string
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty sch:dateCreated ;
+                                 owl:onProperty schema:dateCreated ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:dateTime
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty sch:description ;
+                                 owl:onProperty schema:description ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
                                ] .
@@ -3002,5 +3020,476 @@ cids:veryUnlikely rdf:type owl:NamedIndividual .
 ###  https://ontology.commonapproach.org/cids#worse
 cids:worse rdf:type owl:NamedIndividual .
 
+sff:
+  a owl:Ontology, voaf:Vocabulary ;
+  owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, <http://ontology.eil.utoronto.ca/tove/activity.owl>, <http://ontology.eil.utoronto.ca/tove/icontact.owl>, <http://ontology.eil.utoronto.ca/tove/organization.owl>, <http://www.w3.org/2006/time.rdf> ;
+  cc:license "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  vs:term_status "Stable"@en, "Stable"@fr ;
+  void:inDataset sff:datasetdefinition ;
+  dc:rights "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  dc:creator cids:ac ;
+  dc:description "An Ontology for Representing Social Finance Fund Reporting Requirements"@en ;
+  dc:title "Social Finance Fund Companion Module"@en ;
+  foaf:name "Social Finance Fund Companion Module"@en ;
+  vann:preferredNamespacePrefix "sff" ;
+  vann:preferredNamespaceUri "https://ontology.commonapproach.org/sff#" ;
+  dc:date "11-10-2024" ;
+  owl:versionInfo "1.0"@en .
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+sff:datasetdefinition
+  a void:Dataset, schema:Dataset, dcat:Dataset ;
+  dc:rights <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  dc:creator cids:ac ;
+  dc:description "An Ontology for Representing Social Finance Fund Reporting Requirements"@en ;
+  dc:title "Social Finance Fund Companion Module"@en ;
+  foaf:name "Social Finance Fund Companion Module"@en ;
+  schema:license <https://creativecommons.org/licenses/by-sa/4.0/>, "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en ;
+  schema:creator cids:ac ;
+  rdfs:isDefinedBy sff: .
+
+sff:OrganizationProfile
+  a owl:Class ;
+  rdfs:label "Organization Profile"@en ;
+  cids:hasName "Organization Profile" ;
+  rdfs:comment "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en ;
+  rdfs:subClassOf sff:forceHasOrganization,[
+    a owl:Restriction ;
+    owl:onProperty sff:hasPrimaryContact ;
+    owl:allValuesFrom cids:Person ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasManagementTeamProfile ;
+    owl:allValuesFrom sff:TeamProfile
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasBoardProfile ;
+    owl:allValuesFrom sff:TeamProfile
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:sectorServed ;
+    owl:allValuesFrom cids:Sector
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:localityServed ;
+    owl:allValuesFrom cids:Locality
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:provinceTerritoryServed ;
+    owl:allValuesFrom cids:ProvinceTerritory
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:primaryPopulationServed ;
+    owl:allValuesFrom cids:PopulationServed
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:organizationType ;
+    owl:allValuesFrom cids:OrganizationType
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:servesEDG ;
+    owl:allValuesFrom sff:EquityDeservingGroup
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasFundingStatus ;
+    owl:allValuesFrom sff:FundingStatus
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:reportedDate ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ] ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasOrganizationProfile
+  a owl:ObjectProperty ;
+  rdfs:domain cids:Organization ;
+  rdfs:range sff:OrganizationProfile ;
+  rdfs:label "hasOrganizationProfile"@en ;
+  cids:hasName "hasOrganizationProfile" ;
+  rdfs:comment "Links an Organization to its Social Finance Fund (SFF) profile."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:Sector
+  a owl:Class ;
+  rdfs:label "Sector"@en ;
+  cids:hasName "Sector" ;
+  rdfs:comment "Sectors provide a high-level view of an organization's core focus and the general type of activities it conducts, helping to standardize its profile within the broader landscape of similar entities."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:ReportInfo
+  a owl:Class ;
+  rdfs:label "Report Info"@en ;
+  cids:hasName "Report Info" ;
+  rdfs:comment "Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name."@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty cids:forOrganization ;
+    owl:allValuesFrom cids:Organization ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty prov:startedAtTime ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ], [
+    a owl:Restriction ;
+    owl:onProperty prov:endedAtTime ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ], [
+    a owl:Restriction ;
+    owl:onProperty org:hasName ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:string
+  ] .
+
+sff:FundingStatus
+  a owl:Class ;
+  rdfs:label "Funding Status"@en ;
+  cids:hasName "Funding Status" ;
+  rdfs:comment "Provides information on the status of an organization’s application to a funder or investor."@en ;
+  rdfs:subClassOf sff:forceHasDescription, sff:forceHasOrganization, [
+    a owl:Restriction ;
+    owl:onProperty sff:reportedDate ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:forFunder ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:string
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasFundingState ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange sff:FundingState
+  ] ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:TeamProfile
+  a owl:Class ;
+  rdfs:label "Team Profile"@en ;
+  cids:hasName "Team Profile" ;
+  rdfs:comment "A profile of a board or management team for a specified interval of time."@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty sff:reportedDate ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasTeamSize ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasEDGSize ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasEDGProfile ;
+    owl:onClass sff:EDGProfile
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasComment ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:string
+  ] ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:FundingState
+  a owl:Class, skos:ConceptScheme ;
+  rdfs:subClassOf cids:Code ;
+  rdfs:label "Funding State"@en ;
+  cids:hasName "Funding State" ;
+  rdfs:comment "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:applied
+  a sff:FundingState, skos:Concept ;
+  skos:inScheme sff:FundingState ;
+  skos:prefLabel "Applied"@en, "Appliqué"@fr ;
+  cids:hasName "Applied" ;
+  cids:hasDescription "Funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:rejected
+  a sff:FundingState, skos:Concept ;
+  skos:inScheme sff:FundingState ;
+  skos:prefLabel "Rejected"@en, "Rejetée"@fr ;
+  cids:hasName "Rejected" ;
+  cids:hasDescription "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:funded
+  a sff:FundingState, skos:Concept ;
+  skos:inScheme sff:FundingState ;
+  skos:prefLabel "Funded"@en, "Alloué"@fr ;
+  cids:hasName "Funded" ;
+  cids:hasDescription "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:inReview
+  a sff:FundingState, skos:Concept ;
+  skos:inScheme sff:FundingState ;
+  skos:prefLabel "In Review"@en, "Sous-évaluation"@fr ;
+  cids:hasName "In Review" ;
+  cids:hasDescription "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:EDGProfile
+  a owl:Class ;
+  rdfs:label "EDG Profile"@en ;
+  cids:hasName "EDG Profile" ;
+  rdfs:comment "Information about the number of members belonging to a specific equity deserving group, as part of a board or management team, for a designated time interval."@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty sff:reportedDate ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:dateTime
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:hasSize ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:forEDG ;
+    owl:allValuesFrom sff:EquityDeservingGroup ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+  ] .
+
+sff:EquityDeservingGroup
+  a owl:Class ;
+  rdfs:label "Equity Deserving Group"@en ;
+  cids:hasName "Equity Deserving Group" ;
+  rdfs:comment "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en ;
+  rdfs:subClassOf sff:forceHasDescription, [
+    a owl:Restriction ;
+    owl:onProperty cids:hasCharacteristic ;
+    owl:onDataRange cids:Characteristic
+  ], [
+    a owl:Restriction ;
+    owl:onProperty sff:isDefined ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:boolean
+  ] ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasTeamSize
+  a owl:DatatypeProperty ;
+  rdfs:label "Team Size"@en ;
+  cids:hasName "Team Size" ;
+  rdfs:comment "Number of people on the team."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasCharacteristic
+  a owl:DatatypeProperty ;
+  rdfs:label "has Characteristic"@en ;
+  cids:hasName "has Characteristic" ;
+  rdfs:comment "Specifies the group using a Characteristic. Links to one or more instances of Characteristic."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:isDefined
+  a owl:DatatypeProperty ;
+  rdfs:label "isDefined"@en ;
+  cids:hasName "isDefined" ;
+  rdfs:comment "Specifies whether the equity deserving group is defined with reference to an external code. Its value is a single xsd:Boolean."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasEDGSize
+  a owl:DatatypeProperty ;
+  rdfs:label "EDG Size"@en ;
+  cids:hasName "EDG Size" ;
+  rdfs:comment "Number of people on the team who are members of an equity deserving group."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasComment
+  a owl:DatatypeProperty ;
+  rdfs:label "Comment"@en ;
+  cids:hasName "Comment" ;
+  rdfs:comment "Provides additional information about the team profile if needed."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:reportedDate
+  a owl:DatatypeProperty ;
+  rdfs:label "Reported Date"@en ;
+  cids:hasName "Reported Date" ;
+  rdfs:comment "Specifies the date to which the reported information applies."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:hasEDGProfile
+  a owl:ObjectProperty ;
+  rdfs:label "EDG Profile"@en ;
+  cids:hasName "EDG Profile" ;
+  rdfs:comment "Profiles each of the EDG groups that are present on the management team. Links to one or more instances of EDGProfile."@en ;
+  void:inDataset sff:datasetdefinition ;
+  rdfs:isDefinedBy sff: .
+
+sff:forceHasDescription
+  a owl:Restriction ;
+  owl:onProperty cids:hasDescription;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange xsd:string .
+
+sff:forceHasOrganization
+  a owl:Restriction ;
+  owl:onProperty cids:forOrganization ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass cids:Organization .
+
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vs: <http://iandavis.com/id/> .
+@prefix msg0: <http://web.resource.org/cc/> .
+
+<http://vocab.org/vann/.turtle> rdf:type foaf:Document ,
+                                         dctype:Text ;
+                                foaf:primaryTopic <http://purl.org/vocab/vann/> ;
+                                dct:hasFormat <http://vocab.org/vann/.rdf> ,
+                                              <http://vocab.org/vann/.html> ,
+                                              <http://vocab.org/vann/.json> ;
+                                foaf:topic <http://purl.org/vocab/vann/> .
+
+<http://vocab.org/vann/.rdf> rdf:type dctype:Text ,
+                                      foaf:Document ;
+                             dc:format "application/rdf+xml" ;
+                             rdfs:label "RDF/XML" .
+
+<http://vocab.org/vann/.html> rdf:type dctype:Text ,
+                                       foaf:Document ;
+                              dc:format "text/html" ;
+                              rdfs:label "HTML" .
+
+<http://vocab.org/vann/.json> rdf:type dctype:Text ,
+                                       foaf:Document ;
+                              dc:format "application/json" ;
+                              rdfs:label "JSON" .
+
+<http://purl.org/vocab/vann/> rdf:type owl:Ontology ;
+                              dct:title "VANN: A vocabulary for annotating vocabulary descriptions"@en ;
+                              dct:date "2010-06-07" ;
+                              dct:description "This document describes a vocabulary for annotating descriptions of vocabularies with examples and usage notes."@en ;
+                              dct:identifier "http://purl.org/vocab/vann/vann-vocab-20050401" ;
+                              dct:isVersionOf <http://purl.org/vocab/vann/> ;
+                              dct:replaces vann:vann-vocab-20040305 ;
+                              dct:creator vs:me ;
+                              dct:rights "Copyright © 2005 Ian Davis" ;
+                              vann:preferredNamespaceUri "http://purl.org/vocab/vann/" ;
+                              vann:preferredNamespacePrefix "vann" .
+
+vs:me rdf:type foaf:Person ;
+       foaf:name "Ian Davis" .
+
+<file:///var/www/vocab.org/www/htdocs/vann/> rdf:type msg0:Work ;
+                                             msg0:license <http://creativecommons.org/licenses/by/1.0/> ;
+                                             dct:type dctype:Text .
+
+<http://creativecommons.org/licenses/by/1.0/> rdf:type msg0:License ;
+                                              msg0:permits msg0:Reproduction ,
+                                                           msg0:Distribution ,
+                                                           msg0:DerivativeWorks ;
+                                              msg0:requires msg0:Notice ,
+                                                            msg0:Attribution .
+
+vann:changes rdf:type owl:AnnotationProperty ;
+             rdfs:label "Changes"@en ;
+             rdfs:comment "A reference to a resource that describes changes between this version of a vocabulary and the previous."@en ;
+             rdfs:subPropertyOf rdfs:seeAlso ;
+             rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:usageNote rdf:type owl:AnnotationProperty ;
+               rdfs:label "Usage Note"@en ;
+               rdfs:comment "A reference to a resource that provides information on how this resource is to be used."@en ;
+               rdfs:subPropertyOf rdfs:seeAlso ;
+               rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:example rdf:type owl:AnnotationProperty ;
+             rdfs:label "Example"@en ;
+             rdfs:comment "A reference to a resource that provides an example of how this resource can be used."@en ;
+             rdfs:subPropertyOf rdfs:seeAlso ;
+             rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
+                           rdfs:label "Preferred Namespace Uri"@en ;
+                           rdfs:comment "The preferred namespace URI to use when using terms from this vocabulary in an XML document."@en ;
+                           rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty ;
+                              rdfs:label "Preferred Namespace Prefix"@en ;
+                              rdfs:comment "The preferred namespace prefix to use when using terms from this vocabulary in an XML document."@en ;
+                              rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:termGroup rdf:type owl:AnnotationProperty ;
+               rdfs:label "Term Group"@en ;
+               rdfs:comment "A group of related terms in a vocabulary."@en ;
+               rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+@prefix wv: <http://vocab.org/waiver/terms/norms> .        
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+
+<> a void:DatasetDescription;
+    dcterms:title "A VoID Description of the Pleiades Places Dataset" ;
+    dcterms:creator <http://sgillies.net/me> ;
+    foaf:primaryTopic cids:PleiadesPlaces ;
+    .
+
+void:PleiadesPlaces a void:Dataset ;
+
+# Basic metadata
+
+    foaf:homepage <http://pleiades.stoa.org/places/> ;
+    foaf:page <http://pleiades.stoa.org/> ;
+    dcterms:title "Pleiades Places" ;
+    dcterms:description "Linked Data about ancient world places" ;
+    dcterms:publisher cids:PleiadesProject ;
+    dcterms:license <http://creativecommons.org/licenses/by/3.0/us/> ;
+    void:feature <http://www.w3.org/ns/formats/Turtle> ; 
+
+# TODO: add institutional and individual contributions
+
+# Access metadata
+
+    void:dataDump <http://atlantides.org/downloads/pleiades/rdf/places-latest.ttl.gz>;
+
+# Structural metadata
+
+    void:uriSpace "http://pleiades.stoa.org/places/" ;
+#    void:uriRegexPattern "^http://pleiades\\.stoa\\.org/places/(\d+)#this$" ;
+    void:exampleResource <http://pleiades.stoa.org/places/1043#this> ;
+
+# Vocabularies used
+
+    void:vocabulary <http://purl.org/dc/terms/> ;
+    void:vocabulary <http://xmlns.com/foaf/0.1/> ;
+    void:vocabulary <http://data.ordnancesurvey.co.uk/ontology/geometry/> ;
+    void:vocabulary <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/> ;
+    void:vocabulary <http://www.w3.org/2000/01/rdf-schema#> ;
+    .
+
+# Other entities
+
+void:PleiadesProject a foaf:Organization;
+    rdfs:label "Pleiades Project";
+    foaf:homepage <http://pleiades.stoa.org/home>;
+    .
+

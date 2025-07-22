@@ -1,0 +1,117 @@
+# SPARQL CONSTRUCT Script to Convert OWL to SHACL
+#
+# This script reads an OWL ontology in Turtle format and generates
+# a corresponding SHACL file, also in Turtle. It translates OWL
+# classes, properties, and restrictions into SHACL node and
+# property shapes.
+
+# -- PREFIX DEFINITIONS --
+# Prefixes from the source OWL file are included, plus sh: for SHACL.
+
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rel: <http://purl.org/vocab/relationship/>
+PREFIX schema: <http://schema.org/>
+PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cids: <https://ontology.commonapproach.org/cids#>
+PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX om-1: <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX prov: <https://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sff: <https://ontology.commonapproach.org/sff#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX voaf: <http://purl.org/vocommons/voaf#>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+
+CONSTRUCT {
+    # 1. Node Shapes from Classes
+    ?class rdfs:subClassOf ?superClass .
+    ?shape a sh:NodeShape ;
+        sh:targetClass ?class ;
+        rdfs:label ?label;
+        sh:description ?comment ;
+        sh:closed false ;
+        sh:property ?propertyShape ;
+    .
+    ?propertyShape a sh:PropertyShape ;
+        sh:path ?property ;
+        sh:name ?propertyLocalName ;
+        sh:class ?rangeClass ;
+        sh:order ?order ;
+        sh:nodeKind ?nodeKind ;
+        sh:datatype ?datatype ;
+        csh:in ?inList
+    . 
+}
+WHERE {
+    ?class rdf:type owl:Class .
+    bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className)
+    FILTER(isIRI(?class))
+    bind (concat(?className,"_NodeShape") as ?shapeName)
+    BIND(IRI(concat(str(csh:),?shapeName)) AS ?shape)
+    OPTIONAL { ?class rdfs:label ?label . }
+    OPTIONAL { ?class rdfs:comment ?comment . }
+    OPTIONAL {
+        ?class rdfs:subClassOf ?superClass .
+        FILTER(isIRI(?superClass))
+    }
+    {
+
+        ?restriction owl:onProperty ?property .
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        ?restriction owl:onDataRange ?dataTarget.
+        optional {
+            ?dataTarget owl:oneOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?inList .
+        }
+        optional {
+            filter(isLiteral(?dataTarget)) .
+            bind(?dataTarget as ?datatype1)
+        }
+        bind(coalesce(?datatype1, xsd:string) as ?datatype)
+
+        bind(sh:Literal as ?nodeKind)
+    }
+    union {
+        ?restriction owl:onProperty ?property .
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        ?restriction owl:allValuesFrom ?target.
+        filter NOT EXISTS {
+            ?restriction owl:onDataRange ?datatype .
+        }
+        optional {
+            ?target owl:unionOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?rangeClass1 .
+        }
+        optional {
+            filter(isIRI(?target)) .
+            bind(?target as ?rangeClass2)
+        }
+        bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
+        bind(sh:IRI as ?nodeKind)
+    }
+
+} order by ?shape ?propertyShape
