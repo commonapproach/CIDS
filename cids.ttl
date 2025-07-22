@@ -15,7 +15,7 @@
 @prefix om-1: <http://www.wurvoc.org/vocabularies/om-1.8/> .
 @prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <https://www.w3.org/ns/prov#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rel: <http://purl.org/vocab/relationship/> .
@@ -996,8 +996,8 @@ dqv:QualityMeasurement rdf:type owl:Class .
 dqv:QualityPolicy rdf:type owl:Class .
 
 
-###  https://ontology.commonapproach.org/CharacteristicReport
-<https://ontology.commonapproach.org/CharacteristicReport> rdf:type owl:Class ;
+###  https://ontology.commonapproach.org/cids#CharacteristicReport
+<https://ontology.commonapproach.org/cids#CharacteristicReport> rdf:type owl:Class ;
                                                            rdfs:subClassOf cids:cidsThing ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty i72:numberOf ;

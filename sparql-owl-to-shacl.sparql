@@ -1,48 +1,39 @@
-# SPARQL CONSTRUCT Script to Convert OWL to SHACL
-#
-# This script reads an OWL ontology in Turtle format and generates
-# a corresponding SHACL file, also in Turtle. It translates OWL
-# classes, properties, and restrictions into SHACL node and
-# property shapes.
-
-# -- PREFIX DEFINITIONS --
-# Prefixes from the source OWL file are included, plus sh: for SHACL.
-
-PREFIX cc: <http://creativecommons.org/ns#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
 PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
-PREFIX dqv: <http://www.w3.org/ns/dqv#>
-PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
-PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
-PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
-PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rel: <http://purl.org/vocab/relationship/>
-PREFIX schema: <http://schema.org/>
-PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
-PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX chs: <>
 PREFIX cids: <https://ontology.commonapproach.org/cids#>
 PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
 PREFIX om-1: <http://www.wurvoc.org/vocabularies/om-1.8/>
-PREFIX prov: <https://www.w3.org/ns/prov#>
+PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel: <http://purl.org/vocab/relationship/>
+PREFIX schema: <http://schema.org/>
+PREFIX sff: <https://ontology.commonapproach.org/sff#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX vann: <http://purl.org/vocab/vann/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX sff: <https://ontology.commonapproach.org/sff#>
-PREFIX void: <http://rdfs.org/ns/void#>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX voaf: <http://purl.org/vocommons/voaf#>
-PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
     # 1. Node Shapes from Classes
@@ -61,7 +52,10 @@ CONSTRUCT {
         sh:order ?order ;
         sh:nodeKind ?nodeKind ;
         sh:datatype ?datatype ;
-        csh:in ?inList
+        csh:in ?inList ;
+        sh:minCount ?cardinalityMin ;
+        sh:maxCount ?cardinalityMax ;
+        csh:cardinality ?cardinality ;
     . 
 }
 WHERE {
@@ -113,5 +107,22 @@ WHERE {
         bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
         bind(sh:IRI as ?nodeKind)
     }
-
+    optional {
+        ?restriction owl:qualifiedCardinality ?qCardinality .
+        bind(xsd:string(?qCardinality) as ?cardinalityMin1)
+        bind(xsd:string(?qCardinality) as ?cardinalityMax1)
+    }
+    optional {
+        ?restriction owl:minQualifiedCardinality ?cardinalityMin2 .
+    }
+    optional {
+        ?restriction owl:maxQualifiedCardinality ?cardinalityMax2 .
+    }
+    bind(coalesce(xsd:string(?cardinalityMin1), xsd:string(?cardinalityMin2), "0") as ?cardinalityMin)
+    bind(coalesce(xsd:string(?cardinalityMax1), xsd:string(?cardinalityMax2), "unbounded") as ?cardinalityMax)
+    bind(if(?cardinalityMin = "0" && ?cardinalityMax = "unbounded",csh:ZeroOrMore,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "1",csh:ExactlyOne,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "unbounded",csh:OneOrMore,
+        if(?cardinalityMin = "0" && ?cardinalityMax = "1",csh:Optional, csh:Unknown) ) )      
+        ) as ?cardinality )
 } order by ?shape ?propertyShape
