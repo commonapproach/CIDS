@@ -28,4 +28,7 @@ Shapes can be used to make properties and classes more contextual and serve seve
 * __Structural Recursion.__ SPARQL is not recursive - it processes a linear dataset. However, SHACL can introduce recursive invocations that can better handle analysing and processing hierarchical data structures.
 * __Mapping to DOM Structures.__ SHACL can also be used to generate programmatic DOM structures from RDF in external languages such as python or javascript.
 
+[[Home]](README.md)
+
+[[Next]](what-is-sparql.md)
 

@@ -16,3 +16,7 @@ By aligning with CIDS, you can focus your resources on what makes your applicati
 * __Build a Future-Ready Architecture__: RDF is the language of modern knowledge graphs. Building on CIDS means your software's architecture is inherently prepared for the next wave of data analytics. You gain the ability to leverage powerful graph queries (SPARQL), logical inference (OWL), and sophisticated analysis that can be enhanced with AI and Large Language Models.
 
 *(summarized by Gemini from Common Approach's ontology guides and presentations and then edited by real people)*
+
+[[Home]](README.md)
+
+[[Next]](not-a-programmer.md)
