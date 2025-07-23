@@ -12,6 +12,9 @@ This document is intended to provide software developers with answers to frequen
 * [What is SPARQL?](what-is-sparql.md)
 * [What is JSON-LD and context file?](context-file.md)
 
+### Tools and Libraries for using RDF
+* [Tools and Libraries for RDF](tools-and-libraries.md)
+
 ### Common Impact Data Standard and Social Finance Fund Companion Module
 * [Why is Common Impact Data Standard in RDF?](why-cids-sff-rdf.md)
 * [What are the benefits of using the Common Impact Data Standard?](benefits.md)
