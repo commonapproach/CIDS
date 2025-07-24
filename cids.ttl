@@ -800,11 +800,11 @@ time:year rdf:type owl:FunctionalProperty .
 
 
 ###  http://www.w3.org/ns/prov#endedAtTime
-<http://www.w3.org/ns/prov#endedAtTime> rdf:type owl:DatatypeProperty ;
+prov:endedAtTime rdf:type owl:DatatypeProperty ;
                         cids:belongsToTier cids:BasicTier .
 
 ###  http://www.w3.org/ns/prov#startedAtTime
-<http://www.w3.org/ns/prov#startedAtTime> rdf:type owl:DatatypeProperty ;
+prov:startedAtTime rdf:type owl:DatatypeProperty ;
                         cids:belongsToTier cids:BasicTier .
 
 
@@ -1200,11 +1200,11 @@ dqv:QualityPolicy rdf:type owl:Class .
                                                                           owl:allValuesFrom cids:Person
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                                                          owl:onProperty prov:endedAtTime ;
                                                                           owl:someValuesFrom xsd:dateTime
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                                                          owl:onProperty prov:startedAtTime ;
                                                                           owl:someValuesFrom xsd:dateTime
                                                                         ] ;
                                                         rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
@@ -1355,12 +1355,12 @@ cids:Characteristic rdf:type owl:Class ;
                                       owl:onDataRange xsd:string
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                      owl:onProperty prov:endedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                      owl:onProperty prov:startedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
@@ -1477,12 +1477,12 @@ cids:Counterfactual rdf:type owl:Class ;
                                       owl:onClass act:Activity
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                      owl:onProperty prov:endedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                      owl:onProperty prov:startedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
@@ -1676,12 +1676,12 @@ cids:ImpactDepth rdf:type owl:Class ;
 cids:ImpactDuration rdf:type owl:Class ;
                     rdfs:subClassOf cids:HowMuchImpact ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                      owl:onProperty prov:endedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                      owl:onProperty prov:startedAtTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ;
@@ -1812,12 +1812,12 @@ cids:ImpactReport rdf:type owl:Class ;
                                     owl:onDataRange xsd:string
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                    owl:onProperty prov:endedAtTime ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange xsd:dateTime
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                    owl:onProperty prov:startedAtTime ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange xsd:dateTime
                                   ] ,
@@ -2172,12 +2172,12 @@ cids:IndicatorReport rdf:type owl:Class ;
                                        owl:onDataRange xsd:string
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                                       owl:onProperty prov:endedAtTime ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:dateTime
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                                       owl:onProperty prov:startedAtTime ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:dateTime
                                      ] ;
@@ -2246,12 +2246,12 @@ cids:Input rdf:type owl:Class ;
                              owl:onDataRange xsd:string
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                             owl:onProperty prov:endedAtTime ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:dateTime
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                             owl:onProperty prov:startedAtTime ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:dateTime
                            ] ,
@@ -2729,12 +2729,12 @@ cids:Service rdf:type owl:Class ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                               owl:onProperty prov:endedAtTime ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:dateTime
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                               owl:onProperty prov:startedAtTime ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:dateTime
                              ] ,
@@ -3030,12 +3030,12 @@ cids:Target rdf:type owl:Class ;
                               owl:onDataRange xsd:dateTime
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty <http://www.w3.org/ns/prov#endedAtTime> ;
+                              owl:onProperty prov:endedAtTime ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty <http://www.w3.org/ns/prov#startedAtTime> ;
+                              owl:onProperty prov:startedAtTime ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
