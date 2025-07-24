@@ -1255,7 +1255,7 @@ cids:Activity rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasIdentifier ;
-                                owl:allValuesFrom xsd:string
+                                owl:onDataRange xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasName ;
