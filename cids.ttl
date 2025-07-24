@@ -19,7 +19,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rel: <http://purl.org/vocab/relationship/> .
-@prefix rfds: <> .
 @prefix sch: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sur: <http://ontology.eil.utoronto.ca/tove/survey#> .
@@ -297,7 +296,7 @@ cids:definedBy rdf:type owl:ObjectProperty ;
 ###  https://ontology.commonapproach.org/cids#forActivity
 cids:forActivity rdf:type owl:ObjectProperty ;
     rdfs:range cids:Activity ;
-#    rfds:domain cids:Organization ;
+#    rdfs:domain cids:Organization ;
     rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
@@ -2142,7 +2141,7 @@ cids:Organization rdf:type owl:Class ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange xsd:string
                                   ] ;
-                  rdfs:comment """<p>The cids:Organization class is defined as a rfds:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:</p>
+                  rdfs:comment """<p>The cids:Organization class is defined as a rdfs:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:</p>
 <ul>
 <li>org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.</li>
 <li>hasProgram: Identifies the Programs being modelled.</li>

@@ -1,7 +1,6 @@
 PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX cc: <http://creativecommons.org/ns#>
-PREFIX chs: <>
 PREFIX cids: <https://ontology.commonapproach.org/cids#>
 PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -12,7 +11,6 @@ PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
 PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
-PREFIX hs: <>
 PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
 PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
 PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
@@ -54,8 +52,8 @@ CONSTRUCT {
         sh:nodeKind ?nodeKind ;
         sh:datatype ?datatype ;
         csh:in ?inList ;
-        sh:minCount ?cardinalityMin ;
-        sh:maxCount ?cardinalityMax ;
+        sh:minCount ?minCardinality ;
+        sh:maxCount ?maxCardinality ;
         csh:cardinality ?cardinality ;
         csh:usedBy ?class
     . 
@@ -128,4 +126,6 @@ WHERE {
         if(?cardinalityMin = "1" && ?cardinalityMax = "unbounded",csh:OneOrMore,
         if(?cardinalityMin = "0" && ?cardinalityMax = "1",csh:Optional, csh:Unknown) ) )      
         ) as ?cardinality )
+    bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
+    bind(xsd:integer(?cardinalityMin) as ?minCardinality)
 } order by ?shape ?propertyShape
