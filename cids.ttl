@@ -1254,7 +1254,7 @@ cids:Activity rdf:type owl:Class ;
                                 owl:onClass cids:ImpactModel
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier> ;
+                                owl:onProperty org:hasIdentifier ;
                                 owl:allValuesFrom xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -1263,7 +1263,7 @@ cids:Activity rdf:type owl:Class ;
                                 owl:onDataRange xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasDescription> ;
+                                owl:onProperty cids:hasDescription ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:string
                               ] ;
@@ -1347,7 +1347,7 @@ cids:Characteristic rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasValue ;
-                                      owl:allValuesFrom i72:measure
+                                      owl:allValuesFrom i72:measure # check for case sensitivity because of punning
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty org:hasName ;
@@ -2854,7 +2854,7 @@ cids:Stakeholder rdf:type owl:Class ;
                                    owl:onDataRange xsd:string
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                                   owl:onProperty org:hasName ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:string
                                  ] ;
@@ -3076,7 +3076,7 @@ cids:Theme rdf:type owl:Class ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
                            ] ;
-           rdfs:Label "Theme"@en ;
+           rdfs:label "Theme"@en ;
            rdfs:comment """<p>The Theme class is used to represent the impact themes for which outcomes are specified.</p>
 <p>Outcomes contribute to themes. It has the following properties:</p>
 <ul>
@@ -3105,7 +3105,7 @@ cids:Tier rdf:type owl:Class, skos:ConceptScheme ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
                            ] ;
-          rdfs:Label "Tier"@en ;
+          rdfs:label "Tier"@en ;
           rdfs:comment """<p>The Tier class represents the Common Impact Data Standard tier of alignment to which a class or property belongs.</p>
 <p>A software's alignment to a specific tier of alignment (Basic, Essential, or Full) indicates to a software user which groups of classes and properties are present in the data model of that software, and can be imported and exported in an aligned RDF format (nominally JSONLD).</p>
 <ul>
