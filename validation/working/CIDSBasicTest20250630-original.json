@@ -532,7 +532,7 @@
     ],
     "@type": "cids:IndicatorReport",
     "@id": "https://SPO_D2.ca/IndicatorReport/99094",
-    "hasName": "Number of presentations requested and given",
+    "org:hasName": "Number of presentations requested and given",
     "hasComment": "placeholder comment",
     "i72:value": {
       "@context": [
