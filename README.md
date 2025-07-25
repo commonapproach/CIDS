@@ -6,5 +6,3 @@ Production version of the ontology is located at https://ontology.commonapproach
 
 This repository temporarily contains all ontology versions for alignment
 purposes.
-
-Technical contact: rdf@commonapproach.org

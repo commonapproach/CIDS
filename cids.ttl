@@ -1702,7 +1702,7 @@ cids:ImpactModel rdf:type owl:Class ;
                  rdfs:subClassOf cids:cidsThing ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cids:forOrganization ;
-                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   # owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass cids:Organization
                                  ] ,
                                  [ rdf:type owl:Restriction ;

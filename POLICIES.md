@@ -2,7 +2,7 @@
 
 ## Authorship
 
-For the purposes of authorship and copyright, the ontology is copyright 2024
+For the purposes of authorship and copyright, the ontology is copyright 2025
 Common Approach to Impact Measurement.  The common approach ontology is
 being collaboratively developed over a long period of time.  Individual
 contributors to the ontology are recorded in alphabetical order for the
