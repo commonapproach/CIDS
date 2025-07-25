@@ -345,7 +345,7 @@ cids:Code_NodeShape
         sh:property     cids:hasDescription_PropertyShape ;
         sh:property     cids:definedBy_PropertyShape ;
         sh:property     cids:hasSpecification_PropertyShape ;
-        sh:property     cids:hasIdentifier_PropertyShape ;
+        sh:property     org:hasIdentifier_PropertyShape ;
         sh:property     i72:value_PropertyShape ;
         sh:property     schema:codeValue_PropertyShape ;
 
@@ -446,7 +446,7 @@ org:hasLegalName_PropertyShape
         rdfs:label      "has legal name" ;
         sh:minCount     1 ;
         sh:maxCount     1 ;
-        sh:nodeKind     sh:IRI ;
+        sh:nodeKind     sh:Literal ;
         sh:name         "hasLegalName" ;
         sh:description  "Is a string that specifies the legal name of the Organization" ;
         sh:order        38 .      
@@ -555,6 +555,7 @@ cids:Indicator_NodeShape
         sh:property     org:hasName_PropertyShape ;
         sh:property     cids:hasDescription_PropertyShape ;
         sh:property     cids:forOutcome_PropertyShape ;
+        sh:property     cids:forTheme_PropertyShape ;
         sh:property     cids:forOrganization_PropertyShape ;
         sh:property     i72:unit_of_measure_PropertyShape .
 
@@ -675,9 +676,9 @@ cids:hasSpecification_PropertyShape
 
         
 
-cids:hasIdentifier_PropertyShape
+org:hasIdentifier_PropertyShape
         rdf:type        sh:PropertyShape ;
-        sh:path         cids:hasIdentifier ;
+        sh:path         org:hasIdentifier ;
         rdfs:label      "has identifier" ;
         sh:minCount     0 ;
         sh:maxCount     1 ;

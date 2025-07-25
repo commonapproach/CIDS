@@ -5,7 +5,7 @@
 
 However, OWL inferencing can become very complex, producing far more information than was actually useful, and combinatorial constraints limited its efficacy for very large datasets (it has trouble scaling). Moreover, the model that OWL uses differs significantly from the way that other data modeling standards are built, and outside of the Semantic Web community, there was comparatively little adoption because of this discrepancy between the two underlying models.
 
-Additionally, OWL was developed prior to the advent of SPARQL, and many of the generalized patterns that initially used triple generation for inferencing were increasingly being done better with SPARQL (this became especially true with the advent of SPARQL Update, released in 2013, which made it possible to write directly into the graph from within the graph. 
+Additionally, OWL was developed prior to the advent of SPARQL, and many of the generalized patterns that initially used triple generation for inferencing were increasingly being done better with SPARQL. This became especially true with the advent of SPARQL Update, released in 2013, which made it possible to write directly into the graph from within the graph. 
 
 Finally, a number of key innovations since OWL was created, including RDF-Star and named graphs, had to be retrofitted into OWL, in ways that were becoming more cumbersome than beneficial.
 
@@ -15,7 +15,7 @@ In 2015, the W3C started a working group based upon a new Shape-based language o
 
 The notion of a __shape__ is something that has evolved considerably from the early days of OWL classes. In essence, a shape can be thought of as a way of describing a data structure in terms of its constraints, independent of any specific inferential logic.
 
-SHACL defines two a number of different types of shapes, but the two most heavily used are NodeShapes (which are analogous to but more general than classses) and PropertyShapes (which are analogous to property definitions, but again, more generalized). 
+SHACL defines a number of different types of shapes, but the two most heavily used are NodeShapes (which are analogous to but more general than classses) and PropertyShapes (which are analogous to property definitions, but again, more generalized). 
 
 ## SHACL Roles
 
@@ -28,4 +28,7 @@ Shapes can be used to make properties and classes more contextual and serve seve
 * __Structural Recursion.__ SPARQL is not recursive - it processes a linear dataset. However, SHACL can introduce recursive invocations that can better handle analysing and processing hierarchical data structures.
 * __Mapping to DOM Structures.__ SHACL can also be used to generate programmatic DOM structures from RDF in external languages such as python or javascript.
 
+[[Home]](README.md)
+
+[[Next]](what-is-sparql.md)
 
