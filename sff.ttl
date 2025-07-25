@@ -100,7 +100,8 @@ sff:OrganizationProfile
     owl:onDataRange xsd:dateTime
   ] ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:hasOrganizationProfile
   a owl:ObjectProperty ;
@@ -110,7 +111,8 @@ sff:hasOrganizationProfile
   cids:hasName "hasOrganizationProfile" ;
   rdfs:comment "Links an Organization to its Social Finance Fund (SFF) profile."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:Sector
   a owl:Class ;
@@ -118,7 +120,8 @@ sff:Sector
   cids:hasName "Sector" ;
   rdfs:comment "Sectors provide a high-level view of an organization's core focus and the general type of activities it conducts, helping to standardize its profile within the broader landscape of similar entities."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:ReportInfo
   a owl:Class ;
@@ -145,7 +148,9 @@ sff:ReportInfo
     owl:onProperty org:hasName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:string
-  ] .
+  ] ;
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:FundingStatus
   a owl:Class ;
@@ -169,7 +174,8 @@ sff:FundingStatus
     owl:onDataRange sff:FundingState
   ] ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:TeamProfile
   a owl:Class ;
@@ -197,12 +203,13 @@ sff:TeamProfile
     owl:onClass sff:EDGProfile
   ], [
     a owl:Restriction ;
-    owl:onProperty sff:hasComment ;
+    owl:onProperty cids:hasComment ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:string
   ] ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:FundingState
   a owl:Class, skos:ConceptScheme ;
@@ -211,7 +218,8 @@ sff:FundingState
   cids:hasName "Funding State" ;
   rdfs:comment "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:applied
   a sff:FundingState, skos:Concept ;
@@ -269,7 +277,9 @@ sff:EDGProfile
     owl:onProperty sff:forEDG ;
     owl:allValuesFrom sff:EquityDeservingGroup ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
-  ] .
+  ] ;
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:EquityDeservingGroup
   a owl:Class ;
@@ -287,7 +297,8 @@ sff:EquityDeservingGroup
     owl:onDataRange xsd:boolean
   ] ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:hasTeamSize
   a owl:DatatypeProperty ;
@@ -295,15 +306,8 @@ sff:hasTeamSize
   cids:hasName "Team Size" ;
   rdfs:comment "Number of people on the team."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
-
-sff:hasCharacteristic
-  a owl:DatatypeProperty ;
-  rdfs:label "has Characteristic"@en ;
-  cids:hasName "has Characteristic" ;
-  rdfs:comment "Specifies the group using a Characteristic. Links to one or more instances of Characteristic."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:isDefined
   a owl:DatatypeProperty ;
@@ -311,7 +315,8 @@ sff:isDefined
   cids:hasName "isDefined" ;
   rdfs:comment "Specifies whether the equity deserving group is defined with reference to an external code. Its value is a single xsd:Boolean."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:hasEDGSize
   a owl:DatatypeProperty ;
@@ -319,15 +324,8 @@ sff:hasEDGSize
   cids:hasName "EDG Size" ;
   rdfs:comment "Number of people on the team who are members of an equity deserving group."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
-
-sff:hasComment
-  a owl:DatatypeProperty ;
-  rdfs:label "Comment"@en ;
-  cids:hasName "Comment" ;
-  rdfs:comment "Provides additional information about the team profile if needed."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:reportedDate
   a owl:DatatypeProperty ;
@@ -335,7 +333,8 @@ sff:reportedDate
   cids:hasName "Reported Date" ;
   rdfs:comment "Specifies the date to which the reported information applies."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:hasEDGProfile
   a owl:ObjectProperty ;
@@ -343,7 +342,8 @@ sff:hasEDGProfile
   cids:hasName "EDG Profile" ;
   rdfs:comment "Profiles each of the EDG groups that are present on the management team. Links to one or more instances of EDGProfile."@en ;
   void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: .
+  rdfs:isDefinedBy sff: ;
+  cids:belongsToTier cids:SFFTier .
 
 sff:forceHasDescription
   a owl:Restriction ;
