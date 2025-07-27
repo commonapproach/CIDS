@@ -1,0 +1,34 @@
+
+	{
+		"@context": ["http://ontology.commonapproach.org/contexts/cidsPrefix.json",
+		{
+			"hasAuthority" : {
+				"@id": "org:hasAuthority",
+				"@type": "org:Authority"
+			},
+			"hasGoal": {
+				"@id": "org:hasGoal",
+				"@type": "org:Goal"
+			},
+			"hasPolicy": {
+				"@id": "org:hasPolicy",
+              	"@type": "org:Policy"
+			} ,
+			"hasProcess": {
+				"@id": "org:hasProcess",
+              	"@type": "org:Process"
+			},
+			"hasSkill": {
+				"@id": "org:hasSkill",
+              	"@type": "org:Skill"
+			} ,
+			"specializedRoleOf": {
+				"@id": "org:specializedRoleOf",
+              	"@type": "org:Role"
+            } ,
+            "subordinateOf": {
+				"@id": "org:subordinateOf",
+              	"@type": "org:Role"
+			}
+		}]
+	}

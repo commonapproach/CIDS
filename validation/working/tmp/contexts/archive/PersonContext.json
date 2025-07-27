@@ -1,0 +1,89 @@
+
+	{
+		"@context": ["http://ontology.commonapproach.org/contexts/cidsPrefix.json",
+		"http://ontology.commonapproach.org/contexts/AddressContext.json",
+		"http://ontology.commonapproach.org/contexts/PhoneNumberContext.json",
+		"http://ontology.commonapproach.org/contexts/RoleContext.json" ,
+		{
+			"hasAddress" : {
+				"@id": "ic:hasAddress",
+				"@type": "ic:Address"
+			},
+			"hasPhoneNumber": {
+				"@id": "ic:hasPhoneNumber",
+				"@type": "ic:PhoneNumber"
+			},
+			"hasEmail": {
+				"@id": "ic:hasEmail",
+              	"@type": "xsd:string"
+			} ,
+			"birthDate": {
+				"@id": "sch:birthDate",
+              	"@type": "xsd:string"
+			} ,
+			"givenName": {
+				"@id": "foaf:givenName",
+              	"@type": "xsd:string"
+			} ,
+			"middleName": {
+				"@id": "foaf:middleName",
+              	"@type": "xsd:string"
+			} ,
+			"familyName": {
+				"@id": "foaf:familyName",
+              	"@type": "xsd:string"
+			} ,
+			"formerName": {
+				"@id": "foaf:formerName",
+              	"@type": "xsd:string"
+			} ,
+			"parentOf": {
+				"@id": "cwrc:parentOf",
+              	"@type": "cids:Person"
+			} ,
+			"hasGender": {
+				"@id": "cwrc:hasGender",
+              	"@type": "cwrc:Gender"
+			} ,
+			"hasEthnicity": {
+				"@id": "cwrc:hasEthnicity",
+              	"@type": "cwrc:Ethnicity"
+			} ,
+			"hasReligion": {
+				"@id": "cwrc:hasReligion",
+              	"@type": "cwrc:Religion"
+			} ,
+			"hasOccupation": {
+				"@id": "cids:hasOccupation",
+              	"@type": "xsd:string"
+			} ,
+			"plays": {
+				"@id": "org:plays",
+              	"@type": "org:Role"
+            } ,
+			"spouseOf": {
+				"@id": "rel:spouseOf",
+              	"@type": "cids:Person"
+            } ,
+			"hasDisability": {
+				"@id": "cids:hasDisability",
+              	"@type": "owl:Thing"
+			} ,
+			"hasDisease": {
+				"@id": "cids:hasDisease",
+              	"@type": "owl:Thing"
+			} ,
+			"hasImmigrationStatus": {
+				"@id": "cids:hasImmigrationStatus",
+              	"@type": "owl:Thing"
+			} ,
+			"hasMaritalStatus": {
+				"@id": "cids:hasMaritalStatus",
+              	"@type": "owl:Thing"
+			} ,
+			"identifier": {
+				"@id": "sch:identifier",
+				"@type": "xsd:string"
+			}
+		}]
+	}

@@ -1,0 +1,2508 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.eil.utoronto.ca/CAO/caco"
+     xml:base="http://ontology.eil.utoronto.ca/CAO/caco"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:act="http://ontology.eil.utoronto.ca/tove/activity#"
+     xmlns:cav="http://ontology.eil.utoronto.ca/CAO/cav#"
+     xmlns:i72="http://ontology.eil.utoronto.ca/ISO21972/iso21972#"
+     xmlns:oep="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#"
+     xmlns:org="http://ontology.eil.utoronto.ca/tove/organization#"
+     xmlns:vs="https://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sch="https://schema.org/"
+     xmlns:sur="http://ontology.eil.utoronto.ca/tove/survey#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:adms="http://www.w3.org/ns/adms#"
+     xmlns:caco="http://ontology.eil.utoronto.ca/CAO/caco#"
+     xmlns:cafo="http://ontology.eil.utoronto.ca/CAO/cafo#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
+     xmlns:gcif="http://ontology.eil.utoronto.ca/GCI/Finance/GCI-Finance#"
+     xmlns:om-1="http://www.wurvoc.org/vocabularies/om-1.8/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://ontology.eil.utoronto.ca/CAO/caco">
+	<vs:term_status>archaic</vs:term_status>
+	<owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <owl:incompatibleWith rdf:resource="https://ontology.commonapproach.org/cids-1-0"/>
+        <owl:imports rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo.owl"/>
+        <owl:imports rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl"/>
+        <cc:license>http://creativecommons.org/licenses/by/3.0/</cc:license>
+        <dc:creator xml:lang="en">Mark S. Fox, msf@eil.utoronto.ca</dc:creator>
+        <skos:historicalNote xml:lang="en">This ontology version was a development version that was never widely used. It is made available here for historical reasons.</skos:historicalNote>
+        <dc:description xml:lang="en">The Common Impact Data Standard (CAID):
+
+    Provides a standard representation for the core concepts and attributes that underlie impact models (e.g., logic model, impact thesis, theory of change, etc.), inputs, activities, outputs, and outcomes;
+    Provides a standard for representing the definition of an organizations’ stakeholders, outcomes, indicators, impact, etc.
+    Provides a flexible standard in that any impact model can be mapped onto this data standard;
+    Supports interoperability amongst impact models by enabling the transformation of data from one impact model to another;
+    Complements other impact standards (such as IRIS+ taxonomy of metrics) and other data standards (such as the common data standard and IATI);
+    Simplifies the sharing and analysis of impact data, including data from different sources, organizations, and software;
+    Is extensible in that additional concepts and attributes can be added to meet the specific needs of an organization;
+    Makes it possible to assess the similarity of indicators from multiple sources; and
+    Is a Semantic Representation, that making it easier to use AI and Machine Learning to analyse the data.​</dc:description>
+        <dc:title xml:lang="en">Common Approach Core Ontology for Representing Impact Models</dc:title>
+        <vann:preferredNamespacePrefix>caco</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://ontology.eil.utoronto.ca/CAO/caco#</vann:preferredNamespaceUri>
+        <owl:versionInfo xml:lang="en">version 0.2 3 June 2020
+version 0.1 6 November 2019</owl:versionInfo>
+        <adms:relatedDocumentation xml:lang="en">Fox, M.S., Chowdhury, A., Zhang, J., Gajderowicz, B., Abdulai, T., Ruff, K., and Rosu, D., (2020), “CACO: The Common Approach Core Ontology for Representing Impact Models”, Technical Report, Centre for Social Services Engineering, University of Toronto. Available at csse.utoronto.ca.</adms:relatedDocumentation>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#commment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#commment"/>
+    
+
+
+    <!-- http://www.w3.org/ns/adms#relatedDocumentation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/adms#relatedDocumentation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#benefitsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#benefitsFrom">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#canEnable -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#canEnable">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#canProduce -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#canProduce">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#contributes -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#contributes">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#dcObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#dcObjectProperty"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forActivity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forActivity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forDomain -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forDomain">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forIndicator">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorReport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forOrganization">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forOutcome -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forOutcome">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#forStakeholder -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#forStakeholder">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#fromPerspectiveOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#fromPerspectiveOf">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasAccess -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasAccess">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasActivity">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasActualAmount -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasActualAmount">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasActualImpact -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasActualImpact">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasAmount -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasAmount">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasBaseline -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasBaseline">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasBeneficialStakeholder -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasBeneficialStakeholder">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasCode -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasCode">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasConsequence -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasConsequence">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasContributingStakeholder -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasContributingStakeholder">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasContribution -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasContribution">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasCounterfactual -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasCounterfactual">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasDataSource -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasDataSource">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasDepth -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasDepth">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasDuration">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasImpact -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasImpact">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasImportance -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasImportance">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorReport -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorReport">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorStandard -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorStandard">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasInput">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasLikelihood -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasLikelihood">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasMethod -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasMethod">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasOutput">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasPlannedAmount -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasPlannedAmount">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasProgram -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasProgram">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasResource">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasRisk -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasRisk">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasService -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasService">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasSize -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasSize">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasThreshold -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#inputFor -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#inputFor">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#intendedImpact -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#intendedImpact">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#performs -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#performs">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#produces -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#produces">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#usedByIndicator -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#usedByIndicator">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#usesOutput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#usesOutput -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#usesOutput">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/activity#hasElaboration -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/activity#hasElaboration"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/activity#subActivityOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/activity#subActivityOf"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/organization#forActivity -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/organization#forActivity"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/organization#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.eil.utoronto.ca/tove/organization#hasRole"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/spatial -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/spatial">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#dcObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/temporal -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/temporal">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#dcObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTime"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#temporal -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#temporal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeEnd">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeStart -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeStart">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#hasMitigation -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#hasMitigation">
+        <rdfs:subPropertyOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/dateCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/dateCreated"/>
+    
+
+
+    <!-- http://schema.org/description -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description"/>
+    
+
+
+    <!-- http://schema.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/identifier"/>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Activity -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Activity">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#canProduce"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasCode"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ActivityCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#subActivityOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Service"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#hasPart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">Activity defines the actual “actions” performed by an organization to implement a Service. CACO’s Activity class is defined to be a subclass of the TOVE Activity, and is extended by including properties for Input, Output and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather by what resources they use (input) or who performs the activity (service). Its properties are:
+•	canProduce: specifies the Outcome that results from performance of the Activity. It is used primarily for representing Impact Chains.
+•	hasInput: specifies the Input to the Activity
+•	hasOutput: specifies the Output of the Activity
+•	hasCode: specifies zero or more codes, created by various organizations, to identify a type of Activity, e.g., ICHI – International Classification of Health Interventions activities
+•	act:subActivityOf: specifies the Service or Activity that this Activity is part of</rdfs:commment>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ActivityCode -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ActivityCode">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOrganization"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An instance of an ActivityCode is used to specify a particular code created by a standards organization. Its properties are:
+•	forOrganization: specifies the Organization that created the code, e.g., ICHI, ISO, …
+•	sch:identifier: specifies the code number
+•	sch:name: specifies the name or title of the code
+•	sch:description: specifies the description of the code</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity Code</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#AlignmentRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#AlignmentRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#BeneficialStakeholder -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#BeneficialStakeholder">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#hasRole"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Client"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Employee"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#benefitsFrom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">A Beneficiary_Stakeholder is a stakeholder that benefits from a logic model’s outcome.</rdfs:commment>
+        <rdfs:label xml:lang="en">Beneficial Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Client -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Client">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Community -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Community">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ContributingStakeholder -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ContributingStakeholder">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#benefitsFrom"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#contributes"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">Contributor_Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes.</rdfs:commment>
+        <rdfs:label xml:lang="en">Contributing Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Counterfactual -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Counterfactual">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#for_time_interval"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">a comparison between what actually happened and what would have happened in the absence of the intervention. 
+i72:located_in: spatial location of the counterfactual
+i72:for_time_interval: time interval over which the counterfactual occurs
+hasMethodS: description of the method that defines the counterfactual
+sch:description: general description of the Counterfactual
+i72:value: value of the counterfactual</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Dataset -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Dataset">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/elements/1.1/temporal"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/PeriodOfTime"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#temporal"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/dateCreated"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Dataset provides basic information about the datasets used. It has the following properties:
+•	i72:located_in: specifies the spatial area that the dataset covers
+•	dc:temporal: specifies the time interval that the dataset covers
+•	sch:identifier: specifies the unique ID of the dataset, if any
+•	sch:name: specifies the name of the dataset
+•	sch:description: provides a description of the dataset
+•	sch:dateCreated: specified the date the dataset was created</rdfs:comment>
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#DcThing -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#DcThing"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#DcatThing -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#DcatThing"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Domain -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Domain">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#DropOffRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#DropOffRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#EfficiencyRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#EfficiencyRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Employee -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Employee">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#EnduranceRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#EnduranceRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#EvidenceRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#EvidenceRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ExecutionRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ExecutionRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ExternalRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ExternalRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#FinancialInput -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#FinancialInput">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasType"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#FinancialResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasAmount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Impact -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Impact">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forStakeholder"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#fromPerspectiveOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasActualImpact"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#negative"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#neutral"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#positive"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasDepth"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactDepth"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasDuration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasImportance"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactImportance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasSize"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#intendedImpact"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#negative"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#neutral"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#positive"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The Impact class specifies for a specific Stakeholder whether the Outcome will have a positive, negative or neutral affect on the Stakeholder, and the nature of the impact:
+•	forStakeholder: identifies the Stakeholder affected
+•	fromPerspectiveOf: identifies the Stakeholder who is determining the importance of the Impact
+•	hasImportance: specifies the nature of the importance as a om:Quantity.  Users can define or select whatever quantification they prefer
+•	intendedImpact: identifies the intended direction of the change – note that Indicators capture the actual direction.
+•	hasIndicator: identifies the set of Indicators the Organization assigns to the Outcome but are specific to this Stakeholder
+•	hasSize: specifies the number of stakeholders affected by the impact
+•	hasActualImpact: specifies one of three values for the actual impact – positive, negative or neutral
+•	hasDepth: specifies the depth of the impact defined by an instance of ImpactDepth
+•	hasDuration: specifies the duration the impact is sustained as defined by an instance of ImpactDuration</rdfs:comment>
+        <rdfs:label xml:lang="en">Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ImpactDepth -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ImpactDepth">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasCounterfactual"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Counterfactual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The degree of change experienced by the stakeholder. Depth is calculated by analysing the change that has occured between the &apos;Outcome level at base line&apos; and the &apos;Outcome level in period&apos;.  In other words % increase in Outcome relative to baseline.
+
+• hasMethodS: a description of the method used to determine depth.
+• sch:description: a additional information about the particular impact depth
+• i72:value: the actual value of the depth
+• hasCounterfactual: connects to the Counterfactual that defines amount of change without intervention</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ImpactDuration -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ImpactDuration">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasCounterfactual"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Counterfactual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The time period for which the stakeholder experience the outcome.
+
+• hasMethodS: a description of the method used to determine depth.
+• sch:description: a additional information about the particular impact depth
+• i72:value: the actual value of the depth
+• hasCounterfactual: connects to the Counterfactual that defines amount of change without intervention</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ImpactImportance -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ImpactImportance">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethodS"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">specifies the nature of the importance as a om:Quantity.  Users can define or select whatever quantification they prefer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ImpactMeasurement -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ImpactMeasurement">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasImpact"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasRisk"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">ImpactMeasurement is a subclass of ImpactModel. The top-level definition of an ImpactMeasurement contains the following properties:
+•	hasStakeholder: identifies stakeholders which are the focus of the outcomes – corresponds to the “Who” in Impact Measurement
+•	hasOutcome: identifies key Outcomes for the model – corresponds to the “What” in Impact Measurement
+•	hasImpact: identifies key Impacts for the model
+•	hasRisk: identifies key Risks for the model
+•	hasIndicator: identifies key Indicators for the model</rdfs:commment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOrganization"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/dateCreated"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">CACO is designed to represent the different versions of impact models in use by Social Impact Organizations. The ImpactModel class is the root of a taxonomy of impact models three of which are included here: Logic Model,  Impact Chain and Impact Measurement. The properties of each reflect the differences in focus and level of detail each theory focuses on.</rdfs:commment>
+        <rdfs:label xml:lang="en">Impact Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Indicator -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Indicator">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasAccess"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasDataSource"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasImpact"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorReport"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#IndicatorReport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicatorStandard"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#IndicatorStandard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#usesOutput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Program"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasBaseline"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethod"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasThreshold"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">caco:Indicator extends cafo:Indicator with properties that integrate it with CACO.  In particular we the following properties:
+•	usesOutput: identifies the Outputs that the indicator uses in defining its value. Can be ignored if dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.
+•	forOutcome: Identifies the Outcome’s the Indicator measures.  Note this links to the individuals of the Outcome class, and not the string name (sch:identifier) of an Outcome
+•	hasBaseline: specifies a threshold Quantity that the Indicator should be above or below
+•	hasMethod: specifies the method by which the Indicator was derived (not a string)
+•	hasDataSource: specifies the Datasets used to derive the value if the method is Computation
+•	hasIndicatorReport: links to all of the indicator reports for this indicator
+•	forOrganization: links to the organization for which this indicator is defines</rdfs:commment>
+        <rdfs:label xml:lang="en">Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#IndicatorReport -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#IndicatorReport">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/cav#IndicatorReport"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasAccess"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasDataSource"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forIndicator"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOrganization"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">We include the IndicatorReport from CAV which is used to report measures of an Indicator by an Organization. IndicatorReport is extended with object properties:
+•	forOrganization: identifies the Organization that submits the report (not a string)
+•	forIndicator: identifies the Indicator that is being reported (not a string)
+•	hasValue: specifies the value as a om:Quantity (not a string)
+•	hasMethod: specifies the method by which the Indicator was derived (not a string)
+•	hasDataSource: specifies the Datasets used to derive the value if the method is Computation
+•	i72:for_time_interval: specifies the time interval that the Indicator Report covers</rdfs:commment>
+        <rdfs:label xml:lang="en">Indicator Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#IndicatorStandard -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#IndicatorStandard">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOrganization"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">The IndicatorStandard class identifies the various standards that exist for a particular indicator.  It supports the ability to compare an outcome to nationally or internationally recognized by means of its indicators.
+•	forIndicator: identifies the Indicators for which the standards are linked
+•	forOrganization: specifies the Organization that defined the standard threshold
+•	sch:identifier: specifies the code number for the indicator used by the organization
+•	sch:name: specifies the name or title of the indicator
+•	sch:description: specifies the description of the indicator
+•	i72:value: defines the threshold value from the standard</rdfs:commment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Input -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Input">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasContributingStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ContributingStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#inputFor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Program"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Service"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#for_time_interval"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasActualAmount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasPlannedAmount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">A key component of theories of change are Inputs. Inputs specify the resources required by a social purpose organizationsocial purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input:
+•	FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt. 
+•	SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.
+•	PhysicalInput is any type of physical item, such as food, clothing, furniture, etc. 
+Properties common across all types of Input are:
+•	eof:partOf: specifies the impact models this Input is part of
+•	inputFor: identifies the Program, Service or Activity this is an input for
+•	hasContributingStakeholder: identifies the stakeholder that contributes the resource
+•	hasType: specifies the type of Resource by denoting the relevant subclass of Resource
+•	hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity
+•	hasActualAmount: specifies the actual Quantity of Input (which in turn specifies the unit of measure) used
+•	i72:for_time_interval : specifies the time interval over which the Input is provided</rdfs:commment>
+        <rdfs:label xml:lang="en">Input</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#LogicModel -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#LogicModel">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasActivity"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasProgram"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Program"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">LogicModel is a subclass of ImpactModel. The top level definition of a LogicModel contains the following properties:
+•	hasProgram identifies all of the Programs being modeled.
+•	hasStakeholder identifies key stakeholders participating in the model
+•	hasOutcome identifies key Outcomes for the model
+•	hasInput identifies key Inputs for the model
+•	hasOutput identifies key Outputs for the model 
+•	hasActivity identifies key Activities of the model
+•	hasResource identifies key Resources of the model
+By “key” we mean a subset of each that are important to depict at this level of abstraction.</rdfs:commment>
+        <rdfs:label xml:lang="en">Logic Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Outcome -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Outcome">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/cav#Outcome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#canEnable"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Service"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#canProduce"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forDomain"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Domain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasImpact"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasRisk"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasContribution"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#better"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#none"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#worse"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">As defined by the Impact Measurement Project, Outcomes “are what stakeholders experience as a result of an enterprise’s activities.  They can be positive or negative, intended or unintended.”  CACO captures the key properties of an outcome by representing:
+•	hasImpact: identifies the impact it has on Stakeholders
+•	forDomain: identifies the Domains that the Outcome aligns with
+•	hasIndicator: identifies the set of Indicators the organization assigns to the Outcome
+•	canEnable: links an Outcome to a Service or Activity that is made possible due to the result of the Outcome. It abstracts a more detailed specification of Activities producing States that enable other activities. It is used primarily for representing Outcome Chains.
+•	canProduce: Links an Outcome to another Outcome. It abstracts the underlying activity chain that usually links one Outcome to another. It is used primarily for representing Outcome Chains.
+•	hasContribution: identifies, from the IMP perspective, whether the outcome is better, worse or neither in comparison to no intervention by the organization
+•	i72:located_in: identifies the spatial location the outcome is define for
+•	hasRisk: identifies the risk associated with the outcome
+•	oep:partOf: identifies the Impact Model it is a component of</rdfs:commment>
+        <rdfs:label xml:lang="en">Outcome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#OutcomeChain -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#OutcomeChain">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasActivity"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">OutcomeChain is a subclass of ImpactModel. The top-level definition of an ImpactChain contains the following properties:
+•	hasOutcome: identifies key Outcomes for the model
+•	hasActivity: identifies key Activities of the model
+•	hasIndicator: identifies the key Indicators of the model
+•	By “key” we mean a subset of each that are important to depict at this level of abstraction. Note that it uses a small subset of the CACO ontology as its focus is on an abstraction of impact models.</rdfs:commment>
+        <rdfs:label xml:lang="en">Outcome Chain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Output -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Output">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasAmount"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#produces"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#usedByIndicator"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/organization#forActivity"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Service"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">Outputs are a quantitative summary of an activity. For example, if the activity is ‘we
+provide training’ and the output is ‘we trained 50 people to NVQ level 3’ (CED, 2012). Or a production output could produce 100 meals for the homeless. Basic to these outputs is “what” has been produced and the quantity.
+•	eof:partOf: specifies the impact models this Output is part of
+•	forActivity: identifies the Activity or Service that produces the Output
+•	hasAmount identifies that amount that is produced
+•	produces: identifies the Resource that is produced such as a skill, or a type of Meal
+•	usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator</rdfs:commment>
+        <rdfs:label xml:lang="en">Output</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#PhysicalInput -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#PhysicalInput">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasType"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#PhysicalResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Planet -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Planet">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Program -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Program">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasBeneficialStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#BeneficialStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasContributingStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ContributingStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasService"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Service"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A program defines a set of services that focus on a shared set of Outcomes. For example, a “poverty reduction program” can be made up of a set of Services such as mobiles services that provides food and clothing to those that live on the street, and a training service that provides basic skills for those living on the street. A Program has a set of Stakeholders that my contribute or benefit:
+•	hasService: identifies the Services that make up the Program
+•	hasOutcome: identifies the Outcomes that the program is trying to achieve
+•	hasContributingStakeholder: identifies the stakeholders that contribute to the Program
+•	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Program
+•	hasInput: identifies the Inputs to the Program
+•	hasOutput: identifies the Outputs of the Program</rdfs:comment>
+        <rdfs:label xml:lang="en">Program</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:comment xml:lang="en">Set of instances used as values for various properties that have qualitative values, such as low, medium, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Risk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Risk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#forOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasConsequence"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#average"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#minimal"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#severe"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasLikelihood"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#likely"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#unlikely"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#veryLikely"/>
+                            <rdf:Description rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#veryUnlikely"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasMitigation"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">Risk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. The Impact Management Project recommends that as part of any impact assessment, the risk of the impact be considered as one of the five dimensions of performance. 
+
+The following defines the taxonomy of risk and key properties:
+•	forOutcome: identifies the Outcome the risk is associated with
+•	hasLikelihood: identifies the likelihood that the risk will occur
+•	hasConsequence: identifies the degree of impact the risk could have
+•	hasMitigation: a string that specifies a mitigation plan or references a document
+Note that the subclasses of risk do not have properties that distinguish one from another. These would be provided in later versions, as needed.</rdfs:commment>
+        <rdfs:label xml:lang="en">Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Service -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Service">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasBeneficialStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#BeneficialStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasContributingStakeholder"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ContributingStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutcome"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Outcome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/tove/activity#hasSubActivity"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#for_time_interval"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeEnd"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#beneficiarySizeStart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes.
+•	act:hasSubActivity: identifies the Activities that make that comprise the Service
+•	hasInput: identifies the Inputs to the Service
+•	hasOutput: identifies the Outputs of the Service
+•	hasOutcome: identifies the Outcomes that are specific to the Service
+•	hasContributingStakeholder: identifies the stakeholders that contribute to the Service
+•	hasBeneficialStakeholder: identifies the stakeholders that benefit from the Service
+•	bSizeStart: number of benefical stakeholders at the beginning of the service time interval
+•	bSizeEnd: number of benefical stakeholders at the end of the service time interval
+•	i72:for_time_interval: time intervale over which the service is provided</rdfs:commment>
+        <rdfs:label xml:lang="en">Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#SkillInput -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#SkillInput">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Input"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#hasType"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/cafo#SkillResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#performs"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in"/>
+                <owl:allValuesFrom rdf:resource="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#ImpactModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:commment xml:lang="en">The Stakeholder class is a subclass of an Organization or Person. It identifies what activities they perform using the perform property, where they are located geographically using the locatedIn property, and the specific Theory of Change the stakeholder is a part of. Some methods for measuring impact, such as a Social Return on Investment, require that social purpose organizations distinguish between beneficiary and contributing stakeholders.
+
+Additional properties for Stakeholders can be inherited from either Organization (specified in the “Common Approach Core Ontology Organization Extension” (CAFO-O) or Person (specified in the “Common Approach Core Ontology Person Extension” (CAFO-P).</rdfs:commment>
+        <rdfs:label xml:lang="en">Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#StakeholderParticipationRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#StakeholderParticipationRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#Supplier -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#Supplier">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Stakeholder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#UnexpectedImpactRisk -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#UnexpectedImpactRisk">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#Risk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#cacoThing -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#cacoThing"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/cafo#IndicatorDefinition -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/cafo#IndicatorDefinition"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/cafo#Organization -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/cafo#Organization"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/cav#Indicator -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/cav#Indicator"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/cav#IndicatorReport -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/cav#IndicatorReport"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/cav#Outcome -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/CAO/cav#Outcome"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/activity#Activity -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/activity#Activity"/>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/tove/organization#Role -->
+
+    <owl:Class rdf:about="http://ontology.eil.utoronto.ca/tove/organization#Role"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/Location -->
+
+    <owl:Class rdf:about="http://purl.org/dc/elements/1.1/Location">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#DcThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/PeriodOfTime -->
+
+    <owl:Class rdf:about="http://purl.org/dc/elements/1.1/PeriodOfTime">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#DcThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DateTimeInterval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <rdfs:subClassOf rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#DcatThing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#average -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#average">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#better -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#better">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#highRisk -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#highRisk">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#likely -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#likely">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#lowRisk -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#lowRisk">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#mediumRisk -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#mediumRisk">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#minimal -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#minimal">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#negative -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#negative">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#neutral -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#neutral">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#none -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#none">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#positive -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#positive">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#severe -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#severe">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#unlikely -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#unlikely">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#veryLikely -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#veryLikely">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#veryUnlikely -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#veryUnlikely">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.eil.utoronto.ca/CAO/caco#worse -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.eil.utoronto.ca/CAO/caco#worse">
+        <rdf:type rdf:resource="http://ontology.eil.utoronto.ca/CAO/caco#QualitativeMetric"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

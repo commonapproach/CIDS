@@ -1,0 +1,131 @@
+PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX cids: <https://ontology.commonapproach.org/cids#>
+PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1: <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel: <http://purl.org/vocab/relationship/>
+PREFIX schema: <http://schema.org/>
+PREFIX sff: <https://ontology.commonapproach.org/sff#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX voaf: <http://purl.org/vocommons/voaf#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+    # 1. Node Shapes from Classes
+    ?class rdfs:subClassOf ?superClass .
+    ?shape a sh:NodeShape ;
+        sh:targetClass ?class ;
+        rdfs:label ?label;
+        sh:description ?comment ;
+        sh:closed false ;
+        sh:property ?propertyShape ;
+    .
+    ?propertyShape a sh:PropertyShape ;
+        sh:path ?property ;
+        sh:name ?propertyLocalName ;
+        sh:class ?rangeClass ;
+        sh:order ?order ;
+        sh:nodeKind ?nodeKind ;
+        sh:datatype ?datatype ;
+        csh:in ?inList ;
+        sh:minCount ?minCardinality ;
+        sh:maxCount ?maxCardinality ;
+        csh:cardinality ?cardinality ;
+        csh:usedBy ?class
+    . 
+}
+WHERE {
+    ?class rdf:type owl:Class .
+    bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className)
+    FILTER(isIRI(?class))
+    bind (concat(?className,"_NodeShape") as ?shapeName)
+    BIND(IRI(concat(str(csh:),?shapeName)) AS ?shape)
+    OPTIONAL { ?class rdfs:label ?label . }
+    OPTIONAL { ?class rdfs:comment ?comment . }
+    OPTIONAL {
+        ?class rdfs:subClassOf ?superClass .
+        FILTER(isIRI(?superClass))
+    }
+    {
+        ?class rdfs:subClassOf ?restriction .
+        ?restriction owl:onProperty ?property .
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        ?restriction owl:onDataRange ?dataTarget.
+        optional {
+            ?dataTarget owl:oneOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?inList .
+        }
+        optional {
+            filter(isLiteral(?dataTarget)) .
+            bind(?dataTarget as ?datatype1)
+        }
+        bind(coalesce(?datatype1, xsd:string) as ?datatype)
+
+        bind(sh:Literal as ?nodeKind)
+    }
+    union {
+        ?class rdfs:subClassOf ?restriction .
+        ?restriction owl:onProperty ?property .
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        ?restriction owl:allValuesFrom ?target.
+        filter NOT EXISTS {
+            ?restriction owl:onDataRange ?datatype .
+        }
+        optional {
+            ?target owl:unionOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?rangeClass1 .
+        }
+        optional {
+            filter(isIRI(?target)) .
+            bind(?target as ?rangeClass2)
+        }
+        bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
+        bind(sh:IRI as ?nodeKind)
+    }
+    optional {
+        ?restriction owl:qualifiedCardinality ?qCardinality .
+        bind(xsd:string(?qCardinality) as ?cardinalityMin1)
+        bind(xsd:string(?qCardinality) as ?cardinalityMax1)
+    }
+    optional {
+        ?restriction owl:minQualifiedCardinality ?cardinalityMin2 .
+    }
+    optional {
+        ?restriction owl:maxQualifiedCardinality ?cardinalityMax2 .
+    }
+    bind(coalesce(xsd:string(?cardinalityMin1), xsd:string(?cardinalityMin2), "0") as ?cardinalityMin)
+    bind(coalesce(xsd:string(?cardinalityMax1), xsd:string(?cardinalityMax2), "unbounded") as ?cardinalityMax)
+    bind(if(?cardinalityMin = "0" && ?cardinalityMax = "unbounded",csh:ZeroOrMore,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "1",csh:ExactlyOne,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "unbounded",csh:OneOrMore,
+        if(?cardinalityMin = "0" && ?cardinalityMax = "1",csh:Optional, csh:Unknown) ) )      
+        ) as ?cardinality )
+    bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
+    bind(xsd:integer(?cardinalityMin) as ?minCardinality)
+} order by ?shape ?propertyShape

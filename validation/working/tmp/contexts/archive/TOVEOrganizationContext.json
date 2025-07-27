@@ -1,0 +1,43 @@
+
+	{
+		"@context": [
+			"http://ontology.commonapproach.org/contexts/cidsPrefix.json" ,
+			"http://ontology.commonapproach.org/contexts/OrganizationIDContext.json" ,
+			"http://ontology.commonapproach.org/contexts/AddressContext.json" ,
+			"http://ontology.commonapproach.org/contexts/PhoneNumberContext.json" ,
+			"http://ontology.commonapproach.org/contexts/PersonContext.json" ,
+		{
+			"hasID": {
+				"@id": "org:hasID",
+				"@type": "org:OrganizationID"
+			},
+			"hasAddress": {
+				"@id": "ic:hasAddress",
+				"@type": "ic:Address"
+			},
+			"hasLegalName": {
+				"@id": "org:hasLegalName",
+				"@type": "xsd:string"
+			},
+			"hasLegalStatus": {
+				"@id": "org:hasLegalStatus",
+				"@type": "owl:Thing"
+			},
+			"hasTelephone": {
+				"@id": "ic:hasTelephone",
+				"@type": "ic:PhoneNumber"
+			},
+			"numberOfEmployees": {
+				"@id": "org:numberOfEmployees",
+				"@type": "xsd:nonNegativeNumber"
+			},
+			"consistsOf": {
+				"@id": "org:consistsOf",
+				"@type": "org:Division"
+			},
+			"hasContact": {
+				"@id": "org:hasContact",
+				"@type": "cids:Person"
+			}
+		}]
+	}

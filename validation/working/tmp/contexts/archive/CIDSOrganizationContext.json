@@ -1,0 +1,16 @@
+
+	{
+		"@context": [
+			"http://ontology.commonapproach.org/contexts/cidsPrefix.json" ,
+			"http://ontology.commonapproach.org/contexts/TOVEOrganizationContext.json" ,
+		    {
+			"hasImpactModel": {
+				"@id": "cids:hasImpactModel",
+              	"@type": "cids:ImpactModel"
+			},
+			"useOfFunds": {
+				"@id": "cids:useOfFunds",
+              	"@type": "xsd:string"
+			}
+		}]
+	}

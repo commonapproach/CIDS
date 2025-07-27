@@ -1,0 +1,40 @@
+{
+"@context": {
+		"act": "http://ontology.eil.utoronto.ca/tove/activity#" ,
+		"cids": "http://ontology.commonapproach.org/owl/cids_v2.1#" ,
+		"cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#" ,
+		"dcat": "http://www.w3.org/ns/dcat#" ,
+		"dqv": "http://www.w3.org/ns/dqv#",
+		"foaf": "http://xmlns.com/foaf/0.1/" ,
+		"geo" : "https://sws.geonames.org/",
+		"ic": "http://ontology.eil.utoronto.ca/tove/icontact#" ,
+		"i72": "http://ontology.eil.utoronto.ca/ISO21972/iso21972#",
+		"oep": "http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#" ,
+		"org": "http://ontology.eil.utoronto.ca/tove/organization#" ,
+		"owl": "http://www.w3.org/2002/07/owl#" ,
+		"prov": "https://www.w3.org/Submission/prov-json/schema#" ,
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#" ,
+		"rel": "http://purl.org/vocab/relationship/" ,
+		"sch": "http://schema.org/" ,
+		"time": "http://www.w3.org/2006/time#" ,
+		"wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#" ,
+		"xsd": "http://www.w3.org/2001/XMLSchema#" ,
+		"hasName": {
+				"@id": "cids:hasName",
+              	"@type": "xsd:string"
+		} ,
+		"hasIdentifier": {
+				"@id": "cids:hasIdentifier",
+              	"@type": "xsd:string"
+		} ,
+		"hasDescription": {
+				"@id": "cids:hasDescription",
+              	"@type": "xsd:string"
+		} ,
+		"dateCreated": {
+				"@id": "sch:dateCreated",
+              	"@type": "xsd:date"
+		}
+
+	}
+}

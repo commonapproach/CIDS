@@ -1,0 +1,55 @@
+
+	{
+		"@context": [
+			"http://ontology.commonapproach.org/contexts/cidsPrefix.json" ,
+		    {
+			 "hasCode": {
+				"@id": "cids:hasCode",
+              	"@type": "cids:Code"
+			},
+			"definedBy": {
+				"@id": "cids:definedBy",
+              	"@type": "cids:Organization"
+			},
+			"forOutcome": {
+				"@id": "cids:forOutcome",
+              	"@type": "cids:Outcome"
+			},
+			"usesOutput": {
+				"@id": "cids:usesOutput",
+              	"@type": "cids:Output"
+			},
+			"hasBaseline": {
+				"@id": "cids:hasBaseline",
+              	"@type": "i72:Measure"
+			},
+			"hasThreshold": {
+				"@id": "cids:hasThreshold",
+              	"@type": "i72:Measure"
+			},
+			"wasGeneratedBy": {
+				"@id": "prov:wasGeneratedBy",
+              	"@type": "owl:Thing"
+			},
+			"dataset": {
+				"@id": "dcat:dataset",
+              	"@type": "dcat:Dataset"
+			},
+			"hasIndicatorReport": {
+				"@id": "cids:hasIndicatorReport",
+              	"@type": "cids:IndicatorReport"
+			},
+			"hasAccess": {
+				"@id": "cids:hasAccess",
+              	"@type": "cids:Organization"
+			},
+			"hasIndicatorStandard": {
+				"@id": "cids:hasIndicatorStandard",
+              	"@type": "cids:IndicatorStandard"
+			},
+			"target": {
+				"@id": "dqv:target",
+              	"@type": "dqv:QualityPolicy"
+			}
+		}]
+	}

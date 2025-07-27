@@ -1,0 +1,50 @@
+
+	{
+		"@context": ["http://ontology.commonapproach.org/contexts/cidsPrefix.json",
+		{
+			"forOrganization": {
+				"@id": "cids:forOrganization",
+				"@type": "cids:Organization"
+			},
+			"forIndicator": {
+				"@id": "cids:forIndicator",
+				"@type": "cids:Indicator"
+			},
+			"i72:value": {
+				"@id": "i72:value",
+				"@type": "i72:Measure"
+			},
+			"wasGeneratedBy": {
+				"@id": "prov:wasGeneratedBy",
+				"@type": "owl:Thing"
+			},
+			"dataset": {
+				"@id": "dcat:dataset",
+				"@type": "dcat:Dataset"
+			},
+			"hasTimeInterval": {
+				"@id": "cids:hasTimeInterval",
+				"@type": "time:DateTimeInterval"
+			},
+			"hasQualityAnnotation": {
+				"@id": "dqv:hasQualityAnnotation",
+				"@type": "dqv:QualityAnnotation"
+			},
+			"conformsTo": {
+				"@id": "dqv:conformsTo",
+				"@type": "dcterms:Standard"
+			},
+			"hasQualityMeasurement": {
+				"@id": "dqv:hasQualityMeasurement",
+				"@type": "dqv:QualityMeasurement"
+			},
+			"hasAccess": {
+				"@id": "cids:hasAccess",
+				"@type": "cids:Organization"
+			},
+			"hasComment": {
+				"@id": "cids:hasComment",
+				"@type": "xsd:string"
+			}
+		}]
+	}

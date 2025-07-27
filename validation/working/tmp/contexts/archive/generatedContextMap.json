@@ -1,0 +1,162 @@
+{
+  "@context": {
+    "act": "http://ontology.eil.utoronto.ca/tove/activity#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "cc": "http://creativecommons.org/ns#",
+    "cids": "https://ontology.commonapproach.org/cids#",
+    "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
+    "dash": "http://datashapes.org/dash#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.geonames.org/ontology/ontology_v3.1.rdf#",
+    "graphql": "http://datashapes.org/graphql#",
+    "i72": "http://ontology.eil.utoronto.ca/ISO21972/iso21972#",
+    "ic": "http://ontology.eil.utoronto.ca/tove/icontact#",
+    "oep": "http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#",
+    "org": "http://ontology.eil.utoronto.ca/tove/organization#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rel": "http://purl.org/vocab/relationship/",
+    "sch": "http://schema.org/",
+    "sff": "https://ontology.commonapproach.org/sff-1.0#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
+    "swa": "http://topbraid.org/swa#",
+    "terms": "http://purl.org/dc/terms/",
+    "time": "http://www.w3.org/2006/time#",
+    "tosh": "http://topbraid.org/tosh#",
+    "vann": "http://purl.org/vocab/vann/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "xdmp": "http://marklogic.com/xdmp#",
+    "sem": "http://marklogic.com/semantics#",
+    "ca": "https://ontology.commonapproach.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "iso5087": "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/",
+    "canProduce": { "@id": "cids:canProduce", "@type": "cids:Outcome" },
+    "dataset": { "@id": "dcat:dataset", "@type": "dcat:Dataset" },
+    "forCharacteristic": {
+      "@id": "cids:forCharacteristic",
+      "@type": "cids:Characteristic"
+    },
+    "forEDG": { "@id": "sff:forEDG", "@type": "ca:EquityDeservingGroup" },
+    "forIndicator": { "@id": "cids:forIndicator", "@type": "cids:Indicator" },
+    "forOutcome": { "@id": "cids:forOutcome", "@type": "cids:Outcome" },
+    "forStakeholder": {
+      "@id": "cids:forStakeholder",
+      "@type": "cids:Stakeholder"
+    },
+    "forTheme": { "@id": "cids:forTheme", "@type": "cids:Theme" },
+    "hasAccess": { "@id": "cids:hasAccess", "@type": "cids:Organization" },
+    "hasActivity": { "@id": "cids:hasActivity", "@type": "cids:Activity" },
+    "hasAddress": { "@id": "ic:hasAddress", "@type": "ic:Address" },
+    "hasBeneficialStakeholder": {
+      "@id": "cids:hasBeneficialStakeholder",
+      "@type": "cids:BeneficialStakeholder"
+    },
+    "hasCharacteristic": {
+      "@id": "cids:hasCharacteristic",
+      "@type": "cids:Characteristic"
+    },
+    "hasCharacteristicReport": {
+      "@id": "cids:hasCharacteristicReport",
+      "@type": "cids:CharacteristicReport"
+    },
+    "hasCode": { "@id": "cids:hasCode", "@type": "cids:Code" },
+    "hasContact": { "@id": "cids:hasContact", "@type": "cids:Person" },
+    "hasContributingStakeholder": {
+      "@id": "cids:hasContributingStakeholder",
+      "@type": "cids:ContributingStakeholder"
+    },
+    "hasCounterfactual": {
+      "@id": "cids:hasCounterfactual",
+      "@type": "cids:Counterfactual"
+    },
+    "hasFundingStatus": {
+      "@id": "sff:hasFundingStatus",
+      "@type": "ca:cids-3.0#FundingStatus"
+    },
+    "hasImpactModel": {
+      "@id": "cids:hasImpactModel",
+      "@type": "cids:ImpactModel"
+    },
+    "hasImpactReport": {
+      "@id": "cids:hasImpactReport",
+      "@type": "cids:ImpactReport"
+    },
+    "hasImpactRisk": {
+      "@id": "cids:hasImpactRisk",
+      "@type": "cids:ImpactRisk"
+    },
+    "hasIndicator": { "@id": "cids:hasIndicator", "@type": "cids:Indicator" },
+    "hasIndicatorReport": {
+      "@id": "cids:hasIndicatorReport",
+      "@type": "cids:IndicatorReport"
+    },
+    "hasInput": { "@id": "cids:hasInput", "@type": "cids:Input" },
+    "hasOrganization": {
+      "@id": "cids:hasOrganization",
+      "@type": "cids:Organization"
+    },
+    "hasOutcome": { "@id": "cids:hasOutcome", "@type": "cids:Outcome" },
+    "hasOutput": { "@id": "cids:hasOutput", "@type": "cids:Output" },
+    "hasPart": { "@id": "oep:hasPart", "@type": "cids:Characteristic" },
+    "hasPerson": { "@id": "cids:hasPerson", "@type": "cids:Person" },
+    "hasPrimaryContact": {
+      "@id": "sff:hasPrimaryContact",
+      "@type": "ca:cids-3.0#Person"
+    },
+    "hasProgram": { "@id": "cids:hasProgram", "@type": "cids:Program" },
+    "hasQualityAnnotation": {
+      "@id": "dqv:hasQualityAnnotation",
+      "@type": "dqv:QualityAnnotation"
+    },
+    "hasQualityMeasurement": {
+      "@id": "dqv:hasQualityMeasurement",
+      "@type": "dqv:QualityMeasurement"
+    },
+    "hasResource": { "@id": "act:hasResource", "@type": "act:Resource" },
+    "hasService": { "@id": "cids:hasService", "@type": "cids:Service" },
+    "hasStakeholder": {
+      "@id": "cids:hasStakeholder",
+      "@type": "cids:Stakeholder"
+    },
+    "hasStakeholderOutcome": {
+      "@id": "cids:hasStakeholderOutcome",
+      "@type": "cids:StakeholderOutcome"
+    },
+    "hasTelephone": { "@id": "ic:hasTelephone", "@type": "ic:PhoneNumber" },
+    "hasTheme": { "@id": "cids:hasTheme", "@type": "cids:Theme" },
+    "hasTime": { "@id": "time:hasTime", "@type": "time:DateTimeInterval" },
+    "hasType": { "@id": "cids:hasType", "@type": "cids:FinancialResource" },
+    "hasValue": { "@id": "i72:hasValue", "@type": "i72:Measure" },
+    "localityServed": {
+      "@id": "sff:localityServed",
+      "@type": "ca:cids-3.0#Locality"
+    },
+    "located_in": { "@id": "i72:located_in", "@type": "i72:Feature" },
+    "numberOf": { "@id": "i72:numberOf", "@type": "i72:Measure" },
+    "organizationType": {
+      "@id": "sff:organizationType",
+      "@type": "ca:cids-3.0#OrganizationType"
+    },
+    "produces": { "@id": "cids:produces", "@type": "act:Resource" },
+    "provinceTerritoryServed": {
+      "@id": "sff:provinceTerritoryServed",
+      "@type": "ca:cids-3.0#ProvinceTerritory"
+    },
+    "sectorServed": { "@id": "sff:sectorServed", "@type": "sff:Sector" },
+    "servesEDG": {
+      "@id": "sff:servesEDG",
+      "@type": "ca:cids-3.0#EquityDeservingGroup"
+    },
+    "usesOutput": { "@id": "cids:usesOutput", "@type": "cids:Output" },
+    "value": { "@id": "i72:value", "@type": "i72:Measure" },
+    "wasGeneratedBy": { "@id": "prov:wasGeneratedBy", "@type": "cids:Activity" }
+  }
+}
