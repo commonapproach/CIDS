@@ -58,7 +58,7 @@ CONSTRUCT {
         csh:usedBy ?class
     .
     ?namedIndividual a ?niClass ;
-        rdfs:label ?namedIndividualName ;
+        rdfs:label ?namedIndividualName;
         skos:prefLabel ?prefLabel ;
     .
 }
@@ -79,7 +79,13 @@ WHERE {
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        {
         ?restriction owl:onDataRange ?dataTarget.
+        } union {
+            ?restriction owl:allValuesFrom|owl:someValuesFrom ?datatype2.
+            filter(STRBEFORE(str(?datatype2), "#") = str(xsd:)) .
+        }
+
         optional {
             ?dataTarget owl:oneOf ?rangeTarget.
             ?rangeTarget rdf:rest*/rdf:first ?inList .
@@ -87,8 +93,8 @@ WHERE {
         optional {
             filter(isLiteral(?dataTarget)) .
             bind(?dataTarget as ?datatype1)
-        }
-        bind(coalesce(?datatype1, xsd:string) as ?datatype)
+        }        
+        bind(coalesce(?datatype1, ?datatype2,xsd:string) as ?datatype)
 
         bind(sh:Literal as ?nodeKind)
     }
@@ -109,7 +115,9 @@ WHERE {
             filter(isIRI(?target)) .
             bind(?target as ?rangeClass2)
         }
+ 
         bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
+        filter(STRBEFORE(str(?rangeClass), "#") != str(xsd:)) .    
         bind(sh:IRI as ?nodeKind)
     }
     optional {
