@@ -56,7 +56,9 @@ CONSTRUCT {
         sh:maxCount ?maxCardinality ;
         csh:cardinality ?cardinality ;
         csh:usedBy ?class
-    . 
+    .
+    ?namedIndividual a ?niClass ;
+        rdfs:label ?namedIndividualName .
 }
 WHERE {
     ?class rdf:type owl:Class .
@@ -128,4 +130,9 @@ WHERE {
         ) as ?cardinality )
     bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
     bind(xsd:integer(?cardinalityMin) as ?minCardinality)
-} order by ?shape ?propertyShape
+    optional {
+        ?namedIndividual a ?niClass .
+        ?namedIndividual a owl:NamedIndividual .
+        bind(str(replace(str(?namedIndividual),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?namedIndividualName)
+    }
+} order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName
