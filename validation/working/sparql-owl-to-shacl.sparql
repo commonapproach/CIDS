@@ -58,7 +58,9 @@ CONSTRUCT {
         csh:usedBy ?class
     .
     ?namedIndividual a ?niClass ;
-        rdfs:label ?namedIndividualName .
+        rdfs:label ?namedIndividualName ;
+        skos:prefLabel ?prefLabel ;
+    .
 }
 WHERE {
     ?class rdf:type owl:Class .
@@ -134,5 +136,8 @@ WHERE {
         ?namedIndividual a ?niClass .
         ?namedIndividual a owl:NamedIndividual .
         bind(str(replace(str(?namedIndividual),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?namedIndividualName)
+        optional {
+            ?namedIndividual skos:prefLabel ?prefLabel .
+        }
     }
 } order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName
