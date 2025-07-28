@@ -21,9 +21,11 @@ Validation of Common Impact Data Standard JSONLD should be performed with Apache
 
 With Jena installed, SHACL file `cids.shacl.ttl`, and JSONLD file `my-data.jsonld`, run the command
 
-`shacl validate -s cids.shacl.ttl -d my-data.jsonld`
+`shacl validate -s cids.shacl.ttl -d my-data.jsonld > report.ttl`
 
-The validator will return a report of whether any of the datatypes, relationships, or other restrictions defined by the data standard are incorrect. 
+The validator will return a report file detailing whether any of the datatypes, relationships, or other restrictions defined by the data standard are incorrect. 
+
+
 
 We don’t know yet if validation results are exactly the same validators in other languages (e.g. `pyshacl` for python). We recommend using Jena until we can confirm that results are consistent using other tools. 
 
