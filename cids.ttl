@@ -1258,6 +1258,7 @@ cids:Activity rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasIdentifier ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -1702,7 +1703,7 @@ cids:ImpactModel rdf:type owl:Class ;
                  rdfs:subClassOf cids:cidsThing ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cids:forOrganization ;
-                                   # owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass cids:Organization
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -1826,7 +1827,7 @@ cids:ImpactReport rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasComment ;
-                                    # owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange xsd:string
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -2167,6 +2168,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasComment ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:string
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -3044,7 +3046,7 @@ cids:Target rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:hasComment ;
-                              # owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ;
             rdfs:comment """<p>The target is used to report the target value of an indicator and/or indicator report for some time interval. In addition to the target value and time interval of the target, this class also reports the units of measure of the target, the date the target was created, the name of the target, and any comment about the target that the user may wish to add.</p>
