@@ -1258,8 +1258,7 @@ cids:Activity rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasIdentifier ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:string
+                                owl:allValuesFrom xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasName ;
@@ -2168,8 +2167,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasComment ;
-                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onDataRange xsd:string
+                                       owl:allValuesFrom xsd:string
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty org:hasName ;
