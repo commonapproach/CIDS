@@ -1,6 +1,7 @@
 PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX chs: <>
 PREFIX cids: <https://ontology.commonapproach.org/cids#>
 PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -40,9 +41,10 @@ CONSTRUCT {
     ?shape a sh:NodeShape ;
         sh:targetClass ?class ;
         rdfs:label ?label;
-        sh:description ?comment ;
+#        sh:description ?comment ;
         sh:closed false ;
         sh:property ?propertyShape ;
+        csh:cname ?cname ;
     .
     ?propertyShape a sh:PropertyShape ;
         sh:path ?property ;
@@ -57,14 +59,15 @@ CONSTRUCT {
         csh:cardinality ?cardinality ;
         csh:usedBy ?class
     .
-    ?namedIndividual a ?niClass ;
-        rdfs:label ?namedIndividualName;
-        skos:prefLabel ?prefLabel ;
-    .
+    ?namedIndividual a ?facetClass ;
+        rdfs:label ?prefLabel;
+        cids:hasIdentifier ?identifier ;
+        csh:memberOf ?primaryFacetClass ;
+        .
 }
-WHERE {
+WHERE {{
     ?class rdf:type owl:Class .
-    bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className)
+    bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className   )
     FILTER(isIRI(?class))
     bind (concat(?className,"_NodeShape") as ?shapeName)
     BIND(IRI(concat(str(csh:),?shapeName)) AS ?shape)
@@ -75,10 +78,12 @@ WHERE {
         FILTER(isIRI(?superClass))
     }
     {
+        ?class rdf:type owl:Class .
+        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
         ?class rdfs:subClassOf ?restriction .
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
-        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        bind(iri(concat(str(csh:),?className1,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         {
         ?restriction owl:onDataRange ?dataTarget.
         } union {
@@ -89,20 +94,23 @@ WHERE {
         optional {
             ?dataTarget owl:oneOf ?rangeTarget.
             ?rangeTarget rdf:rest*/rdf:first ?inList .
+            bind(xsd:string as ?datatype3)
         }
         optional {
             filter(isLiteral(?dataTarget)) .
             bind(?dataTarget as ?datatype1)
         }        
-        bind(coalesce(?datatype1, ?datatype2,xsd:string) as ?datatype)
+        bind(coalesce(?datatype1, ?datatype2,?datatype3,?dataTarget,xsd:string) as ?datatype)
 
         bind(sh:Literal as ?nodeKind)
     }
     union {
+        ?class rdf:type owl:Class .
+        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
         ?class rdfs:subClassOf ?restriction .
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
-        bind(iri(concat(str(csh:),?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         ?restriction owl:allValuesFrom ?target.
         filter NOT EXISTS {
             ?restriction owl:onDataRange ?datatype .
@@ -146,6 +154,30 @@ WHERE {
         bind(str(replace(str(?namedIndividual),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?namedIndividualName)
         optional {
             ?namedIndividual skos:prefLabel ?prefLabel .
+        }
+    }} UNION {
+        ?namedIndividual a ?facetClass .
+        {
+            ?namedIndividual a owl:NamedIndividual .
+        } UNION {
+            ?namedIndividual a skos:Concept .   
+        } UNION {
+            ?namedIndividual a cids:Code .
+        }
+        OPTIONAL {
+        ?namedIndividual rdfs:label ?prefLabel1;
+        }
+        optional {
+            ?namedIndividual skos:prefLabel ?prefLabel2 ;
+        }
+        bind(coalesce(?prefLabel1, ?prefLabel2) as ?prefLabel)
+        optional {
+            ?namedIndividual cids:hasIdentifier ?identifier .
+        }
+        optional {
+            ?namedIndividual a ?facetClass .
+            filter(?facetClass not in (owl:NamedIndividual, skos:Concept, cids:Code))
+            bind(?facetClass as ?primaryFacetClass)
         }
     }
 } order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName

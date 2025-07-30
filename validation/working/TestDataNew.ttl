@@ -1,0 +1,108 @@
+﻿@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix codelist: <https://codelist.commonapproach.org/> .
+@prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix seli: <https://codelist.commonapproach.org/SELI/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+cids:Outcome1
+        a       cids:Outcome;
+        org:hasName  "Mission Alignment";
+        cids:forOrganization  org:Organization1;
+        cids:forTheme  seli:Theme1;
+        cids:hasDescription  "";
+        cids:hasIndicator  seli:Indicator1;
+        cids:hasIndicator  seli:Indicator2;
+        cids:hasIndicator  seli:Indicator3;
+        cids:hasIndicator  seli:Indicator4 .
+
+cids:Outcome2
+        a       cids:Outcome;
+        org:hasName  "Leadership";
+        cids:forOrganization  org:Organization1;
+        cids:forTheme  seli:Theme2;
+        cids:hasDescription  "";
+        cids:hasIndicator  seli:Indicator5;
+        cids:hasIndicator  seli:Indicator6;
+        cids:hasIndicator  seli:Indicator7.
+
+org:Organization1
+        a       org:Organization;
+        org:hasName  "Organization 1";
+        org:hasDescription  "This is a description of Organization 1.";
+        org:hasContactEmail  "contact@organization1.org";
+        org:hasWebsite  "https://www.organization1.org" ;
+        ic:hasAddress  "123 Main St, City, Country" ; 
+        .
+
+seli:Theme1
+        a       cids:Theme;
+        org:hasName  "Theme 1";
+        cids:hasDescription  "This is a description of Theme 1." .
+seli:Theme2
+        a       cids:Theme;
+        org:hasName  "Theme 2";
+        cids:hasDescription  "This is a description of Theme 2." .      
+
+seli:Indicator1
+        a       cids:Indicator; 
+        org:hasName  "Indicator 1";
+        org:hasIdentifier  "SELI-IND-001";
+        cids:unitDescription  "Percentage";
+        cids:hasUnitCode  "PCT";
+        cids:hasDescription  "This is a description of Indicator 1." ;
+        .
+seli:Indicator2
+        a       cids:Indicator;
+        org:hasName  "Indicator 2";
+        org:hasIdentifier  "SELI-IND-002";
+        cids:unitDescription  "Count";
+        cids:hasUnitCode  "CNT";
+        cids:hasDescription  "This is a description of Indicator 2." ;
+        .       
+seli:Indicator3
+        a       cids:Indicator;
+        org:hasName  "Indicator 3";
+        org:hasIdentifier  "SELI-IND-003";
+        cids:unitDescription  "Score";
+        cids:hasUnitCode  "SCORE";
+        cids:hasDescription  "This is a description of Indicator 3." ;
+        .               
+seli:Indicator4
+        a       cids:Indicator;
+        org:hasName  "Indicator 4";
+        org:hasIdentifier  "SELI-IND-004";
+        cids:unitDescription  "Rating";
+        cids:hasUnitCode  "RATING";
+        cids:hasDescription  "This is a description of Indicator 4." ;
+        .
+seli:Indicator5
+        a       cids:Indicator;
+        org:hasName  "Indicator 5";
+        org:hasIdentifier  "SELI-IND-005";
+        cids:unitDescription  "Level";
+        cids:hasUnitCode  "LEVEL";
+        cids:hasDescription  "This is a description of Indicator 5." ;
+        .
+seli:Indicator6
+        a       cids:Indicator;
+        org:hasName  "Indicator 6";
+        org:hasIdentifier  "SELI-IND-006";
+        cids:unitDescription  "Index";
+        cids:hasUnitCode  "INDEX";
+        cids:hasDescription  "This is a description of Indicator 6." ;
+        .
+seli:Indicator7
+        a       cids:Indicator;
+        org:hasName  "Indicator 7";
+        org:hasIdentifier  "SELI-IND-007";
+        cids:unitDescription  "Metric";
+        cids:hasDescription  "This is a description of Indicator 7." ;
+        .
+seli:Indicator8
+        a       cids:Indicator;
+        org:hasName  "Indicator 8";
+        org:hasIdentifier  "SELI-IND-008";
+        cids:unitDescription  "Measure";
+        cids:hasUnitCode  "MEASURE";
+        cids:hasDescription  "This is a description of Indicator 8." ;
+        .
