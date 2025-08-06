@@ -470,7 +470,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/",
     "org:hasName": "Number of units of non-market affordable housing created or preserved",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "Units ",
+    "cids:unitDescription": "Units ",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/",
     "hasIndicatorReport": [
@@ -486,7 +486,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/",
     "org:hasName": "% affordability of housing units based on average area median income",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "% ",
+    "cids:unitDescription": "% ",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/",
     "hasIndicatorReport": [
@@ -502,7 +502,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/",
     "org:hasName": "Square footage of community space purchased/built/renovated with our financing",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "Square foot",
+    "cids:unitDescription": "Square foot",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/",
     "hasIndicatorReport": [
@@ -518,7 +518,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/",
     "org:hasName": "Number of individuals served by social service organizations and programs",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "Units",
+    "cids:unitDescription": "Units",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/",
     "hasIndicatorReport": [
@@ -534,7 +534,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/GHGreductionsduetoproductssold/",
     "org:hasName": " GHG reductions due to products sold",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "GHG ",
+    "cids:unitDescription": "GHG ",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "https://placeholderfunds.ca/Outcome/Reducedcarbonfootprint/",
     "hasIndicatorReport": [
@@ -550,7 +550,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/SELI/",
     "org:hasName": "SELI assessment",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "Score",
+    "cids:unitDescription": "Score",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "",
     "hasIndicatorReport": [
@@ -566,7 +566,7 @@
     "@id": "https://placeholderfunds.ca/Indicator/GLI/",
     "org:hasName": "GLI assessment",
     "hasDescription": "(Indicator Description)",
-    "cids:unitDecscription": "Score",
+    "cids:unitDescription": "Score",
     "forOrganization": "https://placeholderfunds.ca/",
     "forOutcome": "",
     "hasIndicatorReport": [
@@ -582,7 +582,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator1",
     "org:hasName": "Are your products/services designed to support equity-deserving groups, and promote social equity?",
     "hasDescription": "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome1",
     "hasIndicatorReport": [
@@ -598,7 +598,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator2",
     "org:hasName": "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?",
     "hasDescription": "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome1",
     "hasIndicatorReport": [
@@ -614,7 +614,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator3",
     "org:hasName": "Do you integrate a social equity analysis while developing your prodcts/services?",
     "hasDescription": "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome1",
     "hasIndicatorReport": [
@@ -630,7 +630,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator4",
     "org:hasName": "Do you integrate a gender analysis while developing your products/services?",
     "hasDescription": "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome1",
     "hasIndicatorReport": [
@@ -646,7 +646,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator5",
     "org:hasName": "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?",
     "hasDescription": "Leadership of the social purpose organization includes lived experience from equity-deserving groups.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome2",
     "hasIndicatorReport": [
@@ -662,7 +662,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator6",
     "org:hasName": "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?",
     "hasDescription": "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome2",
     "hasIndicatorReport": [
@@ -678,7 +678,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator7",
     "org:hasName": "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?",
     "hasDescription": "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome2",
     "hasIndicatorReport": [
@@ -694,7 +694,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator8",
     "org:hasName": "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)",
     "hasDescription": "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.",
-    "cids:unitDecscription": "Boolean",
+    "cids:unitDescription": "Boolean",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome3",
     "hasIndicatorReport": [
@@ -710,7 +710,7 @@
     "@id": "https://codelist.commonapproach.org/codeLists/SELI/Indicator9",
     "org:hasName": "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)",
     "hasDescription": "",
-    "cids:unitDecscription": "Text",
+    "cids:unitDescription": "Text",
     "forOrganization": "",
     "forOutcome": "https://codelist.commonapproach.org/SELI/Outcome4",
     "hasIndicatorReport": [
