@@ -301,6 +301,34 @@
     "endedAtTime": {
       "@id": "prov:endedAtTime",
       "@type": "xsd:dateTime"
+    },
+    "streetAddress": {
+      "@id": "cids:streetAddress",
+      "@type": "xsd:string"
+    },
+    "addressLocality": {
+      "@id": "cids:addressLocality",
+      "@type": "xsd:string"
+    },
+    "addressRegion": {
+      "@id": "cids:addressRegion",
+      "@type": "xsd:string"
+    },
+    "postalCode": {
+      "@id": "cids:postalCode",
+      "@type": "xsd:string"
+    },
+    "addressCountry": {
+      "@id": "cids:addressCountry",
+      "@type": "xsd:string"
+    },
+    "postOfficeBoxNumber": {
+      "@id": "cids:postOfficeBoxNumber",
+      "@type": "xsd:string"
+    },
+    "extendedAddress": {
+      "@id": "cids:extendedAddress",
+      "@type": "xsd:string"
     }
   }
 }
