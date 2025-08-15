@@ -1,0 +1,181 @@
+PREFIX :        <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo:     <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic:      <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep:     <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1:    <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel:     <http://purl.org/vocab/relationship/>
+PREFIX schema:  <http://schema.org/>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur:     <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time:    <http://www.w3.org/2006/time#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+csh:numberOfEmployees_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "numberOfEmployees";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:numberOfEmployees;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:Organization .
+
+csh:hasLegalName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLegalName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasLegalName;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:Organization .
+
+csh:hasAcquired_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         org:Organization , org:Division;
+        sh:minCount      0;
+        sh:name          "hasAcquired";
+        sh:nodeKind      sh:IRI;
+        sh:path          org:hasAcquired;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       org:Organization .
+
+csh:Organization_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:numberOfEmployees_PropertyShape , csh:hasLegalName_PropertyShape , csh:hasAcquired_PropertyShape;
+        sh:targetClass  org:Organization .
+
+org:Organization  rdfs:subClassOf  org:OrganizationThing , org:Organization .
+
+csh:identifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "identifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          schema:identifier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:OrganizationID .
+
+csh:hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:OrganizationID .
+
+csh:dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          schema:dateCreated;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:OrganizationID .
+
+csh:OrganizationID_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:identifier_PropertyShape , csh:hasIdentifier_PropertyShape , csh:dateCreated_PropertyShape;
+        sh:targetClass  org:OrganizationID .
+
+org:OrganizationID  rdfs:subClassOf  org:OrganizationThing , org:OrganizationID .
+
+org:winnipegMbCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "winnipegMbCa" .
+
+org:victoriaBcCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "victoriaBcCa" .
+
+org:vancouverBcCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "vancouverBcCa" .
+
+org:torontoOnCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "torontoOnCa" .
+
+org:suspend  rdf:type  owl:NamedIndividual;
+        rdfs:label  "suspend" .
+
+org:saskatoonSkCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "saskatoonSkCa" .
+
+org:publicly_owned  rdf:type  owl:NamedIndividual , org:Ownership;
+        rdfs:label  "http://ontology.eil.utoronto.ca/tove/organization#publicly_owned" .
+
+org:privately_owned  rdf:type  owl:NamedIndividual , org:Ownership;
+        rdfs:label  "http://ontology.eil.utoronto.ca/tove/organization#privately_owned" .
+
+org:montrealQcCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "montrealQcCa" .
+
+org:halifaxNsCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "halifaxNsCa" .
+
+org:government_owned  rdf:type  owl:NamedIndividual , org:Ownership;
+        rdfs:label  "http://ontology.eil.utoronto.ca/tove/organization#government_owned" .
+
+org:fredrictonNbCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "fredrictonNbCa" .
+
+org:edmontonAbCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "edmontonAbCa" .
+
+org:charitable_owned  rdf:type  owl:NamedIndividual , org:Ownership;
+        rdfs:label  "http://ontology.eil.utoronto.ca/tove/organization#charitable_owned" .
+
+org:calgaryAbCa  rdf:type  owl:NamedIndividual , schema:City;
+        rdfs:label  "calgaryAbCa" .
+
+csh:hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       org:Division .
+
+csh:Division_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:hasName_PropertyShape;
+        sh:targetClass  org:Division .
+
+org:Division  rdfs:subClassOf  org:OrganizationThing , org:Division .

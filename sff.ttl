@@ -98,7 +98,7 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ] ;
   void:inDataset sff:datasetdefinition ;
@@ -134,7 +134,7 @@ sff:ReportInfo
     a owl:Restriction ;
     owl:onProperty cids:forOrganization ;
     owl:allValuesFrom cids:Organization ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
     owl:onProperty prov:startedAtTime ;
@@ -173,7 +173,7 @@ sff:FundingStatus
     a owl:Restriction ;
     owl:onProperty sff:hasFundingState ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange sff:FundingState
+    owl:onClass sff:FundingState
   ] ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
@@ -187,7 +187,7 @@ sff:TeamProfile
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ], [
     a owl:Restriction ;
@@ -291,7 +291,7 @@ sff:EquityDeservingGroup
   rdfs:subClassOf sff:forceHasDescription, [
     a owl:Restriction ;
     owl:onProperty cids:hasCharacteristic ;
-    owl:onDataRange cids:Characteristic
+    owl:onClass cids:Characteristic
   ], [
     a owl:Restriction ;
     owl:onProperty sff:isDefined ;
@@ -336,7 +336,7 @@ sff:reportedDate
   rdfs:comment "Specifies the date to which the reported information applies."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
+  cids:belongsToTier cids:SFFTier . 
 
 sff:hasEDGProfile
   a owl:ObjectProperty ;
