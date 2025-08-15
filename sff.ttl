@@ -22,9 +22,9 @@
 
 sff:
   a owl:Ontology, voaf:Vocabulary ;
-  owl:versionIRI <https://ontology.commonapproach.org/sff/1.1> ;
+  owl:versionIRI <https://ontology.commonapproach.org/sff/1.3> ;
   owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, <http://ontology.eil.utoronto.ca/tove/activity.owl>, <http://ontology.eil.utoronto.ca/tove/icontact.owl>, <http://ontology.eil.utoronto.ca/tove/organization.owl>, <http://www.w3.org/2006/time.rdf> ;
-  cc:license "Social Finance Fund Companion Module v1.1 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  cc:license "Social Finance Fund Companion Module v1.3 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
   ns0:term_status "Stable"@en, "Stable"@fr ;
   void:inDataset sff:datasetdefinition ;
   dc:rights "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
@@ -36,7 +36,7 @@ sff:
   ns1:preferredNamespaceUri "https://ontology.commonapproach.org/sff#" ;
   dc:date "11-10-2024" ;
   owl:priorVersion <https://ontology.commonapproach.org/sff/1.0> ;
-  owl:versionInfo "1.1"@en .
+  owl:versionInfo "1.3"@en .
 
 sff:datasetdefinition
   a void:Dataset, schema:Dataset, dcat:Dataset ;
