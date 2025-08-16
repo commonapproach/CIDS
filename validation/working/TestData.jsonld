@@ -732,7 +732,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "1283"
+      "i72:numerical_value": "1283"
     },
     "prov:startedAtTime": "2024-01-01T05:22:00-08:00",
     "prov:endedAtTime": "2024-12-31T05:22:00-08:00",
@@ -753,7 +753,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "40"
+      "i72:numerical_value": "40"
     },
     "prov:startedAtTime": "2024-01-01T05:22:00-08:00",
     "prov:endedAtTime": "2024-12-31T05:22:00-08:00",
@@ -774,7 +774,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "984390"
+      "i72:numerical_value": "984390"
     },
     "prov:startedAtTime": "2024-01-01T05:22:00-08:00",
     "prov:endedAtTime": "2024-12-31T05:22:00-08:00",
@@ -795,7 +795,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "1271"
+      "i72:numerical_value": "1271"
     },
     "prov:startedAtTime": "2024-01-01T05:22:00-08:00",
     "prov:endedAtTime": "2024-12-31T05:22:00-08:00",
@@ -816,7 +816,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": ""
+      "i72:numerical_value": ""
     },
     "prov:startedAtTime": "2024-01-01T05:22:00-08:00",
     "prov:endedAtTime": "2024-12-31T05:22:00-08:00",
@@ -837,7 +837,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "1"
+      "i72:numerical_value": "1"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -858,7 +858,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "0"
+      "i72:numerical_value": "0"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -879,7 +879,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -900,7 +900,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -921,7 +921,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -942,7 +942,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -963,7 +963,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -984,7 +984,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -1005,7 +1005,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -1026,7 +1026,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "yes"
+      "i72:numerical_value": "yes"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",
@@ -1047,7 +1047,7 @@
         "https://ontology.commonapproach.org/contexts/sffContext.jsonld"
       ],
       "@type": "i72:Measure",
-      "i72:hasNumericalValue": "placeholder"
+      "i72:numerical_value": "placeholder"
     },
     "prov:startedAtTime": "2025-01-01T11:25:00-08:00",
     "prov:endedAtTime": "2025-02-28T11:25:00-08:00",

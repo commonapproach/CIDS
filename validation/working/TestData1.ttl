@@ -1,0 +1,736 @@
+﻿PREFIX forOrganization: <https://placeholderfunds.ca/>
+PREFIX forOutcome: <https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/>
+PREFIX forIndicator: <https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/>
+PREFIX hasPrimaryContact: <https://placeholderfunds.ca/person/>
+PREFIX forFunderId: <https://www.ppbb.ca/>
+
+_:b0    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "1283" .
+
+_:b1    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "40" .
+
+_:b2    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b3    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b4    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b5    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b6    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b7    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "placeholder" .
+
+_:b8    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "984390" .
+
+_:b9    a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "1271" .
+
+_:b10   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "" .
+
+_:b11   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "1" .
+
+_:b12   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "0" .
+
+_:b13   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b14   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+_:b15   a       <http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure>;
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#hasNumericalValue>  "yes" .
+
+<https://codelist.commonapproach.org/SELI/Outcome1>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Mission Alignment";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://codelist.commonapproach.org/SELI/Theme1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator1>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator2>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator3>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator4> .
+
+<https://codelist.commonapproach.org/SELI/Outcome2>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Leadership";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://codelist.commonapproach.org/SELI/Theme1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator5>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator6>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator7> .
+
+<https://codelist.commonapproach.org/SELI/Outcome3>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Culture and Practices";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://codelist.commonapproach.org/SELI/Theme1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator8> .
+
+<https://codelist.commonapproach.org/SELI/Outcome4>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Indigenous Reconciliation";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://codelist.commonapproach.org/SELI/Theme1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator9> .
+
+<https://codelist.commonapproach.org/SELI/Theme1>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "SELI-GLI Assessment";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://codelist.commonapproach.org/SELI/Theme1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg1>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/SOGI>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "2SLGBTQI+" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg10>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/SOGI>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Women (Cisgender and Transgender)" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg11>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/SOGI>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Gender-Diverse People: Non-Binary" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg12>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/SOGI>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Gender-Diverse People: Agender" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg13>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/SOGI>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Gender-Diverse: Other" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg14>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Other Equity Deserving Group" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg2>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/Ethnicity>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Black Peoples" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg3>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/TenureInCanada>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "First Generation Immigrants, Refugees & Newcomers" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg4>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/Ethnicity>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Indigenous Peoples: First Nations" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg5>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/Ethnicity>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Indigenous Peoples: Inuit" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg6>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/Ethnicity>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Indigenous Peoples: M├⌐tis" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg7>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Official Languages Minority Groups" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg8>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasCharacteristic>  <https://placeholderfunds.ca/Characteristic/Ethnicity>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Other Racialized Peoples" .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg9>
+        a       <https://ontology.commonapproach.org/cids#EquityDeservingGroup>;
+        <http://ontology.commonapproach.org/sff#isDefined>  true;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "People Living with a Disability (including invisible and episodic disabilities)" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator1>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Are your products/services designed to support equity-deserving groups, and promote social equity?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-1>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator2>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-2>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator3>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you integrate a social equity analysis while developing your prodcts/services?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-3>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator4>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you integrate a gender analysis while developing your products/services?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-4>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator5>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome2>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Leadership of the social purpose organization includes lived experience from equity-deserving groups.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-5>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator6>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome2>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-6>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator7>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome2>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-7>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator8>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome3>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-8>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Boolean" .
+
+<https://codelist.commonapproach.org/codeLists/SELI/Indicator9>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)";
+        <https://ontology.commonapproach.org/cids#forOrganization>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://codelist.commonapproach.org/SELI/Outcome4>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/forSELI-9>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Text" .
+
+<https://metadata.un.org/sdg/1>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 1: No poverty";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/1>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "End poverty in all its forms everywhere" .
+
+<https://metadata.un.org/sdg/10>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 10: Reduced inequalities";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/10>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Reduce inequality within and among countries." .
+
+<https://metadata.un.org/sdg/11>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 11: Sustainable cities and communities";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/11>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Make cities and human settlements inclusive, safe, resilient and sustainable." .
+
+<https://metadata.un.org/sdg/12>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 12: Responsible consumption and production";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/12>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Ensure sustainable consumption and production patterns." .
+
+<https://metadata.un.org/sdg/13>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 13: Climate action";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/13>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Take urgent action to combat climate change and its impacts." .
+
+<https://metadata.un.org/sdg/14>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 14: Life below water";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/14>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Conserve and sustainably use the oceans, seas and marine resources for sustainable development." .
+
+<https://metadata.un.org/sdg/15>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 15: Life on land";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/15>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss." .
+
+<https://metadata.un.org/sdg/16>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 16: Peace, justice and strong institutions";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/16>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels." .
+
+<https://metadata.un.org/sdg/17>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 17: Partnerships for the goals";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/17>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development." .
+
+<https://metadata.un.org/sdg/2>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 2: Zero hunger";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/2>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "End hunger, achieve food security and improved nutrition and promote sustainable agriculture." .
+
+<https://metadata.un.org/sdg/3>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 3: Good health and well-being";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/3>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Ensure healthy lives and promote well-being for all at all ages." .
+
+<https://metadata.un.org/sdg/4>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 4: Quality education";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/4>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all." .
+
+<https://metadata.un.org/sdg/5>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 5: Gender equality";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/5>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Achieve gender equality and empower all women and girls." .
+
+<https://metadata.un.org/sdg/6>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 6: Clean water and sanitation";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/6>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Ensure availability and sustainable management of water and sanitation for all." .
+
+<https://metadata.un.org/sdg/7>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 7: Affordable and clean energy";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/7>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Ensure access to affordable, reliable, sustainable and modern energy for all." .
+
+<https://metadata.un.org/sdg/8>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 8: Decent work and economic growth";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/8>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all." .
+
+<https://metadata.un.org/sdg/9>
+        a       <https://ontology.commonapproach.org/cids#Theme>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Goal 9: Industry, innovation and infrastructure";
+        <https://ontology.commonapproach.org/cids#hasCode>  <https://metadata.un.org/sdg/9>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation." .
+
+forOrganization:  a  <https://ontology.commonapproach.org/cids#Organization>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasLegalName>  "Placeholder Funds Inc. - Housing Fund 4";
+        <https://ontology.commonapproach.org/cids#hasAddress>  "https://placeholderfunds.ca/Address/";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/GHGreductionsduetoproductssold/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/SELI/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  forIndicator:;
+        <https://ontology.commonapproach.org/cids#hasOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/>;
+        <https://ontology.commonapproach.org/cids#hasOutcome>  <https://placeholderfunds.ca/Outcome/Reducedhomelessness/>;
+        <https://ontology.commonapproach.org/cids#hasOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/>;
+        <https://ontology.commonapproach.org/cids#hasOutcome>  <https://placeholderfunds.ca/Outcome/Improvedqualityoflifeinunderservedneighborhoods/>;
+        <https://ontology.commonapproach.org/cids#hasOutcome>  forOutcome: .
+
+<https://placeholderfunds.ca/Address/>
+        a       <https://ontology.commonapproach.org/cids#Address>;
+        <https://ontology.commonapproach.org/cids#addressCountry>  "Canada";
+        <https://ontology.commonapproach.org/cids#addressLocality>  "Vancouver";
+        <https://ontology.commonapproach.org/cids#addressRegion>  "BC ";
+        <https://ontology.commonapproach.org/cids#postalCode>  "V6B 2K4";
+        <https://ontology.commonapproach.org/cids#streetAddress>  "Unit 300, 140 Thurlow Street" .
+
+<https://placeholderfunds.ca/Characteristic/Ethnicity>
+        a       <https://ontology.commonapproach.org/cids#Characteristic>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Ethnicity" .
+
+<https://placeholderfunds.ca/Characteristic/SOGI>
+        a       <https://ontology.commonapproach.org/cids#Characteristic>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Sexual Orientation and Gender Identity" .
+
+<https://placeholderfunds.ca/Characteristic/TenureInCanada>
+        a       <https://ontology.commonapproach.org/cids#Characteristic>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Tenure in Canada" .
+
+<https://placeholderfunds.ca/EDGProfile/Board/OtherRacialized/2025>
+        a       <https://ontology.commonapproach.org/cids#EDGProfile>;
+        <http://ontology.commonapproach.org/sff#forEDG>  <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg8>;
+        <http://ontology.commonapproach.org/sff#hasSize>  "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<https://placeholderfunds.ca/EDGProfile/Board/Women/2025>
+        a       <https://ontology.commonapproach.org/cids#EDGProfile>;
+        <http://ontology.commonapproach.org/sff#forEDG>  <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg10>;
+        <http://ontology.commonapproach.org/sff#hasSize>  "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<https://placeholderfunds.ca/EDGProfile/Management/Women/2025>
+        a       <https://ontology.commonapproach.org/cids#EDGProfile>;
+        <http://ontology.commonapproach.org/sff#forEDG>  <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg10>;
+        <http://ontology.commonapproach.org/sff#hasSize>  "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<https://placeholderfunds.ca/FundingStatus/2025-02-28/>
+        a       <https://ontology.commonapproach.org/cids#FundingStatus>;
+        <http://ontology.commonapproach.org/sff#forFunder>  "Boann ";
+        <http://ontology.commonapproach.org/sff#forFunderId>  forFunderId:;
+        <http://ontology.commonapproach.org/sff#hasFundingState>  <https://www.ppbb.ca/FundingState/Invested>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "" .
+
+<https://placeholderfunds.ca/Indicator/GHGreductionsduetoproductssold/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  " GHG reductions due to products sold";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  forOutcome:;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/GHGreductionsduetoproductssold2024/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "GHG " .
+
+forIndicator:  a  <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "GLI assessment";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/GLI/Feb2025/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Score" .
+
+<https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Number of individuals served by social service organizations and programs";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/Numberofindividualsservedbysocialserviceorganizationsandprograms2024/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Units" .
+
+<https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Number of units of non-market affordable housing created or preserved";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/Numberofunitsofnon-marketaffordablehousingcreated2024/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Units " .
+
+<https://placeholderfunds.ca/Indicator/SELI/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "SELI assessment";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/TestData.jsonld>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/SELI/Feb2025/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Score" .
+
+<https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Square footage of community space purchased/built/renovated with our financing";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing2024/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "Square foot" .
+
+<https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/>
+        a       <https://ontology.commonapproach.org/cids#Indicator>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "% affordability of housing units based on average area median income";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forOutcome>  <https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "(Indicator Description)";
+        <https://ontology.commonapproach.org/cids#hasIndicatorReport>  <https://placeholderfunds.ca/IndicatorReport/percentaffordabilityofhousingunitsbasedonaverageareamedianincome2024/>;
+        <https://ontology.commonapproach.org/cids#unitDecscription>  "% " .
+
+<https://placeholderfunds.ca/IndicatorReport/GHGreductionsduetoproductssold2024/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "retrofits on properties have not been completed.";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b10;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "GHG reductions due to products sold";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/GHGreductionsduetoproductssold/> .
+
+<https://placeholderfunds.ca/IndicatorReport/GLI/Feb2025/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b12;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "GLI assessment - Feb 2025";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  forIndicator: .
+
+<https://placeholderfunds.ca/IndicatorReport/Numberofindividualsservedbysocialserviceorganizationsandprograms2024/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "1,271 units occupied ";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b9;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Number of individuals served by social service organizations and programs";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/> .
+
+<https://placeholderfunds.ca/IndicatorReport/Numberofunitsofnon-marketaffordablehousingcreated2024/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b0;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Number of units of non-market affordable housing created";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/> .
+
+<https://placeholderfunds.ca/IndicatorReport/SELI/Feb2025/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b11;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "SELI assessment - Feb 2025";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/SELI/> .
+
+<https://placeholderfunds.ca/IndicatorReport/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing2024/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "The rentable area is 984,390 square feet ";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b8;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Square footage of community space purchased/built/renovated with our financing ";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-1>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b13;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Are your products/services designed to support equity-deserving groups, and promote social equity?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator1> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-2>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b14;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator2> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-3>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b15;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you integrate a social equity analysis while developing your prodcts/services?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator3> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-4>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b2;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you integrate a gender analysis while developing your products/services?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator4> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-5>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b3;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator5> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-6>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b4;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator6> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-7>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b5;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator7> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-8>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b6;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator8> .
+
+<https://placeholderfunds.ca/IndicatorReport/forSELI-9>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "placeholder comment";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b7;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2025-02-28T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2025-01-01T11:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://codelist.commonapproach.org/codeLists/SELI/Indicator9> .
+
+<https://placeholderfunds.ca/IndicatorReport/percentaffordabilityofhousingunitsbasedonaverageareamedianincome2024/>
+        a       <https://ontology.commonapproach.org/cids#IndicatorReport>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "Rents affordable on average at 40% of Area Median income";
+        <http://ontology.eil.utoronto.ca/ISO21972/iso21972#value>  _:b1;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "percent affordability of housing units based on average area median income";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T05:22:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forIndicator>  <https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/> .
+
+<https://placeholderfunds.ca/OrganizationProfile/>
+        a       <https://ontology.commonapproach.org/cids#OrganizationProfile>;
+        <http://ontology.commonapproach.org/sff#hasBoardProfile>  <https://placeholderfunds.ca/TeamProfile/Board/2025/>;
+        <http://ontology.commonapproach.org/sff#hasFundingStatus>  <https://placeholderfunds.ca/FundingStatus/2025-02-28/>;
+        <http://ontology.commonapproach.org/sff#hasManagementTeamProfile>  <https://placeholderfunds.ca/TeamProfile/Management/2025/>;
+        <http://ontology.commonapproach.org/sff#hasPrimaryContact>  hasPrimaryContact:;
+        <http://ontology.commonapproach.org/sff#localityServed>  <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#loc1>;
+        <http://ontology.commonapproach.org/sff#localityServed>  <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#loc2>;
+        <http://ontology.commonapproach.org/sff#organizationType>  <https://codelist.commonapproach.org/codeLists/OrgTypeGOC#nonProfit>;
+        <http://ontology.commonapproach.org/sff#primaryPopulationServed>  <https://codelist.commonapproach.org/codeLists/PopulationServed#ps25>;
+        <http://ontology.commonapproach.org/sff#primaryPopulationServed>  <https://codelist.commonapproach.org/codeLists/PopulationServed#ps14>;
+        <http://ontology.commonapproach.org/sff#primaryPopulationServed>  <https://codelist.commonapproach.org/codeLists/PopulationServed#ps15>;
+        <http://ontology.commonapproach.org/sff#provinceTerritoryServed>  <https://codelist.commonapproach.org/codeLists/ProvinceTerritory#CAN>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <http://ontology.commonapproach.org/sff#sectorServed>  <https://codelist.commonapproach.org/codeLists/ICNPOsector#sec6>;
+        <http://ontology.commonapproach.org/sff#servesEDG>  <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg14>;
+        <http://ontology.commonapproach.org/sff#servesEDG>  <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#edg10>;
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization: .
+
+<https://placeholderfunds.ca/Outcome/Improvedqualityoflifeinunderservedneighborhoods/>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Improved quality of life in underserved neighborhoods ";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/1>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/3>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/7>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Description: Improved quality of life in underserved neighborhoods ";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/> .
+
+<https://placeholderfunds.ca/Outcome/Increasedaccesstoaffordablehousingforlow-andmoderate-incomeindividualsandfamilies/>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  " Increased access to affordable housing for low- and moderate-income individuals and families";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/1>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/7>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Description: Increased access to affordable housing for low- and moderate-income individuals and families";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/> .
+
+<https://placeholderfunds.ca/Outcome/Increasedaccesstoessentialcommunityandsocialservices/>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Increased access to essential community and social services";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/1>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/3>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/7>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Description: Increased access to essential community and social services";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Squarefootageofcommunityspacepurchased/built/renovatedwithourfinancing/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/> .
+
+forOutcome:  a  <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Reduced carbon footprint ";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/8>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Description: Reduced carbon footprint ";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/GHGreductionsduetoproductssold/> .
+
+<https://placeholderfunds.ca/Outcome/Reducedhomelessness/>
+        a       <https://ontology.commonapproach.org/cids#Outcome>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Reduced homelessness ";
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization:;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/1>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/3>;
+        <https://ontology.commonapproach.org/cids#forTheme>  <https://metadata.un.org/sdg/7>;
+        <https://ontology.commonapproach.org/cids#hasDescription>  "Description: Reduced homelessness ";
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofunitsofnon-marketaffordablehousingcreatedorpreserved/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/percentaffordabilityofhousingunitsbasedonaverageareamedianincome/>;
+        <https://ontology.commonapproach.org/cids#hasIndicator>  <https://placeholderfunds.ca/Indicator/Numberofindividualsservedbysocialserviceorganizationsandprograms/> .
+
+<https://placeholderfunds.ca/ReportInfo/Reportinginfo2024/>
+        a       <https://ontology.commonapproach.org/cids#ReportInfo>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Reporting info 2024 ";
+        <http://www.w3.org/ns/prov#endedAtTime>  "2024-12-31T09:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <http://www.w3.org/ns/prov#startedAtTime>  "2024-01-01T09:25:00-08:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        <https://ontology.commonapproach.org/cids#forOrganization>  forOrganization: .
+
+<https://placeholderfunds.ca/TeamProfile/Board/2025/>
+        a       <https://ontology.commonapproach.org/cids#TeamProfile>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "Women: 1; Other Racialized Peoples: 1";
+        <http://ontology.commonapproach.org/sff#hasEDGProfile>  <https://placeholderfunds.ca/EDGProfile/Board/Women/2025>;
+        <http://ontology.commonapproach.org/sff#hasEDGProfile>  <https://placeholderfunds.ca/EDGProfile/Board/OtherRacialized/2025>;
+        <http://ontology.commonapproach.org/sff#hasEDGSize>  "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#hasTeamSize>  "4"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+<https://placeholderfunds.ca/TeamProfile/Management/2025/>
+        a       <https://ontology.commonapproach.org/cids#TeamProfile>;
+        <http://ontology.commonapproach.org/sff#hasComment>  "Women: 2\nAll other categories: 0";
+        <http://ontology.commonapproach.org/sff#hasEDGProfile>  <https://placeholderfunds.ca/EDGProfile/Management/Women/2025>;
+        <http://ontology.commonapproach.org/sff#hasEDGSize>  "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#hasTeamSize>  "5"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger>;
+        <http://ontology.commonapproach.org/sff#reportedDate>  "2025-02-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+hasPrimaryContact:  a  <https://ontology.commonapproach.org/cids#Person>;
+        <http://ontology.eil.utoronto.ca/tove/icontact#hasEmail>  "cph@placeholderfunds.ca";
+        <http://xmlns.com/foaf/0.1/familyName>  "Hankins";
+        <http://xmlns.com/foaf/0.1/givenName>  "Cody" .
+
+forFunderId:  a  <https://ontology.commonapproach.org/cids#Organization>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasLegalName>  "PPBB Fund Wholesaler" .
+
+<https://www.ppbb.ca/FundingState/Invested>
+        a       <https://ontology.commonapproach.org/cids#FundingState>;
+        <http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier>  "Invested ";
+        <http://ontology.eil.utoronto.ca/tove/organization#hasName>  "Invested ";
+        <https://ontology.commonapproach.org/cids#hasDescription>  "" .
