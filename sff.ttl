@@ -22,8 +22,9 @@
 
 sff:
   a owl:Ontology, voaf:Vocabulary ;
+  owl:versionIRI <https://ontology.commonapproach.org/sff/1.3.0> ;
   owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, <http://ontology.eil.utoronto.ca/tove/activity.owl>, <http://ontology.eil.utoronto.ca/tove/icontact.owl>, <http://ontology.eil.utoronto.ca/tove/organization.owl>, <http://www.w3.org/2006/time.rdf> ;
-  cc:license "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  cc:license "Social Finance Fund Companion Module v1.3.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
   ns0:term_status "Stable"@en, "Stable"@fr ;
   void:inDataset sff:datasetdefinition ;
   dc:rights "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
@@ -34,7 +35,8 @@ sff:
   ns1:preferredNamespacePrefix "sff" ;
   ns1:preferredNamespaceUri "https://ontology.commonapproach.org/sff#" ;
   dc:date "11-10-2024" ;
-  owl:versionInfo "1.0"@en .
+  owl:priorVersion <https://ontology.commonapproach.org/sff/1.0> ;
+  owl:versionInfo "1.3.0"@en .
 
 sff:datasetdefinition
   a void:Dataset, schema:Dataset, dcat:Dataset ;
@@ -96,7 +98,7 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ] ;
   void:inDataset sff:datasetdefinition ;
@@ -132,7 +134,7 @@ sff:ReportInfo
     a owl:Restriction ;
     owl:onProperty cids:forOrganization ;
     owl:allValuesFrom cids:Organization ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
     owl:onProperty prov:startedAtTime ;
@@ -171,7 +173,7 @@ sff:FundingStatus
     a owl:Restriction ;
     owl:onProperty sff:hasFundingState ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange sff:FundingState
+    owl:onClass sff:FundingState
   ] ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
@@ -185,7 +187,7 @@ sff:TeamProfile
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ], [
     a owl:Restriction ;
@@ -289,7 +291,7 @@ sff:EquityDeservingGroup
   rdfs:subClassOf sff:forceHasDescription, [
     a owl:Restriction ;
     owl:onProperty cids:hasCharacteristic ;
-    owl:onDataRange cids:Characteristic
+    owl:onClass cids:Characteristic
   ], [
     a owl:Restriction ;
     owl:onProperty sff:isDefined ;
@@ -334,7 +336,7 @@ sff:reportedDate
   rdfs:comment "Specifies the date to which the reported information applies."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
+  cids:belongsToTier cids:SFFTier . 
 
 sff:hasEDGProfile
   a owl:ObjectProperty ;
