@@ -1,0 +1,1003 @@
+{
+  "@context": {
+    "act": "http://ontology.eil.utoronto.ca/tove/activity#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "cc": "http://creativecommons.org/ns#",
+    "cids": "https://ontology.commonapproach.org/cids#",
+    "cwrc": "http://sparql.cwrc.ca/ontologies/cwrc#",
+    "dash": "http://datashapes.org/dash#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.geonames.org/ontology/ontology_v3.1.rdf#",
+    "graphql": "http://datashapes.org/graphql#",
+    "i72": "http://ontology.eil.utoronto.ca/ISO21972/iso21972#",
+    "ic": "http://ontology.eil.utoronto.ca/tove/icontact#",
+    "oep": "http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#",
+    "org": "http://ontology.eil.utoronto.ca/tove/organization#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rel": "http://purl.org/vocab/relationship/",
+    "sch": "http://schema.org/",
+    "sff": "http://ontology.commonapproach.org/sff#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
+    "swa": "http://topbraid.org/swa#",
+    "terms": "http://purl.org/dc/terms/",
+    "time": "http://www.w3.org/2006/time#",
+    "tosh": "http://topbraid.org/tosh#",
+    "vann": "http://purl.org/vocab/vann/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "xdmp": "http://marklogic.com/xdmp#",
+    "sem": "http://marklogic.com/semantics#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "iso5087": "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/",
+    "hasImpactModel": {
+      "@id": "cids:hasImpactModel",
+      "@type": "@id"
+    },
+    "hasInput": {
+      "@id": "cids:hasInput",
+      "@type": "@id"
+    },
+    "hasOutput": {
+      "@id": "cids:hasOutput",
+      "@type": "@id"
+    },
+    "hasActivity": {
+      "@id": "cids:hasActivity",
+      "@type": "@id"
+    },
+    "hasOutcome": {
+      "@id": "cids:hasOutcome",
+      "@type": "@id"
+    },
+    "hasStakeholderOutcome": {
+      "@id": "cids:hasStakeholderOutcome",
+      "@type": "@id"
+    },
+    "hasIndicator": {
+      "@id": "cids:hasIndicator",
+      "@type": "@id"
+    },
+    "hasIndicatorReport": {
+      "@id": "cids:hasIndicatorReport",
+      "@type": "@id"
+    },
+    "hasProgram": {
+      "@id": "cids:hasProgram",
+      "@type": "@id"
+    },
+    "forTheme": {
+      "@id": "cids:forTheme",
+      "@type": "@id"
+    },
+    "hasCode": {
+      "@id": "cids:hasCode",
+      "@type": "@id"
+    },
+    "forOrganization": {
+      "@id": "cids:forOrganization",
+      "@type": "@id"
+    },
+    "forActivity": {
+      "@id": "act:forActivity",
+      "@type": "@id"
+    },
+    "forIndicator": {
+      "@id": "cids:forIndicator",
+      "@type": "@id"
+    },
+    "forOutcome": {
+      "@id": "cids:forOutcome",
+      "@type": "@id"
+    },
+    "forStakeholder": {
+      "@id": "cids:forStakeholder",
+      "@type": "@id"
+    },
+    "canEnable": {
+      "@id": "cids:canEnable",
+      "@type": "@id"
+    },
+    "canProduce": {
+      "@id": "cids:canProduce",
+      "@type": "@id"
+    },
+    "hasImpactReport": {
+      "@id": "cids:hasImpactReport",
+      "@type": "@id"
+    },
+    "fromPerspectiveOf": {
+      "@id": "cids:fromPerspectiveOf",
+      "@type": "@id"
+    },
+    "hasImportance": {
+      "@id": "cids:hasImportance",
+      "@type": "xsd:string"
+    },
+    "isUnderserved": {
+      "@id": "cids:isUnderserved",
+      "@type": "xsd:boolean"
+    },
+    "intendedImpact": {
+      "@id": "cids:intendedImpact",
+      "@type": "xsd:string"
+    },
+    "hasImpactDepth": {
+      "@id": "cids:hasImpactDepth",
+      "@type": "@id"
+    },
+    "hasImpactDuration": {
+      "@id": "cids:hasImpactDuration",
+      "@type": "@id"
+    },
+    "hasImpactScale": {
+      "@id": "cids:hasImpactScale",
+      "@type": "@id"
+    },
+    "hasComment": {
+      "@id": "cids:hasComment",
+      "@type": "xsd:string"
+    },
+    "hasExpectation": {
+      "@id": "cids:hasExpectation",
+      "@type": "xsd:string"
+    },
+    "hasImpactRisk": {
+      "@id": "cids:hasImpactRisk",
+      "@type": "@id"
+    },
+    "hasReportedImpact": {
+      "@id": "cids:hasReportedImpact",
+      "@type": "xsd:string"
+    },
+    "HowMuchImpact": {
+      "@id": "cids:HowMuchImpact",
+      "@type": "@id"
+    },
+    "hasCounterfactual": {
+      "@id": "cids:hasCounterfactual",
+      "@type": "@id"
+    },
+    "hasMitigation": {
+      "@id": "cids:hasMitigation",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "sch:description",
+      "@type": "xsd:string"
+    },
+    "hasIdentifier": {
+      "@id": "org:hasIdentifier",
+      "@type": "xsd:string"
+    },
+    "hasContributingStakeholder": {
+      "@id": "cids:hasContributingStakeholder",
+      "@type": "@id"
+    },
+    "hasBeneficialStakeholder": {
+      "@id": "cids:hasBeneficialStakeholder",
+      "@type": "@id"
+    },
+    "benefitsFrom": {
+      "@id": "cids:benefitsFrom",
+      "@type": "@id"
+    },
+    "hasRole": {
+      "@id": "org:hasRole",
+      "@type": "@id"
+    },
+    "Characteristic": {
+      "@id": "cids:Characteristic",
+      "@type": "@id"
+    },
+    "forCharacteristic": {
+      "@id": "cids:forCharacteristic",
+      "@type": "@id"
+    },
+    "hasCharacteristic": {
+      "@id": "cids:hasCharacteristic",
+      "@type": "@id"
+    },
+    "hasCharacteristicReport": {
+      "@id": "cids:hasCharacteristicReport",
+      "@type": "@id"
+    },
+    "definedBy": {
+      "@id": "cids:definedBy",
+      "@type": "@id"
+    },
+    "hasBaseline": {
+      "@id": "cids:hasBaseline",
+      "@type": "@id"
+    },
+    "hasThreshold": {
+      "@id": "cids:hasThreshold",
+      "@type": "@id"
+    },
+    "hasAccess": {
+      "@id": "cids:hasAccess",
+      "@type": "@id"
+    },
+    "hasType": {
+      "@id": "cids:hasType",
+      "@type": "xsd:string"
+    },
+    "produces": {
+      "@id": "cids:produces",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "cids:hasSpecification",
+      "@type": "xsd:anyURI"
+    },
+    "hasStakeholder": {
+      "@id": "cids:hasStakeholder",
+      "@type": "@id"
+    },
+    "hasService": {
+      "@id": "cids:hasService",
+      "@type": "@id"
+    },
+    "issuedBy": {
+      "@id": "org:issuedBy",
+      "@type": "@id"
+    },
+    "numberOfEmployees": {
+      "@id": "org:numberOfEmployees",
+      "@type": "xsd:nonNegativeInteger"
+    },
+    "usedByIndicator": {
+      "@id": "cids:usedByIndicator",
+      "@type": "@id"
+    },
+    "usesOutput": {
+      "@id": "cids:usesOutput",
+      "@type": "@id"
+    },
+    "hasContact": {
+      "@id": "cids:hasContact",
+      "@type": "@id"
+    },
+    "hasPerson": {
+      "@id": "cids:hasPerson",
+      "@type": "@id"
+    },
+    "hasPurpose": {
+      "@id": "cids:hasPurpose",
+      "@type": "xsd:string"
+    },
+    "hasWebAddress": {
+      "@id": "cids:hasWebAddress",
+      "@type": "xsd:anyURI"
+    },
+    "hasCatchmentArea": {
+      "@id": "cids:hasCatchmentArea",
+      "@type": "xsd:string"
+    },
+    "hasName": {
+      "@id": "cids:hasName",
+      "@type": "xsd:string"
+    },
+    "hasDescription": {
+      "@id": "cids:hasDescription",
+      "@type": "xsd:string"
+    },
+    "relatesTo": {
+      "@id": "cids:relatesTo",
+      "@type": "@id"
+    },
+    "prov:startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "prov:endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "streetAddress": {
+      "@id": "cids:streetAddress",
+      "@type": "xsd:string"
+    },
+    "addressLocality": {
+      "@id": "cids:addressLocality",
+      "@type": "xsd:string"
+    },
+    "addressRegion": {
+      "@id": "cids:addressRegion",
+      "@type": "xsd:string"
+    },
+    "postalCode": {
+      "@id": "cids:postalCode",
+      "@type": "xsd:string"
+    },
+    "addressCountry": {
+      "@id": "cids:addressCountry",
+      "@type": "xsd:string"
+    },
+    "postOfficeBoxNumber": {
+      "@id": "cids:postOfficeBoxNumber",
+      "@type": "xsd:string"
+    },
+    "extendedAddress": {
+      "@id": "cids:extendedAddress",
+      "@type": "xsd:string"
+    },
+    "@base": "https://www.example.org/"
+  },
+  "@graph": [
+    {
+      "@id": "#org-fsgv",
+      "@type": "cids:Organization",
+      "org:hasName": "Family Services of Greater Vancouver",
+      "hasDescription": "Family Services of Greater Vancouver is a multi-service agency providing a wide range of programs and services for people in crisis, supporting the most vulnerable members of the community including children, youth, and families. Committed to client-centered, non-judgmental, and trauma-informed support.",
+      "hasOutcome": [
+        "#outcome-brighter-tomorrows",
+        "#outcome-children-nurtured",
+        "#outcome-youth-optimism",
+        "#outcome-adults-empowered",
+        "#outcome-strong-families",
+        "#outcome-youth-school",
+        "#outcome-parents-present",
+        "#outcome-survivor-next-chapter",
+        "#outcome-disability-confidence",
+        "#outcome-youth-focus-future",
+        "#outcome-financial-control",
+        "#outcome-healthy-relationships",
+        "#outcome-employee-career-progress",
+        "#outcome-survivor-healing",
+        "#outcome-trauma-skills",
+        "#outcome-life-improvements",
+        "#outcome-dignified-next-chapter",
+        "#outcome-youth-thrive-access",
+        "#outcome-single-mothers-support"
+      ]
+    },
+    {
+      "@id": "#theme-youth",
+      "@type": "cids:Theme",
+      "org:hasName": "Youth"
+    },
+    {
+      "@id": "#theme-family",
+      "@type": "cids:Theme",
+      "org:hasName": "Family"
+    },
+    {
+      "@id": "#theme-survivor",
+      "@type": "cids:Theme",
+      "org:hasName": "Survivor Support"
+    },
+    {
+      "@id": "#theme-community",
+      "@type": "cids:Theme",
+      "org:hasName": "Community Well-being"
+    },
+    {
+      "@id": "#theme-justice-equity-inclusion",
+      "@type": "cids:Theme",
+      "org:hasName": "Justice, Equity, and Inclusion"
+    },
+    {
+      "@id": "#theme-food-security",
+      "@type": "cids:Theme",
+      "org:hasName": "Food Security"
+    },
+    {
+      "@id": "#theme-financial-empowerment",
+      "@type": "cids:Theme",
+      "org:hasName": "Financial Empowerment"
+    },
+    {
+      "@id": "#theme-trauma-counselling",
+      "@type": "cids:Theme",
+      "org:hasName": "Trauma Counselling"
+    },
+    {
+      "@id": "#theme-housing",
+      "@type": "cids:Theme",
+      "org:hasName": "Housing"
+    },
+    {
+      "@id": "#theme-employment",
+      "@type": "cids:Theme",
+      "org:hasName": "Employment"
+    },
+    {
+      "@id": "#theme-health",
+      "@type": "cids:Theme",
+      "org:hasName": "Health"
+    },
+    {
+      "@id": "#outcome-brighter-tomorrows",
+      "@type": "cids:Outcome",
+      "org:hasName": "All people are resilient, confident, and filled with hope",
+      "hasDescription": "Achieving brighter tomorrows in which all people are resilient, confident, and filled with hope, as per the organization's vision.",
+      "hasIndicator": [
+        "#ind-people-supported",
+        "#ind-direct-support-hours",
+        "#ind-volunteer-support-hours"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-children-nurtured",
+      "@type": "cids:Outcome",
+      "org:hasName": "Children are nurtured",
+      "forTheme": [
+        "#theme-family"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-youth-optimism",
+      "@type": "cids:Outcome",
+      "org:hasName": "Youth find optimism",
+      "forTheme": [
+        "#theme-youth"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-adults-empowered",
+      "@type": "cids:Outcome",
+      "org:hasName": "Adults feel empowered",
+      "forTheme": [
+        "#theme-community"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-strong-families",
+      "@type": "cids:Outcome",
+      "org:hasName": "Parents make choices that build strong families",
+      "forTheme": [
+        "#theme-family"
+      ],
+      "hasIndicator": [
+        "#ind-family-hours-average"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-youth-school",
+      "@type": "cids:Outcome",
+      "org:hasName": "Young people feel ready to go back to school",
+      "forTheme": [
+        "#theme-youth"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-parents-present",
+      "@type": "cids:Outcome",
+      "org:hasName": "Parents are present for their children",
+      "forTheme": [
+        "#theme-family"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-survivor-next-chapter",
+      "@type": "cids:Outcome",
+      "org:hasName": "Survivors of domestic violence write their next chapter",
+      "forTheme": [
+        "#theme-survivor"
+      ],
+      "hasIndicator": [
+        "#ind-survivors-served-weekly"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-disability-confidence",
+      "@type": "cids:Outcome",
+      "org:hasName": "People with disabilities have confidence applying for benefits",
+      "forTheme": [
+        "#theme-community",
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicator": [
+        "#ind-new-income-accessed"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-youth-focus-future",
+      "@type": "cids:Outcome",
+      "org:hasName": "Youth can focus on their future with food security",
+      "forTheme": [
+        "#theme-youth",
+        "#theme-food-security"
+      ],
+      "hasIndicator": [
+        "#ind-meals-served"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-financial-control",
+      "@type": "cids:Outcome",
+      "org:hasName": "People can take control and feel empowered with their money",
+      "forTheme": [
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicator": [
+        "#ind-financial-skills-growth",
+        "#ind-new-income-accessed",
+        "#ind-fe-clients-coached",
+        "#ind-benefits-applied-single-mothers",
+        "#ind-average-benefit-per-client-single-mothers"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-healthy-relationships",
+      "@type": "cids:Outcome",
+      "org:hasName": "Strong community starts with healthy relationships within a family",
+      "forTheme": [
+        "#theme-family",
+        "#theme-community"
+      ],
+      "hasIndicator": [
+        "#ind-family-hours-average"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-employee-career-progress",
+      "@type": "cids:Outcome",
+      "org:hasName": "Employees can focus and progress in their careers with support",
+      "forTheme": [
+        "#theme-community"
+      ],
+      "hasIndicator": [
+        "#ind-eap-supported-employees"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-survivor-healing",
+      "@type": "cids:Outcome",
+      "org:hasName": "Survivors progress in their healing journey",
+      "hasDescription": "Healing is a non-linear journey, and our role is to walk alongside clients as they set the pace for progress.",
+      "hasIndicator": [
+        "#ind-survivors-served-weekly"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-trauma-skills",
+      "@type": "cids:Outcome",
+      "org:hasName": "Trauma counselling clients learn new skills",
+      "forTheme": [
+        "#theme-trauma-counselling"
+      ],
+      "hasIndicator": [
+        "#ind-counselling-skills-learned"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-life-improvements",
+      "@type": "cids:Outcome",
+      "org:hasName": "Trauma counselling clients experience improvements to their life",
+      "forTheme": [
+        "#theme-trauma-counselling"
+      ],
+      "hasIndicator": [
+        "#ind-counselling-life-improvements"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-dignified-next-chapter",
+      "@type": "cids:Outcome",
+      "org:hasName": "People start the next chapter of their life with dignity",
+      "forTheme": [
+        "#theme-community"
+      ],
+      "hasIndicator": [
+        "#ind-counselling-life-improvements"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-youth-thrive-access",
+      "@type": "cids:Outcome",
+      "org:hasName": "Youth access housing, employment, health, and other services they need to thrive",
+      "forTheme": [
+        "#theme-youth",
+        "#theme-housing",
+        "#theme-employment",
+        "#theme-health"
+      ],
+      "hasIndicator": [
+        "#ind-youth-referrals"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#outcome-single-mothers-support",
+      "@type": "cids:Outcome",
+      "org:hasName": "Single mothers receive emotional and financial support",
+      "forTheme": [
+        "#theme-family",
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicator": [
+        "#ind-fe-single-mothers",
+        "#ind-benefits-applied-single-mothers",
+        "#ind-average-benefit-per-client-single-mothers"
+      ],
+      "hasOutcome": [],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ind-people-supported",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of people supported across programs",
+      "forOutcome": [
+        "#outcome-brighter-tomorrows"
+      ],
+      "forTheme": [],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-direct-support-hours",
+      "@type": "cids:Indicator",
+      "org:hasName": "Total hours in direct support time with clients",
+      "forOutcome": [
+        "#outcome-brighter-tomorrows"
+      ],
+      "forTheme": [],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-volunteer-support-hours",
+      "@type": "cids:Indicator",
+      "org:hasName": "Total hours of volunteer support for youth, family, and trauma services",
+      "forOutcome": [
+        "#outcome-brighter-tomorrows"
+      ],
+      "forTheme": [],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-meals-served",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of free meals and snacks served to vulnerable youth",
+      "forOutcome": [
+        "#outcome-youth-focus-future"
+      ],
+      "forTheme": [
+        "#theme-food-security",
+        "#theme-youth"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-financial-skills-growth",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of low-income people who grew their financial skills",
+      "forOutcome": [
+        "#outcome-financial-control"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-family-hours-average",
+      "@type": "cids:Indicator",
+      "org:hasName": "Average hours spent with each family",
+      "forOutcome": [
+        "#outcome-strong-families",
+        "#outcome-healthy-relationships"
+      ],
+      "forTheme": [
+        "#theme-family"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-eap-supported-employees",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of employees and their families supported through employee assistance program",
+      "forOutcome": [
+        "#outcome-employee-career-progress"
+      ],
+      "forTheme": [],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-survivors-served-weekly",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of survivors of high-risk violence and trauma served every week",
+      "forOutcome": [
+        "#outcome-survivor-next-chapter",
+        "#outcome-survivor-healing"
+      ],
+      "forTheme": [
+        "#theme-survivor",
+        "#theme-trauma-counselling"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-new-income-accessed",
+      "@type": "cids:Indicator",
+      "org:hasName": "Amount of new income accessed by low-income clients",
+      "forOutcome": [
+        "#outcome-financial-control",
+        "#outcome-disability-confidence"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-counselling-skills-learned",
+      "@type": "cids:Indicator",
+      "org:hasName": "Percentage of trauma counselling clients reporting learning new skills",
+      "forOutcome": [
+        "#outcome-trauma-skills"
+      ],
+      "forTheme": [
+        "#theme-trauma-counselling"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-counselling-life-improvements",
+      "@type": "cids:Indicator",
+      "org:hasName": "Percentage of trauma counselling clients reporting improvements to their life",
+      "forOutcome": [
+        "#outcome-life-improvements",
+        "#outcome-dignified-next-chapter"
+      ],
+      "forTheme": [
+        "#theme-trauma-counselling"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-youth-referrals",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of referrals made for at-risk youth",
+      "forOutcome": [
+        "#outcome-youth-thrive-access"
+      ],
+      "forTheme": [
+        "#theme-youth",
+        "#theme-housing",
+        "#theme-employment",
+        "#theme-health"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-fe-clients-coached",
+      "@type": "cids:Indicator",
+      "org:hasName": "Number of clients in 1-on-1 financial empowerment coaching",
+      "forOutcome": [
+        "#outcome-financial-control"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-fe-single-mothers",
+      "@type": "cids:Indicator",
+      "org:hasName": "Percentage of financial empowerment clients who are single mothers",
+      "forOutcome": [
+        "#outcome-single-mothers-support"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment",
+        "#theme-family"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-benefits-applied-single-mothers",
+      "@type": "cids:Indicator",
+      "org:hasName": "Amount of benefit applications submitted on behalf of single mothers",
+      "forOutcome": [
+        "#outcome-single-mothers-support",
+        "#outcome-financial-control"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment",
+        "#theme-family"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ind-average-benefit-per-client-single-mothers",
+      "@type": "cids:Indicator",
+      "org:hasName": "Average benefit amount accessed per single mother client",
+      "forOutcome": [
+        "#outcome-single-mothers-support",
+        "#outcome-financial-control"
+      ],
+      "forTheme": [
+        "#theme-financial-empowerment",
+        "#theme-family"
+      ],
+      "hasIndicatorReport": []
+    },
+    {
+      "@id": "#ir-people-supported-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "12,000+ people supported",
+      "hasIndicator": [
+        "#ind-people-supported"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-direct-support-hours-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "118,000+ hours in direct support time with clients",
+      "hasIndicator": [
+        "#ind-direct-support-hours"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-volunteer-support-hours-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "4,700+ hours of volunteer support for youth, family, and trauma services",
+      "hasIndicator": [
+        "#ind-volunteer-support-hours"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-meals-served-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "7,100+ free meals and snacks served to vulnerable youth",
+      "hasIndicator": [
+        "#ind-meals-served"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-financial-skills-growth-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "39,000+ low-income people grew their financial skills",
+      "hasIndicator": [
+        "#ind-financial-skills-growth"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-family-hours-average-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "40 hours spent with each family, on average",
+      "hasIndicator": [
+        "#ind-family-hours-average"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-eap-supported-employees-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "16 employees and their families supported through our employee assistance program",
+      "hasIndicator": [
+        "#ind-eap-supported-employees"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-survivors-served-weekly-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "2,800+ survivors of high-risk violence and trauma served every week",
+      "hasIndicator": [
+        "#ind-survivors-served-weekly"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-new-income-accessed-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "$2,100,000+ of new income accessed by low-income clients",
+      "hasIndicator": [
+        "#ind-new-income-accessed"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-counselling-skills-learned-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "97% of trauma counselling clients reported learning new skills",
+      "hasIndicator": [
+        "#ind-counselling-skills-learned"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-counselling-life-improvements-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "97% of trauma counselling clients felt there were improvements to their life",
+      "hasIndicator": [
+        "#ind-counselling-life-improvements"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-youth-referrals-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "14,000+ referrals made for at-risk youth",
+      "hasIndicator": [
+        "#ind-youth-referrals"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-fe-clients-coached-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "370 clients in 1-on-1 financial empowerment coaching",
+      "hasIndicator": [
+        "#ind-fe-clients-coached"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-fe-single-mothers-percentage-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "10% of financial empowerment clients are single mothers",
+      "hasIndicator": [
+        "#ind-fe-single-mothers"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-benefits-applied-single-mothers-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "$90,000 in benefit applications submitted on behalf of single mothers",
+      "hasIndicator": [
+        "#ind-benefits-applied-single-mothers"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    },
+    {
+      "@id": "#ir-average-benefit-per-client-single-mothers-2024",
+      "@type": "cids:IndicatorReport",
+      "org:hasName": "Average of just over $10K per client (single mothers)",
+      "hasIndicator": [
+        "#ind-average-benefit-per-client-single-mothers"
+      ],
+      "startedAtTime": "2023-04-01T00:00:00Z"
+    }
+  ]
+}

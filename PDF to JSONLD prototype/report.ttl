@@ -1,0 +1,785 @@
+PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dash:    <http://datashapes.org/dash#>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo:     <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX graphql: <http://datashapes.org/graphql#>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic:      <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX iso5087: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX oep:     <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1:    <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel:     <http://purl.org/vocab/relationship/>
+PREFIX sch:     <http://schema.org/>
+PREFIX schema:  <http://schema.org/>
+PREFIX sem:     <http://marklogic.com/semantics#>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur:     <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX swa:     <http://topbraid.org/swa#>
+PREFIX terms:   <http://purl.org/dc/terms/>
+PREFIX time:    <http://www.w3.org/2006/time#>
+PREFIX tosh:    <http://topbraid.org/tosh#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xdmp:    <http://marklogic.com/xdmp#>
+PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+[ rdf:type     sh:ValidationReport;
+  sh:conforms  false;
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-youth-referrals>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-fe-clients-coached-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-youth-optimism>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-family-hours-average>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-counselling-skills-learned-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-volunteer-support-hours>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-survivor-next-chapter>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-meals-served-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-food-security>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-counselling-life-improvements-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-family-hours-average>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-financial-empowerment>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-financial-skills-growth>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-eap-supported-employees>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-trauma-counselling>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-youth-referrals>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-people-supported-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-meals-served-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-trauma-skills>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-counselling-life-improvements-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-new-income-accessed>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-family-hours-average-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-justice-equity-inclusion>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-people-supported>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-new-income-accessed-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-direct-support-hours-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-benefits-applied-single-mothers-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-housing>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-children-nurtured>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-eap-supported-employees-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-employment>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-counselling-skills-learned-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-fe-clients-coached-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-survivors-served-weekly-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-average-benefit-per-client-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-counselling-life-improvements>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-health>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-survivors-served-weekly>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-eap-supported-employees-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-youth-referrals-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-new-income-accessed-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-life-improvements>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-meals-served>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-youth-school>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-average-benefit-per-client-single-mothers-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-volunteer-support-hours-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-survivor>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-volunteer-support-hours>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-fe-clients-coached>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-eap-supported-employees>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-disability-confidence>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-fe-single-mothers-percentage-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-survivors-served-weekly-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-employee-career-progress>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-family>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-average-benefit-per-client-single-mothers-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-counselling-skills-learned>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-single-mothers-support>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-fe-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-financial-control>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-new-income-accessed>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-direct-support-hours-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-family-hours-average-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-adults-empowered>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-healthy-relationships>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-benefits-applied-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-youth-focus-future>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-financial-skills-growth>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-youth-thrive-access>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-benefits-applied-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-volunteer-support-hours-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-average-benefit-per-client-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-financial-skills-growth-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-community>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-people-supported-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:endedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:endedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-youth-referrals-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-dignified-next-chapter>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-fe-single-mothers>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-counselling-skills-learned>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-parents-present>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-fe-single-mothers-percentage-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-counselling-life-improvements>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-financial-skills-growth-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-fe-clients-coached>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-survivors-served-weekly>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#theme-youth>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-direct-support-hours>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 org:hasIdentifier;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasIdentifier_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-people-supported>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-meals-served>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#outcome-strong-families>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ind-direct-support-hours>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 cids:hasDescription;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:hasDescription_PropertyShape
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  <https://www.example.org/#ir-benefits-applied-single-mothers-2024>;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 prov:startedAtTime;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                csh:startedAtTime_PropertyShape
+               ]
+] .
