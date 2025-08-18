@@ -98,7 +98,7 @@ async def analyze_nonprofit_data(report_text, cids_graph):
 
     # --- IMPORTANT ---
     # Replace "YOUR_API_KEY_HERE" with your actual Gemini API key from Google AI Studio.
-    api_key = "AIzaSyARHjICoRxIHuwu22UySls4OrkCwqf7c9c"
+    api_key = " "
     
     if api_key == "YOUR_API_KEY_HERE":
         print("Error: Please replace 'YOUR_API_KEY_HERE' with your actual Gemini API key.")
