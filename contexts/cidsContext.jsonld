@@ -329,6 +329,10 @@
     "extendedAddress": {
       "@id": "cids:extendedAddress",
       "@type": "xsd:string"
+    },
+    "hasAddress": {
+      "@id": "cids:hasAddress",
+      "@type": "@id"
     }
   }
 }
