@@ -333,6 +333,10 @@
     "hasAddress": {
       "@id": "cids:hasAddress",
       "@type": "@id"
+    },
+    "unitDescription": {
+      "@id": "cids:unitDescription",
+      "@type": "xsd:string"
     }
   }
 }
