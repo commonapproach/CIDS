@@ -385,7 +385,7 @@ sff:forFunder
 sff:hasFundingState
   a owl:ObjectProperty ;
   rdfs:domain sff:FundingStatus ;
-  rdfs:range cids:FundingState ;
+  rdfs:range sff:FundingState ;
   rdfs:label "hasFundingState"@en ;
   cids:hasName "hasFundingState" ;
   rdfs:comment "Links a funding status to the state of the funding application."@en ;
