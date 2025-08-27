@@ -91,7 +91,7 @@ WHERE {
         # This converts data ranges to literal property shapes
         ?class rdf:type owl:Class .
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
-        ?class rdfs:subClassOf ?restriction .
+        ?class rdfs:subClassOf+ ?restriction .
         ?restriction owl:onProperty ?property .
         # This checks to see if the property is in the active tier
         optional {
@@ -130,7 +130,7 @@ WHERE {
     # This handles object associations from restrictions
     union {
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
-        ?class rdfs:subClassOf ?restriction .
+        ?class rdfs:subClassOf+ ?restriction .
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
