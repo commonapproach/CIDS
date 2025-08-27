@@ -66,8 +66,6 @@ csh:cidsThing_NodeShape
         sh:property     csh:cidsThing_description_PropertyShape , csh:cidsThing_dateCreated_PropertyShape;
         sh:targetClass  cids:cidsThing .
 
-cids:cidsThing  rdfs:subClassOf  cids:cidsThing .
-
 csh:Tier_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
@@ -86,7 +84,7 @@ csh:Tier_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Tier_hasName_PropertyShape;
         sh:targetClass  cids:Tier .
 
-cids:Tier  rdfs:subClassOf  cids:cidsThing , cids:Tier .
+cids:Tier  rdfs:subClassOf  cids:cidsThing .
 
 csh:Theme_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -118,7 +116,7 @@ csh:Theme_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Theme_hasName_PropertyShape , csh:Theme_hasDescription_PropertyShape;
         sh:targetClass  cids:Theme .
 
-cids:Theme  rdfs:subClassOf  cids:cidsThing , cids:Theme .
+cids:Theme  rdfs:subClassOf  cids:cidsThing .
 
 csh:Target_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -186,7 +184,7 @@ csh:Target_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Target_startedAtTime_PropertyShape , csh:Target_hasName_PropertyShape , csh:Target_hasComment_PropertyShape , csh:Target_endedAtTime_PropertyShape , csh:Target_dateCreated_PropertyShape;
         sh:targetClass  cids:Target .
 
-cids:Target  rdfs:subClassOf  cids:cidsThing , cids:Target .
+cids:Target  rdfs:subClassOf  cids:cidsThing .
 
 csh:Stakeholder_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -222,7 +220,7 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "local" , "national" , "multinational" , "global" , "provincial";
+        csh:in           "national" , "local" , "global" , "provincial" , "multinational";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_NodeShape
@@ -232,7 +230,7 @@ csh:Stakeholder_NodeShape
         sh:property     csh:Stakeholder_hasName_PropertyShape , csh:Stakeholder_hasDescription_PropertyShape , csh:Stakeholder_hasCatchmentArea_PropertyShape;
         sh:targetClass  cids:Stakeholder .
 
-cids:Stakeholder  rdfs:subClassOf  cids:cidsThing , cids:Stakeholder .
+cids:Stakeholder  rdfs:subClassOf  cids:cidsThing .
 
 csh:StakeholderOutcome_isUnderserved_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -281,7 +279,7 @@ csh:StakeholderOutcome_hasImportance_PropertyShape
         sh:path          cids:hasImportance;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "high importance" , "moderate important" , "unimportant" , "neutral";
+        csh:in           "unimportant" , "neutral" , "moderate important" , "high importance";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasDescription_PropertyShape
@@ -304,7 +302,7 @@ csh:StakeholderOutcome_NodeShape
         sh:targetClass  cids:StakeholderOutcome .
 
 cids:StakeholderOutcome
-        rdfs:subClassOf  cids:cidsThing , cids:StakeholderOutcome .
+        rdfs:subClassOf  cids:cidsThing .
 
 csh:Service_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -385,7 +383,7 @@ csh:Service_NodeShape
         sh:property     csh:Service_startedAtTime_PropertyShape , csh:Service_hasName_PropertyShape , csh:Service_hasDescription_PropertyShape , csh:Service_endedAtTime_PropertyShape , csh:Service_beneficialSizeStart_PropertyShape , csh:Service_beneficialSizeEnd_PropertyShape;
         sh:targetClass  cids:Service .
 
-cids:Service  rdfs:subClassOf  cids:cidsThing , cids:Service , cids:Activity , act:Activity .
+cids:Service  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
 
 csh:Program_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -418,7 +416,7 @@ csh:Program_NodeShape
         sh:property     csh:Program_hasName_PropertyShape , csh:Program_hasDescription_PropertyShape;
         sh:targetClass  cids:Program .
 
-cids:Program  rdfs:subClassOf  cids:cidsThing , cids:Program , cids:Activity , act:Activity .
+cids:Program  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
 
 csh:Person_middleName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -473,7 +471,7 @@ csh:Person_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Person_middleName_PropertyShape , csh:Person_givenName_PropertyShape , csh:Person_familyName_PropertyShape , csh:Person_birthDate_PropertyShape;
         sh:targetClass  cids:Person .
 
-cids:Person  rdfs:subClassOf  cids:cidsThing , cids:Person , sch:Person .
+cids:Person  rdfs:subClassOf  cids:cidsThing , sch:Person .
 
 csh:Output_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -516,7 +514,7 @@ csh:Output_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Output_hasName_PropertyShape , csh:Output_hasDescription_PropertyShape , csh:Output_forActivity_PropertyShape;
         sh:targetClass  cids:Output .
 
-cids:Output  rdfs:subClassOf  cids:cidsThing , cids:Output .
+cids:Output  rdfs:subClassOf  cids:cidsThing .
 
 csh:Outcome_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -560,7 +558,7 @@ csh:Outcome_NodeShape
         sh:property     csh:Outcome_hasName_PropertyShape , csh:Outcome_hasDescription_PropertyShape , csh:Outcome_canEnable_PropertyShape;
         sh:targetClass  cids:Outcome .
 
-cids:Outcome  rdfs:subClassOf  cids:cidsThing , cids:Outcome .
+cids:Outcome  rdfs:subClassOf  cids:cidsThing .
 
 csh:Organization_hasDescription_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -581,7 +579,7 @@ csh:Organization_NodeShape
         sh:property     csh:Organization_hasDescription_PropertyShape;
         sh:targetClass  cids:Organization .
 
-cids:Organization  rdfs:subClassOf  cids:cidsThing , cids:Organization , org:Organization .
+cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
 
 csh:Input_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -597,7 +595,7 @@ csh:Input_startedAtTime_PropertyShape
 
 csh:Input_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Activity , cids:Service , cids:Program;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -648,7 +646,7 @@ csh:Input_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Input_startedAtTime_PropertyShape , csh:Input_inputFor_PropertyShape , csh:Input_hasName_PropertyShape , csh:Input_hasDescription_PropertyShape , csh:Input_endedAtTime_PropertyShape;
         sh:targetClass  cids:Input .
 
-cids:Input  rdfs:subClassOf  cids:cidsThing , cids:Input .
+cids:Input  rdfs:subClassOf  cids:cidsThing .
 
 csh:Indicator_unitDescription_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -716,7 +714,7 @@ csh:Indicator_NodeShape
         sh:property     csh:Indicator_unitDescription_PropertyShape , csh:Indicator_hasName_PropertyShape , csh:Indicator_hasIdentifier_PropertyShape , csh:Indicator_hasDescription_PropertyShape , csh:Indicator_hasAccess_PropertyShape;
         sh:targetClass  cids:Indicator .
 
-cids:Indicator  rdfs:subClassOf  cids:cidsThing , cids:Indicator , i72:Indicator .
+cids:Indicator  rdfs:subClassOf  cids:cidsThing , i72:Indicator .
 
 csh:IndicatorReport_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -744,7 +742,7 @@ csh:IndicatorReport_hasName_PropertyShape
 
 csh:IndicatorReport_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Organization , cids:Stakeholder;
+        sh:class         cids:Stakeholder , cids:Organization;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
@@ -772,7 +770,7 @@ csh:IndicatorReport_NodeShape
         sh:property     csh:IndicatorReport_startedAtTime_PropertyShape , csh:IndicatorReport_hasName_PropertyShape , csh:IndicatorReport_hasAccess_PropertyShape , csh:IndicatorReport_endedAtTime_PropertyShape;
         sh:targetClass  cids:IndicatorReport .
 
-cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing , cids:IndicatorReport .
+cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing .
 
 csh:ImpactRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -784,7 +782,7 @@ csh:ImpactRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "lowRisk" , "veryLikely" , "unlikely" , "mediumRisk" , "likely" , "veryUnlikely";
+        csh:in           "veryUnlikely" , "likely" , "unlikely" , "veryLikely" , "highRisk" , "mediumRisk" , "lowRisk";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_hasIdentifier_PropertyShape
@@ -821,7 +819,7 @@ csh:ImpactRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "severe" , "average";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_NodeShape
@@ -831,7 +829,7 @@ csh:ImpactRisk_NodeShape
         sh:property     csh:ImpactRisk_hasLikelihood_PropertyShape , csh:ImpactRisk_hasIdentifier_PropertyShape , csh:ImpactRisk_hasDescription_PropertyShape , csh:ImpactRisk_hasConsequence_PropertyShape;
         sh:targetClass  cids:ImpactRisk .
 
-cids:ImpactRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+cids:ImpactRisk  rdfs:subClassOf  cids:cidsThing .
 
 csh:ImpactReport_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -855,7 +853,7 @@ csh:ImpactReport_hasReportedImpact_PropertyShape
         sh:path          cids:hasReportedImpact;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "positive" , "negative" , "neutral";
+        csh:in           "neutral" , "negative" , "positive";
         csh:usedBy       cids:ImpactReport .
 
 csh:ImpactReport_hasName_PropertyShape
@@ -913,7 +911,7 @@ csh:ImpactReport_NodeShape
         sh:property     csh:ImpactReport_startedAtTime_PropertyShape , csh:ImpactReport_hasReportedImpact_PropertyShape , csh:ImpactReport_hasName_PropertyShape , csh:ImpactReport_hasExpectation_PropertyShape , csh:ImpactReport_hasComment_PropertyShape , csh:ImpactReport_endedAtTime_PropertyShape;
         sh:targetClass  cids:ImpactReport .
 
-cids:ImpactReport  rdfs:subClassOf  cids:cidsThing , cids:ImpactReport .
+cids:ImpactReport  rdfs:subClassOf  cids:cidsThing .
 
 csh:ImpactModel_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -946,7 +944,7 @@ csh:ImpactModel_NodeShape
         sh:property     csh:ImpactModel_hasName_PropertyShape , csh:ImpactModel_hasDescription_PropertyShape;
         sh:targetClass  cids:ImpactModel .
 
-cids:ImpactModel  rdfs:subClassOf  cids:cidsThing , cids:ImpactModel .
+cids:ImpactModel  rdfs:subClassOf  cids:cidsThing .
 
 csh:ImpactDuration_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -979,7 +977,7 @@ csh:ImpactDuration_NodeShape
         sh:property     csh:ImpactDuration_startedAtTime_PropertyShape , csh:ImpactDuration_endedAtTime_PropertyShape;
         sh:targetClass  cids:ImpactDuration .
 
-cids:ImpactDuration  rdfs:subClassOf  cids:cidsThing , cids:ImpactDuration , cids:HowMuchImpact .
+cids:ImpactDuration  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
 
 csh:HowMuchImpact_hasDescription_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1000,7 +998,7 @@ csh:HowMuchImpact_NodeShape
         sh:property     csh:HowMuchImpact_hasDescription_PropertyShape;
         sh:targetClass  cids:HowMuchImpact .
 
-cids:HowMuchImpact  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
+cids:HowMuchImpact  rdfs:subClassOf  cids:cidsThing .
 
 csh:Counterfactual_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1045,7 +1043,7 @@ csh:Counterfactual_NodeShape
         sh:property     csh:Counterfactual_startedAtTime_PropertyShape , csh:Counterfactual_hasDescription_PropertyShape , csh:Counterfactual_endedAtTime_PropertyShape;
         sh:targetClass  cids:Counterfactual .
 
-cids:Counterfactual  rdfs:subClassOf  cids:cidsThing , cids:Counterfactual .
+cids:Counterfactual  rdfs:subClassOf  cids:cidsThing .
 
 csh:Code_hasSpecification_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1113,7 +1111,7 @@ csh:Code_NodeShape  rdf:type  sh:NodeShape;
         sh:property     csh:Code_hasSpecification_PropertyShape , csh:Code_hasName_PropertyShape , csh:Code_hasIdentifier_PropertyShape , csh:Code_hasDescription_PropertyShape , csh:Code_codeValue_PropertyShape;
         sh:targetClass  cids:Code .
 
-cids:Code  rdfs:subClassOf  cids:cidsThing , cids:Code .
+cids:Code  rdfs:subClassOf  cids:cidsThing .
 
 csh:Characteristic_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1170,7 +1168,7 @@ csh:Characteristic_NodeShape
         sh:property     csh:Characteristic_startedAtTime_PropertyShape , csh:Characteristic_hasName_PropertyShape , csh:Characteristic_hasDescription_PropertyShape , csh:Characteristic_endedAtTime_PropertyShape;
         sh:targetClass  cids:Characteristic .
 
-cids:Characteristic  rdfs:subClassOf  cids:cidsThing , cids:Characteristic .
+cids:Characteristic  rdfs:subClassOf  cids:cidsThing .
 
 csh:Address_streetAddress_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1263,7 +1261,7 @@ csh:Address_NodeShape
         sh:property     csh:Address_streetAddress_PropertyShape , csh:Address_postalCode_PropertyShape , csh:Address_postOfficeBoxNumber_PropertyShape , csh:Address_extendedAddress_PropertyShape , csh:Address_addressRegion_PropertyShape , csh:Address_addressLocality_PropertyShape , csh:Address_addressCountry_PropertyShape;
         sh:targetClass  cids:Address .
 
-cids:Address  rdfs:subClassOf  cids:cidsThing , cids:Address , sch:PostalAddress .
+cids:Address  rdfs:subClassOf  cids:cidsThing , sch:PostalAddress .
 
 csh:Activity_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1307,7 +1305,7 @@ csh:Activity_NodeShape
         sh:property     csh:Activity_subActivityOf_PropertyShape , csh:Activity_hasName_PropertyShape , csh:Activity_hasDescription_PropertyShape;
         sh:targetClass  cids:Activity .
 
-cids:Activity  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
+cids:Activity  rdfs:subClassOf  cids:cidsThing , act:Activity .
 
 cids:worse  rdf:type  owl:NamedIndividual .
 
