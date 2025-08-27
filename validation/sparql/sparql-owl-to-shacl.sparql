@@ -106,32 +106,37 @@ WHERE {
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className1,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         {
+        # This gets the datatype from onDataRange or from allValuesFrom if it is a datatype
         ?restriction owl:onDataRange ?dataTarget.
         } union {
             ?restriction owl:allValuesFrom|owl:someValuesFrom ?datatype2.
             filter(STRBEFORE(str(?datatype2), "#") = str(xsd:)) .
         }
-
+        # if the range is a linked list, this iterates over that list
         optional {
             ?dataTarget owl:oneOf ?rangeTarget.
             ?rangeTarget rdf:rest*/rdf:first ?inList .
             bind(xsd:string as ?datatype3)
         }
+        # this determines the datatype of the target if it's a literal
         optional {
             filter(isLiteral(?dataTarget)) .
             bind(?dataTarget as ?datatype1)
         }        
         bind(coalesce(?datatype1, ?datatype2,?datatype3,?dataTarget,xsd:string) as ?datatype)
-
+        # the corresponding property shape will always be a listeral
         bind(sh:Literal as ?nodeKind)
     }
+    # This handles object associations from restrictions
     union {
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
         ?class rdfs:subClassOf ?restriction .
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        # Determine property shape identifiers
         ?restriction owl:allValuesFrom ?target.
+        # Handle tier information
         optional {
             ?restriction cids:belongsToTier ?cTier .
             filter(sameTerm(?cTier, ?activeTier))
@@ -140,23 +145,27 @@ WHERE {
              ?property cids:belongsToTier ?cTier .
             filter(sameTerm(?cTier, ?activeTier))
          }
-       ?class rdf:type owl:Class .
+        # The restriction should not incorporate a data range
+        ?class rdf:type owl:Class .
         filter NOT EXISTS {
             ?restriction owl:onDataRange ?datatype .
         }
+        # Get all range classes from linked list
         optional {
             ?target owl:unionOf ?rangeTarget.
             ?rangeTarget rdf:rest*/rdf:first ?rangeClass1 .
         }
+        # Or, if the target is an IRI, get the relevant range class from that
         optional {
             filter(isIRI(?target)) .
             bind(?target as ?rangeClass2)
         }
- 
+        # make sure the range class isn't an atomic type
         bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
         filter(STRBEFORE(str(?rangeClass), "#") != str(xsd:)) .    
         bind(sh:IRI as ?nodeKind)
     }
+    # This handles qualified cardinality
     optional {
         ?restriction owl:qualifiedCardinality ?qCardinality .
         bind(xsd:string(?qCardinality) as ?cardinalityMin1)
@@ -177,6 +186,7 @@ WHERE {
         ) as ?cardinality )
     bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
     bind(xsd:integer(?cardinalityMin) as ?minCardinality)
+    # This determines enumerations
     optional {
         ?namedIndividual a ?niClass .
         ?namedIndividual a owl:NamedIndividual .
@@ -186,9 +196,11 @@ WHERE {
         }
     }} UNION {
         optional {
+            # Mark whether this is part of a tier
             ?class cids:belongsToTier ?cTier .
             filter(sameTerm(?cTier, ?activeTier))
          }
+         # Determine blank enumerants
         ?namedIndividual a ?facetClass .
         {
             ?namedIndividual a owl:NamedIndividual .
@@ -214,6 +226,7 @@ WHERE {
         }
     }
     union {
+        # Handle unaffiliated object properties without restrictions
         optional {?activeTier rdfs:label ?tier1 }
         bind(str(?tier1) as ?tier)
         ?property a owl:ObjectProperty .
