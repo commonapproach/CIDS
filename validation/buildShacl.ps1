@@ -6,6 +6,9 @@
     [string]$OutputShaclFile
 )
 
+# usage: .\buildShacl.ps1 <input-ttl-file> <output-shacl-file>
+# need to specify the folder paths for the ttl and shacl files relative to the current directory
+
 # Display usage information
 if ($InputTtlFile -eq "" -or $OutputShaclFile -eq "") {
     Write-Host "Usage: .\buildShacl.ps1 <input-ttl-file> <output-shacl-file>"
