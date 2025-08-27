@@ -1,7 +1,7 @@
 PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX cc: <http://creativecommons.org/ns#>
-PREFIX chs: <>
+PREFIX chs: <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids: <https://ontology.commonapproach.org/cids#>
 PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -35,6 +35,9 @@ PREFIX vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# The construct statement generates the full graph, including both
+# the node shapes and the property shapes
+
 CONSTRUCT {
     # 1. Node Shapes from Classes
     ?class rdfs:subClassOf ?superClass .
@@ -57,7 +60,9 @@ CONSTRUCT {
         sh:minCount ?minCardinality ;
         sh:maxCount ?maxCardinality ;
         csh:cardinality ?cardinality ;
-        csh:usedBy ?class
+        csh:usedBy ?class ;
+        csh:activeTier ?activeTier ;
+        csh:section ?section ;
     .
     ?namedIndividual a ?facetClass ;
         rdfs:label ?prefLabel;
@@ -65,10 +70,12 @@ CONSTRUCT {
         csh:memberOf ?primaryFacetClass ;
         .
 }
-WHERE {{
-    values ?activeTier {cids:EssentialTier}
-    ?class cids:belongsToTier ?cTier .
-    filter(sameTerm(?cTier, ?activeTier))
+WHERE {
+#    values ?activeTier {cids:BasicTier}    
+    {
+    # Determines the current active tier, set {} to empty
+    # if all tiers are desired.
+    # Node Shapes from Classes
     ?class rdf:type owl:Class .
     bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className   )
     FILTER(isIRI(?class))
@@ -81,10 +88,21 @@ WHERE {{
         FILTER(isIRI(?superClass))
     }
     {
+        # This converts data ranges to literal property shapes
         ?class rdf:type owl:Class .
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
         ?class rdfs:subClassOf ?restriction .
         ?restriction owl:onProperty ?property .
+        # This checks to see if the property is in the active tier
+        optional {
+            ?restriction cids:belongsToTier ?cTier .
+            filter(sameTerm(?cTier, ?activeTier))   
+        }                                                                                                                                                                                                                                                                                                                                                       
+        optional {
+            ?property cids:belongsToTier ?cTier .
+            filter(sameTerm(?cTier, ?activeTier))   
+        }
+        # This determines the property shape IRI       
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className1,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         {
@@ -108,13 +126,21 @@ WHERE {{
         bind(sh:Literal as ?nodeKind)
     }
     union {
-        ?class rdf:type owl:Class .
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
         ?class rdfs:subClassOf ?restriction .
         ?restriction owl:onProperty ?property .
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         ?restriction owl:allValuesFrom ?target.
+        optional {
+            ?restriction cids:belongsToTier ?cTier .
+            filter(sameTerm(?cTier, ?activeTier))
+         }
+         optional {
+             ?property cids:belongsToTier ?cTier .
+            filter(sameTerm(?cTier, ?activeTier))
+         }
+       ?class rdf:type owl:Class .
         filter NOT EXISTS {
             ?restriction owl:onDataRange ?datatype .
         }
@@ -159,6 +185,10 @@ WHERE {{
             ?namedIndividual skos:prefLabel ?prefLabel .
         }
     }} UNION {
+        optional {
+            ?class cids:belongsToTier ?cTier .
+            filter(sameTerm(?cTier, ?activeTier))
+         }
         ?namedIndividual a ?facetClass .
         {
             ?namedIndividual a owl:NamedIndividual .
@@ -183,4 +213,20 @@ WHERE {{
             bind(?facetClass as ?primaryFacetClass)
         }
     }
+    union {
+        optional {?activeTier rdfs:label ?tier1 }
+        bind(str(?tier1) as ?tier)
+        ?property a owl:ObjectProperty .
+        ?property rdfs:subPropertyOf cids:cidsObjectProperty .
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(if(strstarts(?propertyLocalName,"has"), strafter(?propertyLocalName,"has"), if(strstarts(?propertyLocalName,"is"),strafter(?propertyLocalName,"is"), if(strstarts(?propertyLocalName,"for"),strafter(?propertyLocalName,"for"),""))) as ?targetClassName)
+        bind(iri(concat(str(csh:),"Class_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        bind(if (?targetClassName != "",iri(concat(str(cids:),?targetClassName)),?void) as ?rangeClass)
+        bind(sh:IRI as ?nodeKind)
+        optional {
+            ?property cids:belongsToTier ?cTier .
+            }
+        filter(sameTerm(?cTier, str(?activeTier)))
+        bind(3 as ?section)
+        }    
 } order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName

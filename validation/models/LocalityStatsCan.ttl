@@ -1,0 +1,106 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix : <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> .
+
+<https://codelist.commonapproach.org/codeLists/LocalityStatsCan>
+    dcterms:creator cids:ac ;
+    dcterms:date "08-10-2024" ;
+    dcterms:description "A codelist vocabulary of Locality Codelists according to Statistics Canada definitions."@en ;
+    dcterms:title "Locality Codelist"@en ;
+    vann:preferredNamespacePrefix "LocalityStatsCan" ;
+    vann:preferredNamespaceUri <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    a <http://purl.org/vocommons/voafVocabulary>, owl:Ontology ;
+    rdfs:label "Locality Codelist"@en ;
+    owl:imports <http://www.w3.org/2006/time>, <https://ontology.commonapproach.org/owl/cids> ;
+    owl:versionInfo "1.0" ;
+    foaf:name "Locality Codelist"@en ;
+    cids:hasName "Locality Codelist"@en .
+
+:dataset
+    a skos:ConceptScheme .
+
+:loc1
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Large Urban Population Centre"@en ;
+    skos:definition "A large urban population centres, with a population of 100,000 or more."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition "A large urban population centres, with a population of 100,000 or more."@en ;
+    cids:hasIdentifier "loc1" ;
+    cids:hasName "Large Urban Population Centre"@en .
+
+:loc2
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Medium Population Centre"@en ;
+    skos:definition "A medium population centres, with a population between 30,000 and 99,999."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition "medium population centres, with a population between 30,000 and 99,999."@en ;
+    cids:hasIdentifier "loc2" ;
+    cids:hasName "Medium Population Centre"@en .
+
+:loc3
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Small Population Centre"@en ;
+    skos:definition "A small population centres, with a population between 1,000 and 29,999."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition "A small population centres, with a population between 1,000 and 29,999."@en ;
+    cids:hasIdentifier "loc3" ;
+    cids:hasName "Small Population Centre"@en .
+
+:loc4
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Rural Areas"@en ;
+    skos:definition "All areas outside population centres are classified as rural areas."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition "All areas outside population centres are classified as rural areas."@en ;
+    cids:hasIdentifier "loc4" ;
+    cids:hasName "Rural Areas"@en .
+
+:loc5
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Indigenous Communities and Lands"@en ;
+    skos:definition ""@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition ""@en ;
+    cids:hasIdentifier "loc5" ;
+    cids:hasName "Indigenous Communities and Lands"@en .
+
+:loc6
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "Northern Canada"@en ;
+    skos:definition ""@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition ""@en ;
+    cids:hasIdentifier "loc6" ;
+    cids:hasName "Northern Canada"@en .
+
+:loc7
+    a skos:Concept, cids:CODE, cids:Locality ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/LocalityStatsCan#> ;
+    rdfs:label "All of Canada"@en ;
+    skos:definition ""@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasDefinition ""@en ;
+    cids:hasIdentifier "loc7" ;
+    cids:hasName "All of Canada"@en .
+

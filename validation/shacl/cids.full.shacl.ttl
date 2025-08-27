@@ -1,0 +1,1362 @@
+﻿PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo:     <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic:      <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep:     <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1:    <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel:     <http://purl.org/vocab/relationship/>
+PREFIX sch:     <http://schema.org/>
+PREFIX schema:  <http://schema.org/>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur:     <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time:    <http://www.w3.org/2006/time#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+csh:cidsThing_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:cidsThing .
+
+csh:cidsThing_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:cidsThing .
+
+csh:cidsThing_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:cidsThing_description_PropertyShape , csh:cidsThing_dateCreated_PropertyShape;
+        sh:targetClass  cids:cidsThing .
+
+cids:cidsThing  rdfs:subClassOf  cids:cidsThing .
+
+csh:Tier_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Tier .
+
+csh:Tier_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Tier"@en;
+        sh:closed       false;
+        sh:property     csh:Tier_hasName_PropertyShape;
+        sh:targetClass  cids:Tier .
+
+cids:Tier  rdfs:subClassOf  cids:cidsThing , cids:Tier .
+
+csh:Theme_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Theme .
+
+csh:Theme_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Theme .
+
+csh:Theme_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Theme"@en;
+        sh:closed       false;
+        sh:property     csh:Theme_hasName_PropertyShape , csh:Theme_hasDescription_PropertyShape;
+        sh:targetClass  cids:Theme .
+
+cids:Theme  rdfs:subClassOf  cids:cidsThing , cids:Theme .
+
+csh:Target_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Target .
+
+csh:Target_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Target .
+
+csh:Target_hasComment_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasComment";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasComment;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Target .
+
+csh:Target_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Target .
+
+csh:Target_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Target .
+
+csh:Target_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Target"@en;
+        sh:closed       false;
+        sh:property     csh:Target_startedAtTime_PropertyShape , csh:Target_hasName_PropertyShape , csh:Target_hasComment_PropertyShape , csh:Target_endedAtTime_PropertyShape , csh:Target_dateCreated_PropertyShape;
+        sh:targetClass  cids:Target .
+
+cids:Target  rdfs:subClassOf  cids:cidsThing , cids:Target .
+
+csh:Stakeholder_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Stakeholder .
+
+csh:Stakeholder_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Stakeholder .
+
+csh:Stakeholder_hasCatchmentArea_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasCatchmentArea";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasCatchmentArea;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "national" , "global" , "provincial" , "multinational" , "local";
+        csh:usedBy       cids:Stakeholder .
+
+csh:Stakeholder_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Stakeholder"@en;
+        sh:closed       false;
+        sh:property     csh:Stakeholder_hasName_PropertyShape , csh:Stakeholder_hasDescription_PropertyShape , csh:Stakeholder_hasCatchmentArea_PropertyShape;
+        sh:targetClass  cids:Stakeholder .
+
+cids:Stakeholder  rdfs:subClassOf  cids:cidsThing , cids:Stakeholder .
+
+csh:StakeholderOutcome_isUnderserved_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:boolean;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "isUnderserved";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:isUnderserved;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:StakeholderOutcome .
+
+csh:StakeholderOutcome_intendedImpact_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "intendedImpact";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:intendedImpact;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "positive" , "negative" , "neutral";
+        csh:usedBy       cids:StakeholderOutcome .
+
+csh:StakeholderOutcome_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:StakeholderOutcome .
+
+csh:StakeholderOutcome_hasImportance_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasImportance";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasImportance;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "moderate important" , "neutral" , "high importance" , "unimportant";
+        csh:usedBy       cids:StakeholderOutcome .
+
+csh:StakeholderOutcome_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:StakeholderOutcome .
+
+csh:StakeholderOutcome_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "StakeholderOutcome"@en;
+        sh:closed       false;
+        sh:property     csh:StakeholderOutcome_isUnderserved_PropertyShape , csh:StakeholderOutcome_intendedImpact_PropertyShape , csh:StakeholderOutcome_hasName_PropertyShape , csh:StakeholderOutcome_hasImportance_PropertyShape , csh:StakeholderOutcome_hasDescription_PropertyShape;
+        sh:targetClass  cids:StakeholderOutcome .
+
+cids:StakeholderOutcome
+        rdfs:subClassOf  cids:cidsThing , cids:StakeholderOutcome .
+
+csh:Service_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_beneficialSizeStart_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:positiveInteger;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "beneficialSizeStart";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:beneficialSizeStart;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_beneficialSizeEnd_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:positiveInteger;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "beneficialSizeEnd";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:beneficialSizeEnd;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Service .
+
+csh:Service_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Service"@en;
+        sh:closed       false;
+        sh:property     csh:Service_startedAtTime_PropertyShape , csh:Service_hasName_PropertyShape , csh:Service_hasDescription_PropertyShape , csh:Service_endedAtTime_PropertyShape , csh:Service_beneficialSizeStart_PropertyShape , csh:Service_beneficialSizeEnd_PropertyShape;
+        sh:targetClass  cids:Service .
+
+cids:Service  rdfs:subClassOf  cids:cidsThing , cids:Service , cids:Activity , act:Activity .
+
+csh:Program_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Program .
+
+csh:Program_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Program .
+
+csh:Program_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Program"@en;
+        sh:closed       false;
+        sh:property     csh:Program_hasName_PropertyShape , csh:Program_hasDescription_PropertyShape;
+        sh:targetClass  cids:Program .
+
+cids:Program  rdfs:subClassOf  cids:cidsThing , cids:Program , cids:Activity , act:Activity .
+
+csh:Person_middleName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "middleName";
+        sh:nodeKind      sh:Literal;
+        sh:path          foaf:middleName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Person .
+
+csh:Person_givenName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "givenName";
+        sh:nodeKind      sh:Literal;
+        sh:path          foaf:givenName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Person .
+
+csh:Person_familyName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "familyName";
+        sh:nodeKind      sh:Literal;
+        sh:path          foaf:familyName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Person .
+
+csh:Person_birthDate_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "birthDate";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:birthDate;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Person .
+
+csh:Person_NodeShape  rdf:type  sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:Person_middleName_PropertyShape , csh:Person_givenName_PropertyShape , csh:Person_familyName_PropertyShape , csh:Person_birthDate_PropertyShape;
+        sh:targetClass  cids:Person .
+
+cids:Person  rdfs:subClassOf  cids:cidsThing , cids:Person , sch:Person .
+
+csh:Output_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Output .
+
+csh:Output_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Output .
+
+csh:Output_forActivity_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Service , act:Activity;
+        sh:minCount      0;
+        sh:name          "forActivity";
+        sh:nodeKind      sh:IRI;
+        sh:path          org:forActivity;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Output .
+
+csh:Output_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Output"@en;
+        sh:closed       false;
+        sh:property     csh:Output_hasName_PropertyShape , csh:Output_hasDescription_PropertyShape , csh:Output_forActivity_PropertyShape;
+        sh:targetClass  cids:Output .
+
+cids:Output  rdfs:subClassOf  cids:cidsThing , cids:Output .
+
+csh:Outcome_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Outcome .
+
+csh:Outcome_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Outcome .
+
+csh:Outcome_canEnable_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Activity , cids:Service;
+        sh:minCount      0;
+        sh:name          "canEnable";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:canEnable;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Outcome .
+
+csh:Outcome_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Outcome"@en;
+        sh:closed       false;
+        sh:property     csh:Outcome_hasName_PropertyShape , csh:Outcome_hasDescription_PropertyShape , csh:Outcome_canEnable_PropertyShape;
+        sh:targetClass  cids:Outcome .
+
+cids:Outcome  rdfs:subClassOf  cids:cidsThing , cids:Outcome .
+
+csh:Organization_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Organization .
+
+csh:Organization_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Organization"@en;
+        sh:closed       false;
+        sh:property     csh:Organization_hasDescription_PropertyShape;
+        sh:targetClass  cids:Organization .
+
+cids:Organization  rdfs:subClassOf  cids:cidsThing , cids:Organization , org:Organization .
+
+csh:Input_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Input .
+
+csh:Input_inputFor_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Program , cids:Activity , cids:Service;
+        sh:minCount      0;
+        sh:name          "inputFor";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:inputFor;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Input .
+
+csh:Input_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Input .
+
+csh:Input_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Input .
+
+csh:Input_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Input .
+
+csh:Input_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Input"@en;
+        sh:closed       false;
+        sh:property     csh:Input_startedAtTime_PropertyShape , csh:Input_inputFor_PropertyShape , csh:Input_hasName_PropertyShape , csh:Input_hasDescription_PropertyShape , csh:Input_endedAtTime_PropertyShape;
+        sh:targetClass  cids:Input .
+
+cids:Input  rdfs:subClassOf  cids:cidsThing , cids:Input .
+
+csh:Indicator_unitDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "unitDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:unitDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasAccess_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Stakeholder , cids:Organization;
+        sh:minCount      0;
+        sh:name          "hasAccess";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:hasAccess;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Indicator"@en;
+        sh:closed       false;
+        sh:property     csh:Indicator_unitDescription_PropertyShape , csh:Indicator_hasName_PropertyShape , csh:Indicator_hasIdentifier_PropertyShape , csh:Indicator_hasDescription_PropertyShape , csh:Indicator_hasAccess_PropertyShape;
+        sh:targetClass  cids:Indicator .
+
+cids:Indicator  rdfs:subClassOf  cids:cidsThing , cids:Indicator , i72:Indicator .
+
+csh:IndicatorReport_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_hasAccess_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization , cids:Stakeholder;
+        sh:minCount      0;
+        sh:name          "hasAccess";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:hasAccess;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Indicator Report"@en;
+        sh:closed       false;
+        sh:property     csh:IndicatorReport_startedAtTime_PropertyShape , csh:IndicatorReport_hasName_PropertyShape , csh:IndicatorReport_hasAccess_PropertyShape , csh:IndicatorReport_endedAtTime_PropertyShape;
+        sh:targetClass  cids:IndicatorReport .
+
+cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing , cids:IndicatorReport .
+
+csh:ImpactRisk_hasLikelihood_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLikelihood";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasLikelihood;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "unlikely" , "veryLikely" , "highRisk" , "likely" , "mediumRisk" , "veryUnlikely" , "lowRisk";
+        csh:usedBy       cids:ImpactRisk .
+
+csh:ImpactRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactRisk .
+
+csh:ImpactRisk_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactRisk .
+
+csh:ImpactRisk_hasConsequence_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasConsequence";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasConsequence;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "average" , "severe" , "minimal";
+        csh:usedBy       cids:ImpactRisk .
+
+csh:ImpactRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Impact Risk"@en;
+        sh:closed       false;
+        sh:property     csh:ImpactRisk_hasLikelihood_PropertyShape , csh:ImpactRisk_hasIdentifier_PropertyShape , csh:ImpactRisk_hasDescription_PropertyShape , csh:ImpactRisk_hasConsequence_PropertyShape;
+        sh:targetClass  cids:ImpactRisk .
+
+cids:ImpactRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:ImpactReport_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_hasReportedImpact_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasReportedImpact";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasReportedImpact;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:in           "positive" , "neutral" , "negative";
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_hasExpectation_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasExpectation";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasExpectation;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_hasComment_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasComment";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasComment;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactReport .
+
+csh:ImpactReport_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Impact Report"@en;
+        sh:closed       false;
+        sh:property     csh:ImpactReport_startedAtTime_PropertyShape , csh:ImpactReport_hasReportedImpact_PropertyShape , csh:ImpactReport_hasName_PropertyShape , csh:ImpactReport_hasExpectation_PropertyShape , csh:ImpactReport_hasComment_PropertyShape , csh:ImpactReport_endedAtTime_PropertyShape;
+        sh:targetClass  cids:ImpactReport .
+
+cids:ImpactReport  rdfs:subClassOf  cids:cidsThing , cids:ImpactReport .
+
+csh:ImpactModel_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactModel .
+
+csh:ImpactModel_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactModel .
+
+csh:ImpactModel_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Impact Model"@en;
+        sh:closed       false;
+        sh:property     csh:ImpactModel_hasName_PropertyShape , csh:ImpactModel_hasDescription_PropertyShape;
+        sh:targetClass  cids:ImpactModel .
+
+cids:ImpactModel  rdfs:subClassOf  cids:cidsThing , cids:ImpactModel .
+
+csh:ImpactDuration_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactDuration .
+
+csh:ImpactDuration_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactDuration .
+
+csh:ImpactDuration_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Impact Duration"@en;
+        sh:closed       false;
+        sh:property     csh:ImpactDuration_startedAtTime_PropertyShape , csh:ImpactDuration_endedAtTime_PropertyShape;
+        sh:targetClass  cids:ImpactDuration .
+
+cids:ImpactDuration  rdfs:subClassOf  cids:cidsThing , cids:ImpactDuration , cids:HowMuchImpact .
+
+csh:HowMuchImpact_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:HowMuchImpact .
+
+csh:HowMuchImpact_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "How Much Impact"@en;
+        sh:closed       false;
+        sh:property     csh:HowMuchImpact_hasDescription_PropertyShape;
+        sh:targetClass  cids:HowMuchImpact .
+
+cids:HowMuchImpact  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
+
+csh:Counterfactual_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Counterfactual .
+
+csh:Counterfactual_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Counterfactual .
+
+csh:Counterfactual_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Counterfactual .
+
+csh:Counterfactual_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Counterfactual"@en;
+        sh:closed       false;
+        sh:property     csh:Counterfactual_startedAtTime_PropertyShape , csh:Counterfactual_hasDescription_PropertyShape , csh:Counterfactual_endedAtTime_PropertyShape;
+        sh:targetClass  cids:Counterfactual .
+
+cids:Counterfactual  rdfs:subClassOf  cids:cidsThing , cids:Counterfactual .
+
+csh:Code_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Code .
+
+csh:Code_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Code"@en;
+        sh:closed       false;
+        sh:property     csh:Code_hasSpecification_PropertyShape , csh:Code_hasName_PropertyShape , csh:Code_hasIdentifier_PropertyShape , csh:Code_hasDescription_PropertyShape , csh:Code_codeValue_PropertyShape;
+        sh:targetClass  cids:Code .
+
+cids:Code  rdfs:subClassOf  cids:cidsThing , cids:Code .
+
+csh:Characteristic_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Characteristic .
+
+csh:Characteristic_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Characteristic .
+
+csh:Characteristic_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Characteristic .
+
+csh:Characteristic_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Characteristic .
+
+csh:Characteristic_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Characteristic"@en;
+        sh:closed       false;
+        sh:property     csh:Characteristic_startedAtTime_PropertyShape , csh:Characteristic_hasName_PropertyShape , csh:Characteristic_hasDescription_PropertyShape , csh:Characteristic_endedAtTime_PropertyShape;
+        sh:targetClass  cids:Characteristic .
+
+cids:Characteristic  rdfs:subClassOf  cids:cidsThing , cids:Characteristic .
+
+csh:Address_streetAddress_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "streetAddress";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:streetAddress;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_postalCode_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "postalCode";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:postalCode;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_postOfficeBoxNumber_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "postOfficeBoxNumber";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:postOfficeBoxNumber;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Address .
+
+csh:Address_extendedAddress_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "extendedAddress";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:extendedAddress;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressRegion_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressRegion";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:addressRegion;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressLocality_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressLocality";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:addressLocality;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressCountry_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressCountry";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:addressCountry;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Address"@en;
+        sh:closed       false;
+        sh:property     csh:Address_streetAddress_PropertyShape , csh:Address_postalCode_PropertyShape , csh:Address_postOfficeBoxNumber_PropertyShape , csh:Address_extendedAddress_PropertyShape , csh:Address_addressRegion_PropertyShape , csh:Address_addressLocality_PropertyShape , csh:Address_addressCountry_PropertyShape;
+        sh:targetClass  cids:Address .
+
+cids:Address  rdfs:subClassOf  cids:cidsThing , cids:Address , sch:PostalAddress .
+
+csh:Activity_subActivityOf_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Service , cids:Activity;
+        sh:minCount      0;
+        sh:name          "subActivityOf";
+        sh:nodeKind      sh:IRI;
+        sh:path          act:subActivityOf;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Activity .
+
+csh:Activity_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Activity .
+
+csh:Activity_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Activity .
+
+csh:Activity_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Activity"@en;
+        sh:closed       false;
+        sh:property     csh:Activity_subActivityOf_PropertyShape , csh:Activity_hasName_PropertyShape , csh:Activity_hasDescription_PropertyShape;
+        sh:targetClass  cids:Activity .
+
+cids:Activity  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
+
+cids:worse  rdf:type  owl:NamedIndividual .
+
+cids:veryUnlikely  rdf:type  owl:NamedIndividual .
+
+cids:veryLikely  rdf:type  owl:NamedIndividual .
+
+cids:unlikely  rdf:type  owl:NamedIndividual .
+
+cids:severe  rdf:type  owl:NamedIndividual .
+
+cids:positive  rdf:type  owl:NamedIndividual .
+
+cids:none  rdf:type  owl:NamedIndividual .
+
+cids:neutral  rdf:type  owl:NamedIndividual .
+
+cids:negative  rdf:type  owl:NamedIndividual .
+
+cids:minimal  rdf:type  owl:NamedIndividual .
+
+cids:mediumRisk  rdf:type  owl:NamedIndividual .
+
+cids:lowRisk  rdf:type  owl:NamedIndividual .
+
+cids:likely  rdf:type  owl:NamedIndividual .
+
+cids:highRisk  rdf:type  owl:NamedIndividual .
+
+cids:better  rdf:type  owl:NamedIndividual .
+
+cids:average  rdf:type  owl:NamedIndividual .
+
+cids:ac  rdf:type     cids:Organization , owl:NamedIndividual;
+        rdfs:label    "Common Approach to Impact Measurement"@en;
+        csh:memberOf  cids:Organization .
+
+cids:SFFTier  rdf:type  cids:Tier , skos:Concept;
+        rdfs:label    "SFFTier"@en;
+        csh:memberOf  cids:Tier .
+
+cids:FullTier  rdf:type  cids:Tier , skos:Concept;
+        rdfs:label    "FullTier"@en;
+        csh:memberOf  cids:Tier .
+
+cids:EssentialTier  rdf:type  cids:Tier , skos:Concept;
+        rdfs:label    "EssentialTier"@en;
+        csh:memberOf  cids:Tier .
+
+cids:BasicTier  rdf:type  cids:Tier , skos:Concept;
+        rdfs:label    "BasicTier"@en;
+        csh:memberOf  cids:Tier .

@@ -1,0 +1,314 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://codelist.commonapproach.org/codeLists/SDGImpacts#> .
+
+<https://codelist.commonapproach.org/codeLists/SDGImpacts>
+    a <http://purl.org/vocommons/voafVocabulary>, owl:Ontology ;
+    dcterms:creator cids:ac ;
+    dcterms:date "06-13-2025" ;
+    dcterms:description "A mirror of the official UN Sustainable Development Goals (SDGs) Taxonomy. This vocabulary uses the UN's official IRIs as the primary identifiers for each goal. It retains the original commonapproach.org IRIs, which are now marked as deprecated, for backward compatibility."@en ;
+    dcterms:title "Sustainable Development Goals Impact Themes"@en ;
+    vann:preferredNamespacePrefix "SDGImpacts" ;
+    vann:preferredNamespaceUri <https://codelist.commonapproach.org/codeLists/SDGImpacts#> ;
+    rdfs:label "Sustainable Development Goals Impact Themes"@en ;
+    owl:imports <http://www.w3.org/2006/time>, <https://ontology.commonapproach.org/owl/cids> ;
+    owl:versionInfo "1.1" ; # Updated version
+    foaf:name "Sustainable Development Goals Impact Themes"@en ;
+    cids:hasName "Sustainable Development Goals Impact Themes"@en .
+
+# =================================
+# UN Sustainable Development Goals
+# =================================
+
+<https://metadata.un.org/sdg/1>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "End poverty in all its forms everywhere"@en ;
+    skos:prefLabel "Goal 1: No poverty"@en ;
+    skos:definition "End poverty in all its forms everywhere"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal1> ;
+    cids:hasIdentifier "1" .
+
+<https://metadata.un.org/sdg/2>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "End hunger, achieve food security and improved nutrition and promote sustainable agriculture."@en ;
+    skos:prefLabel "Goal 2: Zero hunger"@en ;
+    skos:definition "End hunger, achieve food security and improved nutrition and promote sustainable agriculture"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal2> ;
+    cids:hasIdentifier "2" .
+
+<https://metadata.un.org/sdg/3>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Ensure healthy lives and promote well-being for all at all ages."@en ;
+    skos:prefLabel "Goal 3: Good health and well-being"@en ;
+    skos:definition "Ensure healthy lives and promote well-being for all at all ages"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal3> ;
+    cids:hasIdentifier "3" .
+
+<https://metadata.un.org/sdg/4>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all."@en ;
+    skos:prefLabel "Goal 4: Quality education"@en ;
+    skos:definition "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal4> ;
+    cids:hasIdentifier "4" .
+
+<https://metadata.un.org/sdg/5>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Achieve gender equality and empower all women and girls."@en ;
+    skos:prefLabel "Goal 5: Gender equality"@en ;
+    skos:definition "Achieve gender equality and empower all women and girls"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal5> ;
+    cids:hasIdentifier "5" .
+
+<https://metadata.un.org/sdg/6>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Ensure availability and sustainable management of water and sanitation for all."@en ;
+    skos:prefLabel "Goal 6: Clean water and sanitation"@en ;
+    skos:definition "Ensure availability and sustainable management of water and sanitation for all"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal6> ;
+    cids:hasIdentifier "6" .
+
+<https://metadata.un.org/sdg/7>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Ensure access to affordable, reliable, sustainable and modern energy for all."@en ;
+    skos:prefLabel "Goal 7: Affordable and clean energy"@en ;
+    skos:definition "Ensure access to affordable, reliable, sustainable and modern energy for all"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal7> ;
+    cids:hasIdentifier "7" .
+
+<https://metadata.un.org/sdg/8>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all."@en ;
+    skos:prefLabel "Goal 8: Decent work and economic growth"@en ;
+    skos:definition "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal8> ;
+    cids:hasIdentifier "8" .
+
+<https://metadata.un.org/sdg/9>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation."@en ;
+    skos:prefLabel "Goal 9: Industry, innovation and infrastructure"@en ;
+    skos:definition "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal9> ;
+    cids:hasIdentifier "9" .
+
+<https://metadata.un.org/sdg/10>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Reduce inequality within and among countries."@en ;
+    skos:prefLabel "Goal 10: Reduced inequalities"@en ;
+    skos:definition "Reduce inequality within and among countries"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal10> ;
+    cids:hasIdentifier "10" .
+
+<https://metadata.un.org/sdg/11>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Make cities and human settlements inclusive, safe, resilient and sustainable."@en ;
+    skos:prefLabel "Goal 11: Sustainable cities and communities"@en ;
+    skos:definition "Make cities and human settlements inclusive, safe, resilient and sustainable"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal11> ;
+    cids:hasIdentifier "11" .
+
+<https://metadata.un.org/sdg/12>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Ensure sustainable consumption and production patterns."@en ;
+    skos:prefLabel "Goal 12: Responsible consumption and production"@en ;
+    skos:definition "Ensure sustainable consumption and production patterns"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal12> ;
+    cids:hasIdentifier "12" .
+
+<https://metadata.un.org/sdg/13>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Take urgent action to combat climate change and its impacts."@en ;
+    skos:prefLabel "Goal 13: Climate action"@en ;
+    skos:definition "Take urgent action to combat climate change and its impacts"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal13> ;
+    cids:hasIdentifier "13" .
+
+<https://metadata.un.org/sdg/14>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Conserve and sustainably use the oceans, seas and marine resources for sustainable development."@en ;
+    skos:prefLabel "Goal 14: Life below water"@en ;
+    skos:definition "Conserve and sustainably use the oceans, seas and marine resources for sustainable development"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal14> ;
+    cids:hasIdentifier "14" .
+
+<https://metadata.un.org/sdg/15>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss."@en ;
+    skos:prefLabel "Goal 15: Life on land"@en ;
+    skos:definition "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal15> ;
+    cids:hasIdentifier "15" .
+
+<https://metadata.un.org/sdg/16>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels."@en ;
+    skos:prefLabel "Goal 16: Peace, justice and strong institutions"@en ;
+    skos:definition "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal16> ;
+    cids:hasIdentifier "16" .
+
+<https://metadata.un.org/sdg/17>
+    a skos:Concept, cids:Theme ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/SDGImpacts> ;
+    rdfs:label "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development."@en ;
+    skos:prefLabel "Goal 17: Partnerships for the goals"@en ;
+    skos:definition "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development"@en ;
+    skos:inScheme <https://metadata.un.org/sdg> ;
+    prov:hadPrimarySource <https://sdgs.un.org/goals/goal17> ;
+    cids:hasIdentifier "17" .
+
+# =================================
+# Concept Scheme
+# =================================
+
+<https://metadata.un.org/sdg>
+    a skos:ConceptScheme ;
+    dcterms:title "Sustainable Development Goals Taxonomy"@en .
+
+# =============================================================
+# Deprecated Common Approach IRIs for Backward Compatibility
+# =============================================================
+
+:SDG1
+    owl:sameAs <https://metadata.un.org/sdg/1> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 1"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/1. It is retained for backward compatibility."@en .
+
+:SDG2
+    owl:sameAs <https://metadata.un.org/sdg/2> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 2"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/2. It is retained for backward compatibility."@en .
+
+:SDG3
+    owl:sameAs <https://metadata.un.org/sdg/3> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 3"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/3. It is retained for backward compatibility."@en .
+
+:SDG4
+    owl:sameAs <https://metadata.un.org/sdg/4> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 4"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/4. It is retained for backward compatibility."@en .
+
+:SDG5
+    owl:sameAs <https://metadata.un.org/sdg/5> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 5"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/5. It is retained for backward compatibility."@en .
+
+:SDG6
+    owl:sameAs <https://metadata.un.org/sdg/6> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 6"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/6. It is retained for backward compatibility."@en .
+
+:SDG7
+    owl:sameAs <https://metadata.un.org/sdg/7> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 7"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/7. It is retained for backward compatibility."@en .
+
+:SDG8
+    owl:sameAs <https://metadata.un.org/sdg/8> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 8"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/8. It is retained for backward compatibility."@en .
+
+:SDG9
+    owl:sameAs <https://metadata.un.org/sdg/9> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 9"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/9. It is retained for backward compatibility."@en .
+
+:SDG10
+    owl:sameAs <https://metadata.un.org/sdg/10> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 10"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/10. It is retained for backward compatibility."@en .
+
+:SDG11
+    owl:sameAs <https://metadata.un.org/sdg/11> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 11"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/11. It is retained for backward compatibility."@en .
+
+:SDG12
+    owl:sameAs <https://metadata.un.org/sdg/12> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 12"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/12. It is retained for backward compatibility."@en .
+
+:SDG13
+    owl:sameAs <https://metadata.un.org/sdg/13> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 13"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/13. It is retained for backward compatibility."@en .
+
+:SDG14
+    owl:sameAs <https://metadata.un.org/sdg/14> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 14"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/14. It is retained for backward compatibility."@en .
+
+:SDG15
+    owl:sameAs <https://metadata.un.org/sdg/15> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 15"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/15. It is retained for backward compatibility."@en .
+
+:SDG16
+    owl:sameAs <https://metadata.un.org/sdg/16> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 16"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/16. It is retained for backward compatibility."@en .
+
+:SDG17
+    owl:sameAs <https://metadata.un.org/sdg/17> ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Legacy IRI for SDG 17"@en ;
+    rdfs:comment "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/17. It is retained for backward compatibility."@en .

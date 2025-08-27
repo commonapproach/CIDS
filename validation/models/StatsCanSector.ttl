@@ -1,0 +1,209 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix : <https://codelist.commonapproach.org/codeLists/StatsCanSector#> .
+
+<https://codelist.commonapproach.org/codeLists/StatsCanSector>
+    dcterms:creator cids:ac ;
+    dcterms:date "03-10-2024" ;
+    dcterms:description "A codelist vocabulary of Sectors as defined by Statistics Canada."@en ;
+    dcterms:title "Statistics Canada Sectors"@en ;
+    vann:preferredNamespacePrefix "StatsCanSector" ;
+    vann:preferredNamespaceUri <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    a <http://purl.org/vocommons/voafVocabulary>, owl:Ontology ;
+    rdfs:label "Statistics Canada Sectors" ;
+    owl:imports <http://www.w3.org/2006/time>, <https://ontology.commonapproach.org/owl/cids> ;
+    owl:versionInfo "1.0" ;
+    foaf:name "Statistics Canada Sectors" ;
+    cids:hasName "Statistics Canada Sectors" .
+
+:dataset
+    a skos:ConceptScheme .
+
+:sec1
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Agriculture, forestry, fishing and hunting"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "11" ;
+    cids:hasName "Agriculture, forestry, fishing and hunting"@en .
+
+:sec10
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Finance and insurance"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "52" ;
+    cids:hasName "Finance and insurance"@en .
+
+:sec11
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Real estate and rental and leasing"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "53" ;
+    cids:hasName "Real estate and rental and leasing"@en .
+
+:sec12
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Professional, scientific and technical services"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "54" ;
+    cids:hasName "Professional, scientific and technical services"@en .
+
+:sec13
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Management of companies and enterprises"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "55" ;
+    cids:hasName "Management of companies and enterprises"@en .
+
+:sec14
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Administrative and support, waste management and remediation services"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "56" ;
+    cids:hasName "Administrative and support, waste management and remediation services"@en .
+
+:sec15
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Educational services"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "61" ;
+    cids:hasName "Educational services"@en .
+
+:sec16
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Health care and social assistance"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "62" ;
+    cids:hasName "Health care and social assistance"@en .
+
+:sec17
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Arts, entertainment and recreation"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "71" ;
+    cids:hasName "Arts, entertainment and recreation"@en .
+
+:sec18
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Accommodation and food services"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "72" ;
+    cids:hasName "Accommodation and food services"@en .
+
+:sec19
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Other services (except public administration)"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "81" ;
+    cids:hasName "Other services (except public administration)"@en .
+
+:sec2
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Mining, quarrying, and oil and gas extraction"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "21" ;
+    cids:hasName "Mining, quarrying, and oil and gas extraction"@en .
+
+:sec20
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Public administration"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "91" ;
+    cids:hasName "Public administration"@en .
+
+:sec3
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Utilities"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "22" ;
+    cids:hasName "Utilities"@en .
+
+:sec4
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Construction"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "23" ;
+    cids:hasName "Construction"@en .
+
+:sec5
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Manufacturing"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "31", "32", "33" ;
+    cids:hasName "Manufacturing"@en .
+
+:sec6
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Wholesale trade"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "41" ;
+    cids:hasName "Wholesale trade"@en .
+
+:sec7
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Retail trade"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "44", "45" ;
+    cids:hasName "Retail trade"@en .
+
+:sec8
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Transportation and warehousing"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "48", "49" ;
+    cids:hasName "Transportation and warehousing"@en .
+
+:sec9
+    a skos:Concept, cids:CODE, cids:Sector ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/StatsCanSector#> ;
+    rdfs:label "Information and cultural industries"@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:statsCan ;
+    cids:hasIdentifier "51" ;
+    cids:hasName "Information and cultural industries"@en .
+

@@ -1,0 +1,178 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix : <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> .
+
+<https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC>
+    dcterms:creator cids:ac ;
+    dcterms:date "03-10-2024" ;
+    dcterms:description "A codelist vocabulary of Equity Deserving Groups as defined by Ministry of Employment and Social Development of Canada."@en ;
+    dcterms:title "Equity Deserving Groups"@en ;
+    vann:preferredNamespacePrefix "EquityDeservingGroupsESDC" ;
+    vann:preferredNamespaceUri <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    a <http://purl.org/vocommons/voafVocabulary>, owl:Ontology ;
+    rdfs:label "Equity Deserving Groups" ;
+    owl:imports <http://www.w3.org/2006/time>, <https://ontology.commonapproach.org/owl/cids> ;
+    owl:versionInfo "1.0" ;
+    foaf:name "Equity Deserving Groups" ;
+    cids:hasName "Equity Deserving Groups" .
+
+:dataset
+    a skos:ConceptScheme .
+
+<https://codelist.commonapproach.org/codeLists/edg1>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "2SLGBTQIA+"@en ;
+    skos:definition "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en ;
+    cids:hasIdentifier "edg1" ;
+    cids:hasName "2SLGBTQIA+"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg10>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Women (Cisgender and Transgender)"@en ;
+    skos:definition "All people who identify as women, whether they are cisgender or transgender women."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "All people who identify as women, whether they are cisgender or transgender women."@en ;
+    cids:hasIdentifier "edg10" ;
+    cids:hasName "Women (Cisgender and Transgender)"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg11>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Gender Diverse People: Non-Binary"@en ;
+    skos:definition "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en ;
+    cids:hasIdentifier "edg11" ;
+    cids:hasName "Gender Diverse People: Non-Binary"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg12>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Gender Diverse People: Agender"@en ;
+    skos:definition "People who do not identify as, or with, any particular gender."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://dictionary.cambridge.org/dictionary/english/agender> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People who do not identify as, or with, any particular gender."@en ;
+    cids:hasIdentifier "edg12" ;
+    cids:hasName "Gender Diverse People: Agender"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg13>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Gender Diverse People: Other"@en ;
+    skos:definition "People whose gender identity does not align with any of the other options provided."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People whose gender identity does not align with any of the other options provided."@en ;
+    cids:hasIdentifier "edg13" ;
+    cids:hasName "Gender Diverse People: Other"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg2>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Black People"@en ;
+    skos:definition "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en ;
+    cids:hasIdentifier "edg2" ;
+    cids:hasName "Black People"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg3>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "First Generation Immigrants, Refugees & Newcomers"@en ;
+    skos:definition "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en ;
+    cids:hasIdentifier "edg3" ;
+    cids:hasName "First Generation Immigrants, Refugees & Newcomers"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg4>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Indigenous Peoples: First Nations"@en ;
+    skos:definition "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en ;
+    cids:hasIdentifier "edg4" ;
+    cids:hasName "Indigenous Peoples: First Nations"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg5>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Indigenous Peoples: Inuit"@en ;
+    skos:definition "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en ;
+    cids:hasIdentifier "edg5" ;
+    cids:hasName "Indigenous Peoples: Inuit"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg6>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Indigenous Peoples: Métis"@en ;
+    skos:definition "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en ;
+    cids:hasIdentifier "edg6" ;
+    cids:hasName "Indigenous Peoples: Métis"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg7>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Official Languages Minority Communities"@en ;
+    skos:definition "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en ;
+    cids:hasIdentifier "edg7" ;
+    cids:hasName "Official Languages Minority Communities"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg8>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "Other Racialized Peoples"@en ;
+    skos:definition "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en ;
+    skos:inScheme :dataset ;
+    cids:definedBy cids:esdc ;
+    cids:hasDefinition "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en ;
+    cids:hasIdentifier "edg8" ;
+    cids:hasName "Other Racialized Peoples"@en .
+
+<https://codelist.commonapproach.org/codeLists/edg9>
+    a skos:Concept, cids:CODE, cids:PopulationServed ;
+    rdfs:isDefinedBy <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC#> ;
+    rdfs:label "People Living with a Disability (including invisible and episodic disabilities)"@en ;
+    skos:inScheme :dataset ;
+    prov:hadPrimarySource <https://codelist.commonapproach.org/codeLists/EquityDeservingGroupsESDC> ;
+    cids:definedBy cids:esdc ;
+    cids:hasIdentifier "edg9" ;
+    cids:hasName "People Living with a Disability (including invisible and episodic disabilities)"@en .
+

@@ -1,0 +1,94 @@
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+cids:Outcome1 a cids:Outcome ;
+    org:hasName "Improved literacy rates"^^xsd:string ;
+    cids:hasDescription "Increase in literacy rates among target population"^^xsd:string ;
+    cids:canEnable cids:Service1 .
+
+cids:Outcome2 a cids:Outcome ;
+    org:hasName "Reduced carbon emissions"^^xsd:string ;
+    cids:hasDescription "Decrease in carbon emissions from target industries"^^xsd:string ;
+    cids:canEnable cids:Activity1 .
+
+cids:Outcome3 a cids:Outcome ;
+    org:hasName "Increased employment opportunities"^^xsd:string ;
+    cids:hasDescription "More job opportunities created in the region"^^xsd:string ;
+    cids:canEnable cids:Program1 .
+
+cids:Outcome4 a cids:Outcome ;
+    org:hasName "Enhanced digital skills"^^xsd:string ;
+    cids:hasDescription "Improved digital literacy among participants"^^xsd:string ;
+    cids:canEnable cids:Service2 .
+
+cids:Outcome5 a cids:Outcome ;
+    org:hasName "Better healthcare access"^^xsd:string ;
+    cids:hasDescription "Improved access to healthcare services"^^xsd:string ;
+    cids:canEnable cids:Activity2 .
+
+cids:Outcome6 a cids:Outcome ;
+    org:hasName "Reduced poverty levels"^^xsd:string ;
+    cids:hasDescription "Decrease in poverty rates in target communities"^^xsd:string ;
+    cids:canEnable cids:Program2 .
+
+cids:Outcome7 a cids:Outcome ;
+    org:hasName "Increased agricultural productivity"^^xsd:string ;
+    cids:hasDescription "Higher crop yields from implemented farming techniques"^^xsd:string ;
+    cids:canEnable cids:Service3 .
+
+cids:Outcome8 a cids:Outcome ;
+    org:hasName "Improved water quality"^^xsd:string ;
+    cids:hasDescription "Reduction in water pollution levels"^^xsd:string ;
+    cids:canEnable cids:Activity3 .
+
+cids:Outcome9 a cids:Outcome ;
+    org:hasName "Enhanced community engagement"^^xsd:string ;
+    cids:hasDescription "Increased participation in community decision-making"^^xsd:string ;
+    cids:canEnable cids:Program3 .
+
+cids:Outcome10 a cids:Outcome ;
+    org:hasName "Reduced school dropout rates"^^xsd:string ;
+    cids:hasDescription "Fewer students leaving school prematurely"^^xsd:string ;
+    cids:canEnable cids:Service4 .
+
+# Related resources referenced in canEnable properties
+cids:Service1 a cids:Service;
+    org:hasName "Literacy Improvement Service"^^xsd:string ;
+    cids:hasDescription "A service aimed at improving literacy rates"^^xsd:string .
+cids:Activity1 a cids:Activity;
+    org:hasName "Carbon Emission Reduction Activity"^^xsd:string ;
+    cids:hasDescription "An activity focused on reducing carbon emissions"^^xsd:string
+ .
+cids:Program1 a cids:Program ;
+    org:hasName "Employment Opportunities Program"^^xsd:string ;
+    cids:hasDescription "A program designed to create job opportunities"^^xsd:string
+.
+cids:Service2 a cids:Service ;
+    org:hasName "Digital Skills Enhancement Service"^^xsd:string ;
+    cids:hasDescription "A service to improve digital literacy"^^xsd:string .
+
+cids:Activity2 a cids:Activity ;
+    org:hasName "Healthcare Access Improvement Activity"^^xsd:string ;
+    cids:hasDescription "An activity to enhance access to healthcare services"^^xsd:string
+    .
+cids:Program2 a cids:Program ;
+    org:hasName "Poverty Reduction Program"^^xsd:string ;
+    cids:hasDescription "A program aimed at reducing poverty levels"^^xsd:string
+.
+cids:Service3 a cids:Service;
+    org:hasName "Agricultural Productivity Service"^^xsd:string ;
+    cids:hasDescription "A service to enhance agricultural productivity"^^xsd:string    
+     .
+cids:Activity3 a cids:Activity;
+    org:hasName "Water Quality Improvement Activity"^^xsd:string ;
+    cids:hasDescription "An activity to improve water quality in the region"^^xsd:string .
+cids:Program3 a cids:Program ;
+    org:hasName "Community Engagement Program"^^xsd:string ;
+    cids:hasDescription "A program to enhance community engagement"^^xsd:string .
+
+cids:Service4 a cids:Service;
+    org:hasName "Digital Skills Enhancement Service"^^xsd:string ;
+    cids:hasDescription "A service to improve digital literacy"^^xsd:string .
