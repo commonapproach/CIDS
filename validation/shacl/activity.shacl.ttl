@@ -1,7 +1,8 @@
-PREFIX :        <http://ontology.eil.utoronto.ca/tove/activity>
+﻿PREFIX :        <http://ontology.eil.utoronto.ca/tove/activity>
 PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
 PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids:    <https://ontology.commonapproach.org/cids#>
 PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -35,3 +36,57 @@ PREFIX void:    <http://rdfs.org/ns/void#>
 PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+act:suspended  rdf:type  owl:NamedIndividual , act:ActivityStatus;
+        csh:memberOf  act:ActivityStatus .
+
+act:suspend  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
+
+act:reenable  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
+
+act:reExecuting  rdf:type  owl:NamedIndividual , act:ActivityStatus;
+        csh:memberOf  act:ActivityStatus .
+
+act:reEnabled  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:possible  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:notPossible  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:executing  rdf:type  owl:NamedIndividual , act:ActivityStatus;
+        csh:memberOf  act:ActivityStatus .
+
+act:execute  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
+
+act:enabled  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:enable  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
+
+act:dormant  rdf:type  owl:NamedIndividual , act:ActivityStatus;
+        csh:memberOf  act:ActivityStatus .
+
+act:disenabled  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:disenable  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
+
+act:completed  rdf:type  owl:NamedIndividual , act:ActivityStatus;
+        csh:memberOf  act:ActivityStatus .
+
+act:complete  rdf:type  owl:NamedIndividual , act:StateStatus , act:ActivityAction;
+        csh:memberOf  act:StateStatus , act:ActivityAction .
+
+act:committed  rdf:type  owl:NamedIndividual , act:StateStatus;
+        csh:memberOf  act:StateStatus .
+
+act:commit  rdf:type  owl:NamedIndividual , act:ActivityAction;
+        csh:memberOf  act:ActivityAction .
