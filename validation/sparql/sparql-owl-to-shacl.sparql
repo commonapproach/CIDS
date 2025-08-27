@@ -84,7 +84,7 @@ WHERE {
     OPTIONAL { ?class rdfs:label ?label . }
     OPTIONAL { ?class rdfs:comment ?comment . }
     OPTIONAL {
-        ?class rdfs:subClassOf* ?superClass .
+        ?class rdfs:subClassOf+ ?superClass .
         FILTER(isIRI(?superClass))
     }
     {
