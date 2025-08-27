@@ -1,7 +1,8 @@
-PREFIX :        <http://www.w3.org/2006/time#>
+﻿PREFIX :        <http://www.w3.org/2006/time#>
 PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
 PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids:    <https://ontology.commonapproach.org/cids#>
 PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -35,3 +36,47 @@ PREFIX void:    <http://rdfs.org/ns/void#>
 PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+time:unitYear  rdf:type  time:TemporalUnit , owl:NamedIndividual;
+        rdfs:label    "Year (unit of temporal duration)"@en;
+        csh:memberOf  time:TemporalUnit .
+
+time:unitWeek  rdf:type  time:TemporalUnit , owl:NamedIndividual;
+        rdfs:label    "Week (unit of temporal duration)"@en;
+        csh:memberOf  time:TemporalUnit .
+
+time:unitSecond  rdf:type  time:TemporalUnit , owl:NamedIndividual;
+        rdfs:label    "Second (unit of temporal duration)"@en;
+        csh:memberOf  time:TemporalUnit .
+
+time:unitMonth  rdf:type  time:TemporalUnit , owl:NamedIndividual;
+        rdfs:label    "Month (unit of temporal duration)"@en;
+        csh:memberOf  time:TemporalUnit .
+
+time:Wednesday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Wednesday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Tuesday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Tuesday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Thursday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Thursday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Sunday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Sunday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Saturday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Saturday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Monday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Monday"@en;
+        csh:memberOf  time:DayOfWeek .
+
+time:Friday  rdf:type  time:DayOfWeek , owl:NamedIndividual;
+        rdfs:label    "Friday"@en;
+        csh:memberOf  time:DayOfWeek .
