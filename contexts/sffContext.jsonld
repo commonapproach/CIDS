@@ -76,7 +76,7 @@
     },
     "reportedDate": {
       "@id": "sff:reportedDate",
-      "@type": "xsd:date"
+      "@type": "xsd:dateTime"
     },
     "ReportInfo": {
       "@id": "sff:reportInfo",
