@@ -753,12 +753,14 @@ sch:codeValue rdf:type owl:DatatypeProperty ,
 
 ###  http://schema.org/dateCreated
 sch:dateCreated rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty .
+                rdfs:subPropertyOf cids:cidsDataProperty ;
+                cids:belongsToTier cids:FullTier .
 
 
 ###  http://schema.org/description
 sch:description rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty .
+                rdfs:subPropertyOf cids:cidsDataProperty ;
+                cids:belongsToTier cids:FullTier .
 
 
 ###  http://schema.org/identifier
@@ -2607,7 +2609,6 @@ cids:Person rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty sch:birthDate ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
                             [ rdf:type owl:Restriction ;
