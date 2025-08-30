@@ -20,6 +20,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix sch: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sur: <http://ontology.eil.utoronto.ca/tove/survey#> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -752,12 +753,14 @@ sch:codeValue rdf:type owl:DatatypeProperty ,
 
 ###  http://schema.org/dateCreated
 sch:dateCreated rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty .
+                rdfs:subPropertyOf cids:cidsDataProperty ;
+                cids:belongsToTier cids:FullTier .
 
 
 ###  http://schema.org/description
 sch:description rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty .
+                rdfs:subPropertyOf cids:cidsDataProperty ;
+                cids:belongsToTier cids:FullTier .
 
 
 ###  http://schema.org/identifier
@@ -1370,7 +1373,8 @@ cids:Characteristic rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasDescription ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onDataRange xsd:string
+                                      owl:onDataRange xsd:string ;
+                                      sh:severity sh:Info
                                     ] ;
                     rdfs:comment """<p>The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:</p>
 <ul>
@@ -1400,7 +1404,8 @@ cids:Code rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:definedBy ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass cids:Organization
+                            owl:onClass cids:Organization ;
+                            sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty org:hasName ;
@@ -1415,17 +1420,20 @@ cids:Code rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:hasDescription ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onDataRange xsd:string
+                            owl:onDataRange xsd:string ;
+                            sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:hasSpecification ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onDataRange xsd:anyURI
+                            owl:onDataRange xsd:anyURI ;
+                            sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty org:hasIdentifier ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onDataRange xsd:string
+                            owl:onDataRange xsd:string ;
+                            sh:severity sh:Info
                           ] ;
           rdfs:comment """<p>An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:</p>
 <ul>
@@ -2059,7 +2067,8 @@ cids:Indicator rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasDescription ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:string
+                                 owl:onDataRange xsd:string ;
+                                 sh:severity sh:Info
                                ] ,
                                  [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:unitDescription ;
@@ -2328,7 +2337,8 @@ cids:Organization rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasDescription ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:string
+                                    owl:onDataRange xsd:string ;
+                                    sh:severity sh:Info
                                   ] ;
                   rdfs:comment """<p>The cids:Organization class is defined as a rdfs:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:</p>
 <ul>
@@ -2432,7 +2442,8 @@ cids:Outcome rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasDescription ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
+                               owl:onDataRange xsd:string ;
+                               sh:severity sh:Info
                              ] ;
              rdfs:comment """<p>Outcomes are what stakeholders experience as a result of an organization’s activities. They can be positive or negative, intended or unintended.</p>
 
@@ -2598,7 +2609,6 @@ cids:Person rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty sch:birthDate ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -2854,7 +2864,8 @@ cids:Stakeholder rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cids:hasDescription ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:string
+                                   owl:onDataRange xsd:string ;
+                                   sh:severity sh:Info
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty org:hasName ;
@@ -3077,7 +3088,8 @@ cids:Theme rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasDescription ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:string
+                             owl:onDataRange xsd:string ;
+                             sh:severity sh:Info
                            ] ;
            rdfs:label "Theme"@en ;
            rdfs:comment """<p>The Theme class is used to represent the impact themes for which outcomes are specified.</p>
@@ -3155,12 +3167,14 @@ cids:cidsThing rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty sch:dateCreated ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:dateTime
+                                 owl:onDataRange xsd:dateTime ;
+                                 sh:severity sh:Info
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty sch:description ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:string
+                                 owl:onDataRange xsd:string ;
+                                 sh:severity sh:Info
                                ] .
 
 
