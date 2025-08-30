@@ -71,7 +71,7 @@ CONSTRUCT {
         .
 }
 WHERE {
-    values ?activeTier {cids:BasicTier}    
+#    values ?activeTier {cids:SFFTier}    
     {
     # Determines the current active tier, set {} to empty
     # if all tiers are desired.

@@ -1,34 +1,29 @@
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix cids: <https://ontology.commonapproach.org/cids#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ns0: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix ns1: <http://purl.org/vocab/vann/> .
 @prefix ns2: <https://schema.org/> .
-@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
 @prefix sff: <https://ontology.commonapproach.org/sff#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+
 
 sff:
   a owl:Ontology, voaf:Vocabulary ;
-  owl:versionIRI <https://ontology.commonapproach.org/sff/1.3.0> ;
-  owl:imports 
-    <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/activity.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/icontact.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/organization.owl>, 
-    <http://www.w3.org/2006/time.rdf>,
-    <http://www.w3.org/ns/prov-o#>,
-    <https://ontology.commonapproach.org/cids#/> ;
-  cc:license "Social Finance Fund Companion Module v1.3.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
+  owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, <http://ontology.eil.utoronto.ca/tove/activity.owl>, <http://ontology.eil.utoronto.ca/tove/icontact.owl>, <http://ontology.eil.utoronto.ca/tove/organization.owl>, <http://www.w3.org/2006/time.rdf> ;
+  cc:license "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
   ns0:term_status "Stable"@en, "Stable"@fr ;
   void:inDataset sff:datasetdefinition ;
   dc:rights "Social Finance Fund Companion Module © 2023 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
@@ -39,8 +34,7 @@ sff:
   ns1:preferredNamespacePrefix "sff" ;
   ns1:preferredNamespaceUri "https://ontology.commonapproach.org/sff#" ;
   dc:date "11-10-2024" ;
-  owl:priorVersion <https://ontology.commonapproach.org/sff/1.0> ;
-  owl:versionInfo "1.3.0"@en .
+  owl:versionInfo "1.0"@en .
 
 sff:datasetdefinition
   a void:Dataset, schema:Dataset, dcat:Dataset ;
@@ -58,12 +52,7 @@ sff:OrganizationProfile
   rdfs:label "Organization Profile"@en ;
   cids:hasName "Organization Profile" ;
   rdfs:comment "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty cids:forOrganization ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass cids:Organization 
-  ],[
+  rdfs:subClassOf sff:forceHasOrganization,[
     a owl:Restriction ;
     owl:onProperty sff:hasPrimaryContact ;
     owl:allValuesFrom cids:Person ;
@@ -107,7 +96,7 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ] ;
   void:inDataset sff:datasetdefinition ;
@@ -143,7 +132,7 @@ sff:ReportInfo
     a owl:Restriction ;
     owl:onProperty cids:forOrganization ;
     owl:allValuesFrom cids:Organization ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
     owl:onProperty prov:startedAtTime ;
@@ -167,18 +156,8 @@ sff:FundingStatus
   a owl:Class ;
   rdfs:label "Funding Status"@en ;
   cids:hasName "Funding Status" ;
-  rdfs:comment "Provides information on the status of an organization's application to a funder or investor."@en ;
-  rdfs:subClassOf [
-  a owl:Restriction ;
-  owl:onProperty cids:forOrganization ;
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass cids:Organization ], 
-  [
-    a owl:Restriction ;
-    owl:onProperty cids:hasDescription ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ],[
+  rdfs:comment "Provides information on the status of an organization’s application to a funder or investor."@en ;
+  rdfs:subClassOf sff:forceHasDescription, sff:forceHasOrganization, [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -192,7 +171,7 @@ sff:FundingStatus
     a owl:Restriction ;
     owl:onProperty sff:hasFundingState ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass sff:FundingState
+    owl:onDataRange sff:FundingState
   ] ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
@@ -206,7 +185,7 @@ sff:TeamProfile
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:dateTime
   ], [
     a owl:Restriction ;
@@ -307,15 +286,10 @@ sff:EquityDeservingGroup
   rdfs:label "Equity Deserving Group"@en ;
   cids:hasName "Equity Deserving Group" ;
   rdfs:comment "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty cids:hasDescription ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
+  rdfs:subClassOf sff:forceHasDescription, [
     a owl:Restriction ;
     owl:onProperty cids:hasCharacteristic ;
-    owl:onClass cids:Characteristic
+    owl:onDataRange cids:Characteristic
   ], [
     a owl:Restriction ;
     owl:onProperty sff:isDefined ;
@@ -360,7 +334,7 @@ sff:reportedDate
   rdfs:comment "Specifies the date to which the reported information applies."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier . 
+  cids:belongsToTier cids:SFFTier .
 
 sff:hasEDGProfile
   a owl:ObjectProperty ;
@@ -371,44 +345,14 @@ sff:hasEDGProfile
   rdfs:isDefinedBy sff: ;
   cids:belongsToTier cids:SFFTier .
 
-sff:forFunder
-  a owl:ObjectProperty ;
-  rdfs:domain sff:FundingStatus ;
-  rdfs:range cids:Organization ;
-  rdfs:label "for Funder"@en ;
-  cids:hasName "for Funder" ;
-  rdfs:comment "Links a funding status to the funder or investor that is being reported on."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
+sff:forceHasDescription
+  a owl:Restriction ;
+  owl:onProperty cids:hasDescription;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange xsd:string .
 
-sff:hasFundingState
-  a owl:ObjectProperty ;
-  rdfs:domain sff:FundingStatus ;
-  rdfs:range sff:FundingState ;
-  rdfs:label "hasFundingState"@en ;
-  cids:hasName "hasFundingState" ;
-  rdfs:comment "Links a funding status to the state of the funding application."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
-
-sff:hasSize
-  a owl:DatatypeProperty ;
-  rdfs:label "hasSize"@en ;
-  cids:hasName "hasSize" ;
-  rdfs:comment "Specifies the size of the team or group, represented as a non-negative integer."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
-
-sff:forEDG
-  a owl:ObjectProperty ;
-  rdfs:domain sff:EDGProfile ;
-  rdfs:range sff:EquityDeservingGroup ;
-  rdfs:label "forEDG"@en ;
-  cids:hasName "forEDG" ;
-  rdfs:comment "Links an EDG profile to the equity deserving group it represents."@en ;
-  void:inDataset sff:datasetdefinition ;
-  rdfs:isDefinedBy sff: ;
-  cids:belongsToTier cids:SFFTier .
+sff:forceHasOrganization
+  a owl:Restriction ;
+  owl:onProperty cids:forOrganization ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass cids:Organization .

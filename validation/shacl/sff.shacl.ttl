@@ -1,6 +1,7 @@
-PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+﻿PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
 PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids:    <https://ontology.commonapproach.org/cids#>
 PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -37,9 +38,20 @@ PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
-csh:hasTeamSize_PropertyShape
+csh:TeamProfile_reportedDate_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "reportedDate";
+        sh:nodeKind      sh:Literal;
+        sh:path          sff:reportedDate;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       sff:TeamProfile .
+
+csh:TeamProfile_hasTeamSize_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:nonNegativeInteger;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasTeamSize";
@@ -48,9 +60,9 @@ csh:hasTeamSize_PropertyShape
         csh:cardinality  csh:Optional;
         csh:usedBy       sff:TeamProfile .
 
-csh:hasEDGSize_PropertyShape
+csh:TeamProfile_hasEDGSize_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:nonNegativeInteger;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasEDGSize";
@@ -59,14 +71,14 @@ csh:hasEDGSize_PropertyShape
         csh:cardinality  csh:Optional;
         csh:usedBy       sff:TeamProfile .
 
-csh:hasComment_PropertyShape
+csh:TeamProfile_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasComment";
         sh:nodeKind      sh:Literal;
-        sh:path          sff:hasComment;
+        sh:path          cids:hasComment;
         csh:cardinality  csh:Optional;
         csh:usedBy       sff:TeamProfile .
 
@@ -74,13 +86,12 @@ csh:TeamProfile_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Team Profile"@en;
         sh:closed       false;
-        sh:description  "A profile of a board or management team for a specified interval of time."@en;
-        sh:property     csh:reportedDate_PropertyShape , csh:hasTeamSize_PropertyShape , csh:hasEDGSize_PropertyShape , csh:hasComment_PropertyShape;
+        sh:property     csh:TeamProfile_reportedDate_PropertyShape , csh:TeamProfile_hasTeamSize_PropertyShape , csh:TeamProfile_hasEDGSize_PropertyShape , csh:TeamProfile_hasComment_PropertyShape;
         sh:targetClass  sff:TeamProfile .
 
-csh:startedAtTime_PropertyShape
+csh:ReportInfo_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:dateTime;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "startedAtTime";
@@ -89,7 +100,7 @@ csh:startedAtTime_PropertyShape
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       sff:ReportInfo .
 
-csh:hasName_PropertyShape
+csh:ReportInfo_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
@@ -100,18 +111,9 @@ csh:hasName_PropertyShape
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       sff:ReportInfo .
 
-csh:forOrganization_PropertyShape
+csh:ReportInfo_endedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "forOrganization";
-        sh:nodeKind      sh:IRI;
-        sh:path          cids:forOrganization;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:ReportInfo .
-
-csh:endedAtTime_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:dateTime;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "endedAtTime";
@@ -124,124 +126,49 @@ csh:ReportInfo_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Report Info"@en;
         sh:closed       false;
-        sh:description  "Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name."@en;
-        sh:property     csh:startedAtTime_PropertyShape , csh:hasName_PropertyShape , csh:forOrganization_PropertyShape , csh:endedAtTime_PropertyShape;
+        sh:property     csh:ReportInfo_startedAtTime_PropertyShape , csh:ReportInfo_hasName_PropertyShape , csh:ReportInfo_endedAtTime_PropertyShape;
         sh:targetClass  sff:ReportInfo .
 
-csh:servesEDG_PropertyShape
+csh:OrganizationProfile_reportedDate_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "servesEDG";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:servesEDG;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:sectorServed_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "sectorServed";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:sectorServed;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:provinceTerritoryServed_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "provinceTerritoryServed";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:provinceTerritoryServed;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:primaryPopulationServed_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "primaryPopulationServed";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:primaryPopulationServed;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:organizationType_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "organizationType";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:organizationType;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:localityServed_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "localityServed";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:localityServed;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:hasPrimaryContact_PropertyShape
-        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
         sh:maxCount      1;
-        sh:minCount      0;
-        sh:name          "hasPrimaryContact";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:hasPrimaryContact;
-        csh:cardinality  csh:Optional;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:hasManagementTeamProfile_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "hasManagementTeamProfile";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:hasManagementTeamProfile;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:hasFundingStatus_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "hasFundingStatus";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:hasFundingStatus;
-        csh:cardinality  csh:ZeroOrMore;
-        csh:usedBy       sff:OrganizationProfile .
-
-csh:hasBoardProfile_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:minCount      0;
-        sh:name          "hasBoardProfile";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:hasBoardProfile;
-        csh:cardinality  csh:ZeroOrMore;
+        sh:minCount      1;
+        sh:name          "reportedDate";
+        sh:nodeKind      sh:Literal;
+        sh:path          sff:reportedDate;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       sff:OrganizationProfile .
 
 csh:OrganizationProfile_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Organization Profile"@en;
         sh:closed       false;
-        sh:description  "Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs."@en;
-        sh:property     csh:servesEDG_PropertyShape , csh:sectorServed_PropertyShape , csh:reportedDate_PropertyShape , csh:provinceTerritoryServed_PropertyShape , csh:primaryPopulationServed_PropertyShape , csh:organizationType_PropertyShape , csh:localityServed_PropertyShape , csh:hasPrimaryContact_PropertyShape , csh:hasManagementTeamProfile_PropertyShape , csh:hasFundingStatus_PropertyShape , csh:hasBoardProfile_PropertyShape;
+        sh:property     csh:OrganizationProfile_reportedDate_PropertyShape;
         sh:targetClass  sff:OrganizationProfile .
 
-sff:OrganizationProfile
-        rdfs:subClassOf  sff:forceHasOrganization .
-
-csh:hasFundingState_PropertyShape
+csh:FundingStatus_reportedDate_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:dateTime;
         sh:maxCount      1;
-        sh:minCount      1;
-        sh:name          "hasFundingState";
+        sh:minCount      0;
+        sh:name          "reportedDate";
         sh:nodeKind      sh:Literal;
-        sh:path          sff:hasFundingState;
-        csh:cardinality  csh:ExactlyOne;
+        sh:path          sff:reportedDate;
+        csh:cardinality  csh:Optional;
         csh:usedBy       sff:FundingStatus .
 
-csh:forFunder_PropertyShape
+csh:FundingStatus_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        csh:cardinality  csh:OneOrMore;
+        csh:usedBy       sff:FundingStatus .
+
+csh:FundingStatus_forFunder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
@@ -256,15 +183,12 @@ csh:FundingStatus_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Funding Status"@en;
         sh:closed       false;
-        sh:description  "Provides information on the status of an organization's application to a funder or investor."@en;
-        sh:property     csh:reportedDate_PropertyShape , csh:hasFundingState_PropertyShape , csh:hasDescription_PropertyShape , csh:forFunder_PropertyShape;
+        sh:property     csh:FundingStatus_reportedDate_PropertyShape , csh:FundingStatus_hasDescription_PropertyShape , csh:FundingStatus_forFunder_PropertyShape;
         sh:targetClass  sff:FundingStatus .
 
-sff:FundingStatus  rdfs:subClassOf  sff:forceHasOrganization , sff:forceHasDescription .
-
-csh:isDefined_PropertyShape
+csh:EquityDeservingGroup_isDefined_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:boolean;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "isDefined";
@@ -273,7 +197,7 @@ csh:isDefined_PropertyShape
         csh:cardinality  csh:Optional;
         csh:usedBy       sff:EquityDeservingGroup .
 
-csh:hasDescription_PropertyShape
+csh:EquityDeservingGroup_hasDescription_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:minCount      1;
@@ -281,43 +205,29 @@ csh:hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         csh:cardinality  csh:OneOrMore;
-        csh:usedBy       sff:FundingStatus , sff:EquityDeservingGroup .
-
-csh:hasCharacteristic_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
-        sh:minCount      0;
-        sh:name          "hasCharacteristic";
-        sh:nodeKind      sh:Literal;
-        sh:path          cids:hasCharacteristic;
-        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       sff:EquityDeservingGroup .
 
 csh:EquityDeservingGroup_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Equity Deserving Group"@en;
         sh:closed       false;
-        sh:description  "Defines each of the equity deserving groups relevant to the management and board members of an organization."@en;
-        sh:property     csh:isDefined_PropertyShape , csh:hasDescription_PropertyShape , csh:hasCharacteristic_PropertyShape;
+        sh:property     csh:EquityDeservingGroup_isDefined_PropertyShape , csh:EquityDeservingGroup_hasDescription_PropertyShape;
         sh:targetClass  sff:EquityDeservingGroup .
 
-sff:EquityDeservingGroup
-        rdfs:subClassOf  sff:forceHasDescription .
-
-csh:reportedDate_PropertyShape
+csh:EDGProfile_reportedDate_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:dateTime;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "reportedDate";
         sh:nodeKind      sh:Literal;
         sh:path          sff:reportedDate;
-        csh:cardinality  csh:ZeroOrMore , csh:Optional;
-        csh:usedBy       sff:TeamProfile , sff:OrganizationProfile , sff:FundingStatus , sff:EDGProfile .
+        csh:cardinality  csh:Optional;
+        csh:usedBy       sff:EDGProfile .
 
-csh:hasSize_PropertyShape
+csh:EDGProfile_hasSize_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:string;
+        sh:datatype      xsd:nonNegativeInteger;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasSize";
@@ -326,20 +236,25 @@ csh:hasSize_PropertyShape
         csh:cardinality  csh:Optional;
         csh:usedBy       sff:EDGProfile .
 
-csh:forEDG_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:maxCount      1;
-        sh:minCount      0;
-        sh:name          "forEDG";
-        sh:nodeKind      sh:IRI;
-        sh:path          sff:forEDG;
-        csh:cardinality  csh:Optional;
-        csh:usedBy       sff:EDGProfile .
-
 csh:EDGProfile_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "EDG Profile"@en;
         sh:closed       false;
-        sh:description  "Information about the number of members belonging to a specific equity deserving group, as part of a board or management team, for a designated time interval."@en;
-        sh:property     csh:reportedDate_PropertyShape , csh:hasSize_PropertyShape , csh:forEDG_PropertyShape;
+        sh:property     csh:EDGProfile_reportedDate_PropertyShape , csh:EDGProfile_hasSize_PropertyShape;
         sh:targetClass  sff:EDGProfile .
+
+sff:rejected  rdf:type  sff:FundingState , skos:Concept;
+        rdfs:label    "Rejet├⌐e"@fr , "Rejected"@en;
+        csh:memberOf  sff:FundingState .
+
+sff:inReview  rdf:type  sff:FundingState , skos:Concept;
+        rdfs:label    "Sous-├⌐valuation"@fr , "In Review"@en;
+        csh:memberOf  sff:FundingState .
+
+sff:funded  rdf:type  sff:FundingState , skos:Concept;
+        rdfs:label    "Allou├⌐"@fr , "Funded"@en;
+        csh:memberOf  sff:FundingState .
+
+sff:applied  rdf:type  sff:FundingState , skos:Concept;
+        rdfs:label    "Appliqu├⌐"@fr , "Applied"@en;
+        csh:memberOf  sff:FundingState .
