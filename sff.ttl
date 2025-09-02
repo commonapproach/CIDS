@@ -233,8 +233,8 @@ sff:TeamProfile
   cids:belongsToTier cids:SFFTier .
 
 sff:FundingState
-  a owl:Class, skos:ConceptScheme ;
-  rdfs:subClassOf cids:Code ;
+  a owl:Class ;
+  rdfs:subClassOf cids:Code, skos:ConceptScheme ;
   rdfs:label "Funding State"@en ;
   cids:hasName "Funding State" ;
   rdfs:comment "A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’."@en ;

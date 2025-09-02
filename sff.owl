@@ -104,16 +104,7 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onClass>
-          <skos:ConceptScheme rdf:about="https://ontology.commonapproach.org/sff#FundingState">
-            <cids:belongsToTier rdf:resource="https://ontology.commonapproach.org/cids#SFFTier"/>
-            <rdfs:isDefinedBy rdf:resource="https://ontology.commonapproach.org/sff#"/>
-            <void:inDataset rdf:resource="https://ontology.commonapproach.org/sff#datasetdefinition"/>
-            <rdfs:comment xml:lang="en">A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’.</rdfs:comment>
-            <cids:hasName>Funding State</cids:hasName>
-            <rdfs:label xml:lang="en">Funding State</rdfs:label>
-            <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#Code"/>
-            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-          </skos:ConceptScheme>
+          <owl:Class rdf:about="https://ontology.commonapproach.org/sff#FundingState"/>
         </owl:onClass>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:qualifiedCardinality>
@@ -380,6 +371,16 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://ontology.commonapproach.org/sff#FundingState">
+    <cids:belongsToTier rdf:resource="https://ontology.commonapproach.org/cids#SFFTier"/>
+    <rdfs:isDefinedBy rdf:resource="https://ontology.commonapproach.org/sff#"/>
+    <void:inDataset rdf:resource="https://ontology.commonapproach.org/sff#datasetdefinition"/>
+    <rdfs:comment xml:lang="en">A value that reflect funding and approval process. The list items should distinguish concepts of ‘applied’, ‘rejected’, and ‘funded’.</rdfs:comment>
+    <cids:hasName>Funding State</cids:hasName>
+    <rdfs:label xml:lang="en">Funding State</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:subClassOf rdf:resource="https://ontology.commonapproach.org/cids#Code"/>
   </owl:Class>
   <owl:ObjectProperty rdf:about="https://ontology.commonapproach.org/sff#hasOrganizationProfile">
     <cids:belongsToTier rdf:resource="https://ontology.commonapproach.org/cids#SFFTier"/>
