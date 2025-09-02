@@ -25,7 +25,6 @@
 @prefix sur: <http://ontology.eil.utoronto.ca/tove/survey#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @base <https://ontology.commonapproach.org/cids> .
