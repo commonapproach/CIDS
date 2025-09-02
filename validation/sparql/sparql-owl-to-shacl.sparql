@@ -61,8 +61,9 @@ CONSTRUCT {
         sh:maxCount ?maxCardinality ;
         csh:cardinality ?cardinality ;
         csh:usedBy ?class ;
+        sh:message ?message ;
+        sh:severity ?severity ;    
         csh:activeTier ?activeTier ;
-        csh:section ?section ;
     .
     ?namedIndividual a ?facetClass ;
         rdfs:label ?prefLabel;
@@ -71,11 +72,12 @@ CONSTRUCT {
         .
 }
 WHERE {
-#    values ?activeTier {cids:SFFTier}    
+    values ?activeTier {cids:EssentialTier}    
     {
     # Determines the current active tier, set {} to empty
     # if all tiers are desired.
     # Node Shapes from Classes
+
     ?class rdf:type owl:Class .
     bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className   )
     FILTER(isIRI(?class))
@@ -102,6 +104,12 @@ WHERE {
             ?property cids:belongsToTier ?cTier .
             filter(sameTerm(?cTier, ?activeTier))   
         }
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
+        }        
         # This determines the property shape IRI       
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className1,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
@@ -111,6 +119,12 @@ WHERE {
         } union {
             ?restriction owl:allValuesFrom|owl:someValuesFrom ?datatype2.
             filter(STRBEFORE(str(?datatype2), "#") = str(xsd:)) .
+        }
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
         }
         # if the range is a linked list, this iterates over that list
         optional {
@@ -136,6 +150,12 @@ WHERE {
         bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         # Determine property shape identifiers
         ?restriction owl:allValuesFrom ?target.
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
+        }
         # Handle tier information
         optional {
             ?restriction cids:belongsToTier ?cTier .
@@ -176,6 +196,13 @@ WHERE {
     }
     optional {
         ?restriction owl:maxQualifiedCardinality ?cardinalityMax2 .
+    }
+    
+    optional {
+        ?restriction sh:message ?message .
+    }
+    optional {
+        ?restriction sh:severity ?severity .
     }
     bind(coalesce(xsd:string(?cardinalityMin1), xsd:string(?cardinalityMin2), "0") as ?cardinalityMin)
     bind(coalesce(xsd:string(?cardinalityMax1), xsd:string(?cardinalityMax2), "unbounded") as ?cardinalityMax)
@@ -241,5 +268,6 @@ WHERE {
             }
         filter(sameTerm(?cTier, str(?activeTier)))
         bind(3 as ?section)
+        
         }    
 } order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName
