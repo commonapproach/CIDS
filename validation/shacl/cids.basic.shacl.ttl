@@ -1,6 +1,5 @@
-﻿PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
-PREFIX ah:      <file:///C:/Users/kurtc/CIDS/CIDS/validation/models/cids.ttl>
 PREFIX cc:      <http://creativecommons.org/ns#>
 PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids:    <https://ontology.commonapproach.org/cids#>
@@ -46,7 +45,7 @@ csh:cidsThing_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:cidsThing .
 
@@ -59,7 +58,7 @@ csh:cidsThing_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:cidsThing .
 
@@ -77,9 +76,9 @@ csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
@@ -90,7 +89,7 @@ csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -102,7 +101,7 @@ csh:UnexpectedImpactRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -114,7 +113,7 @@ csh:UnexpectedImpactRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:UnexpectedImpactRisk .
@@ -128,7 +127,7 @@ csh:UnexpectedImpactRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -141,7 +140,7 @@ csh:UnexpectedImpactRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -163,7 +162,7 @@ csh:Tier_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Tier .
 
@@ -176,7 +175,7 @@ csh:Tier_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Tier .
 
@@ -189,7 +188,7 @@ csh:Tier_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Tier .
 
@@ -209,7 +208,7 @@ csh:Theme_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Theme .
 
@@ -222,7 +221,7 @@ csh:Theme_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Theme .
 
@@ -235,7 +234,7 @@ csh:Theme_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Theme .
 
@@ -248,7 +247,7 @@ csh:Theme_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Theme .
 
@@ -268,7 +267,7 @@ csh:Target_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -280,7 +279,7 @@ csh:Target_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -292,7 +291,7 @@ csh:Target_hasComment_PropertyShape
         sh:name          "hasComment";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasComment;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -304,7 +303,7 @@ csh:Target_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -317,7 +316,7 @@ csh:Target_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -330,7 +329,7 @@ csh:Target_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Target .
 
@@ -351,7 +350,7 @@ csh:StandardsOrganization_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StandardsOrganization .
 
@@ -364,7 +363,7 @@ csh:StandardsOrganization_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StandardsOrganization .
 
@@ -377,7 +376,7 @@ csh:StandardsOrganization_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StandardsOrganization .
 
@@ -399,7 +398,7 @@ csh:Stakeholder_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Stakeholder .
 
@@ -412,7 +411,7 @@ csh:Stakeholder_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Stakeholder .
 
@@ -424,9 +423,9 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:name          "hasCatchmentArea";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasCatchmentArea;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "local" , "global" , "multinational";
+        csh:in           "provincial" , "local" , "multinational" , "national" , "global";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_description_PropertyShape
@@ -438,7 +437,7 @@ csh:Stakeholder_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Stakeholder .
 
@@ -451,7 +450,7 @@ csh:Stakeholder_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Stakeholder .
 
@@ -473,7 +472,7 @@ csh:StakeholderReport_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderReport .
 
@@ -486,7 +485,7 @@ csh:StakeholderReport_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderReport .
 
@@ -508,9 +507,9 @@ csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
@@ -521,7 +520,7 @@ csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -533,7 +532,7 @@ csh:StakeholderParticipationRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -545,7 +544,7 @@ csh:StakeholderParticipationRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:StakeholderParticipationRisk .
@@ -559,7 +558,7 @@ csh:StakeholderParticipationRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -572,7 +571,7 @@ csh:StakeholderParticipationRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -594,7 +593,7 @@ csh:StakeholderOutcome_isUnderserved_PropertyShape
         sh:name          "isUnderserved";
         sh:nodeKind      sh:Literal;
         sh:path          cids:isUnderserved;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderOutcome .
 
@@ -606,9 +605,9 @@ csh:StakeholderOutcome_intendedImpact_PropertyShape
         sh:name          "intendedImpact";
         sh:nodeKind      sh:Literal;
         sh:path          cids:intendedImpact;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "positive" , "neutral" , "negative";
+        csh:in           "negative" , "neutral" , "positive";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasName_PropertyShape
@@ -619,7 +618,7 @@ csh:StakeholderOutcome_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderOutcome .
 
@@ -631,9 +630,9 @@ csh:StakeholderOutcome_hasImportance_PropertyShape
         sh:name          "hasImportance";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasImportance;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unimportant" , "moderate important" , "high importance" , "neutral";
+        csh:in           "neutral" , "unimportant" , "high importance" , "moderate important";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasDescription_PropertyShape
@@ -644,7 +643,7 @@ csh:StakeholderOutcome_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderOutcome .
 
@@ -657,7 +656,7 @@ csh:StakeholderOutcome_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderOutcome .
 
@@ -670,7 +669,7 @@ csh:StakeholderOutcome_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderOutcome .
 
@@ -693,7 +692,7 @@ csh:SocialPurposeOrganization_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SocialPurposeOrganization .
 
@@ -706,7 +705,7 @@ csh:SocialPurposeOrganization_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SocialPurposeOrganization .
 
@@ -719,7 +718,7 @@ csh:SocialPurposeOrganization_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SocialPurposeOrganization .
 
@@ -741,18 +740,18 @@ csh:SkillInput_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
 csh:SkillInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Program , cids:Activity , cids:Service;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
         sh:path          cids:inputFor;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:SkillInput .
 
@@ -764,7 +763,7 @@ csh:SkillInput_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
@@ -776,7 +775,7 @@ csh:SkillInput_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
@@ -788,7 +787,7 @@ csh:SkillInput_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
@@ -801,7 +800,7 @@ csh:SkillInput_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
@@ -814,7 +813,7 @@ csh:SkillInput_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:SkillInput .
 
@@ -834,7 +833,7 @@ csh:Service_subActivityOf_PropertyShape
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
         sh:path          act:subActivityOf;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Service .
 
@@ -846,7 +845,7 @@ csh:Service_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -858,7 +857,7 @@ csh:Service_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -870,7 +869,7 @@ csh:Service_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -882,7 +881,7 @@ csh:Service_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -895,7 +894,7 @@ csh:Service_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -908,7 +907,7 @@ csh:Service_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -920,7 +919,7 @@ csh:Service_beneficialSizeStart_PropertyShape
         sh:name          "beneficialSizeStart";
         sh:nodeKind      sh:Literal;
         sh:path          cids:beneficialSizeStart;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -932,7 +931,7 @@ csh:Service_beneficialSizeEnd_PropertyShape
         sh:name          "beneficialSizeEnd";
         sh:nodeKind      sh:Literal;
         sh:path          cids:beneficialSizeEnd;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Service .
 
@@ -952,7 +951,7 @@ csh:Program_subActivityOf_PropertyShape
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
         sh:path          act:subActivityOf;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Program .
 
@@ -964,7 +963,7 @@ csh:Program_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Program .
 
@@ -976,7 +975,7 @@ csh:Program_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Program .
 
@@ -989,7 +988,7 @@ csh:Program_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Program .
 
@@ -1002,7 +1001,7 @@ csh:Program_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Program .
 
@@ -1023,18 +1022,18 @@ csh:PhysicalInput_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
 csh:PhysicalInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Program , cids:Activity , cids:Service;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
         sh:path          cids:inputFor;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1046,7 +1045,7 @@ csh:PhysicalInput_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1058,7 +1057,7 @@ csh:PhysicalInput_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1070,7 +1069,7 @@ csh:PhysicalInput_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1083,7 +1082,7 @@ csh:PhysicalInput_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1096,7 +1095,7 @@ csh:PhysicalInput_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:PhysicalInput .
 
@@ -1117,7 +1116,7 @@ csh:Person_middleName_PropertyShape
         sh:name          "middleName";
         sh:nodeKind      sh:Literal;
         sh:path          foaf:middleName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Person .
 
@@ -1129,7 +1128,7 @@ csh:Person_givenName_PropertyShape
         sh:name          "givenName";
         sh:nodeKind      sh:Literal;
         sh:path          foaf:givenName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Person .
 
@@ -1141,7 +1140,7 @@ csh:Person_familyName_PropertyShape
         sh:name          "familyName";
         sh:nodeKind      sh:Literal;
         sh:path          foaf:familyName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Person .
 
@@ -1154,7 +1153,7 @@ csh:Person_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Person .
 
@@ -1167,7 +1166,7 @@ csh:Person_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Person .
 
@@ -1178,7 +1177,7 @@ csh:Person_birthDate_PropertyShape
         sh:name          "birthDate";
         sh:nodeKind      sh:Literal;
         sh:path          sch:birthDate;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Person .
 
@@ -1197,7 +1196,7 @@ csh:Output_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Output .
 
@@ -1209,18 +1208,18 @@ csh:Output_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Output .
 
 csh:Output_forActivity_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         act:Activity , cids:Service;
+        sh:class         cids:Service , act:Activity;
         sh:minCount      0;
         sh:name          "forActivity";
         sh:nodeKind      sh:IRI;
         sh:path          org:forActivity;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Output .
 
@@ -1233,7 +1232,7 @@ csh:Output_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Output .
 
@@ -1246,7 +1245,7 @@ csh:Output_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Output .
 
@@ -1266,7 +1265,7 @@ csh:Outcome_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Outcome .
 
@@ -1279,7 +1278,7 @@ csh:Outcome_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Outcome .
 
@@ -1292,7 +1291,7 @@ csh:Outcome_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Outcome .
 
@@ -1305,7 +1304,7 @@ csh:Outcome_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Outcome .
 
@@ -1316,7 +1315,7 @@ csh:Outcome_canEnable_PropertyShape
         sh:name          "canEnable";
         sh:nodeKind      sh:IRI;
         sh:path          cids:canEnable;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Outcome .
 
@@ -1337,7 +1336,7 @@ csh:OutcomeChain_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:OutcomeChain .
 
@@ -1349,7 +1348,7 @@ csh:OutcomeChain_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:OutcomeChain .
 
@@ -1362,7 +1361,7 @@ csh:OutcomeChain_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:OutcomeChain .
 
@@ -1375,7 +1374,7 @@ csh:OutcomeChain_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:OutcomeChain .
 
@@ -1397,7 +1396,7 @@ csh:Organization_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Organization .
 
@@ -1410,7 +1409,7 @@ csh:Organization_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Organization .
 
@@ -1423,7 +1422,7 @@ csh:Organization_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Organization .
 
@@ -1444,18 +1443,18 @@ csh:Input_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
 csh:Input_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Program , cids:Activity , cids:Service;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
         sh:path          cids:inputFor;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Input .
 
@@ -1467,7 +1466,7 @@ csh:Input_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
@@ -1479,7 +1478,7 @@ csh:Input_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
@@ -1491,7 +1490,7 @@ csh:Input_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
@@ -1504,7 +1503,7 @@ csh:Input_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
@@ -1517,7 +1516,7 @@ csh:Input_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Input .
 
@@ -1537,7 +1536,7 @@ csh:Indicator_unitDescription_PropertyShape
         sh:name          "unitDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:unitDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
@@ -1549,7 +1548,7 @@ csh:Indicator_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
@@ -1561,7 +1560,7 @@ csh:Indicator_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
@@ -1574,18 +1573,18 @@ csh:Indicator_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
 csh:Indicator_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Stakeholder , cids:Organization;
+        sh:class         cids:Organization , cids:Stakeholder;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
         sh:path          cids:hasAccess;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Indicator .
 
@@ -1598,7 +1597,7 @@ csh:Indicator_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
@@ -1611,7 +1610,7 @@ csh:Indicator_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Indicator .
 
@@ -1632,7 +1631,7 @@ csh:IndicatorReport_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:IndicatorReport .
 
@@ -1644,18 +1643,18 @@ csh:IndicatorReport_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:IndicatorReport .
 
 csh:IndicatorReport_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Organization , cids:Stakeholder;
+        sh:class         cids:Stakeholder , cids:Organization;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
         sh:path          cids:hasAccess;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:IndicatorReport .
 
@@ -1667,7 +1666,7 @@ csh:IndicatorReport_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:IndicatorReport .
 
@@ -1680,7 +1679,7 @@ csh:IndicatorReport_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:IndicatorReport .
 
@@ -1693,7 +1692,7 @@ csh:IndicatorReport_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:IndicatorReport .
 
@@ -1714,7 +1713,7 @@ csh:ImpactScale_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactScale .
 
@@ -1727,7 +1726,7 @@ csh:ImpactScale_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactScale .
 
@@ -1740,7 +1739,7 @@ csh:ImpactScale_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactScale .
 
@@ -1761,9 +1760,9 @@ csh:ImpactRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_hasIdentifier_PropertyShape
@@ -1774,7 +1773,7 @@ csh:ImpactRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -1786,7 +1785,7 @@ csh:ImpactRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -1798,7 +1797,7 @@ csh:ImpactRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ImpactRisk .
@@ -1812,7 +1811,7 @@ csh:ImpactRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -1825,7 +1824,7 @@ csh:ImpactRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -1846,7 +1845,7 @@ csh:ImpactReport_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1858,9 +1857,9 @@ csh:ImpactReport_hasReportedImpact_PropertyShape
         sh:name          "hasReportedImpact";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasReportedImpact;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "neutral" , "negative" , "positive";
+        csh:in           "positive" , "neutral" , "negative";
         csh:usedBy       cids:ImpactReport .
 
 csh:ImpactReport_hasName_PropertyShape
@@ -1871,7 +1870,7 @@ csh:ImpactReport_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1883,7 +1882,7 @@ csh:ImpactReport_hasExpectation_PropertyShape
         sh:name          "hasExpectation";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasExpectation;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1895,7 +1894,7 @@ csh:ImpactReport_hasComment_PropertyShape
         sh:name          "hasComment";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasComment;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1907,7 +1906,7 @@ csh:ImpactReport_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1920,7 +1919,7 @@ csh:ImpactReport_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1933,7 +1932,7 @@ csh:ImpactReport_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactReport .
 
@@ -1954,7 +1953,7 @@ csh:ImpactPathway_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactPathway .
 
@@ -1966,7 +1965,7 @@ csh:ImpactPathway_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactPathway .
 
@@ -1979,7 +1978,7 @@ csh:ImpactPathway_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactPathway .
 
@@ -1992,7 +1991,7 @@ csh:ImpactPathway_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactPathway .
 
@@ -2013,7 +2012,7 @@ csh:ImpactModel_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactModel .
 
@@ -2025,7 +2024,7 @@ csh:ImpactModel_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactModel .
 
@@ -2038,7 +2037,7 @@ csh:ImpactModel_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactModel .
 
@@ -2051,7 +2050,7 @@ csh:ImpactModel_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactModel .
 
@@ -2072,7 +2071,7 @@ csh:ImpactDuration_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDuration .
 
@@ -2084,7 +2083,7 @@ csh:ImpactDuration_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDuration .
 
@@ -2096,7 +2095,7 @@ csh:ImpactDuration_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDuration .
 
@@ -2109,7 +2108,7 @@ csh:ImpactDuration_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDuration .
 
@@ -2122,7 +2121,7 @@ csh:ImpactDuration_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDuration .
 
@@ -2143,7 +2142,7 @@ csh:ImpactDepth_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDepth .
 
@@ -2156,7 +2155,7 @@ csh:ImpactDepth_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDepth .
 
@@ -2169,7 +2168,7 @@ csh:ImpactDepth_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactDepth .
 
@@ -2190,7 +2189,7 @@ csh:HowMuchImpact_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:HowMuchImpact .
 
@@ -2203,7 +2202,7 @@ csh:HowMuchImpact_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:HowMuchImpact .
 
@@ -2216,7 +2215,7 @@ csh:HowMuchImpact_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:HowMuchImpact .
 
@@ -2238,7 +2237,7 @@ csh:FinancialOrganization_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialOrganization .
 
@@ -2251,7 +2250,7 @@ csh:FinancialOrganization_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialOrganization .
 
@@ -2264,7 +2263,7 @@ csh:FinancialOrganization_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialOrganization .
 
@@ -2286,18 +2285,18 @@ csh:FinancialInput_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
 csh:FinancialInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Program , cids:Activity , cids:Service;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
         sh:path          cids:inputFor;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:FinancialInput .
 
@@ -2309,7 +2308,7 @@ csh:FinancialInput_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
@@ -2321,7 +2320,7 @@ csh:FinancialInput_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
@@ -2333,7 +2332,7 @@ csh:FinancialInput_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
@@ -2346,7 +2345,7 @@ csh:FinancialInput_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
@@ -2359,7 +2358,7 @@ csh:FinancialInput_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:FinancialInput .
 
@@ -2380,9 +2379,9 @@ csh:ExternalRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasIdentifier_PropertyShape
@@ -2393,7 +2392,7 @@ csh:ExternalRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
@@ -2405,7 +2404,7 @@ csh:ExternalRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
@@ -2417,7 +2416,7 @@ csh:ExternalRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ExternalRisk .
@@ -2431,7 +2430,7 @@ csh:ExternalRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
@@ -2444,7 +2443,7 @@ csh:ExternalRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
@@ -2465,9 +2464,9 @@ csh:ExecutionRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasIdentifier_PropertyShape
@@ -2478,7 +2477,7 @@ csh:ExecutionRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -2490,7 +2489,7 @@ csh:ExecutionRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -2502,7 +2501,7 @@ csh:ExecutionRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ExecutionRisk .
@@ -2516,7 +2515,7 @@ csh:ExecutionRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -2529,7 +2528,7 @@ csh:ExecutionRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -2550,9 +2549,9 @@ csh:EvidenceRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasIdentifier_PropertyShape
@@ -2563,7 +2562,7 @@ csh:EvidenceRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -2575,7 +2574,7 @@ csh:EvidenceRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -2587,7 +2586,7 @@ csh:EvidenceRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EvidenceRisk .
@@ -2601,7 +2600,7 @@ csh:EvidenceRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -2614,7 +2613,7 @@ csh:EvidenceRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -2635,9 +2634,9 @@ csh:EnduranceRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasIdentifier_PropertyShape
@@ -2648,7 +2647,7 @@ csh:EnduranceRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -2660,7 +2659,7 @@ csh:EnduranceRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -2672,7 +2671,7 @@ csh:EnduranceRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EnduranceRisk .
@@ -2686,7 +2685,7 @@ csh:EnduranceRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -2699,7 +2698,7 @@ csh:EnduranceRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -2720,9 +2719,9 @@ csh:EfficiencyRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasIdentifier_PropertyShape
@@ -2733,7 +2732,7 @@ csh:EfficiencyRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -2745,7 +2744,7 @@ csh:EfficiencyRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -2757,7 +2756,7 @@ csh:EfficiencyRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EfficiencyRisk .
@@ -2771,7 +2770,7 @@ csh:EfficiencyRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -2784,7 +2783,7 @@ csh:EfficiencyRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -2805,9 +2804,9 @@ csh:DropOffRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasIdentifier_PropertyShape
@@ -2818,7 +2817,7 @@ csh:DropOffRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
@@ -2830,7 +2829,7 @@ csh:DropOffRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
@@ -2842,7 +2841,7 @@ csh:DropOffRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:DropOffRisk .
@@ -2856,7 +2855,7 @@ csh:DropOffRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
@@ -2869,7 +2868,7 @@ csh:DropOffRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
@@ -2890,7 +2889,7 @@ csh:Counterfactual_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Counterfactual .
 
@@ -2902,7 +2901,7 @@ csh:Counterfactual_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Counterfactual .
 
@@ -2914,7 +2913,7 @@ csh:Counterfactual_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Counterfactual .
 
@@ -2927,7 +2926,7 @@ csh:Counterfactual_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Counterfactual .
 
@@ -2940,7 +2939,7 @@ csh:Counterfactual_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Counterfactual .
 
@@ -2961,7 +2960,7 @@ csh:ContributingStakeholder_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ContributingStakeholder .
 
@@ -2974,7 +2973,7 @@ csh:ContributingStakeholder_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ContributingStakeholder .
 
@@ -2986,9 +2985,9 @@ csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         sh:name          "hasCatchmentArea";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasCatchmentArea;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "local" , "global" , "multinational";
+        csh:in           "provincial" , "local" , "multinational" , "national" , "global";
         csh:usedBy       cids:ContributingStakeholder .
 
 csh:ContributingStakeholder_description_PropertyShape
@@ -3000,7 +2999,7 @@ csh:ContributingStakeholder_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ContributingStakeholder .
 
@@ -3013,7 +3012,7 @@ csh:ContributingStakeholder_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ContributingStakeholder .
 
@@ -3036,7 +3035,7 @@ csh:Code_hasSpecification_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasSpecification;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3048,7 +3047,7 @@ csh:Code_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3061,7 +3060,7 @@ csh:Code_hasIdentifier_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Code .
 
@@ -3074,7 +3073,7 @@ csh:Code_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3087,7 +3086,7 @@ csh:Code_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3100,7 +3099,7 @@ csh:Code_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3112,7 +3111,7 @@ csh:Code_codeValue_PropertyShape
         sh:name          "codeValue";
         sh:nodeKind      sh:Literal;
         sh:path          sch:codeValue;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Code .
 
@@ -3132,7 +3131,7 @@ csh:Characteristic_startedAtTime_PropertyShape
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3144,7 +3143,7 @@ csh:Characteristic_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3157,7 +3156,7 @@ csh:Characteristic_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3169,7 +3168,7 @@ csh:Characteristic_endedAtTime_PropertyShape
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3182,7 +3181,7 @@ csh:Characteristic_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3195,7 +3194,7 @@ csh:Characteristic_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Characteristic .
 
@@ -3217,7 +3216,7 @@ csh:CharacteristicReport_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:CharacteristicReport .
 
@@ -3230,7 +3229,7 @@ csh:CharacteristicReport_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:CharacteristicReport .
 
@@ -3252,7 +3251,7 @@ csh:BeneficialStakeholder_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:BeneficialStakeholder .
 
@@ -3265,7 +3264,7 @@ csh:BeneficialStakeholder_hasDescription_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:BeneficialStakeholder .
 
@@ -3277,9 +3276,9 @@ csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         sh:name          "hasCatchmentArea";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasCatchmentArea;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "local" , "global" , "multinational";
+        csh:in           "provincial" , "local" , "multinational" , "national" , "global";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_description_PropertyShape
@@ -3291,7 +3290,7 @@ csh:BeneficialStakeholder_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:BeneficialStakeholder .
 
@@ -3304,7 +3303,7 @@ csh:BeneficialStakeholder_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:BeneficialStakeholder .
 
@@ -3326,9 +3325,9 @@ csh:AlignmentRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
+        csh:in           "veryUnlikely" , "unlikely" , "likely" , "highRisk" , "mediumRisk" , "lowRisk" , "veryLikely";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasIdentifier_PropertyShape
@@ -3339,7 +3338,7 @@ csh:AlignmentRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -3351,7 +3350,7 @@ csh:AlignmentRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -3363,7 +3362,7 @@ csh:AlignmentRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:AlignmentRisk .
@@ -3377,7 +3376,7 @@ csh:AlignmentRisk_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -3390,7 +3389,7 @@ csh:AlignmentRisk_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -3411,7 +3410,7 @@ csh:Address_streetAddress_PropertyShape
         sh:name          "streetAddress";
         sh:nodeKind      sh:Literal;
         sh:path          cids:streetAddress;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3423,7 +3422,7 @@ csh:Address_postalCode_PropertyShape
         sh:name          "postalCode";
         sh:nodeKind      sh:Literal;
         sh:path          cids:postalCode;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3435,7 +3434,7 @@ csh:Address_postOfficeBoxNumber_PropertyShape
         sh:name          "postOfficeBoxNumber";
         sh:nodeKind      sh:Literal;
         sh:path          cids:postOfficeBoxNumber;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Address .
 
@@ -3447,7 +3446,7 @@ csh:Address_extendedAddress_PropertyShape
         sh:name          "extendedAddress";
         sh:nodeKind      sh:Literal;
         sh:path          cids:extendedAddress;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:Optional;
         csh:usedBy       cids:Address .
 
@@ -3460,7 +3459,7 @@ csh:Address_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3473,7 +3472,7 @@ csh:Address_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3485,7 +3484,7 @@ csh:Address_addressRegion_PropertyShape
         sh:name          "addressRegion";
         sh:nodeKind      sh:Literal;
         sh:path          cids:addressRegion;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3497,7 +3496,7 @@ csh:Address_addressLocality_PropertyShape
         sh:name          "addressLocality";
         sh:nodeKind      sh:Literal;
         sh:path          cids:addressLocality;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3509,7 +3508,7 @@ csh:Address_addressCountry_PropertyShape
         sh:name          "addressCountry";
         sh:nodeKind      sh:Literal;
         sh:path          cids:addressCountry;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Address .
 
@@ -3529,7 +3528,7 @@ csh:Activity_subActivityOf_PropertyShape
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
         sh:path          act:subActivityOf;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Activity .
 
@@ -3541,7 +3540,7 @@ csh:Activity_hasName_PropertyShape
         sh:name          "hasName";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Activity .
 
@@ -3553,7 +3552,7 @@ csh:Activity_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Activity .
 
@@ -3566,7 +3565,7 @@ csh:Activity_description_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:description;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Activity .
 
@@ -3579,7 +3578,7 @@ csh:Activity_dateCreated_PropertyShape
         sh:nodeKind      sh:Literal;
         sh:path          sch:dateCreated;
         sh:severity      sh:Info;
-        csh:activeTier   cids:BasicTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Activity .
 
