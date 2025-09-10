@@ -78,7 +78,7 @@ csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
@@ -115,7 +115,7 @@ csh:UnexpectedImpactRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_description_PropertyShape
@@ -425,7 +425,7 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "global" , "local" , "multinational";
+        csh:in           "global" , "local" , "multinational" , "national" , "provincial";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_description_PropertyShape
@@ -509,7 +509,7 @@ csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
@@ -546,7 +546,7 @@ csh:StakeholderParticipationRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_description_PropertyShape
@@ -607,7 +607,7 @@ csh:StakeholderOutcome_intendedImpact_PropertyShape
         sh:path          cids:intendedImpact;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "positive" , "negative" , "neutral";
+        csh:in           "neutral" , "negative" , "positive";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasName_PropertyShape
@@ -632,7 +632,7 @@ csh:StakeholderOutcome_hasImportance_PropertyShape
         sh:path          cids:hasImportance;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unimportant" , "high importance" , "moderate important" , "neutral";
+        csh:in           "high importance" , "unimportant" , "neutral" , "moderate important";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasDescription_PropertyShape
@@ -746,7 +746,7 @@ csh:SkillInput_startedAtTime_PropertyShape
 
 csh:SkillInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Service , cids:Program , cids:Activity;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -1028,7 +1028,7 @@ csh:PhysicalInput_startedAtTime_PropertyShape
 
 csh:PhysicalInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Service , cids:Program , cids:Activity;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -1214,7 +1214,7 @@ csh:Output_hasDescription_PropertyShape
 
 csh:Output_forActivity_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         act:Activity , cids:Service;
+        sh:class         cids:Service , act:Activity;
         sh:minCount      0;
         sh:name          "forActivity";
         sh:nodeKind      sh:IRI;
@@ -1310,7 +1310,7 @@ csh:Outcome_dateCreated_PropertyShape
 
 csh:Outcome_canEnable_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Service;
+        sh:class         cids:Service , cids:Activity;
         sh:minCount      0;
         sh:name          "canEnable";
         sh:nodeKind      sh:IRI;
@@ -1449,7 +1449,7 @@ csh:Input_startedAtTime_PropertyShape
 
 csh:Input_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Service , cids:Program , cids:Activity;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -1579,7 +1579,7 @@ csh:Indicator_hasDescription_PropertyShape
 
 csh:Indicator_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Organization , cids:Stakeholder;
+        sh:class         cids:Stakeholder , cids:Organization;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
@@ -1649,7 +1649,7 @@ csh:IndicatorReport_hasName_PropertyShape
 
 csh:IndicatorReport_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Stakeholder , cids:Organization;
+        sh:class         cids:Organization , cids:Stakeholder;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
@@ -1762,7 +1762,7 @@ csh:ImpactRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_hasIdentifier_PropertyShape
@@ -1799,7 +1799,7 @@ csh:ImpactRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_description_PropertyShape
@@ -1859,7 +1859,7 @@ csh:ImpactReport_hasReportedImpact_PropertyShape
         sh:path          cids:hasReportedImpact;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "neutral" , "positive" , "negative";
+        csh:in           "negative" , "neutral" , "positive";
         csh:usedBy       cids:ImpactReport .
 
 csh:ImpactReport_hasName_PropertyShape
@@ -2291,7 +2291,7 @@ csh:FinancialInput_startedAtTime_PropertyShape
 
 csh:FinancialInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:Activity , cids:Program , cids:Service;
+        sh:class         cids:Service , cids:Program , cids:Activity;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -2381,7 +2381,7 @@ csh:ExternalRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasIdentifier_PropertyShape
@@ -2418,7 +2418,7 @@ csh:ExternalRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_description_PropertyShape
@@ -2466,7 +2466,7 @@ csh:ExecutionRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasIdentifier_PropertyShape
@@ -2503,7 +2503,7 @@ csh:ExecutionRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_description_PropertyShape
@@ -2551,7 +2551,7 @@ csh:EvidenceRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasIdentifier_PropertyShape
@@ -2588,7 +2588,7 @@ csh:EvidenceRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_description_PropertyShape
@@ -2636,7 +2636,7 @@ csh:EnduranceRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasIdentifier_PropertyShape
@@ -2673,7 +2673,7 @@ csh:EnduranceRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_description_PropertyShape
@@ -2721,7 +2721,7 @@ csh:EfficiencyRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasIdentifier_PropertyShape
@@ -2758,7 +2758,7 @@ csh:EfficiencyRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_description_PropertyShape
@@ -2806,7 +2806,7 @@ csh:DropOffRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasIdentifier_PropertyShape
@@ -2843,7 +2843,7 @@ csh:DropOffRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_description_PropertyShape
@@ -2987,7 +2987,7 @@ csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "global" , "local" , "multinational";
+        csh:in           "global" , "local" , "multinational" , "national" , "provincial";
         csh:usedBy       cids:ContributingStakeholder .
 
 csh:ContributingStakeholder_description_PropertyShape
@@ -3278,7 +3278,7 @@ csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "provincial" , "national" , "global" , "local" , "multinational";
+        csh:in           "global" , "local" , "multinational" , "national" , "provincial";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_description_PropertyShape
@@ -3327,7 +3327,7 @@ csh:AlignmentRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "mediumRisk" , "veryUnlikely" , "highRisk" , "lowRisk" , "unlikely" , "veryLikely" , "likely";
+        csh:in           "highRisk" , "veryLikely" , "unlikely" , "lowRisk" , "mediumRisk" , "veryUnlikely" , "likely";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasIdentifier_PropertyShape
@@ -3364,7 +3364,7 @@ csh:AlignmentRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "minimal" , "severe" , "average";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_description_PropertyShape
