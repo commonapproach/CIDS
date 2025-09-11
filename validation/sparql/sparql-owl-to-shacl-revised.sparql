@@ -1,4 +1,4 @@
-PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
+﻿PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX chs: <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
@@ -44,7 +44,6 @@ CONSTRUCT {
     ?shape a sh:NodeShape ;
         sh:targetClass ?class ;
         rdfs:label ?label;
-#        sh:description ?comment ;
         sh:closed false ;
         sh:property ?propertyShape ;
         csh:cname ?cname ;
@@ -72,13 +71,13 @@ CONSTRUCT {
         .
 }
 WHERE {
-    values ?activeTier {cids:BasicTier}    
+#    bind($mode as ?activeTier)
+#    bind(cids:BasicTier as ?activeTier)  # Set active tier here
+    $TIERS
     {
-    # Determines the current active tier, set {} to empty
-    # if all tiers are desired.
-    # Node Shapes from Classes
-
+    # Node Shapes from Classes - Only include classes that belong to the active tier
     ?class rdf:type owl:Class .
+#    ?class cids:belongsToTier ?activeTier .
     bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className   )
     FILTER(isIRI(?class))
     bind (concat(?className,"_NodeShape") as ?shapeName)
@@ -91,19 +90,18 @@ WHERE {
     }
     {
         # This converts data ranges to literal property shapes
-        ?class rdf:type owl:Class .
-        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
+        # Only process restrictions where EITHER the restriction OR the property belongs to active tier
         ?class rdfs:subClassOf+ ?restriction .
         ?restriction owl:onProperty ?property .
-        # This checks to see if the property is in the active tier
-        optional {
-            ?restriction cids:belongsToTier ?cTier .
-            filter(sameTerm(?cTier, ?activeTier))   
-        }                                                                                                                                                                                                                                                                                                                                                       
-        optional {
-            ?property cids:belongsToTier ?cTier .
-            filter(sameTerm(?cTier, ?activeTier))   
+        
+        # Filter: Either the restriction OR the property must belong to the active tier
+        {
+            ?restriction cids:belongsToTier ?activeTier .
+        } UNION {
+            ?property cids:belongsToTier ?activeTier .
         }
+        
+        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
         optional {
             ?restriction sh:message ?message .
         }
@@ -146,6 +144,14 @@ WHERE {
         bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
         ?class rdfs:subClassOf+ ?restriction .
         ?restriction owl:onProperty ?property .
+        
+        # Filter: Either the restriction OR the property must belong to the active tier
+        {
+            ?restriction cids:belongsToTier ?activeTier .
+        } UNION {
+            ?property cids:belongsToTier ?activeTier .
+        }
+        
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         # Determine property shape identifiers
@@ -156,15 +162,6 @@ WHERE {
         optional {
             ?restriction sh:severity ?severity .
         }
-        # Handle tier information
-        optional {
-            ?restriction cids:belongsToTier ?cTier .
-            filter(sameTerm(?cTier, ?activeTier))
-         }
-         optional {
-             ?property cids:belongsToTier ?cTier .
-            filter(sameTerm(?cTier, ?activeTier))
-         }
         # The restriction should not incorporate a data range
         ?class rdf:type owl:Class .
         filter NOT EXISTS {
@@ -213,22 +210,20 @@ WHERE {
         ) as ?cardinality )
     bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
     bind(xsd:integer(?cardinalityMin) as ?minCardinality)
-    # This determines enumerations
+    
+    # This determines enumerations - only for facet classes that belong to the tier
     optional {
         ?namedIndividual a ?niClass .
         ?namedIndividual a owl:NamedIndividual .
+        ?niClass cids:belongsToTier ?activeTier .
         bind(str(replace(str(?namedIndividual),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?namedIndividualName)
         optional {
             ?namedIndividual skos:prefLabel ?prefLabel .
         }
     }} UNION {
-        optional {
-            # Mark whether this is part of a tier
-            ?class cids:belongsToTier ?cTier .
-            filter(sameTerm(?cTier, ?activeTier))
-         }
-         # Determine blank enumerants
+        # Determine enumerations for concepts and codes that belong to the tier
         ?namedIndividual a ?facetClass .
+        ?facetClass cids:belongsToTier ?activeTier .
         {
             ?namedIndividual a owl:NamedIndividual .
         } UNION {
@@ -254,20 +249,16 @@ WHERE {
     }
     union {
         # Handle unaffiliated object properties without restrictions
-        optional {?activeTier rdfs:label ?tier1 }
-        bind(str(?tier1) as ?tier)
+        # Only include properties that belong to the active tier
         ?property a owl:ObjectProperty .
         ?property rdfs:subPropertyOf cids:cidsObjectProperty .
+        ?property cids:belongsToTier ?activeTier .
+        
         bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
         bind(if(strstarts(?propertyLocalName,"has"), strafter(?propertyLocalName,"has"), if(strstarts(?propertyLocalName,"is"),strafter(?propertyLocalName,"is"), if(strstarts(?propertyLocalName,"for"),strafter(?propertyLocalName,"for"),""))) as ?targetClassName)
         bind(iri(concat(str(csh:),"Class_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
         bind(if (?targetClassName != "",iri(concat(str(cids:),?targetClassName)),?void) as ?rangeClass)
         bind(sh:IRI as ?nodeKind)
-        optional {
-            ?property cids:belongsToTier ?cTier .
-            }
-        filter(sameTerm(?cTier, str(?activeTier)))
         bind(3 as ?section)
-        
         }    
 } order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName

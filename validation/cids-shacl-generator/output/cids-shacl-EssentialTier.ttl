@@ -1,0 +1,355 @@
+﻿PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX ah:      <file:///C:/Users/kurtc/CIDS/CIDS/validation/models/cids.ttl>
+PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo:     <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic:      <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep:     <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1:    <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel:     <http://purl.org/vocab/relationship/>
+PREFIX sch:     <http://schema.org/>
+PREFIX schema:  <http://schema.org/>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur:     <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time:    <http://www.w3.org/2006/time#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:UnexpectedImpactRisk .
+
+csh:UnexpectedImpactRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Unexpected Impact Risk";
+        sh:closed       false;
+        sh:property     csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:UnexpectedImpactRisk .
+
+cids:UnexpectedImpactRisk
+        rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:StakeholderParticipationRisk .
+
+csh:StakeholderParticipationRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Stakeholder Participation Risk";
+        sh:closed       false;
+        sh:property     csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:StakeholderParticipationRisk .
+
+cids:StakeholderParticipationRisk
+        rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:Indicator_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Indicator"@en;
+        sh:closed       false;
+        sh:property     csh:Indicator_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:Indicator .
+
+cids:Indicator  rdfs:subClassOf  cids:cidsThing , i72:Indicator .
+
+csh:ImpactRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ImpactRisk .
+
+csh:ImpactRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Impact Risk"@en;
+        sh:closed       false;
+        sh:property     csh:ImpactRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:ImpactRisk .
+
+cids:ImpactRisk  rdfs:subClassOf  cids:cidsThing .
+
+csh:ExternalRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ExternalRisk .
+
+csh:ExternalRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "External Risk";
+        sh:closed       false;
+        sh:property     csh:ExternalRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:ExternalRisk .
+
+cids:ExternalRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:ExecutionRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ExecutionRisk .
+
+csh:ExecutionRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Execution Risk";
+        sh:closed       false;
+        sh:property     csh:ExecutionRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:ExecutionRisk .
+
+cids:ExecutionRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:EvidenceRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EvidenceRisk .
+
+csh:EvidenceRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Evidence Risk";
+        sh:closed       false;
+        sh:property     csh:EvidenceRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:EvidenceRisk .
+
+cids:EvidenceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:EnduranceRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EnduranceRisk .
+
+csh:EnduranceRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Endurance Risk";
+        sh:closed       false;
+        sh:property     csh:EnduranceRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:EnduranceRisk .
+
+cids:EnduranceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:EfficiencyRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EfficiencyRisk .
+
+csh:EfficiencyRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Efficiency Risk";
+        sh:closed       false;
+        sh:property     csh:EfficiencyRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:EfficiencyRisk .
+
+cids:EfficiencyRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:DropOffRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:DropOffRisk .
+
+csh:DropOffRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Drop Off Risk";
+        sh:closed       false;
+        sh:property     csh:DropOffRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:DropOffRisk .
+
+cids:DropOffRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:Code_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Code .
+
+csh:Code_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Code .
+
+csh:Code_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Code"@en;
+        sh:closed       false;
+        sh:property     csh:Code_hasSpecification_PropertyShape , csh:Code_hasIdentifier_PropertyShape , csh:Code_codeValue_PropertyShape;
+        sh:targetClass  cids:Code .
+
+cids:Code  rdfs:subClassOf  cids:cidsThing .
+
+csh:AlignmentRisk_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:AlignmentRisk .
+
+csh:AlignmentRisk_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Alignment Risk";
+        sh:closed       false;
+        sh:property     csh:AlignmentRisk_hasIdentifier_PropertyShape;
+        sh:targetClass  cids:AlignmentRisk .
+
+cids:AlignmentRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
+
+csh:Class_relatesTo_PropertyShape
+        rdf:type        sh:PropertyShape;
+        sh:name         "relatesTo";
+        sh:nodeKind     sh:IRI;
+        sh:path         cids:relatesTo;
+        csh:activeTier  cids:EssentialTier .
+
+csh:Class_hasValue_PropertyShape
+        rdf:type        sh:PropertyShape;
+        sh:class        cids:Value;
+        sh:name         "hasValue";
+        sh:nodeKind     sh:IRI;
+        sh:path         cids:hasValue;
+        csh:activeTier  cids:EssentialTier .
+
+csh:Class_hasCode_PropertyShape
+        rdf:type        sh:PropertyShape;
+        sh:class        cids:Code;
+        sh:name         "hasCode";
+        sh:nodeKind     sh:IRI;
+        sh:path         cids:hasCode;
+        csh:activeTier  cids:EssentialTier .
+
+csh:Class_hasCharacteristic_PropertyShape
+        rdf:type        sh:PropertyShape;
+        sh:class        cids:Characteristic;
+        sh:name         "hasCharacteristic";
+        sh:nodeKind     sh:IRI;
+        sh:path         cids:hasCharacteristic;
+        csh:activeTier  cids:EssentialTier .
+
+csh:Class_definedBy_PropertyShape
+        rdf:type        sh:PropertyShape;
+        sh:name         "definedBy";
+        sh:nodeKind     sh:IRI;
+        sh:path         cids:definedBy;
+        csh:activeTier  cids:EssentialTier .
