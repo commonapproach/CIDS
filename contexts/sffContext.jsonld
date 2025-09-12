@@ -78,10 +78,6 @@
       "@id": "sff:reportedDate",
       "@type": "xsd:dateTime"
     },
-    "ReportInfo": {
-      "@id": "sff:reportInfo",
-      "@type": "@id"
-    },
     "hasFundingState": {
       "@id": "sff:hasFundingState",
       "@type": "@id"
@@ -89,10 +85,6 @@
     "forFunder": {
       "@id": "sff:forFunder",
       "@type": "xsd:string"
-    },
-    "TeamProfile": {
-      "@id": "sff:TeamProfile",
-      "@type": "@id"
     },
     "hasTeamSize": {
       "@id": "sff:hasTeamSize",
