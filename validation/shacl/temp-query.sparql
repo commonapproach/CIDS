@@ -73,7 +73,7 @@ CONSTRUCT {
 WHERE {
 #    bind($mode as ?activeTier)
 #    bind(cids:BasicTier as ?activeTier)  # Set active tier here
-    VALUES ?activeTier { cids:SFFTier }
+    VALUES ?activeTier { cids:BasicTier cids:EssentialTier cids:FullTier cids:SFFTier }
     {
     # Node Shapes from Classes - Only include classes that belong to the active tier
     ?class rdf:type owl:Class .
