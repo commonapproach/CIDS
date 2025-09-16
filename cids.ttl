@@ -304,8 +304,7 @@ cids:dcObjectProperty rdf:type owl:ObjectProperty .
 ###  https://ontology.commonapproach.org/cids#definedBy
 cids:definedBy rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf cids:cidsObjectProperty ;
-               rdf:type owl:FunctionalProperty ;
-               cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+               rdf:type owl:FunctionalProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#forActivity
@@ -1428,8 +1427,7 @@ cids:Code rdf:type owl:Class ;
 <li>i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</li>
 </ul>
 <p>hasIdentifier, hasName, hasDescription, and codeValue act as a cache of the equivalent information to be found in the specification of the Code referred to by hasSpecification. The following table defines the Code class.</p>"""@en ;
-          rdfs:label "Code"@en ;
-          cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+          rdfs:label "Code"@en .
 
 
 ###  https://ontology.commonapproach.org/cids#ContributingStakeholder
