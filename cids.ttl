@@ -1006,7 +1006,7 @@ i72:measure rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty i72:hasNumericalValue ;
                               cids:belongsToTier cids:BasicTier ;
-                              owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:decimal
                             ] .
 

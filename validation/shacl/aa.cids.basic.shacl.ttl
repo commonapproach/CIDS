@@ -43,7 +43,7 @@ csh:measure_hasNumericalValue_PropertyShape
         sh:name          "hasNumericalValue";
         sh:path          i72:hasNumericalValue;
         csh:activeTier   cids:BasicTier;
-        csh:cardinality  csh:ZeroOrMore;
+        csh:cardinality  csh:ZeroOrMore;  # Does not match the cardinality in the OWL file
         csh:usedBy       i72:measure .
 
 csh:measure_NodeShape
