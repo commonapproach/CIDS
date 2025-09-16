@@ -36,66 +36,335 @@ PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
-csh:Class_hasOutcome_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Outcome;
-        sh:name         "hasOutcome";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:hasOutcome;
-        csh:activeTier  cids:BasicTier .
+csh:measure_hasNumericalValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:decimal;
+        sh:minCount      0;
+        sh:name          "hasNumericalValue";
+        sh:path          i72:hasNumericalValue;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       i72:measure .
 
-csh:Class_hasIndicator_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Indicator;
-        sh:name         "hasIndicator";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:hasIndicator;
-        csh:activeTier  cids:BasicTier .
+csh:measure_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:measure_hasNumericalValue_PropertyShape;
+        sh:targetClass  i72:measure .
 
-csh:Class_hasIndicatorReport_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:IndicatorReport;
-        sh:name         "hasIndicatorReport";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:hasIndicatorReport;
-        csh:activeTier  cids:BasicTier .
+csh:Theme_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:path          org:hasName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Theme .
 
-csh:Class_hasAddress_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Address;
-        sh:name         "hasAddress";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:hasAddress;
-        csh:activeTier  cids:BasicTier .
+csh:Theme_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Theme .
 
-csh:Class_forTheme_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Theme;
-        sh:name         "forTheme";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:forTheme;
-        csh:activeTier  cids:BasicTier .
+csh:Theme_NodeShape  rdf:type  sh:NodeShape;
+        rdfs:label      "Theme"@en;
+        sh:closed       false;
+        sh:property     csh:Theme_hasName_PropertyShape , csh:Theme_hasDescription_PropertyShape;
+        sh:targetClass  cids:Theme .
 
-csh:Class_forOutcome_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Outcome;
-        sh:name         "forOutcome";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:forOutcome;
-        csh:activeTier  cids:BasicTier .
+cids:Theme  rdfs:subClassOf  cids:cidsThing .
 
-csh:Class_forOrganization_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Organization;
-        sh:name         "forOrganization";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:forOrganization;
-        csh:activeTier  cids:BasicTier .
+csh:StandardsOrganization_hasLegalName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLegalName";
+        sh:path          org:hasLegalName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:StandardsOrganization .
 
-csh:Class_forIndicator_PropertyShape
-        rdf:type        sh:PropertyShape;
-        sh:class        cids:Indicator;
-        sh:name         "forIndicator";
-        sh:nodeKind     sh:IRI;
-        sh:path         cids:forIndicator;
-        csh:activeTier  cids:BasicTier .
+csh:StandardsOrganization_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Standards Organization"@en;
+        sh:closed       false;
+        sh:property     csh:StandardsOrganization_hasLegalName_PropertyShape;
+        sh:targetClass  cids:StandardsOrganization .
+
+cids:StandardsOrganization
+        rdfs:subClassOf  cids:cidsThing , cids:Organization , org:Organization .
+
+csh:SocialPurposeOrganization_hasLegalName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLegalName";
+        sh:path          org:hasLegalName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:SocialPurposeOrganization .
+
+csh:SocialPurposeOrganization_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Social Purpose Organization"@en;
+        sh:closed       false;
+        sh:property     csh:SocialPurposeOrganization_hasLegalName_PropertyShape;
+        sh:targetClass  cids:SocialPurposeOrganization .
+
+cids:SocialPurposeOrganization
+        rdfs:subClassOf  cids:cidsThing , cids:Organization , org:Organization .
+
+csh:Outcome_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:path          org:hasName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Outcome .
+
+csh:Outcome_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Outcome .
+
+csh:Outcome_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Outcome"@en;
+        sh:closed       false;
+        sh:property     csh:Outcome_hasName_PropertyShape , csh:Outcome_hasDescription_PropertyShape;
+        sh:targetClass  cids:Outcome .
+
+cids:Outcome  rdfs:subClassOf  cids:cidsThing .
+
+cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
+
+csh:Organization_hasLegalName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLegalName";
+        sh:path          org:hasLegalName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Organization , org:Organization .
+
+csh:Organization_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Organization"@en;
+        sh:closed       false;
+        sh:property     csh:Organization_hasLegalName_PropertyShape;
+        sh:targetClass  cids:Organization , org:Organization .
+
+csh:Indicator_unitDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "unitDescription";
+        sh:path          cids:unitDescription;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:path          org:hasName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasDescription";
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Indicator .
+
+csh:Indicator_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Indicator"@en;
+        sh:closed       false;
+        sh:property     csh:Indicator_unitDescription_PropertyShape , csh:Indicator_hasName_PropertyShape , csh:Indicator_hasDescription_PropertyShape;
+        sh:targetClass  cids:Indicator .
+
+cids:Indicator  rdfs:subClassOf  cids:cidsThing , i72:Indicator .
+
+csh:IndicatorReport_startedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "startedAtTime";
+        sh:path          prov:startedAtTime;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:path          org:hasName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_endedAtTime_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "endedAtTime";
+        sh:path          prov:endedAtTime;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:IndicatorReport .
+
+csh:IndicatorReport_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Indicator Report"@en;
+        sh:closed       false;
+        sh:property     csh:IndicatorReport_startedAtTime_PropertyShape , csh:IndicatorReport_hasName_PropertyShape , csh:IndicatorReport_endedAtTime_PropertyShape;
+        sh:targetClass  cids:IndicatorReport .
+
+cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing .
+
+csh:FinancialOrganization_hasLegalName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasLegalName";
+        sh:path          org:hasLegalName;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:FinancialOrganization .
+
+csh:FinancialOrganization_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Financial Organization"@en;
+        sh:closed       false;
+        sh:property     csh:FinancialOrganization_hasLegalName_PropertyShape;
+        sh:targetClass  cids:FinancialOrganization .
+
+cids:FinancialOrganization
+        rdfs:subClassOf  cids:cidsThing , cids:Organization , org:Organization .
+
+csh:Address_streetAddress_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "streetAddress";
+        sh:path          cids:streetAddress;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_postalCode_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "postalCode";
+        sh:path          cids:postalCode;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_postOfficeBoxNumber_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "postOfficeBoxNumber";
+        sh:path          cids:postOfficeBoxNumber;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Address .
+
+csh:Address_extendedAddress_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "extendedAddress";
+        sh:path          cids:extendedAddress;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressRegion_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressRegion";
+        sh:path          cids:addressRegion;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressLocality_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressLocality";
+        sh:path          cids:addressLocality;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_addressCountry_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "addressCountry";
+        sh:path          cids:addressCountry;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Address .
+
+csh:Address_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Address"@en;
+        sh:closed       false;
+        sh:property     csh:Address_streetAddress_PropertyShape , csh:Address_postalCode_PropertyShape , csh:Address_postOfficeBoxNumber_PropertyShape , csh:Address_extendedAddress_PropertyShape , csh:Address_addressRegion_PropertyShape , csh:Address_addressLocality_PropertyShape , csh:Address_addressCountry_PropertyShape;
+        sh:targetClass  cids:Address .
+
+cids:Address  rdfs:subClassOf  cids:cidsThing , sch:PostalAddress .
