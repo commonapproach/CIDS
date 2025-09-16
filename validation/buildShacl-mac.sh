@@ -29,7 +29,7 @@ fi
 echo "Processing: $INPUT_TTL_FILE -> $OUTPUT_SHACL_FILE"
 
 # Run the SPARQL query and save to output file
-if sparql --data "$INPUT_TTL_FILE" --query ../../CIDS/validation/sparql/aa-sparql.sparql > "$OUTPUT_SHACL_FILE"; then
+if sparql --data "$INPUT_TTL_FILE" --query ../../CIDS/validation/sparql/sparql-owl-to-shacl.sparql > "$OUTPUT_SHACL_FILE"; then
 # if sparql --data "$INPUT_TTL_FILE" --query ../../CIDS/validation/sparql/sparql-owl-to-shacl.sparql > "$OUTPUT_SHACL_FILE"; then
     echo "Successfully created SHACL file: $OUTPUT_SHACL_FILE"
 else
