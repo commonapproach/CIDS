@@ -146,12 +146,10 @@ i72:numberOf rdf:type owl:ObjectProperty .
 i72:unit_of_measure rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ;
                     rdfs:domain cids:Counterfactual ,
-                                cids:HowMuchImpact ;
-                    cids:belongsToTier cids:BasicTier .  # Does not appear in SHACL
+                                cids:HowMuchImpact .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#value
-i72:value rdf:type owl:ObjectProperty ;
-            cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+i72:value rdf:type owl:ObjectProperty .
 
 ###  http://ontology.eil.utoronto.ca/tove/activity#hasElaboration
 act:hasElaboration rdf:type owl:ObjectProperty .
@@ -167,7 +165,6 @@ ic:hasAddress rdf:type owl:ObjectProperty .
 ###  https://ontology.commonapproach.org/cids#hasAddress
 cids:hasAddress rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf cids:cidsObjectProperty ;
-                cids:belongsToTier cids:BasicTier ; # Appears in SHACL
                 rdfs:label "has Address"@en ;
                 rdfs:comment "Links an entity to its postal address."@en ;
                 rdfs:range cids:Address .
@@ -336,8 +333,7 @@ cids:forImpactReport rdf:type owl:ObjectProperty .
 cids:forIndicator rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf cids:cidsObjectProperty ;
                   owl:inverseOf cids:hasIndicatorReport ;
-                  rdf:type owl:FunctionalProperty ;
-                  cids:belongsToTier cids:BasicTier .  # Appears in SHACL
+                  rdf:type owl:FunctionalProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#forIndicatorReport
@@ -348,15 +344,12 @@ cids:forIndicatorReport rdf:type owl:ObjectProperty ;
 ###  https://ontology.commonapproach.org/cids#forOrganization
 cids:forOrganization rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf cids:cidsObjectProperty ;
-                     rdf:type owl:FunctionalProperty ;
-                     cids:belongsToTier cids:BasicTier .
-
+                     rdf:type owl:FunctionalProperty .
 
 ###  https://ontology.commonapproach.org/cids#forOutcome
 cids:forOutcome rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf cids:cidsObjectProperty ;
-                rdf:type owl:FunctionalProperty ;
-                cids:belongsToTier cids:BasicTier .
+                rdf:type owl:FunctionalProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#forStakeholder
@@ -371,8 +364,7 @@ cids:forTarget rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#forTheme
 cids:forTheme rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf cids:cidsObjectProperty ;
-              cids:belongsToTier cids:BasicTier .
+              rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#fromPerspectiveOf
@@ -413,8 +405,7 @@ cids:hasBeneficialStakeholder rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasCharacteristic
 cids:hasCharacteristic rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf cids:cidsObjectProperty ;
-                       cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+                       rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasCharacteristicReport
@@ -423,8 +414,7 @@ cids:hasCharacteristicReport rdf:type owl:ObjectProperty .
 
 ###  https://ontology.commonapproach.org/cids#hasCode
 cids:hasCode rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf cids:cidsObjectProperty ;
-             cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+             rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasContact
@@ -513,14 +503,12 @@ cids:hasImpactScale rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasIndicator
 cids:hasIndicator rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf cids:cidsObjectProperty ;
-                  cids:belongsToTier cids:BasicTier .
+                  rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasIndicatorReport
 cids:hasIndicatorReport rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf cids:cidsObjectProperty ;
-                        cids:belongsToTier cids:BasicTier .
+                        rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasIndicatorStandard
@@ -550,8 +538,7 @@ cids:hasOrganization rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasOutcome
 cids:hasOutcome rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf cids:cidsObjectProperty ;
-                cids:belongsToTier cids:BasicTier .
+                rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasOutput
@@ -632,8 +619,7 @@ cids:hasType rdf:type owl:ObjectProperty ;
 
 ###  https://ontology.commonapproach.org/cids#hasValue
 cids:hasValue rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf cids:cidsObjectProperty ;
-              cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+              rdfs:subPropertyOf cids:cidsObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#inputFor
@@ -660,8 +646,7 @@ cids:produces rdf:type owl:ObjectProperty ;
 cids:relatesTo rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf cids:cidsObjectProperty ;
                rdfs:label "Relates To"@en ;
-               cids:hasName "Relates To"@en ;
-               cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+               cids:hasName "Relates To"@en .
 
 
 ###  https://ontology.commonapproach.org/cids#servesPopulation
@@ -731,12 +716,10 @@ ic:hasUnitNumber rdf:type owl:FunctionalProperty .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier
-org:hasIdentifier rdfs:subPropertyOf sch:identifier ;
-            cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+org:hasIdentifier rdfs:subPropertyOf sch:identifier .
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasName
-org:hasName rdf:type owl:DatatypeProperty ; 
-            cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+org:hasName rdf:type owl:DatatypeProperty . # Does not appear in SHACL
 
 
 ###  http://schema.org/birthDate
@@ -746,20 +729,17 @@ sch:birthDate rdf:type owl:DatatypeProperty ,
 
 ###  http://schema.org/codeValue
 sch:codeValue rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-                       cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+                       owl:FunctionalProperty .
 
 
 ###  http://schema.org/dateCreated
 sch:dateCreated rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty ;
-                cids:belongsToTier cids:FullTier .
+                rdfs:subPropertyOf cids:cidsDataProperty .
 
 
 ###  http://schema.org/description
 sch:description rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf cids:cidsDataProperty ;
-                cids:belongsToTier cids:FullTier .
+                rdfs:subPropertyOf cids:cidsDataProperty .
 
 
 ###  http://schema.org/identifier
@@ -805,12 +785,10 @@ time:year rdf:type owl:FunctionalProperty .
 
 
 ###  http://www.w3.org/ns/prov#endedAtTime
-prov:endedAtTime rdf:type owl:DatatypeProperty ;
-                        cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+prov:endedAtTime rdf:type owl:DatatypeProperty .
 
 ###  http://www.w3.org/ns/prov#startedAtTime
-prov:startedAtTime rdf:type owl:DatatypeProperty ;
-                        cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+prov:startedAtTime rdf:type owl:DatatypeProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/familyName
@@ -854,8 +832,7 @@ cids:hasCatchmentArea rdf:type owl:DatatypeProperty ;
 ###  https://ontology.commonapproach.org/cids#hasComment
 cids:hasComment rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf cids:cidsDataProperty ;
-                rdf:type owl:FunctionalProperty ;
-                cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+                rdf:type owl:FunctionalProperty . # Does not appear in SHACL
 
 
 ###  https://ontology.commonapproach.org/cids#hasConsequence
@@ -867,8 +844,7 @@ cids:hasConsequence rdf:type owl:DatatypeProperty ;
 cids:hasDescription rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf sch:description ,
                                        cids:cidsDataProperty ;
-                    rdf:type owl:FunctionalProperty ;
-                    cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
+                    rdf:type owl:FunctionalProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#hasExpectation
@@ -922,8 +898,7 @@ cids:hasReportedImpact rdf:type owl:DatatypeProperty ;
 ###  https://ontology.commonapproach.org/cids#hasSpecification
 cids:hasSpecification rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf cids:cidsDataProperty ;
-                      rdfs:range xsd:anyURI ;
-                      cids:belongsToTier cids:EssentialTier, cids:SFFTier .
+                      rdfs:range xsd:anyURI .
 
 
 ###  https://ontology.commonapproach.org/cids#hasStakeholderCharacteristic
@@ -947,13 +922,12 @@ cids:isUnderserved rdf:type owl:DatatypeProperty ;
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasLegalName
-org:hasLegalName cids:belongsToTier cids:BasicTier .
+org:hasLegalName rdf:type owl:DatatypeProperty .
 
 ###  https://ontology.commonapproach.org/cids#streetAddress
 cids:streetAddress rdf:type owl:DatatypeProperty ,
                                owl:FunctionalProperty ;
                       rdfs:subPropertyOf cids:cidsDataProperty ;
-                      cids:belongsToTier cids:BasicTier ; 
                       rdfs:label "Street Address"@en ;
                       rdfs:comment "The street address. For example, 720 Bathurst St."@en ;
                       rdfs:range xsd:string .
@@ -962,7 +936,6 @@ cids:streetAddress rdf:type owl:DatatypeProperty ,
 cids:addressLocality rdf:type owl:DatatypeProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:subPropertyOf cids:cidsDataProperty ;
-                        cids:belongsToTier cids:BasicTier ; 
                         rdfs:label "Address Locality (City)"@en ;
                         rdfs:comment "The city or locality. For example, Toronto."@en ;
                         rdfs:range xsd:string .
@@ -970,8 +943,7 @@ cids:addressLocality rdf:type owl:DatatypeProperty ,
 ###  https://ontology.commonapproach.org/cids#addressRegion
 cids:addressRegion rdf:type owl:DatatypeProperty ,
                                owl:FunctionalProperty ;
-                      rdfs:subPropertyOf cids:cidsDataProperty ;
-                      cids:belongsToTier cids:BasicTier ; 
+                      rdfs:subPropertyOf cids:cidsDataProperty ; 
                       rdfs:label "Address Region (State/Province)"@en ;
                       rdfs:comment "The region or state. For example, ON."@en ;
                       rdfs:range xsd:string .
@@ -980,7 +952,6 @@ cids:addressRegion rdf:type owl:DatatypeProperty ,
 cids:postalCode rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
                    rdfs:subPropertyOf cids:cidsDataProperty ;
-                   cids:belongsToTier cids:BasicTier ;
                    rdfs:label "Postal Code"@en ;
                    rdfs:comment "The postal code. For example, M4S2R4."@en ;
                    rdfs:range xsd:string .
@@ -989,7 +960,6 @@ cids:postalCode rdf:type owl:DatatypeProperty ,
 cids:addressCountry rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:subPropertyOf cids:cidsDataProperty ;
-                       cids:belongsToTier cids:BasicTier ; 
                        rdfs:label "Address Country"@en ;
                        rdfs:comment "The country. For example, Canada. Also can be used to provide the two-letter ISO 3166-1 alpha-2 country code e.g. CA."@en ;
                        rdfs:range xsd:string .
@@ -998,7 +968,6 @@ cids:addressCountry rdf:type owl:DatatypeProperty ,
 cids:postOfficeBoxNumber rdf:type owl:DatatypeProperty ,
                                      owl:FunctionalProperty ;
                             rdfs:subPropertyOf cids:cidsDataProperty ;
-                            cids:belongsToTier cids:BasicTier ; 
                             rdfs:label "Post Office Box Number"@en ;
                             rdfs:comment "The post office box number for PO box addresses."@en ;
                             rdfs:range xsd:string .
@@ -1007,7 +976,6 @@ cids:postOfficeBoxNumber rdf:type owl:DatatypeProperty ,
 cids:extendedAddress rdf:type owl:DatatypeProperty ,
                                    owl:FunctionalProperty ;
                           rdfs:subPropertyOf cids:cidsDataProperty ;
-                          cids:belongsToTier cids:BasicTier ; 
                           rdfs:label "Extended Address (Unit/Suite/Apartment Number)"@en ;
                           rdfs:comment "An address extension such as an apartment number, suite number, or 'C/O'."@en ;
                           rdfs:range xsd:string .
@@ -1035,12 +1003,16 @@ i72:Monetary_unit rdf:type owl:Class .
 i72:Quantity rdf:type owl:Class .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#measure
-i72:measure rdf:type owl:Class ;
-            cids:belongsToTier cids:BasicTier .
+i72:measure rdf:type owl:Class ; 
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty i72:hasNumericalValue ;
+                              cids:belongsToTier cids:BasicTier ;
+                              owl:QualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:decimal
+                            ] .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
-i72:unit_of_measure rdf:type owl:Class ;
-            cids:belongsToTier cids:BasicTier .
+i72:unit_of_measure rdf:type owl:Class .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/activity#Activity
@@ -1052,42 +1024,48 @@ ic:Address rdf:type owl:Class .
 
 
 ###  https://ontology.commonapproach.org/cids#Address
-cids:Address rdf:type owl:Class ;
-             cids:belongsToTier cids:BasicTier ; 
+cids:Address rdf:type owl:Class ; 
              rdfs:subClassOf sch:PostalAddress ,
                              cids:cidsThing ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:streetAddress ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:addressLocality ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:addressRegion ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:postalCode ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:addressCountry ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:postOfficeBoxNumber ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:extendedAddress ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ;
@@ -1101,7 +1079,12 @@ ic:PhoneNumber rdf:type owl:Class .
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#Organization
 org:Organization rdf:type owl:Class ;
-            cids:belongsToTier cids:BasicTier .
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasLegalName ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#Role
@@ -1985,10 +1968,12 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:forOutcome ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:allValuesFrom cids:Outcome
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:forTheme ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:allValuesFrom cids:Theme
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -2013,6 +1998,7 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasIndicatorReport ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:allValuesFrom cids:IndicatorReport
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -2025,8 +2011,10 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty i72:unit_of_measure ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass i72:Unit_of_measure
+                                 owl:onClass i72:Unit_of_measure ;
+                                 sh:severity sh:Warning
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
@@ -2040,6 +2028,7 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:forOrganization ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass cids:Organization
                                ] ,
@@ -2060,24 +2049,29 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty org:hasName ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasDescription ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string ;
                                  sh:severity sh:Info
                                ] ,
                                  [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:unitDescription ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:describesPopulation ;
+                                 cids:belongsToTier cids:BasicTier ;
                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass i72:Population
+                                 owl:onClass i72:Population ;
+                                 sh:severity sh:Warning
                                ] ;
                rdfs:comment """<p>Indicator is a subclass of i72:Indicator, which provides properties for units of measure, time and value.</p>
 <p>cids:Indicator extends the definition of i72:Indicator with the following properties:</p>
@@ -2145,6 +2139,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty i72:value ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass i72:measure
                                      ] ,
@@ -2155,11 +2150,13 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:forIndicator ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass cids:Indicator
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:forOrganization ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass cids:Organization
                                      ] ,
@@ -2175,20 +2172,25 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasComment ;
-                                       owl:allValuesFrom xsd:string
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:allValuesFrom xsd:string ;
+                                       sh:severity sh:Info
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty org:hasName ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:string
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty prov:endedAtTime ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:dateTime
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty prov:startedAtTime ;
+                                       cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onDataRange xsd:dateTime
                                      ] ;
@@ -2295,6 +2297,7 @@ cids:Organization rdf:type owl:Class ;
                                   cids:cidsThing ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasAddress ;
+                                    cids:belongsToTier cids:BasicTier ;
                                     owl:allValuesFrom cids:Address
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -2311,10 +2314,12 @@ cids:Organization rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasIndicator ;
+                                    cids:belongsToTier cids:BasicTier ;
                                     owl:allValuesFrom cids:Indicator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasOutcome ;
+                                    cids:belongsToTier cids:BasicTier ;
                                     owl:allValuesFrom cids:Outcome
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -2405,6 +2410,7 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:forTheme ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:allValuesFrom cids:Theme
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -2417,6 +2423,7 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasIndicator ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:allValuesFrom cids:Indicator
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -2430,16 +2437,19 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:forOrganization ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass cids:Organization
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty org:hasName ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasDescription ;
+                               cids:belongsToTier cids:BasicTier ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string ;
                                sh:severity sh:Info
@@ -3081,14 +3091,21 @@ cids:Theme rdf:type owl:Class ;
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty org:hasName ;
+                             cids:belongsToTier cids:BasicTier ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasDescription ;
+                             cids:belongsToTier cids:BasicTier ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string ;
                              sh:severity sh:Info
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:relatesTo ;
+                             cids:belongsToTier cids:BasicTier ;
+                             owl:allValuesFrom cids:Theme ;
                            ] ;
            rdfs:label "Theme"@en ;
            rdfs:comment """<p>The Theme class is used to represent the impact themes for which outcomes are specified.</p>
