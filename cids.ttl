@@ -147,11 +147,11 @@ i72:unit_of_measure rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ;
                     rdfs:domain cids:Counterfactual ,
                                 cids:HowMuchImpact ;
-                    cids:belongsToTier cids:BasicTier .
+                    cids:belongsToTier cids:BasicTier .  # Does not appear in SHACL
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#value
 i72:value rdf:type owl:ObjectProperty ;
-            cids:belongsToTier cids:BasicTier .
+            cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 ###  http://ontology.eil.utoronto.ca/tove/activity#hasElaboration
 act:hasElaboration rdf:type owl:ObjectProperty .
@@ -167,7 +167,7 @@ ic:hasAddress rdf:type owl:ObjectProperty .
 ###  https://ontology.commonapproach.org/cids#hasAddress
 cids:hasAddress rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf cids:cidsObjectProperty ;
-                cids:belongsToTier cids:BasicTier ; 
+                cids:belongsToTier cids:BasicTier ; # Appears in SHACL
                 rdfs:label "has Address"@en ;
                 rdfs:comment "Links an entity to its postal address."@en ;
                 rdfs:range cids:Address .
@@ -337,7 +337,7 @@ cids:forIndicator rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf cids:cidsObjectProperty ;
                   owl:inverseOf cids:hasIndicatorReport ;
                   rdf:type owl:FunctionalProperty ;
-                  cids:belongsToTier cids:BasicTier .
+                  cids:belongsToTier cids:BasicTier .  # Appears in SHACL
 
 
 ###  https://ontology.commonapproach.org/cids#forIndicatorReport
@@ -736,7 +736,7 @@ org:hasIdentifier rdfs:subPropertyOf sch:identifier ;
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasName
 org:hasName rdf:type owl:DatatypeProperty ; 
-            cids:belongsToTier cids:BasicTier .
+            cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 
 ###  http://schema.org/birthDate
@@ -806,11 +806,11 @@ time:year rdf:type owl:FunctionalProperty .
 
 ###  http://www.w3.org/ns/prov#endedAtTime
 prov:endedAtTime rdf:type owl:DatatypeProperty ;
-                        cids:belongsToTier cids:BasicTier .
+                        cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 ###  http://www.w3.org/ns/prov#startedAtTime
 prov:startedAtTime rdf:type owl:DatatypeProperty ;
-                        cids:belongsToTier cids:BasicTier .
+                        cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 
 ###  http://xmlns.com/foaf/0.1/familyName
@@ -855,7 +855,7 @@ cids:hasCatchmentArea rdf:type owl:DatatypeProperty ;
 cids:hasComment rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf cids:cidsDataProperty ;
                 rdf:type owl:FunctionalProperty ;
-                cids:belongsToTier cids:BasicTier .
+                cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 
 ###  https://ontology.commonapproach.org/cids#hasConsequence
@@ -868,7 +868,7 @@ cids:hasDescription rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf sch:description ,
                                        cids:cidsDataProperty ;
                     rdf:type owl:FunctionalProperty ;
-                    cids:belongsToTier cids:BasicTier .
+                    cids:belongsToTier cids:BasicTier . # Does not appear in SHACL
 
 
 ###  https://ontology.commonapproach.org/cids#hasExpectation
