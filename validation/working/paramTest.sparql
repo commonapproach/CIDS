@@ -1,5 +1,0 @@
-﻿prefix ex: <http://example.org/>
-
-construct {?s ex:hasName ?name} where {
-    ?s ?p ?o .
-}
