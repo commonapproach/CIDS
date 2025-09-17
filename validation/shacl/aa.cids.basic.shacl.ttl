@@ -1,7 +1,6 @@
 PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
 PREFIX cc:      <http://creativecommons.org/ns#>
-PREFIX chs:     <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids:    <https://ontology.commonapproach.org/cids#>
 PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
@@ -41,6 +40,7 @@ csh:measure_hasNumericalValue_PropertyShape
         sh:datatype      xsd:decimal;
         sh:minCount      0;
         sh:name          "hasNumericalValue";
+        sh:nodeKind      sh:Literal;
         sh:path          i72:hasNumericalValue;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -58,6 +58,7 @@ csh:Theme_hasName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -69,6 +70,7 @@ csh:Theme_hasDescription_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
         csh:activeTier   cids:BasicTier;
@@ -89,6 +91,7 @@ csh:StandardsOrganization_hasLegalName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLegalName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasLegalName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -110,6 +113,7 @@ csh:SocialPurposeOrganization_hasLegalName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLegalName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasLegalName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -131,6 +135,7 @@ csh:Outcome_hasName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -142,6 +147,7 @@ csh:Outcome_hasDescription_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
         csh:activeTier   cids:BasicTier;
@@ -165,6 +171,7 @@ csh:Organization_hasLegalName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLegalName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasLegalName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -183,6 +190,7 @@ csh:Indicator_unitDescription_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "unitDescription";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:unitDescription;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -194,6 +202,7 @@ csh:Indicator_hasName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -205,6 +214,7 @@ csh:Indicator_hasDescription_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
         csh:activeTier   cids:BasicTier;
@@ -226,6 +236,7 @@ csh:IndicatorReport_startedAtTime_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "startedAtTime";
+        sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -237,6 +248,7 @@ csh:IndicatorReport_hasName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -248,6 +260,7 @@ csh:IndicatorReport_endedAtTime_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "endedAtTime";
+        sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -268,6 +281,7 @@ csh:FinancialOrganization_hasLegalName_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLegalName";
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasLegalName;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -289,6 +303,7 @@ csh:Address_streetAddress_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "streetAddress";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:streetAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -300,6 +315,7 @@ csh:Address_postalCode_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "postalCode";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:postalCode;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -311,6 +327,7 @@ csh:Address_postOfficeBoxNumber_PropertyShape
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "postOfficeBoxNumber";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:postOfficeBoxNumber;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:Optional;
@@ -322,6 +339,7 @@ csh:Address_extendedAddress_PropertyShape
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "extendedAddress";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:extendedAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:Optional;
@@ -333,6 +351,7 @@ csh:Address_addressRegion_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "addressRegion";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:addressRegion;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -344,6 +363,7 @@ csh:Address_addressLocality_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "addressLocality";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:addressLocality;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -355,6 +375,7 @@ csh:Address_addressCountry_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "addressCountry";
+        sh:nodeKind      sh:Literal;
         sh:path          cids:addressCountry;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
