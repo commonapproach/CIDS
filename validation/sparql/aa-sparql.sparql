@@ -72,7 +72,7 @@ CONSTRUCT {
         .
 }
 WHERE {
-    values ?activeTier {cids:EssentialTier}    
+    values ?activeTier {cids:BasicTier}    
     {
     # Determines the current active tier, set {} to empty
     # if all tiers are desired.

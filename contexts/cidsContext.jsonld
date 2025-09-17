@@ -337,6 +337,10 @@
     "unitDescription": {
       "@id": "cids:unitDescription",
       "@type": "xsd:string"
+    },
+    "belongsToTier": {
+      "@id": "cids:belongsToTier",
+      "@type": "@id"
     }
   }
 }
