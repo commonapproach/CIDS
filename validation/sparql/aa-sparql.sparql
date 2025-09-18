@@ -139,7 +139,7 @@ WHERE {
             # OBJECT PROPERTIES: Handle onClass restrictions
             ?restriction owl:onClass ?rangeClass .
             filter(STRBEFORE(str(?rangeClass), "#") != str(xsd:)) .
-            bind(sh:IRI as ?nodeKind)
+            bind(sh:BlankNodeOrIRI as ?nodeKind)
             bind(2 as ?section)
         } UNION {
             # OBJECT PROPERTIES: Handle allValuesFrom with non-XSD classes
@@ -157,7 +157,7 @@ WHERE {
                 bind(?target as ?rangeClass2)
             }
             bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
-            bind(sh:IRI as ?nodeKind)
+            bind(sh:BlankNodeOrIRI as ?nodeKind)
             bind(2 as ?section)
         }
         
