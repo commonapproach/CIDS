@@ -1001,13 +1001,13 @@ i72:Monetary_unit rdf:type owl:Class .
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity
 i72:Quantity rdf:type owl:Class .
 
-###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#measure
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure
 i72:Measure rdf:type owl:Class ; 
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty i72:hasNumericalValue ;
                               cids:belongsToTier cids:BasicTier ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onDataRange xsd:decimal
+                              owl:onDataRange xsd:string
                             ] .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
