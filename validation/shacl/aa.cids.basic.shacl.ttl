@@ -36,28 +36,11 @@ PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
 PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
-csh:measure_hasNumericalValue_PropertyShape
-        rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:decimal;
-        sh:minCount      0;
-        sh:name          "hasNumericalValue";
-        sh:nodeKind      sh:Literal;
-        sh:path          i72:hasNumericalValue;
-        csh:activeTier   cids:BasicTier;
-        csh:cardinality  csh:ZeroOrMore;  # Does not match the cardinality in the OWL file
-        csh:usedBy       i72:measure .
-
-csh:measure_NodeShape
-        rdf:type        sh:NodeShape;
-        sh:closed       false;
-        sh:property     csh:measure_hasNumericalValue_PropertyShape;
-        sh:targetClass  i72:measure .
-
 csh:Theme_relatesTo_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "relatesTo";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:relatesTo;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -100,7 +83,7 @@ csh:StandardsOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasOutcome";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasOutcome;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -122,7 +105,7 @@ csh:StandardsOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -132,7 +115,7 @@ csh:StandardsOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -152,7 +135,7 @@ csh:SocialPurposeOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasOutcome";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasOutcome;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -174,7 +157,7 @@ csh:SocialPurposeOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -184,7 +167,7 @@ csh:SocialPurposeOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -216,7 +199,7 @@ csh:Outcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -239,7 +222,7 @@ csh:Outcome_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "forTheme";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forTheme;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -251,7 +234,7 @@ csh:Outcome_forOrganization_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "forOrganization";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forOrganization;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -270,7 +253,7 @@ csh:Organization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasOutcome";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasOutcome;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -292,7 +275,7 @@ csh:Organization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -302,7 +285,7 @@ csh:Organization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -316,6 +299,24 @@ csh:Organization_NodeShape
         sh:targetClass  org:Organization , cids:Organization .
 
 cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
+
+csh:Measure_hasNumericalValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:decimal;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasNumericalValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          i72:hasNumericalValue;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       i72:Measure .
+
+csh:Measure_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:Measure_hasNumericalValue_PropertyShape;
+        sh:targetClass  i72:Measure .
 
 csh:Indicator_unitDescription_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -345,7 +346,7 @@ csh:Indicator_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicatorReport;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -368,7 +369,7 @@ csh:Indicator_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "forTheme";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forTheme;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -378,7 +379,7 @@ csh:Indicator_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "forOutcome";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forOutcome;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -390,7 +391,7 @@ csh:Indicator_forOrganization_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "forOrganization";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forOrganization;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -402,7 +403,7 @@ csh:Indicator_describesPopulation_PropertyShape
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "describesPopulation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:describesPopulation;
         sh:severity      sh:Warning;
         csh:activeTier   cids:BasicTier;
@@ -420,11 +421,11 @@ cids:Indicator  rdfs:subClassOf  cids:cidsThing , i72:Indicator .
 
 csh:IndicatorReport_value_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         i72:measure;
+        sh:class         i72:Measure;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "value";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          i72:value;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -458,7 +459,7 @@ csh:IndicatorReport_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasComment";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasComment;
         sh:severity      sh:Info;
         csh:activeTier   cids:BasicTier;
@@ -471,7 +472,7 @@ csh:IndicatorReport_forOrganization_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "forOrganization";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forOrganization;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -483,7 +484,7 @@ csh:IndicatorReport_forIndicator_PropertyShape
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "forIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:forIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ExactlyOne;
@@ -514,7 +515,7 @@ csh:FinancialOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasOutcome";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasOutcome;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -536,7 +537,7 @@ csh:FinancialOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasIndicator";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasIndicator;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -546,7 +547,7 @@ csh:FinancialOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:minCount      0;
         sh:name          "hasAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:BlankNodeOrIRI;
         sh:path          cids:hasAddress;
         csh:activeTier   cids:BasicTier;
         csh:cardinality  csh:ZeroOrMore;
