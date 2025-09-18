@@ -1039,6 +1039,21 @@ org:Organization rdf:type owl:Class ;
                                owl:allValuesFrom owl:Thing
                              ] .
 
+###  http://ontology.eil.utoronto.ca/tove/organization#OrganizationID
+org:OrganizationID rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty org:issuedBy ;
+                              cids:belongsToTier cids:SFFTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass org:Organization
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:hasIdentifier ;
+                              cids:belongsToTier cids:SFFTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] .
+
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#Role
 org:Role rdf:type owl:Class .
@@ -1387,46 +1402,46 @@ cids:Code rdf:type owl:Class ;
           rdfs:subClassOf cids:cidsThing ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty i72:value ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass i72:Measure
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:definedBy ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass cids:Organization ;
                             sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty org:hasName ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty sch:codeValue ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:hasDescription ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string ;
                             sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:hasSpecification ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:anyURI ;
                             sh:severity sh:Info
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty org:hasIdentifier ;
-                            cids:belongsToTier cids:EssentialTier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string ;
                             sh:severity sh:Info
@@ -2381,7 +2396,7 @@ cids:Organization rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty org:hasID ;
-                                    cids:belongsToTier cids:EssentialTier ;
+                                    cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                                     owl:allValuesFrom org:OrganizationID
                                   ] ,
                                   [ rdf:type owl:Restriction ;
@@ -2696,6 +2711,7 @@ cids:Person rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasEmail ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                               owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -2712,11 +2728,13 @@ cids:Person rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty foaf:familyName ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty foaf:givenName ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ,
