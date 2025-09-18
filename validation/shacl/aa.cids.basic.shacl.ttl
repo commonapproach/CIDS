@@ -302,7 +302,7 @@ cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
 
 csh:Measure_hasNumericalValue_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      xsd:decimal;
+        sh:datatype      xsd:string;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasNumericalValue";
