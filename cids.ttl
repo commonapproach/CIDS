@@ -1002,7 +1002,7 @@ i72:Monetary_unit rdf:type owl:Class .
 i72:Quantity rdf:type owl:Class .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#measure
-i72:measure rdf:type owl:Class ; 
+i72:Measure rdf:type owl:Class ; 
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty i72:hasNumericalValue ;
                               cids:belongsToTier cids:BasicTier ;
@@ -1151,17 +1151,17 @@ cids:Address rdf:type owl:Class ;
 
 
 ###  https://ontology.commonapproach.org/cids#CharacteristicReport
-<https://ontology.commonapproach.org/cids#CharacteristicReport> rdf:type owl:Class ;
-                                                           rdfs:subClassOf cids:cidsThing ,
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty i72:numberOf ;
-                                                                             owl:allValuesFrom i72:measure
-                                                                           ] ,
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty cids:forCharacteristic ;
-                                                                             owl:allValuesFrom cids:Characteristic
-                                                                           ] ;
-                                                           rdfs:comment """<p>The CharacteristicReport class identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.</p>
+cids:CharacteristicReport rdf:type owl:Class ;
+                              rdfs:subClassOf cids:cidsThing ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty i72:numberOf ;
+                                                owl:allValuesFrom i72:Measure
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forCharacteristic ;
+                                                owl:allValuesFrom cids:Characteristic
+                                              ] ;
+                              rdfs:comment """<p>The CharacteristicReport class identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.</p>
 <p>The CharacteristicReport class has the following properties:</p>
 <ul>
 <li>forCharacteristic: Identifies the Characteristics for which the report is being generated.</li>
@@ -1171,33 +1171,33 @@ cids:Address rdf:type owl:Class ;
 
 
 ###  https://ontology.commonapproach.org/cids#StakeholderReport
-<https://ontology.commonapproach.org/cids#StakeholderReport> rdf:type owl:Class ;
-                                                        rdfs:subClassOf cids:cidsThing ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty cids:forOrganization ;
-                                                                          owl:allValuesFrom cids:Organization
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty cids:forStakeholder ;
-                                                                          owl:allValuesFrom cids:Stakeholder
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty cids:hasCharacteristicReport ;
-                                                                          owl:allValuesFrom cids:CharacteristicReport
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty cids:hasPerson ;
-                                                                          owl:allValuesFrom cids:Person
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty prov:endedAtTime ;
-                                                                          owl:someValuesFrom xsd:dateTime
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty prov:startedAtTime ;
-                                                                          owl:someValuesFrom xsd:dateTime
-                                                                        ] ;
-                                                        rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
+cids:StakeholderReport rdf:type owl:Class ;
+                              rdfs:subClassOf cids:cidsThing ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forOrganization ;
+                                                owl:allValuesFrom cids:Organization
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forStakeholder ;
+                                                owl:allValuesFrom cids:Stakeholder
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:hasCharacteristicReport ;
+                                                owl:allValuesFrom cids:CharacteristicReport
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:hasPerson ;
+                                                owl:allValuesFrom cids:Person
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty prov:endedAtTime ;
+                                                owl:someValuesFrom xsd:dateTime
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty prov:startedAtTime ;
+                                                owl:someValuesFrom xsd:dateTime
+                                              ] ;
+                              rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
 <p>The StakeholderReport class has the following properties:</p>
 <ul>
 <li>forStakeholder: Specifies the Stakeholders for which the report is being generated.</li>
@@ -1335,17 +1335,17 @@ cids:Characteristic rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasCode ;
-                                      cids:belongsToTier cids:EssentialTier ;
+                                      cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                                       owl:allValuesFrom cids:Code
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty cids:hasValue ;
+                                      owl:onProperty cids:hasValue, cids:SFFTier ;
                                       cids:belongsToTier cids:EssentialTier ;
-                                      owl:allValuesFrom i72:measure # check for case sensitivity because of punning
+                                      owl:allValuesFrom i72:Measure # check for case sensitivity because of punning
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty org:hasName ;
-                                      cids:belongsToTier cids:EssentialTier ;
+                                      cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:string
                                     ] ,
@@ -1389,7 +1389,7 @@ cids:Code rdf:type owl:Class ;
                             owl:onProperty i72:value ;
                             cids:belongsToTier cids:EssentialTier ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass i72:measure
+                            owl:onClass i72:Measure
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:definedBy ;
@@ -1478,7 +1478,7 @@ cids:Counterfactual rdf:type owl:Class ;
                                       owl:onProperty i72:value ;
                                       cids:belongsToTier cids:FullTier ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass i72:measure
+                                      owl:onClass i72:Measure
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
@@ -1668,7 +1668,7 @@ cids:HowMuchImpact rdf:type owl:Class ;
                                      owl:onProperty i72:value ;
                                      cids:belongsToTier cids:EssentialTier ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass i72:measure
+                                     owl:onClass i72:Measure
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasDescription ;
@@ -1682,7 +1682,7 @@ cids:HowMuchImpact rdf:type owl:Class ;
 <li>forIndicator: The Indicator used to measure the Impact (not a number value).</li>
 <li>prov:wasGeneratedBy: An Activity that can used to describe the method used to determine the impact. For example, it could be a random control trial, or estimation.</li>
 <li>hasDescription: A string that can used to provide additional information about the impact.</li>
-<li>i72:value: Links to the value of the impact specified as an i72:measure</li>
+<li>i72:value: Links to the value of the impact specified as an i72:Measure</li>
 <li>i72:unit_of_measure: Specifies the units of measure of the impact.</li>
 <li>hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</li>
 </ul>"""@en ;
@@ -2103,13 +2103,13 @@ cids:Indicator rdf:type owl:Class ;
                                  owl:onProperty cids:hasBaseline ;
                                  cids:belongsToTier cids:EssentialTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass i72:measure
+                                 owl:onClass i72:Measure
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasThreshold ;
                                  cids:belongsToTier cids:FullTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass i72:measure
+                                 owl:onClass i72:Measure
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty org:hasIdentifier ;
@@ -2150,8 +2150,8 @@ cids:Indicator rdf:type owl:Class ;
 <li>forOutcome: Links to the Outcomes the Indicator measures.</li>
 <li>forOrganization: Links to the Organization that is associated with the Indicator.</li>
 <li>usesOutput: Links the Outputs that the indicator uses in defining its value. This is useful when indicators are computed using output information. This property can be ignored if dcat:dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.</li>
-<li>hasBaseline: Links to an i72:measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the Indicator.</li>
-<li>hasThreshold: Links to an i72:measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.</li>
+<li>hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the Indicator.</li>
+<li>hasThreshold: Links to an i72:Measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.</li>
 <li>hasTarget: Links to a Target for the Indicator to allow for the assessment of performance against a Target.</li>
 <li>unitDescription: Provides a simple, human-readable text string to describe the unit of measure for an indicator. This property is used to capture the user's original input, especially when it cannot be immediately mapped to a formal, structured unit of measure.</li>
 <li>describesPopulation: An interim property used to link an Indicator to the Population it measures when the specific statistical parameter (e.g., Sum or Mean) is unknown. This property should be replaced with a more specific property (e.g., i72:sum_of or i72:mean_of, inherited from i72:Sum and i72:Mean subclasses respectively) during a data enhancement process.</li>
@@ -2217,7 +2217,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                        owl:onProperty i72:value ;
                                        cids:belongsToTier cids:BasicTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass i72:measure
+                                       owl:onClass i72:Measure
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
@@ -2320,12 +2320,12 @@ cids:Input rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasActualAmount ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass i72:measure
+                             owl:onClass i72:Measure
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasPlannedAmount ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass i72:measure
+                             owl:onClass i72:Measure
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasType ;
@@ -2597,7 +2597,7 @@ cids:Output rdf:type owl:Class ;
             rdfs:subClassOf cids:cidsThing ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty i72:value ;
-                              owl:allValuesFrom i72:measure
+                              owl:allValuesFrom i72:Measure
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty org:forActivity ;
@@ -3151,7 +3151,7 @@ cids:Target rdf:type owl:Class ;
                               owl:onProperty i72:value ;
                               cids:belongsToTier cids:EssentialTier ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass i72:measure
+                              owl:onClass i72:Measure
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:forIndicatorReport ;
