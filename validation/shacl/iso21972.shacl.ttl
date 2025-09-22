@@ -1,0 +1,216 @@
+PREFIX act:     <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX cc:      <http://creativecommons.org/ns#>
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX csh:     <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc:    <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo:     <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX gis:     <http://http://www.opengis.net/ont/geosparql#>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic:      <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep:     <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1:    <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel:     <http://purl.org/vocab/relationship/>
+PREFIX sch:     <http://schema.org/>
+PREFIX schema:  <http://schema.org/>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur:     <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time:    <http://www.w3.org/2006/time#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml:     <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+csh:Variable_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "Variable"@en;
+        sh:closed       false;
+        sh:description  "The property that is being measured in the population.  Since Protege is not Full DL, cannot make the property a subclass of Variable, so have to specify it as a string name using has_Name."@en;
+        sh:targetClass  i72:Variable .
+
+i72:Variable  rdfs:subClassOf  i72:Variable , i72:ISO21972Thing .
+
+csh:hasNumericalValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasNumericalValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          i72:hasNumericalValue;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       i72:Measure .
+
+csh:Measure_NodeShape
+        rdf:type        sh:NodeShape;
+        rdfs:label      "measure"@en;
+        sh:closed       false;
+        sh:description  "A measure combines a number to a unit of measure or an interval or ratio scale. For example, \"3 m\" is a measure."@en;
+        sh:property     csh:hasNumericalValue_PropertyShape;
+        sh:targetClass  i72:Measure .
+
+i72:Measure  rdfs:subClassOf  i72:Measure , i72:ISO21972Thing .
+
+csh:asWKT_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "asWKT";
+        sh:nodeKind      sh:Literal;
+        sh:path          gis:asWKT;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       i72:Geometry .
+
+csh:Geometry_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:asWKT_PropertyShape;
+        sh:targetClass  i72:Geometry .
+
+i72:Geometry  rdfs:subClassOf  i72:ISO21972Thing , i72:Geometry , gis:Geometry .
+
+i72:year  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "year" .
+
+i72:watt  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "watt" .
+
+i72:square_metre  rdf:type  owl:NamedIndividual , i72:Unit_exponentiation;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#square_metre" .
+
+i72:population_ratio_unit
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#population_ratio_unit" .
+
+i72:population_cardinality_unit
+        rdf:type    owl:NamedIndividual , i72:Cardinality_unit;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#population_cardinality_unit" .
+
+i72:pc_per_hecto_kilo_pc
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#pc_per_hecto_kilo_pc" .
+
+i72:occurrence  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "occurrence" .
+
+i72:occurence_per_hecto_kilo_pc
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#occurence_per_hecto_kilo_pc" .
+
+i72:minute-time_per_occurence
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#minute-time_per_occurence" .
+
+i72:minute-time  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#minute-time" .
+
+i72:microgram_per_cubic_metre
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#microgram_per_cubic_metre" .
+
+i72:microgram  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "microgram" .
+
+i72:micro  rdf:type  owl:NamedIndividual , i72:SI_prefix;
+        rdfs:label  "micro" .
+
+i72:metre  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "metre" .
+
+i72:megapc  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "megapc" .
+
+i72:mega  rdf:type  owl:NamedIndividual , i72:SI_prefix;
+        rdfs:label  "mega" .
+
+i72:kwh_per_year  rdf:type  owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#kwh_per_year" .
+
+i72:kwh_per_square_metre
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#kwh_per_square_metre" .
+
+i72:kwh_per_pc  rdf:type  owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#kwh_per_pc" .
+
+i72:kilowatt_hour  rdf:type  owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#kilowatt_hour" .
+
+i72:kilowatt  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "kilowatt" .
+
+i72:kilopc  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "kilopc" .
+
+i72:kilo  rdf:type  owl:NamedIndividual , i72:SI_prefix;
+        rdfs:label  "kilo" .
+
+i72:interruption_per_year
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#interruption_per_year" .
+
+i72:interruption  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "interruption" .
+
+i72:hour_per_interruption
+        rdf:type    owl:NamedIndividual , i72:Unit_division;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#hour_per_interruption" .
+
+i72:hour  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "hour" .
+
+i72:hecto_kilo_pc  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#hecto_kilo_pc" .
+
+i72:hecto_kilo  rdf:type  owl:NamedIndividual , i72:SI_prefix;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#hecto_kilo" .
+
+i72:gram  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "gram" .
+
+i72:gigapc  rdf:type  owl:NamedIndividual , i72:Unit_multiple_or_submultiple;
+        rdfs:label  "gigapc" .
+
+i72:giga  rdf:type  owl:NamedIndividual , i72:SI_prefix;
+        rdfs:label  "giga" .
+
+i72:fixed_zero_cardinality
+        rdf:type    owl:NamedIndividual , i72:Point;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#fixed_zero_cardinality" .
+
+i72:decibel  rdf:type  owl:NamedIndividual , i72:Singular_unit;
+        rdfs:label  "decibel" .
+
+i72:Unit_multiple_or_submultiple
+        rdfs:subClassOf  i72:Unit_of_measure , i72:Unit_multiple_or_submultiple , i72:ISO21972Thing .
+
+i72:cubic_metre  rdf:type  owl:NamedIndividual , i72:Unit_exponentiation;
+        rdfs:label  "http://ontology.eil.utoronto.ca/ISO21972/iso21972#cubic_metre" .
+
+csh:definition_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Quantity , i72:Measure , i72:Unit_of_measure , i72:Fixed_point;
+        sh:minCount      0;
+        sh:name          "definition";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:definition;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       i72:Unit_multiple_or_submultiple , i72:Fixed_point .
+
+i72:Fixed_point  rdfs:subClassOf  i72:Point , i72:ISO21972Thing , i72:Fixed_point .

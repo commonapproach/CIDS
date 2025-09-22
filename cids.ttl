@@ -1,0 +1,3410 @@
+@prefix act: <http://ontology.eil.utoronto.ca/tove/activity#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#> .
+@prefix i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#> .
+@prefix ic: <http://ontology.eil.utoronto.ca/tove/icontact#> .
+@prefix oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#> .
+@prefix om-1: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://purl.org/vocab/relationship/> .
+@prefix sch: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sur: <http://ontology.eil.utoronto.ca/tove/survey#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@base <https://ontology.commonapproach.org/cids> .
+
+<https://ontology.commonapproach.org/cids> rdf:type owl:Ontology ;
+                                            owl:versionIRI <https://ontology.commonapproach.org/cids/3.2.0> ;
+                                            owl:imports <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl> ,
+                                                        <http://ontology.eil.utoronto.ca/tove/activity.owl> ,
+                                                        <http://ontology.eil.utoronto.ca/tove/icontact.owl> ,
+                                                        <http://ontology.eil.utoronto.ca/tove/organization.owl> ,
+                                                        <http://www.w3.org/2006/time.rdf> ,
+                                                        <https://codelist.commonapproach.org/codeLists/SDGImpacts>;
+                                            cc:license "Common Impact Data Standard V3.2.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/" ;
+                                            dcterms:creator cids:ac ;
+                                            dcterms:date "06-16-2025" ;
+                                            dcterms:description "The Common Impact Data Standard (CIDS) provides a standard representation for the core concepts and attributes that underlie impact models (e.g., logic model, impact thesis, theory of change, etc.), inputs, activities, outputs, and outcomes."@en ;
+                                            dcterms:title "Common Impact Data Standard"@en ;
+                                            vann:preferredNamespacePrefix "cids" ;
+                                            vann:preferredNamespaceUri "https://ontology.commonapproach.org/cids#" ;
+                                            owl:priorVersion <https://ontology.commonapproach.org/cids/3.1.0> ;
+                                            owl:versionInfo "3.2.0"@en ;
+                                            adms:relatedDocumentation "Common Approach to Impact Measurement (2023) “Technical Guide: The Common Impact Data Standard V3.2.0 An Ontology for Representing Impact”, Common Approach to Impact Measurement. DOI 10.5281/zenodo.7930431 https://www.commonapproach.org/wp-content/uploads/2023/05/Common-Approach_Common-Impact-Data-Standard_Current-version.pdf"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+cc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+dcterms:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdfs:range xsd:dateTime .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Label
+rdfs:Label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#qualifiedCardinality
+owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/adms#relatedDocumentation
+adms:relatedDocumentation rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasName
+cids:hasName rdf:type owl:AnnotationProperty .
+
+
+###  https://ontology.commonapproach.org/cids#modifiedBy
+cids:modifiedBy rdf:type owl:AnnotationProperty ;
+                rdfs:range xsd:string ;
+                rdfs:domain cids:cidsThing .
+
+###  https://ontology.commonapproach.org/cids#belongsToTier
+cids:belongsToTier rdf:type owl:AnnotationProperty ;
+                   rdfs:range cids:Tier ; 
+                   rdfs:comment "Indicates which CIDS Tier an entity belongs to."@en .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in
+i72:located_in rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#numberOf
+i72:numberOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
+i72:unit_of_measure rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain cids:Counterfactual ,
+                                cids:HowMuchImpact .
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#value
+i72:value rdf:type owl:ObjectProperty .
+
+###  http://ontology.eil.utoronto.ca/tove/activity#hasElaboration
+act:hasElaboration rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/activity#subActivityOf
+act:subActivityOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasAddress
+ic:hasAddress rdf:type owl:ObjectProperty .
+
+###  https://ontology.commonapproach.org/cids#hasAddress
+cids:hasAddress rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty ;
+                rdfs:label "has Address"@en ;
+                rdfs:comment "Links an entity to its postal address."@en ;
+                rdfs:range cids:Address .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone
+ic:hasTelephone rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#forActivity
+org:forActivity rdf:type owl:ObjectProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#hasID
+org:hasID rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#hasRole
+org:hasRole rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/elements/1.1/spatial
+dc:spatial rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf cids:dcObjectProperty .
+
+
+###  http://purl.org/dc/elements/1.1/temporal
+dc:temporal rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf cids:dcObjectProperty .
+
+
+###  http://purl.org/vocab/relationship/spouseOf
+rel:spouseOf rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#hasEthnicity
+cwrc:hasEthnicity rdf:type owl:ObjectProperty .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#hasGender
+cwrc:hasGender rdf:type owl:ObjectProperty .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#hasReligion
+cwrc:hasReligion rdf:type owl:ObjectProperty .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#parentOf
+cwrc:parentOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#hasPart
+oep:hasPart rdf:type owl:ObjectProperty ;
+            owl:inverseOf oep:partOf ;
+            rdf:type owl:TransitiveProperty .
+
+
+###  http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#partOf
+oep:partOf rdf:type owl:ObjectProperty ,
+                    owl:TransitiveProperty .
+
+
+###  http://www.w3.org/2006/time#hasBeginning
+time:hasBeginning rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+time:hasEnd rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#hasTime
+time:hasTime rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dcat#dataset
+dcat:dataset rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dcat#temporal
+dcat:temporal rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dqv#conformsTo
+dqv:conformsTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dqv#hasQualityAnnotation
+dqv:hasQualityAnnotation rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dqv#hasQualityMeasurement
+dqv:hasQualityMeasurement rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/dqv#target
+dqv:target rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#Occupation
+cids:Occupation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#benefitsFrom
+cids:benefitsFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#canEnable
+cids:canEnable rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#canProduce
+cids:canProduce rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#cidsObjectProperty
+cids:cidsObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#contributes
+cids:contributes rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#dcObjectProperty
+cids:dcObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#definedBy
+cids:definedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forActivity
+cids:forActivity rdf:type owl:ObjectProperty ;
+    rdfs:range cids:Activity ;
+#    rdfs:domain cids:Organization ;
+    rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forCharacteristic
+cids:forCharacteristic rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forFeature
+cids:forFeature rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forImpactReport
+cids:forImpactReport rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forIndicator
+cids:forIndicator rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cids:cidsObjectProperty ;
+                  owl:inverseOf cids:hasIndicatorReport ;
+                  rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forIndicatorReport
+cids:forIndicatorReport rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forOrganization
+cids:forOrganization rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty ;
+                     rdf:type owl:FunctionalProperty .
+
+###  https://ontology.commonapproach.org/cids#forOutcome
+cids:forOutcome rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty ;
+                rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forStakeholder
+cids:forStakeholder rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forTarget
+cids:forTarget rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#forTheme
+cids:forTheme rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#fromPerspectiveOf
+cids:fromPerspectiveOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasAccess
+cids:hasAccess rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasActivity
+cids:hasActivity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasActualAmount
+cids:hasActualAmount rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasAmount
+cids:hasAmount rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasBaseline
+cids:hasBaseline rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cids:cidsObjectProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasBeneficialStakeholder
+cids:hasBeneficialStakeholder rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf cids:hasStakeholder .
+
+
+###  https://ontology.commonapproach.org/cids#hasCharacteristic
+cids:hasCharacteristic rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasCharacteristicReport
+cids:hasCharacteristicReport rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasCode
+cids:hasCode rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasContact
+cids:hasContact rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasContributingStakeholder
+cids:hasContributingStakeholder rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf cids:hasStakeholder .
+
+
+###  https://ontology.commonapproach.org/cids#hasContribution
+cids:hasContribution rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasCounterfactual
+cids:hasCounterfactual rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cids:cidsObjectProperty ;
+                       rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasDataSource
+cids:hasDataSource rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasDisability
+cids:hasDisability rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasDisease
+cids:hasDisease rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasHowMuch
+cids:hasHowMuch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImmigrationStatus
+cids:hasImmigrationStatus rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpact
+cids:hasImpact rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactDepth
+cids:hasImpactDepth rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cids:cidsObjectProperty ;
+                    rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactDuration
+cids:hasImpactDuration rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cids:cidsObjectProperty ;
+                       rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactModel
+cids:hasImpactModel rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactReport
+cids:hasImpactReport rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactRisk
+cids:hasImpactRisk rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactScale
+cids:hasImpactScale rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cids:cidsObjectProperty ;
+                    rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasIndicator
+cids:hasIndicator rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasIndicatorReport
+cids:hasIndicatorReport rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasIndicatorStandard
+cids:hasIndicatorStandard rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasInput
+cids:hasInput rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasMaritalStatus
+cids:hasMaritalStatus rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasMethod
+cids:hasMethod rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasOrganization
+cids:hasOrganization rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasOutcome
+cids:hasOutcome rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasOutput
+cids:hasOutput rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasPerson
+cids:hasPerson rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasPlannedAmount
+cids:hasPlannedAmount rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasProgram
+cids:hasProgram rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasProjectPartners
+cids:hasProjectPartners rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasResource
+cids:hasResource rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasService
+cids:hasService rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasStakeholder
+cids:hasStakeholder rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf cids:cidsObjectProperty ;
+                    rdfs:domain cids:Organization .
+
+
+###  https://ontology.commonapproach.org/cids#hasStakeholderOutcome
+cids:hasStakeholderOutcome rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasSupplementalFinanicalInformation
+cids:hasSupplementalFinanicalInformation rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasTarget
+cids:hasTarget rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasTheme
+cids:hasTheme rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasThreshold
+cids:hasThreshold rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cids:cidsObjectProperty ;
+                  rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasTimeInterval
+cids:hasTimeInterval rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty ;
+                     rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasType
+cids:hasType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasValue
+cids:hasValue rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#inputFor
+cids:inputFor rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#numberOf
+cids:numberOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#performs
+cids:performs rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#produces
+cids:produces rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf cids:cidsObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#relatesTo
+cids:relatesTo rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf cids:cidsObjectProperty ;
+               rdfs:label "Relates To"@en ;
+               cids:hasName "Relates To"@en .
+
+
+###  https://ontology.commonapproach.org/cids#servesPopulation
+cids:servesPopulation rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.commonapproach.org/cids#usedByIndicator
+cids:usedByIndicator rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf cids:cidsObjectProperty ;
+                     owl:inverseOf cids:usesOutput .
+
+
+###  https://ontology.commonapproach.org/cids#usesOutput
+cids:usesOutput rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf cids:cidsObjectProperty .
+
+###  https://ontology.commonapproach.org/cids#describesPopulation
+cids:describesPopulation rdf:type owl:ObjectProperty ;
+    rdfs:label "describes population"@en ;
+    rdfs:comment "An interim property used to link an Indicator to the Population it measures when the specific statistical parameter (e.g., Sum or Mean) is unknown. This property should be replaced with a more specific property (e.g., i72:sum_of or i72:mean_of) during a data enhancement process."@en ;
+    rdfs:domain cids:Indicator ;
+    rdfs:range i72:Population .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#has_Name
+i72:has_Name rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#numerical_value
+i72:numerical_value rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasBuilding
+ic:hasBuilding rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasCityS
+ic:hasCityS rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasCitySection
+ic:hasCitySection rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasPostalBox
+ic:hasPostalBox rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode
+ic:hasPostalCode rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasStreet
+ic:hasStreet rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber
+ic:hasStreetNumber rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber
+ic:hasUnitNumber rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier
+org:hasIdentifier rdfs:subPropertyOf sch:identifier .
+
+###  http://ontology.eil.utoronto.ca/tove/organization#hasName
+org:hasName rdf:type owl:DatatypeProperty . # Does not appear in SHACL
+
+
+###  http://schema.org/birthDate
+sch:birthDate rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty .
+
+
+###  http://schema.org/codeValue
+sch:codeValue rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty .
+
+
+###  http://schema.org/dateCreated
+sch:dateCreated rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  http://schema.org/description
+sch:description rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  http://schema.org/identifier
+sch:identifier rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#day
+time:day rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#hour
+time:hour rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#minute
+time:minute rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#month
+time:month rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#second
+time:second rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2006/time#year
+time:year rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/ns/prov#endedAtTime
+prov:endedAtTime rdf:type owl:DatatypeProperty .
+
+###  http://www.w3.org/ns/prov#startedAtTime
+prov:startedAtTime rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+foaf:familyName rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty .
+
+
+###  http://xmlns.com/foaf/0.1/formerName
+foaf:formerName rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+foaf:givenName rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty .
+
+
+###  http://xmlns.com/foaf/0.1/middleName
+foaf:middleName rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#beneficialSizeEnd
+cids:beneficialSizeEnd rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#beneficialSizeStart
+cids:beneficialSizeStart rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#cidsDataProperty
+cids:cidsDataProperty rdf:type owl:DatatypeProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasCatchmentArea
+cids:hasCatchmentArea rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasComment
+cids:hasComment rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf cids:cidsDataProperty ;
+                rdf:type owl:FunctionalProperty . # Does not appear in SHACL
+
+
+###  https://ontology.commonapproach.org/cids#hasConsequence
+cids:hasConsequence rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasDescription
+cids:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf sch:description ,
+                                       cids:cidsDataProperty ;
+                    rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasExpectation
+cids:hasExpectation rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf cids:cidsDataProperty ;
+                    rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImpactManagementNormsDefinition
+cids:hasImpactManagementNormsDefinition rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasImportance
+cids:hasImportance rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty ;
+                   rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasLikelihood
+cids:hasLikelihood rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty ;
+                   rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasMethodS
+cids:hasMethodS rdf:type owl:DatatypeProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasMitigation
+cids:hasMitigation rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasOccupation
+cids:hasOccupation rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasPurpose
+cids:hasPurpose rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasReportedImpact
+cids:hasReportedImpact rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf cids:cidsDataProperty ;
+                       rdf:type owl:FunctionalProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasSpecification
+cids:hasSpecification rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty ;
+                      rdfs:range xsd:anyURI .
+
+
+###  https://ontology.commonapproach.org/cids#hasStakeholderCharacteristic
+cids:hasStakeholderCharacteristic rdf:type owl:DatatypeProperty .
+
+
+###  https://ontology.commonapproach.org/cids#hasWebAddress
+cids:hasWebAddress rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#intendedImpact
+cids:intendedImpact rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf cids:cidsDataProperty .
+
+
+###  https://ontology.commonapproach.org/cids#isUnderserved
+cids:isUnderserved rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty ;
+                   rdf:type owl:FunctionalProperty .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#hasLegalName
+org:hasLegalName rdf:type owl:DatatypeProperty .
+
+###  https://ontology.commonapproach.org/cids#streetAddress
+cids:streetAddress rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty ;
+                      rdfs:label "Street Address"@en ;
+                      rdfs:comment "The street address. For example, 720 Bathurst St."@en ;
+                      rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressLocality
+cids:addressLocality rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:subPropertyOf cids:cidsDataProperty ;
+                        rdfs:label "Address Locality (City)"@en ;
+                        rdfs:comment "The city or locality. For example, Toronto."@en ;
+                        rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressRegion
+cids:addressRegion rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:subPropertyOf cids:cidsDataProperty ; 
+                      rdfs:label "Address Region (State/Province)"@en ;
+                      rdfs:comment "The region or state. For example, ON."@en ;
+                      rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#postalCode
+cids:postalCode rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:subPropertyOf cids:cidsDataProperty ;
+                   rdfs:label "Postal Code"@en ;
+                   rdfs:comment "The postal code. For example, M4S2R4."@en ;
+                   rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#addressCountry
+cids:addressCountry rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:subPropertyOf cids:cidsDataProperty ;
+                       rdfs:label "Address Country"@en ;
+                       rdfs:comment "The country. For example, Canada. Also can be used to provide the two-letter ISO 3166-1 alpha-2 country code e.g. CA."@en ;
+                       rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#postOfficeBoxNumber
+cids:postOfficeBoxNumber rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:subPropertyOf cids:cidsDataProperty ;
+                            rdfs:label "Post Office Box Number"@en ;
+                            rdfs:comment "The post office box number for PO box addresses."@en ;
+                            rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#extendedAddress
+cids:extendedAddress rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:subPropertyOf cids:cidsDataProperty ;
+                          rdfs:label "Extended Address (Unit/Suite/Apartment Number)"@en ;
+                          rdfs:comment "An address extension such as an apartment number, suite number, or 'C/O'."@en ;
+                          rdfs:range xsd:string .
+
+###  https://ontology.commonapproach.org/cids#unitDescription
+cids:unitDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "unit description"@en ;
+    rdfs:comment "A simple, human-readable text string provided by a user to describe the unit of measure for an indicator. This property is used to capture the user's original input, especially when it cannot be immediately mapped to a formal, structured unit of measure."@en ;
+    rdfs:domain cids:Indicator ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Feature
+i72:Feature rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Monetary_unit
+i72:Monetary_unit rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Quantity
+i72:Quantity rdf:type owl:Class .
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Measure
+i72:Measure rdf:type owl:Class ; 
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty i72:hasNumericalValue ;
+                              cids:belongsToTier cids:BasicTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] .
+
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
+i72:unit_of_measure rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/tove/activity#Activity
+act:Activity rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#Address
+ic:Address rdf:type owl:Class .
+
+###  http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber
+ic:PhoneNumber rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#Organization
+org:Organization rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasLegalName ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasLegalStatus ;
+                               cids:belongsToTier cids:EssentialTier ;
+                               owl:allValuesFrom owl:Thing
+                             ] .
+
+###  http://ontology.eil.utoronto.ca/tove/organization#OrganizationID
+org:OrganizationID rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty org:issuedBy ;
+                              cids:belongsToTier cids:SFFTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass org:Organization
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:hasIdentifier ;
+                              cids:belongsToTier cids:SFFTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] .
+
+
+###  http://ontology.eil.utoronto.ca/tove/organization#Role
+org:Role rdf:type owl:Class .
+
+
+###  http://purl.org/dc/elements/1.1/Location
+dc:Location rdf:type owl:Class ;
+            rdfs:subClassOf cids:DcThing .
+
+
+###  http://purl.org/dc/elements/1.1/PeriodOfTime
+dc:PeriodOfTime rdf:type owl:Class ;
+                rdfs:subClassOf cids:DcThing .
+
+
+###  http://purl.org/dc/terms/Standard
+dcterms:Standard rdf:type owl:Class .
+
+
+###  http://schema.org/Person
+sch:Person rdf:type owl:Class .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#Ethnicity
+cwrc:Ethnicity rdf:type owl:Class ;
+               rdfs:comment "A subclass of Cultural Form for indicating a person's ethnicity, either as self-reported or as assigned by others, with accompanying context, where present, provided by race or ethnicity context annotations. Ethnicities are groups constructed on the conception of shared national, religious, geographical, racial, or cultural backgrounds or traditions, and particular ethnicities may be denigrated, lauded, or both, depending on the context. Ethnicities are shifting, historically constituted, and interestedly deployed categories whose use must be situated contextually and which are understood here finally as discursive or representational although they have real material impacts. As Angel Oquendo writes, \"Despite its long ‘materialist' past in which it was taken to be synonymous with ‘race,' the concept of ethnicity as used today does appear to focus on cultural rather than on physiognomic difference.\" (Angel R. Oquendo, \"Re-imagining the Latino/a Race\" in The Latino/a Condition: A Critical Reader edited by Richard Delgado, Jean Stefancic 1998. This ontology therefore does not attempt to lay out an exact, fully defined, or mutually exclusive set of ethnic categories: this is an impossibility given their shifting use and the overlap among them and with identity categories for race, geography, and nationality, as demonstrated by Noel Ignatieve in his book How the Irish Became White (Ignatieve, 1995). Those using this class and its instances are encouraged to consult associated race or ethnicity context annotations, if available. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Ethnicity)"@en ;
+               rdfs:label "Ethnicity"@en .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#Gender
+cwrc:Gender rdf:type owl:Class ;
+            rdfs:comment "A subclass of cultural form for indicating a person's gender, whether attributed or self-reported, with accompanying context, where present, provided by gender context annotations. Although in popular culture gender and biological sex are conflated and understood to be binary, the concept of gender stresses the relationality, constructedness, and performativity of gendered identities and gendered behaviour, whose categories are historically contingent and shifting, and the boundaries between them blurry. Simone de Beauvoir (1973) stated \"One is not born, but rather becomes, a woman,\" a belief that has been taken up by many other theorists of gender including Judith Butler (1990). Gender studies to date has investigated the social construction of femininity more than that of masculinity. The multi-layered constructedness of gender is also underlined by Donna Haraway who understands it as a \"socially, historically, and semiotically positioned difference\" (Donna Haraway, 1988). Gender is understood as fluid, situational, and sometimes plural, and it is related to, though not commensurate with, sexual identity and orientation, just as it is related to but not defined by specific forms of embodiment. Rather than seeing biological sex as a pre-social or natural given, the body is understood as a site of inscription (cf. (Elizabeth Grosz, 1994) which is also socially constructed and indeed epigenetically shaped by environmental factors (N. Katherine Hayles, 2012). As articulated by feminist neurologist Gillian Einstein, (2012)\"The world writes on the body.\" This ontology therefore does not provide separate terms for sex as distinct from gender. Instead, it privileges terms associated with gender, recognizing that they are conventionally but not necessarily associated with sex, and that there is constant slippage between gender and sex in the way that these categories circulate through discourses, actions, and institutions. Far from indicating a universal facet of experience, gender intersects with other identity categories and axes of oppression such as class, race or colour, or geographical heritage to produced quite different interests and experiences among people of the same gender, as with the intersection of religion and white masculine identity in the Muscular Christianity movement in nineteenth-century Britain. Being a woman of colour often compounds the impacts of gender oppression. Such interaction between different forms of oppression is termed \"intersectionality\" (Kimberlé Crenshaw, 1989). Where this class and its instances are concerned, readers are advised to consult gender context context annotations, if available. Where terms are applied to younger individuals, the gendered variants, such as “girl” for “woman”, are understood to apply. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Gender)"@en ;
+            rdfs:label "Gender"@en .
+
+
+###  http://sparql.cwrc.ca/ontologies/cwrc#Religion
+cwrc:Religion rdf:type owl:Class ;
+              rdfs:comment "A subclass of cultural form, this describes a person's religion(s) or belief system(s). Note that while atheism denotes the absence of religion, we use the Religion label for convenience. (CWRC - https://sparql.cwrc.ca/ontologies/cwrc.html#Religion)"@en ;
+              rdfs:label "Religion"@en .
+
+
+###  http://www.w3.org/2006/time#DateTimeInterval
+time:DateTimeInterval rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:Class ;
+             rdfs:subClassOf cids:DcatThing .
+
+
+###  http://www.w3.org/ns/dqv#QualityAnnotation
+dqv:QualityAnnotation rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dqv#QualityMeasurement
+dqv:QualityMeasurement rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dqv#QualityPolicy
+dqv:QualityPolicy rdf:type owl:Class .
+
+###  https://ontology.commonapproach.org/cids#Address
+cids:Address rdf:type owl:Class ; 
+             rdfs:subClassOf sch:PostalAddress ,
+                             cids:cidsThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:streetAddress ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressLocality ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressRegion ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:postalCode ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:addressCountry ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:postOfficeBoxNumber ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:extendedAddress ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             rdfs:label "Address"@en ;
+             rdfs:comment "A simplified postal address class for CIDS, based on schema:PostalAddress, using functional properties for common address components."@en .
+
+
+###  https://ontology.commonapproach.org/cids#CharacteristicReport
+cids:CharacteristicReport rdf:type owl:Class ;
+                              rdfs:subClassOf cids:cidsThing ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty i72:numberOf ;
+                                                owl:allValuesFrom i72:Measure
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forCharacteristic ;
+                                                owl:allValuesFrom cids:Characteristic
+                                              ] ;
+                              rdfs:comment """<p>The CharacteristicReport class identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.</p>
+<p>The CharacteristicReport class has the following properties:</p>
+<ul>
+<li>forCharacteristic: Identifies the Characteristics for which the report is being generated.</li>
+<li>numberOf: Specifies the number of members which possess the Characteristic.</li>
+</ul>""" ;
+                                                           rdfs:label "Characteristic Report"@en .
+
+
+###  https://ontology.commonapproach.org/cids#StakeholderReport
+cids:StakeholderReport rdf:type owl:Class ;
+                              rdfs:subClassOf cids:cidsThing ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forOrganization ;
+                                                owl:allValuesFrom cids:Organization
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:forStakeholder ;
+                                                owl:allValuesFrom cids:Stakeholder
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:hasCharacteristicReport ;
+                                                owl:allValuesFrom cids:CharacteristicReport
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty cids:hasPerson ;
+                                                owl:allValuesFrom cids:Person
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty prov:endedAtTime ;
+                                                owl:someValuesFrom xsd:dateTime
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty prov:startedAtTime ;
+                                                owl:someValuesFrom xsd:dateTime
+                                              ] ;
+                              rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
+<p>The StakeholderReport class has the following properties:</p>
+<ul>
+<li>forStakeholder: Specifies the Stakeholders for which the report is being generated.</li>
+<li>prov:startedAtTime: Identifies the start of the time interval of the Stakeholder Report.</li>
+<li>prov:endedAtTime: Identifies the end of the time interval of the Stakeholder Report.</li>
+<li>hasCharacteristicReport: Specifies the Characteristics reports associated with the selected Stakeholders.</li>
+<li>hasPerson: Identifies the Persons who are the Stakeholder being reported upon.</li>
+<li>forOrganization: Identifies the Organization for which the Stakeholder is being generated.</li>
+</ul>""" ;
+                                                        rdfs:label "Stakeholder Report"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Activity
+cids:Activity rdf:type owl:Class ;
+              rdfs:subClassOf act:Activity ,
+                              cids:cidsThing ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty act:subActivityOf ;
+                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( cids:Activity
+                                                                  cids:Service
+                                                                )
+                                                  ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cids:canProduce ;
+                                owl:allValuesFrom cids:Outcome
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cids:hasCode ;
+                                owl:allValuesFrom cids:Code
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cids:hasInput ;
+                                owl:allValuesFrom cids:Input
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cids:hasOutput ;
+                                owl:allValuesFrom cids:Output
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty oep:partOf ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass cids:ImpactModel
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty org:hasIdentifier ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty org:hasName ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty cids:hasDescription ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ;
+              rdfs:comment """<p>Activity defines the actions performed by an organization and/or contributing stakeholder to implement a service. The Common Impact Data Standard’s Activity class is defined to be a subclass of the [TOVE Activity](https://ontology.commonapproach.org/foundational-ontologies.html#tove-activity), and is extended by including properties for Input, Output, and what Service or Activity it is a subActivityOf. An activity’s type is based on its outcome rather than service or input. This allows activities to be classified by the type of change they produce rather than by what resources they use (input) or who performs the activity (service). Its properties are:</p>
+<ul>
+<li>canProduce: Specifies the Outcome that results from performance of the Activity. It is used primarily for representing Outcome Chains.</li>
+<li>oep:partOf: Identifies the Impact Model it is a component of.</li>
+<li>hasInput: Specifies the Input to the Activity.</li>
+<li>hasOutput: Specifies the Output of the Activity.</li>
+<li>hasCode: Specifies zero or more codes created by various organizations to identify a type of Activity. E.g., ICHI – International Classification of Health Interventions activities.</li>
+<li>act:subActivityOf: Specifies the Service or Activity that this Activity is part of.</li>
+<li>hasName: Specifies a name or title for the activity.</li>
+<li>hasDescription: Specifies a description of the activity.</li>
+<li>hasIdentiifier: Specifies a unique identifier for the activity.</li>
+</ul>"""@en ;
+              rdfs:label "Activity"@en .
+
+
+###  https://ontology.commonapproach.org/cids#AlignmentRisk
+cids:AlignmentRisk rdf:type owl:Class ;
+                   rdfs:subClassOf cids:ImpactRisk ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty org:hasIdentifier ;
+                                     cids:belongsToTier cids:FullTier ;
+                                     owl:hasValue "Alignment Risk"
+                                   ] ;
+                   rdfs:label "Alignment Risk" ;
+                   skos:definition "Alignment Risk considers an impact that that is not correlated with the organization's intended purpose. The probability that impact is not locked into the enterprise model."@en .
+
+
+###  https://ontology.commonapproach.org/cids#BeneficialStakeholder
+cids:BeneficialStakeholder rdf:type owl:Class ;
+                           rdfs:subClassOf cids:Stakeholder ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:benefitsFrom ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass cids:Outcome
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasImpactManagementNormsDefinition ;
+                                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                 owl:oneOf [ rdf:type rdf:List ;
+                                                                             rdf:first "Client" ;
+                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                        rdf:first "Community" ;
+                                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                                   rdf:first "Employee" ;
+                                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                                              rdf:first "Planet" ;
+                                                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                                                         rdf:first "Supplier" ;
+                                                                                                                         rdf:rest rdf:nil
+                                                                                                                       ]
+                                                                                                            ]
+                                                                                                 ]
+                                                                                      ]
+                                                                           ]
+                                                               ]
+                                           ] ;
+                           rdfs:comment """<p>A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome. It has the following properties:</p>
+<ul>
+<li>benefitsFrom: the Outcomes that confer a benefit to the Stakeholder</li>
+<li>hasImpactManagementNormsDefinition: Beneficial Stakeholders may be identified by their roles, as specified by the Impact Management Norms: customers, employees, communities, suppliers, and/or planet.</li>
+</ul>"""@en ;
+                           rdfs:label "Beneficial Stakeholder"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Characteristic
+cids:Characteristic rdf:type owl:Class ;
+                    rdfs:subClassOf cids:cidsThing ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      owl:allValuesFrom cids:Activity
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:forStakeholder ;
+                                      cids:belongsToTier cids:EssentialTier ;
+                                      owl:allValuesFrom cids:Stakeholder
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasCode ;
+                                      cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                                      owl:allValuesFrom cids:Code
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasValue, cids:SFFTier ;
+                                      cids:belongsToTier cids:EssentialTier ;
+                                      owl:allValuesFrom i72:Measure # check for case sensitivity because of punning
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty org:hasName ;
+                                      cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:string
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:endedAtTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:startedAtTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasDescription ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:string ;
+                                      sh:severity sh:Info
+                                    ] ;
+                    rdfs:comment """<p>The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:</p>
+<ul>
+<li>forStakeholder: Identifies the Stakeholder affected.</li>
+<li>hasCode: Links to zero or more Codes that are externally defined taxonomies of Stakeholder characteristics.</li>
+<li>hasName: Specifies a name for the characteristic as a string. Can be inferred from hasCode.</li>
+<li>hasValue: Specifies a value for the characteristic as a string. It can be a number or a string corresponding to that characteristic and can be inferred from hasCode.</li>
+<li>prov:startedAtTime: The start of the time interval that the Stakeholder has the characteristic.</li>
+<li>prov:endedAtTime: The end of the time interval that the Stakeholder has the characteristic.</li>
+<li>prov:wasGeneratedBy: Identifies the activities that led to the Stakeholder having the characteristic.</li>
+</ul>""" ;
+                    rdfs:label "Characteristic"@en .
+
+
+###  https://ontology.commonapproach.org/cids#CharacteristicReport
+cids:CharacteristicReport rdf:type owl:Class .
+
+
+###  https://ontology.commonapproach.org/cids#Code
+cids:Code rdf:type owl:Class ;
+          rdfs:subClassOf cids:cidsThing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty i72:value ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass i72:Measure
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty cids:definedBy ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass cids:Organization ;
+                            sh:severity sh:Info
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty org:hasName ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sch:codeValue ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty cids:hasDescription ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string ;
+                            sh:severity sh:Info
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty cids:hasSpecification ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:anyURI ;
+                            sh:severity sh:Info
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty org:hasIdentifier ;
+                            cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string ;
+                            sh:severity sh:Info
+                          ] ;
+          rdfs:comment """<p>An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:</p>
+<ul>
+<li>definedBy: The Organization that defined the code.</li>
+<li>hasSpecification: The URI where the definition of the code can be found.</li>
+<li>hasIdentifier: The code’s unique identifier.</li>
+<li>hasName: A name or title for the code.</li>
+<li>hasDescription: A description of the code.</li>
+<li>schema:codeValue:  The value of the code, if appropriate.</li>
+<li>i72:value: Alternative specification of codeValue using the ISO/IEC 21972 Measure.</li>
+</ul>
+<p>hasIdentifier, hasName, hasDescription, and codeValue act as a cache of the equivalent information to be found in the specification of the Code referred to by hasSpecification. The following table defines the Code class.</p>"""@en ;
+          rdfs:label "Code"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ContributingStakeholder
+cids:ContributingStakeholder rdf:type owl:Class ;
+                             rdfs:subClassOf cids:Stakeholder ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty cids:contributes ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass cids:Input
+                                             ] ;
+                             rdfs:comment """<p>Contributing Stakeholder is a stakeholder that contributes input to ensure a service can produce outcomes. It has the following properties:</p>
+<ul>
+<li>contributes: names the Inputs contributed by the Stakeholder. Inputs are for Programs, Services, or Activities.</li>
+</ul>"""@en ;
+                             rdfs:label "Contributing Stakeholder"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Counterfactual
+cids:Counterfactual rdf:type owl:Class ;
+                    rdfs:subClassOf cids:cidsThing ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty i72:located_in ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:allValuesFrom i72:Feature
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty i72:unit_of_measure ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass i72:Unit_of_measure
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty i72:value ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass i72:Measure
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass act:Activity
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:endedAtTime ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:startedAtTime ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasDescription ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:string
+                                    ] ;
+                    rdfs:comment """<p>Counterfactual defines what the impact on stakeholders would be if the stakeholders did not receive the service. It has the following properties:</p>
+<ul>
+<li>i72:located_in: Identifies the spatial location of the counterfactual.</li>
+<li>prov:startedAtTime: Identifies the start of the time interval during which the counterfactual was determined.</li>
+<li>prov:endedAtTime: Identifies the end of the time interval during which the counterfactual was determined.</li>
+<li>prov:wasGeneratedBy: An activity that describes how the counterfactual was generated.</li>
+<li>hasDescription: A string that describes the counterfactual.</li>
+<li>i72:value: A measure that specifies the value of the counterfactual.</li>
+<li>i72:unit_of_measure: Specifies the units of measure of the counterfactual.</li>
+</ul>"""@en ;
+                    rdfs:label "Counterfactual"@en .
+
+
+###  https://ontology.commonapproach.org/cids#DcThing
+cids:DcThing rdf:type owl:Class .
+
+
+###  https://ontology.commonapproach.org/cids#DcatThing
+cids:DcatThing rdf:type owl:Class .
+
+
+###  https://ontology.commonapproach.org/cids#DropOffRisk
+cids:DropOffRisk rdf:type owl:Class ;
+                 rdfs:subClassOf cids:ImpactRisk ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty org:hasIdentifier ;
+                                   cids:belongsToTier cids:FullTier ;
+                                   owl:hasValue "DropOff Risk"
+                                 ] ;
+                 rdfs:label "Drop Off Risk" ;
+                 skos:definition "Drop-off Risk considers an impact that does not sustain a long lasting effect. The probability that positive impact does not endure and/or that negative impact is no longer mitigated."@en .
+
+
+###  https://ontology.commonapproach.org/cids#EfficiencyRisk
+cids:EfficiencyRisk rdf:type owl:Class ;
+                    rdfs:subClassOf cids:ImpactRisk ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty org:hasIdentifier ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:hasValue "Efficiency Risk"
+                                    ] ;
+                    rdfs:label "Efficiency Risk" ;
+                    skos:definition "Efficiency Risk considers an impact that could have been achieved with fewer resources or at a lower cost. The probability that the impact could have been achieved with fewer resources or at a lower cost."@en .
+
+
+###  https://ontology.commonapproach.org/cids#EnduranceRisk
+cids:EnduranceRisk rdf:type owl:Class ;
+                   rdfs:subClassOf cids:ImpactRisk ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty org:hasIdentifier ;
+                                     cids:belongsToTier cids:FullTier ;
+                                     owl:hasValue "Endurance Risk"
+                                   ] ;
+                   rdfs:label "Endurance Risk" ;
+                   skos:definition "Endurance Risk considers an impact that would be sustained for a longer period of time if the intervention was also sustained. The probability that the required activities are not delivered for a long enough period."@en .
+
+
+###  https://ontology.commonapproach.org/cids#EvidenceRisk
+cids:EvidenceRisk rdf:type owl:Class ;
+                  rdfs:subClassOf cids:ImpactRisk ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty org:hasIdentifier ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:hasValue "Evidence Risk"
+                                  ] ;
+                  rdfs:label "Evidence Risk" ;
+                  skos:definition "Evidence Risk considers an impact that is improperly interpreted because of the lack of high quality data that is available. The probability that insufficient high-quality data exists to know what impact is occurring."@en .
+
+
+###  https://ontology.commonapproach.org/cids#ExecutionRisk
+cids:ExecutionRisk rdf:type owl:Class ;
+                   rdfs:subClassOf cids:ImpactRisk ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty org:hasIdentifier ;
+                                     cids:belongsToTier cids:FullTier ;
+                                     owl:hasValue "Execution Risk"
+                                   ] ;
+                   rdfs:label "Execution Risk" ;
+                   skos:definition "Execution Risk considers an impact that is different than what was intended because the intervention was not delivered properly. The probability that the activities are not delivered as planned and do not result in the desired outcomes."@en .
+
+
+###  https://ontology.commonapproach.org/cids#ExternalRisk
+cids:ExternalRisk rdf:type owl:Class ;
+                  rdfs:subClassOf cids:ImpactRisk ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty org:hasIdentifier ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:hasValue "External Risk"
+                                  ] ;
+                  rdfs:label "External Risk" ;
+                  skos:definition "External Risk considers an impact that is disrupted by factors outside of the range of control. The probability that external factors disrupt our ability to deliver the impact."@en .
+
+
+###  https://ontology.commonapproach.org/cids#FinancialInput
+cids:FinancialInput rdf:type owl:Class ;
+                    rdfs:subClassOf cids:Input ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasType ;
+                                      owl:allValuesFrom act:Resource
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cids:hasAmount ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass [ owl:intersectionOf ( i72:Quantity
+                                                                         i72:Unit_of_measure
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ]
+                                    ] ;
+                    rdfs:comment """<p>FinancialInput represents a monetary resource, with a monetary unit of measure, such as donating cash or paying off debt.</p>
+<p>Financial resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+<ul>
+<li>hasType: a FinancialResource object indicating the type of FinancialInput.</li>
+<li>hasAmount: a Quantity and Unit of measure indicating the amount of the FinancialResource.</li>
+</ul>"""@en ;
+                    rdfs:label "Financial Input"@en .
+
+
+###  https://ontology.commonapproach.org/cids#FinancialOrganization
+cids:FinancialOrganization rdf:type owl:Class ;
+                           rdfs:subClassOf cids:Organization ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasCharacteristic ;
+                                             owl:allValuesFrom cids:Characteristic
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasIndicator ;
+                                             owl:allValuesFrom cids:Indicator
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasOutcome ;
+                                             owl:allValuesFrom cids:Outcome
+                                           ] ;
+                           rdfs:comment "An institution (public or private) that collects funds (from the public or other institutions) and invests them in financial assets. (https://www.vocabulary.com/dictionary/financial%20organization)"@en ;
+                           rdfs:label "Financial Organization"@en .
+
+
+###  https://ontology.commonapproach.org/cids#HowMuchImpact
+cids:HowMuchImpact rdf:type owl:Class ;
+                   rdfs:subClassOf cids:cidsThing ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                     owl:allValuesFrom cids:Activity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:forIndicator ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:allValuesFrom cids:Indicator
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasCounterfactual ;
+                                     cids:belongsToTier cids:FullTier ;
+                                     owl:allValuesFrom cids:Counterfactual
+                                   ] ,
+                                   [ rdf:type owl:Restriction ; 
+                                     owl:onProperty i72:unit_of_measure ;
+                                     cids:belongsToTier cids:FullTier ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass i72:Unit_of_measure
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty i72:value ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass i72:Measure
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasDescription ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:string ;
+                                     sh:severity sh:Info
+                                   ] ;
+                   rdfs:comment """<p>HowMuchImpact defines the properties common to ImpactScale, ImpactDepth and ImpactDuration:</p>
+<ul>
+<li>forIndicator: The Indicator used to measure the Impact (not a number value).</li>
+<li>prov:wasGeneratedBy: An Activity that can used to describe the method used to determine the impact. For example, it could be a random control trial, or estimation.</li>
+<li>hasDescription: A string that can used to provide additional information about the impact.</li>
+<li>i72:value: Links to the value of the impact specified as an i72:Measure</li>
+<li>i72:unit_of_measure: Specifies the units of measure of the impact.</li>
+<li>hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified in a string.</li>
+</ul>"""@en ;
+                   rdfs:label "How Much Impact"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactDepth
+cids:ImpactDepth rdf:type owl:Class ;
+                 rdfs:subClassOf cids:HowMuchImpact ;
+                 rdfs:comment """<p>The degree of change experienced by the stakeholder. Depth is calculated by analysing the change that has occured between the 'Outcome level at base line' and the 'Outcome level in period'.  In other words % increase in Outcome relative to baseline.</p>
+<p>Refers to indicators that measure the degree of change experienced by the stakeholders compared to some baseline determined prior to the service being provided.</p>"""@en ;
+                 rdfs:label "Impact Depth"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactDuration
+cids:ImpactDuration rdf:type owl:Class ;
+                    rdfs:subClassOf cids:HowMuchImpact ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:endedAtTime ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty prov:startedAtTime ;
+                                      cids:belongsToTier cids:FullTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:dateTime
+                                    ] ;
+                    rdfs:comment """<p>The time period for which the stakeholder experience the outcome.</p>
+<ul>
+<li>time:hasTime: defines the time interval for which the stakeholder experiences the outcome.</li>
+</ul>
+
+<p>Refers to indicators that measure how long the stakeholder experiences, or is likely to experience, the outcome.</p>"""@en ;
+                    rdfs:label "Impact Duration"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactModel
+cids:ImpactModel rdf:type owl:Class ;
+                 rdfs:subClassOf cids:cidsThing ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:forOrganization ;
+                                   cids:belongsToTier cids:FullTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass cids:Organization
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty org:hasName ;
+                                   cids:belongsToTier cids:FullTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:hasDescription ;
+                                   cids:belongsToTier cids:FullTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sch:dateCreated ;
+                                   cids:belongsToTier cids:FullTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:dateTime
+                                 ] ;
+                 rdfs:comment """<p>ImpactModel provides the most basic properties:</p>
+<ul>
+<li>hasName: a string containing a title for the model.</li>
+<li>hasDescription: a string containing a description of the model.</li>
+<li>sch:dateCreated: a xsd:date the model was created, in the format of yyyy-mm-dd.</li>
+<li>forOrganization: an object property that links to the Organization the model is for.</li>
+</ul>"""@en ;
+                 rdfs:label "Impact Model"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactPathway
+cids:ImpactPathway rdf:type owl:Class ;
+                   rdfs:subClassOf cids:ImpactModel ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasActivity ;
+                                     owl:allValuesFrom cids:Activity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasIndicator ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:allValuesFrom cids:Indicator
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasIndicatorReport ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:allValuesFrom cids:IndicatorReport
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasInput ;
+                                     owl:allValuesFrom cids:Input
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasOutcome ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:allValuesFrom cids:Outcome
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasOutput ;
+                                     owl:allValuesFrom cids:Output
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasProgram ;
+                                     owl:allValuesFrom cids:Program
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasStakeholderOutcome ;
+                                     cids:belongsToTier cids:EssentialTier ;
+                                     owl:allValuesFrom cids:StakeholderOutcome
+                                   ] ;
+                   rdfs:comment """<p>ImpactPathway is a subclass of ImpactModel. Its properties link to the main impact modelling classes used by an impact pathway and contain the properties defined in the [Impact Management Platform](https://impactmanagementplatform.org/impact/). </p>
+
+<p>The top-level definition of the ImpactPathway class contains the following properties:</p>
+<ul>
+<li>hasInput: Identifies key Inputs for the model.</li>
+<li>hasOutput: Identifies key Outputs for the model.</li>
+<li>hasActivity: Identifies key Activities of the model.</li>
+<li>hasOutcome: Identifies key Outcomes for the model.</li>
+<li>hasIndicator: Identifies key Indicators for the model.</li>
+hasIndicatorReport: A set of IndicatorReports associated with this model.
+<li>hasStakeholder: Identifies key stakeholders participating in the pathway.</li>
+<li>hasStakeholderOutcome: Creates stakeholder-outcome pairing. This enables disaggregated data.</li>
+<li>hasProgram: Identifies the Programs being modelled, if different than the organization.</li>
+</ul>""" ;
+                   rdfs:label "Impact Pathway"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactReport
+cids:ImpactReport rdf:type owl:Class ;
+                  rdfs:subClassOf cids:cidsThing ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasImpactRisk ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:allValuesFrom cids:ImpactRisk
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:forOrganization ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass cids:Organization
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:forOutcome ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass cids:Outcome
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasImpactDepth ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass cids:ImpactDepth
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasImpactDuration ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass cids:ImpactDuration
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasImpactScale ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass cids:ImpactScale
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty org:hasName ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty prov:endedAtTime ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:dateTime
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty prov:startedAtTime ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:dateTime
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasComment ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasExpectation ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasReportedImpact ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                      owl:oneOf [ rdf:type rdf:List ;
+                                                                  rdf:first "negative" ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first "neutral" ;
+                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                        rdf:first "positive" ;
+                                                                                        rdf:rest rdf:nil
+                                                                                      ]
+                                                                           ]
+                                                                ]
+                                                    ]
+                                  ] ;
+                  rdfs:comment """<p>The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:</p>
+<ul>
+<li>How much of the outcome is occurring – across scale, depth and duration?</li>
+<li>Would this change likely have happened anyway?</li>
+</ul>
+
+<p>An ImpactReport has the following properties:</p>
+<ul>
+<li>forOrganization: Links to the Organization for whom this report is associated.</li>
+<li>prov:startedAtTime: Specifies the start of the time interval the report covers.</li>
+<li>prov:endedAtTime: Specifies the end of the time interval the report covers.</li>
+<li>forOutcome: Links to the Organization’s Outcome for whom this report is associated.</li>
+<li>hasName: Name or title of the report.</li>
+<li>hasReportedImpact: Specifies one of three values for the impact as measured – positive, negative or neutral.</li>
+<li>hasImpactScale: Specifies the number of stakeholders who experience the outcome.</li>
+<li>hasImpactDepth: The degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders.</li>
+<li>hasImpactDuration: Impact Duration is the length of time that a stakeholder experiences an impact from the initial implementation.</li>
+<li>hasExpectation: A string field where any expectations that the organization has can be provided.</li>
+<li>hasImpactRisk: Links to information about Impact Risk as defined by Impact Management Norms.</li>
+<li>hasComment: A string field where any comments that the organization has can be provided.</li>
+</ul>""" ;
+                  rdfs:label "Impact Report"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactRisk
+cids:ImpactRisk rdf:type owl:Class ;
+                rdfs:subClassOf cids:cidsThing ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:forImpactReport ;
+                                  owl:allValuesFrom cids:ImpactReport
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:forOutcome ;
+                                  owl:allValuesFrom cids:Outcome
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:hasMitigation ;
+                                  owl:allValuesFrom xsd:string
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty org:hasIdentifier ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:hasConsequence ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                    owl:oneOf [ rdf:type rdf:List ;
+                                                                rdf:first "average" ;
+                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                           rdf:first "minimal" ;
+                                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                                      rdf:first "severe" ;
+                                                                                      rdf:rest rdf:nil
+                                                                                    ]
+                                                                         ]
+                                                              ]
+                                                  ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:hasDescription ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:hasLikelihood ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                    owl:oneOf [ rdf:type rdf:List ;
+                                                                rdf:first "highRisk" ;
+                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                           rdf:first "likely" ;
+                                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                                      rdf:first "lowRisk" ;
+                                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                                 rdf:first "mediumRisk" ;
+                                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                                            rdf:first "unlikely" ;
+                                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                                       rdf:first "veryLikely" ;
+                                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                  rdf:first "veryUnlikely" ;
+                                                                                                                                  rdf:rest rdf:nil
+                                                                                                                                ]
+                                                                                                                     ]
+                                                                                                          ]
+                                                                                               ]
+                                                                                    ]
+                                                                         ]
+                                                              ]
+                                                  ]
+                                ] ;
+                rdfs:comment """<p>ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. Risk is one of the five dimensions of impact as defined by the Impact Norms.</p>
+
+<p>The following defines the key properties of ImpactRisk and its subclasses:</p>
+<ul>
+<li>forImpactReport: Identifies the ImpactReport (and thus the associated StakeholderOutcome) that the risk is associated with.</li>
+<li>hasLikelihood: Identifies the likelihood that the risk will occur among the options given.</li>
+<li>hasConsequence: Identifies the degree of impact the risk could have.</li>
+<li>hasMitigation: A string that specifies a mitigation plan or references a document.</li>
+<li>hasIdentifier: A unique identifier for this risk.</li>
+<li>hasDescription: A description of this risk.</li>
+</ul>
+
+<p>Note that the subclasses of risk do not have properties that distinguish one from another. These will be provided in later versions as needed.</p>"""@en ;
+                rdfs:label "Impact Risk"@en .
+
+
+###  https://ontology.commonapproach.org/cids#ImpactScale
+cids:ImpactScale rdf:type owl:Class ;
+                 rdfs:subClassOf cids:HowMuchImpact ;
+                 rdfs:comment """<p>Specifies the number of stakeholders who experience the outcome.</p>
+
+<p>Refers to indicators that measure the number of individuals who are affected by the social purpose organization’s outcome.</p>"""@en ;
+                 rdfs:label "Impact Scale"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Indicator
+cids:Indicator rdf:type owl:Class ;
+               rdfs:subClassOf i72:Indicator ,
+                               cids:cidsThing ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty dcat:dataset ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:allValuesFrom dcat:Dataset
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:forOutcome ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:allValuesFrom cids:Outcome
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:forTheme ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:allValuesFrom cids:Theme
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasAccess ;
+                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( cids:Organization
+                                                                   cids:Stakeholder
+                                                                 )
+                                                   ]
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasCode ;
+                                 cids:belongsToTier cids:EssentialTier ;
+                                 owl:allValuesFrom cids:Code
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasCounterfactual ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:allValuesFrom cids:Counterfactual
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasHowMuch ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:allValuesFrom cids:HowMuchImpact
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasIndicatorReport ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:allValuesFrom cids:IndicatorReport
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasTarget ;
+                                 cids:belongsToTier cids:EssentialTier ;
+                                 owl:allValuesFrom cids:Target
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:usesOutput ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:allValuesFrom cids:Output
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty i72:unit_of_measure ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass i72:Unit_of_measure ;
+                                 sh:severity sh:Warning
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass cids:Activity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:definedBy ;
+                                 cids:belongsToTier cids:EssentialTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass cids:Organization
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:forOrganization ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass cids:Organization
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasBaseline ;
+                                 cids:belongsToTier cids:EssentialTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass i72:Measure
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasThreshold ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass i72:Measure
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty org:hasIdentifier ;
+                                 cids:belongsToTier cids:FullTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty org:hasName ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:hasDescription ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string ;
+                                 sh:severity sh:Info
+                               ] ,
+                                 [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:unitDescription ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty cids:describesPopulation ;
+                                 cids:belongsToTier cids:BasicTier ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass i72:Population ;
+                                 sh:severity sh:Warning
+                               ] ;
+               rdfs:comment """<p>Indicator is a subclass of i72:Indicator, which provides properties for units of measure, time and value.</p>
+<p>cids:Indicator extends the definition of i72:Indicator with the following properties:</p>
+<ul>
+<li>definedBy: Links to the cids:Organization that defined the Indicator.</li>
+<li>forOutcome: Links to the Outcomes the Indicator measures.</li>
+<li>forOrganization: Links to the Organization that is associated with the Indicator.</li>
+<li>usesOutput: Links the Outputs that the indicator uses in defining its value. This is useful when indicators are computed using output information. This property can be ignored if dcat:dataset is used. The more detailed specification of the definition and computation of the indicator is provided by the i72 Indicator properties.</li>
+<li>hasBaseline: Links to an i72:Measure that specifies a baseline describing the existing condition before intervention. It is used for comparison purposes. Baseline data can be measured or estimated using other datasets. It should be expressed using the same units as the Indicator.</li>
+<li>hasThreshold: Links to an i72:Measure that specifies a minimum or maximum quantity that limits which values an indicator can assume.</li>
+<li>hasTarget: Links to a Target for the Indicator to allow for the assessment of performance against a Target.</li>
+<li>unitDescription: Provides a simple, human-readable text string to describe the unit of measure for an indicator. This property is used to capture the user's original input, especially when it cannot be immediately mapped to a formal, structured unit of measure.</li>
+<li>describesPopulation: An interim property used to link an Indicator to the Population it measures when the specific statistical parameter (e.g., Sum or Mean) is unknown. This property should be replaced with a more specific property (e.g., i72:sum_of or i72:mean_of, inherited from i72:Sum and i72:Mean subclasses respectively) during a data enhancement process.</li>
+<li>i72:unit_of_measure: Specifies the units of the Indicator.</li>
+<li>prov:wasGeneratedBy: Links to a method that specifies how the Indicator was derived.</li>
+<li>dcat:dataset: Links to a dcat:Dataset that specifies the data used to derive the value if the method is Computation.</li>
+<li>hasIndicatorReport: Links to all of the Indicator Reports for this indicator.</li>
+<li>hasAccess: Links to the Stakeholders and Organizations that can read this Indicator.</li>
+<li>hasCode: Identifies the various standards/codelists that exist for a particular indicator. It supports the ability to compare an Outcome to nationally or internationally recognized by means of its indicators.</li>
+<li>hasIdentifier: Unique identifier for the Indicator.</li>
+<li>hasName: Specifies the title of the Indicator.</li>
+<li>hasDescription: Specifies the Indicator's description.</li>
+<li>hasCounterfactual: Links to a Counterfactual in which the value of the counterfactual is specified as a i72:Quantity, and the source of the counterfactual is specified as a string.</li>
+<li>hasHowMuch: Links to HowMuchImpact which defines the properties common to the subclasses ImpactScale, ImpactDepth, and ImpactDuration.</li>
+<li>sch:dateCreated: Is the date that the Indicator was created.</li>
+</ul>"""@en ;
+               rdfs:label "Indicator"@en .
+
+
+###  https://ontology.commonapproach.org/cids#IndicatorDefinition
+cids:IndicatorDefinition rdf:type owl:Class .
+
+
+###  https://ontology.commonapproach.org/cids#IndicatorReport
+cids:IndicatorReport rdf:type owl:Class ;
+                     rdfs:subClassOf cids:cidsThing ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dcat:dataset ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:allValuesFrom dcat:Dataset
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dqv:conformsTo ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:allValuesFrom dcterms:Standard
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dqv:hasQualityAnnotation ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:allValuesFrom dqv:QualityAnnotation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dqv:hasQualityMeasurement ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:allValuesFrom dqv:QualityMeasurement
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:hasAccess ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( cids:Organization
+                                                                         cids:Stakeholder
+                                                                       )
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty i72:unit_of_measure ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass i72:Unit_of_measure
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty i72:value ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass i72:Measure
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass cids:Activity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:forIndicator ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass cids:Indicator
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:forOrganization ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass cids:Organization
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:forStakeholder ;
+                                       cids:belongsToTier cids:FullTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass cids:Stakeholder
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:forTarget ;
+                                       cids:belongsToTier cids:EssentialTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass cids:Target
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty cids:hasComment ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:allValuesFrom xsd:string ;
+                                       sh:severity sh:Info
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty org:hasName ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:string
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty prov:endedAtTime ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:dateTime
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty prov:startedAtTime ;
+                                       cids:belongsToTier cids:BasicTier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:dateTime
+                                     ] ;
+                     rdfs:comment """<p>IndicatorReport is used to report the value of an indicator for some time interval. In addition to the value of the indicator, it reports on when it was generated, the activity used to generate it, the datasets used, and the quality of the value reported using the DQV vocabulary (https://www.w3.org/TR/vocab-dqv/). It contains the following properties:</p>
+<ul>
+<li>forOrganization: Links to the Organization that submits the report.</li>
+<li>forIndicator: Links to the Indicator that is being reported.</li>
+<li>i72:value: Specifies a single measure of the result value.</li>
+<li>i72:unit_of_measure: Specifies a unit of measure for the result value.</li>
+<li>forTarget: Links a Target to the result value.</li>
+<li>prov:wasGeneratedBy: Links to the method by which the Indicator was derived.</li>
+<li>dcat:dataset: Links to the dcat:Dataset that specifies the datasets used to derive the value if the method is computation.</li>
+<li>prov:startedAtTime: The start of the interval that the Indicator Report covers.</li>
+<li>prov:endedAtTime: The end of the time interval that the Indicator Report covers.</li>
+<li>dqv:hasQualityAnnotation: Specifies any annotations regarding the quality of the reported indicator quantity.</li>
+<li>dqv:conformsTo: Specifies the standards that the Indicator being reported conforms to.</li>
+<li>dqv:hasQualityMeasurement: Specifies a metric that represents the evaluation of the indicator.</li>
+<li>forStakeholder: Identifies the Stakeholder affected.</li>
+<li>hasAccess: Links to the organizations that can read this Indicator report.</li>
+<li>hasName: Specifies the Indicator Report's name or title of the Indicator.</li>
+<li>hasComment: A string property in which a general comment for the report can be specified.</li>
+<li>sch:dateCreated: Is the date that the Indicator Report was created.</li>
+</ul>"""@en ;
+                     rdfs:label "Indicator Report"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Input
+cids:Input rdf:type owl:Class ;
+           rdfs:subClassOf cids:cidsThing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasContributingStakeholder ;
+                             owl:allValuesFrom cids:ContributingStakeholder
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:inputFor ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( cids:Activity
+                                                               cids:Program
+                                                               cids:Service
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty oep:partOf ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass cids:ImpactModel
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasActualAmount ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass i72:Measure
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasPlannedAmount ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass i72:Measure
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasType ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass act:Resource
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty org:hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty prov:endedAtTime ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTime
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty prov:startedAtTime ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTime
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasDescription ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+           rdfs:comment """<p>Inputs specify the resources required by a social purpose organization to produce results (Ralser, 2008). An Input is provided by a contributing stakeholder and may come in many forms. We identify three broad categories of Input: [FinancialInput](#FinancialInput), [SkillInput](#SkillInput), and [PhysicalInput](#PhysicalInput).</p>
+
+<p>Properties common across all types of Input are:</p>
+<ul>
+<li>oep:partOf: specifies the impact models this Input is part of</li>
+<li>inputFor: identifies the Program, Service or Activity this is an input for.</li>
+<li>hasContributingStakeholder: identifies the stakeholder that contributes the resource.</li>
+<li>hasType: specifies the type of Resource by denoting the relevant subclass of Resource.</li>
+<li>hasPlannedAmount: specifies the Quantity of Input (which in turn specifies the unit of measure) planned to be used by the activity.</li>
+<li>hasActualAmount: specifies the actual Quantity of Input that was used (which in turn specifies the unit of measure).</li>
+<li>prov:startedAtTime: The start of the time interval over which the Input is provided.</li>
+<li>prov:endedAtTime: The end of the time interval over which the Input is provided.</li>
+<li>hasName: Identifies the name of the Input.</li>
+<li>hasDescription: A description of the Input.</li>
+</ul>"""@en ;
+           rdfs:label "Input"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Organization
+cids:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf org:Organization ,
+                                  cids:cidsThing ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasAddress ;
+                                    cids:belongsToTier cids:BasicTier ;
+                                    owl:allValuesFrom cids:Address
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty org:hasID ;
+                                    cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                                    owl:allValuesFrom org:OrganizationID
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasCharacteristic ;
+                                    cids:belongsToTier cids:EssentialTier ;
+                                    owl:allValuesFrom cids:Characteristic
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasContact ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:allValuesFrom cids:Person
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasIndicator ;
+                                    cids:belongsToTier cids:BasicTier ;
+                                    owl:allValuesFrom cids:Indicator
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasOutcome ;
+                                    cids:belongsToTier cids:BasicTier ;
+                                    owl:allValuesFrom cids:Outcome
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasProgram ;
+                                    cids:belongsToTier cids:FullTier ;
+                                    owl:allValuesFrom cids:Program
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasStakeholder ;
+                                    owl:allValuesFrom cids:Stakeholder
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasPurpose ;
+                                    owl:allValuesFrom xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasWebAddress ;
+                                    owl:allValuesFrom xsd:anyURI
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasDescription ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string ;
+                                    sh:severity sh:Info
+                                  ] ;
+                  rdfs:comment """<p>The cids:Organization class is defined as a rdfs:subClassOf org:Organization which provides the basic properties related to organization structure and behavior. cids:Organization extends org:Organization with the following properties:</p>
+<ul>
+<li>cids:hasAddress: The main address of the Organization, refers to an instance of cids:Address.</li>
+<li>org:hasID: Identifies one or more org:OrganizationID. It may be used to reference externally defined Organizational identifiers such as tax number.</li>
+<li>hasProgram: Identifies the Programs being modelled.</li>
+<li>hasIndicator: List of indicators associated with the Organization.</li>
+<li>hasOutcome: List of outcomes associated with the Organization.</li>
+<li>hasStakeholders: List of stakeholders associated with the Organization.</li>
+<li>hasCharacteristic: List of stakeholder characteristics associated with the Organization.</li>
+<li>hasContact: Identifies one or more contacts for the organization.</li>
+<li>hasDescription: a string that describes the Organization.</li>
+<li>hasWebAddress: a URI specifying the website for the organization.</li>
+<li>hasPurpose: text defining the purpose of the organization.</li>
+<li>sch:dateCreated: the date the Organization’s record was created.</li>
+</ul>
+
+<p>The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization below.</p>
+
+<p>cids:Organization reuses and extends the TOVE Organization Ontology (Fox et al., 1998). The TOVE Organization Ontology is accessible at http://ontology.eil.utoronto.ca/tove/organization.owl.</p>
+
+<p>The following properties of org:Organization are inherited by cids:Organization:</p>
+
+<ul>
+<li>org:hasID: Ties to a unique recognized/public identifier for the Organization, e.g. a business number, charity number, etc.</li>
+<li>ic:hasAddress: The main address of the Organization (optional).</li>
+<li>org:hasLegalName: Is a string that specifies the legal name of the Organization.</li>
+<li>org:hasLegalStatus: An instance of a class that specifies the legal status of the Organization. The legal status will differ based on country.</li>
+<li>ic:hasTelephone: Main phone numbers of the Organization.</li>
+<li>org:numberOfEmployees: A non-negative integer that specifies the Organization’s number of employees.</li>
+<li>hasContact: Identifies one or more people who are the contact for the Organization.</li>
+<li>org:consistsOf: An org:Organization may be divided into org:Divisions.</li>
+</ul>
+
+<p>The following properties of org:OrganizationID are also inherited by cids:Organization:</p>
+
+<ul>
+<li>org:issuedBy: Identifies the entity that issued the OrganizationID.</li>
+<li>hasIdentifier: The number created by the issuing organization.</li>
+<li>sch:dateCreated: The date the identifier was created.</li>
+</ul>
+
+<p>Note that org:FormalOrganization is a subclass of org:Organization to distinguish it from informal organizations. No additional properties are defined but can be extended by the user.</p>""" ;
+                  rdfs:label "Organization"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Outcome
+cids:Outcome rdf:type owl:Class ;
+             rdfs:subClassOf cids:cidsThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty i72:located_in ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom i72:Feature
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:canEnable ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                   owl:unionOf ( cids:Activity
+                                                                 cids:Service
+                                                               )
+                                                 ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:canProduce ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:Outcome
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:forTheme ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:allValuesFrom cids:Theme
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasCode ;
+                               cids:belongsToTier cids:EssentialTier ;
+                               owl:allValuesFrom cids:Code
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasImpactReport ;
+                               cids:belongsToTier cids:EssentialTier ;
+                               owl:allValuesFrom cids:ImpactReport
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasIndicator ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:allValuesFrom cids:Indicator
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasStakeholderOutcome ;
+                               cids:belongsToTier cids:EssentialTier ;
+                               owl:allValuesFrom cids:StakeholderOutcome
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty oep:partOf ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass cids:ImpactModel
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:forOrganization ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass cids:Organization
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasName ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasDescription ;
+                               cids:belongsToTier cids:BasicTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string ;
+                               sh:severity sh:Info
+                             ] ;
+             rdfs:comment """<p>Outcomes are what stakeholders experience as a result of an organization’s activities. They can be positive or negative, intended or unintended.</p>
+
+<p>An Outcome has the following properties:</p>
+<ul>
+<li>hasCode: Links to zero or more Codes that are externally defined taxonomies of outcomes.</li>
+<li>hasStakeholderOutcome: Identifies the impact it has on Stakeholders.</li>
+<li>forTheme: Identifies the Themes that the Outcome aligns with (eg. UNSDG2 or \"Food Security\").</li>
+<li>hasIndicator: Identifies the set of Indicators the organization assigns to the Outcome.</li>
+<li>canEnable: Links an Outcome to a Service or Activity that is made possible due to the result of the Outcome. It abstracts a more detailed specification of Activities producing States that enable other activities.</li>
+<li>canProduce: Links an Outcome to another Outcome. It abstracts the underlying activity chain that usually links one Outcome to another.</li>
+<li>i72:located_in: Identifies the spatial location the outcome is defined for.</li>
+<li>oep:partOf: Identifies the Impact Model it is a component of.</li>
+<li>hasName: string that provides a name for the Outcome.</li>
+<li>hasDescription: string that provides a description for the Outcome.</li>
+<li>hasImpactReport: Identifies the set of ImpactReports that report on the results pertaining to each Outcome.</li>
+<li>sch:dateCreated: date the Outcome was defined.</li>
+</ul>"""@en ;
+             rdfs:label "Outcome"@en .
+
+
+###  https://ontology.commonapproach.org/cids#OutcomeChain
+cids:OutcomeChain rdf:type owl:Class ;
+                  rdfs:subClassOf cids:ImpactModel ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasIndicator ;
+                                    owl:allValuesFrom cids:Indicator
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasOutcome ;
+                                    owl:allValuesFrom cids:Outcome
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasOutput ;
+                                    owl:allValuesFrom cids:Output
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty cids:hasTheme ;
+                                    owl:allValuesFrom cids:Theme
+                                  ] ;
+                  rdfs:comment """<p>OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact modelling classes it uses. The top-level definition of an OutcomeChain contains the following properties:</p>
+<ul>
+<li>hasOutcome: identifies key Outcomes for the model</li>
+<li>hasActivity: identifies key Activities of the model</li>
+<li>hasIndicator: identifies the key Indicators of the model</li>
+</ul>"""@en ;
+                  rdfs:label "Outcome Chain"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Output
+cids:Output rdf:type owl:Class ;
+            rdfs:subClassOf cids:cidsThing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty i72:value ;
+                              owl:allValuesFrom i72:Measure
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:forActivity ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( act:Activity
+                                                                cids:Service
+                                                              )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:canProduce ;
+                              owl:allValuesFrom cids:Outcome
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:produces ;
+                              owl:allValuesFrom act:Resource
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:usedByIndicator ;
+                              owl:allValuesFrom cids:Indicator
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty oep:partOf ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass cids:ImpactModel
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:hasName ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:hasDescription ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ;
+            rdfs:comment """<p>Outputs represent a quantitative summary of an activity. For example, if the activity is “we provide training,” the output is “we trained 50 people to NVQ level 3.” (Source: Social Value International, 2012.) An example of a production output would be “we produce 100 meals for people experiencing homelessness”. An output represents what has been produced and the quantity.</p>
+<p><em>Note: Many impact models illustrate outputs leading to outcomes. Outputs describe the quantity of activity.</em></p>
+<p>The Output class contains the following properties:</p>
+<ul>
+<li>oep:partOf: specifies the impact models this Output is part of</li>
+<li>forActivity: identifies the Activity or Service that produces the Output.</li>
+<li>canProduce: specifies the Outcomes with which the Output is associated and is used to represent Impact Pathways and Outcome Chains.</li>
+<li>i72:value identifies that amount that is produced.</li>
+<li>produces: identifies the Resource that is produced, such as a skill or a type of meal.</li>
+<li>usedByIndicator: identifies the Indicators that use this Output in determining the value of the Indicator.</li>
+<li>hasName: Identifies the name of the Output.</li>
+<li>hasDescription: A description of the Output.</li>
+</ul>"""@en ;
+            rdfs:label "Output"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Person
+cids:Person rdf:type owl:Class ;
+            rdfs:subClassOf sch:Person ,
+                            cids:cidsThing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ic:hasAddress ;
+                              owl:allValuesFrom ic:Address
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:hasAddress ;
+                              owl:allValuesFrom ic:Address
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ic:hasTelephone ;
+                              owl:allValuesFrom ic:PhoneNumber
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:plays ;
+                              owl:allValuesFrom org:Role
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty rel:spouseOf ;
+                              owl:allValuesFrom cids:Person
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cwrc:hasEthnicity ;
+                              owl:allValuesFrom cwrc:Ethnicity
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cwrc:hasGender ;
+                              owl:allValuesFrom cwrc:Gender
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cwrc:hasReligion ;
+                              owl:allValuesFrom cwrc:Religion
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cwrc:parentOf ;
+                              owl:allValuesFrom cids:Person
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty foaf:formerName ;
+                              owl:someValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ic:hasEmail ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sch:identifier ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:hasOccupation ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sch:birthDate ;
+                              owl:onDataRange xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty foaf:familyName ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty foaf:givenName ;
+                              cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty foaf:middleName ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ;
+            rdfs:comment """<p>The Person ontology pattern defines human stakeholders and the various relationships they form. The ontology can capture a great deal of detail about an individual, depending on the available data and needs of the application.</p>
+
+<p>A person can play a role at an organization. For any role, a person can be assigned an ID, with additional meta-data about the role they play. Properties are included for possible disabilities, disease, and immigration status, for use by the theories of change.</p>"""@en .
+
+
+###  https://ontology.commonapproach.org/cids#PhysicalInput
+cids:PhysicalInput rdf:type owl:Class ;
+                   rdfs:subClassOf cids:Input ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty cids:hasType ;
+                                     owl:allValuesFrom act:Resource
+                                   ] ;
+                   rdfs:comment """<p>PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.</p>
+<p>Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+<ul>
+<li>hasType: a PhysicalResource object indicating the type of PhysicalInput.</li>
+</ul>"""@en ;
+                   rdfs:label "Physical Input"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Program
+cids:Program rdf:type owl:Class ;
+             rdfs:subClassOf cids:Activity ,
+                             cids:cidsThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasBeneficialStakeholder ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:BeneficialStakeholder
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasContributingStakeholder ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:ContributingStakeholder
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasImpactModel ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:ImpactModel
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasInput ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:Input
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasOutcome ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:Outcome
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasOutput ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:Output
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasService ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:allValuesFrom cids:Service
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasName ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasDescription ;
+                               cids:belongsToTier cids:FullTier ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             rdfs:comment """<p>A program defines a set of services that focus on a shared set of Outcomes. For example, a “poverty reduction program” can be made up of services such as mobiles services that provide food and clothing to those experiencing homelessness. A Program has a set of Stakeholders who may contribute or benefit. The class contains the following properties:</p>
+<ul>
+<li>hasService: identifies the Services that make up the Program</li>
+<li>hasName: Identifies the name of the Program.</li>
+<li>hasDescription: A description of the Program.</li>
+<li>hasOutcome: Identifies the Outcomes that the program is trying to achieve.</li>
+<li>hasImpactModel: Identifies one or more ImpactModels for the Program.</li>
+<li>hasContributingStakeholder: identifies the stakeholders that contribute to the Program.</li>
+<li>hasBeneficialStakeholder: identifies the stakeholders that benefit from the Program.</li>
+<li>hasInput: identifies the Inputs to the Program.</li>
+<li>hasOutput: identifies the Outputs of the Program.</li>
+</ul>"""@en ;
+             rdfs:label "Program"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Service
+cids:Service rdf:type owl:Class ;
+             rdfs:subClassOf cids:Activity ,
+                             cids:cidsThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty act:hasSubActivity ;
+                               owl:allValuesFrom cids:Activity
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasBeneficialStakeholder ;
+                               owl:allValuesFrom cids:BeneficialStakeholder
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasContributingStakeholder ;
+                               owl:allValuesFrom cids:ContributingStakeholder
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasInput ;
+                               owl:allValuesFrom cids:Input
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasOutcome ;
+                               owl:allValuesFrom cids:Outcome
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasOutput ;
+                               owl:allValuesFrom cids:Output
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty oep:partOf ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass cids:ImpactModel
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty org:hasName ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty prov:endedAtTime ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:dateTime
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty prov:startedAtTime ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:dateTime
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:beneficialSizeEnd ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:positiveInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:beneficialSizeStart ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:positiveInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty cids:hasDescription ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             rdfs:comment """<p>A Program is composed of one or more Services.  As described in the Program description, a poverty reduction program can have many services with each service comprised of different activities, Inputs, Outputs and Outcomes.</p>
+<p>Service is a subclass of Activity and can be related to one or more Programs. It has the following properties:</p>
+<ul>
+<li>oep:partOf: Identifies the Impact Model it is a component of.</li>
+<li>hasName: Identifies the name of the Service.</li>
+<li>hasDescription: A description of the Service.</li>
+<li>act:hasSubActivity: Identifies the Activities that comprise the Service.</li>
+<li>hasInput: Identifies the Inputs to the Service.</li>
+<li>hasOutput: Identifies the Outputs of the Service.</li>
+<li>hasOutcome: Identifies the Outcomes that are specific to the Service.</li>
+<li>hasContributingStakeholder: Identifies the stakeholders that contribute to the Service.</li>
+<li>hasBeneficialStakeholder: Identifies the stakeholders that benefit from the Service.</li>
+<li>beneficialSizeStart: Number of benefical stakeholders at the beginning of the service time interval.</li>
+<li>beneficialSizeEnd: Number of benefical stakeholders at the end of the service time interval.</li>
+<li>prov:startedAtTime: The start of the time interval over which the service is provided.</li>
+<li>prov:endedAtTime: The end of the time interval over which the service is provided.</li>
+</ul>"""@en ;
+             rdfs:label "Service"@en .
+
+
+###  https://ontology.commonapproach.org/cids#SkillInput
+cids:SkillInput rdf:type owl:Class ;
+                rdfs:subClassOf cids:Input ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty cids:hasType ;
+                                  owl:allValuesFrom act:Resource
+                                ] ;
+                rdfs:comment """<p>SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.</p>
+<p>Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
+<ul>
+<li>hasType: A SkillResource object indicating the type of SkillInput.</li>
+</ul>"""@en ;
+                rdfs:label "Skill Input"@en .
+
+
+###  https://ontology.commonapproach.org/cids#SocialPurposeOrganization
+cids:SocialPurposeOrganization rdf:type owl:Class ;
+                               rdfs:subClassOf cids:Organization ;
+                               rdfs:comment "A social purpose organization can be a charity, nonprofit, social enterprise, co-operative, or for profit social enterprise. In all cases, a social purpose organization is advancing a social, cultural or environmental purpose. (https://communityfoundations.ca/investment-readiness-program-glossary/)"@en ;
+                               rdfs:label "Social Purpose Organization"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Stakeholder
+cids:Stakeholder rdf:type owl:Class ;
+                 rdfs:subClassOf cids:cidsThing ,
+                                 [ rdf:type owl:Class ;
+                                   owl:unionOf ( <http://www.w3.org/2003/01/geo/wgs84_pos#Feature>
+                                                 cids:Organization
+                                                 cids:Person
+                                               )
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty i72:located_in ;
+                                   owl:allValuesFrom i72:Feature
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:hasCharacteristic ;
+                                   cids:belongsToTier cids:EssentialTier ;
+                                   owl:allValuesFrom cids:Characteristic
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:performs ;
+                                   owl:allValuesFrom cids:Activity
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty oep:partOf ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass cids:ImpactModel
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:forOrganization ;
+                                   cids:belongsToTier cids:EssentialTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass cids:Organization
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:hasCatchmentArea ;
+                                   cids:belongsToTier cids:EssentialTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                     owl:oneOf [ rdf:type rdf:List ;
+                                                                 rdf:first "global" ;
+                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                            rdf:first "local" ;
+                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                       rdf:first "multinational" ;
+                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                  rdf:first "national" ;
+                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                             rdf:first "provincial" ;
+                                                                                                             rdf:rest rdf:nil
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                   ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty cids:hasDescription ;
+                                   cids:belongsToTier cids:EssentialTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string ;
+                                   sh:severity sh:Info
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty org:hasName ;
+                                   cids:belongsToTier cids:EssentialTier ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ;
+                 rdfs:comment """<p>A stakeholder may be an individual person, but is more often a group or category of people, an organization, or a feature. Stakeholders may be described as either contributing or beneficial stakeholders, as suggested by [Social Value International](https://www.socialvalueint.org/). Stakeholders may also be identified by their roles, as specified by the [Impact Management Norms](https://impactfrontiers.org/norms/): customers, employees, communities, suppliers, and planet.</p>
+
+<p>Stakeholder contains the following properties:</p>
+<ul>
+<li>hasName (title): A title for the stakeholder as a string.</li>
+<li>hasDescription: A general description of the stakeholder as a string.</li>
+<li>hasCatchmentArea: Specifies the regional span of the Stakeholder.</li>
+<li>hasCharacteristic: Specifies characteristics of the Stakeholder.</li>
+<li>performs: Links to the activities performed by the stakeholder.</li>
+<li>i72:located_in: Links to the specific geographic area in which the Stakeholder is located.</li>
+<li>oep:part of: Links the Impact Model that the Stakeholder is being specified for.</li>
+<li>forOrganization: Identifies the Organization which is associated with this Stakeholder.</li>
+</ul>"""@en ;
+                 rdfs:label "Stakeholder"@en .
+
+
+###  https://ontology.commonapproach.org/cids#StakeholderOutcome
+cids:StakeholderOutcome rdf:type owl:Class ;
+                        rdfs:subClassOf cids:cidsThing ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:hasCode ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:allValuesFrom cids:Code
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:hasImpactReport ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:allValuesFrom cids:ImpactReport
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:hasIndicator ;
+                                          cids:belongsToTier cids:FullTier ;
+                                          owl:allValuesFrom cids:Indicator
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:forOutcome ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass cids:Outcome
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:forStakeholder ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass cids:Stakeholder
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:fromPerspectiveOf ;
+                                          cids:belongsToTier cids:FullTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass cids:Stakeholder
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty org:hasName ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:string
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:hasDescription ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:string
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:hasImportance ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                            owl:oneOf [ rdf:type rdf:List ;
+                                                                        rdf:first "high importance" ;
+                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                   rdf:first "moderate important" ;
+                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                              rdf:first "neutral" ;
+                                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                                         rdf:first "unimportant" ;
+                                                                                                         rdf:rest rdf:nil
+                                                                                                       ]
+                                                                                            ]
+                                                                                 ]
+                                                                      ]
+                                                          ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:intendedImpact ;
+                                          cids:belongsToTier cids:FullTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                            owl:oneOf [ rdf:type rdf:List ;
+                                                                        rdf:first "negative" ;
+                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                   rdf:first "neutral" ;
+                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                              rdf:first "positive" ;
+                                                                                              rdf:rest rdf:nil
+                                                                                            ]
+                                                                                 ]
+                                                                      ]
+                                                          ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty cids:isUnderserved ;
+                                          cids:belongsToTier cids:EssentialTier ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:boolean
+                                        ] ;
+                        rdfs:comment """<p>StakeholderOutcome specifies the outcome for a specific stakeholder, as well as properties of that outcome, such as if the stakeholder is underserved with respect to this outcome. StakeholderOutcome is not an alternative to Outcome; rather it is a specialization of a more general Outcome but for a specific stakeholder. Its properties are:</p>
+<ul>
+<li>hasName: A string that is name of the StakeholderOutcome.</li>
+<li>hasDescription: A string that is description of the StakeholderOutcome.</li>
+<li>hasCode: Links to zero or more Codes that are defined taxonomiesof stakeholder outcomes.</li>
+<li>forStakeholder: Identifies the Stakeholder affected.</li>
+<li>forOutcome: Identifies the more general outcome this is part of.</li>
+<li>fromPerspectiveOf: Identifies the Stakeholder who is determining the importance of the Impact.</li>
+<li>hasImportance: Specifies the nature of the importance. One of {“high importance”, “moderate important”, “neutral”, “unimportant”}.</li>
+<li>isUnderserved: A Boolean that denotes if the stakeholder is underserved in relation to their specific outcome.</li>
+<li>intendedImpact: Identifies the intended direction of the change – note that ImpactReport captures the actual direction. This helps to inform the interpretation of the ImpactReport.</li>
+<li>hasIndicator: Identifies the set of Indicators the Organization assigns to the Outcome but are specific to this Stakeholder.</li>
+<li>hasImpactReport: identifies the set of ImpactReport that report on the results pertaining to each Outcome.</li>
+</ul>"""@en ;
+                        rdfs:label "StakeholderOutcome"@en .
+
+
+###  https://ontology.commonapproach.org/cids#StakeholderParticipationRisk
+cids:StakeholderParticipationRisk rdf:type owl:Class ;
+                                  rdfs:subClassOf cids:ImpactRisk ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty org:hasIdentifier ;
+                                                    owl:hasValue "StakeholderParticipation Risk"
+                                                  ] ;
+                                  rdfs:label "Stakeholder Participation Risk" ;
+                                  skos:definition "Stakeholder Participation Risk considers an impact that occurs without consulting or misinterpreting a stakeholder's expectations or experience.  The probability that the expectations and/or experience of stakeholders are misunderstood or not taken into account."@en .
+
+
+###  https://ontology.commonapproach.org/cids#StandardsOrganization
+cids:StandardsOrganization rdf:type owl:Class ;
+                           rdfs:subClassOf cids:Organization ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasCharacteristic ;
+                                             owl:allValuesFrom cids:Characteristic
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasIndicator ;
+                                             owl:allValuesFrom cids:Indicator
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty cids:hasOutcome ;
+                                             owl:allValuesFrom cids:Outcome
+                                           ] ;
+                           rdfs:comment "A standards organization, standards body, standards developing organization (SDO), or standards setting organization (SSO) is an organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards[1] to address the needs of a group of affected adopters. (https://en.wikipedia.org/wiki/Standards_organization)"@en ;
+                           rdfs:label "Standards Organization"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Target
+cids:Target rdf:type owl:Class ;
+            rdfs:subClassOf cids:cidsThing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty i72:unit_of_measure ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass i72:unit_of_measure
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty i72:value ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass i72:Measure
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:forIndicatorReport ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:onClass cids:IndicatorReport
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty org:hasName ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sch:dateCreated ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty prov:endedAtTime ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty prov:startedAtTime ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty cids:hasComment ;
+                              cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string ;
+                              sh:severity sh:Info
+                            ] ;
+            rdfs:comment """<p>The target is used to report the target value of an indicator and/or indicator report for some time interval. In addition to the target value and time interval of the target, this class also reports the units of measure of the target, the date the target was created, the name of the target, and any comment about the target that the user may wish to add.</p>
+<p>This class contains the following properties:</p>
+<ul>
+<li>hasName: Specifies the Target's name.</li>
+<li>i72:value: Specifies a single measure of the Target.</li>
+<li>i72:unit_of_measure: Specifies a unit of measure for the Target.</li>
+<li>prov:startedAtTime: Specifies the start of the time interval that the Target covers.</li>
+<li>prov:endedAtTime: Specifies the end of the time interval that the Target covers.</li>
+<li>hasComment: A string property in which a general comment for the Target can be specified.</li>
+<li>sch:dateCreated: Is the date that the Target was created.</li>
+<li>forIndicatorReport: Links to the Indicator Reports which are associated with the target.</li>
+</ul>""" ;
+            rdfs:label "Target"@en .
+
+
+###  https://ontology.commonapproach.org/cids#Theme
+cids:Theme rdf:type owl:Class ;
+           rdfs:subClassOf cids:cidsThing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasCode ;
+                             owl:allValuesFrom cids:Code
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty org:hasName ;
+                             cids:belongsToTier cids:BasicTier ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:hasDescription ;
+                             cids:belongsToTier cids:BasicTier ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string ;
+                             sh:severity sh:Info
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty cids:relatesTo ;
+                             cids:belongsToTier cids:BasicTier ;
+                             owl:allValuesFrom cids:Theme ;
+                           ] ;
+           rdfs:label "Theme"@en ;
+           rdfs:comment """<p>The Theme class is used to represent the impact themes for which outcomes are specified.</p>
+<p>Outcomes contribute to themes. It has the following properties:</p>
+<ul>
+<li>hasCode: Links to zero or more Codes that are defined taxonomies of Themes.</li>
+<li>hasName: A string that provides a name for the Theme.</li>
+<li>hasDescription: A string that provides a description for the Theme.</li>
+<li>relatesTo: Links a Theme to another Theme.</li>
+</ul>"""@en .
+
+
+###  https://ontology.commonapproach.org/cids#UnexpectedImpactRisk
+cids:UnexpectedImpactRisk rdf:type owl:Class ;
+                          rdfs:subClassOf cids:ImpactRisk ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty org:hasIdentifier ;
+                                            owl:hasValue "UnexpectedImpact Risk"
+                                          ] ;
+                          rdfs:label "Unexpected Impact Risk" ;
+                          skos:definition "Unexpected Impact Risk considers an impact that is more significant than originally anticipated. The probability that significant unexpected positive and/or negative impact is experienced by people and the planet."@en .
+
+###  https://ontology.commonapproach.org/cids#Tier
+cids:Tier rdf:type owl:Class, skos:ConceptScheme ;
+          rdfs:subClassOf cids:cidsThing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty org:hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+          rdfs:label "Tier"@en ;
+          rdfs:comment """<p>The Tier class represents the Common Impact Data Standard tier of alignment to which a class or property belongs.</p>
+<p>A software's alignment to a specific tier of alignment (Basic, Essential, or Full) indicates to a software user which groups of classes and properties are present in the data model of that software, and can be imported and exported in an aligned RDF format (nominally JSONLD).</p>
+<ul>
+<li>hasName: A string that provides a name for the tier of alignment.</li>
+</ul>"""@en .
+
+### Instances of Tier
+
+cids:BasicTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "BasicTier"@en ;
+  org:hasName "BasicTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:EssentialTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "EssentialTier"@en ;
+  org:hasName "EssentialTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:FullTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "FullTier"@en ;
+  org:hasName "FullTier" ;
+  rdfs:isDefinedBy cids: .
+
+cids:SFFTier
+  a cids:Tier, skos:Concept ;
+  skos:inScheme cids:Tier ;
+  skos:prefLabel "SFFTier"@en ;
+  org:hasName "SFFTier" ;
+  rdfs:isDefinedBy cids: .
+
+
+###  https://ontology.commonapproach.org/cids#cidsThing
+cids:cidsThing rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty sch:dateCreated ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:dateTime ;
+                                 sh:severity sh:Info
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sch:description ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string ;
+                                 sh:severity sh:Info
+                               ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://ontology.commonapproach.org/cids#ac
+cids:ac rdf:type owl:NamedIndividual ,
+                 cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Common Approach to Impact Measurement"@en ;
+        foaf:name "Common Approach to Impact Measurement"@en ;
+        cids:hasName "Common Approach to Impact Measurement"@en .
+
+
+###  https://ontology.commonapproach.org/cids#average
+cids:average rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#better
+cids:better rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#highRisk
+cids:highRisk rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#likely
+cids:likely rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#lowRisk
+cids:lowRisk rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#mediumRisk
+cids:mediumRisk rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#minimal
+cids:minimal rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#negative
+cids:negative rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#neutral
+cids:neutral rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#none
+cids:none rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#positive
+cids:positive rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#severe
+cids:severe rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#unlikely
+cids:unlikely rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#veryLikely
+cids:veryLikely rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#veryUnlikely
+cids:veryUnlikely rdf:type owl:NamedIndividual .
+
+
+###  https://ontology.commonapproach.org/cids#worse
+cids:worse rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

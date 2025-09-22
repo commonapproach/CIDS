@@ -1,0 +1,264 @@
+﻿PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX chs: <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
+PREFIX cids: <https://ontology.commonapproach.org/cids#>
+PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX genprop: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/>
+PREFIX geo: <http://www.geonames.org/ontology/ontology_v3.1.rdf#>
+PREFIX i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX ic: <http://ontology.eil.utoronto.ca/tove/icontact#>
+PREFIX oep: <http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#>
+PREFIX om-1: <http://www.wurvoc.org/vocabularies/om-1.8/>
+PREFIX org: <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rel: <http://purl.org/vocab/relationship/>
+PREFIX schema: <http://schema.org/>
+PREFIX sff: <https://ontology.commonapproach.org/sff#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sur: <http://ontology.eil.utoronto.ca/tove/survey#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX voaf: <http://purl.org/vocommons/voaf#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# The construct statement generates the full graph, including both
+# the node shapes and the property shapes
+
+CONSTRUCT {
+    # 1. Node Shapes from Classes
+    ?class rdfs:subClassOf ?superClass .
+    ?shape a sh:NodeShape ;
+        sh:targetClass ?class ;
+        rdfs:label ?label;
+        sh:closed false ;
+        sh:property ?propertyShape ;
+        csh:cname ?cname ;
+    .
+    ?propertyShape a sh:PropertyShape ;
+        sh:path ?property ;
+        sh:name ?propertyLocalName ;
+        sh:class ?rangeClass ;
+        sh:order ?order ;
+        sh:nodeKind ?nodeKind ;
+        sh:datatype ?datatype ;
+        csh:in ?inList ;
+        sh:minCount ?minCardinality ;
+        sh:maxCount ?maxCardinality ;
+        csh:cardinality ?cardinality ;
+        csh:usedBy ?class ;
+        sh:message ?message ;
+        sh:severity ?severity ;    
+        csh:activeTier ?activeTier ;
+    .
+    ?namedIndividual a ?facetClass ;
+        rdfs:label ?prefLabel;
+        cids:hasIdentifier ?identifier ;
+        csh:memberOf ?primaryFacetClass ;
+        .
+}
+WHERE {
+#    bind($mode as ?activeTier)
+#    bind(cids:BasicTier as ?activeTier)  # Set active tier here
+    $TIERS
+    {
+    # Node Shapes from Classes - Only include classes that belong to the active tier
+    ?class rdf:type owl:Class .
+#    ?class cids:belongsToTier ?activeTier .
+    bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className   )
+    FILTER(isIRI(?class))
+    bind (concat(?className,"_NodeShape") as ?shapeName)
+    BIND(IRI(concat(str(csh:),?shapeName)) AS ?shape)
+    OPTIONAL { ?class rdfs:label ?label . }
+    OPTIONAL { ?class rdfs:comment ?comment . }
+    OPTIONAL {
+        ?class rdfs:subClassOf+ ?superClass .
+        FILTER(isIRI(?superClass))
+    }
+    {
+        # This converts data ranges to literal property shapes
+        # Only process restrictions where EITHER the restriction OR the property belongs to active tier
+        ?class rdfs:subClassOf+ ?restriction .
+        ?restriction owl:onProperty ?property .
+        
+        # Filter: Either the restriction OR the property must belong to the active tier
+        {
+            ?restriction cids:belongsToTier ?activeTier .
+        } UNION {
+            ?property cids:belongsToTier ?activeTier .
+        }
+        
+        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className1)
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
+        }        
+        # This determines the property shape IRI       
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?className1,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        {
+        # This gets the datatype from onDataRange or from allValuesFrom if it is a datatype
+        ?restriction owl:onDataRange ?dataTarget.
+        } union {
+            ?restriction owl:allValuesFrom|owl:someValuesFrom ?datatype2.
+            filter(STRBEFORE(str(?datatype2), "#") = str(xsd:)) .
+        }
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
+        }
+        # if the range is a linked list, this iterates over that list
+        optional {
+            ?dataTarget owl:oneOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?inList .
+            bind(xsd:string as ?datatype3)
+        }
+        # this determines the datatype of the target if it's a literal
+        optional {
+            filter(isLiteral(?dataTarget)) .
+            bind(?dataTarget as ?datatype1)
+        }        
+        bind(coalesce(?datatype1, ?datatype2,?datatype3,?dataTarget,xsd:string) as ?datatype)
+        # the corresponding property shape will always be a listeral
+        bind(sh:Literal as ?nodeKind)
+    }
+    # This handles object associations from restrictions
+    union {
+        bind(str(replace(str(?class),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?className2)
+        ?class rdfs:subClassOf+ ?restriction .
+        ?restriction owl:onProperty ?property .
+        
+        # Filter: Either the restriction OR the property must belong to the active tier
+        {
+            ?restriction cids:belongsToTier ?activeTier .
+        } UNION {
+            ?property cids:belongsToTier ?activeTier .
+        }
+        
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(iri(concat(str(csh:),?className2,"_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        # Determine property shape identifiers
+        ?restriction owl:allValuesFrom ?target.
+        optional {
+            ?restriction sh:message ?message .
+        }
+        optional {
+            ?restriction sh:severity ?severity .
+        }
+        # The restriction should not incorporate a data range
+        ?class rdf:type owl:Class .
+        filter NOT EXISTS {
+            ?restriction owl:onDataRange ?datatype .
+        }
+        # Get all range classes from linked list
+        optional {
+            ?target owl:unionOf ?rangeTarget.
+            ?rangeTarget rdf:rest*/rdf:first ?rangeClass1 .
+        }
+        # Or, if the target is an IRI, get the relevant range class from that
+        optional {
+            filter(isIRI(?target)) .
+            bind(?target as ?rangeClass2)
+        }
+        # make sure the range class isn't an atomic type
+        bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
+        filter(STRBEFORE(str(?rangeClass), "#") != str(xsd:)) .    
+        bind(sh:IRI as ?nodeKind)
+    }
+    # This handles qualified cardinality
+    optional {
+        ?restriction owl:qualifiedCardinality ?qCardinality .
+        bind(xsd:string(?qCardinality) as ?cardinalityMin1)
+        bind(xsd:string(?qCardinality) as ?cardinalityMax1)
+    }
+    optional {
+        ?restriction owl:minQualifiedCardinality ?cardinalityMin2 .
+    }
+    optional {
+        ?restriction owl:maxQualifiedCardinality ?cardinalityMax2 .
+    }
+    
+    optional {
+        ?restriction sh:message ?message .
+    }
+    optional {
+        ?restriction sh:severity ?severity .
+    }
+    bind(coalesce(xsd:string(?cardinalityMin1), xsd:string(?cardinalityMin2), "0") as ?cardinalityMin)
+    bind(coalesce(xsd:string(?cardinalityMax1), xsd:string(?cardinalityMax2), "unbounded") as ?cardinalityMax)
+    bind(if(?cardinalityMin = "0" && ?cardinalityMax = "unbounded",csh:ZeroOrMore,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "1",csh:ExactlyOne,
+        if(?cardinalityMin = "1" && ?cardinalityMax = "unbounded",csh:OneOrMore,
+        if(?cardinalityMin = "0" && ?cardinalityMax = "1",csh:Optional, csh:Unknown) ) )      
+        ) as ?cardinality )
+    bind(if(?cardinalityMax = "unbounded", ?void, xsd:integer(?cardinalityMax)) as ?maxCardinality)
+    bind(xsd:integer(?cardinalityMin) as ?minCardinality)
+    
+    # This determines enumerations - only for facet classes that belong to the tier
+    optional {
+        ?namedIndividual a ?niClass .
+        ?namedIndividual a owl:NamedIndividual .
+        ?niClass cids:belongsToTier ?activeTier .
+        bind(str(replace(str(?namedIndividual),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?namedIndividualName)
+        optional {
+            ?namedIndividual skos:prefLabel ?prefLabel .
+        }
+    }} UNION {
+        # Determine enumerations for concepts and codes that belong to the tier
+        ?namedIndividual a ?facetClass .
+        ?facetClass cids:belongsToTier ?activeTier .
+        {
+            ?namedIndividual a owl:NamedIndividual .
+        } UNION {
+            ?namedIndividual a skos:Concept .   
+        } UNION {
+            ?namedIndividual a cids:Code .
+        }
+        OPTIONAL {
+        ?namedIndividual rdfs:label ?prefLabel1;
+        }
+        optional {
+            ?namedIndividual skos:prefLabel ?prefLabel2 ;
+        }
+        bind(coalesce(?prefLabel1, ?prefLabel2) as ?prefLabel)
+        optional {
+            ?namedIndividual cids:hasIdentifier ?identifier .
+        }
+        optional {
+            ?namedIndividual a ?facetClass .
+            filter(?facetClass not in (owl:NamedIndividual, skos:Concept, cids:Code))
+            bind(?facetClass as ?primaryFacetClass)
+        }
+    }
+    union {
+        # Handle unaffiliated object properties without restrictions
+        # Only include properties that belong to the active tier
+        ?property a owl:ObjectProperty .
+        ?property rdfs:subPropertyOf cids:cidsObjectProperty .
+        ?property cids:belongsToTier ?activeTier .
+        
+        bind(str(replace(str(?property),".*/([A-Za-z0-9]+)$|.*#([A-Za-z0-9]+)$","$1$2")) as ?propertyLocalName)
+        bind(if(strstarts(?propertyLocalName,"has"), strafter(?propertyLocalName,"has"), if(strstarts(?propertyLocalName,"is"),strafter(?propertyLocalName,"is"), if(strstarts(?propertyLocalName,"for"),strafter(?propertyLocalName,"for"),""))) as ?targetClassName)
+        bind(iri(concat(str(csh:),"Class_",?propertyLocalName,"_PropertyShape")) as ?propertyShape)
+        bind(if (?targetClassName != "",iri(concat(str(cids:),?targetClassName)),?void) as ?rangeClass)
+        bind(sh:IRI as ?nodeKind)
+        bind(3 as ?section)
+        }    
+} order by ?shape ?propertyShape ?namedIndividual ?namedIndividualName
