@@ -1010,6 +1010,14 @@ i72:Measure rdf:type owl:Class ;
                               owl:onDataRange xsd:string
                             ] .
 
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Population
+i72:Population rdf:type owl:Class ; 
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty rdfs:label ;
+                              cids:belongsToTier cids:BasicTier, cids:SFFTier ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                            ] .
+
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
 i72:unit_of_measure rdf:type owl:Class .
 
