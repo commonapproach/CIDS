@@ -2061,7 +2061,7 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasCode ;
-                                 cids:belongsToTier cids:EssentialTier ;
+                                 cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                                  owl:allValuesFrom cids:Code
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -2516,7 +2516,6 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasCode ;
-                               cids:belongsToTier cids:EssentialTier ;
                                owl:allValuesFrom cids:Code
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -3227,6 +3226,7 @@ cids:Theme rdf:type owl:Class ;
            rdfs:subClassOf cids:cidsThing ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasCode ;
+                             cids:belongsToTier cids:BasicTier ;
                              owl:allValuesFrom cids:Code
                            ] ,
                            [ rdf:type owl:Restriction ;
