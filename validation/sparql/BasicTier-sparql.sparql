@@ -1,7 +1,6 @@
 PREFIX act: <http://ontology.eil.utoronto.ca/tove/activity#>
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX cc: <http://creativecommons.org/ns#>
-PREFIX chs: <file:///C:/Users/kurtc/CIDS/CIDS/validation/working/sparql-owl-to-shacl.sparql>
 PREFIX cids: <https://ontology.commonapproach.org/cids#>
 PREFIX csh: <https://ontology.commonapproach.org/cids/shacl#>
 PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>
