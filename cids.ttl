@@ -2524,6 +2524,7 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasCode ;
+                               cids:belongsToTier cids:EssentialTier ;
                                owl:allValuesFrom cids:Code
                              ] ,
                              [ rdf:type owl:Restriction ;
