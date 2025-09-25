@@ -70,10 +70,20 @@ csh:Theme_hasDescription_PropertyShape
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:Theme .
 
+csh:Theme_hasCode_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:minCount      0;
+        sh:name          "hasCode";
+        sh:nodeKind      sh:BlankNodeOrIRI;
+        sh:path          cids:hasCode;
+        csh:activeTier   cids:BasicTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Theme .
+
 csh:Theme_NodeShape  rdf:type  sh:NodeShape;
         rdfs:label      "Theme"@en;
         sh:closed       false;
-        sh:property     csh:Theme_relatesTo_PropertyShape , csh:Theme_hasName_PropertyShape , csh:Theme_hasDescription_PropertyShape;
+        sh:property     csh:Theme_relatesTo_PropertyShape , csh:Theme_hasName_PropertyShape , csh:Theme_hasDescription_PropertyShape , csh:Theme_hasCode_PropertyShape;
         sh:targetClass  cids:Theme .
 
 cids:Theme  rdfs:subClassOf  cids:cidsThing .
