@@ -1362,8 +1362,8 @@ cids:Characteristic rdf:type owl:Class ;
                                       owl:onClass cids:Code
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty cids:hasValue, cids:SFFTier ;
-                                      cids:belongsToTier cids:EssentialTier ;
+                                      owl:onProperty cids:hasValue ;
+                                      cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
                                       owl:onClass i72:Measure # check for case sensitivity because of punning
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -2275,7 +2275,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasComment ;
                                        cids:belongsToTier cids:BasicTier ;
-                                       owl:onClass xsd:string ;
+                                       owl:onDataRange xsd:string ;
                                        sh:severity sh:Info
                                      ] ,
                                      [ rdf:type owl:Restriction ;
