@@ -37,6 +37,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 csh:Theme_relatesTo_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "relatesTo";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -72,6 +73,7 @@ csh:Theme_hasDescription_PropertyShape
 
 csh:Theme_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Code;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -90,6 +92,7 @@ cids:Theme  rdfs:subClassOf  cids:cidsThing .
 
 csh:StandardsOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -112,6 +115,7 @@ csh:StandardsOrganization_hasLegalName_PropertyShape
 
 csh:StandardsOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -122,6 +126,7 @@ csh:StandardsOrganization_hasIndicator_PropertyShape
 
 csh:StandardsOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -142,6 +147,7 @@ cids:StandardsOrganization
 
 csh:SocialPurposeOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -164,6 +170,7 @@ csh:SocialPurposeOrganization_hasLegalName_PropertyShape
 
 csh:SocialPurposeOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -174,6 +181,7 @@ csh:SocialPurposeOrganization_hasIndicator_PropertyShape
 
 csh:SocialPurposeOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -206,6 +214,7 @@ csh:Outcome_hasName_PropertyShape
 
 csh:Outcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -229,6 +238,7 @@ csh:Outcome_hasDescription_PropertyShape
 
 csh:Outcome_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -260,6 +270,7 @@ cids:Outcome  rdfs:subClassOf  cids:cidsThing .
 
 csh:Organization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -282,6 +293,7 @@ csh:Organization_hasLegalName_PropertyShape
 
 csh:Organization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -292,6 +304,7 @@ csh:Organization_hasIndicator_PropertyShape
 
 csh:Organization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -353,6 +366,7 @@ csh:Indicator_hasName_PropertyShape
 
 csh:Indicator_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:IndicatorReport;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -376,6 +390,7 @@ csh:Indicator_hasDescription_PropertyShape
 
 csh:Indicator_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -386,6 +401,7 @@ csh:Indicator_forTheme_PropertyShape
 
 csh:Indicator_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -466,9 +482,10 @@ csh:IndicatorReport_hasName_PropertyShape
 
 csh:IndicatorReport_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasComment";
-        sh:nodeKind      sh:BlankNodeOrIRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasComment;
         sh:severity      sh:Info;
         csh:activeTier   cids:BasicTier;
@@ -522,6 +539,7 @@ cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing .
 
 csh:FinancialOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -544,6 +562,7 @@ csh:FinancialOrganization_hasLegalName_PropertyShape
 
 csh:FinancialOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -554,6 +573,7 @@ csh:FinancialOrganization_hasIndicator_PropertyShape
 
 csh:FinancialOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
