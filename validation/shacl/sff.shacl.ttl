@@ -40,6 +40,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 csh:Theme_relatesTo_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "relatesTo";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -72,6 +73,7 @@ csh:Theme_hasDescription_PropertyShape
 
 csh:Theme_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Code;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -155,6 +157,7 @@ csh:TeamProfile_NodeShape
 
 csh:StandardsOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -175,6 +178,7 @@ csh:StandardsOrganization_hasLegalName_PropertyShape
 
 csh:StandardsOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -184,6 +188,7 @@ csh:StandardsOrganization_hasIndicator_PropertyShape
 
 csh:StandardsOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         org:OrganizationID;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -193,6 +198,7 @@ csh:StandardsOrganization_hasID_PropertyShape
 
 csh:StandardsOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -212,6 +218,7 @@ cids:StandardsOrganization
 
 csh:SocialPurposeOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -232,6 +239,7 @@ csh:SocialPurposeOrganization_hasLegalName_PropertyShape
 
 csh:SocialPurposeOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -241,6 +249,7 @@ csh:SocialPurposeOrganization_hasIndicator_PropertyShape
 
 csh:SocialPurposeOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         org:OrganizationID;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -250,6 +259,7 @@ csh:SocialPurposeOrganization_hasID_PropertyShape
 
 csh:SocialPurposeOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -372,6 +382,7 @@ csh:ReportInfo_hasName_PropertyShape
 
 csh:ReportInfo_forOrganization_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "forOrganization";
@@ -402,6 +413,7 @@ csh:ReportInfo_NodeShape
 
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         xsd:string;
         sh:minCount      0;
         sh:name          "hasEmail";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -451,6 +463,7 @@ csh:Outcome_hasName_PropertyShape
 
 csh:Outcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -472,6 +485,7 @@ csh:Outcome_hasDescription_PropertyShape
 
 csh:Outcome_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -501,6 +515,7 @@ cids:Outcome  rdfs:subClassOf  cids:cidsThing .
 
 csh:Organization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -521,6 +536,7 @@ csh:Organization_hasLegalName_PropertyShape
 
 csh:Organization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -530,6 +546,7 @@ csh:Organization_hasIndicator_PropertyShape
 
 csh:Organization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         org:OrganizationID;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -539,6 +556,7 @@ csh:Organization_hasID_PropertyShape
 
 csh:Organization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -557,6 +575,7 @@ cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
 
 csh:OrganizationProfile_servesEDG_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         sff:EquityDeservingGroup;
         sh:minCount      0;
         sh:name          "servesEDG";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -567,6 +586,7 @@ csh:OrganizationProfile_servesEDG_PropertyShape
 
 csh:OrganizationProfile_sectorServed_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Sector;
         sh:minCount      0;
         sh:name          "sectorServed";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -589,6 +609,7 @@ csh:OrganizationProfile_reportedDate_PropertyShape
 
 csh:OrganizationProfile_provinceTerritoryServed_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:ProvinceTerritory;
         sh:minCount      0;
         sh:name          "provinceTerritoryServed";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -599,6 +620,7 @@ csh:OrganizationProfile_provinceTerritoryServed_PropertyShape
 
 csh:OrganizationProfile_primaryPopulationServed_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:PopulationServed;
         sh:minCount      0;
         sh:name          "primaryPopulationServed";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -609,6 +631,7 @@ csh:OrganizationProfile_primaryPopulationServed_PropertyShape
 
 csh:OrganizationProfile_organizationType_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:OrganizationType;
         sh:minCount      0;
         sh:name          "organizationType";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -619,6 +642,7 @@ csh:OrganizationProfile_organizationType_PropertyShape
 
 csh:OrganizationProfile_localityServed_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Locality;
         sh:minCount      0;
         sh:name          "localityServed";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -629,6 +653,7 @@ csh:OrganizationProfile_localityServed_PropertyShape
 
 csh:OrganizationProfile_hasPrimaryContact_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Person;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasPrimaryContact";
@@ -640,6 +665,7 @@ csh:OrganizationProfile_hasPrimaryContact_PropertyShape
 
 csh:OrganizationProfile_hasManagementTeamProfile_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         sff:TeamProfile;
         sh:minCount      0;
         sh:name          "hasManagementTeamProfile";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -650,6 +676,7 @@ csh:OrganizationProfile_hasManagementTeamProfile_PropertyShape
 
 csh:OrganizationProfile_hasFundingStatus_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         sff:FundingStatus;
         sh:minCount      0;
         sh:name          "hasFundingStatus";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -660,6 +687,7 @@ csh:OrganizationProfile_hasFundingStatus_PropertyShape
 
 csh:OrganizationProfile_hasBoardProfile_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         sff:TeamProfile;
         sh:minCount      0;
         sh:name          "hasBoardProfile";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -756,6 +784,7 @@ csh:Indicator_hasName_PropertyShape
 
 csh:Indicator_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:IndicatorReport;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -777,6 +806,7 @@ csh:Indicator_hasDescription_PropertyShape
 
 csh:Indicator_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Code;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -786,6 +816,7 @@ csh:Indicator_hasCode_PropertyShape
 
 csh:Indicator_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Theme;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -795,6 +826,7 @@ csh:Indicator_forTheme_PropertyShape
 
 csh:Indicator_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -869,9 +901,10 @@ csh:IndicatorReport_hasName_PropertyShape
 
 csh:IndicatorReport_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasComment";
-        sh:nodeKind      sh:BlankNodeOrIRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasComment;
         sh:severity      sh:Info;
         csh:cardinality  csh:ZeroOrMore;
@@ -1108,6 +1141,7 @@ csh:FundingState_NodeShape
 
 csh:FinancialOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Outcome;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -1128,6 +1162,7 @@ csh:FinancialOrganization_hasLegalName_PropertyShape
 
 csh:FinancialOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Indicator;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -1137,6 +1172,7 @@ csh:FinancialOrganization_hasIndicator_PropertyShape
 
 csh:FinancialOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         org:OrganizationID;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -1146,6 +1182,7 @@ csh:FinancialOrganization_hasID_PropertyShape
 
 csh:FinancialOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Address;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -1230,6 +1267,7 @@ csh:EDGProfile_hasSize_PropertyShape
 
 csh:EDGProfile_forEDG_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         sff:EquityDeservingGroup;
         sh:maxCount      1;
         sh:minCount      0;
         sh:name          "forEDG";
@@ -1335,6 +1373,16 @@ csh:Code_NodeShape  rdf:type  sh:NodeShape;
 
 cids:Code  rdfs:subClassOf  cids:cidsThing .
 
+csh:Characteristic_hasValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "hasValue";
+        sh:nodeKind      sh:BlankNodeOrIRI;
+        sh:path          cids:hasValue;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Characteristic .
+
 csh:Characteristic_hasName_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
@@ -1348,6 +1396,7 @@ csh:Characteristic_hasName_PropertyShape
 
 csh:Characteristic_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
+        sh:class         cids:Code;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:BlankNodeOrIRI;
@@ -1359,7 +1408,7 @@ csh:Characteristic_NodeShape
         rdf:type        sh:NodeShape;
         rdfs:label      "Characteristic"@en;
         sh:closed       false;
-        sh:property     csh:Characteristic_hasName_PropertyShape , csh:Characteristic_hasCode_PropertyShape;
+        sh:property     csh:Characteristic_hasValue_PropertyShape , csh:Characteristic_hasName_PropertyShape , csh:Characteristic_hasCode_PropertyShape;
         sh:targetClass  cids:Characteristic .
 
 cids:Characteristic  rdfs:subClassOf  cids:cidsThing .
