@@ -1018,8 +1018,8 @@ i72:Population rdf:type owl:Class ;
                               owl:minCardinality "1"^^xsd:nonNegativeInteger ;
                             ] .
 
-###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#unit_of_measure
-i72:unit_of_measure rdf:type owl:Class .
+###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure
+i72:Unit_of_measure rdf:type owl:Class .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/activity#Activity
@@ -3171,7 +3171,7 @@ cids:Target rdf:type owl:Class ;
                               owl:onProperty i72:unit_of_measure ;
                               cids:belongsToTier cids:EssentialTier ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass i72:unit_of_measure
+                              owl:onClass i72:Unit_of_measure
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty i72:value ;
