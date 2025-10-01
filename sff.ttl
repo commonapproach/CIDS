@@ -66,44 +66,44 @@ sff:OrganizationProfile
   ],[
     a owl:Restriction ;
     owl:onProperty sff:hasPrimaryContact ;
-    owl:allValuesFrom cids:Person ;
+    owl:onClass cids:Person ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasManagementTeamProfile ;
-    owl:allValuesFrom sff:TeamProfile
+    owl:onClass sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasBoardProfile ;
-    owl:allValuesFrom sff:TeamProfile
+    owl:onClass sff:TeamProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:sectorServed ;
-    owl:allValuesFrom cids:Sector
+    owl:onClass cids:Sector
   ], [
     a owl:Restriction ;
     owl:onProperty sff:localityServed ;
-    owl:allValuesFrom cids:Locality
+    owl:onClass cids:Locality
   ], [
     a owl:Restriction ;
     owl:onProperty sff:provinceTerritoryServed ;
-    owl:allValuesFrom cids:ProvinceTerritory
+    owl:onClass cids:ProvinceTerritory
   ], [
     a owl:Restriction ;
     owl:onProperty sff:primaryPopulationServed ;
-    owl:allValuesFrom cids:PopulationServed
+    owl:onClass cids:PopulationServed
   ], [
     a owl:Restriction ;
     owl:onProperty sff:organizationType ;
-    owl:allValuesFrom cids:OrganizationType
+    owl:onClass cids:OrganizationType
   ], [
     a owl:Restriction ;
     owl:onProperty sff:servesEDG ;
-    owl:allValuesFrom sff:EquityDeservingGroup
+    owl:onClass sff:EquityDeservingGroup
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasFundingStatus ;
-    owl:allValuesFrom sff:FundingStatus
+    owl:onClass sff:FundingStatus
   ], [
     a owl:Restriction ;
     owl:onProperty sff:reportedDate ;
@@ -142,7 +142,7 @@ sff:ReportInfo
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty cids:forOrganization ;
-    owl:allValuesFrom cids:Organization ;
+    owl:onClass cids:Organization ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
@@ -296,7 +296,7 @@ sff:EDGProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:forEDG ;
-    owl:allValuesFrom sff:EquityDeservingGroup ;
+    owl:onClass sff:EquityDeservingGroup ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
   ] ;
   rdfs:isDefinedBy sff: ;
