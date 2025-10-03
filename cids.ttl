@@ -265,7 +265,7 @@ dqv:target rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
-<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty .
+prov:wasGeneratedBy rdf:type owl:ObjectProperty .
 
 
 ###  https://ontology.commonapproach.org/cids#Occupation
@@ -1239,11 +1239,7 @@ cids:Activity rdf:type owl:Class ;
                               cids:cidsThing ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty act:subActivityOf ;
-                                owl:onClass [ rdf:type owl:Class ;
-                                                    owl:unionOf ( cids:Activity
-                                                                  cids:Service
-                                                                )
-                                                  ]
+                                owl:onClass cids:Activity
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty cids:canProduce ;
@@ -1317,24 +1313,15 @@ cids:BeneficialStakeholder rdf:type owl:Class ;
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasImpactManagementNormsDefinition ;
-                                             owl:onClass [ rdf:type rdfs:Datatype ;
-                                                                 owl:oneOf [ rdf:type rdf:List ;
-                                                                             rdf:first "Client" ;
-                                                                             rdf:rest [ rdf:type rdf:List ;
-                                                                                        rdf:first "Community" ;
-                                                                                        rdf:rest [ rdf:type rdf:List ;
-                                                                                                   rdf:first "Employee" ;
-                                                                                                   rdf:rest [ rdf:type rdf:List ;
-                                                                                                              rdf:first "Planet" ;
-                                                                                                              rdf:rest [ rdf:type rdf:List ;
-                                                                                                                         rdf:first "Supplier" ;
-                                                                                                                         rdf:rest rdf:nil
-                                                                                                                       ]
-                                                                                                            ]
-                                                                                                 ]
-                                                                                      ]
-                                                                           ]
-                                                               ]
+                                             owl:onDataRange [ a rdfs:Datatype ;
+                                                               owl:oneOf (
+                                                                "client" 
+                                                                "community" 
+                                                                "employee" 
+                                                                "planet" 
+                                                                "supplier"
+                                                               )
+                                                             ]
                                            ] ;
                            rdfs:comment """<p>A Beneficial Stakeholder is a stakeholder that benefits from an impact model’s outcome. It has the following properties:</p>
 <ul>
@@ -1348,7 +1335,7 @@ cids:BeneficialStakeholder rdf:type owl:Class ;
 cids:Characteristic rdf:type owl:Class ;
                     rdfs:subClassOf cids:cidsThing ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      owl:onProperty prov:wasGeneratedBy ;
                                       cids:belongsToTier cids:FullTier ;
                                       owl:onClass cids:Activity
                                     ] ,
@@ -1505,7 +1492,7 @@ cids:Counterfactual rdf:type owl:Class ;
                                       owl:onClass i72:Measure
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      owl:onProperty prov:wasGeneratedBy ;
                                       cids:belongsToTier cids:FullTier ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass cids:Activity
@@ -1669,7 +1656,7 @@ cids:FinancialOrganization rdf:type owl:Class ;
 cids:HowMuchImpact rdf:type owl:Class ;
                    rdfs:subClassOf cids:cidsThing ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                     owl:onProperty prov:wasGeneratedBy ;
                                      cids:belongsToTier cids:FullTier ;
                                      owl:onClass cids:Activity
                                    ] ,
@@ -1911,17 +1898,8 @@ cids:ImpactReport rdf:type owl:Class ;
                                     owl:onProperty cids:hasReportedImpact ;
                                     cids:belongsToTier cids:FullTier ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                      owl:oneOf [ rdf:type rdf:List ;
-                                                                  rdf:first "negative" ;
-                                                                  rdf:rest [ rdf:type rdf:List ;
-                                                                             rdf:first "neutral" ;
-                                                                             rdf:rest [ rdf:type rdf:List ;
-                                                                                        rdf:first "positive" ;
-                                                                                        rdf:rest rdf:nil
-                                                                                      ]
-                                                                           ]
-                                                                ]
+                                    owl:onDataRange [ a rdfs:Datatype ;
+                                                      owl:oneOf ("negative" "neutral" "positive")
                                                     ]
                                   ] ;
                   rdfs:comment """<p>The ImpactReport represents how much, contribution and risk dimensions for each StakeholderOutcome:</p>
@@ -1976,18 +1954,10 @@ cids:ImpactRisk rdf:type owl:Class ;
                                   owl:onProperty cids:hasConsequence ;
                                   cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                    owl:oneOf [ rdf:type rdf:List ;
-                                                                rdf:first "average" ;
-                                                                rdf:rest [ rdf:type rdf:List ;
-                                                                           rdf:first "minimal" ;
-                                                                           rdf:rest [ rdf:type rdf:List ;
-                                                                                      rdf:first "severe" ;
-                                                                                      rdf:rest rdf:nil
-                                                                                    ]
-                                                                         ]
-                                                              ]
-                                                  ]
+                                  owl:onDataRange [ a rdfs:Datatype ;
+                                                    owl:oneOf 
+                                                    ("average" "minimal" "severe")
+                                                    ]
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasDescription ;
@@ -1999,29 +1969,9 @@ cids:ImpactRisk rdf:type owl:Class ;
                                   owl:onProperty cids:hasLikelihood ;
                                   cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                    owl:oneOf [ rdf:type rdf:List ;
-                                                                rdf:first "highRisk" ;
-                                                                rdf:rest [ rdf:type rdf:List ;
-                                                                           rdf:first "likely" ;
-                                                                           rdf:rest [ rdf:type rdf:List ;
-                                                                                      rdf:first "lowRisk" ;
-                                                                                      rdf:rest [ rdf:type rdf:List ;
-                                                                                                 rdf:first "mediumRisk" ;
-                                                                                                 rdf:rest [ rdf:type rdf:List ;
-                                                                                                            rdf:first "unlikely" ;
-                                                                                                            rdf:rest [ rdf:type rdf:List ;
-                                                                                                                       rdf:first "veryLikely" ;
-                                                                                                                       rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                  rdf:first "veryUnlikely" ;
-                                                                                                                                  rdf:rest rdf:nil
-                                                                                                                                ]
-                                                                                                                     ]
-                                                                                                          ]
-                                                                                               ]
-                                                                                    ]
-                                                                         ]
-                                                              ]
+                                  owl:onDataRange [ a rdfs:Datatype ;
+                                                    owl:oneOf 
+                                                    ("highRisk" "likely" "lowRisk" "mediumRisk" "unlikely" "veryLikely" "veryUnlikely")
                                                   ]
                                 ] ;
                 rdfs:comment """<p>ImpactRisk “assesses the likelihood that impact will be different than expected, and that the difference will be material from the perspective of people or the planet who experience impact.” Stating the riskiness of the impact is important for interpreting the subsequent results. Risk is one of the five dimensions of impact as defined by the Impact Norms.</p>
@@ -2070,11 +2020,7 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasAccess ;
-                                 owl:onClass [ rdf:type owl:Class ;
-                                                     owl:unionOf ( cids:Organization
-                                                                   cids:Stakeholder
-                                                                 )
-                                                   ]
+                                 owl:onClass cids:Stakeholder
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasCode ;
@@ -2114,7 +2060,7 @@ cids:Indicator rdf:type owl:Class ;
                                  sh:severity sh:Warning
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                 owl:onProperty prov:wasGeneratedBy ;
                                  cids:belongsToTier cids:FullTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass cids:Activity
@@ -2232,11 +2178,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasAccess ;
-                                       owl:onClass [ rdf:type owl:Class ;
-                                                           owl:unionOf ( cids:Organization
-                                                                         cids:Stakeholder
-                                                                       )
-                                                         ]
+                                       owl:onClass cids:Stakeholder
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty i72:unit_of_measure ;
@@ -2251,7 +2193,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                        owl:onClass i72:Measure
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                       owl:onProperty prov:wasGeneratedBy ;
                                        cids:belongsToTier cids:FullTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass cids:Activity
@@ -2336,12 +2278,7 @@ cids:Input rdf:type owl:Class ;
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:inputFor ;
-                             owl:onClass [ rdf:type owl:Class ;
-                                                 owl:unionOf ( cids:Activity
-                                                               cids:Program
-                                                               cids:Service
-                                                             )
-                                               ]
+                             owl:onClass cids:Activity
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty oep:partOf ;
@@ -2514,11 +2451,7 @@ cids:Outcome rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canEnable ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass [ rdf:type owl:Class ;
-                                                   owl:unionOf ( cids:Activity
-                                                                 cids:Service
-                                                               )
-                                                 ]
+                               owl:onClass cids:Activity
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canProduce ;
@@ -2632,11 +2565,7 @@ cids:Output rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty org:forActivity ;
-                              owl:onClass [ rdf:type owl:Class ;
-                                                  owl:unionOf ( act:Activity
-                                                                cids:Service
-                                                              )
-                                                ]
+                              owl:onClass cids:Activity
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:canProduce ;
@@ -2987,23 +2916,9 @@ cids:Stakeholder rdf:type owl:Class ;
                                    owl:onProperty cids:hasCatchmentArea ;
                                    cids:belongsToTier cids:EssentialTier ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                     owl:oneOf [ rdf:type rdf:List ;
-                                                                 rdf:first "global" ;
-                                                                 rdf:rest [ rdf:type rdf:List ;
-                                                                            rdf:first "local" ;
-                                                                            rdf:rest [ rdf:type rdf:List ;
-                                                                                       rdf:first "multinational" ;
-                                                                                       rdf:rest [ rdf:type rdf:List ;
-                                                                                                  rdf:first "national" ;
-                                                                                                  rdf:rest [ rdf:type rdf:List ;
-                                                                                                             rdf:first "provincial" ;
-                                                                                                             rdf:rest rdf:nil
-                                                                                                           ]
-                                                                                                ]
-                                                                                     ]
-                                                                          ]
-                                                               ]
+                                   owl:onDataRange [ a rdfs:Datatype ;
+                                                     owl:oneOf 
+                                                     ("global" "local" "multinational" "national" "provincial")
                                                    ]
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -3086,37 +3001,18 @@ cids:StakeholderOutcome rdf:type owl:Class ;
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:hasImportance ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                            owl:oneOf [ rdf:type rdf:List ;
-                                                                        rdf:first "high importance" ;
-                                                                        rdf:rest [ rdf:type rdf:List ;
-                                                                                   rdf:first "moderate important" ;
-                                                                                   rdf:rest [ rdf:type rdf:List ;
-                                                                                              rdf:first "neutral" ;
-                                                                                              rdf:rest [ rdf:type rdf:List ;
-                                                                                                         rdf:first "unimportant" ;
-                                                                                                         rdf:rest rdf:nil
-                                                                                                       ]
-                                                                                            ]
-                                                                                 ]
-                                                                      ]
+                                          owl:onDataRange [ a rdfs:Datatype ;
+                                                            owl:oneOf 
+                                                            ("highImportance" "moderateImportance" "neutral" "unimportant")
                                                           ]
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:intendedImpact ;
                                           cids:belongsToTier cids:FullTier ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                            owl:oneOf [ rdf:type rdf:List ;
-                                                                        rdf:first "negative" ;
-                                                                        rdf:rest [ rdf:type rdf:List ;
-                                                                                   rdf:first "neutral" ;
-                                                                                   rdf:rest [ rdf:type rdf:List ;
-                                                                                              rdf:first "positive" ;
-                                                                                              rdf:rest rdf:nil
-                                                                                            ]
-                                                                                 ]
-                                                                      ]
+                                          owl:onDataRange [ a rdfs:Datatype ;
+                                                            owl:oneOf 
+                                                            ("negative" "neutral" "positive")
                                                           ]
                                         ] ,
                                         [ rdf:type owl:Restriction ;
