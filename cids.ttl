@@ -1505,9 +1505,8 @@ cids:Counterfactual rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
-                                      cids:belongsToTier cids:FullTier ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass act:Activity
+                                      owl:onClass cids:Activity
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty prov:endedAtTime ;
@@ -1951,23 +1950,28 @@ cids:ImpactRisk rdf:type owl:Class ;
                 rdfs:subClassOf cids:cidsThing ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:forImpactReport ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:onClass cids:ImpactReport
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:forOutcome ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:onClass cids:Outcome
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasMitigation ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:onClass xsd:string
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty org:hasIdentifier ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onDataRange xsd:string
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasConsequence ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
                                                     owl:oneOf [ rdf:type rdf:List ;
@@ -1984,11 +1988,13 @@ cids:ImpactRisk rdf:type owl:Class ;
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasDescription ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onDataRange xsd:string
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasLikelihood ;
+                                  cids:belongsToTier cids:FullTier ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
                                                     owl:oneOf [ rdf:type rdf:List ;
@@ -2106,7 +2112,6 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
-                                 cids:belongsToTier cids:FullTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass cids:Activity
                                ] ,
@@ -2223,7 +2228,6 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasAccess ;
-                                       cids:belongsToTier cids:FullTier ;
                                        owl:onClass [ rdf:type owl:Class ;
                                                            owl:unionOf ( cids:Organization
                                                                          cids:Stakeholder
@@ -2244,7 +2248,6 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
-                                       cids:belongsToTier cids:FullTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass cids:Activity
                                      ] ,
@@ -2505,7 +2508,6 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canEnable ;
-                               cids:belongsToTier cids:FullTier ;
                                owl:onClass [ rdf:type owl:Class ;
                                                    owl:unionOf ( cids:Activity
                                                                  cids:Service
