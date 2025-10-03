@@ -1349,6 +1349,7 @@ cids:Characteristic rdf:type owl:Class ;
                     rdfs:subClassOf cids:cidsThing ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      cids:belongsToTier cids:FullTier ;
                                       owl:onClass cids:Activity
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -1505,6 +1506,7 @@ cids:Counterfactual rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                      cids:belongsToTier cids:FullTier ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass cids:Activity
                                     ] ,
@@ -1668,6 +1670,7 @@ cids:HowMuchImpact rdf:type owl:Class ;
                    rdfs:subClassOf cids:cidsThing ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                     cids:belongsToTier cids:FullTier ;
                                      owl:onClass cids:Activity
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -2112,6 +2115,7 @@ cids:Indicator rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                 cids:belongsToTier cids:FullTier ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass cids:Activity
                                ] ,
@@ -2248,6 +2252,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                       cids:belongsToTier cids:FullTier ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                        owl:onClass cids:Activity
                                      ] ,
@@ -2508,6 +2513,7 @@ cids:Outcome rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canEnable ;
+                               cids:belongsToTier cids:FullTier ;
                                owl:onClass [ rdf:type owl:Class ;
                                                    owl:unionOf ( cids:Activity
                                                                  cids:Service
