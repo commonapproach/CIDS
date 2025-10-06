@@ -329,7 +329,7 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "global" , "local" , "provincial" , "multinational" , "national";
+        csh:in           "local" , "global" , "provincial" , "national" , "multinational";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_forOrganization_PropertyShape
@@ -546,11 +546,11 @@ cids:SocialPurposeOrganization
 
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasEmail";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          ic:hasEmail;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -1565,7 +1565,7 @@ csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "global" , "local" , "provincial" , "multinational" , "national";
+        csh:in           "local" , "global" , "provincial" , "national" , "multinational";
         csh:usedBy       cids:ContributingStakeholder .
 
 csh:ContributingStakeholder_forOrganization_PropertyShape
@@ -1793,7 +1793,7 @@ csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "global" , "local" , "provincial" , "multinational" , "national";
+        csh:in           "local" , "global" , "provincial" , "national" , "multinational";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_forOrganization_PropertyShape

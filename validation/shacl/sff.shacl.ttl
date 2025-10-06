@@ -413,10 +413,10 @@ csh:ReportInfo_NodeShape
 
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasEmail";
-        sh:nodeKind      sh:BlankNodeOrIRI;
+        sh:nodeKind      sh:Literal;
         sh:path          ic:hasEmail;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Person .

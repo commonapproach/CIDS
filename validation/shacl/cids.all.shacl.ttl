@@ -70,13 +70,13 @@ csh:cidsThing_NodeShape
 
 csh:UnexpectedImpactRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -88,21 +88,21 @@ csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasDescription_PropertyShape
@@ -113,7 +113,7 @@ csh:UnexpectedImpactRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -125,9 +125,9 @@ csh:UnexpectedImpactRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_forOutcome_PropertyShape
@@ -138,7 +138,7 @@ csh:UnexpectedImpactRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -150,7 +150,7 @@ csh:UnexpectedImpactRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
@@ -186,7 +186,7 @@ csh:UnexpectedImpactRisk_NodeShape
         sh:closed       false;
         sh:property     csh:UnexpectedImpactRisk_hasMitigation_PropertyShape , csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape , csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape , csh:UnexpectedImpactRisk_hasDescription_PropertyShape , csh:UnexpectedImpactRisk_hasConsequence_PropertyShape , csh:UnexpectedImpactRisk_forOutcome_PropertyShape , csh:UnexpectedImpactRisk_forImpactReport_PropertyShape , csh:UnexpectedImpactRisk_description_PropertyShape , csh:UnexpectedImpactRisk_dateCreated_PropertyShape;
         sh:targetClass  cids:UnexpectedImpactRisk;
-        csh:activeTier  csh:CompleteTier .
+        csh:activeTier  cids:FullTier , csh:CompleteTier .
 
 cids:UnexpectedImpactRisk
         rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
@@ -695,7 +695,7 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "local" , "provincial" , "global" , "national";
+        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_forOrganization_PropertyShape
@@ -857,13 +857,13 @@ cids:StakeholderReport
 
 csh:StakeholderParticipationRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -875,21 +875,21 @@ csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasDescription_PropertyShape
@@ -900,7 +900,7 @@ csh:StakeholderParticipationRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -912,9 +912,9 @@ csh:StakeholderParticipationRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_forOutcome_PropertyShape
@@ -925,7 +925,7 @@ csh:StakeholderParticipationRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -937,7 +937,7 @@ csh:StakeholderParticipationRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
@@ -973,7 +973,7 @@ csh:StakeholderParticipationRisk_NodeShape
         sh:closed       false;
         sh:property     csh:StakeholderParticipationRisk_hasMitigation_PropertyShape , csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape , csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape , csh:StakeholderParticipationRisk_hasDescription_PropertyShape , csh:StakeholderParticipationRisk_hasConsequence_PropertyShape , csh:StakeholderParticipationRisk_forOutcome_PropertyShape , csh:StakeholderParticipationRisk_forImpactReport_PropertyShape , csh:StakeholderParticipationRisk_description_PropertyShape , csh:StakeholderParticipationRisk_dateCreated_PropertyShape;
         sh:targetClass  cids:StakeholderParticipationRisk;
-        csh:activeTier  csh:CompleteTier .
+        csh:activeTier  cids:FullTier , csh:CompleteTier .
 
 cids:StakeholderParticipationRisk
         rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
@@ -1000,7 +1000,7 @@ csh:StakeholderOutcome_intendedImpact_PropertyShape
         sh:path          cids:intendedImpact;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "positive" , "negative" , "neutral";
+        csh:in           "neutral" , "positive" , "negative";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasName_PropertyShape
@@ -1037,7 +1037,7 @@ csh:StakeholderOutcome_hasImportance_PropertyShape
         sh:path          cids:hasImportance;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unimportant" , "neutral" , "high importance" , "moderate important";
+        csh:in           "unimportant" , "moderateImportance" , "highImportance" , "neutral";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasImpactReport_PropertyShape
@@ -1369,7 +1369,7 @@ csh:SkillInput_partOf_PropertyShape
 
 csh:SkillInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b3;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
@@ -1501,7 +1501,7 @@ cids:SkillInput  rdfs:subClassOf  cids:cidsThing , cids:Input .
 
 csh:Service_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b4;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
@@ -1741,7 +1741,7 @@ cids:Service  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
 
 csh:Program_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b4;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
@@ -1969,7 +1969,7 @@ csh:PhysicalInput_partOf_PropertyShape
 
 csh:PhysicalInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b3;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
@@ -2221,11 +2221,11 @@ csh:Person_hasEthnicity_PropertyShape
 
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasEmail";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          ic:hasEmail;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2399,7 +2399,7 @@ csh:Output_hasDescription_PropertyShape
 
 csh:Output_forActivity_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         [] ;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forActivity";
@@ -2605,7 +2605,7 @@ csh:Outcome_canProduce_PropertyShape
 
 csh:Outcome_canEnable_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         [] ;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canEnable";
@@ -2964,7 +2964,7 @@ csh:Input_partOf_PropertyShape
 
 csh:Input_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b3;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
@@ -3252,7 +3252,7 @@ csh:Indicator_hasBaseline_PropertyShape
 
 csh:Indicator_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         [] ;
+        sh:class         cids:Stakeholder;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAccess";
@@ -3458,13 +3458,13 @@ csh:IndicatorReport_hasComment_PropertyShape
 
 csh:IndicatorReport_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         [] ;
+        sh:class         cids:Stakeholder;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
         sh:path          cids:hasAccess;
-        csh:activeTier   cids:FullTier;
+        csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:IndicatorReport .
 
@@ -3596,7 +3596,7 @@ csh:ImpactScale_wasGeneratedBy_PropertyShape
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
         sh:path          prov:wasGeneratedBy;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactScale .
 
@@ -3687,13 +3687,13 @@ cids:ImpactScale  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
 
 csh:ImpactRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactRisk .
 
@@ -3705,9 +3705,9 @@ csh:ImpactRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_hasIdentifier_PropertyShape
@@ -3718,7 +3718,7 @@ csh:ImpactRisk_hasIdentifier_PropertyShape
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -3730,7 +3730,7 @@ csh:ImpactRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ImpactRisk .
 
@@ -3742,9 +3742,9 @@ csh:ImpactRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_forOutcome_PropertyShape
@@ -3755,7 +3755,7 @@ csh:ImpactRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactRisk .
 
@@ -3767,7 +3767,7 @@ csh:ImpactRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactRisk .
 
@@ -3803,7 +3803,7 @@ csh:ImpactRisk_NodeShape
         sh:closed       false;
         sh:property     csh:ImpactRisk_hasMitigation_PropertyShape , csh:ImpactRisk_hasLikelihood_PropertyShape , csh:ImpactRisk_hasIdentifier_PropertyShape , csh:ImpactRisk_hasDescription_PropertyShape , csh:ImpactRisk_hasConsequence_PropertyShape , csh:ImpactRisk_forOutcome_PropertyShape , csh:ImpactRisk_forImpactReport_PropertyShape , csh:ImpactRisk_description_PropertyShape , csh:ImpactRisk_dateCreated_PropertyShape;
         sh:targetClass  cids:ImpactRisk;
-        csh:activeTier  csh:CompleteTier .
+        csh:activeTier  cids:FullTier , csh:CompleteTier .
 
 cids:ImpactRisk  rdfs:subClassOf  cids:cidsThing .
 
@@ -3829,7 +3829,7 @@ csh:ImpactReport_hasReportedImpact_PropertyShape
         sh:path          cids:hasReportedImpact;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "neutral" , "negative" , "positive";
+        csh:in           "negative" , "neutral" , "positive";
         csh:usedBy       cids:ImpactReport .
 
 csh:ImpactReport_hasName_PropertyShape
@@ -4236,7 +4236,7 @@ csh:ImpactDuration_wasGeneratedBy_PropertyShape
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
         sh:path          prov:wasGeneratedBy;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactDuration .
 
@@ -4357,7 +4357,7 @@ csh:ImpactDepth_wasGeneratedBy_PropertyShape
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
         sh:path          prov:wasGeneratedBy;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ImpactDepth .
 
@@ -4454,7 +4454,7 @@ csh:HowMuchImpact_wasGeneratedBy_PropertyShape
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
         sh:path          prov:wasGeneratedBy;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:HowMuchImpact .
 
@@ -4763,7 +4763,7 @@ csh:FinancialInput_partOf_PropertyShape
 
 csh:FinancialInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b3;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
@@ -4907,13 +4907,13 @@ cids:FinancialInput  rdfs:subClassOf  cids:cidsThing , cids:Input .
 
 csh:ExternalRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExternalRisk .
 
@@ -4925,21 +4925,21 @@ csh:ExternalRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasDescription_PropertyShape
@@ -4950,7 +4950,7 @@ csh:ExternalRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
@@ -4962,9 +4962,9 @@ csh:ExternalRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_forOutcome_PropertyShape
@@ -4975,7 +4975,7 @@ csh:ExternalRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExternalRisk .
 
@@ -4987,7 +4987,7 @@ csh:ExternalRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExternalRisk .
 
@@ -5029,13 +5029,13 @@ cids:ExternalRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:ExecutionRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -5047,21 +5047,21 @@ csh:ExecutionRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasDescription_PropertyShape
@@ -5072,7 +5072,7 @@ csh:ExecutionRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -5084,9 +5084,9 @@ csh:ExecutionRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_forOutcome_PropertyShape
@@ -5097,7 +5097,7 @@ csh:ExecutionRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -5109,7 +5109,7 @@ csh:ExecutionRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:ExecutionRisk .
 
@@ -5151,13 +5151,13 @@ cids:ExecutionRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:EvidenceRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -5169,21 +5169,21 @@ csh:EvidenceRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasDescription_PropertyShape
@@ -5194,7 +5194,7 @@ csh:EvidenceRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -5206,9 +5206,9 @@ csh:EvidenceRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_forOutcome_PropertyShape
@@ -5219,7 +5219,7 @@ csh:EvidenceRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -5231,7 +5231,7 @@ csh:EvidenceRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EvidenceRisk .
 
@@ -5273,13 +5273,13 @@ cids:EvidenceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:EnduranceRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -5291,21 +5291,21 @@ csh:EnduranceRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasDescription_PropertyShape
@@ -5316,7 +5316,7 @@ csh:EnduranceRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -5328,9 +5328,9 @@ csh:EnduranceRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_forOutcome_PropertyShape
@@ -5341,7 +5341,7 @@ csh:EnduranceRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -5353,7 +5353,7 @@ csh:EnduranceRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EnduranceRisk .
 
@@ -5395,13 +5395,13 @@ cids:EnduranceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:EfficiencyRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -5413,21 +5413,21 @@ csh:EfficiencyRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasDescription_PropertyShape
@@ -5438,7 +5438,7 @@ csh:EfficiencyRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -5450,9 +5450,9 @@ csh:EfficiencyRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_forOutcome_PropertyShape
@@ -5463,7 +5463,7 @@ csh:EfficiencyRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -5475,7 +5475,7 @@ csh:EfficiencyRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:EfficiencyRisk .
 
@@ -5517,13 +5517,13 @@ cids:EfficiencyRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:DropOffRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:DropOffRisk .
 
@@ -5535,21 +5535,21 @@ csh:DropOffRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasDescription_PropertyShape
@@ -5560,7 +5560,7 @@ csh:DropOffRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
@@ -5572,9 +5572,9 @@ csh:DropOffRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_forOutcome_PropertyShape
@@ -5585,7 +5585,7 @@ csh:DropOffRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:DropOffRisk .
 
@@ -5597,7 +5597,7 @@ csh:DropOffRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:DropOffRisk .
 
@@ -5639,7 +5639,7 @@ cids:DropOffRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
 csh:Counterfactual_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         act:Activity;
+        sh:class         cids:Activity;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "wasGeneratedBy";
@@ -5804,7 +5804,7 @@ csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "local" , "provincial" , "global" , "national";
+        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
         csh:usedBy       cids:ContributingStakeholder .
 
 csh:ContributingStakeholder_forOrganization_PropertyShape
@@ -5999,7 +5999,7 @@ csh:Characteristic_wasGeneratedBy_PropertyShape
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
         sh:path          prov:wasGeneratedBy;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Characteristic .
 
@@ -6120,7 +6120,7 @@ csh:Characteristic_NodeShape
         sh:closed       false;
         sh:property     csh:Characteristic_wasGeneratedBy_PropertyShape , csh:Characteristic_dateCreated_PropertyShape , csh:Characteristic_description_PropertyShape , csh:Characteristic_endedAtTime_PropertyShape , csh:Characteristic_forStakeholder_PropertyShape , csh:Characteristic_hasCode_PropertyShape , csh:Characteristic_hasDescription_PropertyShape , csh:Characteristic_hasName_PropertyShape , csh:Characteristic_hasValue_PropertyShape , csh:Characteristic_startedAtTime_PropertyShape;
         sh:targetClass  cids:Characteristic;
-        csh:activeTier  csh:CompleteTier , cids:EssentialTier , cids:SFFTier .
+        csh:activeTier  cids:FullTier , csh:CompleteTier , cids:EssentialTier , cids:SFFTier .
 
 cids:Characteristic  rdfs:subClassOf  cids:cidsThing .
 
@@ -6223,14 +6223,15 @@ csh:BeneficialStakeholder_hasName_PropertyShape
 
 csh:BeneficialStakeholder_hasImpactManagementNormsDefinition_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         [] ;
+        sh:datatype      [] ;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactManagementNormsDefinition";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasImpactManagementNormsDefinition;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
+        csh:in           "client" , "employee" , "community" , "supplier" , "planet";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_hasDescription_PropertyShape
@@ -6268,7 +6269,7 @@ csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "local" , "provincial" , "global" , "national";
+        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_forOrganization_PropertyShape
@@ -6334,13 +6335,13 @@ cids:BeneficialStakeholder
 
 csh:AlignmentRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
+        sh:datatype      xsd:string;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasMitigation;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -6352,21 +6353,21 @@ csh:AlignmentRisk_hasLikelihood_PropertyShape
         sh:name          "hasLikelihood";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasLikelihood;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "veryLikely" , "lowRisk" , "mediumRisk" , "likely" , "unlikely" , "highRisk" , "veryUnlikely";
+        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0 , 1;
-        sh:minCount      0 , 1;
+        sh:maxCount      1;
+        sh:minCount      1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        csh:activeTier   cids:FullTier , csh:CompleteTier;
-        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
+        csh:activeTier   cids:FullTier;
+        csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasDescription_PropertyShape
@@ -6377,7 +6378,7 @@ csh:AlignmentRisk_hasDescription_PropertyShape
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -6389,9 +6390,9 @@ csh:AlignmentRisk_hasConsequence_PropertyShape
         sh:name          "hasConsequence";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasConsequence;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "minimal" , "average" , "severe";
+        csh:in           "severe" , "minimal" , "average";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_forOutcome_PropertyShape
@@ -6402,7 +6403,7 @@ csh:AlignmentRisk_forOutcome_PropertyShape
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forOutcome;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -6414,7 +6415,7 @@ csh:AlignmentRisk_forImpactReport_PropertyShape
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
         sh:path          cids:forImpactReport;
-        csh:activeTier   csh:CompleteTier;
+        csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:AlignmentRisk .
 
@@ -6576,7 +6577,7 @@ cids:Address  rdfs:subClassOf  cids:cidsThing , sch:PostalAddress .
 
 csh:Activity_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         _:b4;
+        sh:class         cids:Activity;
         sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
