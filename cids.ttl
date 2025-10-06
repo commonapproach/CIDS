@@ -1942,7 +1942,7 @@ cids:ImpactRisk rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasMitigation ;
                                   cids:belongsToTier cids:FullTier ;
-                                  owl:onClass xsd:string
+                                  owl:onDataRange xsd:string
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty org:hasIdentifier ;
@@ -2657,7 +2657,7 @@ cids:Person rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasEmail ;
                               cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
-                              owl:onClass xsd:string
+                              owl:onDataRange xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty sch:identifier ;
