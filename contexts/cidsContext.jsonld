@@ -250,6 +250,10 @@
       "@id": "org:issuedBy",
       "@type": "@id"
     },
+    "hasID": {
+      "@id": "org:hasID",
+      "@type": "@id"
+    },
     "numberOfEmployees": {
       "@id": "org:numberOfEmployees",
       "@type": "xsd:nonNegativeInteger"
