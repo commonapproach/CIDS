@@ -179,7 +179,7 @@ org:forActivity rdf:type owl:ObjectProperty .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasID
-org:hasID rdf:type owl:FunctionalProperty .
+org:hasID rdf:type owl:ObjectProperty, owl:FunctionalProperty .
 
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#hasRole
