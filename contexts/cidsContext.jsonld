@@ -345,6 +345,14 @@
     "belongsToTier": {
       "@id": "cids:belongsToTier",
       "@type": "@id"
+    },
+    "hasLegalName": {
+      "@id": "org:hasLegalName",
+      "@type": "xsd:string"
+    },
+    "hasLegalStatus": {
+      "@id": "org:hasLegalStatus",
+      "@type": "owl:Thing"
     }
   }
 }
