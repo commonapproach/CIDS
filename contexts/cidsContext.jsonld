@@ -306,6 +306,18 @@
       "@id": "cids:usesOutput",
       "@type": "@id"
     },
+    "hasNumericalValue": {
+      "@id": "i72:hasNumericalValue",
+      "@type": "xsd:string"
+    },
+    "symbol": {
+      "@id": "i72:symbol",
+      "@type": "xsd:string"
+    },
+    "unit_of_measure": {
+      "@id": "i72:unit_of_measure",
+      "@type": "@id"
+    },
     "value": {
       "@id": "i72:value",
       "@type": "@id"
