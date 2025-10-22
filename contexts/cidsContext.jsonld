@@ -306,6 +306,14 @@
       "@id": "cids:usesOutput",
       "@type": "@id"
     },
+    "familyName": {
+      "@id": "foaf:familyName",
+      "@type": "xsd:string"
+    },
+    "givenName": {
+      "@id": "foaf:givenName",
+      "@type": "xsd:string"
+    },
     "hasNumericalValue": {
       "@id": "i72:hasNumericalValue",
       "@type": "xsd:string"
@@ -321,6 +329,10 @@
     "value": {
       "@id": "i72:value",
       "@type": "@id"
+    },
+    "hasEmail": {
+      "@id": "ic:hasEmail",
+      "@type": "xsd:string"
     },
     "hasID": {
       "@id": "org:hasID",
