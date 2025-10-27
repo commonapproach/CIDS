@@ -1374,6 +1374,7 @@ cids:Characteristic rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasDescription ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      cids:belongsToTier cids:SFFTier ;
                                       owl:onDataRange xsd:string ;
                                       sh:severity sh:Info
                                     ] ;
