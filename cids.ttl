@@ -3245,32 +3245,32 @@ cids:cidsThing rdf:type owl:Class ;
 #################################################################
 
 cids:EquityDeservingGroup rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 
 cids:FundingState rdf:type owl:Class ;
-              rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+              rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 cids:Locality rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 cids:OrganizationType rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 cids:PopulationServed rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 cids:ProvinceTerritory rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 cids:Sector rdf:type owl:Class ;
-               rdfs:subClassOf cids:Code, skos:ConceptScheme ; 
+               rdfs:subClassOf cids:Code ; 
                cids:belongsToTier cids:SFFTier .
 
 
