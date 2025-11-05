@@ -88,11 +88,11 @@ sff:FundingStatus
   cids:hasName "Funding Status" ;
   rdfs:comment "Provides information on the status of an organization's application to a funder or investor."@en ;
   rdfs:subClassOf [
-  a owl:Restriction ;
-  owl:onProperty cids:forOrganization ;
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass cids:Organization ], 
-  [
+    a owl:Restriction ;
+    owl:onProperty cids:forOrganization ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass cids:Organization 
+  ],[
     a owl:Restriction ;
     owl:onProperty cids:hasDescription ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -106,7 +106,7 @@ sff:FundingStatus
     a owl:Restriction ;
     owl:onProperty sff:forFunder ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass cids:Organization
+    owl:onDataRange xsd:string
   ], [
     a owl:Restriction ;
     owl:onProperty sff:hasFundingState ;
