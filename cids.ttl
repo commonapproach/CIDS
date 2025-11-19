@@ -1210,11 +1210,11 @@ cids:StakeholderReport rdf:type owl:Class ;
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty prov:endedAtTime ;
-                                                owl:onClass xsd:dateTime
+                                                owl:onDataRange xsd:dateTime
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty prov:startedAtTime ;
-                                                owl:onClass xsd:dateTime
+                                                owl:onDataRange xsd:dateTime
                                               ] ;
                               rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
 <p>The StakeholderReport class has the following properties:</p>
