@@ -8,10 +8,10 @@ This is not an exhaustive list but provides a solid starting point for common de
 
 The JavaScript ecosystem is rich with modular libraries, often conforming to the [**RDF/JS**](https://rdf.js.org/) specification, which provides standard interfaces for working with RDF data.
 
-* [**N3.js**](https://www.google.com/search?q=https://github.com/rdfjs/N3.js): A highly performant library for parsing and serializing common RDF formats like Turtle, TriG, and N-Quads.  
-* [**jsonld.js**](https://www.google.com/search?q=https://github.com/digitalbazaar/jsonld.js): The canonical library for processing JSON-LD, the primary exchange format for CIDS. It handles key operations like compaction, expansion, and flattening, which are essential for interpreting context files.  
-* [**shacl-engine**](https://www.google.com/search?q=https://github.com/zazuko/shacl-engine): A library for validating RDF data graphs against SHACL shapes, which is crucial for ensuring data conforms to the rules defined by CIDS.  
-* [**SPARQL.js**](https://www.google.com/search?q=https://github.com/rubensworks/sparql.js): A useful tool for parsing SPARQL queries into a JSON abstract syntax tree (AST), enabling manipulation or translation of queries. For executing queries, many RDF/JS-compliant stores have their own engines.
+* [**N3.js**](https://github.com/rdfjs/N3.js): A highly performant library for parsing and serializing common RDF formats like Turtle, TriG, and N-Quads.  
+* [**jsonld.js**](https://github.com/digitalbazaar/jsonld.js): The canonical library for processing JSON-LD, the primary exchange format for CIDS. It handles key operations like compaction, expansion, and flattening, which are essential for interpreting context files.  
+* [**shacl-engine**](https://github.com/zazuko/shacl-engine): A library for validating RDF data graphs against SHACL shapes, which is crucial for ensuring data conforms to the rules defined by CIDS.  
+* [**SPARQL.js**](https://github.com/rubensworks/sparql.js): A useful tool for parsing SPARQL queries into a JSON abstract syntax tree (AST), enabling manipulation or translation of queries. For executing queries, many RDF/JS-compliant stores have their own engines.
 
 ### Python
 
