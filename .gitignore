@@ -1,3 +1,6 @@
 catalog*
 .DS_store
 *~
+
+# Binary JAR files (can be downloaded as needed)
+*.jar
