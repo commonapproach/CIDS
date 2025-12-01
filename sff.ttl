@@ -155,7 +155,7 @@ sff:OrganizationProfile
   ], [
     a owl:Restriction ;
     owl:onProperty sff:primaryPopulationServed ;
-    owl:onClass cids:PopulationServed
+    owl:onClass cids:Characteristic
   ], [
     a owl:Restriction ;
     owl:onProperty sff:organizationType ;

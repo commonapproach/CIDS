@@ -1008,7 +1008,7 @@ csh:OrganizationProfile_provinceTerritoryServed_PropertyShape
 
 csh:OrganizationProfile_primaryPopulationServed_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         cids:PopulationServed;
+        sh:class         cids:Characteristic;
         sh:minCount      0;
         sh:name          "primaryPopulationServed";
         sh:nodeKind      sh:BlankNodeOrIRI;
