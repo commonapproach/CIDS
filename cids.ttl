@@ -3294,6 +3294,20 @@ cids:esdc rdf:type owl:NamedIndividual ,
         foaf:name "Employment Social Development Canada"@en ;
         cids:hasName "Employment Social Development Canada"@en .
 
+cids:giin rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Global Impact Investing Network"@en ;
+        foaf:name "Global Impact Investing Network"@en ;
+        cids:hasName "Global Impact Investing Network"@en .
+
+cids:statsCan rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Statistics Canada"@en ;
+        foaf:name "Statistics Canada"@en ;
+        cids:hasName "Statistics Canada"@en .
+
 
 ###  https://ontology.commonapproach.org/cids#average
 cids:average rdf:type owl:NamedIndividual .
