@@ -22,14 +22,6 @@
 sff:
   a owl:Ontology, voaf:Vocabulary ;
   owl:versionIRI <https://ontology.commonapproach.org/sff/2.0.0> ;
-  owl:imports 
-    <http://ontology.eil.utoronto.ca/ISO21972/iso21972.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/activity.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/icontact.owl>, 
-    <http://ontology.eil.utoronto.ca/tove/organization.owl>, 
-    <http://www.w3.org/2006/time.rdf>,
-    <http://www.w3.org/ns/prov-o#>,
-    <https://ontology.commonapproach.org/cids#/> ;
   cc:license "Social Finance Fund Companion Module v2.0.0 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/"@en, <https://creativecommons.org/licenses/by-sa/4.0/> ;
   ns0:term_status "Stable"@en, "Stable"@fr ;
   void:inDataset sff:datasetdefinition ;

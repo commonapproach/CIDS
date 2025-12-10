@@ -25,7 +25,7 @@ through the appropriate extension or HTTP Content Negotiation.
 
 ## Ontology Versioning
 
-The ontology uses simple version tracking using the appropriate OWL, Void
+The ontology uses semantic version tracking using the appropriate OWL, Void
 and DCAT versioning properties. `owl:previousVersion` triples are provided
 for applications to track earlier versions.
 
