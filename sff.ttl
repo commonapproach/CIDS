@@ -328,7 +328,7 @@ sff:hasOrganizationProfile
 
 sff:hasPrimaryContact
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:Person ;
   rdfs:label "hasPrimaryContact"@en ;
   cids:hasName "hasPrimaryContact" ;
@@ -339,7 +339,7 @@ sff:hasPrimaryContact
 
 sff:localityServed
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:Locality ;
   rdfs:label "localityServed"@en ;
   cids:hasName "localityServed" ;
@@ -350,7 +350,7 @@ sff:localityServed
 
 sff:organizationType
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:OrganizationType ;
   rdfs:label "organizationType"@en ;
   cids:hasName "organizationType" ;
@@ -361,7 +361,7 @@ sff:organizationType
 
 sff:primaryPopulationServed
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:Characteristic ;
   rdfs:label "primaryPopulationServed"@en ;
   cids:hasName "primaryPopulationServed" ;
@@ -372,7 +372,7 @@ sff:primaryPopulationServed
 
 sff:provinceTerritoryServed
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:ProvinceTerritory ;
   rdfs:label "provinceTerritoryServed"@en ;
   cids:hasName "provinceTerritoryServed" ;
@@ -383,7 +383,7 @@ sff:provinceTerritoryServed
 
 sff:sectorServed
   a owl:ObjectProperty ;
-  rdfs:domain cids:OrganizationProfile ;
+  rdfs:domain sff:OrganizationProfile ;
   rdfs:range cids:Sector ;
   rdfs:label "sectorServed"@en ;
   cids:hasName "sectorServed" ;
