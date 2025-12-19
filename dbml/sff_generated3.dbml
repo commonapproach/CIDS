@@ -1,0 +1,195 @@
+// SFF Project - Full ERD (Generated from SHACL)
+// Use URI for @id properties as requested
+
+Table Address {
+  id URI [pk]
+  streetAddress string [not null]
+  postalCode string [not null]
+  postOfficeBoxNumber string
+  extendedAddress string
+  addressRegion string [not null]
+  addressLocality string [not null]
+  addressCountry string [not null]
+}
+
+Table Characteristic {
+  id URI [pk]
+  hasName string [not null]
+  hasDescription string
+  hasCode_id URI
+}
+
+Table Code {
+  id URI [pk]
+  value_id URI
+  hasSpecification string
+  hasName string [not null]
+  hasIdentifier string
+  hasDescription string
+  definedBy_id URI [not null]
+  codeValue string
+}
+
+Table EDGProfile {
+  id URI [pk]
+  reportedDate datetime
+  hasSize integer
+  forEDG_id URI
+}
+
+Table FundingStatus {
+  id URI [pk]
+  reportedDate datetime
+  hasFundingState_id URI [not null]
+  hasDescription string [not null]
+  forOrganization_id URI [not null]
+  forFunder string [not null]
+}
+
+Table Indicator {
+  id URI [pk]
+  unitDescription string [not null]
+  hasName string [not null]
+  hasIndicatorReport_id URI
+  hasDescription string [not null]
+  hasCode_id URI
+  forTheme_id URI
+  forOutcome_id URI
+  forOrganization_id URI [not null]
+  describesPopulation_id URI
+}
+
+Table IndicatorReport {
+  id URI [pk]
+  value_id URI [not null]
+  startedAtTime datetime [not null]
+  hasName string [not null]
+  hasComment string
+  forOrganization_id URI [not null]
+  forIndicator_id URI [not null]
+  endedAtTime datetime [not null]
+}
+
+Table Measure {
+  id URI [pk]
+  hasNumericalValue string [not null]
+}
+
+Table Organization {
+  id URI [pk]
+  hasOutcome_id URI
+  hasLegalName string [not null]
+  hasIndicator_id URI
+  hasID_id URI
+  hasAddress_id URI
+}
+
+Table OrganizationID {
+  id URI [pk]
+  issuedBy_id URI [not null]
+  hasIdentifier string [not null]
+}
+
+Table OrganizationProfile {
+  id URI [pk]
+  sectorServed_id URI
+  reportedDate datetime [not null]
+  provinceTerritoryServed_id URI
+  primaryPopulationServed_id URI
+  organizationType_id URI
+  localityServed_id URI
+  hasPrimaryContact_id URI
+  hasManagementTeamProfile_id URI
+  hasFundingStatus_id URI
+  hasBoardProfile_id URI
+  forOrganization_id URI [not null]
+}
+
+Table Outcome {
+  id URI [pk]
+  hasName string [not null]
+  hasIndicator_id URI
+  hasDescription string [not null]
+  forTheme_id URI
+  forOrganization_id URI [not null]
+}
+
+Table Person {
+  id URI [pk]
+  hasEmail string
+  givenName string
+  familyName string
+}
+
+Table ReportInfo {
+  id URI [pk]
+  startedAtTime datetime [not null]
+  hasName string [not null]
+  forOrganization_id URI [not null]
+  endedAtTime datetime [not null]
+}
+
+Table TeamProfile {
+  id URI [pk]
+  reportedDate datetime [not null]
+  hasTeamSize integer
+  hasEDGSize integer
+  hasEDGProfile_id URI
+  hasComment string
+}
+
+Table Theme {
+  id URI [pk]
+  relatesTo_id URI
+  hasName string [not null]
+  hasDescription string [not null]
+  hasCode_id URI
+}
+
+// Relationships and Foreign Keys
+
+// Organization Components
+Ref: Organization.id < Code.definedBy_id // definedBy
+Ref: Organization.id < FundingStatus.forOrganization_id // forOrganization
+Ref: Organization.id < Indicator.forOrganization_id // forOrganization
+Ref: Organization.id < IndicatorReport.forOrganization_id // forOrganization
+Ref: Outcome.id < Organization.hasOutcome_id // hasOutcome
+Ref: Indicator.id < Organization.hasIndicator_id // hasIndicator
+Ref: OrganizationID.id < Organization.hasID_id // hasID
+Ref: Address.id < Organization.hasAddress_id // hasAddress
+Ref: Organization.id < OrganizationID.issuedBy_id // issuedBy
+Ref: Code.id < OrganizationProfile.sectorServed_id // sectorServed
+Ref: Code.id < OrganizationProfile.provinceTerritoryServed_id // provinceTerritoryServed
+Ref: Characteristic.id < OrganizationProfile.primaryPopulationServed_id // primaryPopulationServed
+Ref: Code.id < OrganizationProfile.organizationType_id // organizationType
+Ref: Code.id < OrganizationProfile.localityServed_id // localityServed
+Ref: Person.id < OrganizationProfile.hasPrimaryContact_id // hasPrimaryContact
+Ref: TeamProfile.id < OrganizationProfile.hasManagementTeamProfile_id // hasManagementTeamProfile
+Ref: FundingStatus.id < OrganizationProfile.hasFundingStatus_id // hasFundingStatus
+Ref: TeamProfile.id < OrganizationProfile.hasBoardProfile_id // hasBoardProfile
+Ref: Organization.id < OrganizationProfile.forOrganization_id // forOrganization
+Ref: Organization.id < Outcome.forOrganization_id // forOrganization
+Ref: Organization.id < ReportInfo.forOrganization_id // forOrganization
+
+// Indicator & Report Links
+Ref: IndicatorReport.id < Indicator.hasIndicatorReport_id // hasIndicatorReport
+Ref: Code.id < Indicator.hasCode_id // hasCode
+Ref: Theme.id < Indicator.forTheme_id // forTheme
+Ref: Outcome.id < Indicator.forOutcome_id // forOutcome
+Ref: Measure.id < IndicatorReport.value_id // value
+Ref: Indicator.id < IndicatorReport.forIndicator_id // forIndicator
+Ref: Indicator.id < Outcome.hasIndicator_id // hasIndicator
+
+// Profiles & Teams
+Ref: Characteristic.id < EDGProfile.forEDG_id // forEDG
+Ref: EDGProfile.id < TeamProfile.hasEDGProfile_id // hasEDGProfile
+
+// Hierarchical / Thematic Links
+Ref: Theme.id < Outcome.forTheme_id // forTheme
+Ref: Theme.id < Theme.relatesTo_id // relatesTo
+Ref: Code.id < Theme.hasCode_id // hasCode
+
+// Code & Values
+Ref: Code.id < Characteristic.hasCode_id // hasCode
+Ref: Measure.id < Code.value_id // value
+Ref: Code.id < FundingStatus.hasFundingState_id // hasFundingState

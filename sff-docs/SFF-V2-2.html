@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Social Finance Fund Companion Module</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Head Section */
+        .head {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .head h1 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+        .head dl {
+            margin: 0;
+        }
+        .head dt {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 150px;
+        }
+        .head dd {
+            display: inline-block;
+            margin-left: 0;
+            margin-bottom: 5px;
+        }
+
+        /* Links */
+        a {
+            color: #004586;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #004586;
+        }
+
+        /* Table of Contents */
+        #toc {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        #toc h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        #toc ol {
+            padding-left: 20px;
+        }
+
+        /* Sections and Headings */
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #003366;
+        }
+        h3 {
+            color: #003366;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+
+        /* Entities (Classes, Properties) */
+        .entity {
+            border: 1px solid #eee;
+            background-color: #fafafa;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .entity h3 {
+            margin-top: 0;
+            background-color: #e6e6e6;
+            padding: 5px 10px;
+            border-radius: 4px 4px 0 0;
+            font-size: 1.1em;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Definition Lists in Entities */
+        .description dt {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #444;
+        }
+        .description dd {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        /* Lists */
+        ul.hlist {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        ul.hlist li {
+            background: #eee;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        /* Type Indicators */
+        .type-c { color: #c44d00; font-size: 0.8em; vertical-align: super; } /* Class */
+        .type-op { color: #004d99; font-size: 0.8em; vertical-align: super; } /* Object Prop */
+        .type-dp { color: #007700; font-size: 0.8em; vertical-align: super; } /* Data Prop */
+        .type-ni { color: #880088; font-size: 0.8em; vertical-align: super; } /* Named Indiv */
+        .type-ap { color: #555; font-size: 0.8em; vertical-align: super; } /* Annotation Prop */
+
+        /* Logic symbols */
+        .logic {
+            font-family: monospace;
+            font-weight: bold;
+        }
+        .dotted {
+            border-bottom: 1px dotted #888;
+        }
+
+        /* Utility */
+        .backlink {
+            font-size: 0.8em;
+            float: right;
+            font-weight: normal;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+        .endnote {
+            font-size: 0.8em;
+            color: #777;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // 1. Render Markdown content
+            $(".markdown").each(function () {
+                var rawText = $(this).text();
+                // Check if marked is available, otherwise fail gracefully
+                if (typeof marked !== 'undefined') {
+                    var parsed = typeof marked.parse === 'function' ? marked.parse(rawText) : marked(rawText);
+                    $(this).html(parsed);
+                }
+            });
+
+            // 2. Handle scrolling to specific ontology ID if present in URL
+            var list = $('a[name="https://ontology.commonapproach.org/sff2.owl"]');
+            if (list.length !== 0) {
+                var element = list.first();
+                element[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="head">
+        <h1>Social Finance Fund Companion Module</h1>
+        <dl>
+            <dt>IRI:</dt>
+            <dd>https://ontology.commonapproach.org/sff#</dd>
+            <dt>Version IRI:</dt>
+            <dd>https://ontology.commonapproach.org/sff/2.0.0</dd>
+        </dl>
+        <dl>
+            <dt>Date:</dt>
+            <dd>31/10/2025</dd>
+            <dt>Current version:</dt>
+            <dd>2.0.0</dd>
+            <dt>Previous version:</dt>
+            <dd><a href="https://ontology.commonapproach.org/sff/1.3.0">https://ontology.commonapproach.org/sff/1.3.0</a> (<a href="/lode/extract?url=https://ontology.commonapproach.org/sff/1.3.0">visualise it with LODE</a>)</dd>
+        </dl>
+        <dl>
+            <dt>Authors:</dt>
+            <dd><a href="https://ontology.commonapproach.org/cids#ac">https://ontology.commonapproach.org/cids#ac</a></dd>
+        </dl>
+        <dl>
+            <dt>Other visualisation:</dt>
+            <dd><a href="/lode/source?url=https://ontology.commonapproach.org/sff2.owl">Ontology source</a> - <a href="https://service.tib.eu/webvowl/#iri=https://ontology.commonapproach.org/sff2.owl">WebVowl</a></dd>
+        </dl>
+        <div class="copyright">
+            <span class="markdown">Social Finance Fund Companion Module © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</span>
+        </div>
+    </div>
+    
+    <hr />
+    
+    <div id="toc">
+        <h2>Table of Content</h2>
+        <ol>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#objectproperties">Object Properties</a></li>
+            <li><a href="#dataproperties">Data Properties</a></li>
+            <li><a href="#namedindividuals">Named Individuals</a></li>
+            <li><a href="#annotationproperties">Annotation Properties</a></li>
+            <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+        </ol>
+    </div>
+
+    <div id="classes">
+        <h2>Classes</h2>
+        <ul class="hlist">
+            <li><a href="#d4e709" title="https://ontology.commonapproach.org/sff#EDGProfile">EDG Profile</a></li>
+            <li><a href="#d4e768" title="https://ontology.commonapproach.org/sff#FundingStatus">Funding Status</a></li>
+            <li><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a></li>
+            <li><a href="#d4e887" title="https://ontology.commonapproach.org/sff#ReportInfo">Report Info</a></li>
+            <li><a href="#d4e915" title="https://ontology.commonapproach.org/sff#TeamProfile">Team Profile</a></li>
+        </ul>
+        
+        <div id="d4e709" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#EDGProfile"></a>
+            <h3>EDG Profile<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#EDGProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Information about the number of members belonging to a specific equity deserving group, as part of a board or management team, for a designated time interval.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><a href="#d4e144" title="https://ontology.commonapproach.org/sff#forEDG">forEDG</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#Characteristic">characteristic</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e518" title="https://ontology.commonapproach.org/sff#hasSize">hasSize</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+                <dd><a href="#d4e560" title="https://ontology.commonapproach.org/sff#reportedDate">Reported Date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+                <dt>is in domain of</dt>
+                <dd><a href="#d4e144" title="https://ontology.commonapproach.org/sff#forEDG">forEDG</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+        </div>
+
+        <div id="d4e768" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#FundingStatus"></a>
+            <h3>Funding Status<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#FundingStatus</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Provides information on the status of an organization's application to a funder or investor.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#forOrganization">forOrganization</span><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#Organization">organization</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#hasDescription">hasDescription</span><sup title="data property" class="type-dp">dp</sup> <span class="logic">min</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                <dd><a href="#d4e169" title="https://ontology.commonapproach.org/sff#forFunder">forFunder</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                
+                <dd><a href="#d4e241" title="https://ontology.commonapproach.org/sff#hasFundingState">hasFundingState</a><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#FundingState">funding state</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e560" title="https://ontology.commonapproach.org/sff#reportedDate">Reported Date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+                <dt>is in domain of</dt>
+                <dd><a href="#d4e169" title="https://ontology.commonapproach.org/sff#forFunder">for Funder</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e241" title="https://ontology.commonapproach.org/sff#hasFundingState">hasFundingState</a><sup title="object property" class="type-op">op</sup></dd>
+                <dt>is in range of</dt>
+                <dd><a href="#d4e266" title="https://ontology.commonapproach.org/sff#hasFundingStatus">hasFundingStatus</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+        </div>
+
+        <div id="d4e821" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#OrganizationProfile"></a>
+            <h3>Organization Profile<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#OrganizationProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Contains additional profile data relevant to SFF that is applicable to both social purpose organizations (SPOs) and SFIs.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#forOrganization">forOrganization</span><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#Organization">organization</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e469" title="https://ontology.commonapproach.org/sff#sectorServed">sectorServed</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <span class="dotted" title="https://ontology.commonapproach.org/cids#Sector">sector</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e444" title="https://ontology.commonapproach.org/sff#provinceTerritoryServed">provinceTerritoryServed</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <span class="dotted" title="https://ontology.commonapproach.org/cids#ProvinceTerritory">province territory</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e418" title="https://ontology.commonapproach.org/sff#primaryPopulationServed">primaryPopulationServed</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <span class="dotted" title="https://ontology.commonapproach.org/cids#Characteristic">characteristic</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e393" title="https://ontology.commonapproach.org/sff#organizationType">organizationType</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <span class="dotted" title="https://ontology.commonapproach.org/cids#OrganizationType">organization type</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e368" title="https://ontology.commonapproach.org/sff#localityServed">localityServed</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <span class="dotted" title="https://ontology.commonapproach.org/cids#Locality">locality</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e292" title="https://ontology.commonapproach.org/sff#hasManagementTeamProfile">hasManagementTeamProfile</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <a href="#d4e915" title="https://ontology.commonapproach.org/sff#TeamProfile">Team Profile</a><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e266" title="https://ontology.commonapproach.org/sff#hasFundingStatus">hasFundingStatus</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <a href="#d4e768" title="https://ontology.commonapproach.org/sff#FundingStatus">Funding Status</a><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e194" title="https://ontology.commonapproach.org/sff#hasBoardProfile">hasBoardProfile</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <a href="#d4e915" title="https://ontology.commonapproach.org/sff#TeamProfile">Team Profile</a><sup title="class" class="type-c">c</sup></dd>
+                
+                <dd><a href="#d4e342" title="https://ontology.commonapproach.org/sff#hasPrimaryContact">hasPrimaryContact</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#Person">person</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><a href="#d4e560" title="https://ontology.commonapproach.org/sff#reportedDate">Reported Date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+                <dt>is in domain of</dt>
+                <dd><a href="#d4e194" title="https://ontology.commonapproach.org/sff#hasBoardProfile">hasBoardProfile</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e266" title="https://ontology.commonapproach.org/sff#hasFundingStatus">hasFundingStatus</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e292" title="https://ontology.commonapproach.org/sff#hasManagementTeamProfile">hasManagementTeamProfile</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e342" title="https://ontology.commonapproach.org/sff#hasPrimaryContact">hasPrimaryContact</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e368" title="https://ontology.commonapproach.org/sff#localityServed">localityServed</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e393" title="https://ontology.commonapproach.org/sff#organizationType">organizationType</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e418" title="https://ontology.commonapproach.org/sff#primaryPopulationServed">primaryPopulationServed</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e444" title="https://ontology.commonapproach.org/sff#provinceTerritoryServed">provinceTerritoryServed</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e469" title="https://ontology.commonapproach.org/sff#sectorServed">sectorServed</a><sup title="object property" class="type-op">op</sup></dd>
+                <dt>is in range of</dt>
+                <dd><a href="#d4e317" title="https://ontology.commonapproach.org/sff#hasOrganizationProfile">hasOrganizationProfile</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+        </div>
+
+        <div id="d4e887" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#ReportInfo"></a>
+            <h3>Report Info<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#ReportInfo</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Provides definitive information on the time interval that a report covers, and can provide some contextual information about the report contents via the report name.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title="http://www.w3.org/ns/prov#startedAtTime">startedAtTime</span><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">dateTime</span></dd>
+                <dd><span class="dotted" title="http://www.w3.org/ns/prov#endedAtTime">endedAtTime</span><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">dateTime</span></dd>
+                <dd><span class="dotted" title="http://ontology.eil.utoronto.ca/tove/organization#hasName">hasName</span><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#forOrganization">forOrganization</span><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <span class="dotted" title="https://ontology.commonapproach.org/cids#Organization">organization</span><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+        </div>
+
+        <div id="d4e915" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#TeamProfile"></a>
+            <h3>Team Profile<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#TeamProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A profile of a board or management team for a specified interval of time.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><a href="#d4e220" title="https://ontology.commonapproach.org/sff#hasEDGProfile">hasEDGProfile</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <a href="#d4e709" title="https://ontology.commonapproach.org/sff#EDGProfile">EDG Profile</a><sup title="class" class="type-c">c</sup></dd>
+                <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#hasComment">hasComment</span><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1 <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                
+                <dd><a href="#d4e560" title="https://ontology.commonapproach.org/sff#reportedDate">Reported Date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+                <dd><a href="#d4e496" title="https://ontology.commonapproach.org/sff#hasEDGSize">EDG Size</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+                <dd><a href="#d4e539" title="https://ontology.commonapproach.org/sff#hasTeamSize">Team Size</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+                <dt>is in range of</dt>
+                <dd><a href="#d4e194" title="https://ontology.commonapproach.org/sff#hasBoardProfile">hasBoardProfile</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e292" title="https://ontology.commonapproach.org/sff#hasManagementTeamProfile">hasManagementTeamProfile</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="objectproperties">
+        <h2>Object Properties</h2>
+        <ul class="hlist">
+            <li><a href="#d4e220" title="https://ontology.commonapproach.org/sff#hasEDGProfile">EDG Profile</a></li>
+            <li><a href="#d4e169" title="https://ontology.commonapproach.org/sff#forFunder">for Funder</a></li>
+            <li><a href="#d4e144" title="https://ontology.commonapproach.org/sff#forEDG">forEDG</a></li>
+            <li><a href="#d4e194" title="https://ontology.commonapproach.org/sff#hasBoardProfile">hasBoardProfile</a></li>
+            <li><a href="#d4e241" title="https://ontology.commonapproach.org/sff#hasFundingState">hasFundingState</a></li>
+            <li><a href="#d4e266" title="https://ontology.commonapproach.org/sff#hasFundingStatus">hasFundingStatus</a></li>
+            <li><a href="#d4e292" title="https://ontology.commonapproach.org/sff#hasManagementTeamProfile">hasManagementTeamProfile</a></li>
+            <li><a href="#d4e317" title="https://ontology.commonapproach.org/sff#hasOrganizationProfile">hasOrganizationProfile</a></li>
+            <li><a href="#d4e342" title="https://ontology.commonapproach.org/sff#hasPrimaryContact">hasPrimaryContact</a></li>
+            <li><a href="#d4e368" title="https://ontology.commonapproach.org/sff#localityServed">localityServed</a></li>
+            <li><a href="#d4e393" title="https://ontology.commonapproach.org/sff#organizationType">organizationType</a></li>
+            <li><a href="#d4e418" title="https://ontology.commonapproach.org/sff#primaryPopulationServed">primaryPopulationServed</a></li>
+            <li><a href="#d4e444" title="https://ontology.commonapproach.org/sff#provinceTerritoryServed">provinceTerritoryServed</a></li>
+            <li><a href="#d4e469" title="https://ontology.commonapproach.org/sff#sectorServed">sectorServed</a></li>
+        </ul>
+
+        <div id="d4e220" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasEDGProfile"></a>
+            <h3>EDG Profile<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasEDGProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Profiles each of the EDG groups that are present on the management team. Links to one or more instances of EDGProfile.</span>
+            </div>
+        </div>
+
+        <div id="d4e169" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#forFunder"></a>
+            <h3>for Funder<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#forFunder</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links a funding status to the funder or investor that is being reported on.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e768" title="https://ontology.commonapproach.org/sff#FundingStatus">Funding Status</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Organization">organization</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e144" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#forEDG"></a>
+            <h3>forEDG<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#forEDG</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an EDG profile to the equity deserving group it represents.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e709" title="https://ontology.commonapproach.org/sff#EDGProfile">EDG Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Characteristic">characteristic</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e194" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasBoardProfile"></a>
+            <h3>hasBoardProfile<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasBoardProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's Profile to demographic information about its Board.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><a href="#d4e915" title="https://ontology.commonapproach.org/sff#TeamProfile">Team Profile</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e241" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasFundingState"></a>
+            <h3>hasFundingState<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasFundingState</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links a funding status to the state of the funding application.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e768" title="https://ontology.commonapproach.org/sff#FundingStatus">Funding Status</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#FundingState">funding state</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e266" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasFundingStatus"></a>
+            <h3>hasFundingStatus<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasFundingStatus</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to one or more funding statuses.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><a href="#d4e768" title="https://ontology.commonapproach.org/sff#FundingStatus">Funding Status</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e292" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasManagementTeamProfile"></a>
+            <h3>hasManagementTeamProfile<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasManagementTeamProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to demographic information about its management team.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><a href="#d4e915" title="https://ontology.commonapproach.org/sff#TeamProfile">Team Profile</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e317" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasOrganizationProfile"></a>
+            <h3>hasOrganizationProfile<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasOrganizationProfile</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization to its Social Finance Fund (SFF) profile.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Organization">organization</span><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e342" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasPrimaryContact"></a>
+            <h3>hasPrimaryContact<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasPrimaryContact</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to the primary contact for the organization's impact reports.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Person">person</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e368" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#localityServed"></a>
+            <h3>localityServed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#localityServed</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to one or more localities served.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Locality">locality</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e393" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#organizationType"></a>
+            <h3>organizationType<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#organizationType</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to its type of legal incorporation.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#OrganizationType">organization type</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e418" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#primaryPopulationServed"></a>
+            <h3>primaryPopulationServed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#primaryPopulationServed</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to the Characteristic of the population and/or equity deserving groups it serves.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Characteristic">characteristic</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e444" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#provinceTerritoryServed"></a>
+            <h3>provinceTerritoryServed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#provinceTerritoryServed</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to the geographic regions it serves.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#ProvinceTerritory">province territory</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="d4e469" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#sectorServed"></a>
+            <h3>sectorServed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#sectorServed</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Links an Organization's profile to the sector or impact category it serves.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><a href="#d4e821" title="https://ontology.commonapproach.org/sff#OrganizationProfile">Organization Profile</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title="https://ontology.commonapproach.org/cids#Sector">sector</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div id="dataproperties">
+        <h2>Data Properties</h2>
+        <ul class="hlist">
+            <li><a href="#d4e496" title="https://ontology.commonapproach.org/sff#hasEDGSize">EDG Size</a></li>
+            <li><a href="#d4e518" title="https://ontology.commonapproach.org/sff#hasSize">hasSize</a></li>
+            <li><a href="#d4e560" title="https://ontology.commonapproach.org/sff#reportedDate">Reported Date</a></li>
+            <li><a href="#d4e539" title="https://ontology.commonapproach.org/sff#hasTeamSize">Team Size</a></li>
+        </ul>
+
+        <div id="d4e496" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasEDGSize"></a>
+            <h3>EDG Size<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasEDGSize</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Number of people on the team who are members of an equity deserving group.</span>
+            </div>
+        </div>
+
+        <div id="d4e518" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasSize"></a>
+            <h3>hasSize<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasSize</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Specifies the size of the team or group, represented as a non-negative integer.</span>
+            </div>
+        </div>
+
+        <div id="d4e560" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#reportedDate"></a>
+            <h3>Reported Date<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#reportedDate</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Specifies the date to which the reported information applies.</span>
+            </div>
+        </div>
+
+        <div id="d4e539" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#hasTeamSize"></a>
+            <h3>Team Size<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#hasTeamSize</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Number of people on the team.</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="namedindividuals">
+        <h2>Named Individuals</h2>
+        <ul class="hlist">
+            <li><a href="#d4e985" title="https://ontology.commonapproach.org/sff#"><span>:</span></a></li>
+            <li><a href="#d4e993" title="https://ontology.commonapproach.org/sff#datasetdefinition"><span>datasetdefinition</span></a></li>
+        </ul>
+        
+        <div id="d4e985" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#"></a>
+            <h3>:<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title="http://purl.org/vocommons/voaf#Vocabulary">vocabulary</span><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+        </div>
+
+        <div id="d4e993" class="entity">
+            <a name="https://ontology.commonapproach.org/sff#datasetdefinition"></a>
+            <h3>datasetdefinition<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/sff#datasetdefinition</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd><a href="https://ontology.commonapproach.org/sff#">https://ontology.commonapproach.org/sff#</a></dd>
+            </dl>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title="http://rdfs.org/ns/void#Dataset">dataset</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><span class="dotted" title="http://www.w3.org/ns/dcat#Dataset">dataset</span><sup title="class" class="type-c">c</sup></dd>
+                <dd><span class="dotted" title="https://schema.org/Dataset">dataset</span><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="annotationproperties">
+        <h2>Annotation Properties</h2>
+        <ul class="hlist">
+            <li><a href="#d4e118" title="https://ontology.commonapproach.org/cids#belongsToTier"><span>belongs to tier</span></a></li>
+            <li><a href="#d4e62" title="http://purl.org/dc/terms/creator"><span>creator</span></a></li>
+            <li><a href="#d4e127" title="https://schema.org/creator"><span>creator</span></a></li>
+            <li><a href="#d4e66" title="http://purl.org/dc/terms/date"><span>date</span></a></li>
+            <li><a href="#d4e70" title="http://purl.org/dc/terms/description"><span>description</span></a></li>
+            <li><a href="#d4e122" title="https://ontology.commonapproach.org/cids#hasName"><span>has name</span></a></li>
+            <li><a href="#d4e92" title="http://rdfs.org/ns/void#inDataset"><span>in dataset</span></a></li>
+            <li><a href="#d4e57" title="http://creativecommons.org/ns#license"><span>license</span></a></li>
+            <li><a href="#d4e131" title="https://schema.org/license"><span>license</span></a></li>
+            <li><a href="#d4e96" title="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"><span>max qualified cardinality</span></a></li>
+            <li><a href="#d4e101" title="http://www.w3.org/2002/07/owl#minQualifiedCardinality"><span>min qualified cardinality</span></a></li>
+            <li><a href="#d4e114" title="http://xmlns.com/foaf/0.1/name"><span>name</span></a></li>
+            <li><a href="#d4e83" title="http://purl.org/vocab/vann/preferredNamespacePrefix"><span>preferred namespace prefix</span></a></li>
+            <li><a href="#d4e88" title="http://purl.org/vocab/vann/preferredNamespaceUri"><span>preferred namespace uri</span></a></li>
+            <li><a href="#d4e105" title="http://www.w3.org/2002/07/owl#qualifiedCardinality"><span>qualified cardinality</span></a></li>
+            <li><a href="#d4e75" title="http://purl.org/dc/terms/rights"><span>rights</span></a></li>
+            <li><a href="#d4e109" title="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"><span>term status</span></a></li>
+            <li><a href="#d4e79" title="http://purl.org/dc/terms/title"><span>title</span></a></li>
+        </ul>
+
+        <div id="d4e118" class="entity">
+            <a name="https://ontology.commonapproach.org/cids#belongsToTier"></a>
+            <h3>belongs to tier<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/cids#belongsToTier</p>
+        </div>
+        <div id="d4e62" class="entity">
+            <a name="http://purl.org/dc/terms/creator"></a>
+            <h3>creator<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+        </div>
+        <div id="d4e127" class="entity">
+            <a name="https://schema.org/creator"></a>
+            <h3>creator<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://schema.org/creator</p>
+        </div>
+        <div id="d4e66" class="entity">
+            <a name="http://purl.org/dc/terms/date"></a>
+            <h3>date<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/date</p>
+        </div>
+        <div id="d4e70" class="entity">
+            <a name="http://purl.org/dc/terms/description"></a>
+            <h3>description<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+        </div>
+        <div id="d4e122" class="entity">
+            <a name="https://ontology.commonapproach.org/cids#hasName"></a>
+            <h3>has name<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://ontology.commonapproach.org/cids#hasName</p>
+        </div>
+        <div id="d4e92" class="entity">
+            <a name="http://rdfs.org/ns/void#inDataset"></a>
+            <h3>in dataset<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://rdfs.org/ns/void#inDataset</p>
+        </div>
+        <div id="d4e57" class="entity">
+            <a name="http://creativecommons.org/ns#license"></a>
+            <h3>license<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://creativecommons.org/ns#license</p>
+        </div>
+        <div id="d4e131" class="entity">
+            <a name="https://schema.org/license"></a>
+            <h3>license<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> https://schema.org/license</p>
+        </div>
+        <div id="d4e96" class="entity">
+            <a name="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"></a>
+            <h3>max qualified cardinality<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#maxQualifiedCardinality</p>
+        </div>
+        <div id="d4e101" class="entity">
+            <a name="http://www.w3.org/2002/07/owl#minQualifiedCardinality"></a>
+            <h3>min qualified cardinality<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#minQualifiedCardinality</p>
+        </div>
+        <div id="d4e114" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/name"></a>
+            <h3>name<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/name</p>
+        </div>
+        <div id="d4e83" class="entity">
+            <a name="http://purl.org/vocab/vann/preferredNamespacePrefix"></a>
+            <h3>preferred namespace prefix<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+        </div>
+        <div id="d4e88" class="entity">
+            <a name="http://purl.org/vocab/vann/preferredNamespaceUri"></a>
+            <h3>preferred namespace uri<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+        </div>
+        <div id="d4e105" class="entity">
+            <a name="http://www.w3.org/2002/07/owl#qualifiedCardinality"></a>
+            <h3>qualified cardinality<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#qualifiedCardinality</p>
+        </div>
+        <div id="d4e75" class="entity">
+            <a name="http://purl.org/dc/terms/rights"></a>
+            <h3>rights<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+        </div>
+        <div id="d4e109" class="entity">
+            <a name="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"></a>
+            <h3>term status<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2003/06/sw-vocab-status/ns#term_status</p>
+        </div>
+        <div id="d4e79" class="entity">
+            <a name="http://purl.org/dc/terms/title"></a>
+            <h3>title<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+        </div>
+    </div>
+
+    <div id="namespacedeclarations">
+        <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+        <dl>
+            <dt><em>default namespace</em></dt>
+            <dd>https://ontology.commonapproach.org/sff#</dd>
+            <dt>cc</dt>
+            <dd>http://creativecommons.org/ns#</dd>
+            <dt>cids</dt>
+            <dd>https://ontology.commonapproach.org/cids#</dd>
+            <dt>dc</dt>
+            <dd>http://purl.org/dc/terms/</dd>
+            <dt>dcat</dt>
+            <dd>http://www.w3.org/ns/dcat#</dd>
+            <dt>error</dt>
+            <dd>http://org.semanticweb.owlapi/error#</dd>
+            <dt>foaf</dt>
+            <dd>http://xmlns.com/foaf/0.1/</dd>
+            <dt>i72</dt>
+            <dd>http://ontology.eil.utoronto.ca/ISO21972/iso21972#</dd>
+            <dt>ns0</dt>
+            <dd>http://www.w3.org/2003/06/sw-vocab-status/ns#</dd>
+            <dt>ns1</dt>
+            <dd>http://purl.org/vocab/vann/</dd>
+            <dt>org</dt>
+            <dd>http://ontology.eil.utoronto.ca/tove/organization#</dd>
+            <dt>owl</dt>
+            <dd>http://www.w3.org/2002/07/owl#</dd>
+            <dt>prov</dt>
+            <dd>http://www.w3.org/ns/prov#</dd>
+            <dt>rdf</dt>
+            <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+            <dt>rdfs</dt>
+            <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+            <dt>schema</dt>
+            <dd>https://schema.org/</dd>
+            <dt>sff</dt>
+            <dd>https://ontology.commonapproach.org/sff#</dd>
+            <dt>sh</dt>
+            <dd>http://www.w3.org/ns/shacl#</dd>
+            <dt>skos</dt>
+            <dd>http://www.w3.org/2004/02/skos/core#</dd>
+            <dt>voaf</dt>
+            <dd>http://purl.org/vocommons/voaf#</dd>
+            <dt>void</dt>
+            <dd>http://rdfs.org/ns/void#</dd>
+            <dt>xsd</dt>
+            <dd>http://www.w3.org/2001/XMLSchema#</dd>
+        </dl>
+    </div>
+
+    <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+</body>
+</html>

@@ -1,0 +1,157 @@
+// SFF Project - Full ERD (Generated from SHACL)
+// Use URI for @id properties as requested
+
+Table Theme {
+  id URI [pk]
+  hasName string [not null]
+  hasDescription string [not null]
+  relatesTo_id URI
+}
+
+Table TeamProfile {
+  id URI [pk]
+  reportedDate datetime [not null]
+  hasTeamSize integer
+  hasEDGSize integer
+  hasComment string
+}
+
+Table EDGProfile {
+  id URI [pk]
+  reportedDate datetime
+  hasSize integer
+  forEDG_id URI
+}
+
+Table Organization {
+  id URI [pk]
+  hasLegalName string [not null]
+}
+
+Table OrganizationID {
+  id URI [pk]
+  hasIdentifier string [not null]
+  issuedBy_id URI [not null]
+  forOrganization_id URI // Linked from Organization.hasID
+}
+
+Table Address {
+  id URI [pk]
+  streetAddress string [not null]
+  postalCode string [not null]
+  addressLocality string [not null]
+  addressRegion string [not null]
+  addressCountry string [not null]
+  postOfficeBoxNumber string
+  extendedAddress string
+  forOrganization_id URI // Linked from Organization.hasAddress
+}
+
+Table Outcome {
+  id URI [pk]
+  hasName string [not null]
+  hasDescription string [not null]
+  forOrganization_id URI [not null]
+}
+
+Table Indicator {
+  id URI [pk]
+  hasName string [not null]
+  hasDescription string [not null]
+  unitDescription string [not null]
+  forOrganization_id URI [not null]
+  forOutcome_id URI
+}
+
+Table IndicatorReport {
+  id URI [pk]
+  hasName string [not null]
+  startedAtTime datetime [not null]
+  endedAtTime datetime [not null]
+  value_id URI [not null]
+  forIndicator_id URI [not null]
+  forOrganization_id URI [not null]
+}
+
+Table Measure {
+  id URI [pk]
+  hasNumericalValue string [not null]
+}
+
+Table Person {
+  id URI [pk]
+  givenName string
+  familyName string
+  hasEmail string
+}
+
+Table ReportInfo {
+  id URI [pk]
+  hasName string [not null]
+  startedAtTime datetime [not null]
+  endedAtTime datetime [not null]
+  forOrganization_id URI [not null]
+}
+
+Table FundingStatus {
+  id URI [pk]
+  reportedDate datetime
+  hasDescription string [not null]
+  forFunder string [not null]
+  hasFundingState_id URI [not null]
+  forOrganization_id URI [not null]
+}
+
+Table Code {
+  id URI [pk]
+  hasName string [not null]
+  codeValue string
+  hasDescription string
+  hasIdentifier string
+  definedBy_id URI [not null]
+  value_id URI
+}
+
+Table Characteristic {
+  id URI [pk]
+  hasName string [not null]
+  hasDescription string
+}
+
+Table OrganizationProfile {
+  id URI [pk]
+  reportedDate datetime [not null]
+  forOrganization_id URI [not null]
+  hasPrimaryContact_id URI
+}
+
+// Relationships and Foreign Keys
+
+// Organization Components
+Ref: Organization.id < OrganizationID.forOrganization_id
+Ref: Organization.id < Address.forOrganization_id
+Ref: Organization.id < Outcome.forOrganization_id
+Ref: Organization.id < Indicator.forOrganization_id
+Ref: Organization.id < IndicatorReport.forOrganization_id
+Ref: Organization.id < FundingStatus.forOrganization_id
+Ref: Organization.id < ReportInfo.forOrganization_id
+
+// Indicator & Report Links
+Ref: Indicator.id < IndicatorReport.forIndicator_id
+Ref: Outcome.id < Indicator.forOutcome_id
+Ref: Measure.id < IndicatorReport.value_id
+
+// Profiles & Teams
+Ref: TeamProfile.id < EDGProfile.id // Linked via hasEDGProfile
+Ref: Characteristic.id < EDGProfile.forEDG_id
+Ref: Person.id < OrganizationProfile.hasPrimaryContact_id
+
+// Hierarchical / Thematic Links
+Ref: Theme.id < Theme.relatesTo_id // relatesTo (self-reference)
+Ref: Theme.id < Outcome.id // forTheme
+Ref: Theme.id < Indicator.id // forTheme
+
+// Code & Values
+Ref: Organization.id < Code.definedBy_id
+Ref: Measure.id < Code.value_id
+Ref: Code.id < Characteristic.id // hasCode
