@@ -3285,28 +3285,28 @@ cids:ac rdf:type owl:NamedIndividual ,
         rdfs:isDefinedBy cids: ;
         rdfs:label "Common Approach to Impact Measurement"@en ;
         foaf:name "Common Approach to Impact Measurement"@en ;
-        cids:hasName "Common Approach to Impact Measurement"@en .
+        org:hasLegalName "Common Approach to Impact Measurement"@en .
 
 cids:esdc rdf:type owl:NamedIndividual ,
         cids:Organization ;
         rdfs:isDefinedBy cids: ;
         rdfs:label "Employment Social Development Canada"@en ;
         foaf:name "Employment Social Development Canada"@en ;
-        cids:hasName "Employment Social Development Canada"@en .
+        org:hasLegalName "Employment Social Development Canada"@en .
 
 cids:giin rdf:type owl:NamedIndividual ,
         cids:Organization ;
         rdfs:isDefinedBy cids: ;
         rdfs:label "Global Impact Investing Network"@en ;
         foaf:name "Global Impact Investing Network"@en ;
-        cids:hasName "Global Impact Investing Network"@en .
+        org:hasLegalName "Global Impact Investing Network"@en .
 
 cids:statsCan rdf:type owl:NamedIndividual ,
         cids:Organization ;
         rdfs:isDefinedBy cids: ;
         rdfs:label "Statistics Canada"@en ;
         foaf:name "Statistics Canada"@en ;
-        cids:hasName "Statistics Canada"@en .
+        org:hasLegalName "Statistics Canada"@en .
 
 
 ###  https://ontology.commonapproach.org/cids#average

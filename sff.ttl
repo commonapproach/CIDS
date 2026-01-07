@@ -30,6 +30,7 @@ sff:
   dc:description "An Ontology for Representing Social Finance Fund Reporting Requirements"@en ;
   dc:title "Social Finance Fund Companion Module"@en ;
   foaf:name "Social Finance Fund Companion Module"@en ;
+  rdfs:label "Social Finance Fund Companion Module"@en ;
   ns1:preferredNamespacePrefix "sff" ;
   ns1:preferredNamespaceUri "https://ontology.commonapproach.org/sff#" ;
   dc:date "2025-10-31"^^xsd:date ;
