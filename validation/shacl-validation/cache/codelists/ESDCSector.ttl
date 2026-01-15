@@ -1,0 +1,259 @@
+@base <https://codelist.commonapproach.org/ESDCSector> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix iriscategory: <https://codelist.commonapproach.org/IRISImpactCategory#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+
+    skos:prefLabel "ESDC Sectors"@en ;
+    dcterms:title "ESDC Sectors"@en ;
+    dcterms:description "An RDF vocabulary of ESDC Sectors."@en .
+
+:Other
+    a cids:Sector ;
+    org:hasName "Other" ;
+    skos:prefLabel "Other"@en ;
+    org:hasIdentifier "Other" ;
+    skos:notation "Other" ;
+
+    cids:definedBy cids:ac ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Agriculture
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Agriculture" ;
+    skos:prefLabel "Agriculture"@en ;
+    org:hasIdentifier "Agriculture" ;
+    skos:notation "Agriculture" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Air
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Air" ;
+    skos:prefLabel "Air"@en ;
+    org:hasIdentifier "Air" ;
+    skos:notation "Air" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:BiodiversityandEcosystems
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Biodiversity and Ecosystems" ;
+    skos:prefLabel "Biodiversity and Ecosystems"@en ;
+    org:hasIdentifier "BiodiversityandEcosystems" ;
+    skos:notation "BiodiversityandEcosystems" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Climate
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Climate" ;
+    skos:prefLabel "Climate"@en ;
+    org:hasIdentifier "Climate" ;
+    skos:notation "Climate" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:DiversityandInclusion
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Diversity and Inclusion" ;
+    skos:prefLabel "Diversity and Inclusion"@en ;
+    org:hasIdentifier "DiversityandInclusion" ;
+    skos:notation "DiversityandInclusion" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Education
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Education" ;
+    skos:prefLabel "Education"@en ;
+    org:hasIdentifier "Education" ;
+    skos:notation "Education" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Employment
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Employment" ;
+    skos:prefLabel "Employment"@en ;
+    org:hasIdentifier "Employment" ;
+    skos:notation "Employment" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Energy
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Energy" ;
+    skos:prefLabel "Energy"@en ;
+    org:hasIdentifier "Energy" ;
+    skos:notation "Energy" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:FinancialServices
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Financial Services" ;
+    skos:prefLabel "Financial Services"@en ;
+    org:hasIdentifier "FinancialServices" ;
+    skos:notation "FinancialServices" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Health
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Health" ;
+    skos:prefLabel "Health"@en ;
+    org:hasIdentifier "Health" ;
+    skos:notation "Health" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Infrastructure
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Infrastructure" ;
+    skos:prefLabel "Infrastructure"@en ;
+    org:hasIdentifier "Infrastructure" ;
+    skos:notation "Infrastructure" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Land
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Land" ;
+    skos:prefLabel "Land"@en ;
+    org:hasIdentifier "Land" ;
+    skos:notation "Land" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:OceansandCoastalZones
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Oceans and Coastal Zones" ;
+    skos:prefLabel "Oceans and Coastal Zones"@en ;
+    org:hasIdentifier "OceansandCoastalZones" ;
+    skos:notation "OceansandCoastalZones" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Pollution
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Pollution" ;
+    skos:prefLabel "Pollution"@en ;
+    org:hasIdentifier "Pollution" ;
+    skos:notation "Pollution" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:RealEstate
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Real Estate" ;
+    skos:prefLabel "Real Estate"@en ;
+    org:hasIdentifier "RealEstate" ;
+    skos:notation "RealEstate" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Waste
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Waste" ;
+    skos:prefLabel "Waste"@en ;
+    org:hasIdentifier "Waste" ;
+    skos:notation "Waste" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+iriscategory:Water
+    a skos:Concept, cids:Code, cids:Sector ;
+    org:hasName "Water" ;
+    skos:prefLabel "Water"@en ;
+    org:hasIdentifier "Water" ;
+    skos:notation "Water" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .

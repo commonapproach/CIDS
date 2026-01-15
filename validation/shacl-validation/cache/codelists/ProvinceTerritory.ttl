@@ -1,0 +1,208 @@
+@base <https://codelist.commonapproach.org/ProvinceTerritory> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "Province and Territory Codelist"@en ;
+    dcterms:title "Province and Territory Codelist"@en ;
+    dcterms:description "A codelist vocabulary of Province and Territory Codelists according to Statistics Canada definitions."@en .
+
+:AB
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Alberta" ;
+    skos:prefLabel "Alberta"@en ;
+    cids:hasIdentifier "AB" ;
+    skos:notation "AB" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:BC
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "British Columbia" ;
+    skos:prefLabel "British Columbia"@en ;
+    cids:hasIdentifier "BC" ;
+    skos:notation "BC" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:CAN
+    a cids:Locality ;
+    org:hasName "All of Canada" ;
+    skos:prefLabel "All of Canada"@en ;
+    cids:hasIdentifier "CAN" ;
+    skos:notation "CAN" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:MB
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Manitoba" ;
+    skos:prefLabel "Manitoba"@en ;
+    cids:hasIdentifier "MB" ;
+    skos:notation "MB" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NB
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "New Brunswick" ;
+    skos:prefLabel "New Brunswick"@en ;
+    cids:hasIdentifier "NB" ;
+    skos:notation "NB" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NL
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Newfoundland and Labrador" ;
+    skos:prefLabel "Newfoundland and Labrador"@en ;
+    cids:hasIdentifier "NL" ;
+    skos:notation "NL" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NS
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Nova Scotia" ;
+    skos:prefLabel "Nova Scotia"@en ;
+    cids:hasIdentifier "NS" ;
+    skos:notation "NS" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NT
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Northwest Territories" ;
+    skos:prefLabel "Northwest Territories"@en ;
+    cids:hasIdentifier "NT" ;
+    skos:notation "NT" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NU
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Nunavut" ;
+    skos:prefLabel "Nunavut"@en ;
+    cids:hasIdentifier "NU" ;
+    skos:notation "NU" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:ON
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Ontario" ;
+    skos:prefLabel "Ontario"@en ;
+    cids:hasIdentifier "ON" ;
+    skos:notation "ON" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:PE
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Prince Edward Island" ;
+    skos:prefLabel "Prince Edward Island"@en ;
+    cids:hasIdentifier "PE" ;
+    skos:notation "PE" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:QC
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Quebec" ;
+    skos:prefLabel "Quebec"@en ;
+    cids:hasIdentifier "QC" ;
+    skos:notation "QC" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SK
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Saskatchewan" ;
+    skos:prefLabel "Saskatchewan"@en ;
+    cids:hasIdentifier "SK" ;
+    skos:notation "SK" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:YT
+    a cids:ProvinceTerritory, cids:Locality ;
+    org:hasName "Yukon" ;
+    skos:prefLabel "Yukon"@en ;
+    cids:hasIdentifier "YT" ;
+    skos:notation "YT" ;
+    prov:hadPrimarySource <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8> ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+

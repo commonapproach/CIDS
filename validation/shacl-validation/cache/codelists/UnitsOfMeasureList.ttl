@@ -1,0 +1,143 @@
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix i72: <http://ontology.eil.utoronto.ca/ISO21972/iso21972#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# CIDS Unit of Measure Picklist
+#
+# This file defines a set of common units of measure for use in
+# CIDS-aligned software. It builds upon the ISO 21972 ontology,
+# making pragmatic simplifications where necessary to support
+# data entry from simple spreadsheet-based systems.
+#################################################################
+
+
+#################################################################
+# 1. CIDS-defined Base Singular Units (for units not in i72:)
+#################################################################
+
+cids:dayUnit rdf:type i72:Singular_unit ;
+    rdfs:label "Days"@en ;
+    i72:symbol "days"@en ;
+    rdfs:comment "A unit of time. Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a duration."@en .
+
+cids:foot rdf:type i72:Singular_unit ;
+    rdfs:label "Foot"@en ;
+    i72:symbol "ft"@en ;
+    rdfs:comment "A non-SI unit of length."@en .
+
+# Pragmatic definition of Tonne as a singular unit to simplify modeling for users.
+cids:tonne rdf:type i72:Singular_unit ;
+    rdfs:label "Tonne"@en ;
+    i72:symbol "t"@en ;
+    rdfs:comment "A unit of mass equivalent to 1,000 kilograms. Use for Indicators multi-typed as i72:Sum or i72:Mean. Pragmatically defined as a singular unit for ease of use."@en .
+
+#################################################################
+# 2. Monetary Units
+#################################################################
+
+cids:cad rdf:type i72:Monetary_unit ;
+    rdfs:label "Canadian Dollar"@en ;
+    i72:symbol "$CAD"@en ;
+    rdfs:comment "Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a financial value."@en .
+
+cids:cadMillions rdf:type i72:Unit_multiple_or_submultiple ;
+    rdfs:label "Millions of Canadian Dollars"@en ;
+    i72:symbol "$CAD(M)"@en ;
+    rdfs:comment "Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a financial value."@en ;
+    i72:prefix i72:mega ;
+    i72:singular_unit cids:cad .
+
+#################################################################
+# 3. Standard Multiples and Exponents
+#################################################################
+
+cids:kilogram rdf:type i72:Unit_multiple_or_submultiple ;
+    rdfs:label "Kilogram"@en ;
+    i72:symbol "kg"@en ;
+    rdfs:comment "A unit of mass. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:prefix i72:kilo ;
+    i72:singular_unit i72:gram .
+
+cids:megatonne rdf:type i72:Unit_multiple_or_submultiple ;
+    rdfs:label "Megatonne"@en ;
+    i72:symbol "Mt"@en ;
+    rdfs:comment "A unit of mass, typically for GHG emissions. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:prefix i72:mega ;
+    i72:singular_unit cids:tonne .
+
+cids:megawatt rdf:type i72:Unit_multiple_or_submultiple ;
+    rdfs:label "Megawatt"@en ;
+    i72:symbol "MW"@en ;
+    rdfs:comment "A unit of power. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:prefix i72:mega ;
+    i72:singular_unit i72:watt .
+
+cids:kilowattHour rdf:type i72:Unit_multiplication ;
+    rdfs:label "Kilowatt-hour"@en ;
+    i72:symbol "kWh"@en ;
+    rdfs:comment "A unit of energy. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:term_1 i72:kilowatt ;
+    i72:term_2 i72:hour .
+
+cids:megawattHour rdf:type i72:Unit_multiplication ;
+    rdfs:label "Megawatt-hour"@en ;
+    i72:symbol "MWh"@en ;
+    rdfs:comment "A unit of energy. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:term_1 cids:megawatt ;
+    i72:term_2 i72:hour .
+
+cids:squareMeter rdf:type i72:Unit_exponentiation ;
+    rdfs:label "Square Meter"@en ;
+    i72:symbol "m^2"@en ;
+    rdfs:comment "A unit of area. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:base i72:metre ;
+    i72:exponent "2"^^xsd:integer .
+
+cids:cubicMeter rdf:type i72:Unit_exponentiation ;
+    rdfs:label "Cubic Meter"@en ;
+    i72:symbol "m^3"@en ;
+    rdfs:comment "A unit of volume. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:base i72:metre ;
+    i72:exponent "3"^^xsd:integer .
+
+cids:squareFoot rdf:type i72:Unit_exponentiation ;
+    rdfs:label "Square Foot"@en ;
+    i72:symbol "sq ft"@en ;
+    rdfs:comment "A non-SI unit of area. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en ;
+    i72:base cids:foot ;
+    i72:exponent "2"^^xsd:integer .
+
+
+#################################################################
+# 4. Pragmatic / Generic Units for Simple Interfaces
+#################################################################
+
+cids:countUnit rdf:type i72:Cardinality_unit ;
+    rdfs:label "Count"@en ;
+    i72:symbol "count"@en ;
+    owl:sameAs i72:population_cardinality_unit ;
+    rdfs:comment "A count of discrete items. Use for Indicators multi-typed as i72:Cardinality. The 'unitDescription' should be used to create the i72:Population."@en .
+
+cids:percentUnit rdf:type i72:Singular_unit ;
+    rdfs:label "Percent"@en ;
+    i72:symbol "%"@en ;
+    rdfs:comment "A generic unit for percentages. The Indicator should be multi-typed as i72:RatioIndicator for clarity."@en .
+
+cids:ratioUnit rdf:type i72:Compound_unit ;
+    rdfs:label "Ratio"@en ;
+    i72:symbol "ratio"@en ;
+    rdfs:comment "A generic unit for ratios where the numerator and denominator are not specified. The Indicator should be multi-typed as i72:RatioIndicator."@en .
+
+cids:scoreUnit rdf:type i72:Singular_unit ;
+    rdfs:label "Score"@en ;
+    i72:symbol "score"@en ;
+    rdfs:comment "A generic unit for scores or points. The Indicator should be linked to a formal scale definition (e.g., i72:Ordinal_scale or a cids:Code) via the i72:measurement_scale property."@en .
+
+cids:unspecifiedUnit rdf:type i72:Singular_unit ;
+    rdfs:label "Unspecified Unit"@en ;
+    rdfs:comment "A placeholder for unspecified units."@en .
+

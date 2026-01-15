@@ -1,0 +1,350 @@
+@base <https://codelist.commonapproach.org/SELI-GLI> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids.owl> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "SELI-GLI Assessment"@en ;
+    skos:prefLabel "Évaluation des Investissements selon une Optique d'Équité Sociale et de Genre"@fr ;
+    dcterms:title "SELI-GLI Assessment"@en ;
+    dcterms:title "Évaluation IOES-IOG"@fr ;
+    dcterms:description "Évaluation des Investissements selon une Optique d'Équité Sociale et de Genre"@fr ;
+    dcterms:description "Social Equity and Gender-Lens Investment Assessment"@en .
+
+# -- Theme --
+
+:Theme1
+    a cids:Theme, skos:Concept ;
+    org:hasName "SELI-GLI Assessment" ;
+    skos:prefLabel "SELI-GLI Assessment"@en ;
+    skos:prefLabel "Évaluation IOES-IOG"@fr ;
+    rdfs:label "SELI-GLI Assessment"@en ;
+    rdfs:label "Évaluation IOES-IOG"@fr ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+# -- Outcomes --
+
+:Outcome1
+    a cids:Outcome, skos:Concept ;
+    org:hasName "Mission Alignment" ;
+    skos:prefLabel "Mission Alignment"@en ;
+    skos:prefLabel "Alignement de la mission"@fr ;
+    rdfs:label "Mission Alignment"@en ;
+    rdfs:label "Alignement de la mission"@fr ;
+    cids:forTheme :Theme1 ;
+    cids:hasIndicator :Indicator1, :Indicator2, :Indicator3, :Indicator4 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Outcome2
+    a cids:Outcome, skos:Concept ;
+    org:hasName "Leadership" ;
+    skos:prefLabel "Leadership"@en ;
+    skos:prefLabel "Leadership"@fr ;
+    rdfs:label "Leadership"@en ;
+    rdfs:label "Leadership"@fr ;
+    cids:forTheme :Theme1 ;
+    cids:hasIndicator :Indicator5, :Indicator6, :Indicator7 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Outcome3
+    a cids:Outcome, skos:Concept ;
+    org:hasName "Culture and Practices" ;
+    skos:prefLabel "Culture and Practices"@en ;
+    skos:prefLabel "Culture et pratiques organisationnelles"@fr ;
+    rdfs:label "Culture and Practices"@en ;
+    rdfs:label "Culture et pratiques organisationnelles"@fr ;
+    cids:forTheme :Theme1 ;
+    cids:hasIndicator :Indicator8 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Outcome4
+    a cids:Outcome, skos:Concept ;
+    org:hasName "Indigenous Reconciliation" ;
+    skos:prefLabel "Indigenous Reconciliation"@en ;
+    skos:prefLabel "Réconciliation avec les Peuples Autochtones"@fr ;
+    rdfs:label "Indigenous Reconciliation"@en ;
+    rdfs:label "Réconciliation avec les Peuples Autochtones"@fr ;
+    cids:forTheme :Theme1 ;
+    cids:hasIndicator :Indicator9 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Outcome5
+    a cids:Outcome, skos:Concept ;
+    org:hasName "Aggregate SELI and GLI classification" ;
+    skos:prefLabel "Aggregate SELI and GLI classification"@en ;
+    skos:prefLabel "Classification globale SELI et GLI"@fr ;
+    rdfs:label "Aggregate SELI and GLI classification"@en ;
+    rdfs:label "Classification globale SELI et GLI"@fr ;
+    cids:forTheme :Theme1 ;
+    cids:hasIndicator :Indicator10, :Indicator11 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+# -- Indicators --
+
+:Indicator1
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Are your products/services designed to support equity-deserving groups, and promote social equity?" ;
+    skos:prefLabel "Are your products/services designed to support equity-deserving groups, and promote social equity?"@en ;
+    skos:prefLabel "Vos produits/services sont-ils conçus pour soutenir les groupes méritant l'équité et promouvoir l'équité sociale ?"@fr ;
+    rdfs:label "Are your products/services designed to support equity-deserving groups, and promote social equity?"@en ;
+    rdfs:label "Vos produits/services sont-ils conçus pour soutenir les groupes méritant l'équité et promouvoir l'équité sociale ?"@fr ;
+    cids:hasDescription "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups." ;
+    skos:definition "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups."@en ;
+    skos:definition "Les produits et/ou services sont conçus par l'organisme à vocation sociale de manière à cibler des initiatives visant à promouvoir l'équité sociale et le bien-être des groupes méritant l'équité."@fr ;
+    rdfs:comment "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups."@en ;
+    rdfs:comment "Les produits et/ou services sont conçus par l'organisme à vocation sociale de manière à cibler des initiatives visant à promouvoir l'équité sociale et le bien-être des groupes méritant l'équité."@fr ;
+    cids:forOutcome :Outcome1 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator2
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?" ;
+    skos:prefLabel "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?"@en ;
+    skos:prefLabel "Vos produits/services sont-ils conçus pour soutenir les femmes et/ou les  personnes de diverses identités de genre, et faire avancer l'égalité des genres?"@fr ;
+    rdfs:label "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?"@en ;
+    rdfs:label "Vos produits/services sont-ils conçus pour soutenir les femmes et/ou les  personnes de diverses identités de genre, et faire avancer l'égalité des genres?"@fr ;
+    cids:hasDescription "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people." ;
+    skos:definition "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people."@en ;
+    skos:definition "Les produits et/ou services sont conçus par l'intermédiaire de finance sociale de manière à cibler des initiatives visant à promouvoir l'égalité des genres et l'équité des femmes et des personnes de diverses identités de genre."@fr ;
+    rdfs:comment "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people."@en ;
+    rdfs:comment "Les produits et/ou services sont conçus par l'intermédiaire de finance sociale de manière à cibler des initiatives visant à promouvoir l'égalité des genres et l'équité des femmes et des personnes de diverses identités de genre."@fr ;
+    cids:forOutcome :Outcome1 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator3
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Do you integrate a social equity analysis while developing your prodcts/services?" ;
+    skos:prefLabel "Do you integrate a social equity analysis while developing your prodcts/services?"@en ;
+    skos:prefLabel "Intégrez-vous une analyse d'équité sociale lors du développement de vos produits et/ou services?"@fr ;
+    rdfs:label "Do you integrate a social equity analysis while developing your prodcts/services?"@en ;
+    rdfs:label "Intégrez-vous une analyse d'équité sociale lors du développement de vos produits et/ou services?"@fr ;
+    cids:hasDescription "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable." ;
+    skos:definition "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en ;
+    skos:definition "L'organisme à vocation sociale effectue une analyse d'équité sociale dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr ;
+    rdfs:comment "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en ;
+    rdfs:comment "L'organisme à vocation sociale effectue une analyse d'équité sociale dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr ;
+    cids:forOutcome :Outcome1 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator4
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Do you integrate a gender analysis while developing your products/services?" ;
+    skos:prefLabel "Do you integrate a gender analysis while developing your products/services?"@en ;
+    skos:prefLabel "Intégrez-vous une analyse de genre lors du développement de vos produits et services?"@fr ;
+    rdfs:label "Do you integrate a gender analysis while developing your products/services?"@en ;
+    rdfs:label "Intégrez-vous une analyse de genre lors du développement de vos produits et services?"@fr ;
+    cids:hasDescription "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable." ;
+    skos:definition "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en ;
+    skos:definition "L'organisme à vocation sociale effectue une analyse de genre dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr ;
+    rdfs:comment "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en ;
+    rdfs:comment "L'organisme à vocation sociale effectue une analyse de genre dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr ;
+    cids:forOutcome :Outcome1 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator5
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?" ;
+    skos:prefLabel "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?"@en ;
+    skos:prefLabel "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs) est-il composé de membre(s) issues de groupes méritant l'équité?"@fr ;
+    rdfs:label "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?"@en ;
+    rdfs:label "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs) est-il composé de membre(s) issues de groupes méritant l'équité?"@fr ;
+    cids:hasDescription "Leadership of the social purpose organization includes lived experience from equity-deserving groups." ;
+    skos:definition "Leadership of the social purpose organization includes lived experience from equity-deserving groups."@en ;
+    skos:definition "Le leadership de l'organisme à vocation sociale inclut des personnes issues de groupes méritant l'équité ayant l'expérience vécue."@fr ;
+    rdfs:comment "Leadership of the social purpose organization includes lived experience from equity-deserving groups."@en ;
+    rdfs:comment "Le leadership de l'organisme à vocation sociale inclut des personnes issues de groupes méritant l'équité ayant l'expérience vécue."@fr ;
+    cids:forOutcome :Outcome2 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator6
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?" ;
+    skos:prefLabel "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?"@en ;
+    skos:prefLabel "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs)  est-il composé de femmes ou/et de personnes de diverses identités de genre ?"@fr ;
+    rdfs:label "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?"@en ;
+    rdfs:label "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs)  est-il composé de femmes ou/et de personnes de diverses identités de genre ?"@fr ;
+    cids:hasDescription "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people." ;
+    skos:definition "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people."@en ;
+    skos:definition "Le leadership de l'organisme à vocation sociale inclut des femmes ou/et des personnes de diverses identités de genre ayant l'expérience vécue."@fr ;
+    rdfs:comment "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people."@en ;
+    rdfs:comment "Le leadership de l'organisme à vocation sociale inclut des femmes ou/et des personnes de diverses identités de genre ayant l'expérience vécue."@fr ;
+    cids:forOutcome :Outcome2 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator7
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?" ;
+    skos:prefLabel "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?"@en ;
+    skos:prefLabel "Offrez-vous à vos clients des moyens formels ou/et informels d'influencer la conception de vos produits, la prise de décision etc. ?"@fr ;
+    rdfs:label "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?"@en ;
+    rdfs:label "Offrez-vous à vos clients des moyens formels ou/et informels d'influencer la conception de vos produits, la prise de décision etc. ?"@fr ;
+    cids:hasDescription "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups." ;
+    skos:definition "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups."@en ;
+    skos:definition "Le leadership de l'organisme à vocation sociale met en place des processus participatifs pour tenir compte de l'expérience vécue des clients ciblés provenant des groupes méritant l'équité."@fr ;
+    rdfs:comment "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups."@en ;
+    rdfs:comment "Le leadership de l'organisme à vocation sociale met en place des processus participatifs pour tenir compte de l'expérience vécue des clients ciblés provenant des groupes méritant l'équité."@fr ;
+    cids:forOutcome :Outcome2 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator8
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)" ;
+    skos:prefLabel "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)"@en ;
+    skos:prefLabel "Avez-vous mis en place des pratiques d'équité sociale significatives au sein de votre culture organisationnelle ? Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr ;
+    rdfs:label "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)"@en ;
+    rdfs:label "Avez-vous mis en place des pratiques d'équité sociale significatives au sein de votre culture organisationnelle ? Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr ;
+    cids:hasDescription "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more." ;
+    skos:definition "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more."@en ;
+    skos:definition "L'organisme à vocation sociale intègre activement des pratiques d'équité sociale dans sa culture organisationnelle. Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr ;
+    rdfs:comment "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more."@en ;
+    rdfs:comment "L'organisme à vocation sociale intègre activement des pratiques d'équité sociale dans sa culture organisationnelle. Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr ;
+    cids:forOutcome :Outcome3 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator9
+    a cids:Indicator, skos:Concept ;
+    org:hasName "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)" ;
+    skos:prefLabel "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)"@en ;
+    skos:prefLabel "Comment votre organisation fait-elle progresser la Réconciliation avec les Peuples Autochtones dans le cadre de son travail ? (Non évalué dans le cadre des seuils de l'IOES et de l'IOG)"@fr ;
+    rdfs:label "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)"@en ;
+    rdfs:label "Comment votre organisation fait-elle progresser la Réconciliation avec les Peuples Autochtones dans le cadre de son travail ? (Non évalué dans le cadre des seuils de l'IOES et de l'IOG)"@fr ;
+    cids:forOutcome :Outcome4 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator10
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Social Equity Lens Investment Assessment" ;
+    skos:prefLabel "Social Equity Lens Investment Assessment"@en ;
+    skos:prefLabel "Évaluation de l'investissement dans une Optique d'Équité Sociale"@fr ;
+    rdfs:label "Social Equity Lens Investment Assessment"@en ;
+    rdfs:label "Évaluation de l'investissement dans une Optique d'Équité Sociale"@fr ;
+    cids:forOutcome :Outcome5 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:Indicator11
+    a cids:Indicator, skos:Concept ;
+    org:hasName "Gender Lens Investment Assessment" ;
+    skos:prefLabel "Gender Lens Investment Assessment"@en ;
+    skos:prefLabel "Évaluation de l'Investissement dans une Optique de Genre"@fr ;
+    rdfs:label "Gender Lens Investment Assessment"@en ;
+    rdfs:label "Évaluation de l'Investissement dans une Optique de Genre"@fr ;
+    cids:forOutcome :Outcome5 ;
+
+    cids:forOrganization cids:esdc ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .

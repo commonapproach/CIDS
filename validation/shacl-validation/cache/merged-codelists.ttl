@@ -1,0 +1,2629 @@
+PREFIX cids:    <https://ontology.commonapproach.org/cids#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX edg:     <https://codelist.commonapproach.org/EquityDeservingGroupsESDC#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX i72:     <http://ontology.eil.utoronto.ca/ISO21972/iso21972#>
+PREFIX org:     <http://ontology.eil.utoronto.ca/tove/organization#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sff:     <https://ontology.commonapproach.org/sff#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann:    <http://purl.org/vocab/vann/>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+cids:statsCan  rdf:type   cids:Organization , owl:NamedIndividual;
+        rdfs:isDefinedBy  cids:;
+        rdfs:label        "Statistics Canada"@en;
+        org:hasLegalName  "Statistics Canada";
+        foaf:name         "Statistics Canada"@en .
+
+cids:giin  rdf:type       cids:Organization , owl:NamedIndividual;
+        rdfs:isDefinedBy  cids:;
+        rdfs:label        "Global Impact Investing Network"@en;
+        org:hasLegalName  "Global Impact Investing Network";
+        foaf:name         "Global Impact Investing Network"@en .
+
+cids:esdc  rdf:type       cids:Organization , owl:NamedIndividual;
+        rdfs:isDefinedBy  cids:;
+        rdfs:label        "Employment Social Development Canada"@en;
+        org:hasLegalName  "Employment Social Development Canada";
+        foaf:name         "Employment Social Development Canada"@en .
+
+cids:ac  rdf:type         cids:Organization , owl:NamedIndividual;
+        rdfs:isDefinedBy  cids:;
+        rdfs:label        "Common Approach to Impact Measurement"@en;
+        org:hasLegalName  "Common Approach to Impact Measurement";
+        foaf:name         "Common Approach to Impact Measurement"@en .
+
+cids:Sector  rdf:type       owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:ProvinceTerritory
+        rdf:type            owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:PopulationServed
+        rdf:type            owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:OrganizationType
+        rdf:type            owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:Locality  rdf:type     owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:FundingState  rdf:type  owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:EquityDeservingGroup
+        rdf:type            owl:Class;
+        rdfs:subClassOf     skos:Concept , cids:Code;
+        cids:belongsToTier  cids:SFFTier .
+
+cids:unspecifiedUnit  rdf:type  i72:Singular_unit;
+        rdfs:comment  "A placeholder for unspecified units."@en;
+        rdfs:label    "Unspecified Unit"@en .
+
+cids:scoreUnit  rdf:type  i72:Singular_unit;
+        rdfs:comment  "A generic unit for scores or points. The Indicator should be linked to a formal scale definition (e.g., i72:Ordinal_scale or a cids:Code) via the i72:measurement_scale property."@en;
+        rdfs:label    "Score"@en;
+        i72:symbol    "score"@en .
+
+cids:ratioUnit  rdf:type  i72:Compound_unit;
+        rdfs:comment  "A generic unit for ratios where the numerator and denominator are not specified. The Indicator should be multi-typed as i72:RatioIndicator."@en;
+        rdfs:label    "Ratio"@en;
+        i72:symbol    "ratio"@en .
+
+cids:percentUnit  rdf:type  i72:Singular_unit;
+        rdfs:comment  "A generic unit for percentages. The Indicator should be multi-typed as i72:RatioIndicator for clarity."@en;
+        rdfs:label    "Percent"@en;
+        i72:symbol    "%"@en .
+
+cids:countUnit  rdf:type  i72:Cardinality_unit;
+        rdfs:comment  "A count of discrete items. Use for Indicators multi-typed as i72:Cardinality. The 'unitDescription' should be used to create the i72:Population."@en;
+        rdfs:label    "Count"@en;
+        i72:symbol    "count"@en;
+        owl:sameAs    i72:population_cardinality_unit .
+
+cids:squareFoot  rdf:type  i72:Unit_exponentiation;
+        rdfs:comment  "A non-SI unit of area. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label    "Square Foot"@en;
+        i72:base      cids:foot;
+        i72:exponent  2;
+        i72:symbol    "sq ft"@en .
+
+cids:cubicMeter  rdf:type  i72:Unit_exponentiation;
+        rdfs:comment  "A unit of volume. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label    "Cubic Meter"@en;
+        i72:base      i72:metre;
+        i72:exponent  3;
+        i72:symbol    "m^3"@en .
+
+cids:squareMeter  rdf:type  i72:Unit_exponentiation;
+        rdfs:comment  "A unit of area. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label    "Square Meter"@en;
+        i72:base      i72:metre;
+        i72:exponent  2;
+        i72:symbol    "m^2"@en .
+
+cids:megawattHour  rdf:type  i72:Unit_multiplication;
+        rdfs:comment  "A unit of energy. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label    "Megawatt-hour"@en;
+        i72:symbol    "MWh"@en;
+        i72:term_1    cids:megawatt;
+        i72:term_2    i72:hour .
+
+cids:kilowattHour  rdf:type  i72:Unit_multiplication;
+        rdfs:comment  "A unit of energy. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label    "Kilowatt-hour"@en;
+        i72:symbol    "kWh"@en;
+        i72:term_1    i72:kilowatt;
+        i72:term_2    i72:hour .
+
+cids:megawatt  rdf:type    i72:Unit_multiple_or_submultiple;
+        rdfs:comment       "A unit of power. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label         "Megawatt"@en;
+        i72:prefix         i72:mega;
+        i72:singular_unit  i72:watt;
+        i72:symbol         "MW"@en .
+
+cids:megatonne  rdf:type   i72:Unit_multiple_or_submultiple;
+        rdfs:comment       "A unit of mass, typically for GHG emissions. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label         "Megatonne"@en;
+        i72:prefix         i72:mega;
+        i72:singular_unit  cids:tonne;
+        i72:symbol         "Mt"@en .
+
+cids:kilogram  rdf:type    i72:Unit_multiple_or_submultiple;
+        rdfs:comment       "A unit of mass. Use for Indicators multi-typed as i72:Sum or i72:Mean."@en;
+        rdfs:label         "Kilogram"@en;
+        i72:prefix         i72:kilo;
+        i72:singular_unit  i72:gram;
+        i72:symbol         "kg"@en .
+
+cids:cadMillions  rdf:type  i72:Unit_multiple_or_submultiple;
+        rdfs:comment       "Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a financial value."@en;
+        rdfs:label         "Millions of Canadian Dollars"@en;
+        i72:prefix         i72:mega;
+        i72:singular_unit  cids:cad;
+        i72:symbol         "$CAD(M)"@en .
+
+cids:cad  rdf:type    i72:Monetary_unit;
+        rdfs:comment  "Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a financial value."@en;
+        rdfs:label    "Canadian Dollar"@en;
+        i72:symbol    "$CAD"@en .
+
+cids:tonne  rdf:type  i72:Singular_unit;
+        rdfs:comment  "A unit of mass equivalent to 1,000 kilograms. Use for Indicators multi-typed as i72:Sum or i72:Mean. Pragmatically defined as a singular unit for ease of use."@en;
+        rdfs:label    "Tonne"@en;
+        i72:symbol    "t"@en .
+
+cids:foot  rdf:type   i72:Singular_unit;
+        rdfs:comment  "A non-SI unit of length."@en;
+        rdfs:label    "Foot"@en;
+        i72:symbol    "ft"@en .
+
+cids:dayUnit  rdf:type  i72:Singular_unit;
+        rdfs:comment  "A unit of time. Use for Indicators multi-typed as i72:Sum or i72:Mean, representing a duration."@en;
+        rdfs:label    "Days"@en;
+        i72:symbol    "days"@en .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator11>
+        rdf:type               skos:Concept , cids:Indicator;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Évaluation de l'Investissement dans une Optique de Genre"@fr , "Gender Lens Investment Assessment"@en;
+        org:hasName            "Gender Lens Investment Assessment";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Évaluation de l'Investissement dans une Optique de Genre"@fr , "Gender Lens Investment Assessment"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome5>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator10>
+        rdf:type               skos:Concept , cids:Indicator;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Évaluation de l'investissement dans une Optique d'Équité Sociale"@fr , "Social Equity Lens Investment Assessment"@en;
+        org:hasName            "Social Equity Lens Investment Assessment";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Évaluation de l'investissement dans une Optique d'Équité Sociale"@fr , "Social Equity Lens Investment Assessment"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome5>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator9>
+        rdf:type               skos:Concept , cids:Indicator;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Comment votre organisation fait-elle progresser la Réconciliation avec les Peuples Autochtones dans le cadre de son travail ? (Non évalué dans le cadre des seuils de l'IOES et de l'IOG)"@fr , "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)"@en;
+        org:hasName            "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Comment votre organisation fait-elle progresser la Réconciliation avec les Peuples Autochtones dans le cadre de son travail ? (Non évalué dans le cadre des seuils de l'IOES et de l'IOG)"@fr , "How do you advance Indigenous Reconciliation within your work? (Not for assessment as part of SELI/GLI Thresholds)"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome4>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator8>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more."@en , "L'organisme à vocation sociale intègre activement des pratiques d'équité sociale dans sa culture organisationnelle. Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)"@en , "Avez-vous mis en place des pratiques d'équité sociale significatives au sein de votre culture organisationnelle ? Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr;
+        org:hasName            "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)";
+        skos:definition        "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more."@en , "L'organisme à vocation sociale intègre activement des pratiques d'équité sociale dans sa culture organisationnelle. Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Have you built meaningful social equity practices within your internal organizational culture? (Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.)"@en , "Avez-vous mis en place des pratiques d'équité sociale significatives au sein de votre culture organisationnelle ? Vise les organismes à vocation sociale opérationnels depuis plus de 2 ans et embauchant 5 employés à temps plein ou plus."@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome3>;
+        cids:hasDescription    "The social purpose organization meaningfully integrates social equity practices in its internal organizational culture. Assessed only for social purpose organizations in operation for over 2 years and employing 5 full-time staff or more.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator7>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups."@en , "Le leadership de l'organisme à vocation sociale met en place des processus participatifs pour tenir compte de l'expérience vécue des clients ciblés provenant des groupes méritant l'équité."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?"@en , "Offrez-vous à vos clients des moyens formels ou/et informels d'influencer la conception de vos produits, la prise de décision etc. ?"@fr;
+        org:hasName            "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?";
+        skos:definition        "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups."@en , "Le leadership de l'organisme à vocation sociale met en place des processus participatifs pour tenir compte de l'expérience vécue des clients ciblés provenant des groupes méritant l'équité."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Do you provide formal or/and informal ways for your clients/customers to inform your product design, decision making, etc.?"@en , "Offrez-vous à vos clients des moyens formels ou/et informels d'influencer la conception de vos produits, la prise de décision etc. ?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome2>;
+        cids:hasDescription    "Leadership of the social purpose organization is informed by participatory processes from the lived experience of target clients/customers from equity-deserving groups.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator6>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people."@en , "Le leadership de l'organisme à vocation sociale inclut des femmes ou/et des personnes de diverses identités de genre ayant l'expérience vécue."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?"@en , "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs)  est-il composé de femmes ou/et de personnes de diverses identités de genre ?"@fr;
+        org:hasName            "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?";
+        skos:definition        "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people."@en , "Le leadership de l'organisme à vocation sociale inclut des femmes ou/et des personnes de diverses identités de genre ayant l'expérience vécue."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Is your leadership* (i.e. founder, owner, and/or senior management) composed of women or/and gender-diverse people?"@en , "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs)  est-il composé de femmes ou/et de personnes de diverses identités de genre ?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome2>;
+        cids:hasDescription    "Leadership of the social purpose organization includes lived experience from women and/or gender diverse people.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator5>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "Leadership of the social purpose organization includes lived experience from equity-deserving groups."@en , "Le leadership de l'organisme à vocation sociale inclut des personnes issues de groupes méritant l'équité ayant l'expérience vécue."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?"@en , "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs) est-il composé de membre(s) issues de groupes méritant l'équité?"@fr;
+        org:hasName            "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?";
+        skos:definition        "Leadership of the social purpose organization includes lived experience from equity-deserving groups."@en , "Le leadership de l'organisme à vocation sociale inclut des personnes issues de groupes méritant l'équité ayant l'expérience vécue."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Is your leadership* (i.e. founder, owner, and/or senior management) composed of member(s) of an equity-deserving group?"@en , "Votre leadership* (c'est-à-dire le fondateur, le propriétaire et/ou les cadres supérieurs) est-il composé de membre(s) issues de groupes méritant l'équité?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome2>;
+        cids:hasDescription    "Leadership of the social purpose organization includes lived experience from equity-deserving groups.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator4>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en , "L'organisme à vocation sociale effectue une analyse de genre dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Do you integrate a gender analysis while developing your products/services?"@en , "Intégrez-vous une analyse de genre lors du développement de vos produits et services?"@fr;
+        org:hasName            "Do you integrate a gender analysis while developing your products/services?";
+        skos:definition        "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en , "L'organisme à vocation sociale effectue une analyse de genre dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Do you integrate a gender analysis while developing your products/services?"@en , "Intégrez-vous une analyse de genre lors du développement de vos produits et services?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome1>;
+        cids:hasDescription    "The social purpose organization conducts a gender equality analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator3>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en , "L'organisme à vocation sociale effectue une analyse d'équité sociale dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Do you integrate a social equity analysis while developing your prodcts/services?"@en , "Intégrez-vous une analyse d'équité sociale lors du développement de vos produits et/ou services?"@fr;
+        org:hasName            "Do you integrate a social equity analysis while developing your prodcts/services?";
+        skos:definition        "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable."@en , "L'organisme à vocation sociale effectue une analyse d'équité sociale dans le cadre du développement de ses produits et/ou services, et intègre des stratégies d'atténuation le cas échéant."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Do you integrate a social equity analysis while developing your prodcts/services?"@en , "Intégrez-vous une analyse d'équité sociale lors du développement de vos produits et/ou services?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome1>;
+        cids:hasDescription    "The social purpose organization conducts a social equity analysis in the development of their products or/and services, and integrates mitigation strategies as applicable.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator2>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people."@en , "Les produits et/ou services sont conçus par l'intermédiaire de finance sociale de manière à cibler des initiatives visant à promouvoir l'égalité des genres et l'équité des femmes et des personnes de diverses identités de genre."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?"@en , "Vos produits/services sont-ils conçus pour soutenir les femmes et/ou les  personnes de diverses identités de genre, et faire avancer l'égalité des genres?"@fr;
+        org:hasName            "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?";
+        skos:definition        "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people."@en , "Les produits et/ou services sont conçus par l'intermédiaire de finance sociale de manière à cibler des initiatives visant à promouvoir l'égalité des genres et l'équité des femmes et des personnes de diverses identités de genre."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Are your products/services designed to support women or/and gender-diverse people, and promote gender equality?"@en , "Vos produits/services sont-ils conçus pour soutenir les femmes et/ou les  personnes de diverses identités de genre, et faire avancer l'égalité des genres?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome1>;
+        cids:hasDescription    "Products or/and services are designed by the social purpose organization to target initiatives advancing gender equality and the well-being of women and gender diverse people.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Indicator1>
+        rdf:type               cids:Indicator , skos:Concept;
+        rdfs:comment           "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups."@en , "Les produits et/ou services sont conçus par l'organisme à vocation sociale de manière à cibler des initiatives visant à promouvoir l'équité sociale et le bien-être des groupes méritant l'équité."@fr;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Are your products/services designed to support equity-deserving groups, and promote social equity?"@en , "Vos produits/services sont-ils conçus pour soutenir les groupes méritant l'équité et promouvoir l'équité sociale ?"@fr;
+        org:hasName            "Are your products/services designed to support equity-deserving groups, and promote social equity?";
+        skos:definition        "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups."@en , "Les produits et/ou services sont conçus par l'organisme à vocation sociale de manière à cibler des initiatives visant à promouvoir l'équité sociale et le bien-être des groupes méritant l'équité."@fr;
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Are your products/services designed to support equity-deserving groups, and promote social equity?"@en , "Vos produits/services sont-ils conçus pour soutenir les groupes méritant l'équité et promouvoir l'équité sociale ?"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forOutcome        <https://codelist.commonapproach.org/SELI-GLI#Outcome1>;
+        cids:hasDescription    "Products or/and services are designed by the social purpose organization to target initiatives advancing social equity and the well-being of equity-deserving groups.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Outcome5>
+        rdf:type               skos:Concept , cids:Outcome;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Classification globale SELI et GLI"@fr , "Aggregate SELI and GLI classification"@en;
+        org:hasName            "Aggregate SELI and GLI classification";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Classification globale SELI et GLI"@fr , "Aggregate SELI and GLI classification"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forTheme          <https://codelist.commonapproach.org/SELI-GLI#Theme1>;
+        cids:hasIndicator      <https://codelist.commonapproach.org/SELI-GLI#Indicator11> , <https://codelist.commonapproach.org/SELI-GLI#Indicator10>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Outcome4>
+        rdf:type               skos:Concept , cids:Outcome;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Réconciliation avec les Peuples Autochtones"@fr , "Indigenous Reconciliation"@en;
+        org:hasName            "Indigenous Reconciliation";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Réconciliation avec les Peuples Autochtones"@fr , "Indigenous Reconciliation"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forTheme          <https://codelist.commonapproach.org/SELI-GLI#Theme1>;
+        cids:hasIndicator      <https://codelist.commonapproach.org/SELI-GLI#Indicator9>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Outcome3>
+        rdf:type               skos:Concept , cids:Outcome;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Culture et pratiques organisationnelles"@fr , "Culture and Practices"@en;
+        org:hasName            "Culture and Practices";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Culture et pratiques organisationnelles"@fr , "Culture and Practices"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forTheme          <https://codelist.commonapproach.org/SELI-GLI#Theme1>;
+        cids:hasIndicator      <https://codelist.commonapproach.org/SELI-GLI#Indicator8>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Outcome2>
+        rdf:type               skos:Concept , cids:Outcome;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Leadership"@fr , "Leadership"@en;
+        org:hasName            "Leadership";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Leadership"@fr , "Leadership"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forTheme          <https://codelist.commonapproach.org/SELI-GLI#Theme1>;
+        cids:hasIndicator      <https://codelist.commonapproach.org/SELI-GLI#Indicator7> , <https://codelist.commonapproach.org/SELI-GLI#Indicator6> , <https://codelist.commonapproach.org/SELI-GLI#Indicator5>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Outcome1>
+        rdf:type               cids:Outcome , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Mission Alignment"@en , "Alignement de la mission"@fr;
+        org:hasName            "Mission Alignment";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Mission Alignment"@en , "Alignement de la mission"@fr;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:forTheme          <https://codelist.commonapproach.org/SELI-GLI#Theme1>;
+        cids:hasIndicator      <https://codelist.commonapproach.org/SELI-GLI#Indicator1> , <https://codelist.commonapproach.org/SELI-GLI#Indicator2> , <https://codelist.commonapproach.org/SELI-GLI#Indicator3> , <https://codelist.commonapproach.org/SELI-GLI#Indicator4>;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI#Theme1>
+        rdf:type               skos:Concept , cids:Theme;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SELI-GLI>;
+        rdfs:label             "Évaluation IOES-IOG"@fr , "SELI-GLI Assessment"@en;
+        org:hasName            "SELI-GLI Assessment";
+        skos:inScheme          <https://codelist.commonapproach.org/SELI-GLI>;
+        skos:prefLabel         "Évaluation IOES-IOG"@fr , "SELI-GLI Assessment"@en;
+        cids:definedBy         cids:esdc;
+        cids:forOrganization   cids:esdc;
+        cids:hasSpecification  <https://codelist.commonapproach.org/SELI-GLI> .
+
+<https://codelist.commonapproach.org/SELI-GLI>
+        rdf:type             skos:ConceptScheme , owl:Ontology , <http://purl.org/vocommons/voaf/Vocabulary>;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "Social Equity and Gender-Lens Investment Assessment"@en , "Évaluation des Investissements selon une Optique d'Équité Sociale et de Genre"@fr;
+        dcterms:title        "Évaluation IOES-IOG"@fr , "SELI-GLI Assessment"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids.owl>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Évaluation des Investissements selon une Optique d'Équité Sociale et de Genre"@fr , "SELI-GLI Assessment"@en .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG17>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/17. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 17"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/17> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG16>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/16. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 16"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/16> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG15>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/15. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 15"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/15> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG14>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/14. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 14"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/14> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG13>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/13. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 13"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/13> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG12>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/12. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 12"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/12> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG11>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/11. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 11"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/11> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG10>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/10. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 10"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/10> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG9>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/9. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 9"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/9> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG8>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/8. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 8"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/8> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG7>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/7. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 7"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/7> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG6>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/6. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 6"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/6> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG5>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/5. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 5"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/5> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG4>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/4. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 4"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/4> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG3>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/3. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 3"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/3> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG2>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/2. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 2"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/2> .
+
+<https://codelist.commonapproach.org/SDGImpacts#SDG1>
+        rdfs:comment    "This IRI is deprecated and has been replaced by https://metadata.un.org/sdg/1. It is retained for backward compatibility."@en;
+        rdfs:label      "Legacy IRI for SDG 1"@en;
+        owl:deprecated  true;
+        owl:sameAs      <https://metadata.un.org/sdg/1> .
+
+<https://metadata.un.org/sdg/17>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "17";
+        org:hasName            "Goal 17: Partnerships for the goals";
+        skos:definition        "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "17";
+        skos:prefLabel         "Goal 17: Partnerships for the goals"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal17>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/16>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "16";
+        org:hasName            "Goal 16: Peace, justice and strong institutions";
+        skos:definition        "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "16";
+        skos:prefLabel         "Goal 16: Peace, justice and strong institutions"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal16>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/15>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "15";
+        org:hasName            "Goal 15: Life on land";
+        skos:definition        "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "15";
+        skos:prefLabel         "Goal 15: Life on land"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal15>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/14>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "14";
+        org:hasName            "Goal 14: Life below water";
+        skos:definition        "Conserve and sustainably use the oceans, seas and marine resources for sustainable development"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "14";
+        skos:prefLabel         "Goal 14: Life below water"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal14>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Conserve and sustainably use the oceans, seas and marine resources for sustainable development";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/13>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "13";
+        org:hasName            "Goal 13: Climate action";
+        skos:definition        "Take urgent action to combat climate change and its impacts"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "13";
+        skos:prefLabel         "Goal 13: Climate action"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal13>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Take urgent action to combat climate change and its impacts";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/12>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "12";
+        org:hasName            "Goal 12: Responsible consumption and production";
+        skos:definition        "Ensure sustainable consumption and production patterns"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "12";
+        skos:prefLabel         "Goal 12: Responsible consumption and production"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal12>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Ensure sustainable consumption and production patterns";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/11>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "11";
+        org:hasName            "Goal 11: Sustainable cities and communities";
+        skos:definition        "Make cities and human settlements inclusive, safe, resilient and sustainable"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "11";
+        skos:prefLabel         "Goal 11: Sustainable cities and communities"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal11>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Make cities and human settlements inclusive, safe, resilient and sustainable";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/10>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "10";
+        org:hasName            "Goal 10: Reduced inequalities";
+        skos:definition        "Reduce inequality within and among countries"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "10";
+        skos:prefLabel         "Goal 10: Reduced inequalities"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal10>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Reduce inequality within and among countries";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/9>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "9";
+        org:hasName            "Goal 9: Industry, innovation and infrastructure";
+        skos:definition        "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "9";
+        skos:prefLabel         "Goal 9: Industry, innovation and infrastructure"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal9>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/8>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "8";
+        org:hasName            "Goal 8: Decent work and economic growth";
+        skos:definition        "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "8";
+        skos:prefLabel         "Goal 8: Decent work and economic growth"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal8>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/7>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "7";
+        org:hasName            "Goal 7: Affordable and clean energy";
+        skos:definition        "Ensure access to affordable, reliable, sustainable and modern energy for all"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "7";
+        skos:prefLabel         "Goal 7: Affordable and clean energy"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal7>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Ensure access to affordable, reliable, sustainable and modern energy for all";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/6>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "6";
+        org:hasName            "Goal 6: Clean water and sanitation";
+        skos:definition        "Ensure availability and sustainable management of water and sanitation for all"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "6";
+        skos:prefLabel         "Goal 6: Clean water and sanitation"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal6>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Ensure availability and sustainable management of water and sanitation for all";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/5>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "5";
+        org:hasName            "Goal 5: Gender equality";
+        skos:definition        "Achieve gender equality and empower all women and girls"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "5";
+        skos:prefLabel         "Goal 5: Gender equality"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal5>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Achieve gender equality and empower all women and girls";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/4>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        rdfs:label             "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all."@en;
+        org:hasIdentifier      "4";
+        org:hasName            "Goal 4: Quality education";
+        skos:definition        "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "4";
+        skos:prefLabel         "Goal 4: Quality education"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal4>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/3>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasName            "Goal 3: Good health and well-being";
+        skos:definition        "Ensure healthy lives and promote well-being for all at all ages"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "3";
+        skos:prefLabel         "Goal 3: Good health and well-being"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal3>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "Ensure healthy lives and promote well-being for all at all ages";
+        cids:hasIdentifier     "3";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/2>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpact>;
+        org:hasName            "Goal 2: Zero hunger";
+        skos:definition        "End hunger, achieve food security and improved nutrition and promote sustainable agriculture"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "2";
+        skos:prefLabel         "Goal 2: Zero hunger"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal2>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "End hunger, achieve food security and improved nutrition and promote sustainable agriculture";
+        cids:hasIdentifier     "2";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg/1>
+        rdf:type               cids:Theme , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/SDGImpacts>;
+        org:hasIdentifier      "1";
+        org:hasName            "Goal 1: No poverty";
+        skos:definition        "End poverty in all its forms everywhere"@en;
+        skos:inScheme          <https://metadata.un.org/sdg>;
+        skos:notation          "1";
+        skos:prefLabel         "Goal 1: No poverty"@en;
+        prov:hadPrimarySource  <https://sdgs.un.org/goals/goal1>;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "End poverty in all its forms everywhere";
+        cids:hasSpecification  <https://codelist.commonapproach.org/SDGImpacts> .
+
+<https://metadata.un.org/sdg>
+        rdf:type       skos:ConceptScheme;
+        dcterms:title  "Sustainable Development Goals Taxonomy"@en .
+
+<https://codelist.commonapproach.org/SDGImpacts>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "A mirror of the official UN Sustainable Development Goals (SDGs) Taxonomy. This vocabulary uses the UN's official IRIs as the primary identifiers for each goal. It retains the original commonapproach.org IRIs, which are now marked as deprecated, for backward compatibility."@en;
+        dcterms:title        "Sustainable Development Goals Impact Themes"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Sustainable Development Goals Impact Themes"@en .
+
+<https://codelist.commonapproach.org/RallyImpactArea#Other>
+        rdf:type               cids:Sector;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea>;
+        org:hasIdentifier      "Other";
+        org:hasName            "Other";
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea>;
+        skos:notation          "Other";
+        skos:prefLabel         "Other"@en;
+        cids:definedBy         cids:ac;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> .
+
+<https://codelist.commonapproach.org/RallyImpactArea#CommunityDevelopment>
+        rdf:type               cids:Sector;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea>;
+        org:hasIdentifier      "CommunityDevelopment";
+        org:hasName            "Community Development";
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea>;
+        skos:notation          "CommunityDevelopment";
+        skos:prefLabel         "Community Development"@en;
+        cids:definedBy         cids:ac;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> .
+
+<https://codelist.commonapproach.org/RallyImpactArea#ArtsandCulture>
+        rdf:type               cids:Sector;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea>;
+        org:hasIdentifier      "ArtsandCulture";
+        org:hasName            "Arts and Culture";
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea>;
+        skos:notation          "ArtsandCulture";
+        skos:prefLabel         "Arts and Culture"@en;
+        cids:definedBy         cids:ac;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> .
+
+<https://codelist.commonapproach.org/RallyImpactArea>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "An RDF vocabulary of Rally Impact Areas."@en;
+        dcterms:title        "Rally Impact Areas"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "1.0";
+        skos:prefLabel       "Rally Impact Areas"@en .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#YT>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Yukon";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "YT";
+        skos:prefLabel         "Yukon"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "YT";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#SK>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Saskatchewan";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "SK";
+        skos:prefLabel         "Saskatchewan"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "SK";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#QC>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Quebec";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "QC";
+        skos:prefLabel         "Quebec"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "QC";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#PE>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Prince Edward Island";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "PE";
+        skos:prefLabel         "Prince Edward Island"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "PE";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#ON>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Ontario";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "ON";
+        skos:prefLabel         "Ontario"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "ON";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#NU>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Nunavut";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "NU";
+        skos:prefLabel         "Nunavut"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "NU";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#NT>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Northwest Territories";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "NT";
+        skos:prefLabel         "Northwest Territories"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "NT";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#NS>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Nova Scotia";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "NS";
+        skos:prefLabel         "Nova Scotia"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "NS";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#NL>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Newfoundland and Labrador";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "NL";
+        skos:prefLabel         "Newfoundland and Labrador"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "NL";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#NB>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "New Brunswick";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "NB";
+        skos:prefLabel         "New Brunswick"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "NB";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#MB>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Manitoba";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "MB";
+        skos:prefLabel         "Manitoba"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "MB";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#CAN>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "All of Canada";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "CAN";
+        skos:prefLabel         "All of Canada"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "CAN";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#BC>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "British Columbia";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "BC";
+        skos:prefLabel         "British Columbia"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "BC";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory#AB>
+        rdf:type               cids:Locality , cids:ProvinceTerritory;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ProvinceTerritory>;
+        org:hasName            "Alberta";
+        skos:inScheme          <https://codelist.commonapproach.org/ProvinceTerritory>;
+        skos:notation          "AB";
+        skos:prefLabel         "Alberta"@en;
+        prov:hadPrimarySource  <https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8>;
+        cids:definedBy         cids:statsCan;
+        cids:hasIdentifier     "AB";
+        cids:hasSpecification  <https://codelist.commonapproach.org/ProvinceTerritory> .
+
+<https://codelist.commonapproach.org/ProvinceTerritory>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "A codelist vocabulary of Province and Territory Codelists according to Statistics Canada definitions."@en;
+        dcterms:title        "Province and Territory Codelist"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Province and Territory Codelist"@en .
+
+<https://codelist.commonapproach.org/PopulationServed#ps27>
+        rdf:type               cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps27";
+        org:hasName            "People Living with a Disability (including invisible and episodic disabilities)";
+        skos:definition        "People Living with a Disability (including invisible and episodic disabilities)"@en;
+        skos:exactMatch        edg:edg9;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:narrower          <https://codelist.commonapproach.org/PopulationServed#ps18> , <https://codelist.commonapproach.org/PopulationServed#ps17> , <https://codelist.commonapproach.org/PopulationServed#ps16>;
+        skos:notation          "ps27";
+        skos:prefLabel         "People Living with a Disability (including invisible and episodic disabilities)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People Living with a Disability (including invisible and episodic disabilities)";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps26>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps26";
+        org:hasName            "Indigenous Peoples: Not Otherwise Specified";
+        skos:definition        "In Canada, individuals who self-identify as Indigenous (First Nations, Inuit, or Métis) but do not specify their group affiliation, are unsure of their specific ancestry, or identify with another Indigenous community not listed separately."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps26";
+        skos:prefLabel         "Indigenous Peoples: Not Otherwise Specified"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, individuals who self-identify as Indigenous (First Nations, Inuit, or Métis) but do not specify their group affiliation, are unsure of their specific ancestry, or identify with another Indigenous community not listed separately."@en;
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps25>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps25";
+        org:hasName            "General Population";
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps25";
+        skos:prefLabel         "General Population"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps24>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps24";
+        org:hasName            "Youth (Ages 15-24)";
+        skos:definition        "Any person aged 15-24."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps24";
+        skos:prefLabel         "Youth (Ages 15-24)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Any person aged 15-24.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps23>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps23";
+        org:hasName            "Children (Ages 0-15)";
+        skos:definition        "Any person aged 0-15."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps23";
+        skos:prefLabel         "Children (Ages 0-15)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Any person aged 0-15.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps22>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps22";
+        org:hasName            "Women (Cisgender and Transgender)";
+        skos:definition        "All people who identify as women, whether they are cisgender or transgender women."@en;
+        skos:exactMatch        edg:edg10;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps22";
+        skos:prefLabel         "Women (Cisgender and Transgender)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "All people who identify as women, whether they are cisgender or transgender women.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps21>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps21";
+        org:hasName            "Survivors of Domestic Violence, Sexual assault, Abuse or Stalking";
+        skos:definition        "People who identify as being survivors of domestic violence, including intimate partner violence, sexual assault, stalking and/or harassment."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps21";
+        skos:prefLabel         "Survivors of Domestic Violence, Sexual assault, Abuse or Stalking"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who identify as being survivors of domestic violence, including intimate partner violence, sexual assault, stalking and/or harassment.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps20>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps20";
+        org:hasName            "People without Advanced Educational Qualification";
+        skos:definition        "People that have not completed any university, college or other post-secondary qualification."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps20";
+        skos:prefLabel         "People without Advanced Educational Qualification"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People that have not completed any university, college or other post-secondary qualification.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps19>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps19";
+        org:hasName            "People of Advanced Age (65+)";
+        skos:definition        "People who are 65 and older."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps19";
+        skos:prefLabel         "People of Advanced Age (65+)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who are 65 and older.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps18>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps18";
+        org:hasName            "People Living with Terminal or Chronic Illness/Diseases";
+        skos:broadMatch        edg:edg9;
+        skos:broader           <https://codelist.commonapproach.org/PopulationServed#ps27>;
+        skos:definition        "People living with disabilities, impairments, and/or functional limitations related to terminal or chronic illness/disease, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and. equal participation in society when they face a barrier."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps18";
+        skos:prefLabel         "People Living with Terminal or Chronic Illness/Diseases"@en;
+        prov:hadPrimarySource  <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People living with disabilities, impairments, and/or functional limitations related to terminal or chronic illness/disease, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps17>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps17";
+        org:hasName            "People Living with Physical,Sensory or Pain Related Disabilities";
+        skos:broadMatch        edg:edg9;
+        skos:broader           <https://codelist.commonapproach.org/PopulationServed#ps27>;
+        skos:definition        "People living with disabilities, impairments, and/or functional limitations related to physical, sensory, or pain, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps17";
+        skos:prefLabel         "People Living with Physical,Sensory or Pain Related Disabilities"@en;
+        prov:hadPrimarySource  <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People living with disabilities, impairments, and/or functional limitations related to physical, sensory, or pain, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps16>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps16";
+        org:hasName            "People Living with Cognitive or Mental Health Related Issues";
+        skos:broadMatch        edg:edg9;
+        skos:broader           <https://codelist.commonapproach.org/PopulationServed#ps27>;
+        skos:definition        "People living with disabilities, impairments, and/or functional limitations related to cognitive, learning, communication or mental health related issues, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps16";
+        skos:prefLabel         "People Living with Cognitive or Mental Health Related Issues"@en;
+        prov:hadPrimarySource  <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People living with disabilities, impairments, and/or functional limitations related to cognitive, learning, communication or mental health related issues, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps15>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps15";
+        org:hasName            "People Living on Low Income";
+        skos:definition        "People living on low income as defined by any of several relative indicators/thresholds used by the Government of Canada to measure low income: low income cut-offs (LICOs), market basket measure (MBM), and/or low income measure (LIM)."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps15";
+        skos:prefLabel         "People Living on Low Income"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/employment-social-development/programs/poverty-reduction/backgrounder.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People living on low income as defined by any of several relative indicators/thresholds used by the Government of Canada to measure low income: low income cut-offs (LICOs), market basket measure (MBM), and/or low income measure (LIM).";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps14>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps14";
+        org:hasName            "People Experiencing Homelessness or Housing Insecurities";
+        skos:definition        "People without stable, safe, permanent, appropriate housing, or the immediate prospect, means, and ability of acquiring it."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps14";
+        skos:prefLabel         "People Experiencing Homelessness or Housing Insecurities"@en;
+        prov:hadPrimarySource  <https://www.homelesshub.ca/sites/default/files/COHhomelessdefinition.pdf>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People without stable, safe, permanent, appropriate housing, or the immediate prospect, means, and ability of acquiring it.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps13>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps13";
+        org:hasName            "Official Languages Minority Communities";
+        skos:definition        "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en;
+        skos:exactMatch        edg:edg7;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps13";
+        skos:prefLabel         "Official Languages Minority Communities"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps12>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps12";
+        org:hasName            "Northern Canadian Communities";
+        skos:definition        "Communities located, and people living, in Northern Canada, which is defined as: The three Canadian territories (Yukon, Northwest Territories, and Nunavut), and the northern extent of Newfoundland and Labrador, Quebec, Ontario, Manitoba, Saskatchewan, Alberta and British Columbia. North is based on provincially determined definitions that generally reflect administrative regions."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps12";
+        skos:prefLabel         "Northern Canadian Communities"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Communities located, and people living, in Northern Canada, which is defined as: The three Canadian territories (Yukon, Northwest Territories, and Nunavut), and the northern extent of Newfoundland and Labrador, Quebec, Ontario, Manitoba, Saskatchewan, Alberta and British Columbia. North is based on provincially determined definitions that generally reflect administrative regions.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps11>
+        rdf:type               cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps11";
+        org:hasName            "Lone Parent Families";
+        skos:definition        "Families or homes where there is one parent present or living there. The lone, or single, parent can be any sex or gender, any ethnicity, and any sexuality. They do not have to be blood-related parents either to be classed as a parent."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps11";
+        skos:prefLabel         "Lone Parent Families"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Families or homes where there is one parent present or living there. The lone, or single, parent can be any sex or gender, any ethnicity, and any sexuality. They do not have to be blood-related parents either to be classed as a parent.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps10>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps10";
+        org:hasName            "First Generation Immigrants, Refugees & Newcomers";
+        skos:definition        "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en;
+        skos:exactMatch        edg:edg3;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps10";
+        skos:prefLabel         "First Generation Immigrants, Refugees & Newcomers"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps9>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps9";
+        org:hasName            "Other Racialized Peoples";
+        skos:definition        "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en;
+        skos:exactMatch        edg:edg8;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps9";
+        skos:prefLabel         "Other Racialized Peoples"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”).";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps8>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps8";
+        org:hasName            "Indigenous Peoples: Métis";
+        skos:definition        "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en;
+        skos:exactMatch        edg:edg6;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps8";
+        skos:prefLabel         "Indigenous Peoples: Métis"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps7>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps7";
+        org:hasName            "Indigenous Peoples: Inuit";
+        skos:definition        "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en;
+        skos:exactMatch        edg:edg5;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps7";
+        skos:prefLabel         "Indigenous Peoples: Inuit"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps6>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps6";
+        org:hasName            "Indigenous Peoples: First Nations";
+        skos:definition        "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en;
+        skos:exactMatch        edg:edg4;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps6";
+        skos:prefLabel         "Indigenous Peoples: First Nations"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps5>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps5";
+        org:hasName            "Black People";
+        skos:definition        "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en;
+        skos:exactMatch        edg:edg2;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps5";
+        skos:prefLabel         "Black People"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps4>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps4";
+        org:hasName            "Gender Diverse People: Other";
+        skos:definition        "People whose gender identity does not align with any of the other options provided."@en;
+        skos:exactMatch        edg:edg13;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps4";
+        skos:prefLabel         "Gender Diverse People: Other"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People whose gender identity does not align with any of the other options provided.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps3>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps3";
+        org:hasName            "Gender Diverse People: Non-Binary";
+        skos:definition        "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en;
+        skos:exactMatch        edg:edg11;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps3";
+        skos:prefLabel         "Gender Diverse People: Non-Binary"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps2>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps2";
+        org:hasName            "Gender Diverse People: Agender";
+        skos:definition        "People who do not identify as, or with, any particular gender."@en;
+        skos:exactMatch        edg:edg12;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps2";
+        skos:prefLabel         "Gender Diverse People: Agender"@en;
+        prov:hadPrimarySource  <https://dictionary.cambridge.org/dictionary/english/agender>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who do not identify as, or with, any particular gender.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed#ps1>
+        rdf:type               cids:EquityDeservingGroup , cids:PopulationServed;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/PopulationServed>;
+        org:hasIdentifier      "ps1";
+        org:hasName            "2SLGBTQIA+";
+        skos:definition        "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en;
+        skos:exactMatch        edg:edg1;
+        skos:inScheme          <https://codelist.commonapproach.org/PopulationServed>;
+        skos:notation          "ps1";
+        skos:prefLabel         "2SLGBTQIA+"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”).";
+        cids:hasSpecification  <https://codelist.commonapproach.org/PopulationServed> .
+
+<https://codelist.commonapproach.org/PopulationServed>
+        rdf:type                       skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator                cids:ac;
+        dcterms:date                   "2025-10-31"^^xsd:date;
+        dcterms:description            "A codelist vocabulary of Populations Served prescribed for Canada's Social Finance Fund by Employment Social Development Canada (ESDC)."@en;
+        dcterms:title                  "PopulationServed Codelist"@en;
+        vann:preferredNamespacePrefix  "ps";
+        vann:preferredNamespaceUri     <https://codelist.commonapproach.org/PopulationServed>;
+        owl:imports                    <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo                "2.0";
+        skos:prefLabel                 "PopulationServed Codelist"@en .
+
+<https://codelist.commonapproach.org/OrgTypeGOC#nonProfit>
+        rdf:type               cids:OrganizationType;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/OrgTypeGOC>;
+        org:hasIdentifier      "nonProfit";
+        org:hasName            "Non-Profit";
+        skos:definition        "Non-profit organizations are associations, clubs, or societies that are not registered charities or individuals, but are organized and operated exclusively for social welfare, civic improvement, pleasure, recreation, or any other purpose except profit. Non-profit organizations may be incorporated or unincorporated."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/OrgTypeGOC>;
+        skos:prefLabel         "Non-Profit"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Non-profit organizations are associations, clubs, or societies that are not registered charities or individuals, but are organized and operated exclusively for social welfare, civic improvement, pleasure, recreation, or any other purpose except profit. Non-profit organizations may be incorporated or unincorporated.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/OrgTypeGOC> .
+
+<https://codelist.commonapproach.org/OrgTypeGOC#forProfit>
+        rdf:type               cids:OrganizationType;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/OrgTypeGOC>;
+        org:hasIdentifier      "forProfit";
+        org:hasName            "For-Profit";
+        skos:definition        "For-profit organizations are businesses or corporations that are organized and operated for the purpose of generating profit."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/OrgTypeGOC>;
+        skos:notation          "forProfit";
+        skos:prefLabel         "For-Profit"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "For-profit organizations are businesses or corporations that are organized and operated for the purpose of generating profit.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/OrgTypeGOC> .
+
+<https://codelist.commonapproach.org/OrgTypeGOC#Cooperative>
+        rdf:type               cids:OrganizationType;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/OrgTypeGOC>;
+        org:hasIdentifier      "Cooperative";
+        org:hasName            "Cooperative";
+        skos:definition        "A cooperative is an association of persons united voluntarily to meet their common economic, social, and cultural needs and aspirations through a jointly owned and democratically controlled enterprise incorporated under specific legislation (e.g., the Canada Cooperatives Act) at the provincial, territorial, or federal level. Depending on the governing legislation, cooperatives may be for-profit or non-profit entities."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/OrgTypeGOC>;
+        skos:notation          "Cooperative";
+        skos:prefLabel         "Cooperative"@en;
+        prov:hadPrimarySource  <https://ised-isde.canada.ca/site/cooperatives-canada/en/information-guide-co-operatives#seven>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "A cooperative is an association of persons united voluntarily to meet their common economic, social, and cultural needs and aspirations through a jointly owned and democratically controlled enterprise incorporated under specific legislation (e.g., the Canada Cooperatives Act) at the provincial, territorial, or federal level. Depending on the governing legislation, cooperatives may be for-profit or non-profit entities.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/OrgTypeGOC> .
+
+<https://codelist.commonapproach.org/OrgTypeGOC#Charitable>
+        rdf:type               cids:OrganizationType;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/OrgTypeGOC>;
+        org:hasIdentifier      "Charitable";
+        org:hasName            "Charitable";
+        skos:definition        "Charitable organizations are registered as such with the Canada Revenue Agency and have a charitable Registration Number."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/OrgTypeGOC>;
+        skos:notation          "Charitable";
+        skos:prefLabel         "Charitable"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Charitable organizations are registered as such with the Canada Revenue Agency and have a charitable Registration Number.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/OrgTypeGOC> .
+
+<https://codelist.commonapproach.org/OrgTypeGOC>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "A codelist vocabulary of organization types informed by Government of Canada definitions."@en;
+        dcterms:title        "Organization Type"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Organization Type"@en .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc7>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc7";
+        org:hasName            "All of Canada";
+        skos:definition        ""@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc7";
+        skos:prefLabel         "All of Canada"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc6>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc6";
+        org:hasName            "Northern Canada";
+        skos:definition        ""@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc6";
+        skos:prefLabel         "Northern Canada"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc5>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc5";
+        org:hasName            "Indigenous Communities and Lands";
+        skos:definition        ""@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc5";
+        skos:prefLabel         "Indigenous Communities and Lands"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc4>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc4";
+        org:hasName            "Rural Areas";
+        skos:definition        "All areas outside population centres are classified as rural areas."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc4";
+        skos:prefLabel         "Rural Areas"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "All areas outside population centres are classified as rural areas.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc3>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc3";
+        org:hasName            "Small Population Centre";
+        skos:definition        "A small population centres, with a population between 1,000 and 29,999."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc3";
+        skos:prefLabel         "Small Population Centre"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "A small population centres, with a population between 1,000 and 29,999.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc2>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc2";
+        org:hasName            "Medium Population Centre";
+        skos:definition        "medium population centres, with a population between 30,000 and 99,999."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc2";
+        skos:prefLabel         "Medium Population Centre"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "medium population centres, with a population between 30,000 and 99,999.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan#loc1>
+        rdf:type               cids:Locality;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/LocalityStatsCan>;
+        org:hasIdentifier      "loc1";
+        org:hasName            "Large Urban Population Centre";
+        skos:definition        "A large urban population centres, with a population of 100,000 or more."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/LocalityStatsCan>;
+        skos:notation          "loc1";
+        skos:prefLabel         "Large Urban Population Centre"@en;
+        cids:definedBy         cids:statsCan;
+        cids:hasDescription    "A large urban population centres, with a population of 100,000 or more.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/LocalityStatsCan> .
+
+<https://codelist.commonapproach.org/LocalityStatsCan>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "A codelist vocabulary of Locality Codelists according to Statistics Canada definitions."@en;
+        dcterms:title        "Locality Codelist"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids> , <http://www.w3.org/2006/time>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Locality Codelist"@en .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#GenderLens>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "GenderLens";
+        org:hasName            "Gender Lens";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#DiversityandInclusion>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "GenderLens";
+        skos:prefLabel         "Gender Lens"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#WaterSanitationandHygiene>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "WaterSanitationandHygiene";
+        org:hasName            "Water Sanitation and Hygiene (WASH)";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Water>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "WaterSanitationandHygiene";
+        skos:prefLabel         "Water Sanitation and Hygiene (WASH)"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#WasteManagement>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "WasteManagement";
+        org:hasName            "Waste Management";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Waste>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "WasteManagement";
+        skos:prefLabel         "Waste Management"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#SustainableWaterManagement>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "SustainableWaterManagement";
+        org:hasName            "Sustainable Water Management";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Water>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "SustainableWaterManagement";
+        skos:prefLabel         "Sustainable Water Management"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#SustainableLandManagement>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "SustainableLandManagement";
+        org:hasName            "Sustainable Land Management";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Land>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "SustainableLandManagement";
+        skos:prefLabel         "Sustainable Land Management"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#SustainableForestry>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "SustainableForestry";
+        org:hasName            "Sustainable Forestry";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Land>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "SustainableForestry";
+        skos:prefLabel         "Sustainable Forestry"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#SustainableAgriculture>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "SustainableAgriculture";
+        org:hasName            "Sustainable Agriculture";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Agriculture>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "SustainableAgriculture";
+        skos:prefLabel         "Sustainable Agriculture"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#SmallholderAgriculture>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "SmallholderAgriculture";
+        org:hasName            "Smallholder Agriculture";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Agriculture>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "SmallholderAgriculture";
+        skos:prefLabel         "Smallholder Agriculture"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#ResilientInfrastructure>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "ResilientInfrastructure";
+        org:hasName            "Resilient Infrastructure";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Infrastructure>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "ResilientInfrastructure";
+        skos:prefLabel         "Resilient Infrastructure"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#RacialEquity>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "RacialEquity";
+        org:hasName            "Racial Equity";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#DiversityandInclusion>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "RacialEquity";
+        skos:prefLabel         "Racial Equity"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#QualityJobs>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "QualityJobs";
+        org:hasName            "Quality Jobs";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Employment>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "QualityJobs";
+        skos:prefLabel         "Quality Jobs"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#AccesstoQualityHealthcare>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "AccesstoQualityHealthcare";
+        org:hasName            "Access to Quality Healthcare";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Health>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "AccesstoQualityHealthcare";
+        skos:prefLabel         "Access to Quality Healthcare"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#AccesstoQualityEducation>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "AccesstoQualityEducation";
+        org:hasName            "Access to Quality Education";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Education>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "AccesstoQualityEducation";
+        skos:prefLabel         "Access to Quality Education"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#PollutionPrevention>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "PollutionPrevention";
+        org:hasName            "Pollution Prevention";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Pollution>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "PollutionPrevention";
+        skos:prefLabel         "Pollution Prevention"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#Nutrition>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "Nutrition";
+        org:hasName            "Nutrition";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Health>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "Nutrition";
+        skos:prefLabel         "Nutrition"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#NaturalResourcesConservation>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "NaturalResourcesConservation";
+        org:hasName            "Natural Resources Conservation";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Land>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "NaturalResourcesConservation";
+        skos:prefLabel         "Natural Resources Conservation"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#MarineResourcesConservationandManagement>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "MarineResourcesConservationandManagement";
+        org:hasName            "Marine Resources Conservation & Management";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#OceansandCoastalZones>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "MarineResourcesConservationandManagement";
+        skos:prefLabel         "Marine Resources Conservation & Management"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#GreenBuildings>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "GreenBuildings";
+        org:hasName            "Green Buildings";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#RealEstate>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "GreenBuildings";
+        skos:prefLabel         "Green Buildings"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#FoodSecurity>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "FoodSecurity";
+        org:hasName            "Food Security";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Agriculture>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "FoodSecurity";
+        skos:prefLabel         "Food Security"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#FinancialInclusion>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "FinancialInclusion";
+        org:hasName            "Financial Inclusion";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#FinancialServices>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "FinancialInclusion";
+        skos:prefLabel         "Financial Inclusion"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#EnergyEfficiency>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "EnergyEfficiency";
+        org:hasName            "Energy Efficiency";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Energy>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "EnergyEfficiency";
+        skos:prefLabel         "Energy Efficiency"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#EnergyAccess>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "EnergyAccess";
+        org:hasName            "Energy Access";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Energy>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "EnergyAccess";
+        skos:prefLabel         "Energy Access"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#ClimateChangeMitigation>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "ClimateChangeMitigation";
+        org:hasName            "Climate Change Mitigation";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Climate>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "ClimateChangeMitigation";
+        skos:prefLabel         "Climate Change Mitigation"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#ClimateResilienceandAdaptation>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "ClimateResilienceandAdaptation";
+        org:hasName            "Climate Resilience and Adaptation";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Climate>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "ClimateResilienceandAdaptation";
+        skos:prefLabel         "Climate Resilience and Adaptation"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#CleanEnergy>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "CleanEnergy";
+        org:hasName            "Clean Energy";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Energy>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "CleanEnergy";
+        skos:prefLabel         "Clean Energy"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#CleanAir>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "CleanAir";
+        org:hasName            "Clean Air";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#Air>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "CleanAir";
+        skos:prefLabel         "Clean Air"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#BiodiversityandEcosystemConservation>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "BiodiversityandEcosystemConservation";
+        org:hasName            "Biodiversity and Ecosystem Conservation";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#BiodiversityandEcosystems>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "BiodiversityandEcosystemConservation";
+        skos:prefLabel         "Biodiversity and Ecosystem Conservation"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme#AffordableQualityHousing>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        org:hasIdentifier      "AffordableQualityHousing";
+        org:hasName            "Affordable Quality Housing";
+        skos:broader           <https://codelist.commonapproach.org/IRISImpactCategory#RealEstate>;
+        skos:inScheme          <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme>;
+        skos:notation          "AffordableQualityHousing";
+        skos:prefLabel         "Affordable Quality Housing"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/RallyImpactArea> , <https://codelist.commonapproach.org/IRISImpactTheme> .
+
+<https://codelist.commonapproach.org/IRISImpactTheme>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "An RDF vocabulary of IRIS+ Impact Themes."@en;
+        dcterms:title        "IRIS+ Impact Themes"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "IRIS+ Impact Themes"@en .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#CrossCategory>
+        rdf:type               cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory>;
+        org:hasIdentifier      "CrossCategory";
+        org:hasName            "Cross Category";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory>;
+        skos:notation          "CrossCategory";
+        skos:prefLabel         "Cross Category"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "An RDF vocabulary of IRIS+ Impact Categories."@en;
+        dcterms:title        "IRIS+ Impact Categories"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "IRIS+ Impact Categories"@en .
+
+<https://codelist.commonapproach.org/FundingState#inReview>
+        rdf:type               cids:FundingState;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/FundingState>;
+        org:hasIdentifier      "inReview";
+        org:hasName            "In Review";
+        skos:definition        "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr , "The funding proposal is being processed by the evaluating organization and is under review."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/FundingState>;
+        skos:notation          "inReview";
+        skos:prefLabel         "Sous-évaluation"@fr , "In Review"@en;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "The funding proposal is being processed by the evaluating organization and is under review.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/FundingState> .
+
+<https://codelist.commonapproach.org/FundingState#funded>
+        rdf:type               cids:FundingState;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/FundingState>;
+        org:hasIdentifier      "invested";
+        org:hasName            "Funded";
+        skos:definition        "La proposition de financement a été acceptée et le financement a été alloué."@fr , "The funding proposal has been accepted and funding has been allocated."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/FundingState>;
+        skos:notation          "invested";
+        skos:prefLabel         "Alloué"@fr , "Funded"@en;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "The funding proposal has been accepted and funding has been allocated.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/FundingState> .
+
+<https://codelist.commonapproach.org/FundingState#rejected>
+        rdf:type               cids:FundingState;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/FundingState>;
+        org:hasIdentifier      "rejected";
+        org:hasName            "Rejected";
+        skos:definition        "La proposition de financement a été rejetée."@fr , "The funding proposal has been rejected."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/FundingState>;
+        skos:notation          "rejected";
+        skos:prefLabel         "Rejetée"@fr , "Rejected"@en;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "The funding proposal has been rejected.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/FundingState> .
+
+<https://codelist.commonapproach.org/FundingState#applied>
+        rdf:type               cids:FundingState;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/FundingState>;
+        org:hasIdentifier      "applied";
+        org:hasName            "Applied";
+        skos:definition        "La proposition de financement a été soumise."@fr , "The funding proposal has been submitted."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/FundingState>;
+        skos:notation          "applied";
+        skos:prefLabel         "Appliqué"@fr , "Applied"@en;
+        cids:definedBy         cids:ac;
+        cids:hasDescription    "The funding proposal has been submitted.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/FundingState> .
+
+<https://codelist.commonapproach.org/FundingState>
+        rdf:type                       skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator                cids:ac;
+        dcterms:date                   "2025-11-05"^^xsd:date;
+        dcterms:description            "A codelist vocabulary of funding states to describe funding applications to funders or investors. The list items convey whether the organization is an applicant, rejected, or invested in."@en;
+        dcterms:title                  "FundingState Codelist"@en;
+        vann:preferredNamespacePrefix  "fstate";
+        vann:preferredNamespaceUri     <https://codelist.commonapproach.org/FundingState>;
+        owl:imports                    <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo                "1.0";
+        skos:prefLabel                 "FundingState Codelist"@en .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Water>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Water";
+        org:hasName            "Water";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Water";
+        skos:prefLabel         "Water"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Waste>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Waste";
+        org:hasName            "Waste";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Waste";
+        skos:prefLabel         "Waste"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#RealEstate>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "RealEstate";
+        org:hasName            "Real Estate";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "RealEstate";
+        skos:prefLabel         "Real Estate"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Pollution>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Pollution";
+        org:hasName            "Pollution";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Pollution";
+        skos:prefLabel         "Pollution"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#OceansandCoastalZones>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "OceansandCoastalZones";
+        org:hasName            "Oceans and Coastal Zones";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "OceansandCoastalZones";
+        skos:prefLabel         "Oceans and Coastal Zones"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Land>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Land";
+        org:hasName            "Land";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Land";
+        skos:prefLabel         "Land"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Infrastructure>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Infrastructure";
+        org:hasName            "Infrastructure";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Infrastructure";
+        skos:prefLabel         "Infrastructure"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Health>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Health";
+        org:hasName            "Health";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Health";
+        skos:prefLabel         "Health"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#FinancialServices>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "FinancialServices";
+        org:hasName            "Financial Services";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "FinancialServices";
+        skos:prefLabel         "Financial Services"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Energy>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Energy";
+        org:hasName            "Energy";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Energy";
+        skos:prefLabel         "Energy"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Employment>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Employment";
+        org:hasName            "Employment";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Employment";
+        skos:prefLabel         "Employment"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Education>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Education";
+        org:hasName            "Education";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Education";
+        skos:prefLabel         "Education"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#DiversityandInclusion>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "DiversityandInclusion";
+        org:hasName            "Diversity and Inclusion";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "DiversityandInclusion";
+        skos:prefLabel         "Diversity and Inclusion"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Climate>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Climate";
+        org:hasName            "Climate";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Climate";
+        skos:prefLabel         "Climate"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#BiodiversityandEcosystems>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "BiodiversityandEcosystems";
+        org:hasName            "Biodiversity and Ecosystems";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "BiodiversityandEcosystems";
+        skos:prefLabel         "Biodiversity and Ecosystems"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Air>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Air";
+        org:hasName            "Air";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Air";
+        skos:prefLabel         "Air"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/IRISImpactCategory#Agriculture>
+        rdf:type               cids:Sector , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Agriculture";
+        org:hasName            "Agriculture";
+        skos:inScheme          <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Agriculture";
+        skos:prefLabel         "Agriculture"@en;
+        prov:hadPrimarySource  <https://iris.thegiin.org/metrics/>;
+        cids:definedBy         cids:giin;
+        cids:hasSpecification  <https://codelist.commonapproach.org/IRISImpactCategory> , <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/ESDCSector#Other>
+        rdf:type               cids:Sector;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/ESDCSector>;
+        org:hasIdentifier      "Other";
+        org:hasName            "Other";
+        skos:inScheme          <https://codelist.commonapproach.org/ESDCSector>;
+        skos:notation          "Other";
+        skos:prefLabel         "Other"@en;
+        cids:definedBy         cids:ac;
+        cids:hasSpecification  <https://codelist.commonapproach.org/ESDCSector> .
+
+<https://codelist.commonapproach.org/ESDCSector>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "An RDF vocabulary of ESDC Sectors."@en;
+        dcterms:title        "ESDC Sectors"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "1.0";
+        skos:prefLabel       "ESDC Sectors"@en .
+
+edg:edg9  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg9";
+        org:hasName            "People Living with a Disability (including invisible and episodic disabilities)";
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg9";
+        skos:prefLabel         "People Living with a Disability (including invisible and episodic disabilities)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg8  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg8";
+        org:hasName            "Other Racialized Peoples";
+        skos:definition        "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg8";
+        skos:prefLabel         "Other Racialized Peoples"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”).";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg7  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg7";
+        org:hasName            "Official Languages Minority Communities";
+        skos:definition        "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg7";
+        skos:prefLabel         "Official Languages Minority Communities"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg6  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg6";
+        org:hasName            "Indigenous Peoples: Métis";
+        skos:definition        "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg6";
+        skos:prefLabel         "Indigenous Peoples: Métis"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg5  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg5";
+        org:hasName            "Indigenous Peoples: Inuit";
+        skos:definition        "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg5";
+        skos:prefLabel         "Indigenous Peoples: Inuit"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg4  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg4";
+        org:hasName            "Indigenous Peoples: First Nations";
+        skos:definition        "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg4";
+        skos:prefLabel         "Indigenous Peoples: First Nations"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg3  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg3";
+        org:hasName            "First Generation Immigrants, Refugees & Newcomers";
+        skos:definition        "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg3";
+        skos:prefLabel         "First Generation Immigrants, Refugees & Newcomers"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg2  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg2";
+        org:hasName            "Black People";
+        skos:definition        "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg2";
+        skos:prefLabel         "Black People"@en;
+        prov:hadPrimarySource  <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg13  rdf:type            cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg13";
+        org:hasName            "Gender Diverse People: Other";
+        skos:definition        "People whose gender identity does not align with any of the other options provided."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg13";
+        skos:prefLabel         "Gender Diverse People: Other"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People whose gender identity does not align with any of the other options provided.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg12  rdf:type            cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg12";
+        org:hasName            "Gender Diverse People: Agender";
+        skos:definition        "People who do not identify as, or with, any particular gender."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg12";
+        skos:prefLabel         "Gender Diverse People: Agender"@en;
+        prov:hadPrimarySource  <https://dictionary.cambridge.org/dictionary/english/agender>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who do not identify as, or with, any particular gender.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg11  rdf:type            cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg11";
+        org:hasName            "Gender Diverse People: Non-Binary";
+        skos:definition        "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg11";
+        skos:prefLabel         "Gender Diverse People: Non-Binary"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg10  rdf:type            cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg10";
+        org:hasName            "Women (Cisgender and Transgender)";
+        skos:definition        "All people who identify as women, whether they are cisgender or transgender women."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg10";
+        skos:prefLabel         "Women (Cisgender and Transgender)"@en;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "All people who identify as women, whether they are cisgender or transgender women.";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+edg:edg1  rdf:type             cids:PopulationServed , cids:EquityDeservingGroup;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        org:hasIdentifier      "edg1";
+        org:hasName            "2SLGBTQIA+";
+        skos:definition        "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en;
+        skos:inScheme          <https://codelist.commonapproach.org/EquityDeservingGroupsESDC>;
+        skos:notation          "edg1";
+        skos:prefLabel         "2SLGBTQIA+"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”).";
+        cids:hasSpecification  <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+
+<https://codelist.commonapproach.org/EquityDeservingGroupsESDC>
+        rdf:type             skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-02"^^xsd:date;
+        dcterms:description  "A codelist vocabulary of Equity Deserving Groups as defined by Ministry of Employment and Social Development of Canada."@en;
+        dcterms:title        "Equity Deserving Groups"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:prefLabel       "Equity Deserving Groups"@en .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#yk>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "yk";
+        org:hasLegalName       "Yukon"@en;
+        org:hasName            "Yukon";
+        skos:definition        "Corporate Affairs - Department of Community Services"@en;
+        skos:notation          "yk";
+        skos:prefLabel         "Yukon"@en;
+        prov:hadPrimarySource  <https://ycor-reey.gov.yk.ca/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Affairs - Department of Community Services";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#sk>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "sk";
+        org:hasLegalName       "Saskatchewan"@en;
+        org:hasName            "Saskatchewan";
+        skos:definition        "Corporate Registry - Information Services Corporation (ISC)"@en;
+        skos:notation          "sk";
+        skos:prefLabel         "Saskatchewan"@en;
+        prov:hadPrimarySource  <https://www.isc.ca/CorporateRegistry>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Registry - Information Services Corporation (ISC)";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#qc>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "qc";
+        org:hasLegalName       "Quebec"@en;
+        org:hasName            "Quebec";
+        skos:definition        "Registraire des entreprises du Québec"@en;
+        skos:notation          "qc";
+        skos:prefLabel         "Quebec"@en;
+        prov:hadPrimarySource  <https://www.registreentreprises.gouv.qc.ca/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Registraire des entreprises du Québec";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#pe>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "pe";
+        org:hasLegalName       "Prince Edward Island"@en;
+        org:hasName            "Prince Edward Island";
+        skos:definition        "Corporate Business Names Registry"@en;
+        skos:notation          "pe";
+        skos:prefLabel         "Prince Edward Island"@en;
+        prov:hadPrimarySource  <https://www.princeedwardisland.ca/en/feature/pei-business-corporate-registry/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Business Names Registry";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#on>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "on";
+        org:hasLegalName       "Ontario"@en;
+        org:hasName            "Ontario";
+        skos:definition        "Ontario Business Registry"@en;
+        skos:notation          "on";
+        skos:prefLabel         "Ontario"@en;
+        prov:hadPrimarySource  <https://www.ontario.ca/page/ontario-business-registry>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Ontario Business Registry";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#nu>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "nu";
+        org:hasLegalName       "Nunavut"@en;
+        org:hasName            "Nunavut";
+        skos:definition        "Corporate Registries - Department of Justice"@en;
+        skos:notation          "nu";
+        skos:prefLabel         "Nunavut"@en;
+        prov:hadPrimarySource  <https://www.gov.nu.ca/en/department-justice/corporate-and-securities-registries>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Registries - Department of Justice";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#ns>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "ns";
+        org:hasLegalName       "Nova Scotia"@en;
+        org:hasName            "Nova Scotia";
+        skos:definition        "Nova Scotia Registry of Joint Stock Companies"@en;
+        skos:notation          "ns";
+        skos:prefLabel         "Nova Scotia"@en;
+        prov:hadPrimarySource  <https://beta.novascotia.ca/programs-and-services/registry-joint-stock-companies>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Nova Scotia Registry of Joint Stock Companies";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#nt>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "nt";
+        org:hasLegalName       "Northwest Territories"@en;
+        org:hasName            "Northwest Territories";
+        skos:definition        "Corporate Registries - Department of Justice"@en;
+        skos:notation          "nt";
+        skos:prefLabel         "Northwest Territories"@en;
+        prov:hadPrimarySource  <https://www.justice.gov.nt.ca/en/boards-agencies/corporate-registries/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Registries - Department of Justice";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#nl>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "nl";
+        org:hasLegalName       "Newfoundland and Labrador"@en;
+        org:hasName            "Newfoundland and Labrador";
+        skos:definition        "Registry of Companies and Deeds"@en;
+        skos:notation          "nl";
+        skos:prefLabel         "Newfoundland and Labrador"@en;
+        prov:hadPrimarySource  <https://www.gov.nl.ca/dgsnl/registries/companies/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Registry of Companies and Deeds";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#nb>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "nb";
+        org:hasLegalName       "New Brunswick"@en;
+        org:hasName            "New Brunswick";
+        skos:definition        "Corporate Registry - Service New Brunswick"@en;
+        skos:notation          "nb";
+        skos:prefLabel         "New Brunswick"@en;
+        prov:hadPrimarySource  <https://www2.snb.ca/content/snb/en/sites/corporate-registry.html>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporate Registry - Service New Brunswick";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#mb>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "mb";
+        org:hasLegalName       "Manitoba"@en;
+        org:hasName            "Manitoba";
+        skos:definition        "Manitoba Companies Office"@en;
+        skos:notation          "mb";
+        skos:prefLabel         "Manitoba"@en;
+        prov:hadPrimarySource  <https://companiesoffice.gov.mb.ca/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Manitoba Companies Office";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#bc>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "bc";
+        org:hasLegalName       "British Columbia"@en;
+        org:hasName            "British Columbia";
+        skos:definition        "BC Registries and Online Services"@en;
+        skos:notation          "bc";
+        skos:prefLabel         "British Columbia"@en;
+        prov:hadPrimarySource  <https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/bc-registries-online-services>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "BC Registries and Online Services";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#ab>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "ab";
+        org:hasLegalName       "Alberta"@en;
+        org:hasName            "Alberta";
+        skos:definition        "Alberta Corporate Registry"@en;
+        skos:notation          "ab";
+        skos:prefLabel         "Alberta"@en;
+        prov:hadPrimarySource  <https://www.alberta.ca/business-licence-or-charitable-registration-in-alberta>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Alberta Corporate Registry";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#cra>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "cra";
+        org:hasLegalName       "Canada Revenue Agency"@en;
+        org:hasName            "Canada Revenue Agency";
+        skos:definition        "Canada Revenue Agency"@en;
+        skos:notation          "cra";
+        skos:prefLabel         "Canada Revenue Agency"@en;
+        prov:hadPrimarySource  <https://www.canada.ca/en/revenue-agency/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Canada Revenue Agency";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries#ca>
+        rdf:type               org:Organization , cids:Organization , cids:Code , skos:Concept;
+        rdfs:isDefinedBy       <https://codelist.commonapproach.org/CanadianCorporateRegistries>;
+        org:hasIdentifier      "ca";
+        org:hasLegalName       "Corporations Canada"@en;
+        org:hasName            "Corporations Canada";
+        skos:definition        "Corporations Canada"@en;
+        skos:notation          "ca";
+        skos:prefLabel         "Corporations Canada"@en;
+        prov:hadPrimarySource  <https://ised-isde.canada.ca/cbr-rec/>;
+        cids:definedBy         cids:esdc;
+        cids:hasDescription    "Corporations Canada";
+        cids:hasSpecification  <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+
+<https://codelist.commonapproach.org/CanadianCorporateRegistries>
+        rdf:type             skos:ConceptScheme , owl:Ontology , <http://purl.org/vocommons/voaf/Vocabulary>;
+        dcterms:creator      cids:ac;
+        dcterms:date         "2025-12-01"^^xsd:date;
+        dcterms:description  "An RDF vocabulary of Canadian Corporate Registries."@en;
+        dcterms:title        "Canadian Corporate Registries"@en;
+        owl:imports          <https://ontology.commonapproach.org/cids>;
+        owl:versionInfo      "2.0";
+        skos:PrefLabel       "Canadian Corporate Registries Codelist"@en .

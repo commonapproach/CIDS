@@ -1,0 +1,447 @@
+@base <https://codelist.commonapproach.org/IRISImpactTheme> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix iriscategory: <https://codelist.commonapproach.org/IRISImpactCategory#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "IRIS+ Impact Themes"@en ;
+    dcterms:title "IRIS+ Impact Themes"@en ;
+    dcterms:description "An RDF vocabulary of IRIS+ Impact Themes."@en .
+
+:AffordableQualityHousing
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:RealEstate ;
+
+    org:hasName "Affordable Quality Housing" ;
+    skos:prefLabel "Affordable Quality Housing"@en ;
+    org:hasIdentifier "AffordableQualityHousing" ;
+    skos:notation "AffordableQualityHousing" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:BiodiversityandEcosystemConservation
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:BiodiversityandEcosystems ;
+
+    org:hasName "Biodiversity and Ecosystem Conservation" ;
+    skos:prefLabel "Biodiversity and Ecosystem Conservation"@en ;
+    org:hasIdentifier "BiodiversityandEcosystemConservation" ;
+    skos:notation "BiodiversityandEcosystemConservation" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:CleanAir
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Air ;
+
+    org:hasName "Clean Air" ;
+    skos:prefLabel "Clean Air"@en ;
+    org:hasIdentifier "CleanAir" ;
+    skos:notation "CleanAir" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:CleanEnergy
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Energy ;
+
+    org:hasName "Clean Energy" ;
+    skos:prefLabel "Clean Energy"@en ;
+    org:hasIdentifier "CleanEnergy" ;
+    skos:notation "CleanEnergy" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:ClimateResilienceandAdaptation
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Climate ;
+
+    org:hasName "Climate Resilience and Adaptation" ;
+    skos:prefLabel "Climate Resilience and Adaptation"@en ;
+    org:hasIdentifier "ClimateResilienceandAdaptation" ;
+    skos:notation "ClimateResilienceandAdaptation" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:ClimateChangeMitigation
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Climate ;
+
+    org:hasName "Climate Change Mitigation" ;
+    skos:prefLabel "Climate Change Mitigation"@en ;
+    org:hasIdentifier "ClimateChangeMitigation" ;
+    skos:notation "ClimateChangeMitigation" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:EnergyAccess
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Energy ;
+
+    org:hasName "Energy Access" ;
+    skos:prefLabel "Energy Access"@en ;
+    org:hasIdentifier "EnergyAccess" ;
+    skos:notation "EnergyAccess" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:EnergyEfficiency
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Energy ;
+
+    org:hasName "Energy Efficiency" ;
+    skos:prefLabel "Energy Efficiency"@en ;
+    org:hasIdentifier "EnergyEfficiency" ;
+    skos:notation "EnergyEfficiency" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:FinancialInclusion
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:FinancialServices ;
+
+    org:hasName "Financial Inclusion" ;
+    skos:prefLabel "Financial Inclusion"@en ;
+    org:hasIdentifier "FinancialInclusion" ;
+    skos:notation "FinancialInclusion" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:FoodSecurity
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Agriculture ;
+
+    org:hasName "Food Security" ;
+    skos:prefLabel "Food Security"@en ;
+    org:hasIdentifier "FoodSecurity" ;
+    skos:notation "FoodSecurity" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:GreenBuildings
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:RealEstate ;
+
+    org:hasName "Green Buildings" ;
+    skos:prefLabel "Green Buildings"@en ;
+    org:hasIdentifier "GreenBuildings" ;
+    skos:notation "GreenBuildings" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:MarineResourcesConservationandManagement
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:OceansandCoastalZones ;
+
+    org:hasName "Marine Resources Conservation & Management" ;
+    skos:prefLabel "Marine Resources Conservation & Management"@en ;
+    org:hasIdentifier "MarineResourcesConservationandManagement" ;
+    skos:notation "MarineResourcesConservationandManagement" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:NaturalResourcesConservation
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Land ;
+
+    org:hasName "Natural Resources Conservation" ;
+    skos:prefLabel "Natural Resources Conservation"@en ;
+    org:hasIdentifier "NaturalResourcesConservation" ;
+    skos:notation "NaturalResourcesConservation" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:Nutrition
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Health ;
+
+    org:hasName "Nutrition" ;
+    skos:prefLabel "Nutrition"@en ;
+    org:hasIdentifier "Nutrition" ;
+    skos:notation "Nutrition" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:PollutionPrevention
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Pollution ;
+
+    org:hasName "Pollution Prevention" ;
+    skos:prefLabel "Pollution Prevention"@en ;
+    org:hasIdentifier "PollutionPrevention" ;
+    skos:notation "PollutionPrevention" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:AccesstoQualityEducation
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Education ;
+
+    org:hasName "Access to Quality Education" ;
+    skos:prefLabel "Access to Quality Education"@en ;
+    org:hasIdentifier "AccesstoQualityEducation" ;
+    skos:notation "AccesstoQualityEducation" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:AccesstoQualityHealthcare
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Health ;
+
+    org:hasName "Access to Quality Healthcare" ;
+    skos:prefLabel "Access to Quality Healthcare"@en ;
+    org:hasIdentifier "AccesstoQualityHealthcare" ;
+    skos:notation "AccesstoQualityHealthcare" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:QualityJobs
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Employment ;
+
+    org:hasName "Quality Jobs" ;
+    skos:prefLabel "Quality Jobs"@en ;
+    org:hasIdentifier "QualityJobs" ;
+    skos:notation "QualityJobs" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:RacialEquity
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:DiversityandInclusion ;
+
+    org:hasName "Racial Equity" ;
+    skos:prefLabel "Racial Equity"@en ;
+    org:hasIdentifier "RacialEquity" ;
+    skos:notation "RacialEquity" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:ResilientInfrastructure
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Infrastructure ;
+
+    org:hasName "Resilient Infrastructure" ;
+    skos:prefLabel "Resilient Infrastructure"@en ;
+    org:hasIdentifier "ResilientInfrastructure" ;
+    skos:notation "ResilientInfrastructure" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SmallholderAgriculture
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Agriculture ;
+
+    org:hasName "Smallholder Agriculture" ;
+    skos:prefLabel "Smallholder Agriculture"@en ;
+    org:hasIdentifier "SmallholderAgriculture" ;
+    skos:notation "SmallholderAgriculture" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SustainableAgriculture
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Agriculture ;
+
+    org:hasName "Sustainable Agriculture" ;
+    skos:prefLabel "Sustainable Agriculture"@en ;
+    org:hasIdentifier "SustainableAgriculture" ;
+    skos:notation "SustainableAgriculture" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SustainableForestry
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Land ;
+
+    org:hasName "Sustainable Forestry" ;
+    skos:prefLabel "Sustainable Forestry"@en ;
+    org:hasIdentifier "SustainableForestry" ;
+    skos:notation "SustainableForestry" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SustainableLandManagement
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Land ;
+
+    org:hasName "Sustainable Land Management" ;
+    skos:prefLabel "Sustainable Land Management"@en ;
+    org:hasIdentifier "SustainableLandManagement" ;
+    skos:notation "SustainableLandManagement" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:SustainableWaterManagement
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Water ;
+
+    org:hasName "Sustainable Water Management" ;
+    skos:prefLabel "Sustainable Water Management"@en ;
+    org:hasIdentifier "SustainableWaterManagement" ;
+    skos:notation "SustainableWaterManagement" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:WasteManagement
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Waste ;
+
+    org:hasName "Waste Management" ;
+    skos:prefLabel "Waste Management"@en ;
+    org:hasIdentifier "WasteManagement" ;
+    skos:notation "WasteManagement" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:WaterSanitationandHygiene
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:Water ;
+
+    org:hasName "Water Sanitation and Hygiene (WASH)" ;
+    skos:prefLabel "Water Sanitation and Hygiene (WASH)"@en ;
+    org:hasIdentifier "WaterSanitationandHygiene" ;
+    skos:notation "WaterSanitationandHygiene" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:GenderLens
+    a skos:Concept, cids:Code ;
+    skos:broader iriscategory:DiversityandInclusion ;
+
+    org:hasName "Gender Lens" ;
+    skos:prefLabel "Gender Lens"@en ;
+    org:hasIdentifier "GenderLens" ;
+    skos:notation "GenderLens" ;
+    prov:hadPrimarySource <https://iris.thegiin.org/metrics/> ;
+
+    cids:definedBy cids:giin ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+   

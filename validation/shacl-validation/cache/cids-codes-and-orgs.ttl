@@ -1,0 +1,76 @@
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+#    Code Lists - Subclasses of cids:Code
+#################################################################
+
+cids:EquityDeservingGroup rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+
+cids:FundingState rdf:type owl:Class ;
+              rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+cids:Locality rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+cids:OrganizationType rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+cids:PopulationServed rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+cids:ProvinceTerritory rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+cids:Sector rdf:type owl:Class ;
+               rdfs:subClassOf cids:Code, skos:Concept ; 
+               cids:belongsToTier cids:SFFTier .
+
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://ontology.commonapproach.org/cids#ac
+cids:ac rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Common Approach to Impact Measurement"@en ;
+        foaf:name "Common Approach to Impact Measurement"@en ;
+        org:hasLegalName "Common Approach to Impact Measurement" .
+
+cids:esdc rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Employment Social Development Canada"@en ;
+        foaf:name "Employment Social Development Canada"@en ;
+        org:hasLegalName "Employment Social Development Canada" .
+
+cids:giin rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Global Impact Investing Network"@en ;
+        foaf:name "Global Impact Investing Network"@en ;
+        org:hasLegalName "Global Impact Investing Network" .
+
+cids:statsCan rdf:type owl:NamedIndividual ,
+        cids:Organization ;
+        rdfs:isDefinedBy cids: ;
+        rdfs:label "Statistics Canada"@en ;
+        foaf:name "Statistics Canada"@en ;
+        org:hasLegalName "Statistics Canada" .
+
