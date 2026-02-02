@@ -22,7 +22,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "rel": "http://purl.org/vocab/relationship/",
     "sch": "http://schema.org/",
-    "sff": "http://ontology.commonapproach.org/sff#",
+    "sff": "https://ontology.commonapproach.org/sff#",
     "sh": "http://www.w3.org/ns/shacl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "sur": "http://ontology.eil.utoronto.ca/tove/survey#",
