@@ -1,0 +1,212 @@
+@base <https://codelist.commonapproach.org/EquityDeservingGroupsESDC> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-02"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "Equity Deserving Groups"@en ;
+    dcterms:title "Equity Deserving Groups"@en ;
+    dcterms:description "A codelist vocabulary of Equity Deserving Groups as defined by Ministry of Employment and Social Development of Canada."@en .
+
+:edg1
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "2SLGBTQIA+" ;
+    skos:prefLabel "2SLGBTQIA+"@en ;
+    cids:hasDescription "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)." ;
+    skos:definition "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en ;
+    org:hasIdentifier "edg1" ;
+    skos:notation "edg1" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg10
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Women (Cisgender and Transgender)" ;
+    skos:prefLabel "Women (Cisgender and Transgender)"@en ;
+    cids:hasDescription "All people who identify as women, whether they are cisgender or transgender women." ;
+    skos:definition "All people who identify as women, whether they are cisgender or transgender women."@en ;
+    org:hasIdentifier "edg10" ;
+    skos:notation "edg10" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg11
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Gender Diverse People: Non-Binary" ;
+    skos:prefLabel "Gender Diverse People: Non-Binary"@en ;
+    cids:hasDescription "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum." ;
+    skos:definition "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en ;
+    org:hasIdentifier "edg11" ;
+    skos:notation "edg11" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg12
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Gender Diverse People: Agender" ;
+    skos:prefLabel "Gender Diverse People: Agender"@en ;
+    cids:hasDescription "People who do not identify as, or with, any particular gender." ;
+    skos:definition "People who do not identify as, or with, any particular gender."@en ;
+    org:hasIdentifier "edg12" ;
+    skos:notation "edg12" ;
+    prov:hadPrimarySource <https://dictionary.cambridge.org/dictionary/english/agender> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg13
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Gender Diverse People: Other" ;
+    skos:prefLabel "Gender Diverse People: Other"@en ;
+    cids:hasDescription "People whose gender identity does not align with any of the other options provided." ;
+    skos:definition "People whose gender identity does not align with any of the other options provided."@en ;
+    org:hasIdentifier "edg13" ;
+    skos:notation "edg13" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg2
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Black People" ;
+    skos:prefLabel "Black People"@en ;
+    cids:hasDescription "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours." ;
+    skos:definition "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en ;
+    org:hasIdentifier "edg2" ;
+    skos:notation "edg2" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg3
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "First Generation Immigrants, Refugees & Newcomers" ;
+    skos:prefLabel "First Generation Immigrants, Refugees & Newcomers"@en ;
+    cids:hasDescription "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years." ;
+    skos:definition "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en ;
+    org:hasIdentifier "edg3" ;
+    skos:notation "edg3" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg4
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Indigenous Peoples: First Nations" ;
+    skos:prefLabel "Indigenous Peoples: First Nations"@en ;
+    cids:hasDescription "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian." ;
+    skos:definition "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en ;
+    org:hasIdentifier "edg4" ;
+    skos:notation "edg4" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg5
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Indigenous Peoples: Inuit" ;
+    skos:prefLabel "Indigenous Peoples: Inuit"@en ;
+    cids:hasDescription "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture." ;
+    skos:definition "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en ;
+    org:hasIdentifier "edg5" ;
+    skos:notation "edg5" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg6
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Indigenous Peoples: Métis" ;
+    skos:prefLabel "Indigenous Peoples: Métis"@en ;
+    cids:hasDescription "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation." ;
+    skos:definition "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en ;
+    org:hasIdentifier "edg6" ;
+    skos:notation "edg6" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg7
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Official Languages Minority Communities" ;
+    skos:prefLabel "Official Languages Minority Communities"@en ;
+    cids:hasDescription "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec." ;
+    skos:definition "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en ;
+    org:hasIdentifier "edg7" ;
+    skos:notation "edg7" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg8
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "Other Racialized Peoples" ;
+    skos:prefLabel "Other Racialized Peoples"@en ;
+    cids:hasDescription "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)." ;
+    skos:definition "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en ;
+    org:hasIdentifier "edg8" ;
+    skos:notation "edg8" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:edg9
+    a cids:EquityDeservingGroup, cids:PopulationServed ;
+    org:hasName "People Living with a Disability (including invisible and episodic disabilities)" ;
+    skos:prefLabel "People Living with a Disability (including invisible and episodic disabilities)"@en ;
+    org:hasIdentifier "edg9" ;
+    skos:notation "edg9" ;
+
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .

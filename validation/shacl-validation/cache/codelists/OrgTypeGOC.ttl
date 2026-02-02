@@ -1,0 +1,82 @@
+@base <https://codelist.commonapproach.org/OrgTypeGOC> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "Organization Type"@en ;
+    dcterms:title "Organization Type"@en ;
+    dcterms:description "A codelist vocabulary of organization types informed by Government of Canada definitions."@en .
+
+:Charitable
+    a cids:OrganizationType ;
+    org:hasName "Charitable" ;
+    skos:prefLabel "Charitable"@en ;
+    cids:hasDescription "Charitable organizations are registered as such with the Canada Revenue Agency and have a charitable Registration Number." ;
+    skos:definition "Charitable organizations are registered as such with the Canada Revenue Agency and have a charitable Registration Number."@en ;
+    org:hasIdentifier "Charitable" ;
+    skos:notation "Charitable" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:Cooperative
+    a cids:OrganizationType ;
+    org:hasName "Cooperative" ;
+    skos:prefLabel "Cooperative"@en ;
+    cids:hasDescription "A cooperative is an association of persons united voluntarily to meet their common economic, social, and cultural needs and aspirations through a jointly owned and democratically controlled enterprise incorporated under specific legislation (e.g., the Canada Cooperatives Act) at the provincial, territorial, or federal level. Depending on the governing legislation, cooperatives may be for-profit or non-profit entities." ;
+    skos:definition "A cooperative is an association of persons united voluntarily to meet their common economic, social, and cultural needs and aspirations through a jointly owned and democratically controlled enterprise incorporated under specific legislation (e.g., the Canada Cooperatives Act) at the provincial, territorial, or federal level. Depending on the governing legislation, cooperatives may be for-profit or non-profit entities."@en ;
+    org:hasIdentifier "Cooperative" ;
+    skos:notation "Cooperative" ;
+    prov:hadPrimarySource <https://ised-isde.canada.ca/site/cooperatives-canada/en/information-guide-co-operatives#seven> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:forProfit
+    a cids:OrganizationType ;
+    org:hasName "For-Profit" ;
+    skos:prefLabel "For-Profit"@en ;
+    cids:hasDescription "For-profit organizations are businesses or corporations that are organized and operated for the purpose of generating profit." ;
+    skos:definition "For-profit organizations are businesses or corporations that are organized and operated for the purpose of generating profit."@en ;
+    org:hasIdentifier "forProfit" ;
+    skos:notation "forProfit" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:nonProfit
+    a cids:OrganizationType ;
+    org:hasName "Non-Profit" ;
+    skos:prefLabel "Non-Profit"@en ;
+    cids:hasDescription "Non-profit organizations are associations, clubs, or societies that are not registered charities or individuals, but are organized and operated exclusively for social welfare, civic improvement, pleasure, recreation, or any other purpose except profit. Non-profit organizations may be incorporated or unincorporated." ;
+    skos:definition "Non-profit organizations are associations, clubs, or societies that are not registered charities or individuals, but are organized and operated exclusively for social welfare, civic improvement, pleasure, recreation, or any other purpose except profit. Non-profit organizations may be incorporated or unincorporated."@en ;
+    org:hasIdentifier "nonProfit" ;
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .

@@ -1,0 +1,438 @@
+@base <https://codelist.commonapproach.org/PopulationServed> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edg: <https://codelist.commonapproach.org/EquityDeservingGroupsESDC#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+    
+    vann:preferredNamespacePrefix "ps" ;
+    vann:preferredNamespaceUri <> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-10-31"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+    
+    skos:prefLabel "PopulationServed Codelist"@en ;
+    dcterms:title "PopulationServed Codelist"@en ;
+    dcterms:description "A codelist vocabulary of Populations Served prescribed for Canada's Social Finance Fund by Employment Social Development Canada (ESDC)."@en .
+
+:ps1
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "2SLGBTQIA+" ;
+    skos:prefLabel "2SLGBTQIA+"@en ;
+    cids:hasDescription "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)." ;
+    skos:definition "People who identify as being two-spirit, lesbian, gay, bisexual, transgender, queer, intersex, asexual and others (“+”)."@en ;
+    org:hasIdentifier "ps1" ;
+    skos:notation "ps1" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg1 ;
+    .
+
+:ps2
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Gender Diverse People: Agender" ;
+    skos:prefLabel "Gender Diverse People: Agender"@en ;
+    cids:hasDescription "People who do not identify as, or with, any particular gender." ;
+    skos:definition "People who do not identify as, or with, any particular gender."@en ;
+    org:hasIdentifier "ps2" ;
+    skos:notation "ps2" ;
+    prov:hadPrimarySource <https://dictionary.cambridge.org/dictionary/english/agender> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg12 ;
+    .
+
+:ps3
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Gender Diverse People: Non-Binary" ;
+    skos:prefLabel "Gender Diverse People: Non-Binary"@en ;
+    cids:hasDescription "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum." ;
+    skos:definition "People whose gender identity does not align with a binary understanding of gender such as man or woman. It is a gender identity which may include man and woman, androgynous, fluid, multiple, no gender, or a different gender outside of the “woman—man” spectrum."@en ;
+    org:hasIdentifier "ps3" ;
+    skos:notation "ps3" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/women-gender-equality/free-to-be-me/2slgbtqi-plus-glossary.html> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg11 ;
+    .
+
+:ps4
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Gender Diverse People: Other" ;
+    skos:prefLabel "Gender Diverse People: Other"@en ;
+    cids:hasDescription "People whose gender identity does not align with any of the other options provided." ;
+    skos:definition "People whose gender identity does not align with any of the other options provided."@en ;
+    org:hasIdentifier "ps4" ;
+    skos:notation "ps4" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg13 ;
+    .
+
+:ps5
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Black People" ;
+    skos:prefLabel "Black People"@en ;
+    cids:hasDescription "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours." ;
+    skos:definition "People belonging to any of various population groups of especially African ancestry often considered as having dark pigmentation of the skin but in fact having a wide range of skin colours."@en ;
+    org:hasIdentifier "ps5" ;
+    skos:notation "ps5" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg2 ;
+    .
+
+:ps6
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Indigenous Peoples: First Nations" ;
+    skos:prefLabel "Indigenous Peoples: First Nations"@en ;
+    cids:hasDescription "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian." ;
+    skos:definition "In Canada, Indigenous people who are part of a First Nation or whose ancestors were part of a First Nation. A First Nation person can be a Status or Non-Status Indian."@en ;
+    org:hasIdentifier "ps6" ;
+    skos:notation "ps6" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg4 ;
+    .
+
+:ps7
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Indigenous Peoples: Inuit" ;
+    skos:prefLabel "Indigenous Peoples: Inuit"@en ;
+    cids:hasDescription "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture." ;
+    skos:definition "In Canada, Indigenous People that inhabit or that traditionally inhabited the northern regions and Arctic coasts of Canada known as Inuit Nunangat, and whose members are united by a common origin, history and culture."@en ;
+    org:hasIdentifier "ps7" ;
+    skos:notation "ps7" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg5 ;
+    .
+
+:ps8
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Indigenous Peoples: Métis" ;
+    skos:prefLabel "Indigenous Peoples: Métis"@en ;
+    cids:hasDescription "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation." ;
+    skos:definition "In Canada, Indigenous People whose members are of mixed First Nations and European ancestry, are united by a common origin, history and culture, and are generally accepted by the Métis Nation."@en ;
+    org:hasIdentifier "ps8" ;
+    skos:notation "ps8" ;
+    prov:hadPrimarySource <https://www.noslangues-ourlanguages.gc.ca/en/publications/equite-diversite-inclusion-equity-diversity-inclusion-eng#notion-69399> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg6 ;
+    .
+
+:ps9
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Other Racialized Peoples" ;
+    skos:prefLabel "Other Racialized Peoples"@en ;
+    cids:hasDescription "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)." ;
+    skos:definition "People other than Indigenous peoples or Black Canadians who are non-Caucasian in race or non-white in colour (refer to the Statistics Canada definition for “visible minorities”)."@en ;
+    org:hasIdentifier "ps9" ;
+    skos:notation "ps9" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg8 ;
+    .
+
+:ps10
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "First Generation Immigrants, Refugees & Newcomers" ;
+    skos:prefLabel "First Generation Immigrants, Refugees & Newcomers"@en ;
+    cids:hasDescription "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years." ;
+    skos:definition "People who were born outside Canada. For the most part, these are people who are now, or once were, immigrants to Canada. People who were forced to flee from persecution in their home country. This includes Convention refugees (as defined by the Immigration and Refugee Protection Act (S.C. 2001, c. 27)) and asylum-seekers or refugee claimants. Immigrants and Refugees that have been in Canada for less than five years."@en ;
+    org:hasIdentifier "ps10" ;
+    skos:notation "ps10" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg3 ;
+    .
+
+:ps11
+    a cids:PopulationServed ;
+    org:hasName "Lone Parent Families" ;
+    skos:prefLabel "Lone Parent Families"@en ;
+    cids:hasDescription "Families or homes where there is one parent present or living there. The lone, or single, parent can be any sex or gender, any ethnicity, and any sexuality. They do not have to be blood-related parents either to be classed as a parent." ;
+    skos:definition "Families or homes where there is one parent present or living there. The lone, or single, parent can be any sex or gender, any ethnicity, and any sexuality. They do not have to be blood-related parents either to be classed as a parent."@en ;
+    org:hasIdentifier "ps11" ;
+    skos:notation "ps11" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps12
+    a cids:PopulationServed ;
+    org:hasName "Northern Canadian Communities" ;
+    skos:prefLabel "Northern Canadian Communities"@en ;
+    cids:hasDescription "Communities located, and people living, in Northern Canada, which is defined as: The three Canadian territories (Yukon, Northwest Territories, and Nunavut), and the northern extent of Newfoundland and Labrador, Quebec, Ontario, Manitoba, Saskatchewan, Alberta and British Columbia. North is based on provincially determined definitions that generally reflect administrative regions." ;
+    skos:definition "Communities located, and people living, in Northern Canada, which is defined as: The three Canadian territories (Yukon, Northwest Territories, and Nunavut), and the northern extent of Newfoundland and Labrador, Quebec, Ontario, Manitoba, Saskatchewan, Alberta and British Columbia. North is based on provincially determined definitions that generally reflect administrative regions."@en ;
+    org:hasIdentifier "ps12" ;
+    skos:notation "ps12" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps13
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Official Languages Minority Communities" ;
+    skos:prefLabel "Official Languages Minority Communities"@en ;
+    cids:hasDescription "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec." ;
+    skos:definition "In Canada, official-language minority communities are mainly French-speaking people living outside the province of Quebec and English-speaking people living in the province of Quebec."@en ;
+    org:hasIdentifier "ps13" ;
+    skos:notation "ps13" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg7 ;
+    .
+
+:ps14
+    a cids:PopulationServed ;
+    org:hasName "People Experiencing Homelessness or Housing Insecurities" ;
+    skos:prefLabel "People Experiencing Homelessness or Housing Insecurities"@en ;
+    cids:hasDescription "People without stable, safe, permanent, appropriate housing, or the immediate prospect, means, and ability of acquiring it." ;
+    skos:definition "People without stable, safe, permanent, appropriate housing, or the immediate prospect, means, and ability of acquiring it."@en ;
+    org:hasIdentifier "ps14" ;
+    skos:notation "ps14" ;
+    prov:hadPrimarySource <https://www.homelesshub.ca/sites/default/files/COHhomelessdefinition.pdf> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps15
+    a cids:PopulationServed ;
+    org:hasName "People Living on Low Income" ;
+    skos:prefLabel "People Living on Low Income"@en ;
+    cids:hasDescription "People living on low income as defined by any of several relative indicators/thresholds used by the Government of Canada to measure low income: low income cut-offs (LICOs), market basket measure (MBM), and/or low income measure (LIM)." ;
+    skos:definition "People living on low income as defined by any of several relative indicators/thresholds used by the Government of Canada to measure low income: low income cut-offs (LICOs), market basket measure (MBM), and/or low income measure (LIM)."@en ;
+    org:hasIdentifier "ps15" ;
+    skos:notation "ps15" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/employment-social-development/programs/poverty-reduction/backgrounder.html> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps16
+    a cids:PopulationServed ;
+    org:hasName "People Living with Cognitive or Mental Health Related Issues" ;
+    skos:prefLabel "People Living with Cognitive or Mental Health Related Issues"@en ;
+    cids:hasDescription "People living with disabilities, impairments, and/or functional limitations related to cognitive, learning, communication or mental health related issues, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier." ;
+    skos:definition "People living with disabilities, impairments, and/or functional limitations related to cognitive, learning, communication or mental health related issues, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier."@en ;
+    org:hasIdentifier "ps16" ;
+    skos:notation "ps16" ;
+    prov:hadPrimarySource <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:broader :ps27 ;
+    skos:broadMatch edg:edg9 ;
+    .
+
+:ps17
+    a cids:PopulationServed ;
+    org:hasName "People Living with Physical,Sensory or Pain Related Disabilities" ;
+    skos:prefLabel "People Living with Physical,Sensory or Pain Related Disabilities"@en ;
+    cids:hasDescription "People living with disabilities, impairments, and/or functional limitations related to physical, sensory, or pain, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier." ;
+    skos:definition "People living with disabilities, impairments, and/or functional limitations related to physical, sensory, or pain, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier."@en ;
+    org:hasIdentifier "ps17" ;
+    skos:notation "ps17" ;
+    prov:hadPrimarySource <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:broader :ps27 ;
+    skos:broadMatch edg:edg9 ;
+    .
+
+:ps18
+    a cids:PopulationServed ;
+    org:hasName "People Living with Terminal or Chronic Illness/Diseases" ;
+    skos:prefLabel "People Living with Terminal or Chronic Illness/Diseases"@en ;
+    cids:hasDescription "People living with disabilities, impairments, and/or functional limitations related to terminal or chronic illness/disease, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and equal participation in society when they face a barrier." ;
+    skos:definition "People living with disabilities, impairments, and/or functional limitations related to terminal or chronic illness/disease, whether apparent or not, and permanent, temporary or episodic in nature, that hinders their full and. equal participation in society when they face a barrier."@en ;
+    org:hasIdentifier "ps18" ;
+    skos:notation "ps18" ;
+    prov:hadPrimarySource <https://laws-lois.justice.gc.ca/eng/acts/A-0.6/> ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:broader :ps27 ;
+    skos:broadMatch edg:edg9 ;
+    .
+
+:ps19
+    a cids:PopulationServed ;
+    org:hasName "People of Advanced Age (65+)" ;
+    skos:prefLabel "People of Advanced Age (65+)"@en ;
+    cids:hasDescription "People who are 65 and older." ;
+    skos:definition "People who are 65 and older."@en ;
+    org:hasIdentifier "ps19" ;
+    skos:notation "ps19" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps20
+    a cids:PopulationServed ;
+    org:hasName "People without Advanced Educational Qualification" ;
+    skos:prefLabel "People without Advanced Educational Qualification"@en ;
+    cids:hasDescription "People that have not completed any university, college or other post-secondary qualification." ;
+    skos:definition "People that have not completed any university, college or other post-secondary qualification."@en ;
+    org:hasIdentifier "ps20" ;
+    skos:notation "ps20" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps21
+    a cids:PopulationServed ;
+    org:hasName "Survivors of Domestic Violence, Sexual assault, Abuse or Stalking" ;
+    skos:prefLabel "Survivors of Domestic Violence, Sexual assault, Abuse or Stalking"@en ;
+    cids:hasDescription "People who identify as being survivors of domestic violence, including intimate partner violence, sexual assault, stalking and/or harassment." ;
+    skos:definition "People who identify as being survivors of domestic violence, including intimate partner violence, sexual assault, stalking and/or harassment."@en ;
+    org:hasIdentifier "ps21" ;
+    skos:notation "ps21" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps22
+    a cids:PopulationServed, cids:EquityDeservingGroup ;
+    org:hasName "Women (Cisgender and Transgender)" ;
+    skos:prefLabel "Women (Cisgender and Transgender)"@en ;
+    cids:hasDescription "All people who identify as women, whether they are cisgender or transgender women." ;
+    skos:definition "All people who identify as women, whether they are cisgender or transgender women."@en ;
+    org:hasIdentifier "ps22" ;
+    skos:notation "ps22" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:exactMatch edg:edg10 ;
+    .
+
+:ps23
+    a cids:PopulationServed ;
+    org:hasName "Children (Ages 0-15)" ;
+    skos:prefLabel "Children (Ages 0-15)"@en ;
+    cids:hasDescription "Any person aged 0-15." ;
+    skos:definition "Any person aged 0-15."@en ;
+    org:hasIdentifier "ps23" ;
+    skos:notation "ps23" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps24
+    a cids:PopulationServed ;
+    org:hasName "Youth (Ages 15-24)" ;
+    skos:prefLabel "Youth (Ages 15-24)"@en ;
+    cids:hasDescription "Any person aged 15-24." ;
+    skos:definition "Any person aged 15-24."@en ;
+    org:hasIdentifier "ps24" ;
+    skos:notation "ps24" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps25
+    a cids:PopulationServed ;
+    org:hasName "General Population" ;
+    skos:prefLabel "General Population"@en ;
+    org:hasIdentifier "ps25" ;
+    skos:notation "ps25" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:ps26
+    a cids:PopulationServed, cids:EquityDeservingGroup;
+    org:hasName "Indigenous Peoples: Not Otherwise Specified" ;
+    skos:prefLabel "Indigenous Peoples: Not Otherwise Specified"@en ;
+    cids:hasDescription "In Canada, individuals who self-identify as Indigenous (First Nations, Inuit, or Métis) but do not specify their group affiliation, are unsure of their specific ancestry, or identify with another Indigenous community not listed separately."@en ;
+    skos:definition "In Canada, individuals who self-identify as Indigenous (First Nations, Inuit, or Métis) but do not specify their group affiliation, are unsure of their specific ancestry, or identify with another Indigenous community not listed separately."@en ;
+    org:hasIdentifier "ps26" ;
+    skos:notation "ps26" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:ps27
+    a cids:EquityDeservingGroup ;
+    org:hasName "People Living with a Disability (including invisible and episodic disabilities)" ;
+    skos:prefLabel "People Living with a Disability (including invisible and episodic disabilities)"@en ;
+    cids:hasDescription "People Living with a Disability (including invisible and episodic disabilities)" ;
+    skos:definition "People Living with a Disability (including invisible and episodic disabilities)"@en ;
+    org:hasIdentifier "ps27" ;
+    skos:notation "ps27" ;
+    cids:definedBy cids:esdc ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    skos:narrower :ps16, :ps17, :ps18 ;
+    skos:exactMatch edg:edg9 .

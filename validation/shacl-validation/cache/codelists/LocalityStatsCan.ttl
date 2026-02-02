@@ -1,0 +1,124 @@
+@base <https://codelist.commonapproach.org/LocalityStatsCan> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <http://www.w3.org/2006/time>, <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:prefLabel "Locality Codelist"@en ;
+    dcterms:title "Locality Codelist"@en ;
+    dcterms:description "A codelist vocabulary of Locality Codelists according to Statistics Canada definitions."@en .
+
+:loc1
+    a cids:Locality ;
+    org:hasName "Large Urban Population Centre" ;
+    skos:prefLabel "Large Urban Population Centre"@en ;
+    cids:hasDescription "A large urban population centres, with a population of 100,000 or more." ;
+    skos:definition "A large urban population centres, with a population of 100,000 or more."@en ;
+    org:hasIdentifier "loc1" ;
+    skos:notation "loc1" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc2
+    a cids:Locality ;
+    org:hasName "Medium Population Centre" ;
+    skos:prefLabel "Medium Population Centre"@en ;
+    cids:hasDescription "medium population centres, with a population between 30,000 and 99,999." ;
+    org:hasIdentifier "loc2" ;
+    skos:definition "medium population centres, with a population between 30,000 and 99,999."@en ;
+    skos:notation "loc2" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc3
+    a cids:Locality ;
+    org:hasName "Small Population Centre" ;
+    skos:prefLabel "Small Population Centre"@en ;
+    cids:hasDescription "A small population centres, with a population between 1,000 and 29,999." ;
+    org:hasIdentifier "loc3" ;
+    skos:definition "A small population centres, with a population between 1,000 and 29,999."@en ;
+    skos:notation "loc3" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc4
+    a cids:Locality ;
+    org:hasName "Rural Areas" ;
+    skos:prefLabel "Rural Areas"@en ;
+    cids:hasDescription "All areas outside population centres are classified as rural areas." ;
+    org:hasIdentifier "loc4" ;
+    skos:definition "All areas outside population centres are classified as rural areas."@en ;
+    skos:notation "loc4" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc5
+    a cids:Locality ;
+    org:hasName "Indigenous Communities and Lands" ;
+    skos:prefLabel "Indigenous Communities and Lands"@en ;
+    cids:hasDescription "" ;
+    org:hasIdentifier "loc5" ;
+    skos:definition ""@en ;
+    skos:notation "loc5" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc6
+    a cids:Locality ;
+    org:hasName "Northern Canada" ;
+    skos:prefLabel "Northern Canada"@en ;
+    cids:hasDescription "" ;
+    org:hasIdentifier "loc6" ;
+    skos:definition ""@en ;
+    skos:notation "loc6" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .
+
+:loc7
+    a cids:Locality ;
+    org:hasName "All of Canada" ;
+    skos:prefLabel "All of Canada"@en ;
+    cids:hasDescription "" ;
+    org:hasIdentifier "loc7" ;
+    skos:definition ""@en ;
+    skos:notation "loc7" ;
+
+    cids:definedBy cids:statsCan ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> .

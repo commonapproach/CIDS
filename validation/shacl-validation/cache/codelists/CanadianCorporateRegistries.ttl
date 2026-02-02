@@ -1,0 +1,265 @@
+@base <https://codelist.commonapproach.org/CanadianCorporateRegistries> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-12-01"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+
+    skos:PrefLabel "Canadian Corporate Registries Codelist"@en ;
+    dcterms:title "Canadian Corporate Registries"@en ;
+    dcterms:description "An RDF vocabulary of Canadian Corporate Registries."@en .
+
+:ca
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Corporations Canada" ;
+    skos:prefLabel "Corporations Canada"@en ;
+    org:hasLegalName "Corporations Canada"@en ;
+    cids:hasDescription "Corporations Canada" ;
+    skos:definition "Corporations Canada"@en ;
+    org:hasIdentifier "ca" ;
+    skos:notation "ca" ;
+    prov:hadPrimarySource <https://ised-isde.canada.ca/cbr-rec/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:cra
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Canada Revenue Agency" ;
+    skos:prefLabel "Canada Revenue Agency"@en ;
+    org:hasLegalName "Canada Revenue Agency"@en ;
+    cids:hasDescription "Canada Revenue Agency" ;
+    skos:definition "Canada Revenue Agency"@en ;
+    org:hasIdentifier "cra" ;
+    skos:notation "cra" ;
+    prov:hadPrimarySource <https://www.canada.ca/en/revenue-agency/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:ab
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Alberta" ;
+    skos:prefLabel "Alberta"@en ;
+    org:hasLegalName "Alberta"@en ;
+    cids:hasDescription "Alberta Corporate Registry" ;
+    skos:definition "Alberta Corporate Registry"@en ;
+    org:hasIdentifier "ab" ;
+    skos:notation "ab" ;
+    prov:hadPrimarySource <https://www.alberta.ca/business-licence-or-charitable-registration-in-alberta> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:bc
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "British Columbia" ;
+    skos:prefLabel "British Columbia"@en ;
+    org:hasLegalName "British Columbia"@en ;
+    cids:hasDescription "BC Registries and Online Services" ;
+    skos:definition "BC Registries and Online Services"@en ;
+    org:hasIdentifier "bc" ;
+    skos:notation "bc" ;
+    prov:hadPrimarySource <https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/bc-registries-online-services> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:mb
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Manitoba" ;
+    skos:prefLabel "Manitoba"@en ;
+    org:hasLegalName "Manitoba"@en ;
+    cids:hasDescription "Manitoba Companies Office" ;
+    skos:definition "Manitoba Companies Office"@en ;
+    org:hasIdentifier "mb" ;
+    skos:notation "mb" ;
+    prov:hadPrimarySource <https://companiesoffice.gov.mb.ca/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:nb
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "New Brunswick" ;
+    skos:prefLabel "New Brunswick"@en ;
+    org:hasLegalName "New Brunswick"@en ;
+    cids:hasDescription "Corporate Registry - Service New Brunswick" ;
+    skos:definition "Corporate Registry - Service New Brunswick"@en ;
+    org:hasIdentifier "nb" ;
+    skos:notation "nb" ;
+    prov:hadPrimarySource <https://www2.snb.ca/content/snb/en/sites/corporate-registry.html> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:nl
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Newfoundland and Labrador" ;
+    skos:prefLabel "Newfoundland and Labrador"@en ;
+    org:hasLegalName "Newfoundland and Labrador"@en ;
+    cids:hasDescription "Registry of Companies and Deeds" ;
+    skos:definition "Registry of Companies and Deeds"@en ;
+    org:hasIdentifier "nl" ;
+    skos:notation "nl" ;
+    prov:hadPrimarySource <https://www.gov.nl.ca/dgsnl/registries/companies/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:nt
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Northwest Territories" ;
+    skos:prefLabel "Northwest Territories"@en ;
+    org:hasLegalName "Northwest Territories"@en ;
+    cids:hasDescription "Corporate Registries - Department of Justice" ;
+    skos:definition "Corporate Registries - Department of Justice"@en ;
+    org:hasIdentifier "nt" ;
+    skos:notation "nt" ;
+    prov:hadPrimarySource <https://www.justice.gov.nt.ca/en/boards-agencies/corporate-registries/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:ns
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Nova Scotia" ;
+    skos:prefLabel "Nova Scotia"@en ;
+    org:hasLegalName "Nova Scotia"@en ;
+    cids:hasDescription "Nova Scotia Registry of Joint Stock Companies" ;
+    skos:definition "Nova Scotia Registry of Joint Stock Companies"@en ;
+    org:hasIdentifier "ns" ;
+    skos:notation "ns" ;
+    prov:hadPrimarySource <https://beta.novascotia.ca/programs-and-services/registry-joint-stock-companies> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:nu
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Nunavut" ;
+    skos:prefLabel "Nunavut"@en ;
+    org:hasLegalName "Nunavut"@en ;
+    cids:hasDescription "Corporate Registries - Department of Justice" ;
+    skos:definition "Corporate Registries - Department of Justice"@en ;
+    org:hasIdentifier "nu" ;
+    skos:notation "nu" ;
+    prov:hadPrimarySource <https://www.gov.nu.ca/en/department-justice/corporate-and-securities-registries> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:on
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Ontario" ;
+    skos:prefLabel "Ontario"@en ;
+    org:hasLegalName "Ontario"@en ;
+    cids:hasDescription "Ontario Business Registry" ;
+    skos:definition "Ontario Business Registry"@en ;
+    org:hasIdentifier "on" ;
+    skos:notation "on" ;
+    prov:hadPrimarySource <https://www.ontario.ca/page/ontario-business-registry> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:pe
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Prince Edward Island" ;
+    skos:prefLabel "Prince Edward Island"@en ;
+    org:hasLegalName "Prince Edward Island"@en ;
+    cids:hasDescription "Corporate Business Names Registry" ;
+    skos:definition "Corporate Business Names Registry"@en ;
+    org:hasIdentifier "pe" ;
+    skos:notation "pe" ;
+    prov:hadPrimarySource <https://www.princeedwardisland.ca/en/feature/pei-business-corporate-registry/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:qc
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Quebec" ;
+    skos:prefLabel "Quebec"@en ;
+    org:hasLegalName "Quebec"@en ;
+    cids:hasDescription "Registraire des entreprises du Québec" ;
+    skos:definition "Registraire des entreprises du Québec"@en ;
+    org:hasIdentifier "qc" ;
+    skos:notation "qc" ;
+    prov:hadPrimarySource <https://www.registreentreprises.gouv.qc.ca/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:sk
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Saskatchewan" ;
+    skos:prefLabel "Saskatchewan"@en ;
+    org:hasLegalName "Saskatchewan"@en ;
+    cids:hasDescription "Corporate Registry - Information Services Corporation (ISC)" ;
+    skos:definition "Corporate Registry - Information Services Corporation (ISC)"@en ;
+    org:hasIdentifier "sk" ;
+    skos:notation "sk" ;
+    prov:hadPrimarySource <https://www.isc.ca/CorporateRegistry> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .
+
+:yk
+    a skos:Concept, cids:Code, cids:Organization, org:Organization ;
+    org:hasName "Yukon" ;
+    skos:prefLabel "Yukon"@en ;
+    org:hasLegalName "Yukon"@en ;
+    cids:hasDescription "Corporate Affairs - Department of Community Services" ;
+    skos:definition "Corporate Affairs - Department of Community Services"@en ;
+    org:hasIdentifier "yk" ;
+    skos:notation "yk" ;
+    prov:hadPrimarySource <https://ycor-reey.gov.yk.ca/> ;
+
+    cids:definedBy cids:esdc;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    .

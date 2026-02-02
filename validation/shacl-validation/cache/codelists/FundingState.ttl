@@ -1,0 +1,84 @@
+@base <https://codelist.commonapproach.org/FundingState> .
+@prefix : <#> .
+
+@prefix cids: <https://ontology.commonapproach.org/cids#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://ontology.eil.utoronto.ca/tove/organization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<>
+    a voaf:Vocabulary, owl:Ontology, skos:ConceptScheme ;
+    owl:imports <https://ontology.commonapproach.org/cids> ;
+    
+    vann:preferredNamespacePrefix "fstate" ;
+    vann:preferredNamespaceUri <> ;
+
+    dcterms:creator cids:ac ;
+    dcterms:date "2025-11-05"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    
+    skos:prefLabel "FundingState Codelist"@en ;
+    dcterms:title "FundingState Codelist"@en ;
+    dcterms:description "A codelist vocabulary of funding states to describe funding applications to funders or investors. The list items convey whether the organization is an applicant, rejected, or invested in."@en .
+
+:applied
+    a cids:FundingState ;
+    org:hasName "Applied" ;
+    skos:prefLabel "Applied"@en, "Appliqué"@fr ;
+    cids:hasDescription "The funding proposal has been submitted." ;
+    skos:definition "The funding proposal has been submitted."@en, "La proposition de financement a été soumise."@fr ;
+    org:hasIdentifier "applied" ;
+    skos:notation "applied" ;
+    cids:definedBy cids:ac ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:rejected
+    a cids:FundingState ;
+    org:hasName "Rejected" ;
+    skos:prefLabel "Rejected"@en, "Rejetée"@fr ;
+    cids:hasDescription "The funding proposal has been rejected." ;
+    skos:definition "The funding proposal has been rejected."@en, "La proposition de financement a été rejetée."@fr ;
+    org:hasIdentifier "rejected" ;
+    skos:notation "rejected" ;
+    cids:definedBy cids:ac ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:funded
+    a cids:FundingState ;
+    org:hasName "Funded" ;
+    skos:prefLabel "Funded"@en, "Alloué"@fr ;
+    cids:hasDescription "The funding proposal has been accepted and funding has been allocated." ;
+    skos:definition "The funding proposal has been accepted and funding has been allocated."@en, "La proposition de financement a été acceptée et le financement a été alloué."@fr ;
+    org:hasIdentifier "invested" ;
+    skos:notation "invested" ;
+    cids:definedBy cids:ac ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
+
+:inReview
+    a cids:FundingState ;
+    org:hasName "In Review" ;
+    skos:prefLabel "In Review"@en, "Sous-évaluation"@fr ;
+    cids:hasDescription "The funding proposal is being processed by the evaluating organization and is under review." ;
+    skos:definition "The funding proposal is being processed by the evaluating organization and is under review."@en, "La proposition de financement est en cours de traitement par l’organisme évaluateur et est en cours d’examen."@fr ;
+    org:hasIdentifier "inReview" ;
+    skos:notation "inReview" ;
+    cids:definedBy cids:ac ;
+    cids:hasSpecification <> ;
+    rdfs:isDefinedBy <> ;
+    skos:inScheme <> ;
+    .
