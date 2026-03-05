@@ -274,6 +274,7 @@
       "@id": "cids:isUnderserved",
       "@type": "xsd:boolean"
     },
+    "label": "rdfs:label",
     "postalCode": {
       "@id": "cids:postalCode",
       "@type": "xsd:string"
