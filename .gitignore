@@ -4,3 +4,8 @@ catalog*
 
 # Binary JAR files (can be downloaded as needed)
 *.jar
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
