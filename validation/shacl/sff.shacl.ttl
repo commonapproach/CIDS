@@ -484,9 +484,9 @@ csh:SFFProperty_hasBoardProfile_PropertyShape
 
 csh:SFFProperty_forFunder_PropertyShape
         rdf:type        sh:PropertyShape;
-        sh:class        cids:Organization;
+        sh:datatype     xsd:string;
         sh:name         "forFunder";
-        sh:nodeKind     sh:BlankNodeOrIRI;
+        sh:nodeKind     sh:Literal;
         sh:path         sff:forFunder;
         csh:activeTier  cids:SFFTier .
 
@@ -2038,9 +2038,9 @@ sff:hasBoardProfile  rdf:type  owl:ObjectProperty;
         rdfs:label    "hasBoardProfile"@en;
         csh:memberOf  owl:ObjectProperty .
 
-sff:forFunder  rdf:type  owl:ObjectProperty;
+sff:forFunder  rdf:type  owl:DatatypeProperty;
         rdfs:label    "for Funder"@en;
-        csh:memberOf  owl:ObjectProperty .
+        csh:memberOf  owl:DatatypeProperty .
 
 sff:forEDG  rdf:type  owl:ObjectProperty;
         rdfs:label    "forEDG"@en;

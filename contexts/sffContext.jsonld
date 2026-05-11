@@ -113,10 +113,6 @@
     "primaryPopulationServed": {
       "@id": "sff:primaryPopulationServed",
       "@type": "@id"
-    },
-    "forFunderId": {
-      "@id": "sff:forFunderId",
-      "@type": "@id"
     }
   }
 }
