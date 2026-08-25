@@ -14,14 +14,14 @@ There are different SHACL files for different levels of alignement with the Comm
 
 * The Basic Tier SHACL file (`cids.basictier.shacl.ttl`) only includes the Organization, Theme, Outcome, Indicator, and IndicatorReport classes. The Essential Tier adds additional classes and properties, as does Full Tier.
 * the SFF Companion Module SHACL file (`sff.shacl.ttl`) contains everything from Basic Tier, as well as additional classes and properties required for participants reporting in the Social Finance Fund. 
-* Other standards have their own files, e.g. ISO 21972, for measurement: `i72.shacl.ttl`. These may be used in addition to the CIDS and SFF files, if needed, but are not required for most cases. 
+* Other standards have their own files, e.g. ISO 21972, for measurement: `iso21972.shacl.ttl`. These may be used in addition to the CIDS and SFF files, if needed, but are not required for most cases. 
 
 **Simple validation of JSON-LD files - Apache Jena**
 
 Common Impact Data Standard JSON-LD files, or "Impact Data Capsules", can be validated against the SHACL files with Apache Jena’s `shacl validate` tool. 
-With Jena installed, and with SHACL file `cids.shacl.ttl`, and JSONLD file `my-data.jsonld`, run the Terminal command from the folder where the files are located:
+With Jena installed, and with SHACL file `cids.basictier.shacl.ttl`, and JSONLD file `my-data.jsonld`, run the Terminal command from the folder where the files are located:
 
-`shacl validate -s cids.shacl.ttl -d my-data.jsonld > report.ttl`
+`shacl validate -s cids.basictier.shacl.ttl -d my-data.jsonld > report.ttl`
 
 The validator will return a violations report file (in Turtle syntax) detailing whether any of the datatypes, relationships, or other restrictions defined by SHACL file are incorrect. 
 
