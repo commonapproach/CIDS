@@ -37,6 +37,7 @@
                                             cc:license "Common Impact Data Standard V3.2.1 © 2025 by Common Approach to Impact Measurement is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/" ;
                                             dcterms:creator cids:ac ;
                                             dcterms:date "2025-10-31"^^xsd:date ;
+                                            dcterms:modified "2026-10-21T00:00:00Z"^^xsd:dateTime ;
                                             dcterms:description "The Common Impact Data Standard (CIDS) provides a standard representation for the core concepts and attributes that underlie impact models (e.g., logic model, impact thesis, theory of change, etc.), inputs, activities, outputs, and outcomes."@en ;
                                             dcterms:title "Common Impact Data Standard"@en ;
                                             vann:preferredNamespacePrefix "cids" ;
@@ -1007,12 +1008,7 @@ i72:Measure rdf:type owl:Class ;
                             ] .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Population
-i72:Population rdf:type owl:Class ; 
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty rdfs:label ;
-                              cids:belongsToTier cids:BasicTier ;
-                              owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-                            ] .
+i72:Population rdf:type owl:Class .
 
 ###  http://ontology.eil.utoronto.ca/ISO21972/iso21972#Unit_of_measure
 i72:Unit_of_measure rdf:type owl:Class .
@@ -1040,7 +1036,7 @@ org:Organization rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty org:hasLegalStatus ;
                                cids:belongsToTier cids:EssentialTier ;
-                               owl:onClass owl:Thing
+                               owl:allValuesFrom owl:Thing
                              ] .
 
 ###  http://ontology.eil.utoronto.ca/tove/organization#OrganizationID
@@ -1174,11 +1170,11 @@ cids:CharacteristicReport rdf:type owl:Class ;
                               rdfs:subClassOf cids:cidsThing ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty i72:numberOf ;
-                                                owl:onClass i72:Measure
+                                                owl:allValuesFrom i72:Measure
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty cids:forCharacteristic ;
-                                                owl:onClass cids:Characteristic
+                                                owl:allValuesFrom cids:Characteristic
                                               ] ;
                               rdfs:comment """<p>The CharacteristicReport class identifies the number of members which possess a certain characteristic or set of characteristics over a period of time.</p>
 <p>The CharacteristicReport class has the following properties:</p>
@@ -1194,27 +1190,27 @@ cids:StakeholderReport rdf:type owl:Class ;
                               rdfs:subClassOf cids:cidsThing ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty cids:forOrganization ;
-                                                owl:onClass cids:Organization
+                                                owl:allValuesFrom cids:Organization
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty cids:forStakeholder ;
-                                                owl:onClass cids:Stakeholder
+                                                owl:allValuesFrom cids:Stakeholder
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty cids:hasCharacteristicReport ;
-                                                owl:onClass cids:CharacteristicReport
+                                                owl:allValuesFrom cids:CharacteristicReport
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty cids:hasPerson ;
-                                                owl:onClass cids:Person
+                                                owl:allValuesFrom cids:Person
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty prov:endedAtTime ;
-                                                owl:onDataRange xsd:dateTime
+                                                owl:someValuesFrom xsd:dateTime
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty prov:startedAtTime ;
-                                                owl:onDataRange xsd:dateTime
+                                                owl:someValuesFrom xsd:dateTime
                                               ] ;
                               rdfs:comment """<p>Stakeholder data evolves over time. The StakeholderReport class is used to identify the number of stakeholders who possess certain characteristics over a period of time.</p>
 <p>The StakeholderReport class has the following properties:</p>
@@ -1235,23 +1231,23 @@ cids:Activity rdf:type owl:Class ;
                               cids:cidsThing ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty act:subActivityOf ;
-                                owl:onClass cids:Activity
+                                owl:allValuesFrom cids:Activity
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty cids:canProduce ;
-                                owl:onClass cids:Outcome
+                                owl:allValuesFrom cids:Outcome
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty cids:hasCode ;
-                                owl:onClass cids:Code
+                                owl:allValuesFrom cids:Code
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty cids:hasInput ;
-                                owl:onClass cids:Input
+                                owl:allValuesFrom cids:Input
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty cids:hasOutput ;
-                                owl:onClass cids:Output
+                                owl:allValuesFrom cids:Output
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty oep:partOf ;
@@ -1260,7 +1256,7 @@ cids:Activity rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasIdentifier ;
-                                owl:onDataRange xsd:string
+                                owl:allValuesFrom xsd:string
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty org:hasName ;
@@ -1310,7 +1306,7 @@ cids:BeneficialStakeholder rdf:type owl:Class ;
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasImpactManagementNormsDefinition ;
-                                             owl:onDataRange [ a rdfs:Datatype ;
+                                             owl:allValuesFrom [ a rdfs:Datatype ;
                                                                owl:oneOf (
                                                                 "client" 
                                                                 "community" 
@@ -1334,22 +1330,22 @@ cids:Characteristic rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty prov:wasGeneratedBy ;
                                       cids:belongsToTier cids:FullTier ;
-                                      owl:onClass cids:Activity
+                                      owl:allValuesFrom cids:Activity
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:forStakeholder ;
                                       cids:belongsToTier cids:EssentialTier ;
-                                      owl:onClass cids:Stakeholder
+                                      owl:allValuesFrom cids:Stakeholder
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasCode ;
                                       cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
-                                      owl:onClass cids:Code
+                                      owl:allValuesFrom cids:Code
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasValue ;
                                       cids:belongsToTier cids:EssentialTier ;
-                                      owl:onClass i72:Measure # check for case sensitivity because of punning
+                                      owl:allValuesFrom i72:Measure # check for case sensitivity because of punning
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty org:hasName ;
@@ -1359,15 +1355,18 @@ cids:Characteristic rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty prov:endedAtTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty prov:startedAtTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:dateTime
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasDescription ;
                                       cids:belongsToTier cids:SFFTier ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:string ;
                                     ] ;
                     rdfs:comment """<p>The Characteristic class is used to define a characteristic of a Stakeholder. It has a hasCode property, enabling the reuse of defined characteristic taxonomies, and has the following properties:</p>
@@ -1393,6 +1392,7 @@ cids:Code rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty i72:value ;
                             cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass i72:Measure
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -1411,6 +1411,7 @@ cids:Code rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty sch:codeValue ;
                             cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -1423,11 +1424,13 @@ cids:Code rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty cids:hasSpecification ;
                             cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:anyURI ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty org:hasIdentifier ;
                             cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:string ;
                           ] ;
           rdfs:comment """<p>An instance of Code is used to represent a specific code in a codelist by specifying the source codelist, code definition and code identifier. It has the following properties:</p>
@@ -1465,7 +1468,7 @@ cids:Counterfactual rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty i72:located_in ;
                                       cids:belongsToTier cids:FullTier ;
-                                      owl:onClass i72:Feature
+                                      owl:allValuesFrom i72:Feature
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty i72:unit_of_measure ;
@@ -1607,7 +1610,7 @@ cids:FinancialInput rdf:type owl:Class ;
                     rdfs:subClassOf cids:Input ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasType ;
-                                      owl:onClass act:Resource
+                                      owl:allValuesFrom act:Resource
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty cids:hasAmount ;
@@ -1632,15 +1635,15 @@ cids:FinancialOrganization rdf:type owl:Class ;
                            rdfs:subClassOf cids:Organization ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasCharacteristic ;
-                                             owl:onClass cids:Characteristic
+                                             owl:allValuesFrom cids:Characteristic
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasIndicator ;
-                                             owl:onClass cids:Indicator
+                                             owl:allValuesFrom cids:Indicator
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasOutcome ;
-                                             owl:onClass cids:Outcome
+                                             owl:allValuesFrom cids:Outcome
                                            ] ;
                            rdfs:comment "An institution (public or private) that collects funds (from the public or other institutions) and invests them in financial assets. (https://www.vocabulary.com/dictionary/financial%20organization)"@en ;
                            rdfs:label "Financial Organization"@en .
@@ -1652,17 +1655,17 @@ cids:HowMuchImpact rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty prov:wasGeneratedBy ;
                                      cids:belongsToTier cids:FullTier ;
-                                     owl:onClass cids:Activity
+                                     owl:allValuesFrom cids:Activity
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:forIndicator ;
                                      cids:belongsToTier cids:EssentialTier ;
-                                     owl:onClass cids:Indicator
+                                     owl:allValuesFrom cids:Indicator
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasCounterfactual ;
                                      cids:belongsToTier cids:FullTier ;
-                                     owl:onClass cids:Counterfactual
+                                     owl:allValuesFrom cids:Counterfactual
                                    ] ,
                                    [ rdf:type owl:Restriction ; 
                                      owl:onProperty i72:unit_of_measure ;
@@ -1769,39 +1772,39 @@ cids:ImpactPathway rdf:type owl:Class ;
                    rdfs:subClassOf cids:ImpactModel ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasActivity ;
-                                     owl:onClass cids:Activity
+                                     owl:allValuesFrom cids:Activity
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasIndicator ;
                                      cids:belongsToTier cids:EssentialTier ;
-                                     owl:onClass cids:Indicator
+                                     owl:allValuesFrom cids:Indicator
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasIndicatorReport ;
                                      cids:belongsToTier cids:EssentialTier ;
-                                     owl:onClass cids:IndicatorReport
+                                     owl:allValuesFrom cids:IndicatorReport
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasInput ;
-                                     owl:onClass cids:Input
+                                     owl:allValuesFrom cids:Input
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasOutcome ;
                                      cids:belongsToTier cids:EssentialTier ;
-                                     owl:onClass cids:Outcome
+                                     owl:allValuesFrom cids:Outcome
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasOutput ;
-                                     owl:onClass cids:Output
+                                     owl:allValuesFrom cids:Output
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasProgram ;
-                                     owl:onClass cids:Program
+                                     owl:allValuesFrom cids:Program
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasStakeholderOutcome ;
                                      cids:belongsToTier cids:EssentialTier ;
-                                     owl:onClass cids:StakeholderOutcome
+                                     owl:allValuesFrom cids:StakeholderOutcome
                                    ] ;
                    rdfs:comment """<p>ImpactPathway is a subclass of ImpactModel. Its properties link to the main impact modelling classes used by an impact pathway and contain the properties defined in the [Impact Management Platform](https://impactmanagementplatform.org/impact/). </p>
 
@@ -1826,7 +1829,7 @@ cids:ImpactReport rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasImpactRisk ;
                                     cids:belongsToTier cids:FullTier ;
-                                    owl:onClass cids:ImpactRisk
+                                    owl:allValuesFrom cids:ImpactRisk
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:forOrganization ;
@@ -1926,17 +1929,17 @@ cids:ImpactRisk rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:forImpactReport ;
                                   cids:belongsToTier cids:FullTier ;
-                                  owl:onClass cids:ImpactReport
+                                  owl:allValuesFrom cids:ImpactReport
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:forOutcome ;
                                   cids:belongsToTier cids:FullTier ;
-                                  owl:onClass cids:Outcome
+                                  owl:allValuesFrom cids:Outcome
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasMitigation ;
                                   cids:belongsToTier cids:FullTier ;
-                                  owl:onDataRange xsd:string
+                                  owl:allValuesFrom xsd:string
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty org:hasIdentifier ;
@@ -2000,51 +2003,51 @@ cids:Indicator rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty dcat:dataset ;
                                  cids:belongsToTier cids:FullTier ;
-                                 owl:onClass dcat:Dataset
+                                 owl:allValuesFrom dcat:Dataset
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:forOutcome ;
                                  cids:belongsToTier cids:BasicTier ;
-                                 owl:onClass cids:Outcome
+                                 owl:allValuesFrom cids:Outcome
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:forTheme ;
                                  cids:belongsToTier cids:BasicTier ;
-                                 owl:onClass cids:Theme
+                                 owl:allValuesFrom cids:Theme
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasAccess ;
-                                 owl:onClass cids:Stakeholder
+                                 owl:allValuesFrom cids:Stakeholder
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasCode ;
                                  cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
-                                 owl:onClass cids:Code
+                                 owl:allValuesFrom cids:Code
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasCounterfactual ;
                                  cids:belongsToTier cids:FullTier ;
-                                 owl:onClass cids:Counterfactual
+                                 owl:allValuesFrom cids:Counterfactual
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasHowMuch ;
                                  cids:belongsToTier cids:FullTier ;
-                                 owl:onClass cids:HowMuchImpact
+                                 owl:allValuesFrom cids:HowMuchImpact
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasIndicatorReport ;
                                  cids:belongsToTier cids:BasicTier ;
-                                 owl:onClass cids:IndicatorReport
+                                 owl:allValuesFrom cids:IndicatorReport
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:hasTarget ;
                                  cids:belongsToTier cids:EssentialTier ;
-                                 owl:onClass cids:Target
+                                 owl:allValuesFrom cids:Target
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty cids:usesOutput ;
                                  cids:belongsToTier cids:FullTier ;
-                                 owl:onClass cids:Output
+                                 owl:allValuesFrom cids:Output
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty i72:unit_of_measure ;
@@ -2153,26 +2156,26 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty dcat:dataset ;
                                        cids:belongsToTier cids:FullTier ;
-                                       owl:onClass dcat:Dataset
+                                       owl:allValuesFrom dcat:Dataset
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty dqv:conformsTo ;
                                        cids:belongsToTier cids:FullTier ;
-                                       owl:onClass dcterms:Standard
+                                       owl:allValuesFrom dcterms:Standard
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty dqv:hasQualityAnnotation ;
                                        cids:belongsToTier cids:FullTier ;
-                                       owl:onClass dqv:QualityAnnotation
+                                       owl:allValuesFrom dqv:QualityAnnotation
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty dqv:hasQualityMeasurement ;
                                        cids:belongsToTier cids:FullTier ;
-                                       owl:onClass dqv:QualityMeasurement
+                                       owl:allValuesFrom dqv:QualityMeasurement
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasAccess ;
-                                       owl:onClass cids:Stakeholder
+                                       owl:allValuesFrom cids:Stakeholder
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty i72:unit_of_measure ;
@@ -2219,7 +2222,7 @@ cids:IndicatorReport rdf:type owl:Class ;
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty cids:hasComment ;
                                        cids:belongsToTier cids:BasicTier ;
-                                       owl:onDataRange xsd:string ;
+                                       owl:allValuesFrom xsd:string ;
                                        sh:severity sh:Info
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -2268,11 +2271,11 @@ cids:Input rdf:type owl:Class ;
            rdfs:subClassOf cids:cidsThing ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasContributingStakeholder ;
-                             owl:onClass cids:ContributingStakeholder
+                             owl:allValuesFrom cids:ContributingStakeholder
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:inputFor ;
-                             owl:onClass cids:Activity
+                             owl:allValuesFrom cids:Activity
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty oep:partOf ;
@@ -2339,49 +2342,49 @@ cids:Organization rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasAddress ;
                                     cids:belongsToTier cids:BasicTier ;
-                                    owl:onClass cids:Address
+                                    owl:allValuesFrom cids:Address
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty org:hasID ;
                                     cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
-                                    owl:onClass org:OrganizationID
+                                    owl:allValuesFrom org:OrganizationID
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasCharacteristic ;
                                     cids:belongsToTier cids:EssentialTier ;
-                                    owl:onClass cids:Characteristic
+                                    owl:allValuesFrom cids:Characteristic
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasContact ;
                                     cids:belongsToTier cids:FullTier ;
-                                    owl:onClass cids:Person
+                                    owl:allValuesFrom cids:Person
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasIndicator ;
                                     cids:belongsToTier cids:BasicTier ;
-                                    owl:onClass cids:Indicator
+                                    owl:allValuesFrom cids:Indicator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasOutcome ;
                                     cids:belongsToTier cids:BasicTier ;
-                                    owl:onClass cids:Outcome
+                                    owl:allValuesFrom cids:Outcome
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasProgram ;
                                     cids:belongsToTier cids:FullTier ;
-                                    owl:onClass cids:Program
+                                    owl:allValuesFrom cids:Program
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasStakeholder ;
-                                    owl:onClass cids:Stakeholder
+                                    owl:allValuesFrom cids:Stakeholder
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasPurpose ;
-                                    owl:onClass xsd:string
+                                    owl:allValuesFrom xsd:string
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasWebAddress ;
-                                    owl:onClass xsd:anyURI
+                                    owl:allValuesFrom xsd:anyURI
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasDescription ;
@@ -2440,42 +2443,42 @@ cids:Outcome rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty i72:located_in ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass i72:Feature
+                               owl:allValuesFrom i72:Feature
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canEnable ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Activity
+                               owl:allValuesFrom cids:Activity
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:canProduce ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Outcome
+                               owl:allValuesFrom cids:Outcome
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:forTheme ;
                                cids:belongsToTier cids:BasicTier ;
-                               owl:onClass cids:Theme
+                               owl:allValuesFrom cids:Theme
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasCode ;
                                cids:belongsToTier cids:EssentialTier ;
-                               owl:onClass cids:Code
+                               owl:allValuesFrom cids:Code
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasImpactReport ;
                                cids:belongsToTier cids:EssentialTier ;
-                               owl:onClass cids:ImpactReport
+                               owl:allValuesFrom cids:ImpactReport
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasIndicator ;
                                cids:belongsToTier cids:BasicTier ;
-                               owl:onClass cids:Indicator
+                               owl:allValuesFrom cids:Indicator
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasStakeholderOutcome ;
                                cids:belongsToTier cids:EssentialTier ;
-                               owl:onClass cids:StakeholderOutcome
+                               owl:allValuesFrom cids:StakeholderOutcome
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty oep:partOf ;
@@ -2527,19 +2530,19 @@ cids:OutcomeChain rdf:type owl:Class ;
                   rdfs:subClassOf cids:ImpactModel ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasIndicator ;
-                                    owl:onClass cids:Indicator
+                                    owl:allValuesFrom cids:Indicator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasOutcome ;
-                                    owl:onClass cids:Outcome
+                                    owl:allValuesFrom cids:Outcome
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasOutput ;
-                                    owl:onClass cids:Output
+                                    owl:allValuesFrom cids:Output
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty cids:hasTheme ;
-                                    owl:onClass cids:Theme
+                                    owl:allValuesFrom cids:Theme
                                   ] ;
                   rdfs:comment """<p>OutcomeChain is a subclass of ImpactModel. Its properties link to instances of the main impact modelling classes it uses. The top-level definition of an OutcomeChain contains the following properties:</p>
 <ul>
@@ -2555,23 +2558,23 @@ cids:Output rdf:type owl:Class ;
             rdfs:subClassOf cids:cidsThing ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty i72:value ;
-                              owl:onClass i72:Measure
+                              owl:allValuesFrom i72:Measure
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty org:forActivity ;
-                              owl:onClass cids:Activity
+                              owl:allValuesFrom cids:Activity
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:canProduce ;
-                              owl:onClass cids:Outcome
+                              owl:allValuesFrom cids:Outcome
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:produces ;
-                              owl:onClass act:Resource
+                              owl:allValuesFrom act:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:usedByIndicator ;
-                              owl:onClass cids:Indicator
+                              owl:allValuesFrom cids:Indicator
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty oep:partOf ;
@@ -2610,59 +2613,60 @@ cids:Person rdf:type owl:Class ;
                             cids:cidsThing ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasAddress ;
-                              owl:onClass ic:Address
+                              owl:allValuesFrom ic:Address
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:hasAddress ;
-                              owl:onClass ic:Address
+                              owl:allValuesFrom ic:Address
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasTelephone ;
-                              owl:onClass ic:PhoneNumber
+                              owl:allValuesFrom ic:PhoneNumber
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty org:plays ;
-                              owl:onClass org:Role
+                              owl:allValuesFrom org:Role
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty rel:spouseOf ;
-                              owl:onClass cids:Person
+                              owl:allValuesFrom cids:Person
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cwrc:hasEthnicity ;
-                              owl:onClass cwrc:Ethnicity
+                              owl:allValuesFrom cwrc:Ethnicity
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cwrc:hasGender ;
-                              owl:onClass cwrc:Gender
+                              owl:allValuesFrom cwrc:Gender
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cwrc:hasReligion ;
-                              owl:onClass cwrc:Religion
+                              owl:allValuesFrom cwrc:Religion
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cwrc:parentOf ;
-                              owl:onClass cids:Person
+                              owl:allValuesFrom cids:Person
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty foaf:formerName ;
-                              owl:onClass xsd:string
+                              owl:someValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ic:hasEmail ;
                               cids:belongsToTier cids:EssentialTier, cids:SFFTier ;
-                              owl:onDataRange xsd:string
+                              owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty sch:identifier ;
-                              owl:onClass xsd:string
+                              owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:hasOccupation ;
-                              owl:onClass xsd:string
+                              owl:allValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty sch:birthDate ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:dateTime
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -2692,7 +2696,7 @@ cids:PhysicalInput rdf:type owl:Class ;
                    rdfs:subClassOf cids:Input ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cids:hasType ;
-                                     owl:onClass act:Resource
+                                     owl:allValuesFrom act:Resource
                                    ] ;
                    rdfs:comment """<p>PhysicalInput is any type of physical item, such as food, clothing, furniture, etc.</p>
 <p>Physical resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
@@ -2709,37 +2713,37 @@ cids:Program rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasBeneficialStakeholder ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:BeneficialStakeholder
+                               owl:allValuesFrom cids:BeneficialStakeholder
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasContributingStakeholder ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:ContributingStakeholder
+                               owl:allValuesFrom cids:ContributingStakeholder
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasImpactModel ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:ImpactModel
+                               owl:allValuesFrom cids:ImpactModel
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasInput ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Input
+                               owl:allValuesFrom cids:Input
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasOutcome ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Outcome
+                               owl:allValuesFrom cids:Outcome
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasOutput ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Output
+                               owl:allValuesFrom cids:Output
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasService ;
                                cids:belongsToTier cids:FullTier ;
-                               owl:onClass cids:Service
+                               owl:allValuesFrom cids:Service
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty org:hasName ;
@@ -2774,27 +2778,27 @@ cids:Service rdf:type owl:Class ;
                              cids:cidsThing ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty act:hasSubActivity ;
-                               owl:onClass cids:Activity
+                               owl:allValuesFrom cids:Activity
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasBeneficialStakeholder ;
-                               owl:onClass cids:BeneficialStakeholder
+                               owl:allValuesFrom cids:BeneficialStakeholder
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasContributingStakeholder ;
-                               owl:onClass cids:ContributingStakeholder
+                               owl:allValuesFrom cids:ContributingStakeholder
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasInput ;
-                               owl:onClass cids:Input
+                               owl:allValuesFrom cids:Input
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasOutcome ;
-                               owl:onClass cids:Outcome
+                               owl:allValuesFrom cids:Outcome
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty cids:hasOutput ;
-                               owl:onClass cids:Output
+                               owl:allValuesFrom cids:Output
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty oep:partOf ;
@@ -2856,7 +2860,7 @@ cids:SkillInput rdf:type owl:Class ;
                 rdfs:subClassOf cids:Input ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty cids:hasType ;
-                                  owl:onClass act:Resource
+                                  owl:allValuesFrom act:Resource
                                 ] ;
                 rdfs:comment """<p>SkillInput is any type of skills-based expertise such as legal, translation, carpentry, etc.</p>
 <p>Skill resource that is used as input to an activity or service. It is a subclass of Input and has the following properties:</p>
@@ -2884,16 +2888,16 @@ cids:Stakeholder rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty i72:located_in ;
-                                   owl:onClass i72:Feature
+                                   owl:allValuesFrom i72:Feature
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cids:hasCharacteristic ;
                                    cids:belongsToTier cids:EssentialTier ;
-                                   owl:onClass cids:Characteristic
+                                   owl:allValuesFrom cids:Characteristic
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cids:performs ;
-                                   owl:onClass cids:Activity
+                                   owl:allValuesFrom cids:Activity
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty oep:partOf ;
@@ -2950,17 +2954,17 @@ cids:StakeholderOutcome rdf:type owl:Class ;
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:hasCode ;
                                           cids:belongsToTier cids:EssentialTier ;
-                                          owl:onClass cids:Code
+                                          owl:allValuesFrom cids:Code
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:hasImpactReport ;
                                           cids:belongsToTier cids:EssentialTier ;
-                                          owl:onClass cids:ImpactReport
+                                          owl:allValuesFrom cids:ImpactReport
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:hasIndicator ;
                                           cids:belongsToTier cids:FullTier ;
-                                          owl:onClass cids:Indicator
+                                          owl:allValuesFrom cids:Indicator
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty cids:forOutcome ;
@@ -3050,15 +3054,15 @@ cids:StandardsOrganization rdf:type owl:Class ;
                            rdfs:subClassOf cids:Organization ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasCharacteristic ;
-                                             owl:onClass cids:Characteristic
+                                             owl:allValuesFrom cids:Characteristic
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasIndicator ;
-                                             owl:onClass cids:Indicator
+                                             owl:allValuesFrom cids:Indicator
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty cids:hasOutcome ;
-                                             owl:onClass cids:Outcome
+                                             owl:allValuesFrom cids:Outcome
                                            ] ;
                            rdfs:comment "A standards organization, standards body, standards developing organization (SDO), or standards setting organization (SSO) is an organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards[1] to address the needs of a group of affected adopters. (https://en.wikipedia.org/wiki/Standards_organization)"@en ;
                            rdfs:label "Standards Organization"@en .
@@ -3082,6 +3086,7 @@ cids:Target rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cids:forIndicatorReport ;
                               cids:belongsToTier cids:EssentialTier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass cids:IndicatorReport
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -3136,7 +3141,7 @@ cids:Theme rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:hasCode ;
                              cids:belongsToTier cids:BasicTier ;
-                             owl:onClass cids:Code
+                             owl:allValuesFrom cids:Code
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty org:hasName ;
@@ -3154,7 +3159,7 @@ cids:Theme rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty cids:relatesTo ;
                              cids:belongsToTier cids:BasicTier ;
-                             owl:onClass cids:Theme ;
+                             owl:allValuesFrom cids:Theme ;
                            ] ;
            rdfs:label "Theme"@en ;
            rdfs:comment """<p>The Theme class is used to represent the impact themes for which outcomes are specified.</p>
