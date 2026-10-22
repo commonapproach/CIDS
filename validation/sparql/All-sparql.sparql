@@ -141,7 +141,6 @@ WHERE {
         }
         
         # Extract cardinality constraints
-        bind(0 as ?void)
         optional {
             ?restriction owl:qualifiedCardinality ?qCardinality .
             bind(xsd:string(?qCardinality) as ?cardinalityMin1)
