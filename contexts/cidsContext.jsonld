@@ -349,7 +349,7 @@
     },
     "hasLegalStatus": {
       "@id": "org:hasLegalStatus",
-      "@type": "owl:Thing"
+      "@type": "@id"
     },
     "hasName": {
       "@id": "org:hasName",
