@@ -38,6 +38,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 csh:Theme_relatesTo_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "relatesTo";
         sh:nodeKind      sh:IRI;
@@ -74,6 +75,7 @@ csh:Theme_hasDescription_PropertyShape
 csh:Theme_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -143,6 +145,7 @@ csh:Target_hasComment_PropertyShape
 csh:Target_forIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -187,6 +190,7 @@ cids:Target  rdfs:subClassOf  cids:cidsThing .
 csh:StandardsOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -198,6 +202,7 @@ csh:StandardsOrganization_hasOutcome_PropertyShape
 csh:StandardsOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -221,6 +226,7 @@ csh:StandardsOrganization_hasLegalName_PropertyShape
 csh:StandardsOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -232,6 +238,7 @@ csh:StandardsOrganization_hasIndicator_PropertyShape
 csh:StandardsOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -243,6 +250,7 @@ csh:StandardsOrganization_hasID_PropertyShape
 csh:StandardsOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -254,6 +262,7 @@ csh:StandardsOrganization_hasCharacteristic_PropertyShape
 csh:StandardsOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -301,6 +310,7 @@ csh:Stakeholder_hasDescription_PropertyShape
 csh:Stakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -371,6 +381,7 @@ csh:StakeholderOutcome_hasName_PropertyShape
 csh:StakeholderOutcome_hasImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactReport";
         sh:nodeKind      sh:IRI;
@@ -394,6 +405,7 @@ csh:StakeholderOutcome_hasDescription_PropertyShape
 csh:StakeholderOutcome_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -440,6 +452,7 @@ cids:StakeholderOutcome
 csh:SocialPurposeOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -451,6 +464,7 @@ csh:SocialPurposeOrganization_hasOutcome_PropertyShape
 csh:SocialPurposeOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -474,6 +488,7 @@ csh:SocialPurposeOrganization_hasLegalName_PropertyShape
 csh:SocialPurposeOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -485,6 +500,7 @@ csh:SocialPurposeOrganization_hasIndicator_PropertyShape
 csh:SocialPurposeOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -496,6 +512,7 @@ csh:SocialPurposeOrganization_hasID_PropertyShape
 csh:SocialPurposeOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -507,6 +524,7 @@ csh:SocialPurposeOrganization_hasCharacteristic_PropertyShape
 csh:SocialPurposeOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -529,6 +547,7 @@ cids:SocialPurposeOrganization
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasEmail";
         sh:nodeKind      sh:Literal;
@@ -572,6 +591,7 @@ cids:Person  rdfs:subClassOf  cids:cidsThing , sch:Person .
 csh:Outcome_hasStakeholderOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:StakeholderOutcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholderOutcome";
         sh:nodeKind      sh:IRI;
@@ -595,6 +615,7 @@ csh:Outcome_hasName_PropertyShape
 csh:Outcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -606,6 +627,7 @@ csh:Outcome_hasIndicator_PropertyShape
 csh:Outcome_hasImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactReport";
         sh:nodeKind      sh:IRI;
@@ -630,6 +652,7 @@ csh:Outcome_hasDescription_PropertyShape
 csh:Outcome_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -641,6 +664,7 @@ csh:Outcome_hasCode_PropertyShape
 csh:Outcome_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:IRI;
@@ -674,6 +698,7 @@ cids:Outcome  rdfs:subClassOf  cids:cidsThing .
 csh:Organization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -685,6 +710,7 @@ csh:Organization_hasOutcome_PropertyShape
 csh:Organization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -708,6 +734,7 @@ csh:Organization_hasLegalName_PropertyShape
 csh:Organization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -719,6 +746,7 @@ csh:Organization_hasIndicator_PropertyShape
 csh:Organization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -730,6 +758,7 @@ csh:Organization_hasID_PropertyShape
 csh:Organization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -741,6 +770,7 @@ csh:Organization_hasCharacteristic_PropertyShape
 csh:Organization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -793,6 +823,7 @@ csh:Indicator_unitDescription_PropertyShape
 csh:Indicator_hasTarget_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Target;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasTarget";
         sh:nodeKind      sh:IRI;
@@ -816,6 +847,7 @@ csh:Indicator_hasName_PropertyShape
 csh:Indicator_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -840,6 +872,7 @@ csh:Indicator_hasDescription_PropertyShape
 csh:Indicator_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -863,6 +896,7 @@ csh:Indicator_hasBaseline_PropertyShape
 csh:Indicator_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:IRI;
@@ -874,6 +908,7 @@ csh:Indicator_forTheme_PropertyShape
 csh:Indicator_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -968,6 +1003,7 @@ csh:IndicatorReport_hasName_PropertyShape
 csh:IndicatorReport_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasComment";
         sh:nodeKind      sh:Literal;
@@ -1063,6 +1099,7 @@ csh:ImpactScale_hasDescription_PropertyShape
 csh:ImpactScale_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -1190,6 +1227,7 @@ cids:ImpactReport  rdfs:subClassOf  cids:cidsThing .
 csh:ImpactPathway_hasStakeholderOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:StakeholderOutcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholderOutcome";
         sh:nodeKind      sh:IRI;
@@ -1201,6 +1239,7 @@ csh:ImpactPathway_hasStakeholderOutcome_PropertyShape
 csh:ImpactPathway_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -1212,6 +1251,7 @@ csh:ImpactPathway_hasOutcome_PropertyShape
 csh:ImpactPathway_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -1223,6 +1263,7 @@ csh:ImpactPathway_hasIndicator_PropertyShape
 csh:ImpactPathway_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -1269,6 +1310,7 @@ csh:ImpactDuration_hasDescription_PropertyShape
 csh:ImpactDuration_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -1315,6 +1357,7 @@ csh:ImpactDepth_hasDescription_PropertyShape
 csh:ImpactDepth_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -1361,6 +1404,7 @@ csh:HowMuchImpact_hasDescription_PropertyShape
 csh:HowMuchImpact_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -1382,6 +1426,7 @@ cids:HowMuchImpact  rdfs:subClassOf  cids:cidsThing .
 csh:FinancialOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -1393,6 +1438,7 @@ csh:FinancialOrganization_hasOutcome_PropertyShape
 csh:FinancialOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -1416,6 +1462,7 @@ csh:FinancialOrganization_hasLegalName_PropertyShape
 csh:FinancialOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -1427,6 +1474,7 @@ csh:FinancialOrganization_hasIndicator_PropertyShape
 csh:FinancialOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -1438,6 +1486,7 @@ csh:FinancialOrganization_hasID_PropertyShape
 csh:FinancialOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -1449,6 +1498,7 @@ csh:FinancialOrganization_hasCharacteristic_PropertyShape
 csh:FinancialOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -1496,6 +1546,7 @@ csh:ContributingStakeholder_hasDescription_PropertyShape
 csh:ContributingStakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -1640,6 +1691,7 @@ cids:Code  rdfs:subClassOf  cids:cidsThing .
 csh:Characteristic_hasValue_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         i72:Measure;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasValue";
         sh:nodeKind      sh:IRI;
@@ -1663,6 +1715,7 @@ csh:Characteristic_hasName_PropertyShape
 csh:Characteristic_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -1674,6 +1727,7 @@ csh:Characteristic_hasCode_PropertyShape
 csh:Characteristic_forStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1720,6 +1774,7 @@ csh:BeneficialStakeholder_hasDescription_PropertyShape
 csh:BeneficialStakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
+        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
