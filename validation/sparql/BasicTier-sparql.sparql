@@ -112,7 +112,8 @@ WHERE {
         {
             # DATA PROPERTIES: Handle onDataRange restrictions  
             ?restriction owl:onDataRange ?dataTarget.
-            bind(?dataTarget as ?datatype)
+            # Enumerations (owl:oneOf) are blank nodes, not datatypes; they are captured in csh:in below
+            bind(if(isIRI(?dataTarget), ?dataTarget, ?void) as ?datatype)
             bind(sh:Literal as ?nodeKind)
             bind(1 as ?section)
             
@@ -124,7 +125,7 @@ WHERE {
         } UNION {
             # DATA PROPERTIES: Handle allValuesFrom with XSD datatypes
             ?restriction owl:allValuesFrom|owl:someValuesFrom ?datatype2.
-            filter(STRBEFORE(str(?datatype2), "#") = str(xsd:)) .
+            filter(STRSTARTS(str(?datatype2), str(xsd:))) .
             bind(?datatype2 as ?datatype)
             bind(sh:Literal as ?nodeKind)
             bind(1 as ?section)
@@ -137,13 +138,13 @@ WHERE {
         } UNION {
             # OBJECT PROPERTIES: Handle onClass restrictions
             ?restriction owl:onClass ?rangeClass .
-            filter(STRBEFORE(str(?rangeClass), "#") != str(xsd:)) .
+            filter(!STRSTARTS(str(?rangeClass), str(xsd:))) .
             bind(sh:BlankNodeOrIRI as ?nodeKind)
             bind(2 as ?section)
         } UNION {
             # OBJECT PROPERTIES: Handle allValuesFrom with non-XSD classes
             ?restriction owl:allValuesFrom|owl:someValuesFrom ?target .
-            filter(STRBEFORE(str(?target), "#") != str(xsd:)) .
+            filter(!STRSTARTS(str(?target), str(xsd:))) .
             
             # Get all range classes from linked list
             optional {
@@ -151,10 +152,7 @@ WHERE {
                 ?rangeTarget rdf:rest*/rdf:first ?rangeClass1 .
             }
             # Or, if the target is an IRI, get the relevant range class from that
-            optional {
-                filter(isIRI(?target)) .
-                bind(?target as ?rangeClass2)
-            }
+            bind(if(isIRI(?target), ?target, ?void) as ?rangeClass2)
             bind(coalesce(?rangeClass1, ?rangeClass2) as ?rangeClass)      
             bind(sh:BlankNodeOrIRI as ?nodeKind)
             bind(2 as ?section)
