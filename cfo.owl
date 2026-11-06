@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://ontology.eil.utoronto.ca/cids/cfo"
+     xml:base="https://ontology.commonapproach.org/cfo"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://ontology.eil.utoronto.ca/cids/cfo">
-    <Prefix name="" IRI="http://ontology.eil.utoronto.ca/cids/cfo"/>
-    <Prefix name="cfo" IRI="http://ontology.eil.utoronto.ca/cids/cfo#"/>
+     ontologyIRI="https://ontology.commonapproach.org/cfo"
+     versionIRI="https://ontology.commonapproach.org/cfo/1.0.2">
+    <Prefix name="" IRI="https://ontology.commonapproach.org/cfo"/>
+    <Prefix name="cfo" IRI="https://ontology.commonapproach.org/cfo#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://ontology.eil.utoronto.ca/cids/cids</Import>
+    <Import>https://ontology.commonapproach.org/cids</Import>
     <Annotation>
         <AnnotationProperty IRI="http://creativecommons.org/ns#license"/>
         <Literal>http://creativecommons.org/licenses/by/3.0/</Literal>
@@ -24,17 +25,11 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
-        <Literal xml:lang="en">The Common Form Data Standard (CIFS):
-
- ​</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <Literal xml:lang="en">The Common Form is a standardized way to represent the organizational information of a social purpose organization (SPO). 
 The organizational information collected includes both financial measures and descriptive measures. 
 The financial information collected includes financial statements and key financial indicators, such as current assets, total assets, total liabilities, total revenues and total expenses. The descriptive information collected includes data such as charity/business number, legal form, mission statement, team and board bios. It provides space to record information about the organization as well as programs and projects within that organization.
 These measures were developed with extensive stakeholder engagement and are based on existing and common organizational profiles—and in the case of the financial measures, drawn from scholarly and practitioner literature. 
-It is the information ”used in most exchanges most of the time”
+It is the information “used in most exchanges most of the time.”
 Created to contextualize the impact data collected using the Common Impact Data Standard, the Common Form facilitates the review, analysis and aggregation of data. This enables assessors to “compare fair,” so that geography, size and age could be considered when comparing impact data.
 
 The Common Form allows software, databases and websites to: 
@@ -42,11 +37,11 @@ The Common Form allows software, databases and websites to:
 ●	foster data interoperability of information between organizations
 ●	make the details of an organization interpretable by a computer 
 ●	empower your clients to apply for grants, loans or investments directly from their impact data’s home base
-As we expand the roster of aligned impact management and grant/fund management softwares, the Common Form ontology will allow social purpose organizations who want to share their data, and the linked details, to do so at very little cost.</Literal>
+As we expand the roster of aligned impact management and grant/fund management software, the Common Form ontology will allow social purpose organizations who want to share their data, and the linked details, to do so at very little cost.</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
-        <Literal xml:lang="en">Common Form Data Standard</Literal>
+        <Literal xml:lang="en">Common Form</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
@@ -54,11 +49,15 @@ As we expand the roster of aligned impact management and grant/fund management s
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-        <Literal>http://ontology.eil.utoronto.ca/cids/cfo#</Literal>
+        <Literal>https://ontology.commonapproach.org/cfo#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
+        <IRI>https://ontology.commonapproach.org/cfo/1.0.1</IRI>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en">version 1.0 24 November 2022</Literal>
+        <Literal xml:lang="en">version 1.0.2 5 Nov 2026</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://www.w3.org/ns/adms#relatedDocumentation"/>
@@ -140,7 +139,7 @@ As we expand the roster of aligned impact management and grant/fund management s
         <DataProperty IRI="#forYear3"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#fundsIntension"/>
+        <DataProperty IRI="#fundsIntention"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#fundsReceived"/>
@@ -381,21 +380,21 @@ As we expand the roster of aligned impact management and grant/fund management s
         <Class IRI="#FundingRequest"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#requestedFrom"/>
-            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+            <Class IRI="https://ontology.commonapproach.org/cids#Organization"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FundingRequest"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#servesPopulation"/>
-            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder"/>
+            <Class IRI="https://ontology.commonapproach.org/cids#BeneficialStakeholder"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FundingRequest"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel"/>
-            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#ImpactModel"/>
+            <ObjectProperty IRI="https://ontology.commonapproach.org/cids#hasImpactModel"/>
+            <Class IRI="https://ontology.commonapproach.org/cids#ImpactModel"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -422,7 +421,7 @@ As we expand the roster of aligned impact management and grant/fund management s
     <SubClassOf>
         <Class IRI="#FundingRequest"/>
         <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#fundsIntension"/>
+            <DataProperty IRI="#fundsIntention"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataExactCardinality>
     </SubClassOf>
@@ -446,7 +445,7 @@ As we expand the roster of aligned impact management and grant/fund management s
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organization"/>
-        <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+        <Class IRI="https://ontology.commonapproach.org/cids#Organization"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organization"/>
@@ -473,13 +472,13 @@ As we expand the roster of aligned impact management and grant/fund management s
         <Class IRI="#Organization"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#servesPopulation"/>
-            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder"/>
+            <Class IRI="https://ontology.commonapproach.org/cids#BeneficialStakeholder"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organization"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasFundingRequest"/>
+            <ObjectProperty IRI="https://ontology.commonapproach.org/cids#hasFundingRequest"/>
             <Class IRI="#FundingRequest"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -546,7 +545,7 @@ As we expand the roster of aligned impact management and grant/fund management s
     <SubClassOf>
         <Class IRI="#PreparedFinancialStatement"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasType"/>
+            <ObjectProperty IRI="https://ontology.commonapproach.org/cids#hasType"/>
             <Class IRI="#FinancialStatement"/>
         </ObjectExactCardinality>
     </SubClassOf>
@@ -586,7 +585,7 @@ As we expand the roster of aligned impact management and grant/fund management s
         <Class IRI="#Project"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#hasProjectPartners"/>
-            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+            <Class IRI="https://ontology.commonapproach.org/cids#Organization"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -699,7 +698,7 @@ As we expand the roster of aligned impact management and grant/fund management s
         <DataProperty IRI="#cfDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#fundsIntension"/>
+        <DataProperty IRI="#fundsIntention"/>
         <DataProperty IRI="#cfDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -829,7 +828,7 @@ As we expand the roster of aligned impact management and grant/fund management s
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#FinancialIndicators</IRI>
-        <Literal xml:lang="en">The FinancialIndicators class is a subClassOf FinancialInformation, and captures financial indicators for the organization with no prepared financial statements or XBRL reports. It has the following properties:
+        <Literal xml:lang="en">The FinancialIndicators class captures financial indicators for an organization with no prepared financial statements or XBRL reports. It is linked from FinancialInformation through hasFinancialIndicators. It has the following properties:
 ●	hasCurrentAssets: Current assets of the organization for the specified year in dollars.
 ●	hasTotalAssets: Total assets of the organization for the specified year in dollars.
 ●	hasTotalLiabilities: Total liabilities of the organization for the specified year in dollars.
@@ -850,48 +849,47 @@ As we expand the roster of aligned impact management and grant/fund management s
         <IRI>#FinancialInformation</IRI>
         <Literal xml:lang="en">The FinancialInformation class is used to specify the organization’s financial information. It has the following properties:
 forYear: The year of the financial information.
-hasPreparedFinancialStatement: Links to the type of prepared statement.
-hasXBRLReport: Links to the instance of Organization’s XBRL report.
-hasFinancialIndicators: Links to the instance of the Organization’s financial indicators.</Literal>
+hasPreparedFinancialStatement: Links to the organization’s prepared financial statements.
+hasXBRLReport: Links to the instance of the organization’s XBRL report.
+hasFinancialIndicators: Links to the instance of the organization’s financial indicators.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#FundingRequest</IRI>
         <Literal xml:lang="en">The FundingRequest class specifies information about the organization or project’s request for funding. It has the following properties:
 ●	fundsRequested: Specifies the amount of funds requested for the organization or project.
-●	fundsReceived: Specifies amount awarded by funding agency.
-●	fundsIntension: Specifies the intended use of the funds, such as for the organization or a project/program.
+●	fundsReceived: Specifies the amount awarded by the funding agency.
+●	fundsIntention: Specifies the intended use of the funds, such as for the organization or a project/program.
 ●	hasImpactModel: Links to a CIDS impact model instance.
 ●	hasImpactModelFile: Links to an impact model defined in a file.
 ●	servesGeographicRegion: A string that specifies the region.
 ●	servesMarket: A string that specifies the market to be served.
-●	servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
+●	servesPopulation: Links to one or more BeneficialStakeholder instances, which define the stakeholders served.
 ●	requestedFrom: One or more organizations that the funds are requested from.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#Organization</IRI>
-        <Literal xml:lang="en">The cfo:Organization class is defined as a rfds:subClassOf cids:Organization which provides the basic properties related to organization structure and behavior and impact models. cfo:Organization extends cids:Organization with the following properties:
+        <Literal xml:lang="en">The cfo:Organization class is defined as an rdfs:subClassOf cids:Organization, which provides the basic properties related to organization structure and behavior and impact models. cfo:Organization extends cids:Organization with the following properties:
 hasFinancialInformation: Links to instances of FinancialInformation.
-hasFundingRequest: Links to instance of FundingRequest which specifies the funds requested.
-hasProject: Links organization to its projects.
-hasBios Links to a file containing the organization’s executives’ and Board’s, or project/program biographies.
-servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
-hasBylaws: Specifies the Organization’s bylaws as text.
-hasIndigenousHeritage: Specifies the Organization’s Indigenous heritages as text.
+hasFundingRequest: Links to instances of FundingRequest, which specify the funds requested.
+hasProject: Links the organization to its projects.
+hasBios: Links to a file containing the biographies of the organization’s executives and Board, or of a project or program.
+servesPopulation: Links to one or more BeneficialStakeholder instances, which define the stakeholders served.
+hasBylaws: Specifies the organization’s bylaws as text.
+hasIndigenousHeritage: Specifies the organization’s Indigenous heritage as text.
 hasPartners: Links to organizations it partners with.
 hasBusinessPlanFile: Links to a file containing the organization’s business plan.
 imagineCanadaProgram: Specifies whether the organization participates in the Imagine Canada Standards program.
 hasBCorpScore: B-Corp score for the organization.
 hasBCorpProfile: Links to a file containing the organization’s B-Corp profile.
 hasCharityDataProfile: Links to a file containing the organization’s charity data profile.
-hasFundingRequest: Links to instances of FundingRequest.
 The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#PreparedFinancialStatement</IRI>
-        <Literal xml:lang="en">The PreparededFinancialStatement class is a subClassOf FinancialInformation, and captures prepared financial statements for the organization. It has the following properties:
+        <Literal xml:lang="en">The PreparedFinancialStatement class captures prepared financial statements for the organization. It is linked from FinancialInformation through hasPreparedFinancialStatement. It has the following properties:
 hasType: Defines the type of prepared financial statements that the organization will share.
 forYear1: URI linking to the prepared statement for Year 1.
 forYear2: URI linking to the prepared statement for Year 2.
@@ -900,25 +898,309 @@ forYear3: URI linking to the prepared statement for Year 3.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#Project</IRI>
-        <Literal xml:lang="en">The Project class specifies information about the organization’s project when they request funding for a specific project or program. It has the following properties:
+        <Literal xml:lang="en">The Project class specifies information about the organization’s project when it requests funding for a specific project or program. It has the following properties:
 ●	hasProjectName: Name of the project for which funds are requested.
 ●	hasProjectObjectives: Description of project objectives.
-●	hasProjectDescriptionFile: Link to file describing the project.
+●	hasProjectDescriptionFile: Link to a file describing the project.
 ●	hasProjectPartners: Links to partner organizations.
-●	hasBudgetFile: Link to file describing the project budget.
-●	hasFundingRequest: Links to the project;s funding request.</Literal>
+●	hasBudgetFile: Link to a file describing the project budget.
+●	hasFundingRequest: Links to the project’s funding request.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
         <IRI>#XBRLReport</IRI>
-        <Literal xml:lang="en">The XBRLReport class is a subClassOf FinancialInformation, and captures prepared XBRL reports for the organization. It has the following properties:
+        <Literal xml:lang="en">The XBRLReport class captures prepared XBRL reports for the organization. It is linked from FinancialInformation through hasXBRLReport. It has the following properties:
 ●	forYear1: URI linking to the prepared report for Year 1.
 ●	forYear2: URI linking to the prepared report for Year 2.
 ●	forYear3: URI linking to the prepared report for Year 3.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FinancialIndicators</IRI>
+        <Literal xml:lang="en">Financial indicators for an organization with no prepared financial statements or XBRL reports.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FinancialInformation</IRI>
+        <Literal xml:lang="en">The organization's financial information for a year.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FinancialStatement</IRI>
+        <Literal xml:lang="en">The type of prepared financial statements for the organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FundingRequest</IRI>
+        <Literal xml:lang="en">Information about the organization's or project's request for funding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal xml:lang="en">An organization described with Common Form information. Extends cids:Organization with financial information, funding requests, projects and descriptive details such as bylaws, bios and B-Corp profile.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PreparedFinancialStatement</IRI>
+        <Literal xml:lang="en">Prepared financial statements for the organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Project</IRI>
+        <Literal xml:lang="en">Information about the organization's project or program when it requests funding for that project or program.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#XBRLReport</IRI>
+        <Literal xml:lang="en">Prepared XBRL reports for the organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cfDataProperty</IRI>
+        <Literal xml:lang="en">Parent property of all Common Form datatype properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cfObjectProperty</IRI>
+        <Literal xml:lang="en">Parent property of all Common Form object properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cfThing</IRI>
+        <Literal xml:lang="en">Parent class of all Common Form classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forYear</IRI>
+        <Literal xml:lang="en">The year of the financial information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forYear1</IRI>
+        <Literal xml:lang="en">URI linking to the prepared statement or report for Year 1.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forYear2</IRI>
+        <Literal xml:lang="en">URI linking to the prepared statement or report for Year 2.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forYear3</IRI>
+        <Literal xml:lang="en">URI linking to the prepared statement or report for Year 3.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fundsIntention</IRI>
+        <Literal xml:lang="en">The intended use of the funds: for the organization, or for a project or program.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fundsReceived</IRI>
+        <Literal xml:lang="en">The amount awarded by the funding agency.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fundsRequested</IRI>
+        <Literal xml:lang="en">The amount of funds requested for the organization or project.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBCorpProfile</IRI>
+        <Literal xml:lang="en">Link to a file containing the organization's B-Corp profile.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBCorpScore</IRI>
+        <Literal xml:lang="en">The organization's B-Corp score.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBios</IRI>
+        <Literal xml:lang="en">Link to a file containing the biographies of the organization's executives and Board, or of a project or program.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBudgetFile</IRI>
+        <Literal xml:lang="en">Link to a file describing the project budget.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBusinessPlanFile</IRI>
+        <Literal xml:lang="en">Link to a file containing the organization's business plan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBylaws</IRI>
+        <Literal xml:lang="en">The organization's bylaws, as text.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCharityDataProfile</IRI>
+        <Literal xml:lang="en">Link to a file containing the organization's charity data profile.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCurrentAssets</IRI>
+        <Literal xml:lang="en">Current assets of the organization for the specified year, in dollars.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDeferredRevenue</IRI>
+        <Literal xml:lang="en">The amount of the organization's deferred revenue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDepreciationExpense</IRI>
+        <Literal xml:lang="en">The amount of the organization's depreciation expenses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEndowment</IRI>
+        <Literal xml:lang="en">The amount of the organization's endowment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFinancialIndicators</IRI>
+        <Literal xml:lang="en">Links to the instance of the organization's financial indicators.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFinancialInformation</IRI>
+        <Literal xml:lang="en">Links an organization to instances of FinancialInformation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFundRaising</IRI>
+        <Literal xml:lang="en">The amount of the organization's fundraising.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFundingRequest</IRI>
+        <Literal xml:lang="en">Links an organization or project to a FundingRequest, which specifies the funds requested.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGovernmentGrants</IRI>
+        <Literal xml:lang="en">The amount of the organization's government grants.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasImpactModelFile</IRI>
+        <Literal xml:lang="en">Link to an impact model defined in a file.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasIndigenousHeritage</IRI>
+        <Literal xml:lang="en">The organization's Indigenous heritage, as text.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInventory</IRI>
+        <Literal xml:lang="en">The amount of the organization's inventory.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInvestmentExpense</IRI>
+        <Literal xml:lang="en">The amount of the organization's investment expenses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPartners</IRI>
+        <Literal xml:lang="en">Links to organizations the organization partners with.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPreparedFinancialStatement</IRI>
+        <Literal xml:lang="en">Links to the organization's prepared financial statements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProject</IRI>
+        <Literal xml:lang="en">Links an organization to its projects.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProjectDescriptionFile</IRI>
+        <Literal xml:lang="en">Link to a file describing the project.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProjectName</IRI>
+        <Literal xml:lang="en">Name of the project for which funds are requested.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProjectObjectives</IRI>
+        <Literal xml:lang="en">Description of the project's objectives.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProjectPartners</IRI>
+        <Literal xml:lang="en">Links a project to its partner organizations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSalesRevenue</IRI>
+        <Literal xml:lang="en">The amount of the organization's sales revenue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTotalAssets</IRI>
+        <Literal xml:lang="en">Total assets of the organization for the specified year, in dollars.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTotalExpenses</IRI>
+        <Literal xml:lang="en">Total expenses of the organization for the specified year, in dollars.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTotalLiabilities</IRI>
+        <Literal xml:lang="en">Total liabilities of the organization for the specified year, in dollars.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTotalOverhead</IRI>
+        <Literal xml:lang="en">The amount of the organization's total overhead.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTotalRevenues</IRI>
+        <Literal xml:lang="en">Total revenues of the organization for the specified year, in dollars.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasXBRLReport</IRI>
+        <Literal xml:lang="en">Links to the instance of the organization's XBRL report.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#imagineCanadaProgram</IRI>
+        <Literal xml:lang="en">Whether the organization participates in the Imagine Canada Standards program (yes, no or inProgress).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requestedFrom</IRI>
+        <Literal xml:lang="en">One or more organizations that the funds are requested from.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#servesGeographicRegion</IRI>
+        <Literal xml:lang="en">The geographic region served.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#servesMarket</IRI>
+        <Literal xml:lang="en">The market to be served.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#servesPopulation</IRI>
+        <Literal xml:lang="en">Links to one or more BeneficialStakeholder instances, which define the stakeholders served.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-

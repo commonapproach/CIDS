@@ -1,24 +1,22 @@
-@prefix : <http://ontology.eil.utoronto.ca/cids/cfo#> .
-@prefix cfo: <http://ontology.eil.utoronto.ca/cids/cfo#> .
+@prefix : <https://ontology.commonapproach.org/cfo#> .
+@prefix cfo: <https://ontology.commonapproach.org/cfo#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://ontology.eil.utoronto.ca/cids/cfo> .
+@base <https://ontology.commonapproach.org/cfo> .
 
-<http://ontology.eil.utoronto.ca/cids/cfo> rdf:type owl:Ontology ;
-                                            owl:imports <http://ontology.eil.utoronto.ca/cids/cids> ;
+<https://ontology.commonapproach.org/cfo> rdf:type owl:Ontology ;
+                                            owl:versionIRI <https://ontology.commonapproach.org/cfo/1.0.2> ;
+                                            owl:imports <https://ontology.commonapproach.org/cids> ;
                                             <http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/3.0/" ;
                                             <http://purl.org/dc/elements/1.1/creator> "Mark S. Fox, msf@eil.utoronto.ca"@en ;
-                                            <http://purl.org/dc/elements/1.1/description> """The Common Form Data Standard (CIFS):
-
- ​"""@en ,
-                                                                                          """The Common Form is a standardized way to represent the organizational information of a social purpose organization (SPO). 
+                                            <http://purl.org/dc/elements/1.1/description> """The Common Form is a standardized way to represent the organizational information of a social purpose organization (SPO). 
 The organizational information collected includes both financial measures and descriptive measures. 
 The financial information collected includes financial statements and key financial indicators, such as current assets, total assets, total liabilities, total revenues and total expenses. The descriptive information collected includes data such as charity/business number, legal form, mission statement, team and board bios. It provides space to record information about the organization as well as programs and projects within that organization.
 These measures were developed with extensive stakeholder engagement and are based on existing and common organizational profiles—and in the case of the financial measures, drawn from scholarly and practitioner literature. 
-It is the information ”used in most exchanges most of the time”
+It is the information “used in most exchanges most of the time.”
 Created to contextualize the impact data collected using the Common Impact Data Standard, the Common Form facilitates the review, analysis and aggregation of data. This enables assessors to “compare fair,” so that geography, size and age could be considered when comparing impact data.
 
 The Common Form allows software, databases and websites to: 
@@ -26,276 +24,325 @@ The Common Form allows software, databases and websites to:
 ●	foster data interoperability of information between organizations
 ●	make the details of an organization interpretable by a computer 
 ●	empower your clients to apply for grants, loans or investments directly from their impact data’s home base
-As we expand the roster of aligned impact management and grant/fund management softwares, the Common Form ontology will allow social purpose organizations who want to share their data, and the linked details, to do so at very little cost."""@en ;
-                                            <http://purl.org/dc/elements/1.1/title> "Common Form Data Standard"@en ;
+As we expand the roster of aligned impact management and grant/fund management software, the Common Form ontology will allow social purpose organizations who want to share their data, and the linked details, to do so at very little cost."""@en ;
+                                            <http://purl.org/dc/elements/1.1/title> "Common Form"@en ;
                                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "cfo" ;
-                                            <http://purl.org/vocab/vann/preferredNamespaceUri> "http://ontology.eil.utoronto.ca/cids/cfo#" ;
-                                            owl:versionInfo "version 1.0 24 November 2022"@en ;
+                                            <http://purl.org/vocab/vann/preferredNamespaceUri> "https://ontology.commonapproach.org/cfo#" ;
+                                            owl:priorVersion <https://ontology.commonapproach.org/cfo/1.0.1> ;
+                                            owl:versionInfo "version 1.0.2 5 Nov 2026"@en ;
                                             <http://www.w3.org/ns/adms#relatedDocumentation> "https://www.commonapproach.org/common-form/"@en .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#cfObjectProperty
-cfo:cfObjectProperty rdf:type owl:ObjectProperty .
+###  https://ontology.commonapproach.org/cfo#cfObjectProperty
+cfo:cfObjectProperty rdf:type owl:ObjectProperty ;
+                     rdfs:comment "Parent property of all Common Form object properties."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasFinancialIndicators
+###  https://ontology.commonapproach.org/cfo#hasFinancialIndicators
 cfo:hasFinancialIndicators rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf cfo:cfObjectProperty .
+                           rdfs:subPropertyOf cfo:cfObjectProperty ;
+                           rdfs:comment "Links to the instance of the organization's financial indicators."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasFinancialInformation
+###  https://ontology.commonapproach.org/cfo#hasFinancialInformation
 cfo:hasFinancialInformation rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf cfo:cfObjectProperty .
+                            rdfs:subPropertyOf cfo:cfObjectProperty ;
+                            rdfs:comment "Links an organization to instances of FinancialInformation."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasFundingRequest
+###  https://ontology.commonapproach.org/cfo#hasFundingRequest
 cfo:hasFundingRequest rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf cfo:cfObjectProperty .
+                      rdfs:subPropertyOf cfo:cfObjectProperty ;
+                      rdfs:comment "Links an organization or project to a FundingRequest, which specifies the funds requested."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasPartners
+###  https://ontology.commonapproach.org/cfo#hasPartners
 cfo:hasPartners rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf cfo:cfObjectProperty .
+                rdfs:subPropertyOf cfo:cfObjectProperty ;
+                rdfs:comment "Links to organizations the organization partners with."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasPreparedFinancialStatement
+###  https://ontology.commonapproach.org/cfo#hasPreparedFinancialStatement
 cfo:hasPreparedFinancialStatement rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf cfo:cfObjectProperty .
+                                  rdfs:subPropertyOf cfo:cfObjectProperty ;
+                                  rdfs:comment "Links to the organization's prepared financial statements."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasProject
+###  https://ontology.commonapproach.org/cfo#hasProject
 cfo:hasProject rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf cfo:cfObjectProperty .
+               rdfs:subPropertyOf cfo:cfObjectProperty ;
+               rdfs:comment "Links an organization to its projects."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasProjectPartners
+###  https://ontology.commonapproach.org/cfo#hasProjectPartners
 cfo:hasProjectPartners rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf cfo:cfObjectProperty .
+                       rdfs:subPropertyOf cfo:cfObjectProperty ;
+                       rdfs:comment "Links a project to its partner organizations."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasXBRLReport
+###  https://ontology.commonapproach.org/cfo#hasXBRLReport
 cfo:hasXBRLReport rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf cfo:cfObjectProperty .
+                  rdfs:subPropertyOf cfo:cfObjectProperty ;
+                  rdfs:comment "Links to the instance of the organization's XBRL report."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#requestedFrom
+###  https://ontology.commonapproach.org/cfo#requestedFrom
 cfo:requestedFrom rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf cfo:cfObjectProperty .
+                  rdfs:subPropertyOf cfo:cfObjectProperty ;
+                  rdfs:comment "One or more organizations that the funds are requested from."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#servesPopulation
+###  https://ontology.commonapproach.org/cfo#servesPopulation
 cfo:servesPopulation rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf cfo:cfObjectProperty .
+                     rdfs:subPropertyOf cfo:cfObjectProperty ;
+                     rdfs:comment "Links to one or more BeneficialStakeholder instances, which define the stakeholders served."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#hasFundingRequest
-<http://ontology.eil.utoronto.ca/cids/cids#hasFundingRequest> rdf:type owl:ObjectProperty .
+###  https://ontology.commonapproach.org/cids#hasFundingRequest
+<https://ontology.commonapproach.org/cids#hasFundingRequest> rdf:type owl:ObjectProperty .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel
-<http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel> rdf:type owl:ObjectProperty .
+###  https://ontology.commonapproach.org/cids#hasImpactModel
+<https://ontology.commonapproach.org/cids#hasImpactModel> rdf:type owl:ObjectProperty .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#hasType
-<http://ontology.eil.utoronto.ca/cids/cids#hasType> rdf:type owl:ObjectProperty .
+###  https://ontology.commonapproach.org/cids#hasType
+<https://ontology.commonapproach.org/cids#hasType> rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#cfDataProperty
-cfo:cfDataProperty rdf:type owl:DatatypeProperty .
+###  https://ontology.commonapproach.org/cfo#cfDataProperty
+cfo:cfDataProperty rdf:type owl:DatatypeProperty ;
+                   rdfs:comment "Parent property of all Common Form datatype properties."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#forYear
+###  https://ontology.commonapproach.org/cfo#forYear
 cfo:forYear rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf cfo:cfDataProperty .
+            rdfs:subPropertyOf cfo:cfDataProperty ;
+            rdfs:comment "The year of the financial information."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#forYear1
+###  https://ontology.commonapproach.org/cfo#forYear1
 cfo:forYear1 rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf cfo:cfDataProperty .
+             rdfs:subPropertyOf cfo:cfDataProperty ;
+             rdfs:comment "URI linking to the prepared statement or report for Year 1."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#forYear2
+###  https://ontology.commonapproach.org/cfo#forYear2
 cfo:forYear2 rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf cfo:cfDataProperty .
+             rdfs:subPropertyOf cfo:cfDataProperty ;
+             rdfs:comment "URI linking to the prepared statement or report for Year 2."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#forYear3
+###  https://ontology.commonapproach.org/cfo#forYear3
 cfo:forYear3 rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf cfo:cfDataProperty .
+             rdfs:subPropertyOf cfo:cfDataProperty ;
+             rdfs:comment "URI linking to the prepared statement or report for Year 3."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#fundsIntension
-cfo:fundsIntension rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf cfo:cfDataProperty .
+###  https://ontology.commonapproach.org/cfo#fundsIntention
+cfo:fundsIntention rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf cfo:cfDataProperty ;
+                   rdfs:comment "The intended use of the funds: for the organization, or for a project or program."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#fundsReceived
+###  https://ontology.commonapproach.org/cfo#fundsReceived
 cfo:fundsReceived rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf cfo:cfDataProperty .
+                  rdfs:subPropertyOf cfo:cfDataProperty ;
+                  rdfs:comment "The amount awarded by the funding agency."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#fundsRequested
+###  https://ontology.commonapproach.org/cfo#fundsRequested
 cfo:fundsRequested rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf cfo:cfDataProperty .
+                   rdfs:subPropertyOf cfo:cfDataProperty ;
+                   rdfs:comment "The amount of funds requested for the organization or project."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBCorpProfile
+###  https://ontology.commonapproach.org/cfo#hasBCorpProfile
 cfo:hasBCorpProfile rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf cfo:cfDataProperty .
+                    rdfs:subPropertyOf cfo:cfDataProperty ;
+                    rdfs:comment "Link to a file containing the organization's B-Corp profile."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBCorpScore
+###  https://ontology.commonapproach.org/cfo#hasBCorpScore
 cfo:hasBCorpScore rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf cfo:cfDataProperty .
+                  rdfs:subPropertyOf cfo:cfDataProperty ;
+                  rdfs:comment "The organization's B-Corp score."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBios
+###  https://ontology.commonapproach.org/cfo#hasBios
 cfo:hasBios rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf cfo:cfDataProperty .
+            rdfs:subPropertyOf cfo:cfDataProperty ;
+            rdfs:comment "Link to a file containing the biographies of the organization's executives and Board, or of a project or program."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBudgetFile
+###  https://ontology.commonapproach.org/cfo#hasBudgetFile
 cfo:hasBudgetFile rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf cfo:cfDataProperty .
+                  rdfs:subPropertyOf cfo:cfDataProperty ;
+                  rdfs:comment "Link to a file describing the project budget."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBusinessPlanFile
+###  https://ontology.commonapproach.org/cfo#hasBusinessPlanFile
 cfo:hasBusinessPlanFile rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf cfo:cfDataProperty .
+                        rdfs:subPropertyOf cfo:cfDataProperty ;
+                        rdfs:comment "Link to a file containing the organization's business plan."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasBylaws
+###  https://ontology.commonapproach.org/cfo#hasBylaws
 cfo:hasBylaws rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf cfo:cfDataProperty .
+              rdfs:subPropertyOf cfo:cfDataProperty ;
+              rdfs:comment "The organization's bylaws, as text."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasCharityDataProfile
+###  https://ontology.commonapproach.org/cfo#hasCharityDataProfile
 cfo:hasCharityDataProfile rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf cfo:cfDataProperty .
+                          rdfs:subPropertyOf cfo:cfDataProperty ;
+                          rdfs:comment "Link to a file containing the organization's charity data profile."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasCurrentAssets
+###  https://ontology.commonapproach.org/cfo#hasCurrentAssets
 cfo:hasCurrentAssets rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf cfo:cfDataProperty .
+                     rdfs:subPropertyOf cfo:cfDataProperty ;
+                     rdfs:comment "Current assets of the organization for the specified year, in dollars."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasDeferredRevenue
+###  https://ontology.commonapproach.org/cfo#hasDeferredRevenue
 cfo:hasDeferredRevenue rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf cfo:cfDataProperty .
+                       rdfs:subPropertyOf cfo:cfDataProperty ;
+                       rdfs:comment "The amount of the organization's deferred revenue."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasDepreciationExpense
+###  https://ontology.commonapproach.org/cfo#hasDepreciationExpense
 cfo:hasDepreciationExpense rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf cfo:cfDataProperty .
+                           rdfs:subPropertyOf cfo:cfDataProperty ;
+                           rdfs:comment "The amount of the organization's depreciation expenses."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasEndowment
+###  https://ontology.commonapproach.org/cfo#hasEndowment
 cfo:hasEndowment rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf cfo:cfDataProperty .
+                 rdfs:subPropertyOf cfo:cfDataProperty ;
+                 rdfs:comment "The amount of the organization's endowment."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasFundRaising
+###  https://ontology.commonapproach.org/cfo#hasFundRaising
 cfo:hasFundRaising rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf cfo:cfDataProperty .
+                   rdfs:subPropertyOf cfo:cfDataProperty ;
+                   rdfs:comment "The amount of the organization's fundraising."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasGovernmentGrants
+###  https://ontology.commonapproach.org/cfo#hasGovernmentGrants
 cfo:hasGovernmentGrants rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf cfo:cfDataProperty .
+                        rdfs:subPropertyOf cfo:cfDataProperty ;
+                        rdfs:comment "The amount of the organization's government grants."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasImpactModelFile
+###  https://ontology.commonapproach.org/cfo#hasImpactModelFile
 cfo:hasImpactModelFile rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf cfo:cfDataProperty .
+                       rdfs:subPropertyOf cfo:cfDataProperty ;
+                       rdfs:comment "Link to an impact model defined in a file."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasIndigenousHeritage
+###  https://ontology.commonapproach.org/cfo#hasIndigenousHeritage
 cfo:hasIndigenousHeritage rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf cfo:cfDataProperty .
+                          rdfs:subPropertyOf cfo:cfDataProperty ;
+                          rdfs:comment "The organization's Indigenous heritage, as text."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasInventory
+###  https://ontology.commonapproach.org/cfo#hasInventory
 cfo:hasInventory rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf cfo:cfDataProperty .
+                 rdfs:subPropertyOf cfo:cfDataProperty ;
+                 rdfs:comment "The amount of the organization's inventory."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasInvestmentExpense
+###  https://ontology.commonapproach.org/cfo#hasInvestmentExpense
 cfo:hasInvestmentExpense rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf cfo:cfDataProperty .
+                         rdfs:subPropertyOf cfo:cfDataProperty ;
+                         rdfs:comment "The amount of the organization's investment expenses."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasProjectDescriptionFile
+###  https://ontology.commonapproach.org/cfo#hasProjectDescriptionFile
 cfo:hasProjectDescriptionFile rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf cfo:cfDataProperty .
+                              rdfs:subPropertyOf cfo:cfDataProperty ;
+                              rdfs:comment "Link to a file describing the project."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasProjectName
+###  https://ontology.commonapproach.org/cfo#hasProjectName
 cfo:hasProjectName rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf cfo:cfDataProperty .
+                   rdfs:subPropertyOf cfo:cfDataProperty ;
+                   rdfs:comment "Name of the project for which funds are requested."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasProjectObjectives
+###  https://ontology.commonapproach.org/cfo#hasProjectObjectives
 cfo:hasProjectObjectives rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf cfo:cfDataProperty .
+                         rdfs:subPropertyOf cfo:cfDataProperty ;
+                         rdfs:comment "Description of the project's objectives."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasSalesRevenue
+###  https://ontology.commonapproach.org/cfo#hasSalesRevenue
 cfo:hasSalesRevenue rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf cfo:cfDataProperty .
+                    rdfs:subPropertyOf cfo:cfDataProperty ;
+                    rdfs:comment "The amount of the organization's sales revenue."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasTotalAssets
+###  https://ontology.commonapproach.org/cfo#hasTotalAssets
 cfo:hasTotalAssets rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf cfo:cfDataProperty .
+                   rdfs:subPropertyOf cfo:cfDataProperty ;
+                   rdfs:comment "Total assets of the organization for the specified year, in dollars."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasTotalExpenses
+###  https://ontology.commonapproach.org/cfo#hasTotalExpenses
 cfo:hasTotalExpenses rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf cfo:cfDataProperty .
+                     rdfs:subPropertyOf cfo:cfDataProperty ;
+                     rdfs:comment "Total expenses of the organization for the specified year, in dollars."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasTotalLiabilities
+###  https://ontology.commonapproach.org/cfo#hasTotalLiabilities
 cfo:hasTotalLiabilities rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf cfo:cfDataProperty .
+                        rdfs:subPropertyOf cfo:cfDataProperty ;
+                        rdfs:comment "Total liabilities of the organization for the specified year, in dollars."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasTotalOverhead
+###  https://ontology.commonapproach.org/cfo#hasTotalOverhead
 cfo:hasTotalOverhead rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf cfo:cfDataProperty .
+                     rdfs:subPropertyOf cfo:cfDataProperty ;
+                     rdfs:comment "The amount of the organization's total overhead."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#hasTotalRevenues
+###  https://ontology.commonapproach.org/cfo#hasTotalRevenues
 cfo:hasTotalRevenues rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf cfo:cfDataProperty .
+                     rdfs:subPropertyOf cfo:cfDataProperty ;
+                     rdfs:comment "Total revenues of the organization for the specified year, in dollars."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#imagineCanadaProgram
+###  https://ontology.commonapproach.org/cfo#imagineCanadaProgram
 cfo:imagineCanadaProgram rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf cfo:cfDataProperty .
+                         rdfs:subPropertyOf cfo:cfDataProperty ;
+                         rdfs:comment "Whether the organization participates in the Imagine Canada Standards program (yes, no or inProgress)."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#servesGeographicRegion
+###  https://ontology.commonapproach.org/cfo#servesGeographicRegion
 cfo:servesGeographicRegion rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf cfo:cfDataProperty .
+                           rdfs:subPropertyOf cfo:cfDataProperty ;
+                           rdfs:comment "The geographic region served."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#servesMarket
+###  https://ontology.commonapproach.org/cfo#servesMarket
 cfo:servesMarket rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf cfo:cfDataProperty .
+                 rdfs:subPropertyOf cfo:cfDataProperty ;
+                 rdfs:comment "The market to be served."@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#FinancialIndicators
+###  https://ontology.commonapproach.org/cfo#FinancialIndicators
 cfo:FinancialIndicators rdf:type owl:Class ;
                         rdfs:subClassOf cfo:cfThing ,
                                         [ rdf:type owl:Restriction ;
@@ -368,7 +415,7 @@ cfo:FinancialIndicators rdf:type owl:Class ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                           owl:onDataRange xsd:decimal
                                         ] ;
-                        <http://purl.org/dc/elements/1.1/description> """The FinancialIndicators class is a subClassOf FinancialInformation, and captures financial indicators for the organization with no prepared financial statements or XBRL reports. It has the following properties:
+                        <http://purl.org/dc/elements/1.1/description> """The FinancialIndicators class captures financial indicators for an organization with no prepared financial statements or XBRL reports. It is linked from FinancialInformation through hasFinancialIndicators. It has the following properties:
 ●	hasCurrentAssets: Current assets of the organization for the specified year in dollars.
 ●	hasTotalAssets: Total assets of the organization for the specified year in dollars.
 ●	hasTotalLiabilities: Total liabilities of the organization for the specified year in dollars.
@@ -382,10 +429,11 @@ cfo:FinancialIndicators rdf:type owl:Class ;
 ●	hasFundRaising: Specifies the amount of the organization’s fundraising.
 ●	hasTotalOverhead: Specifies the amount of the organization’s total overhead.
 ●	hasDepreciationExpense: Specifies the amount of the organization’s depreciation expenses.
-●	hasInvestmentExpense: Specifies the amount of the organization’s investment expenses."""@en .
+●	hasInvestmentExpense: Specifies the amount of the organization’s investment expenses."""@en ;
+                        rdfs:comment "Financial indicators for an organization with no prepared financial statements or XBRL reports."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#FinancialInformation
+###  https://ontology.commonapproach.org/cfo#FinancialInformation
 cfo:FinancialInformation rdf:type owl:Class ;
                          rdfs:subClassOf cfo:cfThing ,
                                          [ rdf:type owl:Restriction ;
@@ -408,30 +456,32 @@ cfo:FinancialInformation rdf:type owl:Class ;
                                          ] ;
                          <http://purl.org/dc/elements/1.1/description> """The FinancialInformation class is used to specify the organization’s financial information. It has the following properties:
 forYear: The year of the financial information.
-hasPreparedFinancialStatement: Links to the type of prepared statement.
-hasXBRLReport: Links to the instance of Organization’s XBRL report.
-hasFinancialIndicators: Links to the instance of the Organization’s financial indicators."""@en .
+hasPreparedFinancialStatement: Links to the organization’s prepared financial statements.
+hasXBRLReport: Links to the instance of the organization’s XBRL report.
+hasFinancialIndicators: Links to the instance of the organization’s financial indicators."""@en ;
+                         rdfs:comment "The organization's financial information for a year."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#FinancialStatement
+###  https://ontology.commonapproach.org/cfo#FinancialStatement
 cfo:FinancialStatement rdf:type owl:Class ;
-                       rdfs:subClassOf cfo:cfThing .
+                       rdfs:subClassOf cfo:cfThing ;
+                       rdfs:comment "The type of prepared financial statements for the organization."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#FundingRequest
+###  https://ontology.commonapproach.org/cfo#FundingRequest
 cfo:FundingRequest rdf:type owl:Class ;
                    rdfs:subClassOf cfo:cfThing ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cfo:requestedFrom ;
-                                     owl:allValuesFrom <http://ontology.eil.utoronto.ca/cids/cids#Organization>
+                                     owl:allValuesFrom <https://ontology.commonapproach.org/cids#Organization>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cfo:servesPopulation ;
-                                     owl:allValuesFrom <http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder>
+                                     owl:allValuesFrom <https://ontology.commonapproach.org/cids#BeneficialStakeholder>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel> ;
-                                     owl:allValuesFrom <http://ontology.eil.utoronto.ca/cids/cids#ImpactModel>
+                                     owl:onProperty <https://ontology.commonapproach.org/cids#hasImpactModel> ;
+                                     owl:allValuesFrom <https://ontology.commonapproach.org/cids#ImpactModel>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty cfo:hasImpactModelFile ;
@@ -446,7 +496,7 @@ cfo:FundingRequest rdf:type owl:Class ;
                                      owl:allValuesFrom xsd:string
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty cfo:fundsIntension ;
+                                     owl:onProperty cfo:fundsIntention ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:string
                                    ] ,
@@ -462,20 +512,21 @@ cfo:FundingRequest rdf:type owl:Class ;
                                    ] ;
                    <http://purl.org/dc/elements/1.1/description> """The FundingRequest class specifies information about the organization or project’s request for funding. It has the following properties:
 ●	fundsRequested: Specifies the amount of funds requested for the organization or project.
-●	fundsReceived: Specifies amount awarded by funding agency.
-●	fundsIntension: Specifies the intended use of the funds, such as for the organization or a project/program.
+●	fundsReceived: Specifies the amount awarded by the funding agency.
+●	fundsIntention: Specifies the intended use of the funds, such as for the organization or a project/program.
 ●	hasImpactModel: Links to a CIDS impact model instance.
 ●	hasImpactModelFile: Links to an impact model defined in a file.
 ●	servesGeographicRegion: A string that specifies the region.
 ●	servesMarket: A string that specifies the market to be served.
-●	servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
-●	requestedFrom: One or more organizations that the funds are requested from."""@en .
+●	servesPopulation: Links to one or more BeneficialStakeholder instances, which define the stakeholders served.
+●	requestedFrom: One or more organizations that the funds are requested from."""@en ;
+                   rdfs:comment "Information about the organization's or project's request for funding."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#Organization
+###  https://ontology.commonapproach.org/cfo#Organization
 cfo:Organization rdf:type owl:Class ;
                  rdfs:subClassOf cfo:cfThing ,
-                                 <http://ontology.eil.utoronto.ca/cids/cids#Organization> ,
+                                 <https://ontology.commonapproach.org/cids#Organization> ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cfo:hasFinancialInformation ;
                                    owl:allValuesFrom cfo:FinancialInformation
@@ -490,10 +541,10 @@ cfo:Organization rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty cfo:servesPopulation ;
-                                   owl:allValuesFrom <http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder>
+                                   owl:allValuesFrom <https://ontology.commonapproach.org/cids#BeneficialStakeholder>
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://ontology.eil.utoronto.ca/cids/cids#hasFundingRequest> ;
+                                   owl:onProperty <https://ontology.commonapproach.org/cids#hasFundingRequest> ;
                                    owl:allValuesFrom cfo:FundingRequest
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -532,29 +583,29 @@ cfo:Organization rdf:type owl:Class ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:string
                                  ] ;
-                 <http://purl.org/dc/elements/1.1/description> """The cfo:Organization class is defined as a rfds:subClassOf cids:Organization which provides the basic properties related to organization structure and behavior and impact models. cfo:Organization extends cids:Organization with the following properties:
+                 <http://purl.org/dc/elements/1.1/description> """The cfo:Organization class is defined as an rdfs:subClassOf cids:Organization, which provides the basic properties related to organization structure and behavior and impact models. cfo:Organization extends cids:Organization with the following properties:
 hasFinancialInformation: Links to instances of FinancialInformation.
-hasFundingRequest: Links to instance of FundingRequest which specifies the funds requested.
-hasProject: Links organization to its projects.
-hasBios Links to a file containing the organization’s executives’ and Board’s, or project/program biographies.
-servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
-hasBylaws: Specifies the Organization’s bylaws as text.
-hasIndigenousHeritage: Specifies the Organization’s Indigenous heritages as text.
+hasFundingRequest: Links to instances of FundingRequest, which specify the funds requested.
+hasProject: Links the organization to its projects.
+hasBios: Links to a file containing the biographies of the organization’s executives and Board, or of a project or program.
+servesPopulation: Links to one or more BeneficialStakeholder instances, which define the stakeholders served.
+hasBylaws: Specifies the organization’s bylaws as text.
+hasIndigenousHeritage: Specifies the organization’s Indigenous heritage as text.
 hasPartners: Links to organizations it partners with.
 hasBusinessPlanFile: Links to a file containing the organization’s business plan.
 imagineCanadaProgram: Specifies whether the organization participates in the Imagine Canada Standards program.
 hasBCorpScore: B-Corp score for the organization.
 hasBCorpProfile: Links to a file containing the organization’s B-Corp profile.
 hasCharityDataProfile: Links to a file containing the organization’s charity data profile.
-hasFundingRequest: Links to instances of FundingRequest.
-The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization."""@en .
+The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization."""@en ;
+                 rdfs:comment "An organization described with Common Form information. Extends cids:Organization with financial information, funding requests, projects and descriptive details such as bylaws, bios and B-Corp profile."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#PreparedFinancialStatement
+###  https://ontology.commonapproach.org/cfo#PreparedFinancialStatement
 cfo:PreparedFinancialStatement rdf:type owl:Class ;
                                rdfs:subClassOf cfo:cfThing ,
                                                [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://ontology.eil.utoronto.ca/cids/cids#hasType> ;
+                                                 owl:onProperty <https://ontology.commonapproach.org/cids#hasType> ;
                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                  owl:onClass cfo:FinancialStatement
                                                ] ,
@@ -573,14 +624,15 @@ cfo:PreparedFinancialStatement rdf:type owl:Class ;
                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                  owl:onDataRange xsd:anyURI
                                                ] ;
-                               <http://purl.org/dc/elements/1.1/description> """The PreparededFinancialStatement class is a subClassOf FinancialInformation, and captures prepared financial statements for the organization. It has the following properties:
+                               <http://purl.org/dc/elements/1.1/description> """The PreparedFinancialStatement class captures prepared financial statements for the organization. It is linked from FinancialInformation through hasPreparedFinancialStatement. It has the following properties:
 hasType: Defines the type of prepared financial statements that the organization will share.
 forYear1: URI linking to the prepared statement for Year 1.
 forYear2: URI linking to the prepared statement for Year 2.
-forYear3: URI linking to the prepared statement for Year 3."""@en .
+forYear3: URI linking to the prepared statement for Year 3."""@en ;
+                               rdfs:comment "Prepared financial statements for the organization."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#Project
+###  https://ontology.commonapproach.org/cfo#Project
 cfo:Project rdf:type owl:Class ;
             rdfs:subClassOf cfo:cfThing ,
                             [ rdf:type owl:Restriction ;
@@ -589,7 +641,7 @@ cfo:Project rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cfo:hasProjectPartners ;
-                              owl:allValuesFrom <http://ontology.eil.utoronto.ca/cids/cids#Organization>
+                              owl:allValuesFrom <https://ontology.commonapproach.org/cids#Organization>
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty cfo:hasProjectObjectives ;
@@ -610,16 +662,17 @@ cfo:Project rdf:type owl:Class ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ;
-            <http://purl.org/dc/elements/1.1/description> """The Project class specifies information about the organization’s project when they request funding for a specific project or program. It has the following properties:
+            <http://purl.org/dc/elements/1.1/description> """The Project class specifies information about the organization’s project when it requests funding for a specific project or program. It has the following properties:
 ●	hasProjectName: Name of the project for which funds are requested.
 ●	hasProjectObjectives: Description of project objectives.
-●	hasProjectDescriptionFile: Link to file describing the project.
+●	hasProjectDescriptionFile: Link to a file describing the project.
 ●	hasProjectPartners: Links to partner organizations.
-●	hasBudgetFile: Link to file describing the project budget.
-●	hasFundingRequest: Links to the project;s funding request."""@en .
+●	hasBudgetFile: Link to a file describing the project budget.
+●	hasFundingRequest: Links to the project’s funding request."""@en ;
+            rdfs:comment "Information about the organization's project or program when it requests funding for that project or program."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#XBRLReport
+###  https://ontology.commonapproach.org/cfo#XBRLReport
 cfo:XBRLReport rdf:type owl:Class ;
                rdfs:subClassOf cfo:cfThing ,
                                [ rdf:type owl:Restriction ;
@@ -637,26 +690,28 @@ cfo:XBRLReport rdf:type owl:Class ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:anyURI
                                ] ;
-               <http://purl.org/dc/elements/1.1/description> """The XBRLReport class is a subClassOf FinancialInformation, and captures prepared XBRL reports for the organization. It has the following properties:
+               <http://purl.org/dc/elements/1.1/description> """The XBRLReport class captures prepared XBRL reports for the organization. It is linked from FinancialInformation through hasXBRLReport. It has the following properties:
 ●	forYear1: URI linking to the prepared report for Year 1.
 ●	forYear2: URI linking to the prepared report for Year 2.
-●	forYear3: URI linking to the prepared report for Year 3."""@en .
+●	forYear3: URI linking to the prepared report for Year 3."""@en ;
+               rdfs:comment "Prepared XBRL reports for the organization."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cfo#cfThing
-cfo:cfThing rdf:type owl:Class .
+###  https://ontology.commonapproach.org/cfo#cfThing
+cfo:cfThing rdf:type owl:Class ;
+            rdfs:comment "Parent class of all Common Form classes."@en .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder
-<http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder> rdf:type owl:Class .
+###  https://ontology.commonapproach.org/cids#BeneficialStakeholder
+<https://ontology.commonapproach.org/cids#BeneficialStakeholder> rdf:type owl:Class .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#ImpactModel
-<http://ontology.eil.utoronto.ca/cids/cids#ImpactModel> rdf:type owl:Class .
+###  https://ontology.commonapproach.org/cids#ImpactModel
+<https://ontology.commonapproach.org/cids#ImpactModel> rdf:type owl:Class .
 
 
-###  http://ontology.eil.utoronto.ca/cids/cids#Organization
-<http://ontology.eil.utoronto.ca/cids/cids#Organization> rdf:type owl:Class .
+###  https://ontology.commonapproach.org/cids#Organization
+<https://ontology.commonapproach.org/cids#Organization> rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

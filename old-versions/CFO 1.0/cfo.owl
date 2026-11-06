@@ -1,0 +1,924 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontology.eil.utoronto.ca/cids/cfo"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ontology.eil.utoronto.ca/cids/cfo">
+    <Prefix name="" IRI="http://ontology.eil.utoronto.ca/cids/cfo"/>
+    <Prefix name="cfo" IRI="http://ontology.eil.utoronto.ca/cids/cfo#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ontology.eil.utoronto.ca/cids/cids</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://creativecommons.org/ns#license"/>
+        <Literal>http://creativecommons.org/licenses/by/3.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal xml:lang="en">Mark S. Fox, msf@eil.utoronto.ca</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal xml:lang="en">The Common Form Data Standard (CIFS):
+
+ ​</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal xml:lang="en">The Common Form is a standardized way to represent the organizational information of a social purpose organization (SPO). 
+The organizational information collected includes both financial measures and descriptive measures. 
+The financial information collected includes financial statements and key financial indicators, such as current assets, total assets, total liabilities, total revenues and total expenses. The descriptive information collected includes data such as charity/business number, legal form, mission statement, team and board bios. It provides space to record information about the organization as well as programs and projects within that organization.
+These measures were developed with extensive stakeholder engagement and are based on existing and common organizational profiles—and in the case of the financial measures, drawn from scholarly and practitioner literature. 
+It is the information ”used in most exchanges most of the time”
+Created to contextualize the impact data collected using the Common Impact Data Standard, the Common Form facilitates the review, analysis and aggregation of data. This enables assessors to “compare fair,” so that geography, size and age could be considered when comparing impact data.
+
+The Common Form allows software, databases and websites to: 
+●	enable the representation of precise definitions of the organization
+●	foster data interoperability of information between organizations
+●	make the details of an organization interpretable by a computer 
+●	empower your clients to apply for grants, loans or investments directly from their impact data’s home base
+As we expand the roster of aligned impact management and grant/fund management softwares, the Common Form ontology will allow social purpose organizations who want to share their data, and the linked details, to do so at very little cost.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <Literal xml:lang="en">Common Form Data Standard</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+        <Literal>cfo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+        <Literal>http://ontology.eil.utoronto.ca/cids/cfo#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en">version 1.0 24 November 2022</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.w3.org/ns/adms#relatedDocumentation"/>
+        <Literal xml:lang="en">https://www.commonapproach.org/common-form/</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#FinancialIndicators"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FinancialInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FinancialStatement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FundingRequest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreparedFinancialStatement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#XBRLReport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cfThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFinancialIndicators"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFinancialInformation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFundingRequest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPartners"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreparedFinancialStatement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProjectPartners"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasXBRLReport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requestedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#servesPopulation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cfDataProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#forYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#forYear1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#forYear2"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#forYear3"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fundsIntension"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fundsReceived"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fundsRequested"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBCorpProfile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBCorpScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBios"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBudgetFile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBusinessPlanFile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBylaws"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCharityDataProfile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCurrentAssets"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDeferredRevenue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDepreciationExpense"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndowment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFundRaising"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGovernmentGrants"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasImpactModelFile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIndigenousHeritage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInventory"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInvestmentExpense"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProjectDescriptionFile"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProjectName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProjectObjectives"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSalesRevenue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTotalAssets"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTotalExpenses"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTotalLiabilities"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTotalOverhead"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTotalRevenues"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#imagineCanadaProgram"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#servesGeographicRegion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#servesMarket"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasCurrentAssets"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasDeferredRevenue"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasDepreciationExpense"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEndowment"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasFundRaising"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasGovernmentGrants"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasInventory"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasInvestmentExpense"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasSalesRevenue"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTotalAssets"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTotalExpenses"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTotalLiabilities"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTotalOverhead"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialIndicators"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasTotalRevenues"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialInformation"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialInformation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPreparedFinancialStatement"/>
+            <Class IRI="#PreparedFinancialStatement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialInformation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasXBRLReport"/>
+            <Class IRI="#XBRLReport"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialInformation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFinancialIndicators"/>
+            <Class IRI="#FinancialIndicators"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialInformation"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear"/>
+            <Datatype abbreviatedIRI="xsd:date"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialStatement"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#requestedFrom"/>
+            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#servesPopulation"/>
+            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel"/>
+            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#ImpactModel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasImpactModelFile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#servesGeographicRegion"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#servesMarket"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#fundsIntension"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#fundsReceived"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FundingRequest"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#fundsRequested"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasFinancialInformation"/>
+            <Class IRI="#FinancialInformation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPartners"/>
+            <Class IRI="#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProject"/>
+            <Class IRI="#Project"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#servesPopulation"/>
+            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#BeneficialStakeholder"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasFundingRequest"/>
+            <Class IRI="#FundingRequest"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBios"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBusinessPlanFile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasBylaws"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIndigenousHeritage"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBCorpProfile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBCorpScore"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasCharityDataProfile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#imagineCanadaProgram"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreparedFinancialStatement"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreparedFinancialStatement"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://ontology.eil.utoronto.ca/cids/cids#hasType"/>
+            <Class IRI="#FinancialStatement"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreparedFinancialStatement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear1"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreparedFinancialStatement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear2"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreparedFinancialStatement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear3"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasFundingRequest"/>
+            <Class IRI="#FundingRequest"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProjectPartners"/>
+            <Class IRI="http://ontology.eil.utoronto.ca/cids/cids#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasProjectObjectives"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBudgetFile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasProjectDescriptionFile"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasProjectName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XBRLReport"/>
+        <Class IRI="#cfThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XBRLReport"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear1"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XBRLReport"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear2"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XBRLReport"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#forYear3"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFinancialIndicators"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFinancialInformation"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFundingRequest"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPartners"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreparedFinancialStatement"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProject"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProjectPartners"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasXBRLReport"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#requestedFrom"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#servesPopulation"/>
+        <ObjectProperty IRI="#cfObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#forYear"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#forYear1"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#forYear2"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#forYear3"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#fundsIntension"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#fundsReceived"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#fundsRequested"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBCorpProfile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBCorpScore"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBios"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBudgetFile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBusinessPlanFile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBylaws"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasCharityDataProfile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasCurrentAssets"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDeferredRevenue"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDepreciationExpense"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndowment"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFundRaising"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasGovernmentGrants"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasImpactModelFile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasIndigenousHeritage"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInventory"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInvestmentExpense"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasProjectDescriptionFile"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasProjectName"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasProjectObjectives"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasSalesRevenue"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTotalAssets"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTotalExpenses"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTotalLiabilities"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTotalOverhead"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTotalRevenues"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#imagineCanadaProgram"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#servesGeographicRegion"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#servesMarket"/>
+        <DataProperty IRI="#cfDataProperty"/>
+    </SubDataPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#FinancialIndicators</IRI>
+        <Literal xml:lang="en">The FinancialIndicators class is a subClassOf FinancialInformation, and captures financial indicators for the organization with no prepared financial statements or XBRL reports. It has the following properties:
+●	hasCurrentAssets: Current assets of the organization for the specified year in dollars.
+●	hasTotalAssets: Total assets of the organization for the specified year in dollars.
+●	hasTotalLiabilities: Total liabilities of the organization for the specified year in dollars.
+●	hasTotalRevenues: Total revenues of the organization for the specified year in dollars.
+●	hasTotalExpenses: Total expenses of the organization for the specified year in dollars.
+●	hasEndowment: Specifies the amount of the organization’s endowment.
+●	hasInventory: Specifies the amount of the organization’s inventory.
+●	hasDeferredRevenue: Specifies the amount of the organization’s deferred revenue.
+●	hasSalesRevenue: Specifies the amount of the organization’s sales revenue.
+●	hasGovernmentGrants: Specifies the amount of the organization’s government grants.
+●	hasFundRaising: Specifies the amount of the organization’s fundraising.
+●	hasTotalOverhead: Specifies the amount of the organization’s total overhead.
+●	hasDepreciationExpense: Specifies the amount of the organization’s depreciation expenses.
+●	hasInvestmentExpense: Specifies the amount of the organization’s investment expenses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#FinancialInformation</IRI>
+        <Literal xml:lang="en">The FinancialInformation class is used to specify the organization’s financial information. It has the following properties:
+forYear: The year of the financial information.
+hasPreparedFinancialStatement: Links to the type of prepared statement.
+hasXBRLReport: Links to the instance of Organization’s XBRL report.
+hasFinancialIndicators: Links to the instance of the Organization’s financial indicators.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#FundingRequest</IRI>
+        <Literal xml:lang="en">The FundingRequest class specifies information about the organization or project’s request for funding. It has the following properties:
+●	fundsRequested: Specifies the amount of funds requested for the organization or project.
+●	fundsReceived: Specifies amount awarded by funding agency.
+●	fundsIntension: Specifies the intended use of the funds, such as for the organization or a project/program.
+●	hasImpactModel: Links to a CIDS impact model instance.
+●	hasImpactModelFile: Links to an impact model defined in a file.
+●	servesGeographicRegion: A string that specifies the region.
+●	servesMarket: A string that specifies the market to be served.
+●	servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
+●	requestedFrom: One or more organizations that the funds are requested from.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Organization</IRI>
+        <Literal xml:lang="en">The cfo:Organization class is defined as a rfds:subClassOf cids:Organization which provides the basic properties related to organization structure and behavior and impact models. cfo:Organization extends cids:Organization with the following properties:
+hasFinancialInformation: Links to instances of FinancialInformation.
+hasFundingRequest: Links to instance of FundingRequest which specifies the funds requested.
+hasProject: Links organization to its projects.
+hasBios Links to a file containing the organization’s executives’ and Board’s, or project/program biographies.
+servesPopulation: Links to one or more BeneficiaryStakeholder which define the stakeholders served.
+hasBylaws: Specifies the Organization’s bylaws as text.
+hasIndigenousHeritage: Specifies the Organization’s Indigenous heritages as text.
+hasPartners: Links to organizations it partners with.
+hasBusinessPlanFile: Links to a file containing the organization’s business plan.
+imagineCanadaProgram: Specifies whether the organization participates in the Imagine Canada Standards program.
+hasBCorpScore: B-Corp score for the organization.
+hasBCorpProfile: Links to a file containing the organization’s B-Corp profile.
+hasCharityDataProfile: Links to a file containing the organization’s charity data profile.
+hasFundingRequest: Links to instances of FundingRequest.
+The Charity Number or Business Number of the cids:Organization is specified using the org:hasID property as defined in org:Organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PreparedFinancialStatement</IRI>
+        <Literal xml:lang="en">The PreparededFinancialStatement class is a subClassOf FinancialInformation, and captures prepared financial statements for the organization. It has the following properties:
+hasType: Defines the type of prepared financial statements that the organization will share.
+forYear1: URI linking to the prepared statement for Year 1.
+forYear2: URI linking to the prepared statement for Year 2.
+forYear3: URI linking to the prepared statement for Year 3.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Project</IRI>
+        <Literal xml:lang="en">The Project class specifies information about the organization’s project when they request funding for a specific project or program. It has the following properties:
+●	hasProjectName: Name of the project for which funds are requested.
+●	hasProjectObjectives: Description of project objectives.
+●	hasProjectDescriptionFile: Link to file describing the project.
+●	hasProjectPartners: Links to partner organizations.
+●	hasBudgetFile: Link to file describing the project budget.
+●	hasFundingRequest: Links to the project;s funding request.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#XBRLReport</IRI>
+        <Literal xml:lang="en">The XBRLReport class is a subClassOf FinancialInformation, and captures prepared XBRL reports for the organization. It has the following properties:
+●	forYear1: URI linking to the prepared report for Year 1.
+●	forYear2: URI linking to the prepared report for Year 2.
+●	forYear3: URI linking to the prepared report for Year 3.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
