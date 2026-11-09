@@ -71,7 +71,6 @@ csh:cidsThing_NodeShape
 csh:UnexpectedImpactRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -82,7 +81,6 @@ csh:UnexpectedImpactRisk_hasMitigation_PropertyShape
 
 csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -90,19 +88,19 @@ csh:UnexpectedImpactRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_hasDescription_PropertyShape
@@ -119,7 +117,6 @@ csh:UnexpectedImpactRisk_hasDescription_PropertyShape
 
 csh:UnexpectedImpactRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -127,13 +124,12 @@ csh:UnexpectedImpactRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:UnexpectedImpactRisk .
 
 csh:UnexpectedImpactRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -145,7 +141,6 @@ csh:UnexpectedImpactRisk_forOutcome_PropertyShape
 csh:UnexpectedImpactRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -241,7 +236,6 @@ cids:Tier  rdfs:subClassOf  cids:cidsThing .
 csh:Theme_relatesTo_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "relatesTo";
         sh:nodeKind      sh:IRI;
@@ -278,7 +272,6 @@ csh:Theme_hasDescription_PropertyShape
 csh:Theme_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -374,7 +367,6 @@ csh:Target_hasComment_PropertyShape
 csh:Target_forIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -432,11 +424,10 @@ cids:Target  rdfs:subClassOf  cids:cidsThing .
 
 csh:StandardsOrganization_hasWebAddress_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:anyURI;
-        sh:maxCount      0;
+        sh:datatype      xsd:anyURI;
         sh:minCount      0;
         sh:name          "hasWebAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasWebAddress;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -445,7 +436,6 @@ csh:StandardsOrganization_hasWebAddress_PropertyShape
 csh:StandardsOrganization_hasStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholder";
         sh:nodeKind      sh:IRI;
@@ -456,11 +446,10 @@ csh:StandardsOrganization_hasStakeholder_PropertyShape
 
 csh:StandardsOrganization_hasPurpose_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasPurpose";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasPurpose;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -469,7 +458,6 @@ csh:StandardsOrganization_hasPurpose_PropertyShape
 csh:StandardsOrganization_hasProgram_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Program;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasProgram";
         sh:nodeKind      sh:IRI;
@@ -481,7 +469,6 @@ csh:StandardsOrganization_hasProgram_PropertyShape
 csh:StandardsOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -493,7 +480,6 @@ csh:StandardsOrganization_hasOutcome_PropertyShape
 csh:StandardsOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -517,7 +503,6 @@ csh:StandardsOrganization_hasLegalName_PropertyShape
 csh:StandardsOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -529,7 +514,6 @@ csh:StandardsOrganization_hasIndicator_PropertyShape
 csh:StandardsOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -554,7 +538,6 @@ csh:StandardsOrganization_hasDescription_PropertyShape
 csh:StandardsOrganization_hasContact_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContact";
         sh:nodeKind      sh:IRI;
@@ -566,7 +549,6 @@ csh:StandardsOrganization_hasContact_PropertyShape
 csh:StandardsOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -578,7 +560,6 @@ csh:StandardsOrganization_hasCharacteristic_PropertyShape
 csh:StandardsOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -627,7 +608,6 @@ cids:StandardsOrganization
 csh:Stakeholder_performs_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "performs";
         sh:nodeKind      sh:IRI;
@@ -676,7 +656,6 @@ csh:Stakeholder_hasDescription_PropertyShape
 csh:Stakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -687,7 +666,6 @@ csh:Stakeholder_hasCharacteristic_PropertyShape
 
 csh:Stakeholder_hasCatchmentArea_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b2;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasCatchmentArea";
@@ -695,7 +673,7 @@ csh:Stakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
+        csh:in           "multinational" , "national" , "local" , "global" , "provincial";
         csh:usedBy       cids:Stakeholder .
 
 csh:Stakeholder_forOrganization_PropertyShape
@@ -748,11 +726,10 @@ cids:Stakeholder  rdfs:subClassOf  cids:cidsThing .
 
 csh:StakeholderReport_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:dateTime;
-        sh:maxCount      0;
+        sh:datatype      xsd:dateTime;
         sh:minCount      0;
         sh:name          "startedAtTime";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -761,7 +738,6 @@ csh:StakeholderReport_startedAtTime_PropertyShape
 csh:StakeholderReport_hasPerson_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasPerson";
         sh:nodeKind      sh:IRI;
@@ -773,7 +749,6 @@ csh:StakeholderReport_hasPerson_PropertyShape
 csh:StakeholderReport_hasCharacteristicReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:CharacteristicReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristicReport";
         sh:nodeKind      sh:IRI;
@@ -785,7 +760,6 @@ csh:StakeholderReport_hasCharacteristicReport_PropertyShape
 csh:StakeholderReport_forStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forStakeholder";
         sh:nodeKind      sh:IRI;
@@ -797,7 +771,6 @@ csh:StakeholderReport_forStakeholder_PropertyShape
 csh:StakeholderReport_forOrganization_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Organization;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOrganization";
         sh:nodeKind      sh:IRI;
@@ -808,11 +781,10 @@ csh:StakeholderReport_forOrganization_PropertyShape
 
 csh:StakeholderReport_endedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:dateTime;
-        sh:maxCount      0;
+        sh:datatype      xsd:dateTime;
         sh:minCount      0;
         sh:name          "endedAtTime";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -858,7 +830,6 @@ cids:StakeholderReport
 csh:StakeholderParticipationRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -869,7 +840,6 @@ csh:StakeholderParticipationRisk_hasMitigation_PropertyShape
 
 csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -877,19 +847,19 @@ csh:StakeholderParticipationRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_hasDescription_PropertyShape
@@ -906,7 +876,6 @@ csh:StakeholderParticipationRisk_hasDescription_PropertyShape
 
 csh:StakeholderParticipationRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -914,13 +883,12 @@ csh:StakeholderParticipationRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:StakeholderParticipationRisk .
 
 csh:StakeholderParticipationRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -932,7 +900,6 @@ csh:StakeholderParticipationRisk_forOutcome_PropertyShape
 csh:StakeholderParticipationRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -992,7 +959,6 @@ csh:StakeholderOutcome_isUnderserved_PropertyShape
 
 csh:StakeholderOutcome_intendedImpact_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      [] ;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "intendedImpact";
@@ -1018,7 +984,6 @@ csh:StakeholderOutcome_hasName_PropertyShape
 csh:StakeholderOutcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -1029,7 +994,6 @@ csh:StakeholderOutcome_hasIndicator_PropertyShape
 
 csh:StakeholderOutcome_hasImportance_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      [] ;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasImportance";
@@ -1037,13 +1001,12 @@ csh:StakeholderOutcome_hasImportance_PropertyShape
         sh:path          cids:hasImportance;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unimportant" , "moderateImportance" , "highImportance" , "neutral";
+        csh:in           "highImportance" , "unimportant" , "neutral" , "moderateImportance";
         csh:usedBy       cids:StakeholderOutcome .
 
 csh:StakeholderOutcome_hasImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactReport";
         sh:nodeKind      sh:IRI;
@@ -1067,7 +1030,6 @@ csh:StakeholderOutcome_hasDescription_PropertyShape
 csh:StakeholderOutcome_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -1151,11 +1113,10 @@ cids:StakeholderOutcome
 
 csh:SocialPurposeOrganization_hasWebAddress_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:anyURI;
-        sh:maxCount      0;
+        sh:datatype      xsd:anyURI;
         sh:minCount      0;
         sh:name          "hasWebAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasWebAddress;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -1164,7 +1125,6 @@ csh:SocialPurposeOrganization_hasWebAddress_PropertyShape
 csh:SocialPurposeOrganization_hasStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1175,11 +1135,10 @@ csh:SocialPurposeOrganization_hasStakeholder_PropertyShape
 
 csh:SocialPurposeOrganization_hasPurpose_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasPurpose";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasPurpose;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -1188,7 +1147,6 @@ csh:SocialPurposeOrganization_hasPurpose_PropertyShape
 csh:SocialPurposeOrganization_hasProgram_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Program;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasProgram";
         sh:nodeKind      sh:IRI;
@@ -1200,7 +1158,6 @@ csh:SocialPurposeOrganization_hasProgram_PropertyShape
 csh:SocialPurposeOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -1212,7 +1169,6 @@ csh:SocialPurposeOrganization_hasOutcome_PropertyShape
 csh:SocialPurposeOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -1236,7 +1192,6 @@ csh:SocialPurposeOrganization_hasLegalName_PropertyShape
 csh:SocialPurposeOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -1248,7 +1203,6 @@ csh:SocialPurposeOrganization_hasIndicator_PropertyShape
 csh:SocialPurposeOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -1273,7 +1227,6 @@ csh:SocialPurposeOrganization_hasDescription_PropertyShape
 csh:SocialPurposeOrganization_hasContact_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContact";
         sh:nodeKind      sh:IRI;
@@ -1285,7 +1238,6 @@ csh:SocialPurposeOrganization_hasContact_PropertyShape
 csh:SocialPurposeOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -1297,7 +1249,6 @@ csh:SocialPurposeOrganization_hasCharacteristic_PropertyShape
 csh:SocialPurposeOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -1370,7 +1321,6 @@ csh:SkillInput_partOf_PropertyShape
 csh:SkillInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -1382,7 +1332,7 @@ csh:SkillInput_inputFor_PropertyShape
 csh:SkillInput_hasType_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         act:Resource;
-        sh:maxCount      0 , 1;
+        sh:maxCount      1;
         sh:minCount      0 , 1;
         sh:name          "hasType";
         sh:nodeKind      sh:IRI;
@@ -1430,7 +1380,6 @@ csh:SkillInput_hasDescription_PropertyShape
 csh:SkillInput_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1502,7 +1451,6 @@ cids:SkillInput  rdfs:subClassOf  cids:cidsThing , cids:Input .
 csh:Service_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
@@ -1538,7 +1486,6 @@ csh:Service_partOf_PropertyShape
 csh:Service_hasSubActivity_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasSubActivity";
         sh:nodeKind      sh:IRI;
@@ -1550,7 +1497,6 @@ csh:Service_hasSubActivity_PropertyShape
 csh:Service_hasOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutput";
         sh:nodeKind      sh:IRI;
@@ -1562,7 +1508,6 @@ csh:Service_hasOutput_PropertyShape
 csh:Service_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -1586,7 +1531,6 @@ csh:Service_hasName_PropertyShape
 csh:Service_hasInput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Input;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasInput";
         sh:nodeKind      sh:IRI;
@@ -1597,11 +1541,10 @@ csh:Service_hasInput_PropertyShape
 
 csh:Service_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasIdentifier";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -1622,7 +1565,6 @@ csh:Service_hasDescription_PropertyShape
 csh:Service_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1634,7 +1576,6 @@ csh:Service_hasContributingStakeholder_PropertyShape
 csh:Service_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -1646,7 +1587,6 @@ csh:Service_hasCode_PropertyShape
 csh:Service_hasBeneficialStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:BeneficialStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasBeneficialStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1696,7 +1636,6 @@ csh:Service_dateCreated_PropertyShape
 csh:Service_canProduce_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canProduce";
         sh:nodeKind      sh:IRI;
@@ -1739,10 +1678,243 @@ csh:Service_NodeShape
 
 cids:Service  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
 
+csh:Sector_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Sector .
+
+csh:Sector_NodeShape  rdf:type  sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:Sector_value_PropertyShape , csh:Sector_hasSpecification_PropertyShape , csh:Sector_hasName_PropertyShape , csh:Sector_hasIdentifier_PropertyShape , csh:Sector_hasDescription_PropertyShape , csh:Sector_description_PropertyShape , csh:Sector_definedBy_PropertyShape , csh:Sector_dateCreated_PropertyShape , csh:Sector_codeValue_PropertyShape;
+        sh:targetClass  cids:Sector;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:Sector  rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
+csh:ProvinceTerritory_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:ProvinceTerritory .
+
+csh:ProvinceTerritory_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:ProvinceTerritory_value_PropertyShape , csh:ProvinceTerritory_hasSpecification_PropertyShape , csh:ProvinceTerritory_hasName_PropertyShape , csh:ProvinceTerritory_hasIdentifier_PropertyShape , csh:ProvinceTerritory_hasDescription_PropertyShape , csh:ProvinceTerritory_description_PropertyShape , csh:ProvinceTerritory_definedBy_PropertyShape , csh:ProvinceTerritory_dateCreated_PropertyShape , csh:ProvinceTerritory_codeValue_PropertyShape;
+        sh:targetClass  cids:ProvinceTerritory;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:ProvinceTerritory
+        rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
 csh:Program_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
@@ -1766,7 +1938,6 @@ csh:Program_partOf_PropertyShape
 csh:Program_hasService_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Service;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasService";
         sh:nodeKind      sh:IRI;
@@ -1778,7 +1949,6 @@ csh:Program_hasService_PropertyShape
 csh:Program_hasOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutput";
         sh:nodeKind      sh:IRI;
@@ -1790,7 +1960,6 @@ csh:Program_hasOutput_PropertyShape
 csh:Program_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -1814,7 +1983,6 @@ csh:Program_hasName_PropertyShape
 csh:Program_hasInput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Input;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasInput";
         sh:nodeKind      sh:IRI;
@@ -1826,7 +1994,6 @@ csh:Program_hasInput_PropertyShape
 csh:Program_hasImpactModel_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactModel;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactModel";
         sh:nodeKind      sh:IRI;
@@ -1837,11 +2004,10 @@ csh:Program_hasImpactModel_PropertyShape
 
 csh:Program_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasIdentifier";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -1862,7 +2028,6 @@ csh:Program_hasDescription_PropertyShape
 csh:Program_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1874,7 +2039,6 @@ csh:Program_hasContributingStakeholder_PropertyShape
 csh:Program_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -1886,7 +2050,6 @@ csh:Program_hasCode_PropertyShape
 csh:Program_hasBeneficialStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:BeneficialStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasBeneficialStakeholder";
         sh:nodeKind      sh:IRI;
@@ -1924,7 +2087,6 @@ csh:Program_dateCreated_PropertyShape
 csh:Program_canProduce_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canProduce";
         sh:nodeKind      sh:IRI;
@@ -1942,6 +2104,124 @@ csh:Program_NodeShape
         csh:activeTier  csh:CompleteTier , cids:FullTier .
 
 cids:Program  rdfs:subClassOf  cids:cidsThing , cids:Activity , act:Activity .
+
+csh:PopulationServed_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:PopulationServed .
+
+csh:PopulationServed_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:PopulationServed_value_PropertyShape , csh:PopulationServed_hasSpecification_PropertyShape , csh:PopulationServed_hasName_PropertyShape , csh:PopulationServed_hasIdentifier_PropertyShape , csh:PopulationServed_hasDescription_PropertyShape , csh:PopulationServed_description_PropertyShape , csh:PopulationServed_definedBy_PropertyShape , csh:PopulationServed_dateCreated_PropertyShape , csh:PopulationServed_codeValue_PropertyShape;
+        sh:targetClass  cids:PopulationServed;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:PopulationServed
+        rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
 
 csh:PhysicalInput_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
@@ -1970,7 +2250,6 @@ csh:PhysicalInput_partOf_PropertyShape
 csh:PhysicalInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -1982,7 +2261,7 @@ csh:PhysicalInput_inputFor_PropertyShape
 csh:PhysicalInput_hasType_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         act:Resource;
-        sh:maxCount      0 , 1;
+        sh:maxCount      1;
         sh:minCount      0 , 1;
         sh:name          "hasType";
         sh:nodeKind      sh:IRI;
@@ -2030,7 +2309,6 @@ csh:PhysicalInput_hasDescription_PropertyShape
 csh:PhysicalInput_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -2102,7 +2380,6 @@ cids:PhysicalInput  rdfs:subClassOf  cids:cidsThing , cids:Input .
 csh:Person_spouseOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "spouseOf";
         sh:nodeKind      sh:IRI;
@@ -2114,7 +2391,6 @@ csh:Person_spouseOf_PropertyShape
 csh:Person_plays_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:Role;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "plays";
         sh:nodeKind      sh:IRI;
@@ -2126,7 +2402,6 @@ csh:Person_plays_PropertyShape
 csh:Person_parentOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "parentOf";
         sh:nodeKind      sh:IRI;
@@ -2149,11 +2424,10 @@ csh:Person_middleName_PropertyShape
 
 csh:Person_identifier_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "identifier";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          sch:identifier;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2162,7 +2436,6 @@ csh:Person_identifier_PropertyShape
 csh:Person_hasTelephone_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         ic:PhoneNumber;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasTelephone";
         sh:nodeKind      sh:IRI;
@@ -2174,7 +2447,6 @@ csh:Person_hasTelephone_PropertyShape
 csh:Person_hasReligion_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cwrc:Religion;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasReligion";
         sh:nodeKind      sh:IRI;
@@ -2185,11 +2457,10 @@ csh:Person_hasReligion_PropertyShape
 
 csh:Person_hasOccupation_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasOccupation";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasOccupation;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2198,7 +2469,6 @@ csh:Person_hasOccupation_PropertyShape
 csh:Person_hasGender_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cwrc:Gender;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasGender";
         sh:nodeKind      sh:IRI;
@@ -2210,7 +2480,6 @@ csh:Person_hasGender_PropertyShape
 csh:Person_hasEthnicity_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cwrc:Ethnicity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasEthnicity";
         sh:nodeKind      sh:IRI;
@@ -2222,7 +2491,6 @@ csh:Person_hasEthnicity_PropertyShape
 csh:Person_hasEmail_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasEmail";
         sh:nodeKind      sh:Literal;
@@ -2234,7 +2502,6 @@ csh:Person_hasEmail_PropertyShape
 csh:Person_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         ic:Address;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -2257,11 +2524,10 @@ csh:Person_givenName_PropertyShape
 
 csh:Person_formerName_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "formerName";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          foaf:formerName;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2308,7 +2574,6 @@ csh:Person_dateCreated_PropertyShape
 csh:Person_birthDate_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:dateTime;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "birthDate";
         sh:nodeKind      sh:Literal;
@@ -2328,7 +2593,6 @@ cids:Person  rdfs:subClassOf  cids:cidsThing , sch:Person .
 csh:Output_value_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         i72:Measure;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "value";
         sh:nodeKind      sh:IRI;
@@ -2340,7 +2604,6 @@ csh:Output_value_PropertyShape
 csh:Output_usedByIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "usedByIndicator";
         sh:nodeKind      sh:IRI;
@@ -2352,7 +2615,6 @@ csh:Output_usedByIndicator_PropertyShape
 csh:Output_produces_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         act:Resource;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "produces";
         sh:nodeKind      sh:IRI;
@@ -2400,7 +2662,6 @@ csh:Output_hasDescription_PropertyShape
 csh:Output_forActivity_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forActivity";
         sh:nodeKind      sh:IRI;
@@ -2438,7 +2699,6 @@ csh:Output_dateCreated_PropertyShape
 csh:Output_canProduce_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canProduce";
         sh:nodeKind      sh:IRI;
@@ -2471,7 +2731,6 @@ csh:Outcome_partOf_PropertyShape
 csh:Outcome_hasStakeholderOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:StakeholderOutcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholderOutcome";
         sh:nodeKind      sh:IRI;
@@ -2495,7 +2754,6 @@ csh:Outcome_hasName_PropertyShape
 csh:Outcome_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -2507,7 +2765,6 @@ csh:Outcome_hasIndicator_PropertyShape
 csh:Outcome_hasImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactReport";
         sh:nodeKind      sh:IRI;
@@ -2532,7 +2789,6 @@ csh:Outcome_hasDescription_PropertyShape
 csh:Outcome_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -2544,7 +2800,6 @@ csh:Outcome_hasCode_PropertyShape
 csh:Outcome_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:IRI;
@@ -2594,7 +2849,6 @@ csh:Outcome_dateCreated_PropertyShape
 csh:Outcome_canProduce_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canProduce";
         sh:nodeKind      sh:IRI;
@@ -2606,7 +2860,6 @@ csh:Outcome_canProduce_PropertyShape
 csh:Outcome_canEnable_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canEnable";
         sh:nodeKind      sh:IRI;
@@ -2628,7 +2881,6 @@ cids:Outcome  rdfs:subClassOf  cids:cidsThing .
 csh:OutcomeChain_hasTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasTheme";
         sh:nodeKind      sh:IRI;
@@ -2640,7 +2892,6 @@ csh:OutcomeChain_hasTheme_PropertyShape
 csh:OutcomeChain_hasOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutput";
         sh:nodeKind      sh:IRI;
@@ -2652,7 +2903,6 @@ csh:OutcomeChain_hasOutput_PropertyShape
 csh:OutcomeChain_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -2676,7 +2926,6 @@ csh:OutcomeChain_hasName_PropertyShape
 csh:OutcomeChain_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -2747,11 +2996,10 @@ cids:OutcomeChain  rdfs:subClassOf  cids:cidsThing , cids:ImpactModel .
 
 csh:Organization_hasWebAddress_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:anyURI;
-        sh:maxCount      0;
+        sh:datatype      xsd:anyURI;
         sh:minCount      0;
         sh:name          "hasWebAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasWebAddress;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2760,7 +3008,6 @@ csh:Organization_hasWebAddress_PropertyShape
 csh:Organization_hasStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholder";
         sh:nodeKind      sh:IRI;
@@ -2771,11 +3018,10 @@ csh:Organization_hasStakeholder_PropertyShape
 
 csh:Organization_hasPurpose_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasPurpose";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasPurpose;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -2784,7 +3030,6 @@ csh:Organization_hasPurpose_PropertyShape
 csh:Organization_hasProgram_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Program;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasProgram";
         sh:nodeKind      sh:IRI;
@@ -2796,7 +3041,6 @@ csh:Organization_hasProgram_PropertyShape
 csh:Organization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -2808,7 +3052,6 @@ csh:Organization_hasOutcome_PropertyShape
 csh:Organization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -2832,7 +3075,6 @@ csh:Organization_hasLegalName_PropertyShape
 csh:Organization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -2844,7 +3086,6 @@ csh:Organization_hasIndicator_PropertyShape
 csh:Organization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -2869,7 +3110,6 @@ csh:Organization_hasDescription_PropertyShape
 csh:Organization_hasContact_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContact";
         sh:nodeKind      sh:IRI;
@@ -2881,7 +3121,6 @@ csh:Organization_hasContact_PropertyShape
 csh:Organization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -2893,7 +3132,6 @@ csh:Organization_hasCharacteristic_PropertyShape
 csh:Organization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -2938,6 +3176,241 @@ csh:Organization_NodeShape
 
 cids:Organization  rdfs:subClassOf  cids:cidsThing , org:Organization .
 
+csh:OrganizationType_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:OrganizationType .
+
+csh:OrganizationType_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:OrganizationType_value_PropertyShape , csh:OrganizationType_hasSpecification_PropertyShape , csh:OrganizationType_hasName_PropertyShape , csh:OrganizationType_hasIdentifier_PropertyShape , csh:OrganizationType_hasDescription_PropertyShape , csh:OrganizationType_description_PropertyShape , csh:OrganizationType_definedBy_PropertyShape , csh:OrganizationType_dateCreated_PropertyShape , csh:OrganizationType_codeValue_PropertyShape;
+        sh:targetClass  cids:OrganizationType;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:OrganizationType
+        rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
+csh:Locality_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:Locality .
+
+csh:Locality_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:Locality_value_PropertyShape , csh:Locality_hasSpecification_PropertyShape , csh:Locality_hasName_PropertyShape , csh:Locality_hasIdentifier_PropertyShape , csh:Locality_hasDescription_PropertyShape , csh:Locality_description_PropertyShape , csh:Locality_definedBy_PropertyShape , csh:Locality_dateCreated_PropertyShape , csh:Locality_codeValue_PropertyShape;
+        sh:targetClass  cids:Locality;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:Locality  rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
 csh:Input_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:dateTime;
@@ -2965,7 +3438,6 @@ csh:Input_partOf_PropertyShape
 csh:Input_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -3025,7 +3497,6 @@ csh:Input_hasDescription_PropertyShape
 csh:Input_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -3108,7 +3579,6 @@ csh:Indicator_wasGeneratedBy_PropertyShape
 csh:Indicator_usesOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "usesOutput";
         sh:nodeKind      sh:IRI;
@@ -3144,7 +3614,6 @@ csh:Indicator_hasThreshold_PropertyShape
 csh:Indicator_hasTarget_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Target;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasTarget";
         sh:nodeKind      sh:IRI;
@@ -3168,7 +3637,6 @@ csh:Indicator_hasName_PropertyShape
 csh:Indicator_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -3192,7 +3660,6 @@ csh:Indicator_hasIdentifier_PropertyShape
 csh:Indicator_hasHowMuch_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:HowMuchImpact;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasHowMuch";
         sh:nodeKind      sh:IRI;
@@ -3217,7 +3684,6 @@ csh:Indicator_hasDescription_PropertyShape
 csh:Indicator_hasCounterfactual_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Counterfactual;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCounterfactual";
         sh:nodeKind      sh:IRI;
@@ -3229,7 +3695,6 @@ csh:Indicator_hasCounterfactual_PropertyShape
 csh:Indicator_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -3253,7 +3718,6 @@ csh:Indicator_hasBaseline_PropertyShape
 csh:Indicator_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
@@ -3265,7 +3729,6 @@ csh:Indicator_hasAccess_PropertyShape
 csh:Indicator_forTheme_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Theme;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forTheme";
         sh:nodeKind      sh:IRI;
@@ -3277,7 +3740,6 @@ csh:Indicator_forTheme_PropertyShape
 csh:Indicator_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -3352,7 +3814,6 @@ csh:Indicator_dateCreated_PropertyShape
 csh:Indicator_dataset_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         dcat:Dataset;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "dataset";
         sh:nodeKind      sh:IRI;
@@ -3410,7 +3871,6 @@ csh:IndicatorReport_startedAtTime_PropertyShape
 csh:IndicatorReport_hasQualityMeasurement_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         dqv:QualityMeasurement;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasQualityMeasurement";
         sh:nodeKind      sh:IRI;
@@ -3422,7 +3882,6 @@ csh:IndicatorReport_hasQualityMeasurement_PropertyShape
 csh:IndicatorReport_hasQualityAnnotation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         dqv:QualityAnnotation;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasQualityAnnotation";
         sh:nodeKind      sh:IRI;
@@ -3446,7 +3905,6 @@ csh:IndicatorReport_hasName_PropertyShape
 csh:IndicatorReport_hasComment_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasComment";
         sh:nodeKind      sh:Literal;
@@ -3459,7 +3917,6 @@ csh:IndicatorReport_hasComment_PropertyShape
 csh:IndicatorReport_hasAccess_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAccess";
         sh:nodeKind      sh:IRI;
@@ -3557,7 +4014,6 @@ csh:IndicatorReport_dateCreated_PropertyShape
 csh:IndicatorReport_dataset_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         dcat:Dataset;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "dataset";
         sh:nodeKind      sh:IRI;
@@ -3569,7 +4025,6 @@ csh:IndicatorReport_dataset_PropertyShape
 csh:IndicatorReport_conformsTo_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         dcterms:Standard;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "conformsTo";
         sh:nodeKind      sh:IRI;
@@ -3591,7 +4046,6 @@ cids:IndicatorReport  rdfs:subClassOf  cids:cidsThing .
 csh:ImpactScale_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
@@ -3628,7 +4082,6 @@ csh:ImpactScale_hasDescription_PropertyShape
 csh:ImpactScale_hasCounterfactual_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Counterfactual;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCounterfactual";
         sh:nodeKind      sh:IRI;
@@ -3640,7 +4093,6 @@ csh:ImpactScale_hasCounterfactual_PropertyShape
 csh:ImpactScale_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -3688,7 +4140,6 @@ cids:ImpactScale  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
 csh:ImpactRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -3699,7 +4150,6 @@ csh:ImpactRisk_hasMitigation_PropertyShape
 
 csh:ImpactRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -3707,7 +4157,7 @@ csh:ImpactRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_hasIdentifier_PropertyShape
@@ -3736,7 +4186,6 @@ csh:ImpactRisk_hasDescription_PropertyShape
 
 csh:ImpactRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -3744,13 +4193,12 @@ csh:ImpactRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:ImpactRisk .
 
 csh:ImpactRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -3762,7 +4210,6 @@ csh:ImpactRisk_forOutcome_PropertyShape
 csh:ImpactRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -3821,7 +4268,6 @@ csh:ImpactReport_startedAtTime_PropertyShape
 
 csh:ImpactReport_hasReportedImpact_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      [] ;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasReportedImpact";
@@ -3829,7 +4275,7 @@ csh:ImpactReport_hasReportedImpact_PropertyShape
         sh:path          cids:hasReportedImpact;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "negative" , "neutral" , "positive";
+        csh:in           "positive" , "negative" , "neutral";
         csh:usedBy       cids:ImpactReport .
 
 csh:ImpactReport_hasName_PropertyShape
@@ -3859,7 +4305,6 @@ csh:ImpactReport_hasImpactScale_PropertyShape
 csh:ImpactReport_hasImpactRisk_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactRisk;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasImpactRisk";
         sh:nodeKind      sh:IRI;
@@ -3991,7 +4436,6 @@ cids:ImpactReport  rdfs:subClassOf  cids:cidsThing .
 csh:ImpactPathway_hasStakeholderOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:StakeholderOutcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholderOutcome";
         sh:nodeKind      sh:IRI;
@@ -4003,7 +4447,6 @@ csh:ImpactPathway_hasStakeholderOutcome_PropertyShape
 csh:ImpactPathway_hasProgram_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Program;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasProgram";
         sh:nodeKind      sh:IRI;
@@ -4015,7 +4458,6 @@ csh:ImpactPathway_hasProgram_PropertyShape
 csh:ImpactPathway_hasOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutput";
         sh:nodeKind      sh:IRI;
@@ -4027,7 +4469,6 @@ csh:ImpactPathway_hasOutput_PropertyShape
 csh:ImpactPathway_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -4051,7 +4492,6 @@ csh:ImpactPathway_hasName_PropertyShape
 csh:ImpactPathway_hasInput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Input;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasInput";
         sh:nodeKind      sh:IRI;
@@ -4063,7 +4503,6 @@ csh:ImpactPathway_hasInput_PropertyShape
 csh:ImpactPathway_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -4075,7 +4514,6 @@ csh:ImpactPathway_hasIndicator_PropertyShape
 csh:ImpactPathway_hasIndicatorReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:IndicatorReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicatorReport";
         sh:nodeKind      sh:IRI;
@@ -4099,7 +4537,6 @@ csh:ImpactPathway_hasDescription_PropertyShape
 csh:ImpactPathway_hasActivity_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasActivity";
         sh:nodeKind      sh:IRI;
@@ -4231,7 +4668,6 @@ cids:ImpactModel  rdfs:subClassOf  cids:cidsThing .
 csh:ImpactDuration_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
@@ -4280,7 +4716,6 @@ csh:ImpactDuration_hasDescription_PropertyShape
 csh:ImpactDuration_hasCounterfactual_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Counterfactual;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCounterfactual";
         sh:nodeKind      sh:IRI;
@@ -4292,7 +4727,6 @@ csh:ImpactDuration_hasCounterfactual_PropertyShape
 csh:ImpactDuration_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -4352,7 +4786,6 @@ cids:ImpactDuration  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
 csh:ImpactDepth_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
@@ -4389,7 +4822,6 @@ csh:ImpactDepth_hasDescription_PropertyShape
 csh:ImpactDepth_hasCounterfactual_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Counterfactual;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCounterfactual";
         sh:nodeKind      sh:IRI;
@@ -4401,7 +4833,6 @@ csh:ImpactDepth_hasCounterfactual_PropertyShape
 csh:ImpactDepth_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -4449,7 +4880,6 @@ cids:ImpactDepth  rdfs:subClassOf  cids:cidsThing , cids:HowMuchImpact .
 csh:HowMuchImpact_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
@@ -4486,7 +4916,6 @@ csh:HowMuchImpact_hasDescription_PropertyShape
 csh:HowMuchImpact_hasCounterfactual_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Counterfactual;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCounterfactual";
         sh:nodeKind      sh:IRI;
@@ -4498,7 +4927,6 @@ csh:HowMuchImpact_hasCounterfactual_PropertyShape
 csh:HowMuchImpact_forIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forIndicator";
         sh:nodeKind      sh:IRI;
@@ -4543,13 +4971,129 @@ csh:HowMuchImpact_NodeShape
 
 cids:HowMuchImpact  rdfs:subClassOf  cids:cidsThing .
 
+csh:FundingState_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:FundingState .
+
+csh:FundingState_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:FundingState_value_PropertyShape , csh:FundingState_hasSpecification_PropertyShape , csh:FundingState_hasName_PropertyShape , csh:FundingState_hasIdentifier_PropertyShape , csh:FundingState_hasDescription_PropertyShape , csh:FundingState_description_PropertyShape , csh:FundingState_definedBy_PropertyShape , csh:FundingState_dateCreated_PropertyShape , csh:FundingState_codeValue_PropertyShape;
+        sh:targetClass  cids:FundingState;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:FundingState  rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
 csh:FinancialOrganization_hasWebAddress_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:anyURI;
-        sh:maxCount      0;
+        sh:datatype      xsd:anyURI;
         sh:minCount      0;
         sh:name          "hasWebAddress";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasWebAddress;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -4558,7 +5102,6 @@ csh:FinancialOrganization_hasWebAddress_PropertyShape
 csh:FinancialOrganization_hasStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasStakeholder";
         sh:nodeKind      sh:IRI;
@@ -4569,11 +5112,10 @@ csh:FinancialOrganization_hasStakeholder_PropertyShape
 
 csh:FinancialOrganization_hasPurpose_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasPurpose";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          cids:hasPurpose;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -4582,7 +5124,6 @@ csh:FinancialOrganization_hasPurpose_PropertyShape
 csh:FinancialOrganization_hasProgram_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Program;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasProgram";
         sh:nodeKind      sh:IRI;
@@ -4594,7 +5135,6 @@ csh:FinancialOrganization_hasProgram_PropertyShape
 csh:FinancialOrganization_hasOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutcome";
         sh:nodeKind      sh:IRI;
@@ -4606,7 +5146,6 @@ csh:FinancialOrganization_hasOutcome_PropertyShape
 csh:FinancialOrganization_hasLegalStatus_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         owl:Thing;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasLegalStatus";
         sh:nodeKind      sh:IRI;
@@ -4630,7 +5169,6 @@ csh:FinancialOrganization_hasLegalName_PropertyShape
 csh:FinancialOrganization_hasIndicator_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Indicator;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasIndicator";
         sh:nodeKind      sh:IRI;
@@ -4642,7 +5180,6 @@ csh:FinancialOrganization_hasIndicator_PropertyShape
 csh:FinancialOrganization_hasID_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         org:OrganizationID;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasID";
         sh:nodeKind      sh:IRI;
@@ -4667,7 +5204,6 @@ csh:FinancialOrganization_hasDescription_PropertyShape
 csh:FinancialOrganization_hasContact_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Person;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContact";
         sh:nodeKind      sh:IRI;
@@ -4679,7 +5215,6 @@ csh:FinancialOrganization_hasContact_PropertyShape
 csh:FinancialOrganization_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -4691,7 +5226,6 @@ csh:FinancialOrganization_hasCharacteristic_PropertyShape
 csh:FinancialOrganization_hasAddress_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Address;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasAddress";
         sh:nodeKind      sh:IRI;
@@ -4764,7 +5298,6 @@ csh:FinancialInput_partOf_PropertyShape
 csh:FinancialInput_inputFor_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "inputFor";
         sh:nodeKind      sh:IRI;
@@ -4776,7 +5309,7 @@ csh:FinancialInput_inputFor_PropertyShape
 csh:FinancialInput_hasType_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         act:Resource;
-        sh:maxCount      0 , 1;
+        sh:maxCount      1;
         sh:minCount      0 , 1;
         sh:name          "hasType";
         sh:nodeKind      sh:IRI;
@@ -4824,7 +5357,6 @@ csh:FinancialInput_hasDescription_PropertyShape
 csh:FinancialInput_hasContributingStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ContributingStakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasContributingStakeholder";
         sh:nodeKind      sh:IRI;
@@ -4908,7 +5440,6 @@ cids:FinancialInput  rdfs:subClassOf  cids:cidsThing , cids:Input .
 csh:ExternalRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -4919,7 +5450,6 @@ csh:ExternalRisk_hasMitigation_PropertyShape
 
 csh:ExternalRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -4927,19 +5457,19 @@ csh:ExternalRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_hasDescription_PropertyShape
@@ -4956,7 +5486,6 @@ csh:ExternalRisk_hasDescription_PropertyShape
 
 csh:ExternalRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -4964,13 +5493,12 @@ csh:ExternalRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:ExternalRisk .
 
 csh:ExternalRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -4982,7 +5510,6 @@ csh:ExternalRisk_forOutcome_PropertyShape
 csh:ExternalRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5030,7 +5557,6 @@ cids:ExternalRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 csh:ExecutionRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -5041,7 +5567,6 @@ csh:ExecutionRisk_hasMitigation_PropertyShape
 
 csh:ExecutionRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -5049,19 +5574,19 @@ csh:ExecutionRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_hasDescription_PropertyShape
@@ -5078,7 +5603,6 @@ csh:ExecutionRisk_hasDescription_PropertyShape
 
 csh:ExecutionRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -5086,13 +5610,12 @@ csh:ExecutionRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:ExecutionRisk .
 
 csh:ExecutionRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -5104,7 +5627,6 @@ csh:ExecutionRisk_forOutcome_PropertyShape
 csh:ExecutionRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5152,7 +5674,6 @@ cids:ExecutionRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 csh:EvidenceRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -5163,7 +5684,6 @@ csh:EvidenceRisk_hasMitigation_PropertyShape
 
 csh:EvidenceRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -5171,19 +5691,19 @@ csh:EvidenceRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_hasDescription_PropertyShape
@@ -5200,7 +5720,6 @@ csh:EvidenceRisk_hasDescription_PropertyShape
 
 csh:EvidenceRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -5208,13 +5727,12 @@ csh:EvidenceRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:EvidenceRisk .
 
 csh:EvidenceRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -5226,7 +5744,6 @@ csh:EvidenceRisk_forOutcome_PropertyShape
 csh:EvidenceRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5271,10 +5788,127 @@ csh:EvidenceRisk_NodeShape
 
 cids:EvidenceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 
+csh:EquityDeservingGroup_value_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         i72:Measure;
+        sh:minCount      0;
+        sh:name          "value";
+        sh:nodeKind      sh:IRI;
+        sh:path          i72:value;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_hasSpecification_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:anyURI;
+        sh:minCount      0;
+        sh:name          "hasSpecification";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasSpecification;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_hasName_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "hasName";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasName;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_hasIdentifier_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "hasIdentifier";
+        sh:nodeKind      sh:Literal;
+        sh:path          org:hasIdentifier;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_hasDescription_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      0;
+        sh:name          "hasDescription";
+        sh:nodeKind      sh:Literal;
+        sh:path          cids:hasDescription;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:Optional;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_description_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "description";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:description;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_definedBy_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:class         cids:Organization;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "definedBy";
+        sh:nodeKind      sh:IRI;
+        sh:path          cids:definedBy;
+        sh:severity      sh:Info;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_dateCreated_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:dateTime;
+        sh:maxCount      1;
+        sh:minCount      1;
+        sh:name          "dateCreated";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:dateCreated;
+        sh:severity      sh:Info;
+        csh:activeTier   csh:CompleteTier;
+        csh:cardinality  csh:ExactlyOne;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_codeValue_PropertyShape
+        rdf:type         sh:PropertyShape;
+        sh:datatype      xsd:string;
+        sh:minCount      0;
+        sh:name          "codeValue";
+        sh:nodeKind      sh:Literal;
+        sh:path          sch:codeValue;
+        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:cardinality  csh:ZeroOrMore;
+        csh:usedBy       cids:EquityDeservingGroup .
+
+csh:EquityDeservingGroup_NodeShape
+        rdf:type        sh:NodeShape;
+        sh:closed       false;
+        sh:property     csh:EquityDeservingGroup_value_PropertyShape , csh:EquityDeservingGroup_hasSpecification_PropertyShape , csh:EquityDeservingGroup_hasName_PropertyShape , csh:EquityDeservingGroup_hasIdentifier_PropertyShape , csh:EquityDeservingGroup_hasDescription_PropertyShape , csh:EquityDeservingGroup_description_PropertyShape , csh:EquityDeservingGroup_definedBy_PropertyShape , csh:EquityDeservingGroup_dateCreated_PropertyShape , csh:EquityDeservingGroup_codeValue_PropertyShape;
+        sh:targetClass  cids:EquityDeservingGroup;
+        csh:activeTier  csh:CompleteTier , cids:SFFTier , cids:EssentialTier .
+
+cids:EquityDeservingGroup
+        rdfs:subClassOf  cids:cidsThing , cids:Code , skos:Concept .
+
 csh:EnduranceRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -5285,7 +5919,6 @@ csh:EnduranceRisk_hasMitigation_PropertyShape
 
 csh:EnduranceRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -5293,19 +5926,19 @@ csh:EnduranceRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_hasDescription_PropertyShape
@@ -5322,7 +5955,6 @@ csh:EnduranceRisk_hasDescription_PropertyShape
 
 csh:EnduranceRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -5330,13 +5962,12 @@ csh:EnduranceRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:EnduranceRisk .
 
 csh:EnduranceRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -5348,7 +5979,6 @@ csh:EnduranceRisk_forOutcome_PropertyShape
 csh:EnduranceRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5396,7 +6026,6 @@ cids:EnduranceRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 csh:EfficiencyRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -5407,7 +6036,6 @@ csh:EfficiencyRisk_hasMitigation_PropertyShape
 
 csh:EfficiencyRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -5415,19 +6043,19 @@ csh:EfficiencyRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_hasDescription_PropertyShape
@@ -5444,7 +6072,6 @@ csh:EfficiencyRisk_hasDescription_PropertyShape
 
 csh:EfficiencyRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -5452,13 +6079,12 @@ csh:EfficiencyRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:EfficiencyRisk .
 
 csh:EfficiencyRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -5470,7 +6096,6 @@ csh:EfficiencyRisk_forOutcome_PropertyShape
 csh:EfficiencyRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5518,7 +6143,6 @@ cids:EfficiencyRisk  rdfs:subClassOf  cids:cidsThing , cids:ImpactRisk .
 csh:DropOffRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -5529,7 +6153,6 @@ csh:DropOffRisk_hasMitigation_PropertyShape
 
 csh:DropOffRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -5537,19 +6160,19 @@ csh:DropOffRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_hasDescription_PropertyShape
@@ -5566,7 +6189,6 @@ csh:DropOffRisk_hasDescription_PropertyShape
 
 csh:DropOffRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -5574,13 +6196,12 @@ csh:DropOffRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:DropOffRisk .
 
 csh:DropOffRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -5592,7 +6213,6 @@ csh:DropOffRisk_forOutcome_PropertyShape
 csh:DropOffRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -5736,7 +6356,6 @@ cids:Counterfactual  rdfs:subClassOf  cids:cidsThing .
 csh:ContributingStakeholder_performs_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "performs";
         sh:nodeKind      sh:IRI;
@@ -5785,7 +6404,6 @@ csh:ContributingStakeholder_hasDescription_PropertyShape
 csh:ContributingStakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -5796,7 +6414,6 @@ csh:ContributingStakeholder_hasCharacteristic_PropertyShape
 
 csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b2;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasCatchmentArea";
@@ -5804,7 +6421,7 @@ csh:ContributingStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
+        csh:in           "multinational" , "national" , "local" , "global" , "provincial";
         csh:usedBy       cids:ContributingStakeholder .
 
 csh:ContributingStakeholder_forOrganization_PropertyShape
@@ -5848,7 +6465,6 @@ csh:ContributingStakeholder_dateCreated_PropertyShape
 csh:ContributingStakeholder_contributes_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Input;
-        sh:maxCount      0;
         sh:minCount      1;
         sh:name          "contributes";
         sh:nodeKind      sh:IRI;
@@ -5871,26 +6487,23 @@ cids:ContributingStakeholder
 csh:Code_value_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         i72:Measure;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "value";
         sh:nodeKind      sh:IRI;
         sh:path          i72:value;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Code .
 
 csh:Code_hasSpecification_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:anyURI;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "hasSpecification";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasSpecification;
-        sh:severity      sh:Info;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Code .
 
 csh:Code_hasName_PropertyShape
@@ -5908,27 +6521,25 @@ csh:Code_hasName_PropertyShape
 csh:Code_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      1;
         sh:minCount      0;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
-        sh:severity      sh:Info;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
-        csh:cardinality  csh:Optional;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Code .
 
 csh:Code_hasDescription_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
         sh:severity      sh:Info;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:Optional;
         csh:usedBy       cids:Code .
 
 csh:Code_description_PropertyShape
@@ -5973,13 +6584,12 @@ csh:Code_dateCreated_PropertyShape
 csh:Code_codeValue_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "codeValue";
         sh:nodeKind      sh:Literal;
         sh:path          sch:codeValue;
         csh:activeTier   cids:SFFTier , cids:EssentialTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Code .
 
 csh:Code_NodeShape  rdf:type  sh:NodeShape;
@@ -5994,7 +6604,6 @@ cids:Code  rdfs:subClassOf  cids:cidsThing .
 csh:Characteristic_wasGeneratedBy_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "wasGeneratedBy";
         sh:nodeKind      sh:IRI;
@@ -6006,24 +6615,22 @@ csh:Characteristic_wasGeneratedBy_PropertyShape
 csh:Characteristic_startedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:dateTime;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "startedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:startedAtTime;
         csh:activeTier   csh:CompleteTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Characteristic .
 
 csh:Characteristic_hasValue_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         i72:Measure;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasValue";
         sh:nodeKind      sh:IRI;
         sh:path          cids:hasValue;
-        csh:activeTier   cids:SFFTier , cids:EssentialTier;
+        csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Characteristic .
 
@@ -6042,20 +6649,17 @@ csh:Characteristic_hasName_PropertyShape
 csh:Characteristic_hasDescription_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "hasDescription";
         sh:nodeKind      sh:Literal;
         sh:path          cids:hasDescription;
-        sh:severity      sh:Info;
-        csh:activeTier   csh:CompleteTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:activeTier   cids:SFFTier;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Characteristic .
 
 csh:Characteristic_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -6067,7 +6671,6 @@ csh:Characteristic_hasCode_PropertyShape
 csh:Characteristic_forStakeholder_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Stakeholder;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forStakeholder";
         sh:nodeKind      sh:IRI;
@@ -6079,13 +6682,12 @@ csh:Characteristic_forStakeholder_PropertyShape
 csh:Characteristic_endedAtTime_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:dateTime;
-        sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0;
         sh:name          "endedAtTime";
         sh:nodeKind      sh:Literal;
         sh:path          prov:endedAtTime;
         csh:activeTier   csh:CompleteTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore;
         csh:usedBy       cids:Characteristic .
 
 csh:Characteristic_description_PropertyShape
@@ -6127,7 +6729,6 @@ cids:Characteristic  rdfs:subClassOf  cids:cidsThing .
 csh:CharacteristicReport_numberOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         i72:Measure;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "numberOf";
         sh:nodeKind      sh:IRI;
@@ -6139,7 +6740,6 @@ csh:CharacteristicReport_numberOf_PropertyShape
 csh:CharacteristicReport_forCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -6188,7 +6788,6 @@ cids:CharacteristicReport
 csh:BeneficialStakeholder_performs_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "performs";
         sh:nodeKind      sh:IRI;
@@ -6223,15 +6822,13 @@ csh:BeneficialStakeholder_hasName_PropertyShape
 
 csh:BeneficialStakeholder_hasImpactManagementNormsDefinition_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      [] ;
-        sh:maxCount      0;
+        sh:class         [] ;
         sh:minCount      0;
         sh:name          "hasImpactManagementNormsDefinition";
-        sh:nodeKind      sh:Literal;
+        sh:nodeKind      sh:IRI;
         sh:path          cids:hasImpactManagementNormsDefinition;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
-        csh:in           "client" , "employee" , "community" , "supplier" , "planet";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_hasDescription_PropertyShape
@@ -6250,7 +6847,6 @@ csh:BeneficialStakeholder_hasDescription_PropertyShape
 csh:BeneficialStakeholder_hasCharacteristic_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Characteristic;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCharacteristic";
         sh:nodeKind      sh:IRI;
@@ -6261,7 +6857,6 @@ csh:BeneficialStakeholder_hasCharacteristic_PropertyShape
 
 csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b2;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasCatchmentArea";
@@ -6269,7 +6864,7 @@ csh:BeneficialStakeholder_hasCatchmentArea_PropertyShape
         sh:path          cids:hasCatchmentArea;
         csh:activeTier   cids:EssentialTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "multinational" , "national" , "provincial" , "local" , "global";
+        csh:in           "multinational" , "national" , "local" , "global" , "provincial";
         csh:usedBy       cids:BeneficialStakeholder .
 
 csh:BeneficialStakeholder_forOrganization_PropertyShape
@@ -6313,7 +6908,6 @@ csh:BeneficialStakeholder_dateCreated_PropertyShape
 csh:BeneficialStakeholder_benefitsFrom_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      1;
         sh:name          "benefitsFrom";
         sh:nodeKind      sh:IRI;
@@ -6336,7 +6930,6 @@ cids:BeneficialStakeholder
 csh:AlignmentRisk_hasMitigation_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasMitigation";
         sh:nodeKind      sh:Literal;
@@ -6347,7 +6940,6 @@ csh:AlignmentRisk_hasMitigation_PropertyShape
 
 csh:AlignmentRisk_hasLikelihood_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b0;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasLikelihood";
@@ -6355,19 +6947,19 @@ csh:AlignmentRisk_hasLikelihood_PropertyShape
         sh:path          cids:hasLikelihood;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "unlikely" , "veryUnlikely" , "likely" , "lowRisk" , "mediumRisk" , "highRisk" , "veryLikely";
+        csh:in           "veryUnlikely" , "veryLikely" , "lowRisk" , "likely" , "highRisk" , "unlikely" , "mediumRisk";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:datatype      xsd:string;
         sh:maxCount      1;
-        sh:minCount      1;
+        sh:minCount      0 , 1;
         sh:name          "hasIdentifier";
         sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   cids:FullTier;
-        csh:cardinality  csh:ExactlyOne;
+        csh:cardinality  csh:ZeroOrMore , csh:ExactlyOne;
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_hasDescription_PropertyShape
@@ -6384,7 +6976,6 @@ csh:AlignmentRisk_hasDescription_PropertyShape
 
 csh:AlignmentRisk_hasConsequence_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:datatype      _:b1;
         sh:maxCount      1;
         sh:minCount      1;
         sh:name          "hasConsequence";
@@ -6392,13 +6983,12 @@ csh:AlignmentRisk_hasConsequence_PropertyShape
         sh:path          cids:hasConsequence;
         csh:activeTier   cids:FullTier;
         csh:cardinality  csh:ExactlyOne;
-        csh:in           "severe" , "minimal" , "average";
+        csh:in           "average" , "severe" , "minimal";
         csh:usedBy       cids:AlignmentRisk .
 
 csh:AlignmentRisk_forOutcome_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forOutcome";
         sh:nodeKind      sh:IRI;
@@ -6410,7 +7000,6 @@ csh:AlignmentRisk_forOutcome_PropertyShape
 csh:AlignmentRisk_forImpactReport_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:ImpactReport;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "forImpactReport";
         sh:nodeKind      sh:IRI;
@@ -6578,7 +7167,6 @@ cids:Address  rdfs:subClassOf  cids:cidsThing , sch:PostalAddress .
 csh:Activity_subActivityOf_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Activity;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "subActivityOf";
         sh:nodeKind      sh:IRI;
@@ -6602,7 +7190,6 @@ csh:Activity_partOf_PropertyShape
 csh:Activity_hasOutput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Output;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasOutput";
         sh:nodeKind      sh:IRI;
@@ -6626,7 +7213,6 @@ csh:Activity_hasName_PropertyShape
 csh:Activity_hasInput_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Input;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasInput";
         sh:nodeKind      sh:IRI;
@@ -6637,11 +7223,10 @@ csh:Activity_hasInput_PropertyShape
 
 csh:Activity_hasIdentifier_PropertyShape
         rdf:type         sh:PropertyShape;
-        sh:class         xsd:string;
-        sh:maxCount      0;
+        sh:datatype      xsd:string;
         sh:minCount      0;
         sh:name          "hasIdentifier";
-        sh:nodeKind      sh:IRI;
+        sh:nodeKind      sh:Literal;
         sh:path          org:hasIdentifier;
         csh:activeTier   csh:CompleteTier;
         csh:cardinality  csh:ZeroOrMore;
@@ -6662,7 +7247,6 @@ csh:Activity_hasDescription_PropertyShape
 csh:Activity_hasCode_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Code;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "hasCode";
         sh:nodeKind      sh:IRI;
@@ -6700,7 +7284,6 @@ csh:Activity_dateCreated_PropertyShape
 csh:Activity_canProduce_PropertyShape
         rdf:type         sh:PropertyShape;
         sh:class         cids:Outcome;
-        sh:maxCount      0;
         sh:minCount      0;
         sh:name          "canProduce";
         sh:nodeKind      sh:IRI;
@@ -6727,6 +7310,10 @@ cids:veryLikely  rdf:type  owl:NamedIndividual .
 
 cids:unlikely  rdf:type  owl:NamedIndividual .
 
+cids:statsCan  rdf:type  cids:Organization , owl:NamedIndividual;
+        rdfs:label    "Statistics Canada"@en;
+        csh:memberOf  cids:Organization .
+
 cids:severe  rdf:type  owl:NamedIndividual .
 
 cids:positive  rdf:type  owl:NamedIndividual .
@@ -6746,6 +7333,14 @@ cids:lowRisk  rdf:type  owl:NamedIndividual .
 cids:likely  rdf:type  owl:NamedIndividual .
 
 cids:highRisk  rdf:type  owl:NamedIndividual .
+
+cids:giin  rdf:type   cids:Organization , owl:NamedIndividual;
+        rdfs:label    "Global Impact Investing Network"@en;
+        csh:memberOf  cids:Organization .
+
+cids:esdc  rdf:type   cids:Organization , owl:NamedIndividual;
+        rdfs:label    "Employment Social Development Canada"@en;
+        csh:memberOf  cids:Organization .
 
 cids:better  rdf:type  owl:NamedIndividual .
 
