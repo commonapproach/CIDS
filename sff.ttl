@@ -245,12 +245,11 @@ sff:forEDG
   cids:belongsToTier cids:SFFTier .
 
 sff:forFunder
-  a owl:ObjectProperty ;
+  a owl:DatatypeProperty ;
   rdfs:domain sff:FundingStatus ;
-  rdfs:range cids:Organization ;
   rdfs:label "for Funder"@en ;
   cids:hasName "for Funder" ;
-  rdfs:comment "Links a funding status to the funder or investor that is being reported on."@en ;
+  rdfs:comment "States the name of the fund, funder or investor that is linked from the forOrganization property of FundingStatus."@en ;
   void:inDataset sff:datasetdefinition ;
   rdfs:isDefinedBy sff: ;
   cids:belongsToTier cids:SFFTier .
