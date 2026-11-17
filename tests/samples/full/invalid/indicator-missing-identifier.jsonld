@@ -1,0 +1,17 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization", "hasLegalName": "Green Meals Co-operative"},
+    {"@id": "https://example.org/sample/Indicator/foodwasteavoided", "@type": "cids:Indicator",
+     "hasName": "Food waste avoided", "hasDescription": "Kilograms of food waste diverted from landfill.",
+     "unitDescription": "kilograms",
+     "forOrganization": "https://example.org/sample/Organization/greenmeals",
+     "definedBy": "https://example.org/sample/Organization/greenmeals",
+     "hasBaseline": "https://example.org/sample/Measure/foodwastebaseline",
+     "hasThreshold": "https://example.org/sample/Measure/foodwastethreshold",
+     "prov:wasGeneratedBy": {"@id": "https://example.org/sample/Activity/kitchenprogram"}},
+    {"@id": "https://example.org/sample/Measure/foodwastebaseline", "@type": "i72:Measure", "hasNumericalValue": "800"},
+    {"@id": "https://example.org/sample/Measure/foodwastethreshold", "@type": "i72:Measure", "hasNumericalValue": "500"},
+    {"@id": "https://example.org/sample/Activity/kitchenprogram", "@type": "cids:Activity"}
+  ]
+}

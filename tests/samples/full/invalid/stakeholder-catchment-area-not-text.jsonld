@@ -1,0 +1,10 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization", "hasLegalName": "Green Meals Co-operative"},
+    {"@id": "https://example.org/sample/Stakeholder/torontohouseholds", "@type": "cids:Stakeholder",
+     "hasName": "Toronto households", "hasDescription": "Households that buy our meal kits.",
+     "forOrganization": "https://example.org/sample/Organization/greenmeals",
+     "hasCatchmentArea": {"@id": "https://example.org/sample/Locality/toronto"}}
+  ]
+}

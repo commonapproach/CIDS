@@ -1,0 +1,144 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.org/sample/Organization/greenmeals",
+      "@type": "cids:Organization",
+      "hasLegalName": "Green Meals Co-operative",
+      "hasAddress": [
+        "https://example.org/sample/Address/greenmeals"
+      ],
+      "hasOutcome": [
+        "https://example.org/sample/Outcome/reducefoodwaste"
+      ],
+      "hasIndicator": [
+        "https://example.org/sample/Indicator/foodwasteavoided"
+      ]
+    },
+    {
+      "@id": "https://example.org/sample/Address/greenmeals",
+      "@type": "cids:Address",
+      "streetAddress": "100 Main Street",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5V 1A1",
+      "addressCountry": "Canada"
+    },
+    {
+      "@id": "https://example.org/sample/Theme/responsibleconsumption",
+      "@type": "cids:Theme",
+      "hasName": "Responsible consumption and production",
+      "hasDescription": "Reduce waste and use resources sustainably."
+    },
+    {
+      "@id": "https://example.org/sample/Outcome/reducefoodwaste",
+      "@type": "cids:Outcome",
+      "hasName": "Reduce food waste",
+      "hasDescription": "Less food from our kitchens ends up in landfill.",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "forTheme": [
+        "https://example.org/sample/Theme/responsibleconsumption"
+      ],
+      "hasIndicator": [
+        "https://example.org/sample/Indicator/foodwasteavoided"
+      ],
+      "oep:partOf": {
+        "@id": "https://example.org/sample/ImpactModel/greenmeals"
+      }
+    },
+    {
+      "@id": "https://example.org/sample/Indicator/foodwasteavoided",
+      "@type": "cids:Indicator",
+      "hasName": "Food waste avoided",
+      "hasDescription": "Kilograms of food waste diverted from landfill.",
+      "unitDescription": "kilograms",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "definedBy": "https://example.org/sample/Organization/greenmeals",
+      "hasBaseline": "https://example.org/sample/Measure/foodwastebaseline",
+      "forOutcome": [
+        "https://example.org/sample/Outcome/reducefoodwaste"
+      ],
+      "hasIndicatorReport": [
+        "https://example.org/sample/IndicatorReport/foodwasteavoided2025"
+      ],
+      "hasIdentifier": "GM-IND-001",
+      "hasThreshold": "https://example.org/sample/Measure/foodwastethreshold",
+      "prov:wasGeneratedBy": {
+        "@id": "https://example.org/sample/Activity/kitchenprogram"
+      }
+    },
+    {
+      "@id": "https://example.org/sample/Measure/foodwastebaseline",
+      "@type": "i72:Measure",
+      "hasNumericalValue": "800"
+    },
+    {
+      "@id": "https://example.org/sample/Target/foodwasteavoided2025",
+      "@type": "cids:Target",
+      "hasName": "Food waste avoided target for 2025",
+      "hasComment": "Target set by the board in December 2024.",
+      "sch:dateCreated": {
+        "@value": "2024-12-01T00:00:00Z",
+        "@type": "xsd:dateTime"
+      },
+      "startedAtTime": "2025-01-01T00:00:00Z",
+      "endedAtTime": "2025-12-31T23:59:59Z",
+      "value": "https://example.org/sample/Measure/foodwastetarget2025"
+    },
+    {
+      "@id": "https://example.org/sample/Measure/foodwastetarget2025",
+      "@type": "i72:Measure",
+      "hasNumericalValue": "1200"
+    },
+    {
+      "@id": "https://example.org/sample/IndicatorReport/foodwasteavoided2025",
+      "@type": "cids:IndicatorReport",
+      "hasName": "Food waste avoided in 2025",
+      "forIndicator": "https://example.org/sample/Indicator/foodwasteavoided",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "cids:forTarget": {
+        "@id": "https://example.org/sample/Target/foodwasteavoided2025"
+      },
+      "startedAtTime": "2025-01-01T00:00:00Z",
+      "endedAtTime": "2025-12-31T23:59:59Z",
+      "value": "https://example.org/sample/Measure/foodwasteavoided2025",
+      "forStakeholder": "https://example.org/sample/Stakeholder/torontohouseholds",
+      "prov:wasGeneratedBy": {
+        "@id": "https://example.org/sample/Activity/kitchenprogram"
+      }
+    },
+    {
+      "@id": "https://example.org/sample/Measure/foodwasteavoided2025",
+      "@type": "i72:Measure",
+      "hasNumericalValue": "1250"
+    },
+    {
+      "@id": "https://example.org/sample/Measure/foodwastethreshold",
+      "@type": "i72:Measure",
+      "hasNumericalValue": "500"
+    },
+    {
+      "@id": "https://example.org/sample/Activity/kitchenprogram",
+      "@type": "cids:Activity"
+    },
+    {
+      "@id": "https://example.org/sample/Stakeholder/torontohouseholds",
+      "@type": "cids:Stakeholder",
+      "hasName": "Toronto households",
+      "hasDescription": "Households that buy our meal kits.",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "hasCatchmentArea": "local"
+    },
+    {
+      "@id": "https://example.org/sample/ImpactModel/greenmeals",
+      "@type": "cids:ImpactModel",
+      "hasName": "Green Meals impact model",
+      "hasDescription": "How our work reduces food waste.",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "sch:dateCreated": {
+        "@value": "2024-11-15T00:00:00Z",
+        "@type": "xsd:dateTime"
+      }
+    }
+  ]
+}

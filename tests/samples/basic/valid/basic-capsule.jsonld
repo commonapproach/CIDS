@@ -1,0 +1,62 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.org/sample/Organization/greenmeals",
+      "@type": "cids:Organization",
+      "hasLegalName": "Green Meals Co-operative",
+      "hasAddress": ["https://example.org/sample/Address/greenmeals"],
+      "hasOutcome": ["https://example.org/sample/Outcome/reducefoodwaste"],
+      "hasIndicator": ["https://example.org/sample/Indicator/foodwasteavoided"]
+    },
+    {
+      "@id": "https://example.org/sample/Address/greenmeals",
+      "@type": "cids:Address",
+      "streetAddress": "100 Main Street",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5V 1A1",
+      "addressCountry": "Canada"
+    },
+    {
+      "@id": "https://example.org/sample/Theme/responsibleconsumption",
+      "@type": "cids:Theme",
+      "hasName": "Responsible consumption and production",
+      "hasDescription": "Reduce waste and use resources sustainably."
+    },
+    {
+      "@id": "https://example.org/sample/Outcome/reducefoodwaste",
+      "@type": "cids:Outcome",
+      "hasName": "Reduce food waste",
+      "hasDescription": "Less food from our kitchens ends up in landfill.",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "forTheme": ["https://example.org/sample/Theme/responsibleconsumption"],
+      "hasIndicator": ["https://example.org/sample/Indicator/foodwasteavoided"]
+    },
+    {
+      "@id": "https://example.org/sample/Indicator/foodwasteavoided",
+      "@type": "cids:Indicator",
+      "hasName": "Food waste avoided",
+      "hasDescription": "Kilograms of food waste diverted from landfill.",
+      "unitDescription": "kilograms",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "forOutcome": ["https://example.org/sample/Outcome/reducefoodwaste"],
+      "hasIndicatorReport": ["https://example.org/sample/IndicatorReport/foodwasteavoided2025"]
+    },
+    {
+      "@id": "https://example.org/sample/IndicatorReport/foodwasteavoided2025",
+      "@type": "cids:IndicatorReport",
+      "hasName": "Food waste avoided in 2025",
+      "forIndicator": "https://example.org/sample/Indicator/foodwasteavoided",
+      "forOrganization": "https://example.org/sample/Organization/greenmeals",
+      "startedAtTime": "2025-01-01T00:00:00Z",
+      "endedAtTime": "2025-12-31T23:59:59Z",
+      "value": "https://example.org/sample/Measure/foodwasteavoided2025"
+    },
+    {
+      "@id": "https://example.org/sample/Measure/foodwasteavoided2025",
+      "@type": "i72:Measure",
+      "hasNumericalValue": "1250"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Lists every result in a SHACL validation report as "<property> <constraint>",
+# for example "hasLegalName MinCount". Used by run-tests.sh to compare a
+# sample's results with its .expected file.
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+SELECT ?result WHERE {
+  ?report a sh:ValidationReport ; sh:result ?r .
+  ?r sh:sourceConstraintComponent ?component .
+  OPTIONAL { ?r sh:resultPath ?path }
+  BIND(IF(BOUND(?path) && isIRI(?path), REPLACE(STR(?path), "^.*[#/]", ""), "(node)") AS ?p)
+  BIND(REPLACE(REPLACE(STR(?component), "^.*#", ""), "ConstraintComponent$", "") AS ?c)
+  BIND(CONCAT(?p, " ", ?c) AS ?result)
+}
+ORDER BY ?result

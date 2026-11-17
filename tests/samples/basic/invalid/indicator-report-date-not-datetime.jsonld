@@ -1,0 +1,15 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization", "hasLegalName": "Green Meals Co-operative"},
+    {"@id": "https://example.org/sample/Indicator/foodwasteavoided", "@type": "cids:Indicator", "hasName": "Food waste avoided", "hasDescription": "Kilograms of food waste diverted from landfill.", "unitDescription": "kilograms", "forOrganization": "https://example.org/sample/Organization/greenmeals"},
+    {"@id": "https://example.org/sample/IndicatorReport/foodwasteavoided2025", "@type": "cids:IndicatorReport",
+     "hasName": "Food waste avoided in 2025",
+     "forIndicator": "https://example.org/sample/Indicator/foodwasteavoided",
+     "forOrganization": "https://example.org/sample/Organization/greenmeals",
+     "startedAtTime": {"@value": "2025-01-01", "@type": "xsd:date"},
+     "endedAtTime": "2025-12-31T23:59:59Z",
+     "value": "https://example.org/sample/Measure/foodwasteavoided2025"},
+    {"@id": "https://example.org/sample/Measure/foodwasteavoided2025", "@type": "i72:Measure", "hasNumericalValue": "1250"}
+  ]
+}
