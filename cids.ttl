@@ -208,7 +208,7 @@ cwrc:parentOf rdf:type owl:ObjectProperty .
 
 ###  http://www.w3.org/2001/sw/BestPractices/OEP/SimplePartWhole/part.owl#hasPart
 oep:hasPart rdf:type owl:ObjectProperty ;
-            owl:inverseOf oep:partOf ;
+            owl:inverseOf oep:partOf
             rdf:type owl:TransitiveProperty .
 
 
