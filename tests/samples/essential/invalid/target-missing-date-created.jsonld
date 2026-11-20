@@ -1,0 +1,12 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Target/foodwasteavoided2025", "@type": "cids:Target",
+     "hasName": "Food waste avoided target for 2025",
+     "hasComment": "Target set by the board in December 2024.",
+     "startedAtTime": "2025-01-01T00:00:00Z",
+     "endedAtTime": "2025-12-31T23:59:59Z",
+     "value": "https://example.org/sample/Measure/foodwastetarget2025"},
+    {"@id": "https://example.org/sample/Measure/foodwastetarget2025", "@type": "i72:Measure", "hasNumericalValue": "1200"}
+  ]
+}

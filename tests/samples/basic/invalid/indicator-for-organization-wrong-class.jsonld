@@ -1,0 +1,12 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Indicator/foodwasteavoided", "@type": "cids:Indicator",
+     "hasName": "Food waste avoided", "hasDescription": "Kilograms of food waste diverted from landfill.",
+     "unitDescription": "kilograms",
+     "forOrganization": "https://example.org/sample/Address/greenmeals"},
+    {"@id": "https://example.org/sample/Address/greenmeals", "@type": "cids:Address",
+     "streetAddress": "100 Main Street", "addressLocality": "Toronto", "addressRegion": "ON",
+     "postalCode": "M5V 1A1", "addressCountry": "Canada"}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization",
+     "hasLegalName": ["Green Meals Co-operative", "Green Meals Inc."]}
+  ]
+}

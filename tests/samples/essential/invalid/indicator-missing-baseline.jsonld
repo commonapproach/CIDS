@@ -1,0 +1,11 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization", "hasLegalName": "Green Meals Co-operative"},
+    {"@id": "https://example.org/sample/Indicator/foodwasteavoided", "@type": "cids:Indicator",
+     "hasName": "Food waste avoided", "hasDescription": "Kilograms of food waste diverted from landfill.",
+     "unitDescription": "kilograms",
+     "forOrganization": "https://example.org/sample/Organization/greenmeals",
+     "definedBy": "https://example.org/sample/Organization/greenmeals"}
+  ]
+}

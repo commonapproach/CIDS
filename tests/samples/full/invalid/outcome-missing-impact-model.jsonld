@@ -1,0 +1,9 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Organization/greenmeals", "@type": "cids:Organization", "hasLegalName": "Green Meals Co-operative"},
+    {"@id": "https://example.org/sample/Outcome/reducefoodwaste", "@type": "cids:Outcome",
+     "hasName": "Reduce food waste", "hasDescription": "Less food from our kitchens ends up in landfill.",
+     "forOrganization": "https://example.org/sample/Organization/greenmeals"}
+  ]
+}

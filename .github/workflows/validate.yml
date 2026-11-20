@@ -1,0 +1,59 @@
+# Runs tests/run-tests.sh on every pull request and every push to main.
+# See tests/README.md for what the tests check.
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  JENA_VERSION: "5.5.0"
+  JENA_SHA512: "f9ae68a748e642c6a8175ee25afdfa37ce057ed37e7caf279a8a46ad93284bea808cf14d96bf30b6e4e6a4ddaf30cf5ee9d441f48a9a3d3c9e647a9b71645e0c"
+  ROBOT_VERSION: "1.9.10"
+  ROBOT_SHA256: "16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Cache Jena and ROBOT downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/tools
+          key: tools-jena-${{ env.JENA_VERSION }}-robot-${{ env.ROBOT_VERSION }}
+
+      - name: Install Apache Jena and ROBOT
+        run: |
+          mkdir -p ~/tools && cd ~/tools
+          if [ ! -f "apache-jena-${JENA_VERSION}.tar.gz" ]; then
+            curl -sSfL -o "apache-jena-${JENA_VERSION}.tar.gz" \
+              "https://archive.apache.org/dist/jena/binaries/apache-jena-${JENA_VERSION}.tar.gz"
+          fi
+          echo "${JENA_SHA512}  apache-jena-${JENA_VERSION}.tar.gz" | sha512sum -c -
+          tar xzf "apache-jena-${JENA_VERSION}.tar.gz"
+          echo "$HOME/tools/apache-jena-${JENA_VERSION}/bin" >> "$GITHUB_PATH"
+
+          if [ ! -f robot.jar ]; then
+            curl -sSfL -o robot.jar \
+              "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar"
+          fi
+          echo "${ROBOT_SHA256}  robot.jar" | sha256sum -c -
+          echo "ROBOT_JAR=$HOME/tools/robot.jar" >> "$GITHUB_ENV"
+
+      - name: Run the tests
+        run: tests/run-tests.sh

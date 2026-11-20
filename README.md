@@ -46,6 +46,7 @@ CIDS reuses terms from existing open standards rather than inventing its own, in
 | [`validation/shacl/`](validation/shacl/) | SHACL shapes for checking data: one file per tier (Basic, Essential, Full), one with everything (`cids.all`), plus SFF and supporting standards. |
 | [`validation/sparql/`](validation/sparql/) | The SPARQL queries that generate the SHACL shapes from the ontology, one per tier. |
 | [`validation/shacl-validation/`](validation/shacl-validation/) | `CIDS-validate.sh`, a script that validates a data file and summarizes the results. |
+| [`tests/`](tests/) | Automated checks for this repository, with sample capsules. See [Running the tests](#running-the-tests). |
 | [`faq/`](faq/) | Plain-language explainers on RDF, OWL, SHACL, JSON-LD and CIDS. |
 | [`old-versions/`](old-versions/) | Earlier versions of CIDS, SFF and the Common Form. |
 | [`CHANGELOG.md`](CHANGELOG.md) | Changes by version. |
@@ -89,6 +90,24 @@ How a change to the standard is handled depends on what kind of change it is (se
 | **Major** | Removing or renaming a class or property, making a property required | The change is planned with the technical committee, opened as an `rfc` issue for a 60-day public consultation, then made in a pull request. |
 
 An `rfc` issue should say what would change, which version bump it needs, and how it affects existing data and software. Every change also needs a check of what else must be updated, such as the SHACL shapes, the JSON-LD context and the documentation.
+
+### Running the tests
+
+Every pull request, and every push to `main`, runs automated checks. A pull request with a red check needs fixing before it is merged. The checks are:
+
+1. Every ontology, SHACL and context file loads without syntax errors.
+2. The ontology files are valid OWL (OWL 2 DL, with no logical contradictions), and `cfo.ttl` and `cfo.owl` match.
+3. The sample capsules in [`tests/samples/`](tests/samples/) give the right result against the SHACL shapes: valid samples pass, and each deliberately broken sample fails for the reason it was written for.
+
+To run them on your own computer, you need Java 17 or newer, [Apache Jena](https://jena.apache.org/download/) (with `riot`, `shacl` and `sparql` on your `PATH`) and [ROBOT](https://github.com/ontodev/robot/releases) (`robot.jar`). From the top of the repository, run:
+
+```bash
+ROBOT_JAR=/path/to/robot.jar tests/run-tests.sh
+```
+
+The OWL checks need internet access, because they load the ontologies CIDS imports. A full run takes a few minutes. Without ROBOT, `tests/run-tests.sh --skip-owl` runs everything except the OWL checks.
+
+Problems that are already known and have an open issue are listed in [`tests/known-failures.txt`](tests/known-failures.txt) and [`tests/known-owl-problems/`](tests/known-owl-problems/). They are reported as `KNOWN` and don't fail the run; anything new does. See [`tests/README.md`](tests/README.md) for how to add a sample or update these lists.
 
 See also [How can I help with the development of the Common Impact Data Standard?](faq/how-to-help.md)
 

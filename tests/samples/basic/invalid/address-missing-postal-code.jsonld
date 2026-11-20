@@ -1,0 +1,7 @@
+{
+  "@context": "../../../../contexts/cidsContext.jsonld",
+  "@graph": [
+    {"@id": "https://example.org/sample/Address/greenmeals", "@type": "cids:Address",
+     "streetAddress": "100 Main Street", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "Canada"}
+  ]
+}

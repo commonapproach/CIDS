@@ -1,0 +1,38 @@
+# Known failures
+#
+# Checks listed here fail on main today. Each one has an open issue.
+# run-tests.sh still runs them and prints "KNOWN", but they do not make the
+# run fail. Any failure that is NOT listed here makes the run fail.
+#
+# When an issue is fixed, its check starts passing and run-tests.sh fails with
+# "now passes": delete the line here in the same pull request as the fix.
+#
+# Format: <check name>  <link to the issue>
+# The check name is exactly what run-tests.sh prints after PASS/FAIL.
+
+# Test 1
+syntax validation/shacl/SDGImpacts.shacl.ttl  https://github.com/commonapproach/cids-internal/issues/24
+shapes validation/shacl/SDGImpacts.shacl.ttl  https://github.com/commonapproach/cids-internal/issues/24
+shapes validation/shacl/cids.all.shacl.ttl  https://github.com/commonapproach/cids-internal/issues/25
+
+# Test 2. The reasoner stops at the transitive oep:partOf problem in cids.ttl
+# (issue 27); cfo imports cids, so it fails the same way. Once 27 is fixed, the
+# reasoner will hit two more problems before these checks can pass:
+#   unit_of_measure domain makes CIDS inconsistent  https://github.com/commonapproach/cids-internal/issues/28
+#   ISO 21972 makes Measure unsatisfiable           https://github.com/commonapproach/cids-internal/issues/29
+# (OWL 2 DL problems are listed separately, in tests/known-owl-problems/.)
+owl-consistent cids.ttl  https://github.com/commonapproach/cids-internal/issues/27
+owl-consistent cfo.ttl  https://github.com/commonapproach/cids-internal/issues/27
+owl-consistent cfo.owl  https://github.com/commonapproach/cids-internal/issues/27
+same cfo.ttl cfo.owl  https://github.com/commonapproach/cids-internal/issues/32
+
+# OWL 2 DL problems
+#
+# These are not listed line by line here. Each ontology has its own list in
+# tests/known-owl-problems/<file>.txt; only problems not on that list fail.
+# The problems in our own files are tracked in these issues:
+#   cids.ttl: transitive oep:partOf used with "exactly 1"       https://github.com/commonapproach/cids-internal/issues/27
+#   cids.ttl: undeclared classes and annotation properties      https://github.com/commonapproach/cids-internal/issues/30
+#   sff.ttl:  incomplete restrictions, no import of CIDS        https://github.com/commonapproach/cids-internal/issues/31
+# Most other lines come from the ontologies CIDS imports (OWL-Time, ISO 21972,
+# ISO 5087), which Common Approach does not maintain.

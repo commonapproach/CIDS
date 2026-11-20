@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Used by ROBOT in run-tests.sh. When an ontology imports CIDS (for example
+     cfo.ttl), load the cids.ttl in this repository instead of the published
+     version, so a pull request is tested against its own copy of CIDS. -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="https://ontology.commonapproach.org/cids" uri="../cids.ttl"/>
+    <uri name="http://ontology.commonapproach.org/cids" uri="../cids.ttl"/>
+</catalog>
